@@ -18,7 +18,6 @@
                 <li class="breadcrumb-item active">من نحن؟</li>
             </ol>
         </div>
-        @include('front.components.team')
-        @include('front.components.partners')
+        @include('front.components.single-service')
     </div>
 @endsection
