@@ -14,7 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $data=Service::get();
+        return view('front.services.service',compact('data'));
     }
 
     /**
@@ -46,7 +47,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        //
+        return view('front.services.single-service',compact('service'));
     }
 
     /**

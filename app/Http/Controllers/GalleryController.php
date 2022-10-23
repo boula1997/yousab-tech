@@ -14,7 +14,8 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        //
+        $data=Gallery::get();
+        return view('front.portfolio',compact('data'));
     }
 
     /**
@@ -46,7 +47,8 @@ class GalleryController extends Controller
      */
     public function show(Gallery $gallery)
     {
-        //
+        return view('front.portfolio',compact('gallery'));
+        
     }
 
     /**

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Service;
 use App\Models\Blog;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,10 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $data=Blog::get();
-        return view('front.blogs.blog',compact('data'));
+        $services=Service::get();
+        $blogs=Blog::get();
+        $galleries=Gallery::get();
+        return view('front.index',compact('services','blogs','galleries'));
     }
 
     /**
@@ -36,28 +40,27 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
+    public function show(Service $service)
     {
-        return view('front.blogs.single-blog',compact('blog'));
-        
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit(Service $service)
     {
         //
     }
@@ -66,10 +69,10 @@ class BlogController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, Service $service)
     {
         //
     }
@@ -77,10 +80,10 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $blog)
+    public function destroy(Service $service)
     {
         //
     }

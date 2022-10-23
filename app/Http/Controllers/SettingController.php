@@ -14,7 +14,8 @@ class SettingController extends Controller
      */
     public function index()
     {
-        //
+        $data=Setting::get();
+        return view('front.layouts.master',compact('data'));
     }
 
     /**
