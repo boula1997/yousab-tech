@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\SettingController;
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +27,9 @@ Route::resource('services', ServiceController::class);
 Route::resource('blogs', BlogController::class);
 Route::resource('settings', SettingController::class);
 Route::resource('home', HomeController::class);
+Route::resource('portfolio', GalleryController::class);
+Route::resource('contact', ContactController::class);
+Route::resource('about', AboutController::class);
 
 
 Route::get('routes', function () {
@@ -47,3 +52,11 @@ Route::get('routes', function () {
     }
     echo "</table>";
 });
+
+// Route::get('/',[HomeController::class, 'index'])->name('home');
+// Route::get('/about',[AboutController::class, 'index'])->name('about');
+// Route::get('/services',[ServiceController::class, 'index'])->name('service');
+// Route::get('/service/{id}',[ServiceController::class, 'show'])->name('service-details');
+// Route::get('/portfolios',[GalleryController::class, 'index'])->name('portfolio');
+// Route::get('/contact',[ContactController::class, 'index'])->name('contact');
+// Route::post('/contact_form',[ContactController::class, 'contact_post'])->name('direct_contact_post');

@@ -18,6 +18,8 @@ class CreateSettingsTable extends Migration
             $table->string('logo');
             $table->string('tab');
             $table->text('address');
+            $table->string('title');
+            $table->string('image');
             $table->text('description');
             $table->text('map');
             $table->text('facebook');
