@@ -27,8 +27,6 @@ class RedirectIfAuthenticated
             }
         }
 
-        return route('products');
-
         return $next($request);
     }
 }
