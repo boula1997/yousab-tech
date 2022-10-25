@@ -14,8 +14,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $data=Blog::get();
-        return view('front.blogs.blog',compact('data'));
+        $blogs=Blog::get();
+        return view('front.blogs.blog',compact('blogs'));
     }
 
     /**

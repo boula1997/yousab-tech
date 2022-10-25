@@ -6,14 +6,15 @@
            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
-           <!-- Slide - Set the background image for this slide in the line below -->
-           @foreach ($data as $slider)
-           <div class="carousel-item active" style="background-image: url('{{ asset($slider->image)}}')">
-              <div class="carousel-caption d-none d-md-block">
-                 <h3>{{ $slider->title }}</h3>
-                 <p>{{ $slider->description }}</p>
-              </div>
+           <!-- Slide One - Set the background image for this slide in the line below -->
+           @foreach ($sliders as $slider)
+           <div class="carousel-item {{$slider->id==1?'active':''}}" style="background-image: url('{{$slider->image}}')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>{{$slider->title}}</h3>
+                    {!! $slider->description  !!}
+                </div>          
            </div>
+        @endforeach
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

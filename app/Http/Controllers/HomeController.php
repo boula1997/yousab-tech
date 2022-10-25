@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use App\Models\Blog;
 use App\Models\Gallery;
+use App\Models\Setting;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -17,9 +19,11 @@ class HomeController extends Controller
     public function index()
     {
         $services=Service::get();
+        $sliders=Slider::get();
         $blogs=Blog::get();
         $galleries=Gallery::get();
-        return view('front.index',compact('services','blogs','galleries'));
+        $setting=Setting::first();
+        return view('front.index',compact('services','blogs','galleries','sliders','setting'));
     }
 
     /**

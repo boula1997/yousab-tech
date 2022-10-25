@@ -2,7 +2,7 @@
     <div class="row">
        <div class="col-lg-6">
           <h2>{{ $setting->title }}</h2>
-          <p>{{ $setting->description }} </p>
+          {!! $setting->description !!}
           <h3>مميزات شركتنا</h3>
           <ul>
              <li>أفضل أسعار تنسيق حدائق في الرياض</li>
@@ -14,7 +14,7 @@
           <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p> -->
        </div>
        <div class="col-lg-6">
-          <img class="img-fluid rounded" src="{{ setting($setting->image) }}" alt="" />
+          <img class="img-fluid rounded" src="{{ asset($setting->image) }}" alt="" />
        </div>
     </div>
     <!-- /.row -->

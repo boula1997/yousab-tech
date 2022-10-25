@@ -14,8 +14,8 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $settings=Setting::first();
-        return view('front.about',compact('settings'));
+        $setting=Setting::first();
+        return view('front.about',compact('setting'));
     }
 
     /**

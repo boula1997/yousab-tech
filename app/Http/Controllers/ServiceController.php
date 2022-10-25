@@ -14,8 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $data=Service::get();
-        return view('front.services.service',compact('data'));
+        $services=Service::get();
+        return view('front.services.service',compact('services'));
     }
 
     /**
