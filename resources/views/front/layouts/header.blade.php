@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
-	<meta name="description" content="Free Web tutorials for HTML and CSS">
+	<meta name="description" content="Free Web tutorials for HTML and CSS here  is going be object">
    <meta name="keywords" content="HTML, CSS, JavaScript">
 	<title>حدائف زهرة البستان</title>
 	<!-- Bootstrap core CSS -->
