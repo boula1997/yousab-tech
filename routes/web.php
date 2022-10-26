@@ -6,6 +6,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\MetaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,7 @@ Route::resource('services',ServiceController::class);
 Route::resource('about',AboutController::class);
 Route::resource('home',HomeController::class);
 Route::resource('portfolios',GalleryController::class);
+Route::resource('keys',MetaController::class);
 
 Route::get('routes', function () {
     $routeCollection = Route::getRoutes();
