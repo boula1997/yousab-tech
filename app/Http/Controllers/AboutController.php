@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use App\Models\Page;
+use App\Models\Blog;
 
 
 class AboutController extends Controller
@@ -16,11 +17,13 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $setting=Setting::first();
+ $blogs_footer=Blog::take(3)->get();
         $about_section=Page::where('identifier','about')->first();
         $advantage_section=Page::where('identifier','advantge')->first();
+        $setting=Setting::first();
 
-        return view('front.about',compact('setting','about_section','advantage_section'));
+
+        return view('front.about',compact('setting','blogs_footer','about_section','advantage_section'));
     }
 
     /**

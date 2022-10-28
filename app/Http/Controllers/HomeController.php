@@ -28,8 +28,9 @@ class HomeController extends Controller
         $contact_section=Page::where('identifier','contact')->first();
         $advantage_section=Page::where('identifier','advantge')->first();
         $setting=Setting::first();
+        $blogs_footer=Blog::take(3)->get();
         // dd($contact->title);
-        return view('front.index',compact('services','blogs','galleries','sliders','setting','contact_section','about_section','advantage_section','setting','portfolios'));
+        return view('front.index',compact('services','blogs_footer','galleries','sliders','setting','blogs','contact_section','about_section','advantage_section','setting','blogs','portfolios'));
     }
 
     /**

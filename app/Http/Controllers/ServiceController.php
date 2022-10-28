@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\Setting;  
+use App\Models\Blog;  
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -15,7 +17,9 @@ class ServiceController extends Controller
     public function index()
     {
         $services=Service::get();
-        return view('front.services.service',compact('services'));
+        $setting=Setting::first();
+        $blogs_footer=Blog::take(3)->get();
+        return view('front.services.service',compact('services','setting','blogs_footer'));
     }
 
     /**

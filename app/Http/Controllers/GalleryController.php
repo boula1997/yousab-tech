@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gallery;
+use App\Models\Setting;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -15,7 +17,9 @@ class GalleryController extends Controller
     public function index()
     {
         $portfolios=Gallery::get();
-        return view('front.portfolio',compact('portfolios'));
+        $setting=Setting::first();
+ $blogs_footer=Blog::take(3)->get();
+        return view('front.portfolio',compact('portfolios','setting','blogs_footer'));
     }
 
     /**

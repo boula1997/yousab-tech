@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -15,7 +16,10 @@ class BlogController extends Controller
     public function index()
     {
         $blogs=Blog::get();
-        return view('front.blogs.blog',compact('blogs'));
+        $setting=Setting::first();
+ $blogs_footer=Blog::take(3)->get();
+
+        return view('front.blogs.blog',compact('blogs','blogs_footer','setting'));
     }
 
     /**
