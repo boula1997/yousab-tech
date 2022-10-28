@@ -7,6 +7,7 @@ use App\Models\Blog;
 use App\Models\Gallery;
 use App\Models\Setting;
 use App\Models\Slider;
+use App\Models\Page;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,9 +22,14 @@ class HomeController extends Controller
         $services=Service::get();
         $sliders=Slider::get();
         $blogs=Blog::get();
+        $portfolios=Gallery::get();
         $galleries=Gallery::get();
+        $about_section=Page::where('identifier','about')->first();
+        $contact_section=Page::where('identifier','contact')->first();
+        $advantage_section=Page::where('identifier','advantge')->first();
         $setting=Setting::first();
-        return view('front.index',compact('services','blogs','galleries','sliders','setting'));
+        // dd($contact->title);
+        return view('front.index',compact('services','blogs','galleries','sliders','setting','contact_section','about_section','advantage_section','setting','portfolios'));
     }
 
     /**

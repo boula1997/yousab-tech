@@ -14,8 +14,8 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $data=Gallery::get();
-        return view('front.portfolio',compact('data'));
+        $portfolios=Gallery::get();
+        return view('front.portfolio',compact('portfolios'));
     }
 
     /**

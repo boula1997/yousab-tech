@@ -8,10 +8,10 @@
                <!-- تواصلوا معنا الان Section -->
                <div class="row mb-4">
                 <div class="col-md-8">
-                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+                    {!! $contact_section->description  !!}
                 </div>
                 <div class="col-md-4">
-                   <a class="btn btn-lg btn-secondary btn-block" href="#">تواصلوا معنا الان</a>
+                   <a class="btn btn-lg btn-secondary btn-block" href="#">{{$contact_section->title}}</a>
                 </div>
             </div>
     </div>

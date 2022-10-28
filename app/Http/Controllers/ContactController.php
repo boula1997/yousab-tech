@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use App\Models\Page;
+
 
 class ContactController extends Controller
 {
@@ -14,8 +16,13 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $settings=Setting::first();
-        return view('front.contact',compact('settings'));
+        $contact_section=Page::where('identifier','contact')->first();
+        $setting=Setting::first();
+        $about_section=Page::where('identifier','about')->first();
+        $advantage_section=Page::where('identifier','advantge')->first();
+
+        return view('front.contact',compact('setting','about_section','contact_section','advantage_section'));
+
     }
 
     /**

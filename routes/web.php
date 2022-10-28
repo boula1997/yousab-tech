@@ -28,13 +28,20 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::resource('home',HomeController::class);
 Route::resource('blogs',BlogController::class);
 Route::resource('contact',ContactController::class);
 Route::resource('services',ServiceController::class);
 Route::resource('about',AboutController::class);
-Route::resource('home',HomeController::class);
 Route::resource('portfolios',GalleryController::class);
 Route::resource('keys',MetaController::class);
+
+Route::get('/','App\Http\Controllers\HomeController@index')->name('front.home');
+Route::get('/blog','App\Http\Controllers\BlogController@index')->name('front.blog');
+Route::get('/contacts','App\Http\Controllers\ContactController@index')->name('front.contact');
+Route::get('/service','App\Http\Controllers\ServiceController@index')->name('front.service');
+Route::get('/portfolio','App\Http\Controllers\GalleryController@index')->name('front.portfolio');
+Route::get('/aboutus','App\Http\Controllers\AboutController@index')->name('front.about');
 
 Route::get('routes', function () {
     $routeCollection = Route::getRoutes();

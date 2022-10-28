@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use App\Models\Page;
+
 
 class AboutController extends Controller
 {
@@ -15,7 +17,10 @@ class AboutController extends Controller
     public function index()
     {
         $setting=Setting::first();
-        return view('front.about',compact('setting'));
+        $about_section=Page::where('identifier','about')->first();
+        $advantage_section=Page::where('identifier','advantge')->first();
+
+        return view('front.about',compact('setting','about_section','advantage_section'));
     }
 
     /**

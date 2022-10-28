@@ -18,7 +18,7 @@
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{{route('front.home')}}">
             <img src="images/logo.png" alt="logo" />
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,19 +40,19 @@
                      </div>
                   </li> --}}
                   <li class="nav-item">
-                     <a class="nav-link {{ Route::is('portfolios.index')? 'active' : '' }}" href="{{route('portfolios.index')}}">الاعمال</a>
+                     <a class="nav-link {{ Route::is('front.portfolio')? 'active' : '' }}" href="{{route('front.portfolio')}}">الاعمال</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link {{ Route::is('blogs.index')? 'active' : '' }}" href="{{route('blogs.index')}}">المقالات</a>
+                     <a class="nav-link {{ Route::is('front.blog')? 'active' : '' }}" href="{{route('front.blog')}}">المقالات</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link {{ Route::is('services.index')? 'active' : '' }}" href="{{route('services.index')}}">خدماتنا</a>
+                     <a class="nav-link {{ Route::is('front.service')? 'active' : '' }}" href="{{route('front.service')}}">خدماتنا</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link {{ Route::is('about.index')? 'active' : '' }}" href="{{ route('about.index') }}">من نحن؟</a>
+                     <a class="nav-link {{ Route::is('front.about')? 'active' : '' }}" href="{{ route('front.about') }}">من نحن؟</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link {{ Route::is('home.index')? 'active' : '' }}" href="{{ route('home.index') }}">الرئسية</a>
+                     <a class="nav-link {{ Route::is('front.home')? 'active' : '' }}" href="{{ route('front.home') }}">الرئسية</a>
                   </li>
                </ul>
             </div>
