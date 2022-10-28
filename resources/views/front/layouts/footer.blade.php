@@ -69,19 +69,19 @@
     </div>
     <div class="container">
         <div class="footer-logo">
-            <a href="#"><img src="images/footer-logo.png" alt="" /></a>
+            <a href="{{route('front.home')}}"><img src="images/footer-logo.png" alt="" /></a>
         </div>
         <!--foote_bottom_ul_amrc ends here-->
-        <p class="copyright text-center">جميع الحقوق محفوظة. &copy; 2018 <a href="{{route('front.home')}}">حدائق رهرة البستان</a> صمم
+        <p class="copyright text-center">جميع الحقوق محفوظة. &copy; 2022 <a href="{{route('front.home')}}">حدائق رهرة البستان</a> صمم
             بواسطة :
             <a href="#">بولا نسيم</a>
         </p>
         <ul class="social_footer_ul">
             <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="https://twitter.com/zahratalbistan?t=xWf6sJLW9pUGKz0NjyeWcg&s=08" target="_blank"><i
+            <li><a href="{{$setting->twitter}}" target="_blank"><i
                         class="fab fa-twitter"></i></a></li>
             <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/zahratalbistan?r=nametag" target="_blank"><i
+            <li><a href="{{$setting->instgram}}" target="_blank"><i
                         class="fab fa-instagram"></i></a></li>
         </ul>
         <!--social_footer_ul ends here-->
