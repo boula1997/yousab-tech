@@ -14,6 +14,12 @@
                 <!--headin5_amrc ends here-->
                 <ul class="footer_ul2_amrc">
                     <li>
+                        <a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter fleft padding-right"></i> </a>
+                        <a href="{{ $setting->twitter }}" target="_blank">
+                            <p>صفحتنا علي تويتر</p>
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ $setting->facebook }}" target="_blank"><i class="fab fa-facebook fleft padding-right"></i> </a>
                         <a href="{{ $setting->facebook }}" target="_blank">
                             <p>صفحتنا الرسمية علي فيسبوك</p>
@@ -25,12 +31,7 @@
                             <p>قنانتنا علي اليوتيوب</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter fleft padding-right"></i> </a>
-                        <a href="{{ $setting->twitter }}" target="_blank">
-                            <p>صفحتنا علي تويتر</p>
-                        </a>
-                    </li>
+
                 </ul>
                 <!--footer_ul2_amrc ends here-->
             </div>
@@ -74,7 +75,7 @@
         <!--foote_bottom_ul_amrc ends here-->
         <p class="copyright text-center">جميع الحقوق محفوظة. &copy; 2022 <a href="{{route('front.home')}}">حدائق رهرة البستان</a> صمم
             بواسطة :
-            <a href="#">بولا نسيم</a>
+            <a href="#">م.بولا نسيم</a>
         </p>
         <ul class="social_footer_ul">
             <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -93,4 +94,8 @@
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
+
 </html>
+
+
+

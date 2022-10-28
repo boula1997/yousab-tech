@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
 	<meta name="description" content="Free Web tutorials for HTML and CSS here  is going be object">
-   <meta name="keywords" content="HTML, CSS, JavaScript">
+   <meta name="keywords" content="{{$setting->meta_data}}">
 	<title>حدائف زهرة البستان</title>
 	<!-- Bootstrap core CSS -->
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
