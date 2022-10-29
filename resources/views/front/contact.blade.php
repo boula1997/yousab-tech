@@ -4,9 +4,9 @@
   <div class="full-title">
     <div class="container" style="text-align:center;">
       <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">تواصل معنا</h1>
-      <h4 style="color: white;">يمكنكم التواصل معنا من خلال النموذج التالي</h4>
-      <h4 style="color: white;">وسيتم الرد عليكم في اسرع وقت</h4>
+      <h1 class="mt-4 mb-3">{{$contact_section->title}}
+        <small>{{$contact_section->subtitle}}</small>
+    </h1>
     </div>
   </div>
     <div class="container">

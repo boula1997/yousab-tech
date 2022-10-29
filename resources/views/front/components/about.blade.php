@@ -1,7 +1,7 @@
 <div class="about-main">
     <div class="row">
        <div class="col-lg-6">
-          <h2>{{ $about_section->title }}</h2>
+          <h2>{{ $about_section->subtitle }}</h2>
           {!! $about_section->description !!}
           <h3>{{ $advantage_section->title }}</h3>
           <ul>

@@ -4,8 +4,8 @@
 	<div class="full-title">
 		<div class="container">
 			<!-- Page Heading/Breadcrumbs -->
-			<h1 class="mt-4 mb-3">الخدمات
-				<small>Subheading</small>
+			<h1 class="mt-4 mb-3">{{$service_section->title}}
+				<small>{{$service_section->subtitle}}</small>
 			</h1>
 		</div>
 	</div>
