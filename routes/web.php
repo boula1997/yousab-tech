@@ -40,6 +40,7 @@ Route::get('/','App\Http\Controllers\HomeController@index')->name('front.home');
 Route::get('/blog','App\Http\Controllers\BlogController@index')->name('front.blog');
 Route::get('/contacts','App\Http\Controllers\ContactController@index')->name('front.contact');
 Route::get('/service','App\Http\Controllers\ServiceController@index')->name('front.service');
+// Route::get('/service/{$id}','App\Http\Controllers\ServiceController@show')->name('front.show.service');
 Route::get('/portfolio','App\Http\Controllers\GalleryController@index')->name('front.portfolio');
 Route::get('/aboutus','App\Http\Controllers\AboutController@index')->name('front.about');
 

@@ -55,7 +55,7 @@
                     @foreach ($blogs_footer as $blog_footer)
                         <li class="media">
                             <div class="media-left">
-                                <img class="img-fluid" src="{{ $blog_footer->image }}" alt="" />
+                                <img class="img-fluid" src="{{ asset($blog_footer->image) }}" alt="" />
                             </div>
                             <div class="media-body">
                                 <p>{{ $blog_footer->title }}</p>
@@ -70,7 +70,7 @@
     </div>
     <div class="container">
         <div class="footer-logo">
-            <a href="{{route('front.home')}}"><img src="images/footer-logo.png" alt="" /></a>
+            <a href="{{route('front.home')}}"><img src="{{$setting->logo}}" alt="" /></a>
         </div>
         <!--foote_bottom_ul_amrc ends here-->
         <p class="copyright text-center">جميع الحقوق محفوظة. &copy; 2022 <a href="{{route('front.home')}}">حدائق رهرة البستان</a> صمم

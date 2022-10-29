@@ -13,7 +13,7 @@
                {!! $service->description   !!}
             </div>
             <div class="card-footer">
-               <a href="#" class="btn btn-primary">تصفح الخدمة</a>
+               <a href="{{route('services.show',$service)}}" class="btn btn-primary">تصفح الخدمة</a>
             </div>
          </div>
       </div>    

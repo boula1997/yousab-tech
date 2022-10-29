@@ -51,7 +51,9 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        return view('front.services.single-service',compact('service'));
+        $setting=Setting::first();
+        $blogs_footer=Blog::take(3)->get();
+        return view('front.services.single-service',compact('service','setting','blogs_footer'));
     }
 
     /**
