@@ -4,7 +4,7 @@
 	<div class="full-title">
 		<div class="container">
 			<!-- Page Heading/Breadcrumbs -->
-			<h1 class="mt-4 mb-3">{{$blog_section->title}}
+			<h1 class="mt-4 mb-3">المقالات
 			</h1>
 		</div>
 	</div>

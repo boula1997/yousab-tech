@@ -4,7 +4,7 @@
   <div class="full-title">
     <div class="container" style="text-align:center;">
       <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">{{$contact_section->title}}
+      <h1 class="mt-4 mb-3">تواصلوا معنا
     </h1>
     </div>
   </div>
