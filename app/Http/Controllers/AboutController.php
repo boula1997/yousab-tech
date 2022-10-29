@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use App\Models\Page;
-use App\Models\Blog;
+use App\Models\Blog; 
+use App\Models\Team; 
 
 
 class AboutController extends Controller
@@ -17,13 +18,14 @@ class AboutController extends Controller
      */
     public function index()
     {
- $blogs_footer=Blog::take(3)->get();
+        $blogs_footer=Blog::take(3)->get();
         $about_section=Page::where('identifier','about')->first();
         $advantage_section=Page::where('identifier','advantge')->first();
         $setting=Setting::first();
+        $teams=Team::get();
 
 
-        return view('front.about',compact('setting','blogs_footer','about_section','advantage_section'));
+        return view('front.about',compact('setting','blogs_footer','about_section','advantage_section','teams'));
     }
 
     /**

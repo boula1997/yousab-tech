@@ -7,7 +7,7 @@
                   <div class="card h-100">
                      <div class="card-img">
                         <a href="#">
-                           <img class="card-img-top" src="{{$blog->image}}" alt="" />
+                           <img class="card-img-top" src="{{asset($blog->image)}}" alt="" />
                            <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
                         </a>
                      </div>

@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service;
-use App\Models\Setting;  
-use App\Models\Blog;  
+use App\Models\Partner;
 use Illuminate\Http\Request;
 
-class ServiceController extends Controller
+class PartnerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +14,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services=Service::get();
-        $setting=Setting::first();
-        $blogs_footer=Blog::take(3)->get();
-        return view('front.teams',compact('services','setting','blogs_footer'));
+        //
     }
 
     /**
@@ -46,23 +41,21 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $service)
+    public function show(Partner $partner)
     {
-        $setting=Setting::first();
-        $blogs_footer=Blog::take(3)->get();
-        return view('front.services.single-service',compact('service','setting','blogs_footer'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function edit(Service $service)
+    public function edit(Partner $partner)
     {
         //
     }
@@ -71,10 +64,10 @@ class ServiceController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Service $service)
+    public function update(Request $request, Partner $partner)
     {
         //
     }
@@ -82,10 +75,10 @@ class ServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Service $service)
+    public function destroy(Partner $partner)
     {
         //
     }

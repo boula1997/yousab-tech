@@ -19,5 +19,6 @@
             </ol>
         </div>
         @include('front.components.about')
+        @include('front.components.team')
     </div>
 @endsection

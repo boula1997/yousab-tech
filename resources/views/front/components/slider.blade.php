@@ -8,7 +8,7 @@
         <div class="carousel-inner" role="listbox">
            <!-- Slide One - Set the background image for this slide in the line below -->
            @foreach ($sliders as $slider)
-           <div class="carousel-item {{$slider->id==1?'active':''}}" style="background-image: url('{{$slider->image}}')">
+           <div class="carousel-item {{$slider->id==1?'active':''}}" style="background-image: url('{{asset($slider->image)}}')">
                 <div class="carousel-caption d-none d-md-block">
                     <h3>{{$slider->title}}</h3>
                     {!! $slider->description  !!}

@@ -15,10 +15,10 @@
 				<li class="breadcrumb-item">
 					<a href="index.html">الرئسية</a>
 				</li>
-				<li class="breadcrumb-item active">الخدمات</li>
+				<li class="breadcrumb-item active">{{$service_section->title}}</li>
 			</ol>
 		</div>
-        <img class="img-fluid rounded mb-4" src="images/services-big.jpg" alt="" />
+        <img class="img-fluid rounded mb-4" src="{{asset($service_section->image)}}" alt="" />
         @include('front.components.services')
         @include('front.components.partners')
     </div>
