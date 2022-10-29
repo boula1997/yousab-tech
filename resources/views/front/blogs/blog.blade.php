@@ -5,7 +5,6 @@
 		<div class="container">
 			<!-- Page Heading/Breadcrumbs -->
 			<h1 class="mt-4 mb-3">{{$blog_section->title}}
-				<small>{{ $blog_section->subtitle }}</small>
 			</h1>
 		</div>
 	</div>

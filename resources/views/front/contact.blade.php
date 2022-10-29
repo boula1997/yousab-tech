@@ -5,7 +5,6 @@
     <div class="container" style="text-align:center;">
       <!-- Page Heading/Breadcrumbs -->
       <h1 class="mt-4 mb-3">{{$contact_section->title}}
-        <small>{{$contact_section->subtitle}}</small>
     </h1>
     </div>
   </div>
