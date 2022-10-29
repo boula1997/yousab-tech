@@ -9,7 +9,7 @@
 					<div class="card-body">
 						<h4 class="card-title">{{$team->title}}</h4>
 						<h6 class="card-subtitle mb-2 text-muted">{{$team->subtitle}}</h6>
-						<p class="card-text">{{$team->description}}</p>
+						<p class="card-text">{!! $team->description  !!}</p>
 					</div>
 					<div class="card-footer">
 						<ul>

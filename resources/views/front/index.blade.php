@@ -11,7 +11,7 @@
                     {!! $contact_section->description  !!}
                 </div>
                 <div class="col-md-4">
-                   <a class="btn btn-lg btn-secondary btn-block" href="#">{{$contact_section->title}}</a>
+                   <a class="btn btn-lg btn-secondary btn-block" href="{{route('front.contact')}}">{{$contact_section->title}}</a>
                 </div>
             </div>
     </div>
