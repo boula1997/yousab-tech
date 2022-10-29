@@ -90,8 +90,35 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="jquery/jquery.min.js"></script>
-<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('jquery/jquery.min.js')}}"></script>
+<script src="{{asset('bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script>
+    $("#contactForm").on("submit",function(e){
+        var dataString=$(this).serialize();
+        $.ajax({
+            type:"post",
+            url:"{{route('contact.store')}}",
+            data:dataString,
+            success: function () {
+                $("#contactForm").html("<div id='message' style='text-align: center;'></div>");
+                $("#message")
+                .html("<h2 style='background-color:green; color:white; text-align: center;'>تم ارسال رسالتك بنجاح!</h2>")
+                .append("<p>سيتم الرد عليك قريبا</p>")
+                .hide()
+                .fadeIn(1500, function () {
+                    $("#message").append(
+                    "<img id='checkmark' src='{{asset($setting->logo)}}' />"
+                    );
+                });
+            }
+
+
+        });
+
+        e.preventDefault();
+        return false;
+    });
+</script>
 </body>
 
 

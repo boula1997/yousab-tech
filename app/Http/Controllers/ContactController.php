@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Page;
 use App\Models\Blog;
 use App\Models\Partner;
+use App\Models\Contact;
+use App\Http\Requests\ContactRequest;
 
 
 class ContactController extends Controller
@@ -45,9 +47,13 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
-        //
+        // dd($request->input('message'));
+        $data=$request->all();
+        $data['message']=$request->input('message');
+        // dd($data);
+        Contact::create($data);
     }
 
     /**
@@ -79,7 +85,7 @@ class ContactController extends Controller
      * @param  \App\Models\Setting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Setting $setting)
+    public function update(ContactRequest $request, Setting $setting)
     {
         //
     }

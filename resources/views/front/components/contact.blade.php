@@ -45,35 +45,49 @@
 <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
 <div class="row">
     <div class="col-lg-8 mb-4 contact-left">
+        
         <h3>راسلنا الان!</h3>
-        <form name="sentMessage" id="contactForm" novalidate style="text-align: right;">
+        <form id="contactForm" style="text-align: right;" method="post">
+            @csrf
             <div class="control-group form-group">
                 <div class="controls">
-                    <label>الاسم بالكامل</label>
-                    <input type="text" class="form-control" id="name" required
-                        data-validation-required-message="Please enter your name.">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
+                        id="name" required data-validation-required-message="Please enter your name."
+                        value="{{ old('name') }}" placeholder="الاسم بالكامل">
+                    @error('name')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                     <p class="help-block"></p>
                 </div>
             </div>
             <div class="control-group form-group">
                 <div class="controls">
-                    <label>رقم الهاتف</label>
-                    <input type="tel" class="form-control" id="phone" required
-                        data-validation-required-message="Please enter your phone number.">
+                    <input type="tel" class="form-control @error('phone') is-invalid @enderror" name="phone"
+                        id="phone" required data-validation-required-message="Please enter your phone number."
+                        value="{{ old('phone') }}" placeholder="رقم الهاتف">
+                        @error('phone')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
             </div>
             <div class="control-group form-group">
                 <div class="controls">
-                    <label>البريد الالكتروني</label>
-                    <input type="email" class="form-control" id="email" required
-                        data-validation-required-message="Please enter your email address.">
+                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
+                        id="email" required data-validation-required-message="Please enter your email address."
+                        value="{{ old('email') }}" placeholder="البريد الالكتروني">
+                        @error('email')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
             </div>
             <div class="control-group form-group">
                 <div class="controls">
-                    <label>الرسالة </label>
-                    <textarea rows="5" cols="100" class="form-control" id="message" required
-                        data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                    <textarea rows="5" cols="100" class="form-control @error('message') is-invalid @enderror" name="message"
+                        id="message" required data-validation-required-message="Please enter your message" placeholder="الرسالة" maxlength="999"
+                        style="resize:none">{{ old('message') }}</textarea>
+                        @error('message')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
             </div>
             <div id="success"></div>
@@ -82,3 +96,5 @@
         </form>
     </div>
 </div>
+
+
