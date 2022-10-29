@@ -1,6 +1,6 @@
         <!-- Portfolio Section -->
         <div class="portfolio-main">
-            <h2>سابقة الاعمال</h2>
+            <h2>المقالات</h2>
             <div class="row">
                @foreach ($blogs as $blog)
                <div class="col-lg-4 col-sm-6 portfolio-item">
