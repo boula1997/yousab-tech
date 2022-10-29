@@ -6,6 +6,7 @@ use App\Models\Setting;
 use Illuminate\Http\Request;
 use App\Models\Page;
 use App\Models\Blog;
+use App\Models\Partner;
 
 
 class ContactController extends Controller
@@ -21,9 +22,10 @@ class ContactController extends Controller
         $setting=Setting::first();
         $blogs_footer=Blog::take(3)->get();
         $about_section=Page::where('identifier','about')->first();
-        $advantage_section=Page::where('identifier','advantge')->first();
+        $advantage_section=Page::where('identifier','advantage')->first();
+        $partners=Partner::get();
 
-        return view('front.contact',compact('setting','blogs_footer','about_section','contact_section','advantage_section'));
+        return view('front.contact',compact('setting','blogs_footer','about_section','contact_section','advantage_section','partners'));
 
     }
 

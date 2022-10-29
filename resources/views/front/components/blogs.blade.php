@@ -13,7 +13,7 @@
                      </div>
                      <div class="card-body">
                         <h4 class="card-title">
-                           <a href="#">{{$blog->title}}</a>
+                           <a href="{{route('blogs.show',$blog)}}">{{$blog->title}}</a>
                         </h4>
                      </div>
                   </div>

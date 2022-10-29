@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Gallery;
 use App\Models\Setting;
 use App\Models\Blog;
+use App\Models\Page;
+use App\Models\Partner;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -18,8 +20,10 @@ class GalleryController extends Controller
     {
         $portfolios=Gallery::get();
         $setting=Setting::first();
- $blogs_footer=Blog::take(3)->get();
-        return view('front.portfolio',compact('portfolios','setting','blogs_footer'));
+        $blogs_footer=Blog::take(3)->get();
+        $portfolio_section=Page::where('identifier','portfolio')->first();
+        $partners=Partner::get();
+        return view('front.portfolio',compact('portfolios','setting','blogs_footer','portfolio_section','partners'));
     }
 
     /**

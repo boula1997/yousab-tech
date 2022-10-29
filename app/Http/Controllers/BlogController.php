@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Setting;
+use App\Models\Page;
+use App\Models\Partner;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -17,9 +19,12 @@ class BlogController extends Controller
     {
         $blogs=Blog::get();
         $setting=Setting::first();
- $blogs_footer=Blog::take(3)->get();
+        $blogs_footer=Blog::take(3)->get();
+        $blog_section=Page::where('identifier','blog')->first();
+        $partners=Partner::get();
 
-        return view('front.blogs.blog',compact('blogs','blogs_footer','setting'));
+
+        return view('front.blogs.blog',compact('blogs','blogs_footer','setting','blog_section','partners'));
     }
 
     /**
@@ -51,7 +56,9 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        return view('front.blogs.single-blog',compact('blog'));
+        $setting=Setting::first();  
+        $blogs_footer=Blog::take(3)->get();
+        return view('front.blogs.single-blog',compact('blog','setting','blogs_footer'));
         
     }
 

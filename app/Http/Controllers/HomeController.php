@@ -26,7 +26,7 @@ class HomeController extends Controller
         $galleries=Gallery::get();
         $about_section=Page::where('identifier','about')->first();
         $contact_section=Page::where('identifier','contact')->first();
-        $advantage_section=Page::where('identifier','advantge')->first();
+        $advantage_section=Page::where('identifier','advantage')->first();
         $setting=Setting::first();
         $blogs_footer=Blog::take(3)->get();
         // dd($contact->title);

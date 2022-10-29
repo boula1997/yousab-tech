@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Page;
 use App\Models\Blog; 
 use App\Models\Team; 
+use App\Models\Partner; 
 
 
 class AboutController extends Controller
@@ -20,12 +21,13 @@ class AboutController extends Controller
     {
         $blogs_footer=Blog::take(3)->get();
         $about_section=Page::where('identifier','about')->first();
-        $advantage_section=Page::where('identifier','advantge')->first();
+        $advantage_section=Page::where('identifier','advantage')->first();
         $setting=Setting::first();
         $teams=Team::get();
+        $partners=Partner::get();
 
 
-        return view('front.about',compact('setting','blogs_footer','about_section','advantage_section','teams'));
+        return view('front.about',compact('setting','blogs_footer','about_section','advantage_section','teams','partners'));
     }
 
     /**
