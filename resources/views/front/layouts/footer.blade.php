@@ -70,7 +70,7 @@
     </div>
     <div class="container">
         <div class="footer-logo">
-            <a href="{{route('front.home')}}"><img src="{{$setting->logo}}" alt="" /></a>
+            <a href="{{route('front.home')}}"><img width="150px" height="150px" src="{{$setting->logo}}" alt="" /></a>
         </div>
         <!--foote_bottom_ul_amrc ends here-->
         <p class="copyright text-center">جميع الحقوق محفوظة. &copy; 2022 <a href="{{route('front.home')}}">حدائق رهرة البستان</a> صمم
