@@ -20,7 +20,7 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{{route('front.home')}}">
-            <img src="{{asset($setting->logo)}}" alt="logo" />
+            <img width="180px" height="53" src="{{asset($setting->logo)}}" alt="logo" />
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="fas fa-bars"></span>
