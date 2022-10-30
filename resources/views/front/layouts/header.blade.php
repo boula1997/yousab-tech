@@ -20,11 +20,11 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{{route('front.home')}}">
-            <img width="100px" height="100px" style="position:absolute" src="{{asset($setting->logo)}}" alt="logo" />
+            <img width="100px" height="100px" style="position:relative;" src="{{asset($setting->logo)}}" alt="logo" />
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="fas fa-bars"></span>
-            </button>
+            </button>   
             <div class="collapse navbar-collapse" id="navbarResponsive">
                <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
