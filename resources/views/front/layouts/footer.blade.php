@@ -58,7 +58,7 @@
                                 <img class="img-fluid" src="{{ asset($blog_footer->image) }}" alt="" />
                             </div>
                             <div class="media-body">
-                                <p>{{ $blog_footer->title }}</p>
+                                <a href="{{route('blogs.show',$blog_footer)}}"><p>{{ $blog_footer->title }}</p></a>
                                 <span>{{ $blog_footer->creared_at }}</span>
                             </div>
                         </li>
