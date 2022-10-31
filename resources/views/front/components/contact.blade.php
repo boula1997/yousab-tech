@@ -21,7 +21,8 @@
 
         <p>{{ $setting->phone3 }}</p>
         <a href="https://wa.me/966594394745"><i class="fab fa-whatsapp"></i></a> <a href="tel:00966594394745"><i class="fas fa-phone-square"></i></a>
-            <!-- <abbr title="Email">E</abbr>: -->
+         <p>  
+        <!-- <abbr title="Email">E</abbr>: -->
             <a href="mailto:medahtahmed465@gmail.com">{{ $setting->email1 }}<i class="fas fa-envelope"></i>
             </a>
         </p>
