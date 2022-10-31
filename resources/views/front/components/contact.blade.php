@@ -11,13 +11,13 @@
         <p>
             {{ $setting->address }}
             <i class="fas fa-map-marker-alt"></i>
-
         </p>
+
         <p>{{ $setting->phone1 }}</p>
         <a href="https://wa.me/966500774150"><i class="fab fa-whatsapp"></i></a> <a href="tel:00966500774150"><i class="fas fa-phone-square"></i></a>
                     
         <p>{{ $setting->phone2 }}</p>
-        <a href="https://wa.me/966537394580"><i class="fab fa-whatsapp"></i></a> <a href="tel:00966537394580"><i class="fas fa-phone-square"></i></a>
+        <a href="https://wa.me/966537394580"><i style="font-size: 50px"class="fab fa-whatsapp"></i></a> <a href="tel:00966537394580"><i style="font-size: 50px" class="fas fa-phone-square"></i></a>
 
         <p>{{ $setting->phone3 }}</p>
         <a href="https://wa.me/966594394745"><i class="fab fa-whatsapp"></i></a> <a href="tel:00966594394745"><i class="fas fa-phone-square"></i></a>
