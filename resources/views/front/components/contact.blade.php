@@ -14,13 +14,13 @@
 
         </p>
         <p>{{ $setting->phone1 }}</p>
-        <p><a href="https://wa.me/966500774150"><i class="fab fa-whatsapp"></i></a> <a href="tel:00966500774150"><i class="fas fa-phone-square"></i></a></p>
+        <a href="https://wa.me/966500774150"><i class="fab fa-whatsapp"></i></a> <a href="tel:00966500774150"><i class="fas fa-phone-square"></i></a>
                     
-        <p><a href="https://wa.me/0500774150"target="_blank"> {{ $setting->phone2 }}
-            </a><i class="fab fa-whatsapp"></i> <i class="fas fa-phone-square"></i></i></i></p>
-        <p><a href="https://wa.me/0500774150"target="_blank"> {{ $setting->phone3 }}
-            </a> <i class="fab fa-whatsapp"></i> <i class="fas fa-phone-square"></i></i></i></p>
-        <p>
+        <p>{{ $setting->phone2 }}</p>
+        <a href="https://wa.me/966537394580"><i class="fab fa-whatsapp"></i></a> <a href="tel:00966537394580"><i class="fas fa-phone-square"></i></a>
+
+        <p>{{ $setting->phone3 }}</p>
+        <a href="https://wa.me/966594394745"><i class="fab fa-whatsapp"></i></a> <a href="tel:00966594394745"><i class="fas fa-phone-square"></i></a>
             <!-- <abbr title="Email">E</abbr>: -->
             <a href="mailto:medahtahmed465@gmail.com">{{ $setting->email1 }}<i class="fas fa-envelope"></i>
             </a>
