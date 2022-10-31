@@ -13,8 +13,9 @@
             <i class="fas fa-map-marker-alt"></i>
 
         </p>
-        <p><a href="https://wa.me/0500774150" target="_blank"> {{ $setting->phone1 }}
-            </a> <i class="fab fa-whatsapp"></i> <i class="fas fa-phone-square"></i></i></i></p>
+        <p>{{ $setting->phone1 }}</p>
+        <p><a href="https://wa.me/966500774150"><i class="fab fa-whatsapp"></i></a> <a href="tel:00966500774150"><i class="fas fa-phone-square"></i></a></p>
+                    
         <p><a href="https://wa.me/0500774150"target="_blank"> {{ $setting->phone2 }}
             </a><i class="fab fa-whatsapp"></i> <i class="fas fa-phone-square"></i></i></i></p>
         <p><a href="https://wa.me/0500774150"target="_blank"> {{ $setting->phone3 }}
@@ -45,7 +46,7 @@
 <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
 <div class="row">
     <div class="col-lg-8 mb-4 contact-left">
-        
+
         <h3>راسلنا الان!</h3>
         <form id="contactForm" style="text-align: right;" method="post">
             @csrf
@@ -65,7 +66,7 @@
                     <input type="tel" class="form-control @error('phone') is-invalid @enderror" name="phone"
                         id="phone" required data-validation-required-message="Please enter your phone number."
                         value="{{ old('phone') }}" placeholder="رقم الهاتف">
-                        @error('phone')
+                    @error('phone')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
@@ -75,7 +76,7 @@
                     <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
                         id="email" required data-validation-required-message="Please enter your email address."
                         value="{{ old('email') }}" placeholder="البريد الالكتروني">
-                        @error('email')
+                    @error('email')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
@@ -83,9 +84,9 @@
             <div class="control-group form-group">
                 <div class="controls">
                     <textarea rows="5" cols="100" class="form-control @error('message') is-invalid @enderror" name="message"
-                        id="message" required data-validation-required-message="Please enter your message" placeholder="الرسالة" maxlength="999"
-                        style="resize:none">{{ old('message') }}</textarea>
-                        @error('message')
+                        id="message" required data-validation-required-message="Please enter your message" placeholder="الرسالة"
+                        maxlength="999" style="resize:none">{{ old('message') }}</textarea>
+                    @error('message')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
@@ -96,5 +97,3 @@
         </form>
     </div>
 </div>
-
-

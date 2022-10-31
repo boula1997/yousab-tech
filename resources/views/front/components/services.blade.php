@@ -18,8 +18,8 @@
                                 </h4>
                             </div>
                             <div class="card-footer">
-                                <a href="{{ route('services.show',$service) }}" class="btn btn-primary">تصفح الخدمة</a>
                                 <a href="tel:00966500774150" class="btn btn-primary">اتصل بنا</a>
+                                <a href="{{ route('services.show',$service) }}" class="btn btn-primary">تصفح الخدمة</a>
                             </div>
                         </div>
                     </div>
