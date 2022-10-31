@@ -5,8 +5,8 @@
                 <h5 class="headin5_amrc col_white_amrc pt2">موقعنا</h5>
                 <!--headin5_amrc-->
                 <p class="mb10">شركة زهرة البستان</p>
-                <p><i class="fa fa-location-arrow"></i>{{ $setting->address}}</p>
-                <p><i class="fa fa-phone"></i>{{ $setting->phone1 }} </p>
+                <p><i class="fa fa-location-arrow"></i> {{ $setting->address}}</p>
+                <p><i class="fa fa-phone"></i> {{ $setting->phone1 }} </p>
                 <p><i class="fa fa fa-envelope"></i> {{ $setting->email1}}</p>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col">
@@ -14,19 +14,19 @@
                 <!--headin5_amrc ends here-->
                 <ul class="footer_ul2_amrc">
                     <li>
-                        <a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter fleft padding-right"></i> </a>
+                        <a href="{{ $setting->twitter }}" target="_blank"> <i class="fab fa-twitter fleft padding-right"></i> </a>
                         <a href="{{ $setting->twitter }}" target="_blank">
                             <p>صفحتنا علي تويتر</p>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ $setting->facebook }}" target="_blank"><i class="fab fa-facebook fleft padding-right"></i> </a>
+                        <a href="{{ $setting->facebook }}" target="_blank"> <i class="fab fa-facebook fleft padding-right"></i> </a>
                         <a href="{{ $setting->facebook }}" target="_blank">
                             <p>صفحتنا الرسمية علي فيسبوك</p>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ $setting->youtube }}" target="_blank"><i class="fab fa-youtube fleft padding-right"></i> </a>
+                        <a href="{{ $setting->youtube }}" target="_blank"> <i class="fab fa-youtube fleft padding-right"></i> </a>
                         <a href="{{ $setting->youtube }}" target="_blank">
                             <p>قنانتنا علي اليوتيوب</p>
                         </a>
