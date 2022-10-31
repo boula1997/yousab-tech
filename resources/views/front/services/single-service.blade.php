@@ -21,13 +21,10 @@
     </div>
     <div class="about-main">
         <div class="row">
-           <div class="col-lg-6">
+           <div class="col-lg-6" style="padding-top: 20px">
               <h2>{{ $service->title }}</h2>
               {!!  $service->description  !!}
            </div>
-           <br>
-           <br>
-           <br>
            <div class="col-lg-6">
               <img class="img-fluid rounded" src="{{ asset($service->image)}}" alt="" />
            </div>
