@@ -17,10 +17,10 @@
         <p><a href="https://wa.me/966500774150"><i style="font-size:200%" class="fab fa-whatsapp"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:00966500774150"><i style="font-size:200%" class="fas fa-phone-square"></i></a></p> 
                     
         <p>{{ $setting->phone2 }}</p>
-        <a href="https://wa.me/966537394580"><i style="font-size:200%"class="fab fa-whatsapp"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:00966537394580"><i style="font-size: 200%" class="fas fa-phone-square"></i></a><br>
+        <p><a href="https://wa.me/966537394580"><i style="font-size:200%"class="fab fa-whatsapp"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:00966537394580"><i style="font-size: 200%" class="fas fa-phone-square"></i></a></p>
 
         <p>{{ $setting->phone3 }}</p>          
-        <a href="https://wa.me/966594394745"><i style="font-size:200%" class="fab fa-whatsapp"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:00966594394745"><i style="font-size:200%" class="fas fa-phone-square"></i></a><br>
+        <p><a href="https://wa.me/966594394745"><i style="font-size:200%" class="fab fa-whatsapp"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:00966594394745"><i style="font-size:200%" class="fas fa-phone-square"></i></a></p>
          <p>  
         <!-- <abbr title="Email">E</abbr>: -->
             <a href="mailto:medahtahmed465@gmail.com">{{ $setting->email1 }}<i class="fas fa-envelope"></i>
