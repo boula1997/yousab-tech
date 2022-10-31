@@ -8,7 +8,7 @@
                         <div class="card h-100">
                             <div class="card-img">
                                 <a href="#">
-                                    <img class="card-img-top" src="{{ asset($service->image) }}" alt="" />
+                                    <a href="{{ route('services.show',$service) }}"><img class="card-img-top" src="{{ asset($service->image) }}" alt="{{ $service->title }}"/></a>
                                     <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
                                 </a>
                             </div>
