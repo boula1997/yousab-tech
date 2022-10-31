@@ -23,12 +23,12 @@
         <p><a href="https://wa.me/966594394745"><i style="font-size:200%" class="fab fa-whatsapp"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:00966594394745"><i style="font-size:200%" class="fas fa-phone-square"></i></a></p>
          <p>  
         <!-- <abbr title="Email">E</abbr>: -->
-            <a href="mailto:medahtahmed465@gmail.com">{{ $setting->email1 }}<i class="fas fa-envelope"></i>
+            <a href="mailto:medahtahmed465@gmail.com">{{ $setting->email1 }} <i class="fas fa-envelope"></i>
             </a>
         </p>
         <p>
             <!-- <abbr title="Email">E</abbr>: -->
-            <a href="mailto:aomarkhmis1234@gmail.com">{{ $setting->email2 }}<i class="fas fa-envelope"></i>
+            <a href="mailto:aomarkhmis1234@gmail.com">{{ $setting->email2 }} <i class="fas fa-envelope"></i>
             </a>
         </p>
         <p>
