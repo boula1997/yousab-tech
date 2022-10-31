@@ -26,6 +26,8 @@
               {!!  $service->description  !!}
            </div>
            <br>
+           <br>
+           <br>
            <div class="col-lg-6">
               <img class="img-fluid rounded" src="{{ asset($service->image)}}" alt="" />
            </div>
