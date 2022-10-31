@@ -14,6 +14,7 @@
 	<link href="{{asset('site/css/all.css')}}" rel="stylesheet">
 	<!-- Custom styles for this template -->
 	<link href="{{asset('site/css/style.css')}}" rel="stylesheet">
+   <link href="{{asset('site/css/lightbox.css')}}" rel="stylesheet" />
 </head>
 <body>
     <!-- Navigation -->

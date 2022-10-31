@@ -92,6 +92,7 @@
 <!-- Bootstrap core JavaScript -->
 <script src="{{asset('jquery/jquery.min.js')}}"></script>
 <script src="{{asset('bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('site/js/lightbox.js')}}"></script>
 <script>
     $("#contactForm").on("submit",function(e){
         var dataString=$(this).serialize();
