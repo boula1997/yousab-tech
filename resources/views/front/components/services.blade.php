@@ -12,6 +12,7 @@
                                     <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
                                 </a>
                             </div>
+                            <br>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#">{{ $service->title }}</a>
