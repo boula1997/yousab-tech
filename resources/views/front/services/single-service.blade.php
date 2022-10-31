@@ -25,7 +25,7 @@
               <h2>{{ $service->title }}</h2>
               {!!  $service->description  !!}
            </div>
-           <div class="col-lg-6" style="padding-top: 20px">
+           <div class="col-lg-6" style="padding-top: 5%">
               <img class="img-fluid rounded" src="{{ asset($service->image)}}" alt="" />
            </div>
         </div>
