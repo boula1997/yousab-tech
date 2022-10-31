@@ -19,7 +19,7 @@
         <p>{{ $setting->phone2 }}</p>
         <a href="https://wa.me/966537394580"><i style="font-size:200%"class="fab fa-whatsapp"></i></a> <a href="tel:00966537394580"><i style="font-size: 200%" class="fas fa-phone-square"></i></a>
 
-        <p>{{ $setting->phone3 }}</p>
+        <p>{{ $setting->phone3 }}</p>          
         <a href="https://wa.me/966594394745"><i style="font-size:200%" class="fab fa-whatsapp"></i></a> <a href="tel:00966594394745"><i style="font-size:200%" class="fas fa-phone-square"></i></a>
          <p>  
         <!-- <abbr title="Email">E</abbr>: -->
