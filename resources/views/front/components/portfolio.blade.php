@@ -8,7 +8,7 @@
                 {{-- <div class="card h-100">
                     <h4 class="card-header">{{ $portfolio->title }}</h4> --}}
                     <div class="card-img">
-                        <a href="{{ asset($portfolio->image) }}" data-lightbox="portfolio" data-title="My caption"><img class="img-fluid" src="{{ asset($portfolio->image) }}" alt="" /></a>
+                        <a href="{{ asset($portfolio->image) }}" data-lightbox="portfolio" data-title="{{ $portfolio->title }}"><img class="img-fluid" src="{{ asset($portfolio->image) }}" alt="" /></a>
                         
                     </div>
                     {{-- <div class="card-body">
