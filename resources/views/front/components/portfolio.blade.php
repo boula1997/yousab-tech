@@ -4,13 +4,12 @@
 
     <div class="row">
        
+        @foreach ($portfolios as $portfolio)
             <div class="col-lg-4 mb-4">
-                {{-- <div class="card h-100">
-                    <h4 class="card-header">{{ $portfolio->title }}</h4> --}}
-                    <div class="card-img">
-                        @foreach ($portfolios as $portfolio)
+                <div class="card h-100">
+                    <h4 class="card-header">{{ $portfolio->title }}</h4>
+                    <div  class="card-img">
                         <a href="{{ asset($portfolio->image) }}" data-lightbox="portfolio" data-title="{{ $portfolio->title }}"><img style="margin: 1%" class="img-fluid" src="{{ asset($portfolio->image) }}" alt="" /></a>
-                        @endforeach
                     </div>
                     {{-- <div class="card-body">
                         {!! $portfolio->description !!}
@@ -18,8 +17,9 @@
                     {{-- <div class="card-footer">
                         <a href="#" class="btn btn-primary">تصفح الخدمة</a>
                     </div> --}}
-                {{-- </div> --}}
+                </div>
             </div>
+            @endforeach
     </div>
     <!-- /.row -->
 </div>
