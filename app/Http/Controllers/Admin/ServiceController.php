@@ -16,7 +16,7 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::latest()->paginate(5);
-        return view('Admin.crud.services.index', compact('services'))
+        return view('admin.crud.services.index', compact('services'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,7 +27,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('Admin.crud.services.create');
+        return view('admin.crud.services.create');
     }
 
     /**
@@ -58,7 +58,7 @@ class ServiceController extends Controller
      */
     public function show(Service $data)
     {
-        return view('Admin.crud.services.show', compact('data'));
+        return view('admin.crud.services.show', compact('data'));
     }
 
     /**
@@ -70,7 +70,7 @@ class ServiceController extends Controller
     public function edit(Service $data)
     {
     //    dd($data->title);
-        return view('Admin.crud.services.edit', compact('data'));
+        return view('admin.crud.services.edit', compact('data'));
     }
     /**
      * Update the specified resource in storage.

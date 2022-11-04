@@ -16,7 +16,7 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blog::latest()->paginate(5);
-        return view('Admin.crud.blogs.index', compact('blogs'))
+        return view('admin.crud.blogs.index', compact('blogs'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,7 +27,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('Admin.crud.blogs.create');
+        return view('admin.crud.blogs.create');
     }
 
     /**
@@ -59,7 +59,7 @@ class BlogController extends Controller
      */
     public function show(Blog $data)
     {
-        return view('Admin.crud.blogs.show', compact('data'));
+        return view('admin.crud.blogs.show', compact('data'));
     }
 
     /**
@@ -71,7 +71,7 @@ class BlogController extends Controller
     public function edit(Blog $data)
     {
     //    dd($data->title);
-        return view('Admin.crud.blogs.edit', compact('data'));
+        return view('admin.crud.blogs.edit', compact('data'));
     }
     /**
      * Update the specified resource in storage.
