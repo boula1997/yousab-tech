@@ -3,20 +3,20 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Gallery;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
-class PortfolioController extends Controller
+class ServiceController extends Controller
 {
-     /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $portfolios = Gallery::latest()->paginate(5);
-        return view('admin.crud.portfolios.index', compact('portfolios'))
+        $services = Service::latest()->paginate(5);
+        return view('admin.crud.services.index', compact('services'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,7 +27,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        return view('admin.crud.portfolios.create');
+        return view('admin.crud.services.create');
     }
 
     /**
@@ -44,63 +44,62 @@ class PortfolioController extends Controller
         ]);
 
         $data=$request->all();
-        $data['image']=json_encode($data['images']);
-        Gallery::create($data);
+        Service::create($data);
 
-        return redirect()->route('portfolios.index')
+        return redirect()->route('services.index')
             ->with('success', 'تم الانشاء');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Gallery  $data
+     * @param  \App\Models\Service  $data
      * @return \Illuminate\Http\Response
      */
-    public function show(Gallery $data)
+    public function show(Service $data)
     {
-        return view('admin.crud.portfolios.show', compact('data'));
+        return view('admin.crud.services.show', compact('data'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Gallery  $data
+     * @param  \App\Models\Service  $data
      * @return \Illuminate\Http\Response
      */
-    public function edit(Gallery $data)
+    public function edit(Service $data)
     {
     //    dd($data->title);
-        return view('admin.crud.portfolios.edit', compact('data'));
+        return view('admin.crud.services.edit', compact('data'));
     }
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\portfolio  $data
+     * @param  \App\Models\service  $data
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gallery $data)
+    public function update(Request $request, Service $data)
     {
         $request->validate([
             'name' => 'title',
         ]);
         $data->update($request->all());
 
-        return redirect()->route('portfolios.index')
+        return redirect()->route('services.index')
             ->with('success', 'تم التعديل بنجاح');
     }
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Gallery  $data
+     * @param  \App\Models\Service  $data
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gallery $data)
+    public function destroy(Service $data)
     {
         $data->delete();
 
-        return redirect()->route('portfolios.index')
+        return redirect()->route('services.index')
             ->with('success', 'تم الحذف');
     }
 }

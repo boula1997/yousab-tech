@@ -7,7 +7,7 @@
                 <h2>اضف صور للمعرض</h2>
             </div>
             <div class="pull-left">
-                <a class="btn btn-primary" href="{{route('portfolios.index')}}" title="Go back"> <i class="fas fa-backward "></i> </a>
+                <a class="btn btn-primary" href="{{route('services.index')}}" title="Go back"> <i class="fas fa-backward "></i> </a>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
             </ul>
         </div>
     @endif
-    <form action="{{route('portfolios.store')}}" method="POST" >
+    <form action="{{route('services.store')}}" method="POST" >
         @csrf
 
         <div class="row">

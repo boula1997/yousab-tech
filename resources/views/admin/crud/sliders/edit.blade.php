@@ -7,7 +7,7 @@
                 <h2>اضف صور للمعرض</h2>
             </div>
             <div class="pull-left">
-                <a class="btn btn-primary" href="{{route('portfolios.index')}}" title="Go back"> <i class="fas fa-backward "></i> </a>
+                <a class="btn btn-primary" href="{{route('sliders.index')}}" title="Go back"> <i class="fas fa-backward "></i> </a>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
             </ul>
         </div>
     @endif
-    <form action="{{route('portfolios.store')}}" method="POST" >
+    <form action="{{route('sliders.store')}}" method="POST" >
         @csrf
 
         <div class="row">
@@ -47,7 +47,7 @@
                             <div class="col-md-12">
                                 <div class="form-group" style="text-align: center">
                                     <label class="col-form-label" style="font-size: 15pt"> <strong> اختر الصور</strong></label>
-                                    @include('admin.components.image_arr_edit')
+                                    @include('admin.components.image_edit')
                                 </div>
             
                             </div>

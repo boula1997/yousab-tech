@@ -7,7 +7,7 @@
                 <h2>اضف صور للمعرض</h2>
             </div>
             <div class="pull-left">
-                <a class="btn btn-primary" href="{{route('portfolios.index')}}" title="Go back"> <i class="fas fa-backward "></i> </a>
+                <a class="btn btn-primary" href="{{route('blogs.index')}}" title="Go back"> <i class="fas fa-backward "></i> </a>
             </div>
         </div>
     </div>
@@ -22,21 +22,21 @@
             </ul>
         </div>
     @endif
-    <form action="{{route('portfolios.store')}}" method="POST" >
+    <form action="{{route('blogs.store')}}" method="POST" >
         @csrf
 
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>الاسم:</strong>
-                    <input type="text" value="{{old('title',$data->title)}}" name="title" class="form-control">
+                    <input type="text" value="{{old('title')}}" name="title" class="form-control">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>الوصف:</strong>
                     <textarea class="form-control" style="height:30%" name="description"
-                      >{{old('description',$data->description)}}</textarea>
+                      >{{old('description')}}</textarea>
                 </div>
             </div>
 
@@ -47,7 +47,7 @@
                             <div class="col-md-12">
                                 <div class="form-group" style="text-align: center">
                                     <label class="col-form-label" style="font-size: 15pt"> <strong> اختر الصور</strong></label>
-                                    @include('admin.components.image_arr_edit')
+                                    @include('admin.components.image_arr_create')
                                 </div>
             
                             </div>

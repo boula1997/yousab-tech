@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Gallery;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
-class PortfolioController extends Controller
+class BlogController extends Controller
 {
      /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        $portfolios = Gallery::latest()->paginate(5);
-        return view('admin.crud.portfolios.index', compact('portfolios'))
+        $blogs = Blog::latest()->paginate(5);
+        return view('admin.crud.blogs.index', compact('blogs'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,7 +27,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        return view('admin.crud.portfolios.create');
+        return view('admin.crud.blogs.create');
     }
 
     /**
@@ -45,62 +45,62 @@ class PortfolioController extends Controller
 
         $data=$request->all();
         $data['image']=json_encode($data['images']);
-        Gallery::create($data);
+        Blog::create($data);
 
-        return redirect()->route('portfolios.index')
+        return redirect()->route('blogs.index')
             ->with('success', 'تم الانشاء');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Gallery  $data
+     * @param  \App\Models\Blog  $data
      * @return \Illuminate\Http\Response
      */
-    public function show(Gallery $data)
+    public function show(Blog $data)
     {
-        return view('admin.crud.portfolios.show', compact('data'));
+        return view('admin.crud.blogs.show', compact('data'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Gallery  $data
+     * @param  \App\Models\Blog  $data
      * @return \Illuminate\Http\Response
      */
-    public function edit(Gallery $data)
+    public function edit(Blog $data)
     {
     //    dd($data->title);
-        return view('admin.crud.portfolios.edit', compact('data'));
+        return view('admin.crud.blogs.edit', compact('data'));
     }
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\portfolio  $data
+     * @param  \App\Models\blog  $data
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gallery $data)
+    public function update(Request $request, Blog $data)
     {
         $request->validate([
             'name' => 'title',
         ]);
         $data->update($request->all());
 
-        return redirect()->route('portfolios.index')
+        return redirect()->route('blogs.index')
             ->with('success', 'تم التعديل بنجاح');
     }
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Gallery  $data
+     * @param  \App\Models\Blog  $data
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gallery $data)
+    public function destroy(Blog $data)
     {
         $data->delete();
 
-        return redirect()->route('portfolios.index')
+        return redirect()->route('blogs.index')
             ->with('success', 'تم الحذف');
     }
 }
