@@ -1,7 +1,7 @@
 <div id="page-inner">
     <div class="row">
         <div class="col-lg-12">
-            <h2>ADMIN DASHBOARD</h2>
+            <h1 style="text-align: center">لوحة التحكم</h1>
         </div>
     </div>
     <!-- /. ROW  -->
@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-lg-12 ">
             <div class="alert alert-info">
-                <strong>Welcome Jhon Doe ! </strong> You Have No pending Task For Today.
+                <strong>اكتشف المزيد من التعديلات </strong> {{auth()->user()->name}} مرحبا بك  
             </div>
 
         </div>
@@ -62,7 +62,7 @@
 
 
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+        {{-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
             <div class="div-square">
                 <a href="blank.html">
                     <i class="fa fa-key fa-5x"></i>
@@ -340,7 +340,7 @@
             </div>
 
 
-        </div>
+        </div> --}}
     </div>
     <!-- /. ROW  -->
     <div class="row">
