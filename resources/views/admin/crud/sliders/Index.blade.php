@@ -1,4 +1,4 @@
-@extends('admin.crud.Layouts.app')
+@extends('admin.crud.Layouts.App')
 
 @section('content')
     <div class="row">
