@@ -29,7 +29,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
-                     <a class="nav-link {{ Route::is('contact.index')? 'active' : '' }}" href="{{ route('contact.index') }}">تواصل معنا</a>
+                     <a class="nav-link {{ Route::is('front.contact')? 'active' : '' }}" href="{{ route('front.contact') }}">تواصل معنا</a>
                   </li>
                   {{-- <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -8,7 +8,7 @@
                         <div class="card h-100">
                             <div class="card-img">
                                 <a href="#">
-                                    <a href="{{ route('services.show',$service) }}"><img class="card-img-top" src="{{ asset($service->image) }}" alt="{{ $service->title }}"/></a>
+                                    <a href="{{ route('front.show.service',$service->id) }}"><img class="card-img-top" src="{{ asset($service->image) }}" alt="{{ $service->title }}"/></a>
                                     <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
                                 </a>
                             </div>
@@ -19,7 +19,7 @@
                             </div>
                             <div class="card-footer">
                                 <a href="tel:00966500774150" class="btn btn-primary">اتصل بنا <i class="fas fa-phone-square"></i></a>
-                                <a href="{{ route('services.show',$service) }}" class="btn btn-primary">تصفح الخدمة</a>
+                                <a href="{{ route('front.show.service',['id'=>$service->id]) }}" class="btn btn-primary">تصفح الخدمة</a>
                             </div>
                         </div>
                     </div>

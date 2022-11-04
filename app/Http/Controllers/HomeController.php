@@ -29,9 +29,9 @@ class HomeController extends Controller
         $advantage_section=Page::where('identifier','advantage')->first();
         $setting=Setting::first();
         $blogs_footer=Blog::take(3)->get();
-        // dd($contact->title);
 
-     return view('front.index',compact('services','blogs_footer','galleries','sliders','setting','blogs','contact_section','about_section','advantage_section','setting','blogs','portfolios'));
+         return view('front.index',compact('services','blogs_footer','galleries','sliders','setting','blogs','contact_section','about_section','advantage_section','setting','blogs','portfolios'));
+
 
     }
 

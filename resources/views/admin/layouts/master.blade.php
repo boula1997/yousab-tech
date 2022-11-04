@@ -1,5 +1,5 @@
-@include('front.layouts.header')
+@include('admin.layouts.header')
 <div id="wrapper">
     @yield('content')
 </div>
-@include('front.layouts.footer')
+@include('admin.layouts.footer')

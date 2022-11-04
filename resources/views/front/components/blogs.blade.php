@@ -14,7 +14,7 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="{{ route('blogs.show', $blog) }}">{{ $blog->title }}</a>
+                                    <a href="{{ route('front.show.blog', ['id'=>$blog->id]) }}">{{ $blog->title }}</a>
                                 </h4>
                             </div>
                         </div>

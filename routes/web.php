@@ -3,10 +3,11 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SiteController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\MetaController;
+use App\Http\Controllers\Admin\PortfolioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,21 +29,23 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::resource('home',HomeController::class);
-Route::resource('blogs',BlogController::class);
-Route::resource('contact',ContactController::class);
-Route::resource('services',ServiceController::class);
-Route::resource('about',AboutController::class);
-Route::resource('portfolios',GalleryController::class);
-Route::resource('keys',MetaController::class);
+// Route::resource('home',HomeController::class);
+// Route::resource('blogs',BlogController::class);
+// Route::resource('contact',ContactController::class);
+// Route::resource('services',ServiceController::class);
+// Route::resource('about',AboutController::class);
+Route::resource('portfolios',PortfolioController::class);
 
-Route::get('/','App\Http\Controllers\HomeController@index')->name('front.home');
-Route::get('/blog','App\Http\Controllers\BlogController@index')->name('front.blog');
-Route::get('/contacts','App\Http\Controllers\ContactController@index')->name('front.contact');
-Route::get('/service','App\Http\Controllers\ServiceController@index')->name('front.service');
-// Route::get('/service/{$id}','App\Http\Controllers\ServiceController@show')->name('front.show.service');
-Route::get('/portfolio','App\Http\Controllers\GalleryController@index')->name('front.portfolio');
-Route::get('/aboutus','App\Http\Controllers\AboutController@index')->name('front.about');
+Route::get('/','App\Http\Controllers\SiteController@home')->name('front.home');
+Route::get('/blog','App\Http\Controllers\SiteController@blogs')->name('front.blog');
+Route::get('/contacts','App\Http\Controllers\SiteController@contact')->name('front.contact');
+Route::get('/service','App\Http\Controllers\SiteController@services')->name('front.service');
+Route::get('/single-service','App\Http\Controllers\SiteController@single_service')->name('front.show.service');
+Route::get('/single-blog','App\Http\Controllers\SiteController@single_blog')->name('front.show.blog');
+Route::get('/portfolio','App\Http\Controllers\SiteController@portfolios')->name('front.portfolio');
+Route::get('/about','App\Http\Controllers\SiteController@about')->name('front.about');
+Route::post('/contact','App\Http\Controllers\SiteController@contact_post')->name('front.contact.post');
+
 
 Route::get('routes', function () {
     $routeCollection = Route::getRoutes();

@@ -58,7 +58,7 @@
                                 <img class="img-fluid" src="{{asset($blog_footer->image)}}" alt="" />
                             </div>
                             <div class="media-body">
-                                <a href="{{route('blogs.show',$blog_footer)}}"><p>{{ $blog_footer->title }}</p></a>
+                                <a href="{{route('front.blog',$blog_footer)}}"><p>{{ $blog_footer->title }}</p></a>
                                 <span>{{ $blog_footer->creared_at }}</span>
                             </div>
                         </li>
@@ -98,7 +98,7 @@
         var dataString=$(this).serialize();
         $.ajax({
             type:"post",
-            url:"{{route('contact.store')}}",
+            url:"{{route('front.contact.post')}}",
             data:dataString,
             success: function () {
                 $("#contactForm").html("<div id='message' style='text-align: center;'></div>");
