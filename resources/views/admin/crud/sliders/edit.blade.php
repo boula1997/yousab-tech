@@ -17,14 +17,14 @@
             <strong>اخطاء!</strong> 
             <ul>
                 @foreach ($errors->all() as $error)
-                    <li></li>
+                <li>{{$error}}</li>
                 @endforeach
             </ul>
         </div>
     @endif
-    <form action="{{route('sliders.store')}}" method="POST" >
+    <form action="{{route('sliders.update',$slider)}}" method="POST" >
         @csrf
-
+        @method('PUT')
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">

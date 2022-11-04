@@ -39,12 +39,15 @@ class SliderController extends Controller
    { 
        // dd($request->all());
        $request->validate([
-           'title' => 'required',
-       ]);
+        'title' => 'required',
+        'image' => 'required',
+     ],['title.required'=>'حقل الاسم مطلوب',
+     'image.required'=>'حقل الصورة مطلوب',]);
 
-       $slider=$request->all();
-       Slider::create($slider);
 
+       $data=$request->all();
+       $data['image']='images/'.$data['image'];
+       Slider::create($data);
        return redirect()->route('sliders.index')
            ->with('success', 'تم الانشاء');
    }
@@ -81,9 +84,21 @@ class SliderController extends Controller
    public function update(Request $request, Slider $slider)
    {
        $request->validate([
-           'name' => 'title',
-       ]);
-       $slider->update($request->all());
+           'title' => 'required',
+        ],['title.required'=>'حقل الاسم مطلوب',
+        'image.required'=>'حقل الصورة مطلوب',]);
+        
+        $data=$request->all();
+
+        if($request->input('image')!==null){
+            $data['image']='images/'.$data['image'];
+        }
+
+        else
+       { $data['image']=$slider->image;}
+
+        $slider->update($data);
+
 
        return redirect()->route('sliders.index')
            ->with('success', 'تم التعديل بنجاح');

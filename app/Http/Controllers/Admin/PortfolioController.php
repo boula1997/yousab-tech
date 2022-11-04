@@ -41,7 +41,9 @@ class PortfolioController extends Controller
         // dd($request->all());
         $request->validate([
             'title' => 'required',
-        ]);
+            'image' => 'required',
+         ],['title.required'=>'حقل الاسم مطلوب',
+         'image.required'=>'حقل الصورة مطلوب',]);+
 
         $portfolio=$request->all();
         $portfolio['image']=json_encode($portfolio['images']);
@@ -83,8 +85,10 @@ class PortfolioController extends Controller
     public function update(Request $request, Gallery $portfolio)
     {
         $request->validate([
-            'name' => 'title',
-        ]);
+            'title' => 'required',
+            'image' => 'required',
+         ],['title.required'=>'حقل الاسم مطلوب',
+         'image.required'=>'حقل الصورة مطلوب',]);
         $portfolio->update($request->all());
 
         return redirect()->route('portfolios.index')

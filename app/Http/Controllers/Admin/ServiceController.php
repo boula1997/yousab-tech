@@ -41,10 +41,12 @@ class ServiceController extends Controller
         // dd($request->all());
         $request->validate([
             'title' => 'required',
-        ]);
-
-        $service=$request->all();
-        Service::create($service);
+            'image' => 'required',
+         ],['title.required'=>'حقل الاسم مطلوب',
+         'image.required'=>'حقل الصورة مطلوب',]);
+         $data=$request->all();
+         $data['image']='images/'.$data['image'];
+        Service::create($data);
 
         return redirect()->route('services.index')
             ->with('success', 'تم الانشاء');
@@ -82,9 +84,13 @@ class ServiceController extends Controller
     public function update(Request $request, Service $service)
     {
         $request->validate([
-            'name' => 'title',
-        ]);
-        $service->update($request->all());
+            'title' => 'required',
+            'image' => 'required',
+         ],['title.required'=>'حقل الاسم مطلوب',
+         'image.required'=>'حقل الصورة مطلوب',]);
+         $data=$request->all();
+         $data['image']='images/'.$data['image'];
+        $service->update($data);
 
         return redirect()->route('services.index')
             ->with('success', 'تم التعديل بنجاح');

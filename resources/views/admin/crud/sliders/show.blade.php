@@ -16,26 +16,25 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
-                <p  style="display: inline">{{$slider->name}}</p>
+                <strong>الاسم</strong><br>
+                <p  style="display: inline">{{$slider->title}}</p>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Description:</strong>
-                <p style="display: inline">{{$slider->description}}</p>
+                <strong>الوصف</strong><br>
+                <p style="display: inline">{!! $slider->description !!}</p>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Price:</strong>
-                <p style="display: inline">{{$slider->price}}</p>
-
+                <strong class="pull-right">الصورة  </strong>
+              <img class="pull-left" src="{{asset($slider->image)}}" alt="">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Date Created:</strong>
+                <strong>تاريخ الانشاء:</strong>
                 <p style="display: inline">{{$slider->created_at}}</p>
 
             </div>

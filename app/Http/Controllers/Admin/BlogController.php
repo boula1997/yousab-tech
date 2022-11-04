@@ -41,10 +41,13 @@ class BlogController extends Controller
         // dd($request->all());
         $request->validate([
             'title' => 'required',
-        ]);
+            'image' => 'required',
+         ],['title.required'=>'حقل الاسم مطلوب',
+         'image.required'=>'حقل الصورة مطلوب',]);
 
-        $blog=$request->all();
-        Blog::create($blog);
+         $data=$request->all();
+         $data['image']='images/'.$data['image'];
+        Blog::create($data);
 
         return redirect()->route('blogs.index')
             ->with('success', 'تم الانشاء');
@@ -82,9 +85,13 @@ class BlogController extends Controller
     public function update(Request $request, Blog $blog)
     {
         $request->validate([
-            'name' => 'title',
-        ]);
-        $blog->update($request->all());
+            'title' => 'required',
+            'image' => 'required',
+         ],['title.required'=>'حقل الاسم مطلوب',
+         'image.required'=>'حقل الصورة مطلوب',]);
+         $data=$request->all();
+         $data['image']='images/'.$data['image'];
+        $blog->update($data);
 
         return redirect()->route('blogs.index')
             ->with('success', 'تم التعديل بنجاح');
