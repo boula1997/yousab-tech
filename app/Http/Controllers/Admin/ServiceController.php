@@ -16,7 +16,7 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::latest()->paginate(5);
-        return view('admin.crud.services.index', compact('services'))
+        return view('admin.crud.services.Index', compact('services'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

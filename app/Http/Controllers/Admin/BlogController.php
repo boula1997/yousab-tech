@@ -16,7 +16,7 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blog::latest()->paginate(5);
-        return view('admin.crud.blogs.index', compact('blogs'))
+        return view('admin.crud.blogs.Index', compact('blogs'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

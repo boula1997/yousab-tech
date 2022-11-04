@@ -16,7 +16,7 @@ class PortfolioController extends Controller
     public function index()
     {
         $portfolios = Gallery::latest()->paginate(5);
-        return view('admin.crud.portfolios.index', compact('portfolios'))
+        return view('admin.crud.portfolios.Index', compact('portfolios'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
