@@ -54,6 +54,7 @@
         @endforeach
     </table>
 
-    {!! $blogs->links() !!}
+    {{-- {!! $blogs->links() !!} --}}
+
 
 @endsection

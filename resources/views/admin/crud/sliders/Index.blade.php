@@ -54,6 +54,7 @@
         @endforeach
     </table>
 
-    {!! $sliders->links() !!}
+    {{-- {!! $sliders->links() !!} --}}
+
 
 @endsection

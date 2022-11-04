@@ -54,6 +54,7 @@
         @endforeach
     </table>
 
-    {!! $portfolios->links() !!}
+    {{-- {{-- {!! $portfolios->links() !!} --}}
+ 
 
 @endsection

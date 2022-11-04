@@ -54,6 +54,7 @@
         @endforeach
     </table>
 
-    {!! $services->links() !!}
+    {{-- {!! $services->links() !!} --}}
+
 
 @endsection
