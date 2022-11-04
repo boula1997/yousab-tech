@@ -1,4 +1,4 @@
-@extends('admin.crud.layouts.app')
+@extends('Admin.crud.layouts.app')
 
 @section('content')
     <div class="row">

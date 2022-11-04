@@ -15,7 +15,7 @@ class SliderController extends Controller
    public function index()
    {
        $sliders = Slider::latest()->paginate(5);
-       return view('admin.crud.sliders.index', compact('sliders'))
+       return view('Admin.crud.sliders.index', compact('sliders'))
            ->with('i', (request()->input('page', 1) - 1) * 5);
    }
 
@@ -26,7 +26,7 @@ class SliderController extends Controller
     */
    public function create()
    {
-       return view('admin.crud.sliders.create');
+       return view('Admin.crud.sliders.create');
    }
 
    /**
@@ -57,7 +57,7 @@ class SliderController extends Controller
     */
    public function show(Slider $data)
    {
-       return view('admin.crud.sliders.show', compact('data'));
+       return view('Admin.crud.sliders.show', compact('data'));
    }
 
    /**
@@ -69,7 +69,7 @@ class SliderController extends Controller
    public function edit(Slider $data)
    {
    //    dd($data->title);
-       return view('admin.crud.sliders.edit', compact('data'));
+       return view('Admin.crud.sliders.edit', compact('data'));
    }
    /**
     * Update the specified resource in storage.

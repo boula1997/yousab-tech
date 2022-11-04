@@ -16,7 +16,7 @@ class PortfolioController extends Controller
     public function index()
     {
         $portfolios = Gallery::latest()->paginate(5);
-        return view('admin.crud.portfolios.index', compact('portfolios'))
+        return view('Admin.crud.portfolios.index', compact('portfolios'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,7 +27,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        return view('admin.crud.portfolios.create');
+        return view('Admin.crud.portfolios.create');
     }
 
     /**
@@ -59,7 +59,7 @@ class PortfolioController extends Controller
      */
     public function show(Gallery $data)
     {
-        return view('admin.crud.portfolios.show', compact('data'));
+        return view('Admin.crud.portfolios.show', compact('data'));
     }
 
     /**
@@ -71,7 +71,7 @@ class PortfolioController extends Controller
     public function edit(Gallery $data)
     {
     //    dd($data->title);
-        return view('admin.crud.portfolios.edit', compact('data'));
+        return view('Admin.crud.portfolios.edit', compact('data'));
     }
     /**
      * Update the specified resource in storage.
