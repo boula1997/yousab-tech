@@ -43,9 +43,9 @@ class PortfolioController extends Controller
             'title' => 'required',
         ]);
 
-        $data=$request->all();
-        $data['image']=json_encode($data['images']);
-        Gallery::create($data);
+        $portfolio=$request->all();
+        $portfolio['image']=json_encode($portfolio['images']);
+        Gallery::create($portfolio);
 
         return redirect()->route('portfolios.index')
             ->with('success', 'تم الانشاء');
@@ -54,38 +54,38 @@ class PortfolioController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Gallery  $data
+     * @param  \App\Models\Gallery  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function show(Gallery $data)
+    public function show(Gallery $portfolio)
     {
-        return view('admin.crud.portfolios.show', compact('data'));
+        return view('admin.crud.portfolios.show', compact('portfolio'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Gallery  $data
+     * @param  \App\Models\Gallery  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function edit(Gallery $data)
+    public function edit(Gallery $portfolio)
     {
-    //    dd($data->title);
-        return view('admin.crud.portfolios.edit', compact('data'));
+    //    dd($portfolio->title);
+        return view('admin.crud.portfolios.edit', compact('portfolio'));
     }
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\portfolio  $data
+     * @param  \App\Models\portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gallery $data)
+    public function update(Request $request, Gallery $portfolio)
     {
         $request->validate([
             'name' => 'title',
         ]);
-        $data->update($request->all());
+        $portfolio->update($request->all());
 
         return redirect()->route('portfolios.index')
             ->with('success', 'تم التعديل بنجاح');
@@ -93,12 +93,12 @@ class PortfolioController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Gallery  $data
+     * @param  \App\Models\Gallery  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gallery $data)
+    public function destroy(Gallery $portfolio)
     {
-        $data->delete();
+        $portfolio->delete();
 
         return redirect()->route('portfolios.index')
             ->with('success', 'تم الحذف');

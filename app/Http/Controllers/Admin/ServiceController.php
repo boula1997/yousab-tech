@@ -43,8 +43,8 @@ class ServiceController extends Controller
             'title' => 'required',
         ]);
 
-        $data=$request->all();
-        Service::create($data);
+        $service=$request->all();
+        Service::create($service);
 
         return redirect()->route('services.index')
             ->with('success', 'تم الانشاء');
@@ -53,38 +53,38 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Service  $data
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $data)
+    public function show(Service $service)
     {
-        return view('admin.crud.services.show', compact('data'));
+        return view('admin.crud.services.show', compact('service'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Service  $data
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Service $data)
+    public function edit(Service $service)
     {
-    //    dd($data->title);
-        return view('admin.crud.services.edit', compact('data'));
+    //    dd($service->title);
+        return view('admin.crud.services.edit', compact('service'));
     }
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\service  $data
+     * @param  \App\Models\service  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Service $data)
+    public function update(Request $request, Service $service)
     {
         $request->validate([
             'name' => 'title',
         ]);
-        $data->update($request->all());
+        $service->update($request->all());
 
         return redirect()->route('services.index')
             ->with('success', 'تم التعديل بنجاح');
@@ -92,12 +92,12 @@ class ServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Service  $data
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Service $data)
+    public function destroy(Service $service)
     {
-        $data->delete();
+        $service->delete();
 
         return redirect()->route('services.index')
             ->with('success', 'تم الحذف');

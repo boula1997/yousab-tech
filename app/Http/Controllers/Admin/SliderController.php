@@ -42,8 +42,8 @@ class SliderController extends Controller
            'title' => 'required',
        ]);
 
-       $data=$request->all();
-       Slider::create($data);
+       $slider=$request->all();
+       Slider::create($slider);
 
        return redirect()->route('sliders.index')
            ->with('success', 'تم الانشاء');
@@ -52,38 +52,38 @@ class SliderController extends Controller
    /**
     * Display the specified resource.
     *
-    * @param  \App\Models\Slider  $data
+    * @param  \App\Models\Slider  $slider
     * @return \Illuminate\Http\Response
     */
-   public function show(Slider $data)
+   public function show(Slider $slider)
    {
-       return view('admin.crud.sliders.show', compact('data'));
+       return view('admin.crud.sliders.show', compact('slider'));
    }
 
    /**
     * Show the form for editing the specified resource.
     *
-    * @param  \App\Models\Slider  $data
+    * @param  \App\Models\Slider  $slider
     * @return \Illuminate\Http\Response
     */
-   public function edit(Slider $data)
+   public function edit(Slider $slider)
    {
-   //    dd($data->title);
-       return view('admin.crud.sliders.edit', compact('data'));
+   //    dd($slider->title);
+       return view('admin.crud.sliders.edit', compact('slider'));
    }
    /**
     * Update the specified resource in storage.
     *
     * @param  \Illuminate\Http\Request  $request
-    * @param  \App\Models\portfolio  $data
+    * @param  \App\Models\portfolio  $slider
     * @return \Illuminate\Http\Response
     */
-   public function update(Request $request, Slider $data)
+   public function update(Request $request, Slider $slider)
    {
        $request->validate([
            'name' => 'title',
        ]);
-       $data->update($request->all());
+       $slider->update($request->all());
 
        return redirect()->route('sliders.index')
            ->with('success', 'تم التعديل بنجاح');
@@ -91,12 +91,12 @@ class SliderController extends Controller
    /**
     * Remove the specified resource from storage.
     *
-    * @param  \App\Models\Slider  $data
+    * @param  \App\Models\Slider  $slider
     * @return \Illuminate\Http\Response
     */
-   public function destroy(Slider $data)
+   public function destroy(Slider $slider)
    {
-       $data->delete();
+       $slider->delete();
 
        return redirect()->route('sliders.index')
            ->with('success', 'تم الحذف');

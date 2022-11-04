@@ -26,19 +26,19 @@
             <th>تاريخ النشاء</th>
             <th>التحكم</th>
         </tr>
-        @foreach ($services as $data)
+        @foreach ($services as $service)
             <tr>
                 <td>#{{$loop->iteration}}</td>
-                <td>{{$data->title}}</td>
-                <td>{{$data->created_at}}</td>
+                <td>{{$service->title}}</td>
+                <td>{{$service->created_at}}</td>
                 <td style="width: 11%">
-                    <form action="{{route('services.destroy',$data)}}" method="POST">
+                    <form action="{{route('services.destroy',$service)}}" method="POST">
 
-                        <a href="{{route('services.show',$data)}}" title="show">
+                        <a href="{{route('services.show',$service)}}" title="show">
                             <i class="fas fa-eye text-success  fa-lg"></i>
                         </a>
 
-                        <a href="{{route('services.edit',$data)}}" title="edit">
+                        <a href="{{route('services.edit',$service)}}" title="edit">
                             <i class="fas fa-edit  fa-lg"></i>
                         </a>
 

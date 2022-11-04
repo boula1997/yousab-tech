@@ -17,26 +17,26 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                <p  style="display: inline">{{$data->name}}</p>
+                <p  style="display: inline">{{$service->name}}</p>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Description:</strong>
-                <p style="display: inline">{{$data->description}}</p>
+                <p style="display: inline">{{$service->description}}</p>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Price:</strong>
-                <p style="display: inline">{{$data->price}}</p>
+                <p style="display: inline">{{$service->price}}</p>
 
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Date Created:</strong>
-                <p style="display: inline">{{$data->created_at}}</p>
+                <p style="display: inline">{{$service->created_at}}</p>
 
             </div>
         </div>

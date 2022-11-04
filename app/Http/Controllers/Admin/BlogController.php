@@ -43,9 +43,8 @@ class BlogController extends Controller
             'title' => 'required',
         ]);
 
-        $data=$request->all();
-        $data['image']=json_encode($data['images']);
-        Blog::create($data);
+        $blog=$request->all();
+        Blog::create($blog);
 
         return redirect()->route('blogs.index')
             ->with('success', 'تم الانشاء');
@@ -54,38 +53,38 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Blog  $data
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $data)
+    public function show(Blog $blog)
     {
-        return view('admin.crud.blogs.show', compact('data'));
+        return view('admin.crud.blogs.show', compact('blog'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Blog  $data
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $data)
+    public function edit(Blog $blog)
     {
-    //    dd($data->title);
-        return view('admin.crud.blogs.edit', compact('data'));
+    //    dd($blog->title);
+        return view('admin.crud.blogs.edit', compact('blog'));
     }
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\blog  $data
+     * @param  \App\Models\blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $data)
+    public function update(Request $request, Blog $blog)
     {
         $request->validate([
             'name' => 'title',
         ]);
-        $data->update($request->all());
+        $blog->update($request->all());
 
         return redirect()->route('blogs.index')
             ->with('success', 'تم التعديل بنجاح');
@@ -93,12 +92,12 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Blog  $data
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $data)
+    public function destroy(Blog $blog)
     {
-        $data->delete();
+        $blog->delete();
 
         return redirect()->route('blogs.index')
             ->with('success', 'تم الحذف');

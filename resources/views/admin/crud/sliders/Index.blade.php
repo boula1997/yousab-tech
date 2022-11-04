@@ -26,19 +26,19 @@
             <th>تاريخ النشاء</th>
             <th>التحكم</th>
         </tr>
-        @foreach ($sliders as $data)
+        @foreach ($sliders as $slider)
             <tr>
                 <td>#{{$loop->iteration}}</td>
-                <td>{{$data->title}}</td>
-                <td>{{$data->created_at}}</td>
+                <td>{{$slider->title}}</td>
+                <td>{{$slider->created_at}}</td>
                 <td style="width: 11%">
-                    <form action="{{route('sliders.destroy',$data)}}" method="POST">
+                    <form action="{{route('sliders.destroy',$slider)}}" method="POST">
 
-                        <a href="{{route('sliders.show',$data)}}" title="show">
+                        <a href="{{route('sliders.show',$slider)}}" title="show">
                             <i class="fas fa-eye text-success  fa-lg"></i>
                         </a>
 
-                        <a href="{{route('sliders.edit',$data)}}" title="edit">
+                        <a href="{{route('sliders.edit',$slider)}}" title="edit">
                             <i class="fas fa-edit  fa-lg"></i>
                         </a>
 

@@ -29,14 +29,14 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>الاسم:</strong>
-                    <input type="text" value="{{old('title',$data->title)}}" name="title" class="form-control">
+                    <input type="text" value="{{old('title',$slider->title)}}" name="title" class="form-control">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>الوصف:</strong>
                     <textarea class="form-control" style="height:30%" name="description"
-                      >{{old('description',$data->description)}}</textarea>
+                      >{{old('description',$slider->description)}}</textarea>
                 </div>
             </div>
 
@@ -44,10 +44,26 @@
                 <div class="card card-custom">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-10">
+                                <img height="50%" src="{{asset($slider->image)}}" alt="">
+                            </div>
+                            <div class="col-md-2">
                                 <div class="form-group" style="text-align: center">
                                     <label class="col-form-label" style="font-size: 15pt"> <strong> اختر الصور</strong></label>
-                                    @include('admin.components.image_edit')
+                                    <div class="image-input image-input-empty image-input-outline" id="kt_image_5">
+                                        <div class="image-input-wrapper"></div>
+                                        <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
+                                            <i class="fa fa-pen icon-sm text-muted"></i>
+                                            <input type="file" name="image" accept=".png, .jpg, .jpeg, .svg" />
+                                            <input type="hidden" name="profile_avatar_remove" />
+                                        </label>
+                                        <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
+                                            <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                        </span>
+                                        <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="remove" data-toggle="tooltip" title="Remove avatar">
+                                            <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                        </span>
+                                    </div>
                                 </div>
             
                             </div>

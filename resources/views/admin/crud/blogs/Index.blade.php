@@ -26,19 +26,19 @@
             <th>تاريخ النشاء</th>
             <th>التحكم</th>
         </tr>
-        @foreach ($blogs as $data)
+        @foreach ($blogs as $blog)
             <tr>
                 <td>#{{$loop->iteration}}</td>
-                <td>{{$data->title}}</td>
-                <td>{{$data->created_at}}</td>
+                <td>{{$blog->title}}</td>
+                <td>{{$blog->created_at}}</td>
                 <td style="width: 11%">
-                    <form action="{{route('blogs.destroy',$data)}}" method="POST">
+                    <form action="{{route('blogs.destroy',$blog)}}" method="POST">
 
-                        <a href="{{route('blogs.show',$data)}}" title="show">
+                        <a href="{{route('blogs.show',$blog)}}" title="show">
                             <i class="fas fa-eye text-success  fa-lg"></i>
                         </a>
 
-                        <a href="{{route('blogs.edit',$data)}}" title="edit">
+                        <a href="{{route('blogs.edit',$blog)}}" title="edit">
                             <i class="fas fa-edit  fa-lg"></i>
                         </a>
 

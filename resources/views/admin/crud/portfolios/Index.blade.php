@@ -26,19 +26,19 @@
             <th>تاريخ النشاء</th>
             <th>التحكم</th>
         </tr>
-        @foreach ($portfolios as $data)
+        @foreach ($portfolios as $portfolio)
             <tr>
                 <td>#{{$loop->iteration}}</td>
-                <td>{{$data->title}}</td>
-                <td>{{$data->created_at}}</td>
+                <td>{{$portfolio->title}}</td>
+                <td>{{$portfolio->created_at}}</td>
                 <td style="width: 11%">
-                    <form action="{{route('portfolios.destroy',$data)}}" method="POST">
+                    <form action="{{route('portfolios.destroy',$portfolio)}}" method="POST">
 
-                        <a href="{{route('portfolios.show',$data)}}" title="show">
+                        <a href="{{route('portfolios.show',$portfolio)}}" title="show">
                             <i class="fas fa-eye text-success  fa-lg"></i>
                         </a>
 
-                        <a href="{{route('portfolios.edit',$data)}}" title="edit">
+                        <a href="{{route('portfolios.edit',$portfolio)}}" title="edit">
                             <i class="fas fa-edit  fa-lg"></i>
                         </a>
 
