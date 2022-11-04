@@ -343,7 +343,7 @@
         </div> --}}
     </div>
     <!-- /. ROW  -->
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-lg-12 ">
             <br />
             <div class="alert alert-danger">
@@ -352,7 +352,7 @@
             </div>
 
         </div>
-    </div>
+    </div> --}}
     <!-- /. ROW  -->
 </div>
 <!-- /. PAGE INNER  -->
