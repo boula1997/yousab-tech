@@ -47,7 +47,7 @@
                             <div class="col-md-12">
                                 <div class="form-group" style="text-align: center">
                                     <label class="col-form-label" style="font-size: 15pt"> <strong> اختر الصور</strong></label>
-                                    @include('admin.components.image_create')
+                                    @include('admin.components.image_arr_create')
                                 </div>
             
                             </div>
