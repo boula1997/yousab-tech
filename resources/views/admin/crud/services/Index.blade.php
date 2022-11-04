@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>My Dashboard </h2>
+                <h2>لوحة التحكم</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{route('services.create')}}" title="Create a service"> <i class="fas fa-plus-circle"></i>
