@@ -15,7 +15,7 @@ class SliderController extends Controller
    public function index()
    {
        $sliders = Slider::latest()->paginate(5);
-       return view('admin.crud.sliders.index', compact('sliders'))
+       return view('admin.crud.sliders.Index', compact('sliders'))
            ->with('i', (request()->input('page', 1) - 1) * 5);
    }
 
