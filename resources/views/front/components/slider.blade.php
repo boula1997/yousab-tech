@@ -18,7 +18,7 @@
                                 <li style="margin-bottom: 150%"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li style="margin-bottom: 150%"><a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
                                 <li style="margin-bottom: 150%"><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                <li style="margin-bottom: 150%"><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                <li ><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
                             </ul>
                         </div>
                         <div class="col-md-10" >
@@ -30,7 +30,7 @@
                                 <li style="margin-bottom: 150%"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li style="margin-bottom: 150%"><a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
                                 <li style="margin-bottom: 150%"><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                <li style="margin-bottom: 150%"><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                <li ><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
                             </ul>
                         </div>
                     </div>
