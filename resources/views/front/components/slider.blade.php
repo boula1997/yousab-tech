@@ -5,13 +5,35 @@
            <li data-target="#carouselExampleIndicators" data-slide-to="{{$loop->index}}" class="{{$loop->index < 1 ? 'active' : ''}}"></li>
            @endforeach
         </ol>
+
         <div class="carousel-inner" role="listbox">
            <!-- Slide One - Set the background image for this slide in the line below -->
+ 
            @foreach ($sliders as $slider)
            <div class="carousel-item {{$loop->index==0?'active':''}}" style="background-image: url('{{asset($slider->image)}}')">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3>{{$slider->title}}</h3>
-                    {!! $slider->description  !!}
+                    <div class="row">
+                        <div class="col-md-1">
+                            <ul class="social_footer_ul" style="magin: 10%">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-10">
+                            <h3>{{$slider->title}}</h3>
+                            {!! $slider->description  !!}
+                        </div>
+                        <div class="col-md-1">
+                            <ul class="social_footer_ul">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>          
            </div>
         @endforeach
