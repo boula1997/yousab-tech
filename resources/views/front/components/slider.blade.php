@@ -11,7 +11,7 @@
  
            @foreach ($sliders as $slider)
            <div class="carousel-item {{$loop->index==0?'active':''}}" style="background-image: url('{{asset($slider->image)}}')">
-                <div class="carousel-caption d-md-block">
+                <div class="carousel-caption d-md-block" >
                     <div class="row">
                         <br>
                         <div class="col-md-1" style="margin-top:10%">
@@ -22,7 +22,7 @@
                                 <li style="margin-bottom: 150%"><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
                             </ul>
                         </div>
-                        <div class="col-md-10" style="margin-top:10%">
+                        <div class="col-md-10" style="margin-top:30%">
                             <h3>{{$slider->title}}</h3>
                             {!! $slider->description  !!}
                         </div>
