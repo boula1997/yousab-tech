@@ -17,7 +17,6 @@
                             <ul class="social_footer_ul">
                                 <li style="margin-bottom: 50%"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li style="margin-bottom: 50%"><a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                <li style="margin-bottom: 50%"><a href="#"><i class="fab fa-linkedin"></i></a></li>
                                 <li><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
                             </ul>
                         </div>
@@ -29,7 +28,6 @@
                             <ul class="social_footer_ul">
                                 <li style="margin-bottom: 50%"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li style="margin-bottom: 50%"><a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                <li style="margin-bottom: 50%"><a href="#"><i class="fab fa-linkedin"></i></a></li>
                                 <li ><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
                             </ul>
                         </div>
