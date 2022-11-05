@@ -42,8 +42,11 @@ class BlogController extends Controller
         $request->validate([
          'title' => 'required',
          'image' => 'required',
+         'description' => 'required',
       ],['title.required'=>'حقل الاسم مطلوب',
-      'image.required'=>'حقل الصورة مطلوب',]);
+      'image.required'=>'حقل الصورة مطلوب',
+      'description.required'=>'حقل الوصف مطلوب',
+    ]);
  
  
         $data=$request->all();
@@ -87,7 +90,7 @@ class BlogController extends Controller
         $request->validate([
             'title' => 'required',
          ],['title.required'=>'حقل الاسم مطلوب',
-         'image.required'=>'حقل الصورة مطلوب',]);
+         'description.required'=>'حقل الوصف مطلوب',]);
          
          $data=$request->all();
  

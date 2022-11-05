@@ -42,8 +42,11 @@ class SliderController extends Controller
        $request->validate([
         'title' => 'required',
         'image' => 'required',
+        'description' => 'required',
      ],['title.required'=>'حقل الاسم مطلوب',
-     'image.required'=>'حقل الصورة مطلوب',]);
+     'image.required'=>'حقل الصورة مطلوب',
+     'description.required'=>'حقل الوصف مطلوب',
+   ]);
 
 
        $data=$request->all();
@@ -84,10 +87,10 @@ class SliderController extends Controller
     */
    public function update(Request $request, Slider $slider)
    {
-       $request->validate([
-           'title' => 'required',
-        ],['title.required'=>'حقل الاسم مطلوب',
-        'image.required'=>'حقل الصورة مطلوب',]);
+    $request->validate([
+        'title' => 'required',
+     ],['title.required'=>'حقل الاسم مطلوب',
+     'description.required'=>'حقل الوصف مطلوب',]);
         
         $data=$request->all();
 
