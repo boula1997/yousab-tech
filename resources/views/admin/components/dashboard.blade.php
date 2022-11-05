@@ -44,7 +44,7 @@
             <div class="div-square">
                 <a href="{{ route('blogs.index') }}">
                     <i class="fa fa-lightbulb-o fa-5x"></i>
-                    <a href="{{ route('portfolios.index') }}">
+                    <a href="{{ route('blogs.index') }}">
                         <h4>New Issues</h4>
                     </a>
                 </a>
