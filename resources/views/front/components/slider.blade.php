@@ -21,7 +21,7 @@
                                 <li style="margin-bottom: 150%"><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
                             </ul>
                         </div>
-                        <div class="col-md-10" style="margin-top:30%">
+                        <div class="col-md-10" >
                             <h3>{{$slider->title}}</h3>
                             {!! $slider->description  !!}
                         </div>
