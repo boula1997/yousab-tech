@@ -46,8 +46,10 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-10">
-                                <img height="50%" src="{{asset($portfolio->image)}}" alt="">
-                            </div>
+                                @foreach($images as $image)
+                                 <img height="10%" width="10%" src="{{asset('images/'.$image)}}" alt="">
+                               @endforeach
+                             </div>
                             <div class="col-md-2">
                                 <div class="form-group" style="text-align: center">
                                     <label class="col-form-label" style="font-size: 15pt"> <strong> اختر الصور</strong></label>

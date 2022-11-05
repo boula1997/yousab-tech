@@ -41,9 +41,11 @@ class PortfolioController extends Controller
         // dd($request->all());
         $request->validate([
             'title' => 'required',
-            'image' => 'required',
+            'images.*' => 'required',
          ],['title.required'=>'حقل الاسم مطلوب',
-         'image.required'=>'حقل الصورة مطلوب',]);+
+         'images.*.required'=>'حقل الصورة مطلوب',]);
+
+        //  dd($request->all());
 
         $portfolio=$request->all();
         $portfolio['image']=json_encode($portfolio['images']);
@@ -61,7 +63,8 @@ class PortfolioController extends Controller
      */
     public function show(Gallery $portfolio)
     {
-        return view('admin.crud.portfolios.show', compact('portfolio'));
+        $images=json_decode($portfolio->image);
+        return view('admin.crud.portfolios.show', compact('portfolio','images'));
     }
 
     /**
@@ -73,7 +76,8 @@ class PortfolioController extends Controller
     public function edit(Gallery $portfolio)
     {
     //    dd($portfolio->title);
-        return view('admin.crud.portfolios.edit', compact('portfolio'));
+    $images=json_decode($portfolio->image);
+        return view('admin.crud.portfolios.edit', compact('portfolio','images'));
     }
     /**
      * Update the specified resource in storage.
@@ -86,10 +90,12 @@ class PortfolioController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'image' => 'required',
+            'images' => 'required',
          ],['title.required'=>'حقل الاسم مطلوب',
          'image.required'=>'حقل الصورة مطلوب',]);
-        $portfolio->update($request->all());
+         $data=$request->all();
+         $data['image']=json_encode($data['images']);
+        $portfolio->update($data);
 
         return redirect()->route('portfolios.index')
             ->with('success', 'تم التعديل بنجاح');
