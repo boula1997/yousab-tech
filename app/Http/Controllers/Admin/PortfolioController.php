@@ -46,11 +46,23 @@ class PortfolioController extends Controller
          ],['title.required'=>'حقل الاسم مطلوب',
          'images.*.required'=>'حقل الصورة مطلوب',]);
 
-        //  dd($request->all());
+        // $portfolio=$request->all();
+        // $portfolio['image']=json_encode($portfolio['images']);
+        if($request->hasFile('images')!==null){
 
-        $portfolio=$request->all();
-        $portfolio['image']=json_encode($portfolio['images']);
-        Gallery::create($portfolio);
+            $files=$request->file('images');
+            foreach($files as $file){
+                $name=$file->getClientOriginalName();
+                $file->move('images',$name);
+                $data['image']='images/'.$name;
+            }
+
+         }
+ 
+        //  else
+        // { $data['image']=$service->image;}
+
+        // Gallery::create($portfolio);
 
         return redirect()->route('portfolios.index')
             ->with('success', 'تم الانشاء');
@@ -96,7 +108,7 @@ class PortfolioController extends Controller
          'image.required'=>'حقل الصورة مطلوب',]);
          $data=$request->all();
          $data['image']=json_encode($data['images']);
-        $portfolio->update($data);
+         $portfolio->update($data);
 
         return redirect()->route('portfolios.index')
             ->with('success', 'تم التعديل بنجاح');
