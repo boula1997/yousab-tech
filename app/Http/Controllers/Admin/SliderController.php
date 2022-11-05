@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -49,8 +50,11 @@ class SliderController extends Controller
    ]);
 
 
-       $data=$request->all();
-       $data['image']='images/'.$data['image'];
+   $file = $request->file('image');
+   $name=$file->getClientOriginalName();
+   $file->move('images',$name);
+   $data=$request->all();
+   $data['image']='images/'.$name;
        Slider::create($data);
        return redirect()->route('sliders.index')
            ->with('success', 'تم الانشاء');
@@ -94,10 +98,16 @@ class SliderController extends Controller
         
         $data=$request->all();
 
-        if($request->input('image')!==null){
-            $data['image']='images/'.$data['image'];
-        }
+        if($request->hasFile('image')!==null){
 
+            if(file_exists($slider->image))
+            File::delete($slider->image);
+            $file = $request->file('image');
+            $name=$file->getClientOriginalName();
+            $file->move('images',$name);
+            $data['image']='images/'.$name;
+
+         }
         else
        { $data['image']=$slider->image;}
 

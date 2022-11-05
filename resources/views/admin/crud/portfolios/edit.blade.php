@@ -22,7 +22,7 @@
             </ul>
         </div>
     @endif
-    <form action="{{route('portfolios.update',$portfolio)}}" method="POST" >
+    <form action="{{route('portfolios.update',$portfolio)}}" method="POST" enctype="multipart/form-data" >
         @csrf
         @method('PUT')
 

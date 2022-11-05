@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -47,10 +48,12 @@ class ServiceController extends Controller
          'image.required'=>'حقل الصورة مطلوب',
          'description.required'=>'حقل الوصف مطلوب',
        ]);
- 
- 
+
+        $file = $request->file('image');
+        $name=$file->getClientOriginalName();
+        $file->move('images',$name);
         $data=$request->all();
-        $data['image']='images/'.$data['image'];
+        $data['image']='images/'.$name;
         Service::create($data);
         return redirect()->route('services.index')
             ->with('success', 'تم الانشاء');
@@ -94,8 +97,15 @@ class ServiceController extends Controller
          
          $data=$request->all();
  
-         if($request->input('image')!==null){
-             $data['image']='images/'.$data['image'];
+         if($request->hasFile('image')!==null){
+
+            if(file_exists($service->image))
+            File::delete($service->image);
+            $file = $request->file('image');
+            $name=$file->getClientOriginalName();
+            $file->move('images',$name);
+            $data['image']='images/'.$name;
+
          }
  
          else

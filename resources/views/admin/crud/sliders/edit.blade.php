@@ -22,7 +22,7 @@
             </ul>
         </div>
     @endif
-    <form action="{{route('sliders.update',$slider)}}" method="POST" >
+    <form action="{{route('sliders.update',$slider)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="row">
