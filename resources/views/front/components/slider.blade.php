@@ -13,8 +13,7 @@
            <div class="carousel-item {{$loop->index==0?'active':''}}" style="background-image: url('{{asset($slider->image)}}')">
                 <div class="carousel-caption d-md-block" >
                     <div class="row">
-                        <br>
-                        <div class="col-md-1" style="margin-top:10%">
+                        <div class="col-md-1">
                             <ul class="social_footer_ul">
                                 <li style="margin-bottom: 150%"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li style="margin-bottom: 150%"><a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
@@ -26,7 +25,7 @@
                             <h3>{{$slider->title}}</h3>
                             {!! $slider->description  !!}
                         </div>
-                        <div class="col-md-1" style="margin-top:10%">
+                        <div class="col-md-1">
                             <ul class="social_footer_ul">
                                 <li style="margin-bottom: 150%"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li style="margin-bottom: 150%"><a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
