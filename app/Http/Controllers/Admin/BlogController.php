@@ -8,18 +8,18 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  /**
+    * Display a listing of the resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
     public function index()
     {
         $blogs = Blog::latest()->paginate(5);
         return view('admin.crud.blogs.Index', compact('blogs'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
@@ -29,7 +29,7 @@ class BlogController extends Controller
     {
         return view('admin.crud.blogs.create');
     }
-
+ 
     /**
      * Store a newly created resource in storage.
      *
@@ -40,19 +40,19 @@ class BlogController extends Controller
     { 
         // dd($request->all());
         $request->validate([
-            'title' => 'required',
-            'image' => 'required',
-         ],['title.required'=>'حقل الاسم مطلوب',
-         'image.required'=>'حقل الصورة مطلوب',]);
-
-         $data=$request->all();
-         $data['image']='images/'.$data['image'];
+         'title' => 'required',
+         'image' => 'required',
+      ],['title.required'=>'حقل الاسم مطلوب',
+      'image.required'=>'حقل الصورة مطلوب',]);
+ 
+ 
+        $data=$request->all();
+        $data['image']='images/'.$data['image'];
         Blog::create($data);
-
         return redirect()->route('blogs.index')
             ->with('success', 'تم الانشاء');
     }
-
+ 
     /**
      * Display the specified resource.
      *
@@ -63,7 +63,7 @@ class BlogController extends Controller
     {
         return view('admin.crud.blogs.show', compact('blog'));
     }
-
+ 
     /**
      * Show the form for editing the specified resource.
      *
@@ -79,20 +79,28 @@ class BlogController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\blog  $blog
+     * @param  \App\Models\portfolio  $blog
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Blog $blog)
     {
         $request->validate([
             'title' => 'required',
-            'image' => 'required',
          ],['title.required'=>'حقل الاسم مطلوب',
          'image.required'=>'حقل الصورة مطلوب',]);
+         
          $data=$request->all();
-         $data['image']='images/'.$data['image'];
-        $blog->update($data);
-
+ 
+         if($request->input('image')!==null){
+             $data['image']='images/'.$data['image'];
+         }
+ 
+         else
+        { $data['image']=$blog->image;}
+ 
+         $blog->update($data);
+ 
+ 
         return redirect()->route('blogs.index')
             ->with('success', 'تم التعديل بنجاح');
     }
@@ -105,7 +113,7 @@ class BlogController extends Controller
     public function destroy(Blog $blog)
     {
         $blog->delete();
-
+ 
         return redirect()->route('blogs.index')
             ->with('success', 'تم الحذف');
     }

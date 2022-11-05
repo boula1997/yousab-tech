@@ -7,7 +7,8 @@ use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class SliderController extends Controller
-{  /**
+{  
+    /**
     * Display a listing of the resource.
     *
     * @return \Illuminate\Http\Response
