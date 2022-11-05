@@ -2,13 +2,13 @@
     <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
         <ol class="carousel-indicators">
            @foreach ($sliders as $slider)
-           <li data-target="#carouselExampleIndicators" data-slide-to="{{$loop->index}}" class="{{$loop->index<1 ? 'active' : ''}}"></li>
+           <li data-target="#carouselExampleIndicators" data-slide-to="{{$loop->index}}" class="{{$loop->index < 1 ? 'active' : ''}}"></li>
            @endforeach
         </ol>
         <div class="carousel-inner" role="listbox">
            <!-- Slide One - Set the background image for this slide in the line below -->
            @foreach ($sliders as $slider)
-           <div class="carousel-item {{$slider->id==1?'active':''}}" style="background-image: url('{{asset($slider->image)}}')">
+           <div class="carousel-item {{$loop->index==0?'active':''}}" style="background-image: url('{{asset($slider->image)}}')">
                 <div class="carousel-caption d-none d-md-block">
                     <h3>{{$slider->title}}</h3>
                     {!! $slider->description  !!}
