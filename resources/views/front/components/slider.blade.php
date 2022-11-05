@@ -11,7 +11,7 @@
  
            @foreach ($sliders as $slider)
            <div class="carousel-item {{$loop->index==0?'active':''}}" style="background-image: url('{{asset($slider->image)}}')">
-                <div class="carousel-caption  ">
+                <div class="carousel-caption d-md-block">
                     <div class="row">
                         <div class="col-sm-1">
                             <ul class="social_footer_ul">
