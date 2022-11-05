@@ -16,26 +16,25 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
-                <p  style="display: inline">{{$service->name}}</p>
+                <strong>الاسم</strong><br>
+                <p  style="display: inline">{{$service->title}}</p>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Description:</strong>
-                <p style="display: inline">{{$service->description}}</p>
+                <strong>الوصف</strong><br>
+                <p style="display: inline">{!! $service->description !!}</p>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Price:</strong>
-                <p style="display: inline">{{$service->price}}</p>
-
+                <strong class="pull-right">الصورة  </strong>
+              <img class="pull-left" src="{{asset($service->image)}}" alt="">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Date Created:</strong>
+                <strong>تاريخ الانشاء:</strong>
                 <p style="display: inline">{{$service->created_at}}</p>
 
             </div>

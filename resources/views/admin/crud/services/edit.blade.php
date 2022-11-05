@@ -22,8 +22,9 @@
             </ul>
         </div>
     @endif
-    <form action="{{route('services.store')}}" method="POST" >
+    <form action="{{route('services.update',$service)}}" method="POST" >
         @csrf
+        @method('PUT')
 
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">

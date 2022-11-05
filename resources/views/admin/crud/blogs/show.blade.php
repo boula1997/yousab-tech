@@ -16,26 +16,25 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
-                <p  style="display: inline">{{$blog->name}}</p>
+                <strong>الاسم</strong><br>
+                <p  style="display: inline">{{$blog->title}}</p>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Description:</strong>
-                <p style="display: inline">{{$blog->description}}</p>
+                <strong>الوصف</strong><br>
+                <p style="display: inline">{!! $blog->description !!}</p>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Price:</strong>
-                <p style="display: inline">{{$blog->price}}</p>
-
+                <strong class="pull-right">الصورة  </strong>
+              <img class="pull-left" src="{{asset($blog->image)}}" alt="">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Date Created:</strong>
+                <strong>تاريخ الانشاء:</strong>
                 <p style="display: inline">{{$blog->created_at}}</p>
 
             </div>
