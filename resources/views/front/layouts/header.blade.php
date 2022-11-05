@@ -41,8 +41,18 @@
                         <a class="dropdown-item" href="pricing.html">جدول الاسعار</a>
                      </div>
                   </li> --}}
-                  <li class="nav-item">
+                  {{-- <li class="nav-item">
                      <a class="nav-link {{ Route::is('front.portfolio')? 'active' : '' }}" href="{{route('front.portfolio')}}">الاعمال</a>
+                  </li> --}}
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle {{ Route::is('front.portfolio')? 'active' : '' }}" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     اعمالنا
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                        @foreach ($portfolios as $portfolio)
+                        <a class="dropdown-item" href="{{route('front.portfolio',['id'=>$portfolio->id])}}">{{$portfolio->title}}</a>     
+                        @endforeach
+                     </div>
                   </li>
                   <li class="nav-item">
                      <a class="nav-link {{ Route::is('front.blog')? 'active' : '' }}" href="{{route('front.blog')}}">المقالات</a>

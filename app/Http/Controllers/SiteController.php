@@ -21,14 +21,14 @@ class SiteController extends Controller
         $sliders=Slider::get();
         $blogs=Blog::get();
         $portfolios=Gallery::get();
-        $galleries=Gallery::get();
         $about_section=Page::where('identifier','about')->first();
         $contact_section=Page::where('identifier','contact')->first();
         $advantage_section=Page::where('identifier','advantage')->first();
         $setting=Setting::first();
         $blogs_footer=Blog::take(3)->get();
+        $portfolios=Gallery::get();
 
-         return view('front.index',compact('services','blogs_footer','galleries','sliders','setting','blogs','contact_section','about_section','advantage_section','setting','blogs','portfolios'));
+         return view('front.index',compact('services','blogs_footer','portfolios','sliders','setting','blogs','contact_section','about_section','advantage_section','setting','blogs'));
 
 
     }
@@ -38,11 +38,12 @@ class SiteController extends Controller
         $blogs=Blog::get();
         $setting=Setting::first();
         $blogs_footer=Blog::take(3)->get();
+        $portfolios=Gallery::get();
         $blog_section=Page::where('identifier','blog')->first();
         $partners=Partner::get();
 
 
-        return view('front.blogs.blog',compact('blogs','blogs_footer','setting','blog_section','partners'));
+        return view('front.blogs.blog',compact('blogs','blogs_footer','portfolios','setting','blog_section','partners'));
     }
 
     public function single_blog(Request $request)
@@ -51,7 +52,8 @@ class SiteController extends Controller
         $blog=Blog::findorfail($id);
         $setting=Setting::first();  
         $blogs_footer=Blog::take(3)->get();
-        return view('front.blogs.single-blog',compact('blog','setting','blogs_footer'));
+        $portfolios=Gallery::get();
+        return view('front.blogs.single-blog',compact('blog','setting','blogs_footer','portfolios'));
         
     }
 
@@ -78,10 +80,11 @@ class SiteController extends Controller
         $services=Service::get();
         $setting=Setting::first();
         $blogs_footer=Blog::take(3)->get();
+        $portfolios=Gallery::get();
         $service_section=Page::where('identifier','service')->first();
         $partners=Partner::get();
         // dd($service_section->title);
-        return view('front.services.service',compact('services','setting','blogs_footer','service_section','partners'));
+        return view('front.services.service',compact('services','setting','blogs_footer','portfolios','service_section','partners'));
     }
 
     public function single_service(Request $request)
@@ -90,22 +93,26 @@ class SiteController extends Controller
         $service=Service::findorfail($id);
         $setting=Setting::first();
         $blogs_footer=Blog::take(3)->get();
-        return view('front.services.single-service',compact('service','setting','blogs_footer'));
+        $portfolios=Gallery::get();
+        return view('front.services.single-service',compact('service','setting','blogs_footer','portfolios'));
     }
 
-    public function portfolios()
+    public function portfolios(Request $request)
     {
-        $portfolios=Gallery::get();
         $setting=Setting::first();
         $blogs_footer=Blog::take(3)->get();
         $portfolio_section=Page::where('identifier','portfolio')->first();
+        $portfolio=Gallery::findorfail($request->input('id'));
+        $portfolios=Gallery::get();
+        $images=json_decode($portfolio->image);
         $partners=Partner::get();
-        return view('front.portfolio',compact('portfolios','setting','blogs_footer','portfolio_section','partners'));
+        return view('front.portfolio',compact('portfolios','portfolio','setting','blogs_footer','portfolio_section','partners','images'));
     }
 
-    public function single_portfolio(Gallery $gallery)
+    public function single_portfolio()
     {
-        return view('front.portfolio',compact('gallery'));
+
+        return view('front.portfolio',compact('portfolio'));
         
     }
 
@@ -114,17 +121,19 @@ class SiteController extends Controller
         $contact_section=Page::where('identifier','contact')->first();
         $setting=Setting::first();
         $blogs_footer=Blog::take(3)->get();
+        $portfolios=Gallery::get();
         $about_section=Page::where('identifier','about')->first();
         $advantage_section=Page::where('identifier','advantage')->first();
         $partners=Partner::get();
 
-        return view('front.contact',compact('setting','blogs_footer','about_section','contact_section','advantage_section','partners'));
+        return view('front.contact',compact('setting','blogs_footer','portfolios','about_section','contact_section','advantage_section','partners'));
 
     }
 
     public function about()
     {
         $blogs_footer=Blog::take(3)->get();
+        $portfolios=Gallery::get();
         $about_section=Page::where('identifier','about')->first();
         $advantage_section=Page::where('identifier','advantage')->first();
         $setting=Setting::first();
@@ -132,7 +141,7 @@ class SiteController extends Controller
         $partners=Partner::get();
 
 
-        return view('front.about',compact('setting','blogs_footer','about_section','advantage_section','teams','partners'));
+        return view('front.about',compact('setting','blogs_footer','portfolios','about_section','advantage_section','teams','partners'));
     }
 
     public function contact_post(ContactRequest $request)
