@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use App\Models\Gallery;
+use App\Models\Image;
 use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
@@ -39,30 +40,23 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     { 
-        // dd($request->all());
         $request->validate([
             'title' => 'required',
             'images.*' => 'required',
          ],['title.required'=>'حقل الاسم مطلوب',
          'images.*.required'=>'حقل الصورة مطلوب',]);
 
-        // $portfolio=$request->all();
-        // $portfolio['image']=json_encode($portfolio['images']);
+         $portfolio=Gallery::create($request->all());
         if($request->hasFile('images')!==null){
 
             $files=$request->file('images');
             foreach($files as $file){
                 $name=$file->getClientOriginalName();
                 $file->move('images',$name);
-                $data['image']='images/'.$name;
+                Image::create(['image'=>'images/'.$name,'gallery_id'=>$portfolio->id]);
             }
 
          }
- 
-        //  else
-        // { $data['image']=$service->image;}
-
-        // Gallery::create($portfolio);
 
         return redirect()->route('portfolios.index')
             ->with('success', 'تم الانشاء');
@@ -106,9 +100,16 @@ class PortfolioController extends Controller
             'images' => 'required',
          ],['title.required'=>'حقل الاسم مطلوب',
          'image.required'=>'حقل الصورة مطلوب',]);
-         $data=$request->all();
-         $data['image']=json_encode($data['images']);
-         $portfolio->update($data);
+         if($request->hasFile('images')!==null){
+
+            $files=$request->file('images');
+            foreach($files as $file){
+                $name=$file->getClientOriginalName();
+                $file->move('images',$name);
+                // $image::update(['image'=>'images/'.$name,'gallery_id'=>$portfolio->id]);
+            }
+
+         }
 
         return redirect()->route('portfolios.index')
             ->with('success', 'تم التعديل بنجاح');
