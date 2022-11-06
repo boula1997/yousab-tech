@@ -5,6 +5,7 @@ use App\Models\Service;
 use App\Models\Blog;
 use App\Models\Gallery;
 use App\Models\Setting;
+use App\Models\Image;
 use App\Models\Slider;
 use App\Models\Page;
 use App\Models\Partner;
@@ -103,8 +104,8 @@ class SiteController extends Controller
         $blogs_footer=Blog::take(3)->get();
         $portfolio_section=Page::where('identifier','portfolio')->first();
         $portfolio=Gallery::findorfail($request->input('id'));
+        $images=Image::where('gallery_id',$portfolio->id)->get();
         $portfolios=Gallery::get();
-        $images=json_decode($portfolio->image);
         $partners=Partner::get();
         return view('front.portfolio',compact('portfolios','portfolio','setting','blogs_footer','portfolio_section','partners','images'));
     }

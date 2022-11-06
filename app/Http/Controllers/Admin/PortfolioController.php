@@ -47,6 +47,7 @@ class PortfolioController extends Controller
          'images.*.required'=>'حقل الصورة مطلوب',]);
 
          $portfolio=Gallery::create($request->all());
+        //  dd($portfolio);
         if($request->hasFile('images')!==null){
 
             $files=$request->file('images');
