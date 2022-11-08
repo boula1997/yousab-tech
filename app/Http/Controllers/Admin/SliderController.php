@@ -98,7 +98,7 @@ class SliderController extends Controller
         
         $data=$request->all();
          dd($data);
-        if($request->hasFile('image')!==null){
+        if($request->hasFile('image')){
 
             if(file_exists($slider->image))
             File::delete($slider->image);

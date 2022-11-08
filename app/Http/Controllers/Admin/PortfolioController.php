@@ -101,7 +101,7 @@ class PortfolioController extends Controller
             'images' => 'array|required',
          ],['title.required'=>'حقل الاسم مطلوب',
          'image.required'=>'حقل الصورة مطلوب',]);
-         if($request->hasFile('images')!==null){
+         if($request->hasFile('images')){
 
             $files=$request->file('images');
             foreach($files as $file){
