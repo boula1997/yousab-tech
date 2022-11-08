@@ -97,7 +97,6 @@ class SliderController extends Controller
      'description.required'=>'حقل الوصف مطلوب',]);
         
         $data=$request->all();
-         dd($data);
         if($request->hasFile('image')){
 
             if(file_exists($slider->image))

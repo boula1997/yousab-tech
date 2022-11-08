@@ -99,7 +99,7 @@ class BlogController extends Controller
          $data=$request->all();
  
          if($request->hasFile('image')){
-
+             dd(10);
             if(file_exists($blog->image))
             File::delete($blog->image);
             $file = $request->file('image');
