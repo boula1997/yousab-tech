@@ -17,7 +17,7 @@ class CreateImagesTable extends Migration
             $table->id();
             $table->string('image');
             $table->unsignedBigInteger('gallery_id');
-            $table->foreign('gallery_id')->references('id')->on('galleries')->delete();
+            $table->foreign('gallery_id')->references('id')->on('galleries');
             $table->timestamps();
         });
     }

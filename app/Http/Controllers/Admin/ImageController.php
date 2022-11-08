@@ -3,21 +3,24 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Image;
 use Illuminate\Support\Facades\File;
-use App\Models\Blog;
 use Illuminate\Http\Request;
+use App\Models\Gallery;
 
-class BlogController extends Controller
+
+class ImageController extends Controller
 {
-  /**
+     /**
     * Display a listing of the resource.
     *
     * @return \Illuminate\Http\Response
     */
     public function index()
     {
-        $blogs = Blog::latest()->paginate(5);
-        return view('admin.crud.blogs.Index', compact('blogs'))
+        // dd(10);
+        $tests = Image::latest()->paginate(5);
+        return view('admin.crud.gallery-images.Index', compact('tests'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
  
@@ -28,7 +31,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('admin.crud.blogs.create');
+        return view('admin.crud.gallery-images.create');
     }
  
     /**
@@ -41,12 +44,12 @@ class BlogController extends Controller
     { 
         // dd($request->all());
         $request->validate([
-         'title' => 'required',
+      
          'image' => 'required',
-         'description' => 'required',
-      ],['title.required'=>'حقل الاسم مطلوب',
+        
+      ],[
       'image.required'=>'حقل الصورة مطلوب',
-      'description.required'=>'حقل الوصف مطلوب',
+     
     ]);
  
  
@@ -55,53 +58,49 @@ class BlogController extends Controller
     $file->move('images',$name);
     $data=$request->all();
     $data['image']='images/'.$name;
-        Blog::create($data);
-        return redirect()->route('blogs.index')
+        Image::create($data);
+        return redirect()->route('tests.index')
             ->with('success', 'تم الانشاء');
     }
  
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Models\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
+    public function show(Image $image)
     {
-        return view('admin.crud.blogs.show', compact('blog'));
+        return view('admin.crud.gallery-images.show', compact('image'));
     }
  
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Models\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit(Image $image)
     {
-    //    dd($blog->title);
-        return view('admin.crud.blogs.edit', compact('blog'));
+    //    dd($image->title);
+        return view('admin.crud.gallery-images.edit', compact('image'));
     }
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\portfolio  $blog
+     * @param  \App\Models\portfolio  $image
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, Image $image)
     {
-        $request->validate([
-            'title' => 'required',
-         ],['title.required'=>'حقل الاسم مطلوب',
-         'description.required'=>'حقل الوصف مطلوب',]);
          
          $data=$request->all();
  
-         if($request->hasFile('image')){
-             dd(10);
-            if(file_exists($blog->image))
-            File::delete($blog->image);
+         if($request->hasFile('image')!==null){
+
+            if(file_exists($image->image))
+            File::delete($image->image);
             $file = $request->file('image');
             $name=$file->getClientOriginalName();
             $file->move('images',$name);
@@ -110,25 +109,26 @@ class BlogController extends Controller
          }
  
          else
-        { $data['image']=$blog->image;}
+        { $data['image']=$image->image;}
  
-         $blog->update($data);
+         $image->update($data);
  
  
-        return redirect()->route('blogs.index')
+        return redirect()->route('tests.index')
             ->with('success', 'تم التعديل بنجاح');
     }
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Models\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $blog)
+    public function destroy(Image $image)
     {
-        $blog->delete();
+        dd($image->image);
+        $image->delete();
  
-        return redirect()->route('blogs.index')
+        return redirect()->route('tests.index')
             ->with('success', 'تم الحذف');
     }
 }

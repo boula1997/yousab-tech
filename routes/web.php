@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\MetaController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\ImageController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -31,13 +32,14 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::resource('home',HomeController::class);
+// Route::resource('home',HomeController::class);
 Route::resource('blogs',BlogController::class);
 Route::resource('contact',ContactController::class);
 Route::resource('services',ServiceController::class);
 Route::resource('sliders',SliderController::class);
 Route::resource('about',AboutController::class);
 Route::resource('portfolios',PortfolioController::class);
+Route::resource('tests',ImageController::class);
 
 Route::get('/','App\Http\Controllers\SiteController@home')->name('front.home');
 Route::get('/blog','App\Http\Controllers\SiteController@blogs')->name('front.blog');
