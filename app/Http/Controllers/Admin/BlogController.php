@@ -98,7 +98,7 @@ class BlogController extends Controller
          
          $data=$request->all();
  
-         if($request->hasFile('image')!==null){
+         if($request->hasFile('image')){
 
             if(file_exists($blog->image))
             File::delete($blog->image);
