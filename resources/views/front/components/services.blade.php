@@ -8,7 +8,7 @@
                         <div class="card h-100">
                             <div class="card-img">
                                 <a href="#">
-                                    <a href="{{ route('front.show.service',['id'=>$service->id]) }}"><img class="card-img-top" src="{{ asset($service->image) }}" alt="{{ $service->title }}"/></a>
+                                    <a href="{{ route('front.show.service',['id'=>$service->id]) }} "><img class="card-img-top" src="{{ asset($service->image) }}" alt="{{ $service->title }}"/></a>
                                     <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
                                 </a>
                             </div>
