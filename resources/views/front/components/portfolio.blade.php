@@ -7,7 +7,7 @@
         @foreach ($images as $image)
             <div class="col-lg-4">
                 <div class="card">
-                        <a href="{{ asset('images/'.$image) }}" data-lightbox="portfolio" data-title="{{ $portfolio->title }}"><img style="margin: 1%" class="img-fluid" src="{{ asset('images/'.$image) }}" alt="" /></a>
+                        <a href="{{ asset($image->image) }}" data-lightbox="portfolio" data-title="{{ $portfolio->title }}"><img style="margin: 1%" class="img-fluid" src="{{ asset($image->image) }}" alt="" /></a>
                 </div>
             </div>
             @endforeach

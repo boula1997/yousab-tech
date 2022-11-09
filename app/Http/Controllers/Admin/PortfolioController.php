@@ -47,6 +47,7 @@ class PortfolioController extends Controller
          'images.*.required'=>'حقل الصورة مطلوب',]);
 
          $portfolio=Gallery::create($request->all());
+        //  dd($portfolio);
         if($request->hasFile('images')!==null){
 
             $files=$request->file('images');
@@ -83,7 +84,7 @@ class PortfolioController extends Controller
     public function edit(Gallery $portfolio)
     {
     //    dd($portfolio->title);
-    $images=json_decode($portfolio->image);
+    $images=Image::where('gallery_id',$portfolio->id)->get();
         return view('admin.crud.portfolios.edit', compact('portfolio','images'));
     }
     /**
@@ -97,10 +98,15 @@ class PortfolioController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'images' => 'required',
+            'images' => 'array|required',
          ],['title.required'=>'حقل الاسم مطلوب',
          'image.required'=>'حقل الصورة مطلوب',]);
+<<<<<<< HEAD
          if($request->hasFile('images')!==null){ 
+=======
+         if($request->hasFile('images')){
+
+>>>>>>> c129897c6cf406194167dc1f10d5dd17b24d7198
             $files=$request->file('images');
             foreach($files as $file){
                 $name=$file->getClientOriginalName();
