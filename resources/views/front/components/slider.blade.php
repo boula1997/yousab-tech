@@ -23,7 +23,7 @@
                         <div class="col-md-12">
                             <h3>{{$slider->title}}</h3>
                             {!! $slider->description  !!}
-                           <a href="tel:00966537394580"><button class="btn btn-success">اتصل بنا للتفاصيل والاسعار<i class="fa fa-phone"></i></button>
+                           <a href="tel:00966537394580"><button class="btn btn-success">اتصل بنا للتفاصيل والاسعار <i class="fa fa-phone"></i></button>
                            </a> 
                         </div>
                         {{-- <div class="col-md-1">
