@@ -61,7 +61,7 @@ Route::get('routes', function () {
     echo "<td width='10%'><h4>Route</h4></td>";
     echo "<td width='10%'><h4>Name</h4></td>";
     echo "<td width='70%'><h4>Corresponding Action</h4></td>";
-    echo "</tr>";
+    echo "</tr>";       
     foreach ($routeCollection as $value) {
         echo "<tr>";
         echo "<td>" . $value->methods()[0] . "</td>";

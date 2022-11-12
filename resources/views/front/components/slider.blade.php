@@ -13,24 +13,26 @@
            <div class="carousel-item {{$loop->index==0?'active':''}}" style="background-image: url('{{asset($slider->image)}}')">
                 <div class="carousel-caption d-md-block" >
                     <div class="row">
-                        <div class="col-md-1">
+                        {{-- <div class="col-md-1">
                             <ul class="social_footer_ul">
                                 <li style="margin-bottom: 50%"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li style="margin-bottom: 50%"><a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
                             </ul>
-                        </div>
-                        <div class="col-md-10">
+                        </div> --}}
+                        <div class="col-md-12">
                             <h3>{{$slider->title}}</h3>
                             {!! $slider->description  !!}
+                           <a href="tel:00966537394580"><button class="btn btn-success">اتصل بنا لان <i class="fa fa-phone"></i></button>
+                           </a> 
                         </div>
-                        <div class="col-md-1">
+                        {{-- <div class="col-md-1">
                             <ul class="social_footer_ul">
                                 <li style="margin-bottom: 50%"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li style="margin-bottom: 50%"><a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
                                 <li ><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
                             </ul>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>          
            </div>
