@@ -4,7 +4,6 @@
     <div class="container">
         @include('front.components.services')
         @include('front.components.about')
-        @include('front.components.portfolio_home')
                <!-- تواصلوا معنا الان Section -->
                <div class="row mb-4">
                 <div class="col-md-8">
