@@ -6,7 +6,7 @@
 	<meta name="description" content="">
 	<meta name="description" content="Free Web tutorials for HTML and CSS here  is going be object">
    <meta name="keywords" content="{{asset($setting->meta_data)}}">
-	<title>حدائف حدائق الفيروز</title>
+	<title>شركة حدائق الفيروز</title>
    <link rel="icon" href="{{asset($setting->logo)}}">
 	<!-- Bootstrap core CSS -->
 	<link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
