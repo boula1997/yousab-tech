@@ -79,8 +79,7 @@
                     alt="" /></a>
         </div>
         <!--foote_bottom_ul_amrc ends here-->
-        <p class="copyright text-center">جميع الحقوق محفوظة. &copy; 2022 <a href="{{ route('front.home') }}">حدائق رهرة
-                البستان</a> صمم
+        <p class="copyright text-center">جميع الحقوق محفوظة. &copy; 2022 <a href="{{ route('front.home') }}">حدائق الفيروز</a> صمم
             بواسطة :
             <a href="#">م.بولا نسيم</a>
         </p>
