@@ -4,7 +4,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col">
                 <h5 class="headin5_amrc col_white_amrc pt2">موقعنا</h5>
                 <!--headin5_amrc-->
-                <p class="mb10">شركة زهرة البستان</p>
+                <p class="mb10">شركة حدائق الفيروز</p>
                 <p><i class="fa fa-location-arrow"></i> {{ $setting->address }}</p>
                 <p><i class="fa fa-phone"></i> {{ $setting->phone1 }} </p>
                 <p><i class="fa fa fa-envelope"></i> {{ $setting->email1 }}</p>
