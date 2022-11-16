@@ -35,6 +35,13 @@
                             <p>قنانتنا علي اليوتيوب</p>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ $setting->tiktok }}" target="_blank"> <i
+                                class="fab fa-tiktok fleft padding-right"></i> </a>
+                        <a href="{{ $setting->tiktok }}" target="_blank">
+                            <p>قنانتنا علي اليوتيوب</p>
+                        </a>
+                    </li>
 
                 </ul>
                 <!--footer_ul2_amrc ends here-->
