@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
-   /**
+   /**s
     * Display a listing of the resource.
     *
     * @return \Illuminate\Http\Response

@@ -95,6 +95,7 @@
             <li><a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
             <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <i class="fab fa-tiktok"></i>
         </ul>
         <!--social_footer_ul ends hezre-->
     </div>
