@@ -42,6 +42,9 @@
     </style>
 </head>
 
+@include('front.components.whatsapp')
+
+
 <footer class="text-center text-black" style="color: black !important">
     <div class="container bottom_border">
         <div class="row">
