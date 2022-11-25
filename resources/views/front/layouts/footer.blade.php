@@ -81,6 +81,7 @@
                         </a>
                     </li>
 
+
                 </ul>
             </div>
             <div class="col-md-3 col-sm-12">
@@ -132,6 +133,8 @@
             <li><a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
             <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="{{ $setting->youtube }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            <i class="fa-brands fa-tiktok"></i>
         </ul>
         <!--social_footer_ul ends hezre-->
     </div>

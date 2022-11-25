@@ -9,14 +9,14 @@ use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
-   /**
+   /**s
     * Display a listing of the resource.
     *
     * @return \Illuminate\Http\Response
     */
     public function index()
     {
-        $services = Service::latest()->paginate(5);
+        $services = Service::latest()->get();
         return view('admin.crud.services.Index', compact('services'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }

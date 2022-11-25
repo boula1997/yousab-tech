@@ -19,7 +19,7 @@ class ImageController extends Controller
     public function index()
     {
           // dd(10);
-        $tests = Image::latest()->paginate(5);
+        $tests = Image::latest()->get();
         return view('admin.crud.gallery-images.Index', compact('tests'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
