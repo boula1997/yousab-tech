@@ -18,7 +18,7 @@ class PageController extends Controller
     public function index()
     {
         $Pages = Page::latest()->get();
-        return view('admin.crud.Pages.Index', compact('Pages'))
+        return view('admin.crud.pages.Index', compact('Pages'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
  
