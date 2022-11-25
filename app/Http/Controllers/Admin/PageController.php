@@ -68,7 +68,7 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
-        return view('admin.crud.Pages.show', compact('Page'));
+        return view('admin.crud.Pages.show', compact('page'));
     }
  
     /**
@@ -80,7 +80,7 @@ class PageController extends Controller
     public function edit(Page $page)
     {
     //    dd($page->title);
-        return view('admin.crud.pages.Index', compact('Page'));
+        return view('admin.crud.pages.Index', compact('page'));
     }
     /**
      * Update the specified resource in storage.
