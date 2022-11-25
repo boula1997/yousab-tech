@@ -19,8 +19,8 @@
 <script type="text/javascript">
     (function () {
         var options = {
-            call: "011267859a10", // Call phone number
-            whatsapp: "011267859a10", // WhatsApp number
+            call: "00966500774150", // Call phone number
+            whatsapp: "966500774150", // WhatsApp number
             call_to_action: "تواصل معنا", // Call to action
             button_color: "#FF6550", // Color of button
             position: "left", // Position may be 'right' or 'left'
