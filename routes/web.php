@@ -48,6 +48,7 @@ Route::get('/service','App\Http\Controllers\SiteController@services')->name('fro
 Route::get('/single-service','App\Http\Controllers\SiteController@single_service')->name('front.show.service');
 Route::get('/single-blog','App\Http\Controllers\SiteController@single_blog')->name('front.show.blog');
 Route::get('/portfolio','App\Http\Controllers\SiteController@portfolios')->name('front.portfolio');
+Route::get('/video','App\Http\Controllers\SiteController@videos')->name('front.video');
 Route::get('/about','App\Http\Controllers\SiteController@about')->name('front.about');
 Route::post('/contact','App\Http\Controllers\SiteController@contact_post')->name('front.contact.post');
 
