@@ -22,21 +22,21 @@
             </ul>
         </div>
     @endif
-    <form action="{{route('pages.update',$Page)}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('pages.update',$page)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>الاسم:</strong>
-                    <input type="text" value="{{old('title',$Page->title)}}" name="title" class="form-control">
+                    <input type="text" value="{{old('title',$page->title)}}" name="title" class="form-control">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>الوصف:</strong>
                     <textarea class="form-control" style="height:30%" name="description"
-                      >{{old('description',$Page->description)}}</textarea>
+                      >{{old('description',$page->description)}}</textarea>
                 </div>
             </div>
 
@@ -45,7 +45,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-10">
-                                <img height="50%" src="{{asset($Page->image)}}" alt="">
+                                <img height="50%" src="{{asset($page->image)}}" alt="">
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group" style="text-align: center">

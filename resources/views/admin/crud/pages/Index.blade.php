@@ -29,19 +29,19 @@
             <th>تاريخ النشاء</th>
             <th>التحكم</th>
         </tr>
-        @foreach ($Pages as $Page)
+        @foreach ($pages as $page)
             <tr>
                 <td>#{{$loop->iteration}}</td>
-                <td>{{$Page->title}}</td>
-                <td>{{$Page->created_at}}</td>
+                <td>{{$page->title}}</td>
+                <td>{{$page->created_at}}</td>
                 <td style="width: 11%">
-                    <form action="{{route('pages.destroy',$Page)}}" method="POST">
+                    <form action="{{route('pages.destroy',$page)}}" method="POST">
 
-                        <a href="{{route('pages.show',$Page)}}" title="show">
+                        <a href="{{route('pages.show',$page)}}" title="show">
                             <i class="fas fa-eye text-success  fa-lg"></i>
                         </a>
 
-                        <a href="{{route('pages.edit',$Page)}}" title="edit">
+                        <a href="{{route('pages.edit',$page)}}" title="edit">
                             <i class="fas fa-edit  fa-lg"></i>
                         </a>
 
@@ -57,7 +57,7 @@
         @endforeach
     </table>
 
-    {{-- {!! $Pages->links() !!} --}}
+    {{-- {!! $pages->links() !!} --}}
 
 
 @endsection

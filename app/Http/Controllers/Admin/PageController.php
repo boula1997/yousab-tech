@@ -17,7 +17,7 @@ class PageController extends Controller
     */
     public function index()
     {
-        $Pages = Page::latest()->get();
+        $pages = Page::latest()->get();
         return view('admin.crud.pages.Index', compact('Pages'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -63,10 +63,10 @@ class PageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Page  $Page
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function show(Page $Page)
+    public function show(Page $page)
     {
         return view('admin.crud.Pages.show', compact('Page'));
     }
@@ -74,22 +74,22 @@ class PageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Page  $Page
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function edit(Page $Page)
+    public function edit(Page $page)
     {
-    //    dd($Page->title);
+    //    dd($page->title);
         return view('admin.crud.pages.Index', compact('Page'));
     }
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\portfolio  $Page
+     * @param  \App\Models\portfolio  $page
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Page $Page)
+    public function update(Request $request, Page $page)
     {
         $request->validate([
             'title' => 'required',
@@ -100,8 +100,8 @@ class PageController extends Controller
  
          if($request->hasFile('image')){
 
-            if(file_exists($Page->image))
-            File::delete($Page->image);
+            if(file_exists($page->image))
+            File::delete($page->image);
             $file = $request->file('image');
             $name=$file->getClientOriginalName();
             $file->move('images',$name);
@@ -110,9 +110,9 @@ class PageController extends Controller
          }
  
          else
-        { $data['image']=$Page->image;}
+        { $data['image']=$page->image;}
  
-         $Page->update($data);
+         $page->update($data);
  
  
         return redirect()->route('Pages.index')
@@ -121,12 +121,12 @@ class PageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Page  $Page
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Page $Page)
+    public function destroy(Page $page)
     {
-        $Page->delete();
+        $page->delete();
  
         return redirect()->route('Pages.index')
             ->with('success', 'تم الحذف');

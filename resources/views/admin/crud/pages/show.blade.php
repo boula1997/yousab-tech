@@ -17,25 +17,25 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>الاسم</strong><br>
-                <p  style="display: inline">{{$Page->title}}</p>
+                <p  style="display: inline">{{$page->title}}</p>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>الوصف</strong><br>
-                <p style="display: inline">{!! $Page->description !!}</p>
+                <p style="display: inline">{!! $page->description !!}</p>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong class="pull-right">الصورة  </strong>
-              <img class="pull-left" src="{{asset($Page->image)}}" alt="">
+              <img class="pull-left" src="{{asset($page->image)}}" alt="">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>تاريخ الانشاء:</strong>
-                <p style="display: inline">{{$Page->created_at}}</p>
+                <p style="display: inline">{{$page->created_at}}</p>
 
             </div>
         </div>
