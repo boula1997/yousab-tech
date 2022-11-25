@@ -4,6 +4,7 @@
         background: linear-gradient(90deg, rgba(92, 255, 92, 1) 0%, rgba(0, 163, 0, 1) 100%) !important;
         color: #fff !important;
         font-size: 15px;
+
     }
 
     .sliderBtn:checked,
@@ -20,42 +21,36 @@
     .carousel-caption {
         background: rgba(255, 255, 255, 0.5);
         margin: auto;
-        bottom: 15rem;
+        bottom: 3rem;
         height: auto;
         width: 700px;
         padding: 40px;
-    }
-
-    .carousel-item {
-        animation: 6s linear infinite zoomInImg;
-    }
-
-    @keyframes zoomInImg {
-        0% {
-            transform: scale(1)
-        }
-
-        100% {
-            transform: scale(1.14)
-        }
     }
 
     @media (max-width: 991px) {
         .carousel-caption {
             background: rgba(255, 255, 255, 0.5);
             margin: auto;
-            bottom: 5rem;
+            bottom: 3rem;
             height: auto;
             width: auto;
             padding: 40px;
-            font-size: 13px;
+            font-size: 12px;
         }
 
+        .carousel-caption h3 {
+            font-size: 25px;
+        }
+
+        .carousel-caption p {
+            font-size: 16px;
+        }
         .sliderBtn {
             background: rgb(92, 255, 92) !important;
             background: linear-gradient(90deg, rgba(92, 255, 92, 1) 0%, rgba(0, 163, 0, 1) 100%) !important;
             color: #fff !important;
-            font-size: 15px;
+            font-size: 13px;
+            margin: auto;
         }
     }
 

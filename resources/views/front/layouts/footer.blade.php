@@ -134,7 +134,7 @@
             <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
             <li><a href="{{ $setting->youtube }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
-            <i class="fa-brands fa-tiktok"></i>
+            <li><a href="{{ $setting->youtube }}" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
         </ul>
         <!--social_footer_ul ends hezre-->
     </div>

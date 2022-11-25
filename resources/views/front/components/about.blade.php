@@ -1,11 +1,11 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet"> --}}
 
     <style>
         * {
-            font-family: 'Amiri', serif;
+            /* font-family: 'Amiri', serif; */
             font-size: 20px;
         }
 
@@ -13,13 +13,13 @@
             font-size: 18px;
         }
 
-        .about-main ul li:before {
+        /* .about-main ul li:before {
             position: absolute;
-            left: 505px;
+            left: 30rem;
             top: 0px;
             transform: rotateY(180deg);
             color: #4eae3a;
-        }
+        } */
 
         .about-main .image-box {
             height: 450px;
@@ -38,16 +38,35 @@
             transition: all 0.3s ease-in-out;
         }
 
-        @media (max-width: 991px) {
-
+        /* @media (max-width: 1399px) {
             .about-main ul li:before {
-            position: absolute;
-            left: 345px;
-            top: 0px;
-            transform: rotateY(180deg);
-            color: #4eae3a;
+                left: 25.5rem;
+            }
         }
+
+        @media (max-width: 1199px) {
+            .about-main ul li:before {
+                left: 21rem;
+            }
         }
+
+        @media (max-width: 991px) {
+            .about-main ul li:before {
+                left: 33rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .about-main ul li:before {
+                left: 24rem;
+            }
+        }
+
+        @media (max-width: 414px) {
+            .about-main ul li:before {
+                left: 17rem;
+            }
+        } */
 
     </style>
 </head>
