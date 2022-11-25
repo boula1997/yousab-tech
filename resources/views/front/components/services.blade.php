@@ -117,7 +117,7 @@
     <div class="container">
         <div class="row">
             @foreach ($services as $service)
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" data-aos="fade-right" data-aos-duration="3000">
                 <a href="{{ route('front.show.service',['id'=>$service->id]) }}">
                     <div class="card-flyer">
                         <div class="text-box">

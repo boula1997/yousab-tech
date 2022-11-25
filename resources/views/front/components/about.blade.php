@@ -1,25 +1,17 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    {{-- <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet"> --}}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 
     <style>
         * {
-            /* font-family: 'Amiri', serif; */
             font-size: 20px;
         }
 
         .about-main p {
             font-size: 18px;
         }
-
-        /* .about-main ul li:before {
-            position: absolute;
-            left: 30rem;
-            top: 0px;
-            transform: rotateY(180deg);
-            color: #4eae3a;
-        } */
 
         .about-main .image-box {
             height: 450px;
@@ -38,42 +30,12 @@
             transition: all 0.3s ease-in-out;
         }
 
-        /* @media (max-width: 1399px) {
-            .about-main ul li:before {
-                left: 25.5rem;
-            }
-        }
-
-        @media (max-width: 1199px) {
-            .about-main ul li:before {
-                left: 21rem;
-            }
-        }
-
-        @media (max-width: 991px) {
-            .about-main ul li:before {
-                left: 33rem;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .about-main ul li:before {
-                left: 24rem;
-            }
-        }
-
-        @media (max-width: 414px) {
-            .about-main ul li:before {
-                left: 17rem;
-            }
-        } */
-
     </style>
 </head>
 
 <div class="about-main">
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="3000">
             <h2 style="color: #00A300">{{ $about_section->subtitle }}</h2>
             {!! $about_section->description !!}
             <h3 class="pt-3" style="color: #00A300">{{ $advantage_section->title }}</h3>
@@ -83,9 +45,15 @@
             </ul>
             <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p> -->
         </div>
-        <div class="col-lg-6 image-box">
+        <div class="col-lg-6 image-box" data-aos="fade-right" data-aos-duration="3000">
             <img class="img-fluid rounded" src="{{ asset($about_section->image) }}" alt="" />
         </div>
     </div>
     <!-- /.row -->
 </div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+
+</script>

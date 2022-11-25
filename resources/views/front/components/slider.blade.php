@@ -1,3 +1,6 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
 <style>
     .sliderBtn {
         background: rgb(92, 255, 92) !important;
@@ -45,6 +48,7 @@
         .carousel-caption p {
             font-size: 16px;
         }
+
         .sliderBtn {
             background: rgb(92, 255, 92) !important;
             background: linear-gradient(90deg, rgba(92, 255, 92, 1) 0%, rgba(0, 163, 0, 1) 100%) !important;
@@ -70,10 +74,11 @@
                 style="background-image: url('{{asset($slider->image)}}')">
                 <div class="carousel-caption d-md-block">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12 animate__animated animate__fadeInDown">
                             <h3>{{$slider->title}}</h3>
                             {!! $slider->description !!}
-                            <a href="tel:00966537394580"><button class="btn sliderBtn">اتصل بنا للتفاصيل والاسعار <i
+                            <a href="tel:00966537394580"><button
+                                    class="btn sliderBtn">اتصل بنا للتفاصيل والاسعار <i
                                         class="fa fa-phone"></i></button>
                             </a>
                         </div>
