@@ -29,7 +29,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        return view('admin.crud.Pages.create');
+        return view('admin.crud.pages.create');
     }
  
     /**
@@ -68,7 +68,7 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
-        return view('admin.crud.Pages.show', compact('page'));
+        return view('admin.crud.pages.show', compact('page'));
     }
  
     /**
@@ -115,7 +115,7 @@ class PageController extends Controller
          $page->update($data);
  
  
-        return redirect()->route('Pages.index')
+        return redirect()->route('pages.index')
             ->with('success', 'تم التعديل بنجاح');
     }
     /**
@@ -128,7 +128,7 @@ class PageController extends Controller
     {
         $page->delete();
  
-        return redirect()->route('Pages.index')
+        return redirect()->route('pages.index')
             ->with('success', 'تم الحذف');
     }
 }
