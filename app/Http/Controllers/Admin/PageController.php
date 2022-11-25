@@ -80,7 +80,7 @@ class PageController extends Controller
     public function edit(Page $Page)
     {
     //    dd($Page->title);
-        return view('admin.crud.Pages.edit', compact('Page'));
+        return view('admin.crud.pages.Index', compact('Page'));
     }
     /**
      * Update the specified resource in storage.
