@@ -1,72 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta name="description" content="Free Web tutorials for HTML and CSS here  is going be object">
-   <meta name="keywords" content="{{asset($setting->meta_data)}}">
-	<title>شركة حدائق الفيروز</title>
-   <link rel="icon" href="{{asset($setting->logo)}}">
-	<!-- Bootstrap core CSS -->
-	<link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-	<!-- Fontawesome CSS -->
-	<link href="{{asset('site/css/all.css')}}" rel="stylesheet">
-	<!-- Custom styles for this template -->
-	<link href="{{asset('site/css/style.css')}}" rel="stylesheet">
-   <link href="{{asset('site/css/lightbox.css')}}" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="description" content="Free Web tutorials for HTML and CSS here  is going be object">
+    <meta name="keywords" content="{{asset($setting->meta_data)}}">
+    <title>شركة حدائق الفيروز</title>
+    <link rel="icon" href="{{asset($setting->logo)}}">
+    <!-- Bootstrap core CSS -->
+    <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- Fontawesome CSS -->
+    <link href="{{asset('site/css/all.css')}}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{{asset('site/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('site/css/lightbox.css')}}" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
+
+    <style>
+        .navbar {
+                background: rgb(92, 255, 92);
+                background: linear-gradient(90deg, rgba(92, 255, 92, 1) 0%, rgba(0, 163, 0, 1) 100%);
+        }
+
+        .dropdown-item:hover {
+            color: #fff !important;
+            background: rgb(92, 255, 92);
+            background: linear-gradient(90deg, rgba(92, 255, 92, 1) 0%, rgba(0, 163, 0, 1) 100%);
+        }
+
+        .nav-item .active {
+            color: #fff !important;
+        }
+
+        .nav-item a {
+            color: black !important;
+            font-size: 18px;
+            margin-left: 10px;
+        }
+
+    </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
+
+<body style="padding: 0 !important">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <!-- Container wrapper -->
         <div class="container">
-            <a class="navbar-brand" href="{{route('front.home')}}">
-            <img width="100px" height="100px" src="{{asset($setting->logo)}}" alt="logo" />
-            </a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="fas fa-bars"></span>
-            </button>   
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-               <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                     <a class="nav-link {{ Route::is('front.contact')? 'active' : '' }}" href="{{ route('front.contact') }}">تواصل معنا</a>
-                  </li>
-                  {{-- <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     الصفحات
-                     </a>
-                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                        <a class="dropdown-item" href="faq.html">اسئلة شائعة</a>
-                        <a class="dropdown-item" href="404.html">صفحة الخطا</a>
-                        <a class="dropdown-item" href="pricing.html">جدول الاسعار</a>
-                     </div>
-                  </li> --}}
-                  {{-- <li class="nav-item">
-                     <a class="nav-link {{ Route::is('front.portfolio')? 'active' : '' }}" href="{{route('front.portfolio')}}">الاعمال</a>
-                  </li> --}}
-                  <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle {{ Route::is('front.portfolio')? 'active' : '' }}" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     اعمالنا
-                     </a>
-                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                        @foreach ($portfolios as $portfolio)
-                        <a class="dropdown-item" href="{{route('front.portfolio',['id'=>$portfolio->id])}}">{{$portfolio->title}}</a>     
-                        @endforeach
-                     </div>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link {{ Route::is('front.blog')? 'active' : '' }}" href="{{route('front.blog')}}">المقالات</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link {{ Route::is('front.service')? 'active' : '' }}" href="{{route('front.service')}}">خدماتنا</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link {{ Route::is('front.about')? 'active' : '' }}" href="{{ route('front.about') }}">من نحن؟</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link {{ Route::is('front.home')? 'active' : '' }}" href="{{ route('front.home') }}">الرئسية</a>
-                  </li>
-               </ul>
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- Left links -->
+                <ul class="navbar-nav  mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::is('front.home')? 'active' : '' }}"
+                            href="{{ route('front.home') }}">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::is('front.about')? 'active' : '' }}"
+                            href="{{ route('front.about') }}">من
+                            نحن؟</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::is('front.service')? 'active' : '' }}"
+                            href="{{route('front.service')}}">خدماتنا</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::is('front.blog')? 'active' : '' }}"
+                            href="{{route('front.blog')}}">المقالات</a>
+                    </li>
+                    <!-- Navbar dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" {{ Route::is('front.portfolio')? 'active' : '' }}" href="#"
+                            id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                            اعمالنا
+                        </a>
+                        <!-- Dropdown menu -->
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @foreach ($portfolios as $portfolio)
+                            <li class="m-auto">
+                                <a class="dropdown-item d-flex"
+                                    href="{{route('front.portfolio',['id'=>$portfolio->id])}}">{{$portfolio->title}}</a>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::is('front.contact')? 'active' : '' }}"
+                            href="{{ route('front.contact') }}">تواصل معنا</a>
+                    </li>
+                </ul>
+                <!-- Left links -->
             </div>
+            <!-- Collapsible wrapper -->
+            <!-- Right elements -->
+            <div class="d-flex align-items-center">
+                <!-- Navbar brand -->
+                <a class="navbar-brand mt-2 mt-lg-0" href="{{route('front.home')}}">
+                    <img src="{{asset('images/logo.png')}}" height="15" alt="Logo" loading="lazy"
+                        style="width: auto; height: 80px; border-radius: 10px; box-shadow: 10px; object-fit:cover;" />
+                </a>
+            </div>
+            <!-- Right elements -->
         </div>
+        <!-- Container wrapper -->
     </nav>
+    <!-- Navbar -->

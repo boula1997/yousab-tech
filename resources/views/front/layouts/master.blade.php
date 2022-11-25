@@ -1,5 +1,5 @@
 @include('front.layouts.header')
 
-    @yield('content')
+@yield('content')
 
 @include('front.layouts.footer')

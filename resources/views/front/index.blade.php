@@ -5,12 +5,14 @@
         @include('front.components.services')
         @include('front.components.about')
                <!-- تواصلوا معنا الان Section -->
-               <div class="row mb-4">
-                <div class="col-md-8">
+               <div class="mb-4">
+                <div class="">
                     {!! $contact_section->description  !!}
                 </div>
-                <div class="col-md-4">
-                   <a class="btn btn-lg btn-secondary btn-block" href="{{route('front.contact')}}">{{$contact_section->title}}</a>
+                <div class="d-flex justify-content-center text-white">
+                    <a href="{{route('front.contact')}}">
+                        <button class="btn sliderBtn">{{$contact_section->title}}</button>
+                    </a>
                 </div>
             </div>
     </div>

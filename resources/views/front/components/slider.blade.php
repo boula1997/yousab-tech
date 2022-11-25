@@ -1,42 +1,91 @@
+<style>
+    .sliderBtn {
+        background: rgb(92, 255, 92) !important;
+        background: linear-gradient(90deg, rgba(92, 255, 92, 1) 0%, rgba(0, 163, 0, 1) 100%) !important;
+        color: #fff !important;
+        font-size: 15px;
+    }
+
+    .sliderBtn:checked,
+    .sliderBtn:focus,
+    .sliderBtn:visited,
+    .sliderBtn:active,
+    .sliderBtn:hover {
+        background: rgb(92, 255, 92);
+        background: linear-gradient(90deg, rgba(92, 255, 92, 1) 0%, rgba(0, 163, 0, 1) 100%);
+        color: #fff !important;
+        font-size: 15px;
+    }
+
+    .carousel-caption {
+        background: rgba(255, 255, 255, 0.5);
+        margin: auto;
+        bottom: 15rem;
+        height: auto;
+        width: 700px;
+        padding: 40px;
+    }
+
+    .carousel-item {
+        animation: 6s linear infinite zoomInImg;
+    }
+
+    @keyframes zoomInImg {
+        0% {
+            transform: scale(1)
+        }
+
+        100% {
+            transform: scale(1.14)
+        }
+    }
+
+    @media (max-width: 991px) {
+        .carousel-caption {
+            background: rgba(255, 255, 255, 0.5);
+            margin: auto;
+            bottom: 5rem;
+            height: auto;
+            width: auto;
+            padding: 40px;
+            font-size: 13px;
+        }
+
+        .sliderBtn {
+            background: rgb(92, 255, 92) !important;
+            background: linear-gradient(90deg, rgba(92, 255, 92, 1) 0%, rgba(0, 163, 0, 1) 100%) !important;
+            color: #fff !important;
+            font-size: 15px;
+        }
+    }
+
+</style>
 <header class="slider-main">
     <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
         <ol class="carousel-indicators">
-           @foreach ($sliders as $slider)
-           <li data-target="#carouselExampleIndicators" data-slide-to="{{$loop->index}}" class="{{$loop->index < 1 ? 'active' : ''}}"></li>
-           @endforeach
+            @foreach ($sliders as $slider)
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{$loop->index}}" data-bs-interval="6000"
+                class="{{$loop->index < 1 ? 'active' : ''}}"></li>
+            @endforeach
         </ol>
-
         <div class="carousel-inner" role="listbox">
-           <!-- Slide One - Set the background image for this slide in the line below -->
- 
-           @foreach ($sliders as $slider)
-           <div class="carousel-item {{$loop->index==0?'active':''}}" style="background-image: url('{{asset($slider->image)}}')">
-                <div class="carousel-caption d-md-block" >
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            @foreach ($sliders as $slider)
+            <div class="carousel-item {{$loop->index==0?'active':''}}"
+                style="background-image: url('{{asset($slider->image)}}')">
+                <div class="carousel-caption d-md-block">
                     <div class="row">
-                        {{-- <div class="col-md-1">
-                            <ul class="social_footer_ul">
-                                <li style="margin-bottom: 50%"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li style="margin-bottom: 50%"><a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                            </ul>
-                        </div> --}}
                         <div class="col-md-12">
                             <h3>{{$slider->title}}</h3>
-                            {!! $slider->description  !!}
-                           <a href="tel:00966537394580"><button class="btn btn-success">اتصل بنا للتفاصيل والاسعار <i class="fa fa-phone"></i></button>
-                           </a> 
+                            {!! $slider->description !!}
+                            <a href="tel:00966537394580"><button class="btn sliderBtn">اتصل بنا للتفاصيل والاسعار <i
+                                        class="fa fa-phone"></i></button>
+                            </a>
                         </div>
-                        {{-- <div class="col-md-1">
-                            <ul class="social_footer_ul">
-                                <li style="margin-bottom: 50%"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li style="margin-bottom: 50%"><a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                <li ><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                            </ul>
-                        </div> --}}
                     </div>
-                </div>          
-           </div>
-        @endforeach
+                </div>
+            </div>
+            @endforeach
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
