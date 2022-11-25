@@ -10,8 +10,14 @@ class SettingController extends Controller
 {
     public function setting(Request $request){
     $setting=Setting::first();
-    $setting->update($request->all());
-    return view();
+    $data=$request->all();
+    if($data['logo']==null)
+    $data['logo']=$setting->logo;
+    if($data['tab']==null)
+    $data['tab']=$setting->tab;
+    $setting->update($data);
+    return redirect()->route('edit.setting',compact('setting'))
+    ->with('success', 'تم التعديل بنجاح');
     }
 
     public function editSetting(){

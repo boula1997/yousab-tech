@@ -7,7 +7,7 @@
                 <h2>اضف صور للمعرض</h2>
             </div>
             <div class="pull-left">
-                <a class="btn btn-primary" href="{{route('setting')}}" title="Go back"> <i class="fas fa-backward "></i> </a>
+                <a class="btn btn-primary" href="{{route('dashboard')}}" title="Go back"> <i class="fas fa-backward "></i> </a>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
             </ul>
         </div>
     @endif
-    <form action="{{route('setting')}}" method="POST" enctype="multipart/form-data" >
+    <form action="{{route('setting')}}" method="POST"  >
         @csrf
         @method('PUT')
 
@@ -111,23 +111,21 @@
                     <input type="text" value="{{old('appointment2',$setting->appointment2)}}" name="appointment2" class="form-control">
                 </div>
             </div>
-            {{-- <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>الوصف:</strong>
                     <textarea class="form-control" style="height:30%" name="description"
                       >{{old('description',$setting->description)}}</textarea>
                 </div>
-            </div> --}}
+            </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="card card-custom">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-10">
-                                <img height="50%" src="{{asset($setting->logo)}}" alt="">
-                            </div>
-                            <div class="col-md-2">
+                            <div class="col-md-6">
                                 <div class="form-group" style="text-align: center">
+                                    <img height="20%" src="{{asset($setting->logo)}}" alt="">
                                     <label class="col-form-label" style="font-size: 15pt"> <strong> اللوجو</strong></label>
                                     <div class="image-input image-input-empty image-input-outline" id="kt_image_5">
                                         <div class="image-input-wrapper"></div>
@@ -143,8 +141,11 @@
                                             <i class="ki ki-bold-close icon-xs text-muted"></i>
                                         </span>
                                     </div>
-                                </div>
+                                </div>            
+                            </div>
+                            <div class="col-md-6">
                                 <div class="form-group" style="text-align: center">
+                                    <img height="20%" src="{{asset($setting->logo)}}" alt="">
                                     <label class="col-form-label" style="font-size: 15pt"> <strong> التاب</strong></label>
                                     <div class="image-input image-input-empty image-input-outline" id="kt_image_5">
                                         <div class="image-input-wrapper"></div>
@@ -161,7 +162,6 @@
                                         </span>
                                     </div>
                                 </div>
-            
                             </div>
              
                         </div>
