@@ -23,7 +23,7 @@
             whatsapp: "966500774150", // WhatsApp number
             call_to_action: "تواصل معنا", // Call to action
             button_color: "#FF6550", // Color of button
-            position: "left", // Position may be 'right' or 'left'
+            position: "right", // Position may be 'right' or 'left'
             order: "call,whatsapp", // Order of buttons
         };
         var proto = 'https:', host = "getbutton.io", url = proto + '//static.' + host;
