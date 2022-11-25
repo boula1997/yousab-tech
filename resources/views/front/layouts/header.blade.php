@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="description" content="Free Web tutorials for HTML and CSS here  is going be object">
+    <meta name="description" content="حدائق الفيروز لنسيق الحدائق">
     <meta name="keywords" content="{{asset($setting->meta_data)}}">
     <title>شركة حدائق الفيروز</title>
     <link rel="icon" href="{{asset($setting->logo)}}">
