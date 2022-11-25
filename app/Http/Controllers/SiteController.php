@@ -110,6 +110,18 @@ class SiteController extends Controller
         return view('front.portfolio',compact('portfolios','portfolio','setting','blogs_footer','portfolio_section','partners','images'));
     }
 
+    public function videos(Request $request)
+    {
+        $setting=Setting::first();
+        $blogs_footer=Blog::take(3)->get();
+        $portfolio_section=Page::where('identifier','portfolio')->first();
+        $portfolio=Gallery::findorfail($request->input('id'));
+        $images=Image::where('gallery_id',$portfolio->id)->get();
+        $portfolios=Gallery::get();
+        $partners=Partner::get();
+        return view('front.video',compact('portfolios','portfolio','setting','blogs_footer','portfolio_section','partners','images'));
+    }
+
     public function single_portfolio()
     {
 

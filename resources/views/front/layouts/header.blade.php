@@ -100,6 +100,11 @@
                         </ul>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link {{ Route::is('front.video')? 'active' : '' }}"
+                            href="{{ route('front.video') }}">فيديوهاتنا
+                            </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {{ Route::is('front.contact')? 'active' : '' }}"
                             href="{{ route('front.contact') }}">تواصل معنا</a>
                     </li>
