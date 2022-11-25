@@ -35,7 +35,7 @@
 
 <div class="about-main">
     <div class="row">
-        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="3000">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-duration="3000">
             <h2 style="color: #00A300">{{ $about_section->subtitle }}</h2>
             {!! $about_section->description !!}
             <h3 class="pt-3" style="color: #00A300">{{ $advantage_section->title }}</h3>
@@ -45,7 +45,7 @@
             </ul>
             <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p> -->
         </div>
-        <div class="col-lg-6 image-box" data-aos="fade-right" data-aos-duration="3000">
+        <div class="col-lg-6 image-box" data-aos="fade-up" data-aos-duration="3000">
             <img class="img-fluid rounded" src="{{ asset($about_section->image) }}" alt="" />
         </div>
     </div>

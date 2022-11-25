@@ -22,7 +22,7 @@
     }
 
     .carousel-caption {
-        background: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.3);
         margin: auto;
         bottom: 3rem;
         height: auto;
@@ -32,7 +32,7 @@
 
     @media (max-width: 991px) {
         .carousel-caption {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.3);
             margin: auto;
             bottom: 3rem;
             height: auto;
@@ -63,7 +63,7 @@
     <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
         <ol class="carousel-indicators">
             @foreach ($sliders as $slider)
-            <li data-target="#carouselExampleIndicators" data-slide-to="{{$loop->index}}" data-bs-interval="6000"
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{$loop->index}}" data-bs-interval="3000"
                 class="{{$loop->index < 1 ? 'active' : ''}}"></li>
             @endforeach
         </ol>
