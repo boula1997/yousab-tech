@@ -115,11 +115,9 @@ class SiteController extends Controller
         $setting=Setting::first();
         $blogs_footer=Blog::take(3)->get();
         $portfolio_section=Page::where('identifier','portfolio')->first();
-        $portfolio=Gallery::findorfail($request->input('id'));
-        $images=Image::where('gallery_id',$portfolio->id)->get();
         $portfolios=Gallery::get();
         $partners=Partner::get();
-        return view('front.video',compact('portfolios','portfolio','setting','blogs_footer','portfolio_section','partners','images'));
+        return view('front.video',compact('portfolios','setting','blogs_footer','portfolio_section','partners'));
     }
 
     public function single_portfolio()
