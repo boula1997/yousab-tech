@@ -40,6 +40,8 @@ Route::resource('sliders',SliderController::class);
 Route::resource('about',AboutController::class);
 Route::resource('portfolios',PortfolioController::class);
 Route::resource('tests',ImageController::class);
+Route::put('/setting','App\Http\Controllers\Admin\SettingController@setting')->name('setting');
+Route::get('/setting/edit','App\Http\Controllers\Admin\SettingController@editSetting')->name('edit.setting');
 
 Route::get('/','App\Http\Controllers\SiteController@home')->name('front.home');
 Route::get('/blog','App\Http\Controllers\SiteController@blogs')->name('front.blog');

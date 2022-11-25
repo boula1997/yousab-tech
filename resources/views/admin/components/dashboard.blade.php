@@ -62,17 +62,17 @@
 
 
         </div>
-        {{-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
             <div class="div-square">
-                <a href="blank.html">
+                <a href="{{ route('edit.setting') }}">
                     <i class="fa fa-key fa-5x"></i>
-                    <h4>Admin </h4>
+                    <h4>Setting </h4>
                 </a>
             </div>
 
 
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+         {{-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
             <div class="div-square">
                 <a href="blank.html">
                     <i class="fa fa-comments-o fa-5x"></i>
