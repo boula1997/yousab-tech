@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\MetaController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ImageController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +38,7 @@ Route::resource('blogs',BlogController::class);
 Route::resource('contact',ContactController::class);
 Route::resource('services',ServiceController::class);
 Route::resource('sliders',SliderController::class);
+Route::resource('pages',PageController::class);
 Route::resource('about',AboutController::class);
 Route::resource('portfolios',PortfolioController::class);
 Route::resource('tests',ImageController::class);
