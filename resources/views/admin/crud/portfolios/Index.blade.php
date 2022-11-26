@@ -34,7 +34,7 @@
                 <td>#{{$loop->iteration}}</td>
                 <td>{{$portfolio->title}}</td>
                 <td>{{$portfolio->created_at}}</td>
-                <td style="width: 11%">
+                <td style="width: 25%">
                     <form action="{{route('portfolios.destroy',$portfolio)}}" method="POST">
 
                         <a href="{{route('portfolios.show',$portfolio)}}" title="show">
