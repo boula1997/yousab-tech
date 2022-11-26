@@ -115,7 +115,7 @@ class PageController extends Controller
          $page->update($data);
  
  
-        return redirect()->route('pages.index')
+        return redirect()->route('pages.edit',compact('page'))
             ->with('success', 'تم التعديل بنجاح');
     }
     /**

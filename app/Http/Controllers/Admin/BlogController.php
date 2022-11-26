@@ -114,7 +114,7 @@ class BlogController extends Controller
          $blog->update($data);
  
  
-        return redirect()->route('blogs.index')
+        return redirect()->route('blogs.edit',compact('blog'))
             ->with('success', 'تم التعديل بنجاح');
     }
     /**

@@ -121,7 +121,7 @@ class PortfolioController extends Controller
             }
          }
 
-        return redirect()->route('portfolios.index')
+        return redirect()->route('portfolios.edit',compact('portfolio'))
             ->with('success', 'تم التعديل بنجاح');
     }
     /**
