@@ -71,7 +71,7 @@ class PortfolioController extends Controller
      */
     public function show(Gallery $portfolio)
     {
-        $images=json_decode($portfolio->image);
+        $images=Image::where('gallery_id',$portfolio->id)->get();
         return view('admin.crud.portfolios.show', compact('portfolio','images'));
     }
 
@@ -84,7 +84,7 @@ class PortfolioController extends Controller
     public function edit(Gallery $portfolio)
     {
     //    dd($portfolio->title);
-    $images=Image::where('gallery_id',$portfolio->id)->get();
+        $images=Image::where('gallery_id',$portfolio->id)->get();
         return view('admin.crud.portfolios.edit', compact('portfolio','images'));
     }
     /**
@@ -98,20 +98,30 @@ class PortfolioController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'images' => 'array|required',
+            
          ],['title.required'=>'حقل الاسم مطلوب',
-         'image.required'=>'حقل الصورة مطلوب',]);
-         if($request->hasFile('images')){ 
+         ]);
+
+         
+         if($request->hasFile('images')){
+
             $files=$request->file('images');
             foreach($files as $file){
                 $name=$file->getClientOriginalName();
                 $file->move('images',$name);
-                // $image::update(['image'=>'images/'.$name,'gallery_id'=>$portfolio->id]);
+                Image::create(['image'=>'images/'.$name,'gallery_id'=>$portfolio->id]);
             }
 
          }
+         if($request->has('delimages')){
 
-        return redirect()->route('portfolios.index')
+            $delimages=$request->input('delimages');
+            foreach($delimages as $delimage){
+                Image::where('id',$delimage)->delete();
+            }
+         }
+
+        return redirect()->route('portfolios.edit',compact('portfolio'))
             ->with('success', 'تم التعديل بنجاح');
     }
     /**

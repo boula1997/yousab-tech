@@ -7,16 +7,10 @@
                 <h2>اضف صور للمعرض</h2>
             </div>
             <div class="pull-left">
-                <a class="btn btn-primary" href="{{route('tests.index')}}" title="Go back"> <i class="fas fa-backward "></i> </a>
+                <a class="btn btn-primary" href="{{route('pages.index')}}" title="Go back"> <i class="fas fa-backward "></i> </a>
             </div>
         </div>
     </div>
-
-    @if ($message = Session::get('success'))
-    <div class="alert alert-success">
-        <p style="text-align: end">{{$message}} </p>
-    </div>
-@endif
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -28,22 +22,21 @@
             </ul>
         </div>
     @endif
-    <form action="{{route('tests.update',$image)}}" method="POST" enctype="multipart/form-data" >
+    <form action="{{route('pages.store')}}" method="POST" enctype="multipart/form-data" >
         @csrf
-        @method('PUT')
 
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>الاسم:</strong>
-                    <input type="text" value="{{old('title',$image->title)}}" name="title" class="form-control">
+                    <input type="text" value="{{old('title')}}" name="title" class="form-control">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>الوصف:</strong>
                     <textarea class="form-control" style="height:30%" name="description"
-                      >{{old('description',$image->description)}}</textarea>
+                      >{{old('description')}}</textarea>
                 </div>
             </div>
 
@@ -51,13 +44,10 @@
                 <div class="card card-custom">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-8">
-                                <img height="50%" src="{{asset($image->image)}}" alt="">
-                            </div>
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <div class="form-group" style="text-align: center">
                                     <label class="col-form-label" style="font-size: 15pt"> <strong> اختر الصور</strong></label>
-                                    <div class="image-input image-input-empty image-input-outline" id="kt_image_5">
+                                    <div class="image-input image-input-empty image-input-outline" id="kt_image_5" style="background-image: url({{ asset('admin') }}/assets/media/users/blank.png)">
                                         <div class="image-input-wrapper"></div>
                                         <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
                                             <i class="fa fa-pen icon-sm text-muted"></i>

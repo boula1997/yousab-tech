@@ -10,7 +10,7 @@
                 <a class="btn btn-primary" href="{{route('dashboard')}}" title="Go back"> <i class="fas fa-backward "></i> </a>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{route('sliders.create')}}" title="Create a slider"> <i class="fas fa-plus-circle"></i>
+                <a class="btn btn-success" href="{{route('pages.create')}}" title="Create a Page"> <i class="fas fa-plus-circle"></i>
                     </a>
             </div>
         </div>
@@ -29,19 +29,19 @@
             <th>تاريخ النشاء</th>
             <th>التحكم</th>
         </tr>
-        @foreach ($sliders as $slider)
+        @foreach ($pages as $page)
             <tr>
                 <td>#{{$loop->iteration}}</td>
-                <td>{{$slider->title}}</td>
-                <td>{{$slider->created_at}}</td>
+                <td>{{$page->title}}</td>
+                <td>{{$page->created_at}}</td>
                 <td style="width: 11%">
-                    <form action="{{route('sliders.destroy',$slider)}}" method="POST">
+                    <form action="{{route('pages.destroy',$page)}}" method="POST">
 
-                        <a href="{{route('sliders.show',$slider)}}" title="show">
+                        <a href="{{route('pages.show',$page)}}" title="show">
                             <i class="fas fa-eye text-success  fa-lg"></i>
                         </a>
 
-                        <a href="{{route('sliders.edit',$slider)}}" title="edit">
+                        <a href="{{route('pages.edit',$page)}}" title="edit">
                             <i class="fas fa-edit  fa-lg"></i>
                         </a>
 
@@ -57,7 +57,7 @@
         @endforeach
     </table>
 
-    {{-- {!! $sliders->links() !!} --}}
+    {{-- {!! $pages->links() !!} --}}
 
 
 @endsection

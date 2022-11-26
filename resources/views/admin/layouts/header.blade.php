@@ -31,7 +31,12 @@
                 </div>
 
                 <span class="logout-spn">
-                    <a href="" style="color:#fff;">LOGOUT</a>
+                    <form action="{{route('logout')}}" method="post">
+                        @csrf
+                        {{-- <a href="{{route('logout')}}" style="color:#fff;">LOGOUT</a> --}}
+                     <button class="btn btn-primary"  type="submit">تسجيل الخروج</button>
+                    </form>
+                    
 
                 </span>
             </div>

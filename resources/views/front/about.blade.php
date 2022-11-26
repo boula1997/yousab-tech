@@ -18,7 +18,7 @@
             </ol>
         </div>
         @include('front.components.about')
-        @include('front.components.team')
+        {{-- @include('front.components.team') --}}
         @include('front.components.partners')
     </div>
 @endsection

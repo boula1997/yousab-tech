@@ -12,6 +12,12 @@
         </div>
     </div>
 
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success">
+        <p style="text-align: end">{{$message}} </p>
+    </div>
+    @endif
+
     @if ($errors->any())
         <div class="alert alert-danger">
             <strong>اخطاء!</strong> 

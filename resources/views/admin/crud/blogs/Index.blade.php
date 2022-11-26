@@ -6,6 +6,9 @@
             <div class="pull-center">
                 <h2 style="text-align: center">لوحة التحكم</h2>
             </div>
+            <div class="pull-left">
+                <a class="btn btn-primary" href="{{route('dashboard')}}" title="Go back"> <i class="fas fa-backward "></i> </a>
+            </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{route('blogs.create')}}" title="Create a blog"> <i class="fas fa-plus-circle"></i>
                     </a>

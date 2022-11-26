@@ -7,7 +7,7 @@
             <div class="pull-left">
                 <h2>  </h2>
             </div>
-            <div class="pull-right">
+            <div class="pull-left">
                 <a class="btn btn-primary" href="{{route('blogs.index')}}" title="Go back"> <i class="fas fa-backward "></i> </a>
             </div>
         </div>

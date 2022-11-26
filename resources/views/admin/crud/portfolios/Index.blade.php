@@ -6,6 +6,9 @@
             <div class="pull-center">
                 <h2 style="text-align: center">لوحة التحكم</h2>
             </div>
+            <div class="pull-left">
+                <a class="btn btn-primary" href="{{route('dashboard')}}" title="Go back"> <i class="fas fa-backward "></i> </a>
+            </div>
             <div class="pull-right">
                 <a class="bt    n btn-success" href="{{route('portfolios.create')}}" title="Create a portfolio"> <i class="fas fa-plus-circle"></i>
                     </a>
@@ -31,7 +34,7 @@
                 <td>#{{$loop->iteration}}</td>
                 <td>{{$portfolio->title}}</td>
                 <td>{{$portfolio->created_at}}</td>
-                <td style="width: 11%">
+                <td style="width: 25%">
                     <form action="{{route('portfolios.destroy',$portfolio)}}" method="POST">
 
                         <a href="{{route('portfolios.show',$portfolio)}}" title="show">
@@ -41,6 +44,9 @@
                         <a href="{{route('portfolios.edit',$portfolio)}}" title="edit">
                             <i class="fas fa-edit  fa-lg"></i>
                         </a>
+                        <br>
+                        <br>
+                        
 
                         @csrf   
                         @method('DELETE')

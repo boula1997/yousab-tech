@@ -114,7 +114,7 @@ class ServiceController extends Controller
          $service->update($data);
  
  
-        return redirect()->route('services.index')
+        return redirect()->route('services.edit',compact('service'))
             ->with('success', 'تم التعديل بنجاح');
     }
     /**
