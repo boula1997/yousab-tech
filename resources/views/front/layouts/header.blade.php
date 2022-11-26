@@ -85,7 +85,7 @@
                     </li>
                     <!-- Navbar dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" {{ Route::is('front.portfolio')? 'active' : '' }}" href="#"
+                        <a class="nav-link dropdown-toggle {{ Route::is('front.portfolio')? 'active' : '' }}" href="#"
                             id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                             اعمالنا
                         </a>
