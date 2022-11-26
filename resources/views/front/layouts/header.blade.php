@@ -115,9 +115,9 @@
             <!-- Right elements -->
             <div class="d-flex align-items-center">
                 <!-- Navbar brand -->
-                <a class="navbar-brand mt-2 mt-lg-0" href="{{route('front.home')}}">
-                    <img src="{{asset($setting->logo)}}" height="15" alt="Logo" loading="lazy"
-                        style="width: auto; height: 80px; border-radius: 10px; box-shadow: 10px; object-fit:cover;" />
+                <a class="navbar-brand mt-2 mt-lg-0 bg-white" href="{{route('front.home')}}">
+                    <img src="{{asset($setting->logo)}}" alt="Logo" loading="lazy"
+                        style="width: 110px; height: 100px; border-radius: 10px; box-shadow: 10px; object-fit:cover;" />
                 </a>
             </div>
             <!-- Right elements -->
