@@ -38,13 +38,13 @@ class CounterController extends Controller
      */
     public function store(Request $request)
     { 
-        // dd($request->all());
         $request->validate([
          'title' => 'required',
          'count' => 'required',
       ],['title.required'=>'حقل الاسم مطلوب',
-      'count.required'=>'حقل الرابط مطلوب',
+      'count.required'=>'حقل العدد مطلوب',
     ]);
+    
     
         Counter::create($request->all());
         return redirect()->route('counters.index')
@@ -86,7 +86,7 @@ class CounterController extends Controller
             'title' => 'required',
             'count' => 'required',
          ],['title.required'=>'حقل الاسم مطلوب',
-         'count.required'=>'حقل الرابط مطلوب',
+         'count.required'=>'حقل العدد مطلوب',
        ]);
          
          $data=$request->all();

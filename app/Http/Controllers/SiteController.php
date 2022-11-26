@@ -11,6 +11,8 @@ use App\Models\Page;
 use App\Models\Partner;
 use App\Models\Team;
 use App\Models\Contact;
+use App\Models\Counter;
+use App\Models\Video;
 use App\Http\Requests\ContactRequest;
 use Illuminate\Http\Request;
 
@@ -20,6 +22,7 @@ class SiteController extends Controller
     {
         $services=Service::get();
         $sliders=Slider::get();
+        $counters=Counter::get();
         $blogs=Blog::get();
         $portfolios=Gallery::get();
         $about_section=Page::where('identifier','about')->first();
@@ -29,7 +32,7 @@ class SiteController extends Controller
         $blogs_footer=Blog::take(3)->get();
         $portfolios=Gallery::get();
 
-         return view('front.index',compact('services','blogs_footer','portfolios','sliders','setting','blogs','contact_section','about_section','advantage_section','setting','blogs'));
+         return view('front.index',compact('services','blogs_footer','portfolios','sliders','setting','blogs','contact_section','about_section','advantage_section','setting','blogs','counters'));
 
 
     }
@@ -117,7 +120,8 @@ class SiteController extends Controller
         $portfolio_section=Page::where('identifier','portfolio')->first();
         $portfolios=Gallery::get();
         $partners=Partner::get();
-        return view('front.video',compact('portfolios','setting','blogs_footer','portfolio_section','partners'));
+        $videos=Video::get();
+        return view('front.video',compact('portfolios','setting','blogs_footer','portfolio_section','partners','videos'));
     }
 
     public function single_portfolio()
