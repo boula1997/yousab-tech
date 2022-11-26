@@ -5,11 +5,11 @@
     .counter-icon {
         font-size: 2em !important;
         margin-top: 10%;
-        color: white;
+        color: teal;
     }
 
     .counter-h2 {
-        color: white;
+        color: teal;
     }
 
     /* .intro {
@@ -74,15 +74,25 @@
 
 </script>
 
-<div class="container-fluid text-center m-auto">
+<div class="container-fluid text-center">
     {{-- <h1>Some cool facts</h1> --}}
     <div class="row pt-5">
-        @foreach ($counters as $counter)
         <div class="col-sm-3 pt-3 pb-4" style="background-color: #00FF00">
-            <h2 class="counter-h2" data-max="{{$counter->count}}"></h2>
-            <h2 class="counter-h2">{{$counter->title}}</h2>
+            <i class="fa fa-user counter-icon"></i>
+            <h2 class="counter-h2" data-max="50">+ Happy Customers</h2>
         </div>
-
+        <div class="col-sm-3 pt-3 pb-4" style="background-color: #2EFF2E">
+            <i class="fa fa-code counter-icon"></i>
+            <h2 class="counter-h2" data-max="25000">+ Lines of code</h2>
+        </div>
+        <div class="col-sm-3 pt-3 pb-4" style="background-color: #5CFF5C">
+            <i class="fa fa-lock counter-icon"></i>
+            <h2 class="counter-h2" data-max="10">+ Projects</h2>
+        </div>
+        <div class="col-sm-3 pt-4 pb-5" style="background-color: #8AFF8A">
+            <i class="fa fa-briefcase counter-icon"></i>
+            <h2 class="counter-h2" data-max="30" id="test">+ Developers</h2>
+        </div>
         @endforeach
     </div>
 </div>
