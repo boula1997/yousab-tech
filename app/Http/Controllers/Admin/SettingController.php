@@ -11,10 +11,28 @@ class SettingController extends Controller
     public function setting(Request $request){
     $setting=Setting::first();
     $data=$request->all();
-    if($data['logo']==null)
+    if(!$request->hasFile('logo'))
     $data['logo']=$setting->logo;
-    if($data['tab']==null)
+    else{
+        $file = $request->file('logo');
+        $name=$file->getClientOriginalName();
+        $file->move('images',$name);
+        $data['logo']='images/'.$name;
+    }
+
+    if(!$request->hasFile('tab'))
     $data['tab']=$setting->tab;
+    else{
+        $file2 = $request->file('tab');
+        $name2=$file2->getClientOriginalName();
+        $file2->move('images',$name2);
+        $data['tab']='images/'.$name2;
+    }
+
+
+
+
+
     $setting->update($data);
     return redirect()->route('edit.setting',compact('setting'))
     ->with('success', 'تم التعديل بنجاح');

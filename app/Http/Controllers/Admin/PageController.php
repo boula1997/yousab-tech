@@ -43,10 +43,8 @@ class PageController extends Controller
         // dd($request->all());
         $request->validate([
             'title' => 'required',
-            'image' => 'required',
             'description' => 'required',
          ],['title.required'=>'حقل الاسم مطلوب',
-         'image.required'=>'حقل الصورة مطلوب',
          'description.required'=>'حقل الوصف مطلوب',
        ]);
 
