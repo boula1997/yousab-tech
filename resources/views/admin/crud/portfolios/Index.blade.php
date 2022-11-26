@@ -44,6 +44,9 @@
                         <a href="{{route('portfolios.edit',$portfolio)}}" title="edit">
                             <i class="fas fa-edit  fa-lg"></i>
                         </a>
+                        <br>
+                        <br>
+                        
 
                         @csrf   
                         @method('DELETE')
