@@ -5,11 +5,11 @@
     .counter-icon {
         font-size: 2em !important;
         margin-top: 10%;
-        color: teal;
+        color: white;
     }
 
     .counter-h2 {
-        color: teal;
+        color: white;
     }
 
     /* .intro {
@@ -83,6 +83,7 @@
             <h2 class="counter-h2">{{$counter->title}}</h2>
         </div>
             
+        @endforeach
         @endforeach
     </div>
 </div>

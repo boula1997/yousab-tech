@@ -1,6 +1,4 @@
-
-
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 
 <style>
@@ -45,9 +43,9 @@
 
 </div>
 <div class="about-main container">
-    <div class="row">
+    <div class="row animate__animated animate__fadeInDown" style="animation-duration: 3s;">
         <div class="col-md-8 col-sm-12">
-            {!!  $service->description  !!}
+            {!! $service->description !!}
         </div>
         <div class="col-md-4 col-sm-12" style="height: 400px;">
             <img style="height: 100%; object-fit: cover" class="img-fluid rounded" src="{{ asset($service->image) }}"
