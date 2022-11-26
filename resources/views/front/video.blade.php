@@ -25,38 +25,43 @@
         </div>
     </div>
 </div>
-<div class="m-auto">
-    <div id="carouselExampleControls" class="carousel slide" data-mdb-ride="carousel" data-mdb-touch="true" data-interval="false">
-        <div class="carousel-inner rounded-5">
-            <div class="carousel-item active m-auto text-center">
-                    <iframe width="75%" height="70%" src="https://www.youtube.com/embed/CB_rXABU8DI"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-            </div>
-            <div class="carousel-item m-auto text-center">
-                <iframe width="75%" height="70%" src="https://www.youtube.com/embed/CB_rXABU8DI"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-            </div>
-            <div class="carousel-item m-auto text-center">
-                <iframe width="75%" height="70%" src="https://www.youtube.com/embed/CB_rXABU8DI"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-12 mb-3" style="height: 400px">
+            <div style="height: 100%" class="rounded-5 card mb-3">
+                <iframe class="rounded-5" width="100%" height="100%" src="https://www.youtube.com/embed/C0DPdy98e4c"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
         </div>
-        <button class="carousel-control-prev text-black" type="button" data-mdb-target="#carouselExampleControls"
-            data-mdb-slide="prev">
-            <span class="carousel-control-prev-icon text-black" aria-hidden="true"></span>
-            <span class="visually-hidden text-black">Previous</span>
-        </button>
-        <button class="carousel-control-next text-black" type="button" data-mdb-target="#carouselExampleControls"
-            data-mdb-slide="next">
-            <span class="carousel-control-next-icon text-black" aria-hidden="true"></span>
-            <span class="visually-hidden text-black">Next</span>
-        </button>
+        <div class="col-md-4 col-sm-12 mb-3" style="height: 400px">
+            <div class="card" style="height: 100%">
+                <iframe class="rounded-5" width="100%" height="100%" src="https://www.youtube.com/embed/LXb3EKWsInQ"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-3" style="height: 400px">
+            <div class="card" style="height: 100%">
+                <iframe class="rounded-5" width="100%" height="100%" src="https://www.youtube.com/embed/CHSnz0bCaUk"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-3" style="height: 400px">
+            <div class="card" style="height: 100%">
+                <iframe class="rounded-5" width="100%" height="100%" src="https://www.youtube.com/embed/CHSnz0bCaUk"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
 </div>
+
+
 @endsection
