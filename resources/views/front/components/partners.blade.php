@@ -1,5 +1,5 @@
 		<!-- عملائنا -->
-		<div class="customers-box"> 
+		<div class="customers-box">
 			<h2>عملائنا</h2>
 			<div class="row">
 				@foreach ($partners as $partner)
