@@ -26,8 +26,8 @@
 
     <style>
         .navbar {
-                background: rgb(92, 255, 92);
-                background: linear-gradient(90deg, rgba(92, 255, 92, 1) 0%, rgba(0, 163, 0, 1) 100%);
+            background: rgb(92, 255, 92);
+            background: linear-gradient(90deg, rgba(92, 255, 92, 1) 0%, rgba(0, 163, 0, 1) 100%);
         }
 
         .dropdown-item:hover {
@@ -44,6 +44,11 @@
             color: black !important;
             font-size: 18px;
             margin-left: 10px;
+        }
+
+        @media (min-width: 1200px) {
+            height: 150px;
+            widows: 160px;
         }
 
     </style>
@@ -102,7 +107,7 @@
                     <li class="nav-item">
                         <a class="nav-link {{ Route::is('front.video')? 'active' : '' }}"
                             href="{{ route('front.video') }}">فيديوهاتنا
-                            </a>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Route::is('front.contact')? 'active' : '' }}"
@@ -115,11 +120,13 @@
             <!-- Right elements -->
             <div class="d-flex align-items-center">
                 <!-- Navbar brand -->
-                <a class="navbar-brand mt-2 mt-lg-0 bg-white" href="{{route('front.home')}}">
+                <a class="navbar-brand mt-2 mt-lg-0" href="{{route('front.home')}}">
+                    <h5 class="text-white ps-3">شركة حدائق الفيروز</h5>
                     <img src="{{asset($setting->logo)}}" alt="Logo" loading="lazy"
-                        style="width: 110px; height: 100px; border-radius: 10px; box-shadow: 10px; object-fit:cover;" />
+                        style="width: 110px; height: 100px; border-radius: 10px; box-shadow: 10px; object-fit:cover; display: block;" />
                 </a>
             </div>
+
             <!-- Right elements -->
         </div>
         <!-- Container wrapper -->
