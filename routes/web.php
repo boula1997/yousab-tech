@@ -11,6 +11,8 @@ use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ImageController;
+use App\Http\Controllers\Admin\CounterController;
+use App\Http\Controllers\Admin\VideoController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -41,6 +43,8 @@ Route::resource('sliders',SliderController::class);
 Route::resource('pages',PageController::class);
 Route::resource('about',AboutController::class);
 Route::resource('portfolios',PortfolioController::class);
+Route::resource('counters',CounterController::class);
+Route::resource('videos',VideoController::class);
 Route::resource('tests',ImageController::class);
 Route::put('/setting','App\Http\Controllers\Admin\SettingController@setting')->name('setting');
 Route::get('/setting/edit','App\Http\Controllers\Admin\SettingController@editSetting')->name('edit.setting');
