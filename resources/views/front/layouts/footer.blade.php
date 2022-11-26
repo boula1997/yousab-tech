@@ -43,9 +43,6 @@
 </head>
 
 @include('front.components.whatsapp')
-@include('front.components.counter')
-
-
 
 <footer class="text-center text-black" style="color: black !important">
     <div class="container bottom_border">

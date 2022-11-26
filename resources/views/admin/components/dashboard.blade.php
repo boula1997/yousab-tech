@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-lg-12 ">
             <div class="alert alert-info">
-                <strong>اكتشف المزيد من التعديلات </strong> {{auth()->user()->name}} مرحبا بك  
+                <strong>اكتشف المزيد من التعديلات </strong> {{ auth()->user()->name }} مرحبا بك
             </div>
 
         </div>
@@ -61,7 +61,7 @@
 
 
         </div>
-       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
             <div class="div-square">
                 <a href="{{ route('edit.setting') }}">
                     <i class="fa fa-cogs fa-5x"></i>
@@ -71,9 +71,9 @@
 
 
         </div>
-         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
             <div class="div-square">
-                <a href="{{route('pages.index')}}">
+                <a href="{{ route('pages.index') }}">
                     <i class="fa fa-comments-o fa-5x"></i>
                     <h4>الصفحات</h4>
                 </a>
@@ -82,89 +82,37 @@
 
         </div>
     </div>
-    {{-- <!-- /. ROW  -->
     <div class="row text-center pad-top">
-
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
             <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-clipboard fa-5x"></i>
-                    <h4>All Docs</h4>
+                <a href="{{ route('videos.index') }}">
+                    <i class="fa fa-picture-o fa-5x"></i>
+                    <a href="{{ route('videos.index') }}">
+                        <h4>الفيديوهات</h4>
+                    </a>
                 </a>
             </div>
 
 
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-gear fa-5x"></i>
-                    <h4>Settings</h4>
-                </a>
-            </div>
-
-
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-wechat fa-5x"></i>
-                    <h4>Live Talk</h4>
-                </a>
-            </div>
-
-
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-bell-o fa-5x"></i>
-                    <h4>Notifications </h4>
-                </a>
-            </div>
-
-
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-rocket fa-5x"></i>
-                    <h4>Launch</h4>
-                </a>
-            </div>
-
-
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-user fa-5x"></i>
-                    <h4>Register User</h4>
-                </a>
-            </div>
-
-
-        </div>
-    </div>
-    <!-- /. ROW  -->
-    <div class="row text-center pad-top">
-
 
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
             <div class="div-square">
-                <a href="blank.html">
+                <a href="{{ route('counters.index') }}">
                     <i class="fa fa-envelope-o fa-5x"></i>
-                    <h4>Mail Box</h4>
+                    <h4>العداد</h4>
                 </a>
             </div>
 
 
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+        {{-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
             <div class="div-square">
-                <a href="blank.html">
+                <a href="{{ route('blogs.index') }}">
                     <i class="fa fa-lightbulb-o fa-5x"></i>
-                    <h4>New Issues</h4>
+                    <a href="{{ route('blogs.index') }}">
+                        <h4>المقالات</h4>
+                    </a>
                 </a>
             </div>
 
@@ -172,9 +120,9 @@
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
             <div class="div-square">
-                <a href="blank.html">
+                <a href="{{ route('sliders.index') }}">
                     <i class="fa fa-users fa-5x"></i>
-                    <h4>See Users</h4>
+                    <h4>شرائح العرض</h4>
                 </a>
             </div>
 
@@ -182,9 +130,9 @@
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
             <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-key fa-5x"></i>
-                    <h4>Admin </h4>
+                <a href="{{ route('edit.setting') }}">
+                    <i class="fa fa-cogs fa-5x"></i>
+                    <h4>الاعددات </h4>
                 </a>
             </div>
 
@@ -192,167 +140,16 @@
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
             <div class="div-square">
-                <a href="#">
+                <a href="{{ route('pages.index') }}">
                     <i class="fa fa-comments-o fa-5x"></i>
-                    <h4>Support</h4>
-                </a>
-            </div>
-
-
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-circle-o-notch fa-5x"></i>
-                    <h4>Check Data</h4>
-                </a>
-            </div>
-
-
-        </div>
-    </div>
-    <!-- /. ROW  -->
-    <div class="row text-center pad-top">
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-rocket fa-5x"></i>
-                    <h4>Launch</h4>
-                </a>
-            </div>
-
-
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-clipboard fa-5x"></i>
-                    <h4>All Docs</h4>
-                </a>
-            </div>
-
-
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-gear fa-5x"></i>
-                    <h4>Settings</h4>
-                </a>
-            </div>
-
-
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-wechat fa-5x"></i>
-                    <h4>Live Talk</h4>
-                </a>
-            </div>
-
-
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-bell-o fa-5x"></i>
-                    <h4>Notifications </h4>
-                </a>
-            </div>
-
-
-        </div>
-
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-user fa-5x"></i>
-                    <h4>Register User</h4>
-                </a>
-            </div>
-
-
-        </div>
-    </div>
-    <!-- /. ROW  -->
-    <div class="row text-center pad-top">
-
-
-
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-lightbulb-o fa-5x"></i>
-                    <h4>New Issues</h4>
-                </a>
-            </div>
-
-
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-users fa-5x"></i>
-                    <h4>See Users</h4>
-                </a>
-            </div>
-
-
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-key fa-5x"></i>
-                    <h4>Admin </h4>
-                </a>
-            </div>
-
-
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-comments-o fa-5x"></i>
-                    <h4>Support</h4>
-                </a>
-            </div>
-
-
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-circle-o-notch fa-5x"></i>
-                    <h4>Check Data</h4>
-                </a>
-            </div>
-
-
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-            <div class="div-square">
-                <a href="blank.html">
-                    <i class="fa fa-envelope-o fa-5x"></i>
-                    <h4>Mail Box</h4>
+                    <h4>الصفحات</h4>
                 </a>
             </div>
 
 
         </div> --}}
     </div>
-    <!-- /. ROW  -->
-    {{-- <div class="row">
-        <div class="col-lg-12 ">
-            <br />
-            <div class="alert alert-danger">
-                <strong>Want More Icons Free ? </strong> Checkout fontawesome website and use any icon <a
-                    target="_blank" href="http://fortawesome.github.io/Font-Awesome/icons/">Click Here</a>.
-            </div>
 
-        </div>
-    </div> --}}
-    <!-- /. ROW  -->
 </div>
 <!-- /. PAGE INNER  -->
 <!-- /. PAGE WRAPPER  -->

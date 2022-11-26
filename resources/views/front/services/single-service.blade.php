@@ -1,34 +1,58 @@
+
+
+
+
+
+<style>
+    .hm-gradient {
+        background: #57FA57;
+        border-radius: 4px;
+    }
+
+    .about-main img {
+        transition: all 0.7s ease-in-out;
+        height: 300px;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    .about-main img:hover {
+        transform: scale(1.1);
+        transition: all 0.7s ease-in-out;
+    }
+
+</style>
+
 @extends('front.layouts.master')
 @section('content')
-    <!-- full Title -->
-    <div class="full-title">
-        <div class="container">
-            <!-- Page Heading/Breadcrumbs -->
-            <h1 class="mt-4 mb-3">{{ $service->title }}
-            </h1>
-        </div>
+<!-- full Title -->
+<div class="full-title">
+    <div class="container text-center">
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">{{ $service->title }}
+        </h1>
     </div>
+</div>
+<div class="container">
     <div class="container">
-        <div class="breadcrumb-main">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="index.html">الرئسية</a>
-                </li>
-                <li class="breadcrumb-item active">{{ $service->title }}</li>
-            </ol>
+        <div class="hm-gradient mb-5">
+            <div class="container p-4" style="font-size: 20px">
+                <a style="color: #4E3A14" href="index.html">الرئيسية</a> / <span
+                    style="color: white">{{ $service->title }}</span>
+            </div>
         </div>
+    </div>
 
-    </div>
-    <div class="about-main">
-        <div class="row">
-           <div class="col-lg-6" >
-              <h2>{{ $service->title }}</h2>
-              {!!  $service->description  !!}
-           </div>
-           <div class="col-lg-6" style="padding-top: 5%">
-              <img class="img-fluid rounded" src="{{ asset($service->image)}}" alt="" />
-           </div>
+</div>
+<div class="about-main container">
+    <div class="row">
+        <div class="col-md-8 col-sm-12">
+            {!!  $service->description  !!}
         </div>
-        <!-- /.row -->
+        <div class="col-md-4 col-sm-12" style="height: 400px;">
+            <img style="height: 100%; object-fit: cover" class="img-fluid rounded" src="{{ asset($service->image) }}"
+                alt="" />
+        </div>
     </div>
+</div>
 @endsection

@@ -15,5 +15,6 @@
                     </a>
                 </div>
             </div>
+            @include('front.components.counter')
     </div>
 @endsection

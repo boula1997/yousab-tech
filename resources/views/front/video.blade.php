@@ -28,6 +28,8 @@
 
 <div class="container">
     <div class="row">
+        @foreach ($videos as $video)
+        {{-- {{dd($video->youtube_link)}} --}}
         <div class="col-md-4 col-sm-12 mb-3" style="height: 400px">
             <div style="height: 100%" class="rounded-5 card mb-3" >
                 <iframe class="rounded-5" width="100%" height="100%" src="https://www.youtube.com/embed/C0DPdy98e4c"
@@ -52,14 +54,7 @@
                     allowfullscreen></iframe>
             </div>
         </div>
-        <div class="col-md-4 col-sm-12 mb-3" style="height: 400px">
-            <div class="card" style="height: 100%">
-                <iframe class="rounded-5" width="100%" height="100%" src="https://www.youtube.com/embed/CHSnz0bCaUk"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 

@@ -22,7 +22,7 @@
 @section('content')
 <!-- full Title -->
 <div class="full-title">
-    <div class="container">
+    <div class="container text-center">
         <!-- Page Heading/Breadcrumbs -->
         <h1 class="mt-4 mb-3">{{ $blog->title }}
         </h1>
