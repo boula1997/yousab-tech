@@ -37,17 +37,17 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>الاسم:</strong>
-                        <input type="text" value="{{old('title')}}" name="title" class="form-control">
+                        <input type="text" value="{{old('title',$counter->title)}}" name="title" class="form-control">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>العدد:</strong>
-                        <input type="text" value="{{old('counter')}}" name="counter" class="form-control">
+                        <input type="text" value="{{old('counter',$counter->count)}}" name="count" class="form-control">
                     </div>
                 </div>
     
-                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <div class="c:\Users\User\AppData\Local\Programs\Microsoft VS Code\resources\app\out\vs\code\electron-sandbox\workbench\workbench.htmlcol-xs-12 col-sm-12 col-md-12 text-center">
                     <button type="submit" class="btn btn-primary">حفظ</button>
                 </div>
             </div>

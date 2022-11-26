@@ -35,7 +35,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>العدد:</strong>
-                    <input type="text" value="{{old('counter')}}" name="counter" class="form-control">
+                    <input type="text" value="{{old('counter')}}" name="count" class="form-control">
                 </div>
             </div>
 
