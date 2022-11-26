@@ -48,6 +48,7 @@
                             <div class="col-md-12">
                                 @foreach($images as $image)
                                  <img height="10%" width="10%" src="{{asset($image->image)}}" alt="">
+                                 <input type="checkbox" name="delimages[]" value="{{$image->id}}">
                                 @endforeach
 
                                {{-- <a href="{{route('tests.create')}}">

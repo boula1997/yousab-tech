@@ -71,7 +71,7 @@ class PortfolioController extends Controller
      */
     public function show(Gallery $portfolio)
     {
-        $images=json_decode($portfolio->image);
+        $images=Image::where('gallery_id',$portfolio->id)->get();
         return view('admin.crud.portfolios.show', compact('portfolio','images'));
     }
 
@@ -98,11 +98,12 @@ class PortfolioController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'images' => 'array|required',
+            
          ],['title.required'=>'حقل الاسم مطلوب',
-         'image.required'=>'حقل الصورة مطلوب',]);
+         ]);
 
-         if($request->hasFile('images')!==null){
+         
+         if($request->hasFile('images')){
 
             $files=$request->file('images');
             foreach($files as $file){
@@ -111,6 +112,13 @@ class PortfolioController extends Controller
                 Image::create(['image'=>'images/'.$name,'gallery_id'=>$portfolio->id]);
             }
 
+         }
+         if($request->has('delimages')){
+
+            $delimages=$request->input('delimages');
+            foreach($delimages as $delimage){
+                Image::where('id',$delimage)->delete();
+            }
          }
 
         return redirect()->route('portfolios.index')
