@@ -7,7 +7,7 @@
     <meta name="description" content="حدائق الفيروز لنسيق الحدائق">
     <meta name="keywords" content="{{asset($setting->meta_data)}}">
     <title>شركة حدائق الفيروز</title>
-    <link rel="icon" href="{{asset($setting->logo)}}">
+    <link rel="icon" href="{{asset($setting->tab)}}">
     <!-- Bootstrap core CSS -->
     <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Fontawesome CSS -->
@@ -116,7 +116,7 @@
             <div class="d-flex align-items-center">
                 <!-- Navbar brand -->
                 <a class="navbar-brand mt-2 mt-lg-0" href="{{route('front.home')}}">
-                    <img src="{{asset('images/logo.png')}}" height="15" alt="Logo" loading="lazy"
+                    <img src="{{asset($setting->logo)}}" height="15" alt="Logo" loading="lazy"
                         style="width: auto; height: 80px; border-radius: 10px; box-shadow: 10px; object-fit:cover;" />
                 </a>
             </div>
