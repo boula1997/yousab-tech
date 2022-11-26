@@ -131,14 +131,14 @@
             <a href="{{ route('front.home') }}"><img width="150px" height="150px" src="{{ asset($setting->logo) }}"
                     alt="" /></a>
         </div>
-        <div class="social_footer">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="{{ $setting->youtube }}" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="{{ $setting->tiktok }}" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-        </div>
+        <ul class="social_footer_ul">
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="{{ $setting->youtube }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="{{ $setting->tiktok }}" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
+        </ul>
         <!--social_footer_ul ends hezre-->
     </div>
 </footer>
@@ -158,18 +158,15 @@
                 $("#contactForm").html("<div id='message' style='text-align: center;'></div>");
                 $("#message")
                     .html(
-                        `<div class="p-3 mb-2 bg-secondary bg-gradient text-center text-white">
-                            <h2>تم ارسال رسالتك بنجاح!</h2>
-                            <p>سيتم الرد عليك قريبا</p>
-                        </div>`
+                        "<h2 style='background-color:green; color:white; text-align: center;'>تم ارسال رسالتك بنجاح!</h2>"
                     )
-                    // .append("")
+                    .append("<p>سيتم الرد عليك قريبا</p>")
                     .hide()
-                    // .fadeIn(1500, function () {
-                    //     $("#message").append(
-                    //         "<img id='checkmark' src='{{ asset($setting->logo) }}' />"
-                    //     );
-                    // });
+                    .fadeIn(1500, function () {
+                        $("#message").append(
+                            "<img id='checkmark' src='{{ asset($setting->logo) }}' />"
+                        );
+                    });
             }
 
 

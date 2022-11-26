@@ -333,16 +333,28 @@ footer p {
 	color: #ffffff;
 	text-decoration: none;
 }
-.social_footer {
-	/* display:table; */
+.social_footer_ul {
+	display:table;
 	/* margin:15px auto 0 auto; */
 	list-style-type:none;
 	/* padding: 0; */
 	}
-
-.social_footer a  {
+.social_footer_ul li {
+	padding:20px;
+	padding:10px;
+    display: inline-block;
+	/* float:left; */
+    /* display: flex; */
+    /* flex-direction: row; */
+	}
+.social_footer_ul li a {
 	color:#fff;
-    padding: 5px;
+	}
+.social_footer_ul li i {
+	width:20px;
+	height:20px;
+	text-align:center;
+    position: relative;
 	}
 
 /* ---- All Pages CSS ---- */
