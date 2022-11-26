@@ -82,7 +82,7 @@
             <h2 class="counter-h2" data-max="{{$counter->count}}"></h2>
             <h2 class="counter-h2">{{$counter->title}}</h2>
         </div>
-            
+
         @endforeach
     </div>
 </div>
