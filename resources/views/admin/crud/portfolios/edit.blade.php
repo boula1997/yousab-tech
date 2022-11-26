@@ -45,14 +45,14 @@
                 <div class="card card-custom">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-10">
+                            <div class="col-md-12">
                                 @foreach($images as $image)
                                  <img height="10%" width="10%" src="{{asset($image->image)}}" alt="">
                                 @endforeach
 
-                               <a href="{{route('tests.create')}}">
+                               {{-- <a href="{{route('tests.create')}}">
                                    <button type="button" class="btn btn-primary">تحكم في الصور</button>
-                               </a>
+                               </a> --}}
    
                              </div>
                             {{-- <div class="col-md-2">
@@ -76,6 +76,39 @@
             
                             </div> --}}
              
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="card card-custom">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group" style="text-align: center">
+                                                        <label class="col-form-label" style="font-size: 15pt"> <strong> اختر الصور</strong></label>
+                                                        <div class="image-input image-input-empty image-input-outline" id="kt_image_5" style="background-image: url({{ asset('admin') }}/assets/media/users/blank.png)">
+                                                            <div class="image-input-wrapper"></div>
+                                                            <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
+                                                                <i class="fa fa-pen icon-sm text-muted"></i>
+                                                                <input type="file" name="images[]" multiple  accept=".png, .jpg, .jpeg, .svg" />
+                                                                <input type="hidden" name="profile_avatar_remove" />
+                                                            </label>
+                                                            <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
+                                                                <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                                            </span>
+                                                            <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="remove" data-toggle="tooltip" title="Remove avatar">
+                                                                <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                
+                                                </div>
+                                 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
