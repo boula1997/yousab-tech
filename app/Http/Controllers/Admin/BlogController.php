@@ -49,12 +49,10 @@ class BlogController extends Controller
       'description.required'=>'حقل الوصف مطلوب',
     ]);
  
- 
-    $file = $request->file('image');
-    $name=$file->getClientOriginalName();
-    $file->move('images',$name);
     $data=$request->all();
-    $data['image']='images/'.$name;
+    $file = $request->file('image');
+    $data['image']=$request->image->store('images');
+    $file->move('images',$data['image']);
         Blog::create($data);
         return redirect()->route('blogs.index')
             ->with('success', 'تم الانشاء');
@@ -102,9 +100,8 @@ class BlogController extends Controller
             if(file_exists($blog->image))
             File::delete($blog->image);
             $file = $request->file('image');
-            $name=$file->getClientOriginalName();
-            $file->move('images',$name);
-            $data['image']='images/'.$name;
+            $data['image']=$request->image->store('images');
+            $file->move('images',$data['image']);
 
          }
  
@@ -125,8 +122,8 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
+        File::delete($blog->image);
         $blog->delete();
- 
         return redirect()->route('blogs.index')
             ->with('success', 'تم الحذف');
     }

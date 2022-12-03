@@ -52,9 +52,9 @@ class PortfolioController extends Controller
 
             $files=$request->file('images');
             foreach($files as $file){
-                $name=$file->getClientOriginalName();
-                $file->move('images',$name);
-                Image::create(['image'=>'images/'.$name,'gallery_id'=>$portfolio->id]);
+                $data['image']=$file->store('images');
+                $file->move('images',$data['image']);
+                Image::create(['image'=>$data['image'],'gallery_id'=>$portfolio->id]);
             }
 
          }
@@ -107,9 +107,9 @@ class PortfolioController extends Controller
 
             $files=$request->file('images');
             foreach($files as $file){
-                $name=$file->getClientOriginalName();
-                $file->move('images',$name);
-                Image::create(['image'=>'images/'.$name,'gallery_id'=>$portfolio->id]);
+                $data['image']=$file->store('images');
+                $file->move('images',$data['image']);
+                Image::create(['image'=>$data['image'],'gallery_id'=>$portfolio->id]);
             }
 
          }
@@ -117,6 +117,7 @@ class PortfolioController extends Controller
 
             $delimages=$request->input('delimages');
             foreach($delimages as $delimage){
+                File::delete(Image::where('id',$delimage));
                 Image::where('id',$delimage)->delete();
             }
          }

@@ -49,12 +49,10 @@ class SliderController extends Controller
      'description.required'=>'حقل الوصف مطلوب',
    ]);
 
-
-   $file = $request->file('image');
-   $name=$file->getClientOriginalName();
-   $file->move('images',$name);
    $data=$request->all();
-   $data['image']='images/'.$name;
+   $file = $request->file('image');
+   $data['image']=$request->image->store('images');
+   $file->move('images',$data['image']);
        Slider::create($data);
        return redirect()->route('sliders.index')
            ->with('success', 'تم الانشاء');
@@ -102,9 +100,8 @@ class SliderController extends Controller
             if(file_exists($slider->image))
             File::delete($slider->image);
             $file = $request->file('image');
-            $name=$file->getClientOriginalName();
-            $file->move('images',$name);
-            $data['image']='images/'.$name;
+            $data['image']=$request->image->store('images');
+            $file->move('images',$data['image']);
 
          }
         else
@@ -125,6 +122,8 @@ class SliderController extends Controller
    public function destroy(Slider $slider)
    {
        $slider->delete();
+       File::delete($slider->image);
+
 
        return redirect()->route('sliders.index')
            ->with('success', 'تم الحذف');

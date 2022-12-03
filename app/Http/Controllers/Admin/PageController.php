@@ -48,11 +48,10 @@ class PageController extends Controller
          'description.required'=>'حقل الوصف مطلوب',
        ]);
 
-        $file = $request->file('image');
-        $name=$file->getClientOriginalName();
-        $file->move('images',$name);
         $data=$request->all();
-        $data['image']='images/'.$name;
+        $file = $request->file('image');
+        $data['image']=$request->image->store('images');
+        $file->move('images',$data['image']);
         Page::create($data);
         return redirect()->route('Pages.index')
             ->with('success', 'تم الانشاء');
@@ -101,9 +100,8 @@ class PageController extends Controller
             if(file_exists($page->image))
             File::delete($page->image);
             $file = $request->file('image');
-            $name=$file->getClientOriginalName();
-            $file->move('images',$name);
-            $data['image']='images/'.$name;
+            $data['image']=$request->image->store('images');
+            $file->move('images',$data['image']);
 
          }
  
@@ -125,6 +123,8 @@ class PageController extends Controller
     public function destroy(Page $page)
     {
         $page->delete();
+        File::delete($page->image);
+
  
         return redirect()->route('pages.index')
             ->with('success', 'تم الحذف');
