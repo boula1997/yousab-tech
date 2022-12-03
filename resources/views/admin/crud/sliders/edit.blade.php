@@ -51,7 +51,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-10">
-                                <img height="50%" src="{{asset($slider->image)}}" alt="">
+                                <img height="50%" src="{{asset('public/'.$slider->image)}}" alt="">
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group" style="text-align: center">
