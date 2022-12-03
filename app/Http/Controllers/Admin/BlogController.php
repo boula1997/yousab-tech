@@ -98,7 +98,7 @@ class BlogController extends Controller
  
          if($request->hasFile('image')){
             if(file_exists($blog->image))
-            File::delete($blog->image);
+            File::delete('public/'.$blog->image);
             $file = $request->file('image');
             $data['image']=$request->image->store('images');
             $file->move('public/images',$data['image']);
@@ -122,7 +122,7 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
-        File::delete($blog->image);
+        File::delete('public/'.$blog->image);
         $blog->delete();
         return redirect()->route('blogs.index')
             ->with('success', 'تم الحذف');

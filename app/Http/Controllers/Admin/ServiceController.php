@@ -100,7 +100,7 @@ class ServiceController extends Controller
          if($request->hasFile('image')){
 
             if(file_exists($service->image))
-            File::delete($service->image);
+            File::delete('public/'.$service->image);
             $file = $request->file('image');
             $data['image']=$request->image->store('images');
             $file->move('public/images',$data['image']);
@@ -125,7 +125,7 @@ class ServiceController extends Controller
     public function destroy(Service $service)
     {
         $service->delete();
-        File::delete($service->image);
+        File::delete('public/'.$service->image);
  
         return redirect()->route('services.index')
             ->with('success', 'تم الحذف');

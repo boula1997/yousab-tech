@@ -16,7 +16,7 @@ class SettingController extends Controller
     if(!$request->hasFile('logo'))
     $data['logo']=$setting->logo;
     else{
-        File::delete($setting->logo);
+        File::delete('public/'.$setting->logo);
         $file = $request->file('logo');
         $data['logo']=$request->image->store('images');
         $file->move('public/images',$data['image']);
@@ -25,7 +25,7 @@ class SettingController extends Controller
     if(!$request->hasFile('tab'))
     $data['tab']=$setting->tab;
     else{
-        File::delete($setting->tab);
+        File::delete('public/'.$setting->tab);
         $file2 = $request->file('tab');
         $data['tab']=$request->image->store('images');
         $file2->move('images',$data['image']);

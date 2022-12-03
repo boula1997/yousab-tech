@@ -117,7 +117,7 @@ class PortfolioController extends Controller
 
             $delimages=$request->input('delimages');
             foreach($delimages as $delimage){
-                File::delete(Image::where('id',$delimage));
+                File::delete('public/'.Image::where('id',$delimage));
                 Image::where('id',$delimage)->delete();
             }
          }
