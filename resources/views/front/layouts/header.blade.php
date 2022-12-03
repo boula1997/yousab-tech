@@ -10,12 +10,12 @@
     <title>شركة حدائق الفيروز</title>
     <link rel="icon" href="{{asset($setting->tab)}}">
     <!-- Bootstrap core CSS -->
-    <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Fontawesome CSS -->
-    <link href="{{asset('site/css/all.css')}}" rel="stylesheet">
+    <link href="{{asset('public/site/css/all.css')}}" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="{{asset('site/css/style.css')}}" rel="stylesheet">
-    <link href="{{asset('site/css/lightbox.css')}}" rel="stylesheet" />
+    <link href="{{asset('public/site/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('public/site/css/lightbox.css')}}" rel="stylesheet" />
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
