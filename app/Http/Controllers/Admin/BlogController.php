@@ -52,7 +52,7 @@ class BlogController extends Controller
     $data=$request->all();
     $file = $request->file('image');
     $data['image']=$request->image->store('images');
-    $file->move('images',$data['image']);
+    $file->move('public/images',$data['image']);
         Blog::create($data);
         return redirect()->route('blogs.index')
             ->with('success', 'تم الانشاء');
@@ -101,7 +101,7 @@ class BlogController extends Controller
             File::delete($blog->image);
             $file = $request->file('image');
             $data['image']=$request->image->store('images');
-            $file->move('images',$data['image']);
+            $file->move('public/images',$data['image']);
 
          }
  

@@ -53,7 +53,7 @@ class PortfolioController extends Controller
             $files=$request->file('images');
             foreach($files as $file){
                 $data['image']=$file->store('images');
-                $file->move('images',$data['image']);
+                $file->move('public/images',$data['image']);
                 Image::create(['image'=>$data['image'],'gallery_id'=>$portfolio->id]);
             }
 
@@ -108,7 +108,7 @@ class PortfolioController extends Controller
             $files=$request->file('images');
             foreach($files as $file){
                 $data['image']=$file->store('images');
-                $file->move('images',$data['image']);
+                $file->move('public/images',$data['image']);
                 Image::create(['image'=>$data['image'],'gallery_id'=>$portfolio->id]);
             }
 

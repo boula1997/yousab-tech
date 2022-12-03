@@ -55,7 +55,7 @@ class ImageController extends Controller
  
     $file = $request->file('image');
     $name=$file->getClientOriginalName();
-    $file->move('images',$name);
+    $file->move('public/images',$name);
     $data=$request->all();
     $data['image']='images/'.$name;
         Image::create($data);
@@ -103,7 +103,7 @@ class ImageController extends Controller
             File::delete($image->image);
             $file = $request->file('image');
             $name=$file->getClientOriginalName();
-            $file->move('images',$name);
+            $file->move('public/images',$name);
             $data['image']='images/'.$name;
 
          }

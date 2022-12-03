@@ -51,7 +51,7 @@ class PageController extends Controller
         $data=$request->all();
         $file = $request->file('image');
         $data['image']=$request->image->store('images');
-        $file->move('images',$data['image']);
+        $file->move('public/images',$data['image']);
         Page::create($data);
         return redirect()->route('Pages.index')
             ->with('success', 'تم الانشاء');
@@ -101,7 +101,7 @@ class PageController extends Controller
             File::delete($page->image);
             $file = $request->file('image');
             $data['image']=$request->image->store('images');
-            $file->move('images',$data['image']);
+            $file->move('public/images',$data['image']);
 
          }
  

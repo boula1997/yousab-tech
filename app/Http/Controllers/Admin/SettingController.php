@@ -19,7 +19,7 @@ class SettingController extends Controller
         File::delete($setting->logo);
         $file = $request->file('logo');
         $data['logo']=$request->image->store('images');
-        $file->move('images',$data['image']);
+        $file->move('public/images',$data['image']);
     }
 
     if(!$request->hasFile('tab'))
