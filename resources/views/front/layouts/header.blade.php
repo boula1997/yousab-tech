@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="حدائق الفيروز لنسيق الحدائق">
     <meta name="keywords" content="{{asset($setting->meta_data)}}">
+    <meta name="google-site-verification" content="l9ckpRd1nnm4e6bib_Il9gnvHUnTVIuGGF-atI5zOM4" />
     <title>شركة حدائق الفيروز</title>
     <link rel="icon" href="{{asset($setting->tab)}}">
     <!-- Bootstrap core CSS -->
