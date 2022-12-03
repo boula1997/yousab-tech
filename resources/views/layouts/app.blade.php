@@ -12,7 +12,7 @@
 
         <!-- Scripts -->
         <link rel="stylesheet" href="public/css/app.css">
-        <script type="text/javascript" src="publc/js/app.js"></script>
+        <script type="text/javascript" src="public/js/app.js"></script>
 
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     </head>
