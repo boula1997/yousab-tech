@@ -97,7 +97,7 @@ class PageController extends Controller
  
          if($request->hasFile('image')){
 
-            if(file_exists($page->image))
+            if(file_exists('public/'.$page->image))
             File::delete('public/'.$page->image);
             $file = $request->file('image');
             $data['image']=$request->image->store('images');

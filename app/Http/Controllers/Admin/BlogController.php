@@ -97,7 +97,7 @@ class BlogController extends Controller
          $data=$request->all();
  
          if($request->hasFile('image')){
-            if(file_exists($blog->image))
+            if(file_exists('public/'.$blog->image))
             File::delete('public/'.$blog->image);
             $file = $request->file('image');
             $data['image']=$request->image->store('images');
