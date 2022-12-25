@@ -122,7 +122,7 @@
                     <div class="card-flyer">
                         <div class="text-box">
                             <div class="image-box">
-                                <img src="{{ asset($service->image) }}" alt="{{ $service->title }}" />
+                                <img src="{{ asset('public/'.$service->image) }}" alt="{{ $service->title }}" />
                             </div>
                             <div class="text-container">
                                 <h6>{{ $service->title }}</h6>

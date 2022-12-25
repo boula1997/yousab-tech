@@ -5,16 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="حدائق الفيروز لنسيق الحدائق">
-    <meta name="keywords" content="{{asset($setting->meta_data)}}">
+    <meta name="keywords" content="{{asset('public/'.$setting->meta_data)}}">
+    <meta name="google-site-verification" content="l9ckpRd1nnm4e6bib_Il9gnvHUnTVIuGGF-atI5zOM4" />
     <title>شركة حدائق الفيروز</title>
-    <link rel="icon" href="{{asset($setting->tab)}}">
+    <link rel="icon" href="{{asset('public/'.$setting->tab)}}">
     <!-- Bootstrap core CSS -->
-    <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Fontawesome CSS -->
-    <link href="{{asset('site/css/all.css')}}" rel="stylesheet">
+    <link href="{{asset('public/site/css/all.css')}}" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="{{asset('site/css/style.css')}}" rel="stylesheet">
-    <link href="{{asset('site/css/lightbox.css')}}" rel="stylesheet" />
+    <link href="{{asset('public/site/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('public/site/css/lightbox.css')}}" rel="stylesheet" />
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -121,7 +122,7 @@
             <div class="d-flex align-items-center">
                 <!-- Navbar brand -->
                 <a class="navbar-brand mt-2 mt-lg-0" href="{{route('front.home')}}">
-                    <img src="{{asset($setting->logo)}}" alt="Logo" loading="lazy"
+                    <img src="{{asset('public/'.$setting->logo)}}" alt="Logo" loading="lazy"
                         style="width: 200px; height: 100px; border-radius: 10px; box-shadow: 10px; object-fit:cover; display: block;" />
                 </a>
             </div>

@@ -50,16 +50,14 @@ class SliderController extends Controller
             'description.required' => 'حقل الوصف مطلوب',
         ]);
 
-
-        $file = $request->file('image');
-        $name = $file->getClientOriginalName();
-        $file->move('images', $name);
-        $data = $request->all();
-        $data['image'] = 'images/' . $name;
-        Slider::create($data);
-        return redirect()->route('sliders.index')
-            ->with('success', 'تم الانشاء');
-    }
+   $data=$request->all();
+   $file = $request->file('image');
+   $data['image']=$request->image->store('images');
+   $file->move('public/images',$data['image']);
+       Slider::create($data);
+       return redirect()->route('sliders.index')
+           ->with('success', 'تم الانشاء');
+   }
 
     /**
      * Display the specified resource.
@@ -102,31 +100,33 @@ class SliderController extends Controller
         $data = $request->all();
         if ($request->hasFile('image')) {
 
-            if (file_exists($slider->image))
-                File::delete($slider->image);
+            if(file_exists('public/'.$slider->image))
+            File::delete('public/'.$slider->image);
             $file = $request->file('image');
-            $name = $file->getClientOriginalName();
-            $file->move('images', $name);
-            $data['image'] = 'images/' . $name;
-        } else {
-            $data['image'] = $slider->image;
-        }
+            $data['image']=$request->image->store('images');
+            $file->move('public/images',$data['image']);
+
+         }
+        else
+       { $data['image']=$slider->image;}
 
         $slider->update($data);
 
 
-        return redirect()->route('sliders.edit', compact('slider'))
-            ->with('success', 'تم التعديل بنجاح');
-    }
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Slider  $slider
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Slider $slider)
-    {
-        $slider->delete();
+       return redirect()->route('sliders.edit',compact('slider'))
+           ->with('success', 'تم التعديل بنجاح');
+   }
+   /**
+    * Remove the specified resource from storage.
+    *
+    * @param  \App\Models\Slider  $slider
+    * @return \Illuminate\Http\Response
+    */
+   public function destroy(Slider $slider)
+   {
+       $slider->delete();
+       File::delete('public/'.$slider->image);
+
 
         return redirect()->route('sliders.index')
             ->with('success', 'تم الحذف');

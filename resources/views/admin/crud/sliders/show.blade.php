@@ -29,7 +29,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong class="pull-right">الصورة  </strong>
-              <img class="pull-left" src="{{asset($slider->image)}}" alt="">
+              <img class="pull-left" src="{{asset('public/'.$slider->image)}}" alt="">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

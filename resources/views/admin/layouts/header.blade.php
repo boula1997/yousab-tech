@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>لوحة التحكم</title>
     <!-- BOOTSTRAP STYLES-->
-    <link href="{{ asset('admin/css/bootstrap.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/admin/css/bootstrap.css') }}" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
-    <link href="{{ asset('admin/css/font-awesome.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/admin/css/font-awesome.css') }}" rel="stylesheet" />
     <!-- CUSTOM STYLES-->
-    <link href="{{ asset('admin/css/custom.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/admin/css/custom.css') }}" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
@@ -26,7 +26,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="{{route('front.home')}}">
-                        <img src="{{ asset('admin/img/logo.png') }}" />
+                        <img src="{{ asset('public/admin/img/logo.png') }}" />
                     </a>
                 </div>
 

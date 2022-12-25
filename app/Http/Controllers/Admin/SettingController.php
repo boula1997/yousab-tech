@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Setting;
+use Illuminate\Support\Facades\File;
+
 
 class SettingController extends Controller
 {
@@ -14,19 +16,19 @@ class SettingController extends Controller
     if(!$request->hasFile('logo'))
     $data['logo']=$setting->logo;
     else{
+        File::delete('public/'.$setting->logo);
         $file = $request->file('logo');
-        $name=$file->getClientOriginalName();
-        $file->move('images',$name);
-        $data['logo']='images/'.$name;
+        $data['logo']=$request->image->store('images');
+        $file->move('public/images',$data['image']);
     }
 
     if(!$request->hasFile('tab'))
     $data['tab']=$setting->tab;
     else{
+        File::delete('public/'.$setting->tab);
         $file2 = $request->file('tab');
-        $name2=$file2->getClientOriginalName();
-        $file2->move('images',$name2);
-        $data['tab']='images/'.$name2;
+        $data['tab']=$request->image->store('images');
+        $file2->move('images',$data['image']);
     }
 
 

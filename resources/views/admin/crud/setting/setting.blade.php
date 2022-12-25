@@ -125,7 +125,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group" style="text-align: center">
-                                    <img height="20%" src="{{asset($setting->logo)}}" alt="">
+                                    <img height="20%" src="{{asset('public/'.$setting->logo)}}" alt="">
                                     <label class="col-form-label" style="font-size: 15pt"> <strong> اللوجو</strong></label>
                                     <div class="image-input image-input-empty image-input-outline" id="kt_image_5">
                                         <div class="image-input-wrapper"></div>
@@ -145,7 +145,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group" style="text-align: center">
-                                    <img height="20%" src="{{asset($setting->tab)}}" alt="">
+                                    <img height="20%" src="{{asset('public/'.$setting->tab)}}" alt="">
                                     <label class="col-form-label" style="font-size: 15pt"> <strong> التاب</strong></label>
                                     <div class="image-input image-input-empty image-input-outline" id="kt_image_5">
                                         <div class="image-input-wrapper"></div>

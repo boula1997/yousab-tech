@@ -30,7 +30,7 @@
             <div class="form-group">
                 <strong class="pull-right">الصور  </strong>
                 @foreach($images as $image)
-                <img height="10%" width="10%" src="{{asset($image->image)}}" alt="">
+                <img height="10%" width="10%" src="{{asset('public/'.$image->image)}}" alt="">
               @endforeach
             </div>
         </div>

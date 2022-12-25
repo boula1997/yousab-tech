@@ -47,7 +47,7 @@
                             <div class="col-md-12">
                                 <div class="form-group" style="text-align: center">
                                     <label class="col-form-label" style="font-size: 15pt"> <strong> اختر صورة</strong></label>
-                                    <div class="image-input image-input-empty image-input-outline" id="kt_image_5" style="background-image: url({{ asset('admin') }}/assets/media/users/blank.png)">
+                                    <div class="image-input image-input-empty image-input-outline" id="kt_image_5" style="background-image: url({{ asset('public/admin') }}/assets/media/users/blank.png)">
                                         <div class="image-input-wrapper"></div>
                                         <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
                                             <i class="fa fa-pen icon-sm text-muted"></i>

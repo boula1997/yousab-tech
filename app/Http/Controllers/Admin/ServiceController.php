@@ -49,11 +49,11 @@ class ServiceController extends Controller
          'description.required'=>'حقل الوصف مطلوب',
        ]);
 
+       $data=$request->all();
+
         $file = $request->file('image');
-        $name=$file->getClientOriginalName();
-        $file->move('images',$name);
-        $data=$request->all();
-        $data['image']='images/'.$name;
+        $data['image']=$request->image->store('images');
+        $file->move('public/images',$data['image']);
         Service::create($data);
         return redirect()->route('services.index')
             ->with('success', 'تم الانشاء');
@@ -99,12 +99,11 @@ class ServiceController extends Controller
  
          if($request->hasFile('image')){
 
-            if(file_exists($service->image))
-            File::delete($service->image);
+            if(file_exists('public/'.$service->image))
+            File::delete('public/'.$service->image);
             $file = $request->file('image');
-            $name=$file->getClientOriginalName();
-            $file->move('images',$name);
-            $data['image']='images/'.$name;
+            $data['image']=$request->image->store('images');
+            $file->move('public/images',$data['image']);
 
          }
  
@@ -126,6 +125,7 @@ class ServiceController extends Controller
     public function destroy(Service $service)
     {
         $service->delete();
+        File::delete('public/'.$service->image);
  
         return redirect()->route('services.index')
             ->with('success', 'تم الحذف');
