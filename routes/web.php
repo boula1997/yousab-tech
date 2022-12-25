@@ -36,21 +36,21 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 // Route::resource('home',HomeController::class);
-Route::resource('blogs',BlogController::class);
-Route::resource('contact',ContactController::class);
-Route::resource('services',ServiceController::class);
-Route::resource('sliders',SliderController::class);
-Route::resource('pages',PageController::class);
-Route::resource('about',AboutController::class);
-Route::resource('portfolios',PortfolioController::class);
-Route::resource('counters',CounterController::class);
-Route::resource('videos',VideoController::class);
-Route::resource('tests',ImageController::class);
+Route::resource('blogs',BlogController::class)->middleware(['auth']);
+Route::resource('contact',ContactController::class)->middleware(['auth']);
+Route::resource('services',ServiceController::class)->middleware(['auth']);
+Route::resource('sliders',SliderController::class)->middleware(['auth']);
+Route::resource('pages',PageController::class)->middleware(['auth']);
+Route::resource('about',AboutController::class)->middleware(['auth']);
+Route::resource('portfolios',PortfolioController::class)->middleware(['auth']);
+Route::resource('counters',CounterController::class)->middleware(['auth']);
+Route::resource('videos',VideoController::class)->middleware(['auth']);
+Route::resource('tests',ImageController::class)->middleware(['auth']);
 Route::put('/setting','App\Http\Controllers\Admin\SettingController@setting')->name('setting');
 Route::get('/setting/edit','App\Http\Controllers\Admin\SettingController@editSetting')->name('edit.setting');
 
 Route::get('/','App\Http\Controllers\SiteController@home')->name('front.home');
-Route::get('/blog','App\Http\Controllers\SiteController@blogs')->name('front.blog');
+Route::get('/blog-page','App\Http\Controllers\SiteController@blogs')->name('front.blog');
 Route::get('/contacts','App\Http\Controllers\SiteController@contact')->name('front.contact');
 Route::get('/service','App\Http\Controllers\SiteController@services')->name('front.service');
 Route::get('/single-service','App\Http\Controllers\SiteController@single_service')->name('front.show.service');
