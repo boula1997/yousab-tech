@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="حدائق الفيروز لنسيق الحدائق">
+    <meta name="description" content="الفيروز لتنسيق الحدائق و اعمال اللاندسكيب تركيب نجيل و ثيل و مظلات مسابح و شلالات اقل سعر اعلي جودة">
     <meta name="keywords" content="{{asset('public/'.$setting->meta_data)}}">
     <meta name="google-site-verification" content="l9ckpRd1nnm4e6bib_Il9gnvHUnTVIuGGF-atI5zOM4" />
     <title>شركة حدائق الفيروز</title>
@@ -54,6 +54,14 @@
 
     </style>
 </head>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3LMD3XH4D9');
+</script>
 
 <body style="padding: 0 !important">
     <!-- Navbar -->
