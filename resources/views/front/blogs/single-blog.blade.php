@@ -47,7 +47,7 @@
         </div>
         <div class="col-md-4 col-sm-12" style="height: 400px;">
             <img style="height: 100%; object-fit: cover" class="img-fluid rounded" src="{{ asset('public/'.$blog->image) }}"
-                alt="" />
+                alt="{{$blog->title}}" />
         </div>
     </div>
 </div>

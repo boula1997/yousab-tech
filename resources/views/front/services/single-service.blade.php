@@ -49,7 +49,7 @@
         </div>
         <div class="col-md-4 col-sm-12" style="height: 400px;">
             <img style="height: 100%; object-fit: cover" class="img-fluid rounded" src="{{ asset('public/'.$service->image) }}"
-                alt="" />
+                alt="{{$service->title}}" />
         </div>
     </div>
 </div>
