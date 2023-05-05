@@ -41,8 +41,8 @@
         @foreach ($images as $image)
         {{-- <div class="col-lg-4">
             <div class="card">
-                <a href="{{ asset('public/'.$image->image) }}" data-lightbox="portfolio"
-        data-title="{{ $portfolio->title }}"><img style="margin: 1%" class="img-fluid" src="{{ asset('public/'.$image->image) }}"
+                <a href="{{ asset($image->image) }}" data-lightbox="portfolio"
+        data-title="{{ $portfolio->title }}"><img style="margin: 1%" class="img-fluid" src="{{ asset($image->image) }}"
             alt="" /></a>
     </div>
 </div> --}}
@@ -50,8 +50,8 @@
     data-aos="fade-up" data-aos-duration="3000">
     <div class="card" style="height: 300px">
         <div class="card-img" style="height: 300px">
-            <a href="{{ asset('public/'.$image->image) }}" data-lightbox="portfolio" data-title="{{ $portfolio->title }}">
-                <img class="card-img-top img-fluid h-100" src="{{ asset('public/'.$image->image) }}" alt="" />
+            <a href="{{ asset($image->image) }}" data-lightbox="portfolio" data-title="{{ $portfolio->title }}">
+                <img class="card-img-top img-fluid h-100" src="{{ asset($image->image) }}" alt="" />
             </a>
         </div>
     </div>

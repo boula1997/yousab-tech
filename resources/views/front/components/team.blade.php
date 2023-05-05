@@ -5,7 +5,7 @@
 				@foreach ($teams as $team)
 				<div class="col-lg-4 mb-4">
 				  <div class="card h-100 text-center">
-					<img class="card-img-top" src="{{asset('public/'.$team->image)}}" alt="" />
+					<img class="card-img-top" src="{{asset($team->image)}}" alt="" />
 					<div class="card-body">
 						<h4 class="card-title">{{$team->title}}</h4>
 						<h6 class="card-subtitle mb-2 text-muted">{{$team->subtitle}}</h6>

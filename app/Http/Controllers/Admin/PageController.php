@@ -97,8 +97,8 @@ class PageController extends Controller
  
          if($request->hasFile('image')){
 
-            if(file_exists('public/'.$page->image))
-            File::delete('public/'.$page->image);
+            if(file_exists($page->image))
+            File::delete($page->image);
             $file = $request->file('image');
             $data['image']=$request->image->store('images');
             $file->move('public/images',$data['image']);
@@ -123,7 +123,7 @@ class PageController extends Controller
     public function destroy(Page $page)
     {
         $page->delete();
-        File::delete('public/'.$page->image);
+        File::delete($page->image);
 
  
         return redirect()->route('pages.index')

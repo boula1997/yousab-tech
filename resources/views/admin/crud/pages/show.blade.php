@@ -29,7 +29,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong class="pull-right">الصورة  </strong>
-              <img src="{{asset('public/'.$page->image)}}" alt="{{$page->title}}">
+              <img src="{{asset($page->image)}}" alt="{{$page->title}}">
             </div>
         </div>  
         <div class="col-xs-12 col-sm-12 col-md-12">

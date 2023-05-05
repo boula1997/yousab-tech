@@ -46,7 +46,7 @@
             {!! $blog->description !!}
         </div>
         <div class="col-md-4 col-sm-12" style="height: 400px;">
-            <img style="height: 100%; object-fit: cover" class="img-fluid rounded" src="{{ asset('public/'.$blog->image) }}"
+            <img style="height: 100%; object-fit: cover" class="img-fluid rounded" src="{{ asset($blog->image) }}"
                 alt="{{$blog->title}}" />
         </div>
     </div>

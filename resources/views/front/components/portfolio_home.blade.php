@@ -9,7 +9,7 @@
                 <div class="card h-100">
                     <h4 class="card-header">{{ $portfolio->title }}</h4>
                     <div  class="card-img">
-                        <a href="{{ asset('public/'.$portfolio->image) }}" data-lightbox="portfolio" data-title="{{ $portfolio->title }}"><img style="margin: 1%" class="img-fluid" src="{{ asset('public/'.$portfolio->image) }}" alt="" /></a>
+                        <a href="{{ asset($portfolio->image) }}" data-lightbox="portfolio" data-title="{{ $portfolio->title }}"><img style="margin: 1%" class="img-fluid" src="{{ asset($portfolio->image) }}" alt="" /></a>
                     </div>
                     {{-- <div class="card-body">
                         {!! $portfolio->description !!}

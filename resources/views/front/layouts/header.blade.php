@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="الفيروز لتنسيق الحدائق و اعمال اللاندسكيب تركيب نجيل و ثيل و مظلات مسابح و شلالات اقل سعر اعلي جودة">
-    <meta name="keywords" content="{{asset('public/'.$setting->meta_data)}}">
+    <meta name="keywords" content="{{asset($setting->meta_data)}}">
     <meta name="google-site-verification" content="l9ckpRd1nnm4e6bib_Il9gnvHUnTVIuGGF-atI5zOM4" />
     <title>شركة حدائق الفيروز</title>
-    <link rel="icon" href="{{asset('public/'.$setting->tab)}}">
+    <link rel="icon" href="{{asset($setting->tab)}}">
     <!-- Bootstrap core CSS -->
     <link href="{{asset('public/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Fontawesome CSS -->
@@ -47,10 +47,10 @@
             margin-left: 10px;
         }
 
-        @media (min-width: 1200px) {
+        /* @media (min-width: 1200px) {
             height: 150px;
             widows: 160px;
-        }
+        } */
 
     </style>
 </head>
@@ -130,7 +130,7 @@
             <div class="d-flex align-items-center">
                 <!-- Navbar brand -->
                 <a class="navbar-brand mt-2 mt-lg-0" href="{{route('front.home')}}">
-                    <img src="{{asset('public/'.$setting->logo)}}" alt="Logo" loading="lazy"
+                    <img src="{{asset($setting->logo)}}" alt="Logo" loading="lazy"
                         style="width: 200px; height: 100px; border-radius: 10px; box-shadow: 10px; object-fit:cover; display: block;" />
                 </a>
             </div>

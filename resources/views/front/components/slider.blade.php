@@ -71,7 +71,7 @@
             <!-- Slide One - Set the background image for this slide in the line below -->
             @foreach ($sliders as $slider)
             <div class="carousel-item {{$loop->index==0?'active':''}}"
-                style="background-image: url('{{asset('public/'.$slider->image)}}')">
+                style="background-image: url('{{asset($slider->image)}}')">
                 <div class="carousel-caption d-md-block">
                     <div class="row">
                         <div class="col-md-12 animate__animated animate__fadeInDown">

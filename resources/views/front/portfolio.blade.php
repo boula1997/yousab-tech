@@ -23,7 +23,7 @@
                     style="color: white">{{$portfolio_section->title}}</span>
             </div>
         </div>
-        {{-- <img class="img-fluid rounded mb-4" src="{{asset('public/'.$portfolio_section->image)}}" alt="" /> --}}
+        {{-- <img class="img-fluid rounded mb-4" src="{{asset($portfolio_section->image)}}" alt="" /> --}}
         @include('front.components.portfolio')
         @include('front.components.partners')
     </div>

@@ -29,7 +29,12 @@ class CreateSettingsTable extends Migration
             $table->text('instgram');
             $table->text('phone1');
             $table->text('phone2');
+            $table->text('email1');
+            $table->text('email2');
+            $table->text('appointment1');
+            $table->text('appointment2');
             $table->text('phone3');
+            $table->text('meta_data');
             $table->timestamps();
         });
     }

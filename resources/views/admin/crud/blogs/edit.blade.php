@@ -52,7 +52,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-8">
-                                <img height="50%" src="{{asset('public/'.$blog->image)}}" alt="{{$blog->title}}">
+                                <img height="50%" src="{{asset($blog->image)}}" alt="{{$blog->title}}">
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group" style="text-align: center">

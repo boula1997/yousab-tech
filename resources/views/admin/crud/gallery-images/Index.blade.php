@@ -32,7 +32,7 @@
         @foreach ($tests as $test)
             <tr>
                 <td>#{{$loop->iteration}}</td>
-                <td><img width="10%" height="10%" src="{{asset('public/'.$test->image)}}" alt=""></td>
+                <td><img width="10%" height="10%" src="{{asset($test->image)}}" alt=""></td>
                 <td>{{$test->created_at}}</td>
                 <td style="width: 11%">
                     <form action="{{route('tests.destroy',$test)}}" method="POST">

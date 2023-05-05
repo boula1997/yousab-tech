@@ -99,8 +99,8 @@ class ImageController extends Controller
  
          if($request->hasFile('image')!==null){
 
-            if(file_exists('public/'.$image->image))
-            File::delete('public/'.$image->image);
+            if(file_exists($image->image))
+            File::delete($image->image);
             $file = $request->file('image');
             $name=$file->getClientOriginalName();
             $file->move('public/images',$name);

@@ -46,7 +46,7 @@
             <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p> -->
         </div>
         <div class="col-lg-6 image-box" data-aos="fade-up" data-aos-duration="3000">
-            <img class="img-fluid rounded" src="{{ asset('public/'.$about_section->image) }}" alt="" />
+            <img class="img-fluid rounded" src="{{ asset($about_section->image) }}" alt="" />
         </div>
     </div>
     <!-- /.row -->
