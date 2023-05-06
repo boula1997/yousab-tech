@@ -1,5 +1,9 @@
 @include('admin.layouts.header')
-<div id="wrapper">
-    @yield('content')
-</div>
-@include('admin.layouts.footer')
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        @include('admin.components.dashboard')
+        @yield('content')
+    </div>
+
+    @include('admin.layouts.footer')

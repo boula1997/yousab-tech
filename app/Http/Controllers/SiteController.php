@@ -18,7 +18,11 @@ use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
-    public function home()
+    public function __construct()
+    {
+        dd('go to dashboard');
+    }
+    public function home()  
     {
         $services=Service::get();
         $sliders=Slider::get();
