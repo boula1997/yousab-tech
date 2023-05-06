@@ -36,54 +36,43 @@
                                         <p style="text-align: end">{{ $message }} </p>
                                     </div>
                                 @endif
-                                <table class="table table-bordered">
+                                <table id="example1" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th style="width: 10px">#</th>
+                                            <th>#</th>
                                             <th>Name</th>
-                                            <th style="width: 150px">Controls</th>
+                                            <th>Controls</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($blogs as $blog)
-                                        <tr>
-                                            <td>#{{$loop->iteration}}</td>
-                                            <td>{{$blog->title}}</td>
-                                            <td>
-                                                <form action="{{route('blogs.destroy',$blog)}}" method="POST">
-                                                <a href="{{route('blogs.show',$blog)}}" title="show">
-                                                    <i class="fas fa-eye text-success  fa-lg"></i>
-                                                </a>
-                        
-                                                <a href="{{route('blogs.edit',$blog)}}" title="edit">
-                                                    <i class="fas fa-edit  fa-lg"></i>
-                                                </a>
-                        
-                                                @csrf   
-                                                @method('DELETE')
-                        
-                                                <button type="submit" title="delete" style="border: none; background-color:transparent;">
-                                                    <i class="fas fa-trash fa-lg text-danger"></i>
-                                                </button>
-                                            </form>
-                                            </td>
-                                        </tr>
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $blog->title }}</td>
+                                                <td>
+                                                    <form action="{{ route('blogs.destroy', $blog) }}" method="POST">
+                                                        <a href="{{ route('blogs.show', $blog) }}" title="show">
+                                                            <i class="fas fa-eye text-success  fa-lg"></i>
+                                                        </a>
 
+                                                        <a href="{{ route('blogs.edit', $blog) }}" title="edit">
+                                                            <i class="fas fa-edit  fa-lg"></i>
+                                                        </a>
 
+                                                        @csrf
+                                                        @method('DELETE')
+
+                                                        <button type="submit" title="delete"
+                                                            style="border: none; background-color:transparent;">
+                                                            <i class="fas fa-trash fa-lg text-danger"></i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
 
                                     </tbody>
-                                    @endforeach
                                 </table>
-                            </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer clearfix">
-                                <ul class="pagination pagination-sm m-0 float-right">
-                                    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                                </ul>
                             </div>
                         </div>
 
@@ -97,3 +86,26 @@
     </div>
     <!-- /.content-wrapper -->
 @endsection
+
+
+@push('scripts')
+    <script>
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
+@endpush

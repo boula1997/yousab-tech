@@ -55,29 +55,13 @@
                                         <input type="text" name="title" value="{{ old('title') }}"
                                             class="form-control" id="exampleInputName" placeholder="Enter Name">
                                     </div>
-                                    {{-- <div class="form-group">
-                                        <label for="exampleInputPassword1">Description</label>
-                                        <input type="text" name="description" value="{{ old('description') }}"
-                                            class="form-control" id="exampleInputPassword1" placeholder="Description">
-                                    </div> --}}
-                                    <!-- /.card-header -->
+
                                     <div class="form-group">
-                                        <div class="col-md-12">
-                                            <div class="card card-outline card-info">
-                                                <div class="card-header">
-                                                    <h3 class="card-title">
-                                                        Description
-                                                    </h3>
-                                                </div>
-                                                <!-- /.card-header -->
-                                                <div class="card-body">
-                                                    <textarea id="summernote" name="description">
-                                                    </textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- /.col-->
+                                        <label for="exampleInputDescription">Description</label>
+                                        <textarea id="summernote" name="description">
+                                        </textarea>
                                     </div>
+
                                     <div class="form-group">
                                         <label for="exampleInputFile">File input</label>
                                         <div class="input-group">
