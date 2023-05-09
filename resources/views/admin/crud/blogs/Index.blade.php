@@ -25,6 +25,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
+                        <button class="btn btn-primary">Create New</button>
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">Bordered Table</h3>
