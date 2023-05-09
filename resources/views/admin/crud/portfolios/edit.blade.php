@@ -1,129 +1,118 @@
-@extends('admin.crud.Layouts.App')
+@extends('admin.layouts.master')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12" style="margin-top: 3%">
-            <div class="pull-right">
-                <h2>اضف صور للمعرض</h2>
-            </div>
-            <div class="pull-left">
-                <a class="btn btn-primary" href="{{route('portfolios.index')}}" title="Go back"> <i class="fas fa-backward "></i> </a>
-            </div>
-        </div>
-    </div>
-
-    @if ($message = Session::get('success'))
-    <div class="alert alert-success">
-        <p style="text-align: end">{{$message}} </p>
-    </div>
-@endif
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>اخطاء!</strong> 
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{$error}}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    <form action="{{route('portfolios.update',$portfolio)}}" method="POST" enctype="multipart/form-data" >
-        @csrf
-        @method('PUT')
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>الاسم:</strong>
-                    <input type="text" value="{{old('title',$portfolio->title)}}" name="title" class="form-control">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>General Form</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">General Form</li>
+                        </ol>
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>الوصف:</strong>
-                    <textarea class="form-control" style="height:30%" name="description"
-                      >{{old('description',$portfolio->description)}}</textarea>
-                </div>
-            </div>
+            </div><!-- /.container-fluid -->
+        </section>
 
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="card card-custom">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                @foreach($images as $image)
-                                 <img height="10%" width="10%" src="{{asset($image->image)}}" alt="">
-                                 <input type="checkbox" name="delimages[]" value="{{$image->id}}">
-                                @endforeach
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Quick Example</h3>
+                            </div>
+                            <!-- /.card-header -->
 
-                               {{-- <a href="{{route('tests.create')}}">
-                                   <button type="button" class="btn btn-primary">تحكم في الصور</button>
-                               </a> --}}
-   
-                             </div>
-                            {{-- <div class="col-md-2">
-                                <div class="form-group" style="text-align: center">
-                                    <label class="col-form-label" style="font-size: 15pt"> <strong> اختر الصور</strong></label>
-                                    <div class="image-input image-input-empty image-input-outline" id="kt_image_5">
-                                        <div class="image-input-wrapper"></div>
-                                        <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
-                                            <i class="fa fa-pen icon-sm text-muted"></i>
-                                            <input type="file" name="images[]" multiple accept=".png, .jpg, .jpeg, .svg" />
-                                            <input type="hidden" name="profile_avatar_remove" />
-                                        </label>
-                                        <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
-                                            <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                        </span>
-                                        <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="remove" data-toggle="tooltip" title="Remove avatar">
-                                            <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                        </span>
-                                    </div>
+                            {{-- validation messages start --}}
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <strong>اخطاء!</strong>
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
-            
-                            </div> --}}
-             
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="col-xs-12 col-sm-12 col-md-12">
-                                    <div class="card card-custom">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-group" style="text-align: center">
-                                                        <label class="col-form-label" style="font-size: 15pt"> <strong> اختر الصور</strong></label>
-                                                        <div class="image-input image-input-empty image-input-outline" id="kt_image_5" style="background-image: url({{ asset('public/admin') }}/assets/media/users/blank.png)">
-                                                            <div class="image-input-wrapper"></div>
-                                                            <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
-                                                                <i class="fa fa-pen icon-sm text-muted"></i>
-                                                                <input type="file" name="images[]" multiple  accept=".png, .jpg, .jpeg, .svg" />
-                                                                <input type="hidden" name="profile_avatar_remove" />
-                                                            </label>
-                                                            <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
-                                                                <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                                            </span>
-                                                            <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="remove" data-toggle="tooltip" title="Remove avatar">
-                                                                <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                
-                                                </div>
-                                 
+                            @endif
+                            {{-- validation messages end --}}
+
+                            <!-- form start -->
+                            <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Name</label>
+                                        <input type="text" name="title" value="{{ old('title') }}"
+                                            class="form-control" id="exampleInputName" placeholder="Enter Name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputDescription">Description</label>
+                                        <textarea id="summernote" name="description">
+                                        </textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputFile">File input</label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" name="image" class="custom-file-input"
+                                                    id="exampleInputFile">
+                                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">Upload</span>
                                             </div>
                                         </div>
                                     </div>
+                                    {{-- <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                    </div> --}}
                                 </div>
-                            </div>
+                                <!-- /.card-body -->
+
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
                         </div>
+                        <!-- /.card -->
+
+
                     </div>
+                    <!--/.col (left) -->
+
                 </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">حفظ</button>
-            </div>
-        </div>
-
-    </form>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
 @endsection
+
+@push('scripts')
+    <script>
+        $(function() {
+            // Summernote
+            $('#summernote').summernote()
+
+            // CodeMirror
+            CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                mode: "htmlmixed",
+                theme: "monokai"
+            });
+        })
+    </script>
+@endpush

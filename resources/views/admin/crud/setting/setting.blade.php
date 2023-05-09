@@ -1,178 +1,118 @@
-@extends('admin.crud.Layouts.App')
+@extends('admin.layouts.master')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12" style="margin-top: 3%">
-            <div class="pull-right">
-                <h2>اضف صور للمعرض</h2>
-            </div>
-            <div class="pull-left">
-                <a class="btn btn-primary" href="{{route('dashboard')}}" title="Go back"> <i class="fas fa-backward "></i> </a>
-            </div>
-        </div>
-    </div>
-
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>اخطاء!</strong> 
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{$error}}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    <form action="{{route('setting')}}" method="POST" enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>العنوان:</strong>
-                    <input type="text" value="{{old('address',$setting->address)}}" name="address" class="form-control">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>الخريطة:</strong>
-                    <input type="text" value="{{old('map',$setting->map)}}" name="map" class="form-control">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>فيسبوك:</strong>
-                    <input type="text" value="{{old('facebook',$setting->facebook)}}" name="facebook" class="form-control">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>تويتر:</strong>
-                    <input type="text" value="{{old('twitter',$setting->twitter)}}" name="twitter" class="form-control">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>يوتيوب:</strong>
-                    <input type="text" value="{{old('youtube',$setting->youtube)}}" name="youtube" class="form-control">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>تيك توك:</strong>
-                    <input type="text" value="{{old('tiktok',$setting->tiktok)}}" name="tiktok" class="form-control">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong> انستجرام:</strong>
-                    <input type="text" value="{{old('instgram',$setting->instgram)}}" name="instgram" class="form-control">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong> رقم الهاتف الاول:</strong>
-                    <input type="text" value="{{old('phone1',$setting->phone1)}}" name="phone1" class="form-control">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong> رقم الهاتف الثاني:</strong>
-                    <input type="text" value="{{old('phone2',$setting->phone2)}}" name="phone2" class="form-control">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong> رقم الهاتف الثالث:</strong>
-                    <input type="text" value="{{old('phone3',$setting->phone3)}}" name="phone3" class="form-control">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>  البريد الالكتروني الاول :</strong>
-                    <input type="text" value="{{old('email1',$setting->email1)}}" name="email1" class="form-control">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong> البريد الالكتروني الثاني:</strong>
-                    <input type="text" value="{{old('email2',$setting->email2)}}" name="email2" class="form-control">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>   معاد العمل الاول:</strong>
-                    <input type="text" value="{{old('appointment1',$setting->appointment1)}}" name="appointment1" class="form-control">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong> معاد العمل الثاني:</strong>
-                    <input type="text" value="{{old('appointment2',$setting->appointment2)}}" name="appointment2" class="form-control">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>الوصف:</strong>
-                    <textarea class="form-control" style="height:30%" name="description"
-                      >{{old('description',$setting->description)}}</textarea>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="card card-custom">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group" style="text-align: center">
-                                    <img height="20%" src="{{asset($setting->logo)}}" alt="">
-                                    <label class="col-form-label" style="font-size: 15pt"> <strong> اللوجو</strong></label>
-                                    <div class="image-input image-input-empty image-input-outline" id="kt_image_5">
-                                        <div class="image-input-wrapper"></div>
-                                        <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
-                                            <i class="fa fa-pen icon-sm text-muted"></i>
-                                            <input type="file" name="logo" accept=".png, .jpg, .jpeg, .svg" />
-                                            <input type="hidden" name="profile_avatar_remove" />
-                                        </label>
-                                        <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
-                                            <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                        </span>
-                                        <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="remove" data-toggle="tooltip" title="Remove avatar">
-                                            <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                        </span>
-                                    </div>
-                                </div>            
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group" style="text-align: center">
-                                    <img height="20%" src="{{asset($setting->tab)}}" alt="">
-                                    <label class="col-form-label" style="font-size: 15pt"> <strong> التاب</strong></label>
-                                    <div class="image-input image-input-empty image-input-outline" id="kt_image_5">
-                                        <div class="image-input-wrapper"></div>
-                                        <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
-                                            <i class="fa fa-pen icon-sm text-muted"></i>
-                                            <input type="file" name="tab" accept=".png, .jpg, .jpeg, .svg" />
-                                            <input type="hidden" name="profile_avatar_remove" />
-                                        </label>
-                                        <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
-                                            <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                        </span>
-                                        <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="remove" data-toggle="tooltip" title="Remove avatar">
-                                            <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-             
-                        </div>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>General Form</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">General Form</li>
+                        </ol>
                     </div>
                 </div>
-            </div>
+            </div><!-- /.container-fluid -->
+        </section>
 
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">حفظ</button>
-            </div>
-        </div>
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Quick Example</h3>
+                            </div>
+                            <!-- /.card-header -->
 
-    </form>
+                            {{-- validation messages start --}}
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <strong>اخطاء!</strong>
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            {{-- validation messages end --}}
+
+                            <!-- form start -->
+                            <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Name</label>
+                                        <input type="text" name="title" value="{{ old('title') }}"
+                                            class="form-control" id="exampleInputName" placeholder="Enter Name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputDescription">Description</label>
+                                        <textarea id="summernote" name="description">
+                                        </textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputFile">File input</label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" name="image" class="custom-file-input"
+                                                    id="exampleInputFile">
+                                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">Upload</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                    </div> --}}
+                                </div>
+                                <!-- /.card-body -->
+
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.card -->
+
+
+                    </div>
+                    <!--/.col (left) -->
+
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
 @endsection
+
+@push('scripts')
+    <script>
+        $(function() {
+            // Summernote
+            $('#summernote').summernote()
+
+            // CodeMirror
+            CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                mode: "htmlmixed",
+                theme: "monokai"
+            });
+        })
+    </script>
+@endpush
