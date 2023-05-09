@@ -37,8 +37,10 @@
                             <h3 class="card-title">Quick Example</h3>
                         </div>
                         <!-- /.card-header -->
-
-
+                        @extends('admin.components.create-form')
+                        @section('form_action','{{ route('blogs.store') }}')
+                        @section('form_type','POST')
+                            
                         @section('form_content')
                             <!-- form start -->
 
