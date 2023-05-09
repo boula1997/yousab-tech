@@ -3,6 +3,9 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+    @section('title', setting()->website_title . '|' . 'Create Blog')
+
+    @section('breadcrumb')
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <div class="container-fluid">
@@ -19,100 +22,102 @@
                 </div>
             </div><!-- /.container-fluid -->
         </section>
+    @endsection
 
-        <!-- Main content -->
-        <section class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <!-- left column -->
-                    <div class="col-md-12">
-                        <!-- general form elements -->
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3 class="card-title">Quick Example</h3>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Quick Example</h3>
+                        </div>
+                        <!-- /.card-header -->
+
+                        {{-- validation messages start --}}
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <strong>اخطاء!</strong>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
                             </div>
-                            <!-- /.card-header -->
+                        @endif
+                        {{-- validation messages end --}}
 
-                            {{-- validation messages start --}}
-                            @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <strong>اخطاء!</strong>
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
+                        <!-- form start -->
+                        <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Name</label>
+                                    <input type="text" name="title" value="{{ old('title') }}"
+                                        class="form-control" id="exampleInputName" placeholder="Enter Name">
                                 </div>
-                            @endif
-                            {{-- validation messages end --}}
 
-                            <!-- form start -->
-                            <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Name</label>
-                                        <input type="text" name="title" value="{{ old('title') }}"
-                                            class="form-control" id="exampleInputName" placeholder="Enter Name">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="exampleInputDescription">Description</label>
-                                        <textarea id="summernote" name="description">
+                                <div class="form-group">
+                                    <label for="exampleInputDescription">Description</label>
+                                    <textarea id="summernote" name="description">
                                         </textarea>
-                                    </div>
+                                </div>
 
-                                    <div class="form-group">
-                                        <label for="exampleInputFile">File input</label>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" name="image" class="custom-file-input"
-                                                    id="exampleInputFile">
-                                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                            </div>
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">Upload</span>
-                                            </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">File input</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" name="image" class="custom-file-input"
+                                                id="exampleInputFile">
+                                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">Upload</span>
                                         </div>
                                     </div>
-                                    {{-- <div class="form-check">
+                                </div>
+                                {{-- <div class="form-check">
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
                                     </div> --}}
-                                </div>
-                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card-body -->
 
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- /.card -->
-
-
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
                     </div>
-                    <!--/.col (left) -->
+                    <!-- /.card -->
+
 
                 </div>
-                <!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
+                <!--/.col (left) -->
+
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 @endsection
 
 @push('scripts')
-    <script>
-        $(function() {
-            // Summernote
-            $('#summernote').summernote()
+<script>
+    $(function() {
+        // Summernote
+        $('#summernote').summernote()
 
-            // CodeMirror
-            CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
-                mode: "htmlmixed",
-                theme: "monokai"
-            });
-        })
-    </script>
+        // CodeMirror
+        CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+            mode: "htmlmixed",
+            theme: "monokai"
+        });
+    })
+</script>
 @endpush
