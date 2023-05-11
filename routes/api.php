@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('blogs', 'BlogController@index');
 Route::get('blogs/{id}', 'BlogController@show');
+Route::post('store/contact', 'ContactController@store');
