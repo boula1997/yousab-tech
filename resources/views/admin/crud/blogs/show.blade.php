@@ -3,7 +3,7 @@
 @section('content')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    @section('title', setting()->website_title . '|' . 'Show Blog')
+    @section('title', settings()->website_title . '|' . 'Show Blog')
 
     @section('breadcrumb')
         <!-- Content Header (Page header) -->

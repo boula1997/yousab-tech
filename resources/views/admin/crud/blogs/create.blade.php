@@ -3,7 +3,7 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-    @section('title', setting()->website_title . '|' . 'Create Blog')
+    @section('title', settings()->website_title . '|' . 'Create Blog')
 
     @section('breadcrumb')
         <!-- Content Header (Page header) -->
@@ -53,7 +53,8 @@
                             <div class="form-group">
                                 <label for="exampleInputDescription">Description</label>
                                 <textarea id="summernote" name="description">
-                            </textarea>
+                                    {{ old('description') }}
+                               </textarea>
                             </div>
 
                             <div class="form-group">
