@@ -4,10 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\BlogRequest;
-use Illuminate\Support\Facades\File;
 use App\Models\Blog;
 use Exception;
-use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {

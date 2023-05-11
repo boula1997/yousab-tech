@@ -8,5 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Blog extends Model
 {
     use HasFactory;
-    protected $fillable = ['title','image','subtitle','description'];
+    protected $table = 'blogs';
+    protected $guarded = [];
+    public $timestamps = true;
+    public function getImageAttribute()
+    {
+        return asset($this->image);
+    }
 }
