@@ -6,6 +6,7 @@ use App\Models\Blog;
 use App\Models\Setting;
 use App\Models\Page;
 use App\Models\Partner;
+use Exception;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -15,18 +16,22 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $blog;
+    public function __construct(Blog $blog )
+    {
+        $this->blog = $blog;
+    }
     public function index()
     {
-        $blogs=Blog::get();
-        $setting=Setting::first();
-        $blogs_footer=Blog::take(3)->get();
-        $blog_section=Page::where('identifier','blog')->first();
-        $partners=Partner::get();
-
-
-        return view('front.blogs.blog',compact('blogs','blogs_footer','setting','blog_section','partners'));
+        try {
+            $blogs = $this->blog->get();
+            $blogs_footer = $this->blog->take(3)->get();
+            $partners = Partner::get();
+            return view('front.blogs.blog', compact('blogs', 'blogs_footer', 'partners'));
+        } catch (Exception $e) {
+            return redirect()->back();
+        }
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -45,7 +50,6 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        
     }
 
     /**
@@ -56,10 +60,9 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        $setting=Setting::first();  
-        $blogs_footer=Blog::take(3)->get();
-        return view('front.blogs.single-blog',compact('blog','setting','blogs_footer'));
-        
+        $setting = Setting::first();
+        $blogs_footer = $this->blog->take(3)->get();
+        return view('front.blogs.single-blog', compact('blog', 'setting', 'blogs_footer'));
     }
 
     /**
