@@ -54,8 +54,7 @@ class BlogController extends Controller
     {
         try {
             $data = $request->all();
-            $file = $request->file('image');
-            $data['image'] = upload_image($file);
+            $data['image'] = upload_image($request->image);
             $this->blog->create($data);
             return redirect()->route('blogs.index')
                 ->with('success', 'تم الانشاء');
@@ -100,11 +99,8 @@ class BlogController extends Controller
             $data = $request->all();
 
             if ($request->hasFile('image')) {
-                if (file_exists($blog->image))
-                    File::delete($blog->image);
-                $file = $request->file('image');
-                $data['image'] = $request->image->store('images');
-                $file->move('public/images', $data['image']);
+                delete_file($blog->image);
+                $data['image'] = upload_image($request->image);
             } else {
                 $data['image'] = $blog->image;
             }
@@ -127,7 +123,7 @@ class BlogController extends Controller
     public function destroy(Blog $blog)
     {
         try {
-            File::delete($blog->image);
+            delete_file($blog->image);
             $blog->delete();
             return redirect()->route('blogs.index')
                 ->with('success', 'تم الحذف');
