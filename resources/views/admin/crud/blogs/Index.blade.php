@@ -8,12 +8,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Simple Tables</h1>
+                        <h1>Blogs</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Simple Tables</li>
+                            <li class="breadcrumb-item active">Blogs</li>
                         </ol>
                     </div>
                 </div>
@@ -43,6 +43,7 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
+                                            <th>image</th>
                                             <th>Name</th>
                                             <th>Controls</th>
                                         </tr>
@@ -51,6 +52,7 @@
                                         @foreach ($blogs as $blog)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
+                                                <td><img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}"></td>
                                                 <td>{{ $blog->title }}</td>
                                                 <td>
                                                     <form action="{{ route('blogs.destroy', $blog) }}" method="POST">

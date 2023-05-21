@@ -56,11 +56,6 @@
                                             class="form-control" id="exampleInputName" placeholder="Enter Name">
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="exampleInputDescription">Description</label>
-                                        <textarea id="summernote" name="description">
-                                        </textarea>
-                                    </div>
 
                                     <div class="form-group">
                                         <label for="exampleInputFile">File input</label>

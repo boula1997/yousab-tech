@@ -8,12 +8,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Simple Tables</h1>
+                        <h1>Gallery</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Simple Tables</li>
+                            <li class="breadcrumb-item active">Gallery</li>
                         </ol>
                     </div>
                 </div>
@@ -41,6 +41,7 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Name</th>
+                                            <th>image</th>
                                             <th>Controls</th>
                                         </tr>
                                     </thead>
@@ -48,6 +49,7 @@
                                         @foreach ($galleries as $gallery)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
+                                                <td><img src="{{ asset($gallery->image) }}" alt="{{ $gallery->title }}"></td>
                                                 <td>{{ $gallery->title }}</td>
                                                 <td>
                                                     <form action="{{ route('galleries.destroy', $gallery) }}" method="POST">
