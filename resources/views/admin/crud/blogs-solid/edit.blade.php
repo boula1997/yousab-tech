@@ -3,7 +3,7 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-    @section('title', setting()->website_title . '|' . 'Create Blog')
+    @section('title', settings()->website_title . '|' . 'Create Blog')
 
     @section('breadcrumb')
         <!-- Content Header (Page header) -->
@@ -11,12 +11,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Create Blog</h1>
+                        <h1>Update Blog</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Create Blog</li>
+                            <li class="breadcrumb-item active">Update Blog</li>
                         </ol>
                     </div>
                 </div>
@@ -40,18 +40,20 @@
 
 
                         @section('form_content')
+                            @method('put')
                             <!-- form start -->
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Name</label>
-                                <input type="text" name="title" value="{{ old('title') }}" class="form-control"
-                                    id="exampleInputName" placeholder="Enter Name">
+                                <input type="text" name="title" value="{{ old('title'), $blog->title }}"
+                                    class="form-control" id="exampleInputName" placeholder="Enter Name">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputDescription">Description</label>
                                 <textarea id="summernote" name="description">
-                            </textarea>
+                                    {{ old('description'), $blog->description }}
+                               </textarea>
                             </div>
 
                             <div class="form-group">
