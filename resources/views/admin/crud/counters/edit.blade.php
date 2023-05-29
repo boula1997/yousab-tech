@@ -47,22 +47,22 @@
                             {{-- validation messages end --}}
 
                             <!-- form start -->
-                            <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('counters.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name</label>
-                                        <input type="text" name="title" value="{{ old('title') }}"
+                                        <input type="text" name="title" value="{{ old('title',$counter->title) }}"
                                             class="form-control" id="exampleInputName" placeholder="Enter Name">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleInputDescription">Description</label>
-                                        <textarea id="summernote" name="description">
-                                        </textarea>
+                                        <label for="exampleInputEmail1">Count</label>
+                                        <input type="text" name="count" value="{{ old('count',$counter->count) }}"
+                                            class="form-control" id="exampleInputName" placeholder="Enter Name">
                                     </div>
 
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label for="exampleInputFile">File input</label>
                                         <div class="input-group">
                                             <div class="custom-file">
@@ -74,7 +74,7 @@
                                                 <span class="input-group-text">Upload</span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     {{-- <div class="form-check">
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                         <label class="form-check-label" for="exampleCheck1">Check me out</label>

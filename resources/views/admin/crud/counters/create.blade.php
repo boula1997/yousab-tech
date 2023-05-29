@@ -47,7 +47,7 @@
                             {{-- validation messages end --}}
 
                             <!-- form start -->
-                            <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('counters.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
@@ -55,15 +55,15 @@
                                         <input type="text" name="title" value="{{ old('title') }}"
                                             class="form-control" id="exampleInputName" placeholder="Enter Name">
                                     </div>
-
                                     <div class="form-group">
-                                        <label for="exampleInputDescription">Count</label>
-                                        <textarea id="summernote" name="count">
-                                        </textarea>
+                                        <label for="exampleInputEmail1">Count</label>
+                                        <input type="text" name="count" value="{{ old('count') }}"
+                                            class="form-control" id="exampleInputName" placeholder="Enter Name">
                                     </div>
 
 
-                                    <div class="col-md-4 col-sm-12">
+
+                                    {{-- <div class="col-md-4 col-sm-12">
                                         <div class="form-group">
                                             <label class="d-block">
                                                 {{ $label }}
@@ -93,7 +93,7 @@
                                         @isset($deleteImage)
                                             @include('admin.components.deleteImage')
                                         @endisset
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <!-- /.card-body -->
 

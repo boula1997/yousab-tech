@@ -41,6 +41,7 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Name</th>
+                                            <th>Count</th>
                                             <th>Controls</th>
                                         </tr>
                                     </thead>
@@ -49,6 +50,7 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $counter->title }}</td>
+                                                <td>{{ $counter->count }}</td>
                                                 <td>
                                                     <form action="{{ route('counters.destroy', $counter) }}" method="POST">
                                                         <a href="{{ route('counters.show', $counter) }}" title="show">
