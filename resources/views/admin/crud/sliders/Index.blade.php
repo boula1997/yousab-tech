@@ -1,9 +1,9 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains page content -->
+    <!-- Content Wrapper. Contains slider content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+        <!-- Content Header (slider header) -->
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -40,7 +40,8 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Name</th>
+                                            <th>image</th>
+                                            <th>Title</th>
                                             <th>Controls</th>
                                         </tr>
                                     </thead>
@@ -48,6 +49,7 @@
                                         @foreach ($sliders as $slider)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
+                                                <td><img width="100" height="100" src="{{ asset($slider->image) }}" alt="{{ $slider->title }}"></td>
                                                 <td>{{ $slider->title }}</td>
                                                 <td>
                                                     <form action="{{ route('sliders.destroy', $slider) }}" method="POST">

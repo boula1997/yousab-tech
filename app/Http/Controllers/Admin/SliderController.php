@@ -113,7 +113,7 @@ class SliderController extends Controller
         $slider->update($data);
 
 
-       return redirect()->route('sliders.edit',compact('slider'))
+       return redirect()->route('sliders.index',compact('slider'))
            ->with('success', 'تم التعديل بنجاح');
    }
    /**
