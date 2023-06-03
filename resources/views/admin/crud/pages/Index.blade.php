@@ -41,7 +41,7 @@
                                         <tr>
                                             <th>#</th>
                                             <th>image</th>
-                                            <th>Name</th>
+                                            <th>Title</th>
                                             <th>Controls</th>
                                         </tr>
                                     </thead>

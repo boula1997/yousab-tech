@@ -1,19 +1,19 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains page content -->
+    <!-- Content Wrapper. Contains blog content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+        <!-- Content Header (blog header) -->
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Simple Tables</h1>
+                        <h1>Blogs</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Simple Tables</li>
+                            <li class="breadcrumb-item active">Blogs</li>
                         </ol>
                     </div>
                 </div>
@@ -25,7 +25,6 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <button class="btn btn-primary">Create New</button>
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">Bordered Table</h3>
@@ -41,7 +40,8 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Name</th>
+                                            <th>image</th>
+                                            <th>Title</th>
                                             <th>Controls</th>
                                         </tr>
                                     </thead>
@@ -49,6 +49,7 @@
                                         @foreach ($blogs as $blog)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
+                                                <td><img width="100" height="100" src="{{ asset($blog->image) }}" alt="{{ $blog->title }}"></td>
                                                 <td>{{ $blog->title }}</td>
                                                 <td>
                                                     <form action="{{ route('blogs.destroy', $blog) }}" method="POST">

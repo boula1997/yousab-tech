@@ -65,7 +65,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputDescription">Description</label>
                                         <textarea id="summernote" name="description">
-                                            {{ old('description') }}
+                                            {!! old('description') !!}
                                         </textarea>
                                     </div>
 

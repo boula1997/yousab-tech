@@ -23,8 +23,9 @@ class BlogRequest extends FormRequest
      */
     public function rules()
     {
+        $image=request()->isMethod('put')?'required':'nullable';
         return [
-            'title' => 'required',
+            'title' => $image,
             'image' => 'required',
             'description' => 'required',
         ];

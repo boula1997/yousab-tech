@@ -12,8 +12,8 @@ class Blog extends Model
     protected $guarded = [];
     public $timestamps = true;
     
-    public function getImageAttribute()
-    {
-        return $this->image? asset($this->image):asset('images/portfolio-img-01.jpg');
-    }
+    // public function getImageAttribute()
+    // {
+    //     return $this->image? asset($this->image):asset('images/portfolio-img-01.jpg');
+    // }
 }
