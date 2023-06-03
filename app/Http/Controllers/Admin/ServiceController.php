@@ -53,7 +53,7 @@ class ServiceController extends Controller
 
         $file = $request->file('image');
         $data['image']=$request->image->store('images');
-        $file->move('public/images',$data['image']);
+        $file->move('images',$data['image']);
         Service::create($data);
         return redirect()->route('services.index')
             ->with('success', 'تم الانشاء');
@@ -103,7 +103,7 @@ class ServiceController extends Controller
             File::delete($service->image);
             $file = $request->file('image');
             $data['image']=$request->image->store('images');
-            $file->move('public/images',$data['image']);
+            $file->move('images',$data['image']);
 
          }
  

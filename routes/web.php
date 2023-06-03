@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\Admin\ServiceController;
-use App\Http\Controllers\Admin\AboutController;
+// use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\MetaController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\SliderController;
@@ -36,12 +36,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 // Route::resource('home',HomeController::class);
-// Route::resource('blogs',BlogController::class)->middleware(['auth']);
-Route::resource('contact',ContactController::class)->middleware(['auth']);
+Route::resource('blogs',BlogController::class)->middleware(['auth']);
+// Route::resource('contact',ContactController::class)->middleware(['auth']);
 Route::resource('services',ServiceController::class)->middleware(['auth']);
 Route::resource('sliders',SliderController::class)->middleware(['auth']);
 Route::resource('pages',PageController::class)->middleware(['auth']);
-Route::resource('about',AboutController::class)->middleware(['auth']);
+// Route::resource('about',AboutController::class)->middleware(['auth']);
 Route::resource('portfolios',PortfolioController::class)->middleware(['auth']);
 Route::resource('counters',CounterController::class)->middleware(['auth']);
 Route::resource('videos',VideoController::class)->middleware(['auth']);

@@ -53,7 +53,7 @@ class SliderController extends Controller
    $data=$request->all();
    $file = $request->file('image');
    $data['image']=$request->image->store('images');
-   $file->move('public/images',$data['image']);
+   $file->move('images',$data['image']);
        Slider::create($data);
        return redirect()->route('sliders.index')
            ->with('success', 'تم الانشاء');
@@ -104,7 +104,7 @@ class SliderController extends Controller
             File::delete($slider->image);
             $file = $request->file('image');
             $data['image']=$request->image->store('images');
-            $file->move('public/images',$data['image']);
+            $file->move('images',$data['image']);
 
          }
         else

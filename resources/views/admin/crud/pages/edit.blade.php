@@ -47,43 +47,45 @@
                             {{-- validation messages end --}}
 
                             <!-- form start -->
-                            <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('pages.update', $page) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                @method('PUT')
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Title</label>
-                                        <input type="text" name="title" value="{{ old('title',$page->title) }}"
+                                        <input type="text" name="title" value="{{ old('title', $page->title) }}"
                                             class="form-control" id="exampleInputName" placeholder="Enter Name">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Subtitle</label>
-                                        <input type="text" name="subtitle" value="{{ old('subtitle',$page->subtitle) }}"
+                                        <input type="text" name="subtitle" value="{{ old('subtitle', $page->subtitle) }}"
                                             class="form-control" id="exampleInputName" placeholder="Enter Name">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Identifier</label>
-                                        <input type="text" name="identifier" value="{{ old('identifier',$page->identifier) }}"
-                                            class="form-control" id="exampleInputName" placeholder="Enter Name">
+                                        <input type="text" name="identifier"
+                                            value="{{ old('identifier', $page->identifier) }}" class="form-control"
+                                            id="exampleInputName" placeholder="Enter Name">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="exampleInputDescription">Description</label>
                                         <textarea id="summernote" name="description">
-                                            {!! old('description'),$page->description !!}
+                                            {!! old('description'), $page->description !!}
                                         </textarea>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
-
-                                            <div class="form-group">
-                                                <label for="exampleInputFile">File input</label>
+                                            <div class="form-group mt-30">
+                                                <label for="exampleInputFile">Image</label>
                                                 <div class="input-group">
                                                     <div class="custom-file">
                                                         <input type="file" name="image" class="custom-file-input"
                                                             id="exampleInputFile">
-                                                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                                        <label class="custom-file-label" for="exampleInputFile">Choose
+                                                            file</label>
                                                     </div>
                                                     <div class="input-group-append">
                                                         <span class="input-group-text">Upload</span>
@@ -92,14 +94,12 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-
-                                            <div class="form-group">
+                                            <div class="form-group text-center">
                                                 <label for="exampleInputFile">Image</label>
-                                                <div class="input-group">
-                                                    <div class="custom-file">
-                                                        <img src="{{asset($page->image)}}" alt="">
-                                                    </div>
-                                                </div>
+
+                                                <img width="200" height="200" src="{{ asset($page->image) }}"
+                                                    alt="">
+
                                             </div>
                                         </div>
                                     </div>

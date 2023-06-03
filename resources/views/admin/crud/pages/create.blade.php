@@ -47,23 +47,36 @@
                             {{-- validation messages end --}}
 
                             <!-- form start -->
-                            <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('pages.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Name</label>
+                                        <label for="exampleInputEmail1">Title</label>
                                         <input type="text" name="title" value="{{ old('title') }}"
+                                            class="form-control" id="exampleInputName" placeholder="Enter Name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Subtitle</label>
+                                        <input type="text" name="subtitle" value="{{ old('subtitle') }}"
                                             class="form-control" id="exampleInputName" placeholder="Enter Name">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="exampleInputDescription">Description</label>
                                         <textarea id="summernote" name="description">
+                                            {{ old('description') }}
                                         </textarea>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleInputFile">File input</label>
+                                        <label for="exampleInputEmail1">identifier</label>
+                                        <input type="text" name="identifier" value="{{ old('identifier') }}"
+                                            class="form-control" id="exampleInputName" placeholder="Enter Name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputFile">Image</label>
                                         <div class="input-group">
                                             <div class="custom-file">
                                                 <input type="file" name="image" class="custom-file-input"

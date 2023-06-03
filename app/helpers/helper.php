@@ -17,7 +17,7 @@ function page($identifier)
 function upload_image($file)
 {
     $path = $file->store('images');
-    $file->move('public/images', $path);
+    $file->move('images', $path);
     return $path;
 }
 

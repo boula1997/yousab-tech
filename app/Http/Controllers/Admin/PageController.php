@@ -51,9 +51,9 @@ class PageController extends Controller
         $data=$request->all();
         $file = $request->file('image');
         $data['image']=$request->image->store('images');
-        $file->move('public/images',$data['image']);
+        $file->move('images',$data['image']);
         Page::create($data);
-        return redirect()->route('Pages.index')
+        return redirect()->route('pages.index')
             ->with('success', 'تم الانشاء');
     }
  
@@ -88,11 +88,10 @@ class PageController extends Controller
      */
     public function update(Request $request, Page $page)
     {
-        // $request->validate([
-        //     'title' => 'required',
-        //  ],['title.required'=>'حقل الاسم مطلوب',
-        //  'description.required'=>'حقل الوصف مطلوب',]);
-         dd(10);
+        $request->validate([
+            'title' => 'required',
+         ],['title.required'=>'حقل الاسم مطلوب',
+         'description.required'=>'حقل الوصف مطلوب',]);
          $data=$request->all();
  
          if($request->hasFile('image')){
@@ -101,7 +100,7 @@ class PageController extends Controller
             File::delete($page->image);
             $file = $request->file('image');
             $data['image']=$request->image->store('images');
-            $file->move('public/images',$data['image']);
+            $file->move('images',$data['image']);
 
          }
  
@@ -111,7 +110,7 @@ class PageController extends Controller
          $page->update($data);
  
  
-        return redirect()->route('pages.edit',compact('page'))
+        return redirect()->route('pages.index',compact('page'))
             ->with('success', 'تم التعديل بنجاح');
     }
     /**
