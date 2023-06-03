@@ -88,11 +88,11 @@ class PageController extends Controller
      */
     public function update(Request $request, Page $page)
     {
-        $request->validate([
-            'title' => 'required',
-         ],['title.required'=>'حقل الاسم مطلوب',
-         'description.required'=>'حقل الوصف مطلوب',]);
-         
+        // $request->validate([
+        //     'title' => 'required',
+        //  ],['title.required'=>'حقل الاسم مطلوب',
+        //  'description.required'=>'حقل الوصف مطلوب',]);
+         dd(10);
          $data=$request->all();
  
          if($request->hasFile('image')){

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BlogController;
-use App\Http\Controllers\Admin\ContactController;
+// use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -36,7 +36,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 // Route::resource('home',HomeController::class);
-Route::resource('blogs',BlogController::class)->middleware(['auth']);
+// Route::resource('blogs',BlogController::class)->middleware(['auth']);
 Route::resource('contact',ContactController::class)->middleware(['auth']);
 Route::resource('services',ServiceController::class)->middleware(['auth']);
 Route::resource('sliders',SliderController::class)->middleware(['auth']);
