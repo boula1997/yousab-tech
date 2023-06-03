@@ -14,6 +14,6 @@ class Blog extends Model
     
     public function getImageAttribute()
     {
-        return asset($this->image);
+        return $this->image? asset($this->image):asset('images/portfolio-img-01.jpg');
     }
 }

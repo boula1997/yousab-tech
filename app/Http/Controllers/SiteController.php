@@ -20,7 +20,7 @@ class SiteController extends Controller
 {
     public function __construct()
     {
-        dd('go to dashboard');
+        // dd('go to dashboard');
     }
     public function home()  
     {
