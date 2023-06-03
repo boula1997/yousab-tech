@@ -1,9 +1,9 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains page content -->
+    <!-- Content Wrapper. Contains service content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+        <!-- Content Header (Service header) -->
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -41,7 +41,7 @@
                                         <tr>
                                             <th>#</th>
                                             <th>image</th>
-                                            <th>Name</th>
+                                            <th>Title</th>
                                             <th>Controls</th>
                                         </tr>
                                     </thead>
@@ -49,7 +49,7 @@
                                         @foreach ($services as $service)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img src="{{ asset($service->image) }}" alt="{{ $service->title }}"></td>
+                                                <td><img width="100" height="100" src="{{ asset($service->image) }}" alt="{{ $service->title }}"></td>
                                                 <td>{{ $service->title }}</td>
                                                 <td>
                                                     <form action="{{ route('services.destroy', $service) }}" method="POST">

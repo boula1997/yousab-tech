@@ -1,9 +1,9 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains page content -->
+    <!-- Content Wrapper. Contains service content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+        <!-- Content Header (Service header) -->
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -47,31 +47,48 @@
                             {{-- validation messages end --}}
 
                             <!-- form start -->
-                            <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('services.update', $service) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                @method('PUT')
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Name</label>
-                                        <input type="text" name="title" value="{{ old('title') }}"
+                                        <label for="exampleInputEmail1">Title</label>
+                                        <input type="text" name="title" value="{{ old('title', $service->title) }}"
                                             class="form-control" id="exampleInputName" placeholder="Enter Name">
                                     </div>
+
+
 
                                     <div class="form-group">
                                         <label for="exampleInputDescription">Description</label>
                                         <textarea id="summernote" name="description">
+                                            {!! old('description'), $service->description !!}
                                         </textarea>
                                     </div>
-
-                                    <div class="form-group">
-                                        <label for="exampleInputFile">File input</label>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" name="image" class="custom-file-input"
-                                                    id="exampleInputFile">
-                                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group mt-30">
+                                                <label for="exampleInputFile">Image</label>
+                                                <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input type="file" name="image" class="custom-file-input"
+                                                            id="exampleInputFile">
+                                                        <label class="custom-file-label" for="exampleInputFile">Choose
+                                                            file</label>
+                                                    </div>
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">Upload</span>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">Upload</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group text-center">
+                                                <label for="exampleInputFile">Image</label>
+
+                                                <img width="200" height="200" src="{{ asset($service->image) }}"
+                                                    alt="">
+
                                             </div>
                                         </div>
                                     </div>
