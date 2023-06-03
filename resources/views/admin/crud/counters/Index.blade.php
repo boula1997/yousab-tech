@@ -1,9 +1,9 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains page content -->
+    <!-- Content Wrapper. Contains count content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+        <!-- Content Header (Counter header) -->
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -40,8 +40,8 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Name</th>
-                                            <th>Count</th>
+                                            <th>Title</th>
+                                            <th>Counter</th>
                                             <th>Controls</th>
                                         </tr>
                                     </thead>

@@ -1,9 +1,9 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains page content -->
+    <!-- Content Wrapper. Contains count content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+        <!-- Content Header (Counter header) -->
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -51,48 +51,20 @@
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Name</label>
+                                        <label for="exampleInputEmail1">Title</label>
                                         <input type="text" name="title" value="{{ old('title') }}"
                                             class="form-control" id="exampleInputName" placeholder="Enter Name">
                                     </div>
+
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Count</label>
+                                        <label for="exampleInputEmail1">Counter</label>
                                         <input type="text" name="count" value="{{ old('count') }}"
                                             class="form-control" id="exampleInputName" placeholder="Enter Name">
                                     </div>
 
-
-
-                                    {{-- <div class="col-md-4 col-sm-12">
-                                        <div class="form-group">
-                                            <label class="d-block">
-                                                {{ $label }}
-                                
-                                            </label>
-                                            <div class="image-input-wrapper" style="background-image: url({{ $value }})">
-                                            </div>
-                                            <div class="image-input image-input-empty image-input-outline" id="{{ $id }}"
-                                                style="background-image: url({{ $value }})">
-                                                <div class="image-input-wrapper"></div>
-                                                <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
-                                                    data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
-                                                    <i class="fa fa-pen icon-sm text-muted"></i>
-                                                    <input type="file" name="{{ $name }}" accept="image/*" />
-                                                    <input type="hidden" name="profile_avatar_remove" />
-                                                </label>
-                                                <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
-                                                    data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
-                                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                                </span>
-                                                <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
-                                                    data-action="remove" data-toggle="tooltip" title="Remove avatar">
-                                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        @isset($deleteImage)
-                                            @include('admin.components.deleteImage')
-                                        @endisset
+                                    {{-- <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
                                     </div> --}}
                                 </div>
                                 <!-- /.card-body -->

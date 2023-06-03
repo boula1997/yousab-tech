@@ -94,7 +94,7 @@ class CounterController extends Controller
          $counter->update($data);
  
  
-        return redirect()->route('counters.edit',compact('counter'))
+        return redirect()->route('counters.index',compact('counter'))
             ->with('success', 'تم التعديل بنجاح');
     }
     /**
