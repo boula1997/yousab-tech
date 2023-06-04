@@ -1,7 +1,7 @@
 <head>
     <style>
         footer {
-            background: url('https://images.unsplash.com/photo-1497211419994-14ae40a3c7a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');
+            background: url({{asset('images/all-title-bg.jpg')}});
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -38,7 +38,6 @@
 
             }
         }
-
     </style>
 </head>
 
@@ -103,17 +102,17 @@
                 <!--headin5_amrc-->
                 <ul class="footer_ul_amrc">
                     @foreach ($blogs_footer as $blog_footer)
-                    <li class="media">
-                        <div class="media-left">
-                            <img class="img-fluid" src="{{ $blog_footer->image }}" alt="" />
-                        </div>
-                        <div class="media-body">
-                            <a href="{{ route('front.blog', $blog_footer) }}">
-                                <p>{{ $blog_footer->title }}</p>
-                            </a>
-                            <span>{{ $blog_footer->creared_at }}</span>
-                        </div>
-                    </li>
+                        <li class="media">
+                            <div class="media-left">
+                                <img class="img-fluid" src="{{ $blog_footer->image }}" alt="" />
+                            </div>
+                            <div class="media-body">
+                                <a href="{{ route('front.blog', $blog_footer) }}">
+                                    <p>{{ $blog_footer->title }}</p>
+                                </a>
+                                <span>{{ $blog_footer->creared_at }}</span>
+                            </div>
+                        </li>
                     @endforeach
                 </ul>
             </div>
@@ -143,28 +142,28 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="{{ asset('public/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('public/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('public/site/js/lightbox.js') }}"></script>
+<script src="{{ asset('jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('site/js/lightbox.js') }}"></script>
 <script>
-    $("#contactForm").on("submit", function (e) {
+    $("#contactForm").on("submit", function(e) {
         var dataString = $(this).serialize();
         $.ajax({
             type: "post",
             url: "{{ route('front.contact.post') }}",
             data: dataString,
-            success: function () {
+            success: function() {
                 $("#contactForm").html("<div id='message' style='text-align: center;'></div>");
                 $("#message")
                     .html(
-                        `<div  style="background: linear-gradient(90deg, rgba(92, 255, 92, 1) 0%, rgba(0, 163, 0, 1) 100%);" class="p-3 mb-2 rounded-5 text-center text-white">
+                        `<div  style="background: linear-gradient(50deg, rgba(50, 100, 30, 0) 0%, rgba(0, 50, 0, 1) 15%);" class="p-3 mb-2 rounded-5 text-center text-white">
                             <h2>تم ارسال رسالتك بنجاح!</h2>
                             <p>سيتم الرد عليك قريبا</p>
                         </div>`
                     )
                     .append("")
                     .hide()
-                    .fadeIn(1500, function () {
+                    .fadeIn(1500, function() {
                         $("#message").append(
                             // "<img id='checkmark' src='{{ $setting->logo }}' />"
                         );
@@ -177,7 +176,6 @@
         e.preventDefault();
         return false;
     });
-
 </script>
 </body>
 
