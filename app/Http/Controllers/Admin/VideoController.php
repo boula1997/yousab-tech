@@ -94,7 +94,7 @@ class VideoController extends Controller
          $video->update($data);
  
  
-        return redirect()->route('videos.edit',compact('video'))
+        return redirect()->route('videos.index',compact('video'))
             ->with('success', 'تم التعديل بنجاح');
     }
     /**

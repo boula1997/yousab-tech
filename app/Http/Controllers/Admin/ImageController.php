@@ -99,8 +99,8 @@ class ImageController extends Controller
  
          if($request->hasFile('image')!==null){
 
-            if(file_exists($image->image))
-            File::delete($image->image);
+            if(file_exists($image->path))
+            File::delete($image->path);
             $file = $request->file('image');
             $name=$file->getClientOriginalName();
             $file->move('images',$name);
@@ -109,7 +109,7 @@ class ImageController extends Controller
          }
  
          else
-        { $data['image']=$image->image;}
+        { $data['image']=$image->path;}
  
          $image->update($data);
  
@@ -125,7 +125,7 @@ class ImageController extends Controller
      */
     public function destroy(Image $image)
     {
-        dd($image->image);
+        dd($image->path);
         $image->delete();
  
         return redirect()->route('tests.index')

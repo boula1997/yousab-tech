@@ -49,7 +49,7 @@
                                         @foreach ($galleries as $gallery)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img src="{{ asset($gallery->image) }}" alt="{{ $gallery->title }}"></td>
+                                                <td><img src="{{ $gallery->image }}" alt="{{ $gallery->title }}"></td>
                                                 <td>{{ $gallery->title }}</td>
                                                 <td>
                                                     <form action="{{ route('galleries.destroy', $gallery) }}" method="POST">

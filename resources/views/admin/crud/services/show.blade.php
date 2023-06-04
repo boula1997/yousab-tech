@@ -49,7 +49,8 @@
                                             <label for="exampleInputFile">Image</label>
                                             <div class="col-md-6">
                                                 <div class="form-group text-center">
-                                                    <img width="300" height="300" src="{{ asset($service->image) }}"
+                                                    <img width="300" height="300" src="{{ 
+                                                        $service->image }}"
                                                         alt="">
 
                                                 </div>

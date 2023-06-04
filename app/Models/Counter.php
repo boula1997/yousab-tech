@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Counter extends Model
 {
     use HasFactory;
-
-    protected $fillable=['title','count'];
+    protected $table = 'counters';
+    protected $guarded = [];
+    public $timestamps = true;
+    
 }

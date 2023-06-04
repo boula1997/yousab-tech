@@ -49,7 +49,8 @@
                                         @foreach ($services as $service)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img width="100" height="100" src="{{ asset($service->image) }}" alt="{{ $service->title }}"></td>
+                                                <td><img width="100" height="100" src="{{ $service->image }}"
+                                                        alt="{{ $service->title }}"></td>
                                                 <td>{{ $service->title }}</td>
                                                 <td>
                                                     <form action="{{ route('services.destroy', $service) }}" method="POST">

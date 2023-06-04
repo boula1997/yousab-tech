@@ -8,5 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Slider extends Model
 {
     use HasFactory;
-    protected $fillable = ['title','image','description'];
+    protected $table = 'sliders';
+    protected $guarded = [];
+    public $timestamps = true;
+    
+    public function getImageAttribute($val)
+    {
+        return $val? asset($val):asset(settings()->logo);
+    }
 }

@@ -7,7 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model
 {
-    use HasFactory;
-    protected $fillable = ['logo','tab','address','map','title','image','facebook','twitter','youtube','tiktok','instgram','phone1','phone2','phone3','email1','email2','appointment1','appointment2'];
 
+    use HasFactory;
+    protected $table = 'settings';
+    protected $guarded = [];
+    public $timestamps = true;
+
+    public function getLogoAttribute($val)
+    {
+        return $val ? asset($val) : asset(settings()->logo);
+    }
+    public function getTabAttribute($val)
+    {
+        return $val ? asset($val) : asset(settings()->tab);
+    }
 }

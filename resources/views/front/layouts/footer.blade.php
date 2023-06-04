@@ -105,7 +105,7 @@
                     @foreach ($blogs_footer as $blog_footer)
                     <li class="media">
                         <div class="media-left">
-                            <img class="img-fluid" src="{{ asset($blog_footer->image) }}" alt="" />
+                            <img class="img-fluid" src="{{ $blog_footer->image }}" alt="" />
                         </div>
                         <div class="media-body">
                             <a href="{{ route('front.blog', $blog_footer) }}">
@@ -127,7 +127,7 @@
 
         </p>
         <div class="footer-logo">
-            <a href="{{ route('front.home') }}"><img width="150px" height="150px" src="{{ asset($setting->logo) }}"
+            <a href="{{ route('front.home') }}"><img width="150px" height="150px" src="{{ $setting->logo }}"
                     alt="" /></a>
         </div>
         <ul class="social_footer_ul">
@@ -166,7 +166,7 @@
                     .hide()
                     .fadeIn(1500, function () {
                         $("#message").append(
-                            // "<img id='checkmark' src='{{ asset($setting->logo) }}' />"
+                            // "<img id='checkmark' src='{{ $setting->logo }}' />"
                         );
                     });
             }

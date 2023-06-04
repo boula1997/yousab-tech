@@ -1,9 +1,9 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains page content -->
+    <!-- Content Wrapper. Contains video content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+        <!-- Content Header (video header) -->
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -40,7 +40,8 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Name</th>
+                                            <th>Title</th>
+                                            <th>Youtube Link</th>
                                             <th>Controls</th>
                                         </tr>
                                     </thead>
@@ -49,6 +50,7 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $video->title }}</td>
+                                                <td>{{ $video->youtube_link }}</td>
                                                 <td>
                                                     <form action="{{ route('videos.destroy', $video) }}" method="POST">
                                                         <a href="{{ route('videos.show', $video) }}" title="show">

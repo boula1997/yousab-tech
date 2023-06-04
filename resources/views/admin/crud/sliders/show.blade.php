@@ -50,7 +50,7 @@
                                             <label for="exampleInputFile">Image</label>
                                             <div class="col-md-6">
                                                 <div class="form-group text-center">
-                                                    <img width="300" height="300" src="{{ asset($slider->image) }}"
+                                                    <img width="300" height="300" src="{{ $slider->image }}"
                                                         alt="">
 
                                                 </div>

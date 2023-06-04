@@ -40,8 +40,7 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>image</th>
-                                            <th>Name</th>
+                                            <th>Title</th>
                                             <th>Controls</th>
                                         </tr>
                                     </thead>
@@ -49,7 +48,6 @@
                                         @foreach ($portfolios as $portfolio)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img src="{{ asset($portfolio->image) }}" alt="{{ $portfolio->title }}"></td>
                                                 <td>{{ $portfolio->title }}</td>
                                                 <td>
                                                     <form action="{{ route('portfolios.destroy', $portfolio) }}" method="POST">

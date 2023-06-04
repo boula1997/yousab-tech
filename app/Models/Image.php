@@ -8,7 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
     use HasFactory;
-    protected $fillable = ['gallery_id','image'];
+    protected $table = 'images';
+    protected $guarded = [];
+    public $timestamps = true;
+    
+    public function getPathAttribute($val)
+    {
+        return  asset($val);
+    }
 
     public function Gallery(){
         return $this->belongsTo(Gallery::class,'gallery_id');

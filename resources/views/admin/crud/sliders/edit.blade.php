@@ -87,7 +87,7 @@
                                             <div class="form-group text-center">
                                                 <label for="exampleInputFile">Image</label>
 
-                                                <img width="200" height="200" src="{{ asset($slider->image) }}"
+                                                <img width="200" height="200" src="{{ $slider->image }}"
                                                     alt="">
 
                                             </div>

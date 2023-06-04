@@ -9,5 +9,8 @@ class Video extends Model
 {
     use HasFactory;
 
-    protected $fillable=['title','youtube_link'];
+    protected $table = 'videos';
+    protected $guarded = [];
+    public $timestamps = true;
+    
 }

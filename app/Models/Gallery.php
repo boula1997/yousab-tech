@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Gallery extends Model
 {
     use HasFactory;
-    protected $fillable = ['title','subtitle','description'];
+    protected $table = 'galleries';
+    protected $guarded = [];
+    public $timestamps = true;
+    
 
 }   

@@ -8,5 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Team extends Model
 {
     use HasFactory;
-    protected $fillable = ['title','image','subtitle','description'];
+    protected $table = 'teams';
+    protected $guarded = [];
+    public $timestamps = true;
+    
+    public function getImageAttribute($val)
+    {
+        return $val? asset($val):asset(settings()->logo);
+    }
 }

@@ -1,9 +1,9 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains page content -->
+    <!-- Content Wrapper. Contains video content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+        <!-- Content Header (video header) -->
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -51,20 +51,31 @@
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Name</label>
+                                        <label for="exampleInputEmail1">Title</label>
                                         <input type="text" name="title" value="{{ old('title') }}"
                                             class="form-control" id="exampleInputName" placeholder="Enter Name">
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="exampleInputDescription">Youtube URL</label>
-                                        <textarea id="summernote" name="youtube_link">
-                                        </textarea>
-                                    </div>
 
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Youtube Link</label>
+                                            <input type="text" name="youtube_link" value="{{ old('youtube_link') }}"
+                                                class="form-control" id="exampleInputName" placeholder="Enter Name">
+                                        </div>
+
+
+
+                                        {{-- <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                    </div> --}}
+                                    </div>
+                                    <!-- /.card-body -->
+
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
                             </form>
                         </div>
                         <!-- /.card -->

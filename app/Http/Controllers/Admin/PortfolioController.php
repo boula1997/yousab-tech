@@ -102,7 +102,7 @@ class PortfolioController extends Controller
          ],['title.required'=>'حقل الاسم مطلوب',
          ]);
 
-         
+        //  dd($request->all());
          if($request->hasFile('images')){
 
             $files=$request->file('images');

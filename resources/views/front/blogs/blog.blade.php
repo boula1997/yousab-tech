@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <img class="img-fluid rounded mb-4" src="{{asset($blog_section->image)}}" alt="{{$blog->title}}" />
+        <img class="img-fluid rounded mb-4" src="{{$blog_section->image}}" alt="{{$blog_section->title}}" />
         @include('front.components.blogs')
         @include('front.components.partners')
     </div>
