@@ -12,10 +12,10 @@
                         <!-- general form elements -->
                         <div class="card card-light">
                             <div class="card-header">
-                                <h3 class="card-title">Quick Example</h3>
+                                <h3 class="card-title">Create Portfolio</h3>
                                 <ol class="breadcrumb float-sm-right bg-light p-0 m-0">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active">General Form</li>
+                                    <li class="breadcrumb-item"><a href="{{route('portfolios.index')}}">Portfolios</a></li>
+                                    <li class="breadcrumb-item active">Create</li>
                                 </ol>
                             </div>
                             <!-- /.card-header -->
@@ -71,8 +71,8 @@
                                 </div>
                                 <!-- /.card-body -->
 
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                <div class="card-footer text-center">
+                                    <button type="submit" class="btn btn-primary w-20">Submit</button>
                                 </div>
                             </form>
                         </div>

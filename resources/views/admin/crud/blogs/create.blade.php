@@ -12,8 +12,8 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Create Blog</li>
+                            <li class="breadcrumb-item"><a href="{{route('blogs.index')}}">Blogs</a></li>
+                            <li class="breadcrumb-item active">Create</li>
                         </ol>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                         <!-- general form elements -->
                         <div class="card card-secondary">
                             <div class="card-header">
-                                <h3 class="card-title">Edit Blog</h3>
+                                <h3 class="card-title">Create Blog</h3>
                             </div>
                             <!-- /.card-header -->
 
@@ -57,9 +57,9 @@
                                     </div>
 
 
-                                        <div class="form-group">
+                                    <div class="form-group">
                                         <label for="exampleInputDescription">Description</label>
-                                        <textarea id="summernote" name="description">
+                                        <textarea rows="100"  id="summernote" name="description">
                                             {!! old('description') !!}
                                         </textarea>
                                     </div>
@@ -85,8 +85,8 @@
                                 </div>
                                 <!-- /.card-body -->
 
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                <div class="card-footer text-center">
+                                    <button type="submit" class="btn btn-primary w-20">Submit</button>
                                 </div>
                             </form>
                         </div>

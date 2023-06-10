@@ -10,11 +10,20 @@
                     <!-- left column -->
                     <div class="col-md-12">
                         <!-- general form elements -->
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Quick Example</h3>
+                        <div class="card-header">
+                            <!-- general form elements -->
+                            <div class="row">
+                                <div class="col-md-6 d-flex d-flex justify-content-start">
+                                    <h3 class="card-title">Blogs</h3>
+                                </div>
+                                <div class="col-md-6 d-flex d-flex justify-content-end">
+                                    <a href="{{route('blogs.create')}}">
+
+                                        <button class="btn btn-primary"><i class="fa fa-plus fa-sm px-2" aria-hidden="true"></i> Add New</button>
+                                    </a>
+                                </div>
                             </div>
-                            <!-- /.card-header -->
+                        </div>
                             <div class="card-body">
                                 @if ($message = Session::get('success'))
                                     <div class="alert alert-success">

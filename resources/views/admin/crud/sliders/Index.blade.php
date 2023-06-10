@@ -12,9 +12,19 @@
                         <!-- general form elements -->
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Quick Example</h3>
+                                <!-- general form elements -->
+                                <div class="row">
+                                    <div class="col-md-6 d-flex d-flex justify-content-start">
+                                        <h3 class="card-title">Sliders</h3>
+                                    </div>
+                                    <div class="col-md-6 d-flex d-flex justify-content-end">
+                                        <a href="{{route('blogs.create')}}">
+
+                                            <button class="btn btn-primary">Sliders</button>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                            <!-- /.card-header -->
                             <div class="card-body">
                                 @if ($message = Session::get('success'))
                                     <div class="alert alert-success">
