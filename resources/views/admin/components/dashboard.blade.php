@@ -1,12 +1,12 @@
 
 
         <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
+        {{-- <div class="preloader flex-column justify-content-center align-items-center">
             <a href="{{ route('front.home') }}">
                 <img class="animation__shake" src="{{ asset('admin/img/logo.png') }}" alt="AdminLTELogo"
                     height="60" width="60">
             </a>
-        </div>
+        </div> --}}
 
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -185,7 +185,7 @@
                                 <p>
                                     Portfolios
                                     <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">6</span>
+                                    <span class="badge badge-info right">{{itemsCount('Portfolios')}}</span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -203,7 +203,7 @@
                                 <p>
                                     Pages
                                     <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">6</span>
+                                    <span class="badge badge-info right">{{itemsCount('pages')}}</span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -220,7 +220,7 @@
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Services <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">6</span>
+                                    <span class="badge badge-info right">{{itemsCount('services')}}</span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -237,7 +237,7 @@
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Blogs <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">6</span>
+                                    <span class="badge badge-info right">{{itemsCount('blogs')}}</span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -254,7 +254,7 @@
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     counters <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">6</span>
+                                    <span class="badge badge-info right">{{itemsCount('counters')}}</span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -271,7 +271,7 @@
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     videos <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">6</span>
+                                    <span class="badge badge-info right">{{itemsCount('videos')}}</span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -288,7 +288,7 @@
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Sliders <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">6</span>
+                                    <span class="badge badge-info right">{{itemsCount('sliders')}}</span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
