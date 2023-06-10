@@ -3,31 +3,16 @@
 @section('content')
     <!-- Content Wrapper. Contains service content -->
     <div class="content-wrapper">
-        <!-- Content Header (Service header) -->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>Services</h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Services</li>
-                        </ol>
-                    </div>
-                </div>
-            </div><!-- /.container-fluid -->
-        </section>
-
         <!-- Main content -->
-        <section class="content">
+        <section class="content pt-2">
             <div class="container-fluid">
                 <div class="row">
+                    <!-- left column -->
                     <div class="col-md-12">
+                        <!-- general form elements -->
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Bordered Table</h3>
+                                <h3 class="card-title">Quick Example</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -55,11 +40,11 @@
                                                 <td>
                                                     <form action="{{ route('services.destroy', $service) }}" method="POST">
                                                         <a href="{{ route('services.show', $service) }}" title="show">
-                                                            <i class="fas fa-eye text-success  fa-lg"></i>
+                                                            <i class="fas fa-eye text-secondary fa-lg"></i>
                                                         </a>
 
                                                         <a href="{{ route('services.edit', $service) }}" title="edit">
-                                                            <i class="fas fa-edit  fa-lg"></i>
+                                                            <i class="fas fa-edit  text-secondary  fa-lg"></i>
                                                         </a>
 
                                                         @csrf
@@ -67,7 +52,7 @@
 
                                                         <button type="submit" title="delete"
                                                             style="border: none; background-color:transparent;">
-                                                            <i class="fas fa-trash fa-lg text-danger"></i>
+                                                            <i class="fas fa-trash fa-lg text-secondary"></i>
                                                         </button>
                                                     </form>
                                                 </td>

@@ -31,7 +31,7 @@
                         <!-- left column -->
                         <div class="col-md-12">
                             <!-- general form elements -->
-                            <div class="card card-primary">
+                            <div class="card card-secondary">
                                 <div class="card-header">
                                     <h3 class="card-title">Quick Example</h3>
                                 </div>
