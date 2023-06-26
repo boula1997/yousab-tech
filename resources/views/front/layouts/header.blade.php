@@ -4,18 +4,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="الفيروز لتنسيق الحدائق و اعمال اللاندسكيب تركيب نجيل و ثيل و مظلات مسابح و شلالات اقل سعر اعلي جودة">
-    <meta name="keywords" content="{{$setting->meta_data}}">
+    <meta name="description"
+        content="الفيروز لتنسيق الحدائق و اعمال اللاندسكيب تركيب نجيل و ثيل و مظلات مسابح و شلالات اقل سعر اعلي جودة">
+    <meta name="keywords" content="{{ $setting->meta_data }}">
     <meta name="google-site-verification" content="l9ckpRd1nnm4e6bib_Il9gnvHUnTVIuGGF-atI5zOM4" />
     <title>شركة حدائق الفيروز</title>
-    <link rel="icon" href="{{$setting->tab}}">
+    <link rel="icon" href="{{ $setting->tab }}">
     <!-- Bootstrap core CSS -->
-    <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Fontawesome CSS -->
-    <link href="{{asset('site/css/all.css')}}" rel="stylesheet">
+    <link href="{{ asset('site/css/all.css') }}" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="{{asset('site/css/style.css')}}" rel="stylesheet">
-    <link href="{{asset('site/css/lightbox.css')}}" rel="stylesheet" />
+    <link href="{{ asset('site/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('site/css/lightbox.css') }}" rel="stylesheet" />
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -51,16 +52,18 @@
             height: 150px;
             widows: 160px;
         } */
-
     </style>
 </head>
 
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-3LMD3XH4D9');
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-3LMD3XH4D9');
 </script>
 
 <body style="padding: 0 !important">
@@ -81,46 +84,62 @@
                 <!-- Left links -->
                 <ul class="navbar-nav  mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::is('front.home')? 'active' : '' }}"
+                        <a class="nav-link {{ Route::is('front.home') ? 'active' : '' }}"
                             href="{{ route('front.home') }}">الرئيسية</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::is('front.about')? 'active' : '' }}"
+                        <a class="nav-link {{ Route::is('front.about') ? 'active' : '' }}"
                             href="{{ route('front.about') }}">من
                             نحن؟</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::is('front.service')? 'active' : '' }}"
-                            href="{{route('front.service')}}">خدماتنا</a>
+                        <a class="nav-link {{ Route::is('front.service') ? 'active' : '' }}"
+                            href="{{ route('front.service') }}">خدماتنا</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::is('front.blog')? 'active' : '' }}"
-                            href="{{route('front.blog')}}">المقالات</a>
+                        <a class="nav-link {{ Route::is('front.blog') ? 'active' : '' }}"
+                            href="{{ route('front.blog') }}">المقالات</a>
                     </li>
                     <!-- Navbar dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {{ Route::is('front.portfolio')? 'active' : '' }}" href="#"
-                            id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle {{ Route::is('front.portfolio') ? 'active' : '' }}"
+                            href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
+                            aria-expanded="false">
                             اعمالنا
                         </a>
                         <!-- Dropdown menu -->
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach ($portfolios as $portfolio)
-                            <li class="m-auto">
-                                <a class="dropdown-item d-flex"
-                                    href="{{route('front.portfolio',['id'=>$portfolio->id])}}">{{$portfolio->title}}</a>
-                            </li>
+                                <li class="m-auto">
+                                    <a class="dropdown-item d-flex"
+                                        href="{{ route('front.portfolio', ['id' => $portfolio->id]) }}">{{ $portfolio->title }}</a>
+                                </li>
                             @endforeach
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::is('front.video')? 'active' : '' }}"
+                        <a class="nav-link {{ Route::is('front.video') ? 'active' : '' }}"
                             href="{{ route('front.video') }}">فيديوهاتنا
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::is('front.contact')? 'active' : '' }}"
+                        <a class="nav-link {{ Route::is('front.contact') ? 'active' : '' }}"
                             href="{{ route('front.contact') }}">تواصل معنا</a>
+                    </li>
+                    <li class="nav-item">
+                        @auth
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <button type="submit" class="btn nav-link">Logout</button>
+                            </form>
+                        @endauth
+
+                        @if (!auth()->user())
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="{{ route('login') }}">Login</a>
+                    </li>
+                    @endif
                     </li>
                 </ul>
                 <!-- Left links -->
@@ -129,8 +148,8 @@
             <!-- Right elements -->
             <div class="d-flex align-items-center">
                 <!-- Navbar brand -->
-                <a class="navbar-brand mt-2 mt-lg-0" href="{{route('front.home')}}">
-                    <img src="{{$setting->logo}}" alt="Logo" loading="lazy"
+                <a class="navbar-brand mt-2 mt-lg-0" href="{{ route('front.home') }}">
+                    <img src="{{ $setting->logo }}" alt="Logo" loading="lazy"
                         style="width: 200px; height: 100px; border-radius: 10px; box-shadow: 10px; object-fit:cover; display: block;" />
                 </a>
             </div>
