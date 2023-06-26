@@ -31,6 +31,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
+
+Route::get('/admin/login',[App\Http\Controllers\Auth\LoginController::class,'showAdminLoginForm'])->name('admin.login-view');
+Route::post('/admin/login',[App\Http\Controllers\Auth\LoginController::class,'adminLogin'])->name('admin.login');
+
+Route::get('/admin/register',[App\Http\Controllers\Auth\RegisterController::class,'showAdminRegisterForm'])->name('admin.register-view');
+Route::post('/admin/register',[App\Http\Controllers\Auth\RegisterController::class,'createAdmin'])->name('admin.register');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin/dashboard',function(){
+    return view('dashboard');
+})->middleware('auth:admin');
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -83,8 +98,3 @@ Route::get('routes', function () {
 });
 
 
-require __DIR__.'/auth.php';
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
