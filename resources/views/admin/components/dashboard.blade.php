@@ -311,7 +311,7 @@
                         <i class="nav-icon  fa fa-sign-out text-white" aria-hidden="true"></i>
                         <button class="btn text-secondary" type="submit">Logout</button>
 
-                    </form>
+                    </form> 
                 </li>
 
                 @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
