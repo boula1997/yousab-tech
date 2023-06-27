@@ -15,6 +15,7 @@ return [
 
     'home'  => 'Home',
     'about'  => 'About',
+    'title'  => 'Title',
 
 
 ];
