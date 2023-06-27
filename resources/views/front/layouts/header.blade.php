@@ -85,7 +85,7 @@
                 <ul class="navbar-nav  mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link {{ Route::is('front.home') ? 'active' : '' }}"
-                            href="{{ route('front.home') }}">الرئيسية</a>
+                            href="{{ route('front.home') }}">{{__('general.home')}}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Route::is('front.about') ? 'active' : '' }}"
