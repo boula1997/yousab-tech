@@ -51,13 +51,13 @@ Route::group(
     ],
     function () {
 
-        Route::group(['middleware' => ['auth']], function () {
+        Route::group(['middleware' => ['auth:admin']], function () {
 
-            Route::resource('roles', RoleController::class);
             Route::get('/dashboard', function () {
                 return view('dashboard');
             })->name('dashboard');
 
+            Route::resource('roles', RoleController::class);
             // Route::resource('home',HomeController::class);
             Route::resource('blogs', BlogController::class);
             // Route::resource('contact',ContactController::class);
@@ -84,7 +84,7 @@ Route::group(
         Route::get('/', function () {
             return view('welcome');
         });
-        
+
         Auth::routes();
 
         Route::get('/admin/login', [App\Http\Controllers\Auth\LoginController::class, 'showAdminLoginForm'])->name('admin.login-view');

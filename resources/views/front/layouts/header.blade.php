@@ -85,7 +85,7 @@
                 <ul class="navbar-nav  mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link {{ Route::is('front.home') ? 'active' : '' }}"
-                            href="{{ route('front.home') }}">{{__('general.home')}}</a>
+                            href="{{ route('front.home') }}">{{ __('general.home') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Route::is('front.about') ? 'active' : '' }}"
@@ -136,19 +136,19 @@
 
                         @if (!auth()->user())
                     <li class="nav-item">
-                        <a class="nav-link"
-                            href="{{ route('login') }}">Login</a>
+                        <a class="nav-link" href="{{ route('login') }}">Login</a>
                     </li>
                     @endif
                     </li>
 
-                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                    <li>
-                        <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                            {{ $properties['native'] }}
-                        </a>
-                    </li>
-                @endforeach
+                    @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li>
+                            <a rel="alternate" hreflang="{{ $localeCode }}"
+                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                {{ $properties['native'] }}
+                            </a>
+                        </li>
+                    @endforeach
 
                 </ul>
                 <!-- Left links -->
