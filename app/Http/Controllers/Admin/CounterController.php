@@ -13,6 +13,16 @@ class CounterController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
+    
+    function __construct()
+    {
+         $this->middleware('permission:counter-list|counter-create|counter-edit|counter-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:counter-create', ['only' => ['create','store']]);
+         $this->middleware('permission:counter-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:counter-delete', ['only' => ['destroy']]);
+    }
+
+    
     public function index()
     {
         $counters = Counter::latest()->get();

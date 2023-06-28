@@ -16,6 +16,15 @@ class ImageController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
+
+    function __construct()
+    {
+         $this->middleware('permission:image-list|image-create|image-edit|image-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:image-create', ['only' => ['create','store']]);
+         $this->middleware('permission:image-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:image-delete', ['only' => ['destroy']]);
+    }
+
     public function index()
     {
           // dd(10);

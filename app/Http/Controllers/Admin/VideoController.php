@@ -13,6 +13,15 @@ class VideoController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
+
+    function __construct()
+    {
+         $this->middleware('permission:video-list|video-create|video-edit|video-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:video-create', ['only' => ['create','store']]);
+         $this->middleware('permission:video-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:video-delete', ['only' => ['destroy']]);
+    }
+
     public function index()
     {
         $videos = Video::latest()->get();

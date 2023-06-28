@@ -15,6 +15,15 @@ class PortfolioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     function __construct()
+     {
+          $this->middleware('permission:portfolio-list|portfolio-create|portfolio-edit|portfolio-delete', ['only' => ['index','show']]);
+          $this->middleware('permission:portfolio-create', ['only' => ['create','store']]);
+          $this->middleware('permission:portfolio-edit', ['only' => ['edit','update']]);
+          $this->middleware('permission:portfolio-delete', ['only' => ['destroy']]);
+     }
+ 
     public function index()
     {
         $portfolios = Gallery::latest()->get();
