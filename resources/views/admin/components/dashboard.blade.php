@@ -173,146 +173,170 @@
                 <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
 
+                 @can('portfolio-list')
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                Portfolios
+                                <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('Portfolios') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('portfolios.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Show</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                 @endcan
 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            Portfolios
-                            <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">{{ itemsCount('Portfolios') }}</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('portfolios.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Show</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            Pages
-                            <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">{{ itemsCount('pages') }}</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('pages.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Show</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            Services <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">{{ itemsCount('services') }}</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('services.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Show</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            Blogs <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">{{ itemsCount('blogs') }}</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('blogs.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Show</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            counters <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">{{ itemsCount('counters') }}</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('counters.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Show</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            videos <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">{{ itemsCount('videos') }}</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('videos.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Show</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            Sliders <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">{{ itemsCount('sliders') }}</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('sliders.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Show</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('edit.setting') }}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Settings
-                            <span class="right badge badge-danger">New</span>
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
+                 @can('page-list')
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                Pages
+                                <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('pages') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('pages.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Show</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                 @endcan
 
-                    <form action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <i class="nav-icon  fa fa-sign-out text-white" aria-hidden="true"></i>
-                        <button class="btn text-secondary" type="submit">Logout</button>
+                 @can('service-list')
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                Services <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('services') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('services.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Show</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                 @endcan
 
-                    </form> 
-                </li>
+                 @can('blog-lsit')
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                Blogs <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('blogs') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('blogs.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Show</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                 @endcan
+
+                 @can('counter-list')
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                counters <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('counters') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('counters.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Show</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                 @endcan
+
+                 @can('video-list')
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                videos <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('videos') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('videos.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Show</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                 @endcan
+
+                 @can('slider-list')
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                Sliders <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('sliders') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('sliders.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Show</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                 @endcan
+
+                 @can('setting-lsit')
+                    <li class="nav-item">
+                        <a href="{{ route('edit.setting') }}" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>
+                                Settings
+                                <span class="right badge badge-danger">New</span>
+                            </p>
+                        </a>
+                    </li>
+                 @endcan
+
+                    <li class="nav-item">
+
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <i class="nav-icon  fa fa-sign-out text-white" aria-hidden="true"></i>
+                            <button class="btn text-secondary" type="submit">Logout</button>
+
+                        </form> 
+                    </li>
+
 
                 @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                     <li class="nav-item">
