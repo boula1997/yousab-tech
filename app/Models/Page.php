@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 class Page extends Model
 {
@@ -12,8 +13,8 @@ class Page extends Model
     protected $guarded = [];
     public $timestamps = true;
     
-    public function getImageAttribute($val)
+    public function file(): MorphOne
     {
-        return $val? asset($val):asset(settings()->logo);
+        return $this->morphOne(File::class, 'fileable');
     }
 }
