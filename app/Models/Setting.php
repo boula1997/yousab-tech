@@ -4,14 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Astrotomic\Translatable\Translatable;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 
-class Setting extends Model
+class Setting extends Model implements TranslatableContract
 {
 
-    use HasFactory;
+    use HasFactory, Translatable;
     protected $table = 'settings';
     protected $guarded = [];
+    public $translatedAttributes = ['title', 'subtitle', 'description'];
     public $timestamps = true;
+
 
     public function getLogoAttribute($val)
     {
