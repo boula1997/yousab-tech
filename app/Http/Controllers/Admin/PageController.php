@@ -56,7 +56,6 @@ class PageController extends Controller
         $file->move('images', $data['image']);
         $page=Page::create($data);
         ModelsFile::create(['url' => $data['image'],'fileable_id'=>$page->id,'fileable_type'=>'App\Models\Page']);
-        dd($page->file->url);
         return redirect()->route('pages.index')
             ->with('success', 'تم الانشاء');
     }

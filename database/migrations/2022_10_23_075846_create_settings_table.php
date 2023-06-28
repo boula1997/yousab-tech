@@ -17,10 +17,7 @@ class CreateSettingsTable extends Migration
             $table->id();
             $table->string('logo');
             $table->string('tab');
-            $table->text('address');
-            $table->string('title');
             $table->string('image');
-            $table->text('description');
             $table->text('map');
             $table->text('facebook');
             $table->text('twitter');
@@ -31,10 +28,7 @@ class CreateSettingsTable extends Migration
             $table->text('phone2');
             $table->text('email1');
             $table->text('email2');
-            $table->text('appointment1');
-            $table->text('appointment2');
             $table->text('phone3');
-            $table->text('meta_data');
             $table->timestamps();
         });
     }
