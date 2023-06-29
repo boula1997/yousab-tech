@@ -18,8 +18,8 @@ class CreateCountTranslationsTable extends Migration
             $table->string('title');
             $table->unsignedBigInteger('count_id');
             $table->string('locale')->index();
-            $table->unique(['count_id', 'locale']);
-            $table->foreign('count_id')->references('id')->on('counts')->delete('cascade');
+            $table->unique(['count_id', 'locale'k]);
+            $table->foreign('count_id')->references('id')->on('counters')->delete('cascade');
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ class CreateSliderTranslationsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->unsignedBigInteger('service_id');
+            $table->unsignedBigInteger('sliderk_id');
             $table->string('locale')->index();
             $table->unique(['slider_id', 'locale']);
             $table->foreign('slider_id')->references('id')->on('sliders')->delete('cascade');
