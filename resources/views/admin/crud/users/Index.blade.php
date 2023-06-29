@@ -1,60 +1,113 @@
-@extends('layouts.app')
-
+@extends('admin.layouts.master')
 
 @section('content')
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Users Management</h2>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('users.create') }}"> Create New User</a>
-        </div>
+    <!-- Content Wrapper. Contains user content -->
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content pt-2">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <!-- general form elements -->
+                                <div class="row">
+                                    <div class="col-md-6 d-flex d-flex justify-content-start">
+                                        <h3 class="card-title">Users</h3>
+                                    </div>
+                                    <div class="col-md-6 d-flex d-flex justify-content-end">
+                                        <a href="{{route('users.create')}}">
+                                            
+                                            <button class="btn btn-primary"><i class="fa fa-plus fa-sm px-2" aria-hidden="true"></i> Add New</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                @if ($message = Session::get('success'))
+                                    <div class="alert alert-success">
+                                        <p style="text-align: end">{{ $message }} </p>
+                                    </div>
+                                @endif
+                                <table id="example1" class="table table-bordered table-hover">
+                                    <thead class="h-2">
+                                        <tr class="p-0 m-0">
+                                            <th>#</th>
+                                            <th>image</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Role</th>
+                                            <th>Controls</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($data as $user)
+                                            <tr class="p-0 m-0">
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td><img width="100" height="100" src="{{ $user->image }}"
+                                                        alt="{{ $user->name }}"></td>
+                                                <td>{{ $user->name }}</td>
+                                                <td>{{ $user->email }}</td>
+                                                <td>{{ $user->role }}</td>
+                                                <td>
+                                                    <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                                                        <a href="{{ route('users.show', $user->id) }}" title="show">
+                                                            <i class="fas  fa-eye text-secondary"></i>
+                                                        </a>
+
+                                                        <a href="{{ route('users.edit', $user->id) }}" title="edit">
+                                                            <i class="fas  fa-edit  text-secondary "></i>
+                                                        </a>
+
+                                                        @csrf
+                                                        @method('DELETE')
+
+                                                        <button type="submit" title="delete"
+                                                            style="border: none; background-color:transparent;">
+                                                            <i class="fas  fa-trash text-secondary"></i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
     </div>
-</div>
-
-
-@if ($message = Session::get('success'))
-<div class="alert alert-success">
-  <p>{{ $message }}</p>
-</div>
-@endif
-
-
-<table class="table table-bordered">
- <tr>
-   <th>No</th>
-   <th>Name</th>
-   <th>Email</th>
-   <th>Roles</th>
-   <th width="280px">Action</th>
- </tr>
- @foreach ($data as $key => $user)
-  <tr>
-    <td>{{ ++$i }}</td>
-    <td>{{ $user->name }}</td>
-    <td>{{ $user->email }}</td>
-    <td>
-      @if(!empty($user->getRoleNames()))
-        @foreach($user->getRoleNames() as $v)
-           <label class="badge badge-success">{{ $v }}</label>
-        @endforeach
-      @endif
-    </td>
-    <td>
-       <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
-       <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
-        {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-        {!! Form::close() !!}
-    </td>
-  </tr>
- @endforeach
-</table>
-
-
-{!! $data->render() !!}
-
-
-<p class="text-center text-primary"><small>Tutorial by ItSolutionStuff.com</small></p>
+    <!-- /.content-wrapper -->
 @endsection
+
+
+@push('scripts')
+    <script>
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
+@endpush

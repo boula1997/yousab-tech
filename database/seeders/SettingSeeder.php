@@ -14,7 +14,7 @@ class SettingSeeder extends Seeder
      */
     public function run()
     {
-        Setting::create([
+        Setting::updateOrCreate([
             'logo'=> 'logo',
             'tab'=> 'tab',
             'address'=> 'address',
