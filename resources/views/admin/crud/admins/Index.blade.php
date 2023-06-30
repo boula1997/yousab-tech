@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains user content -->
+    <!-- Content Wrapper. Contains admin content -->
     <div class="content-wrapper">
         <!-- Main content -->
         <section class="content pt-2">
@@ -14,10 +14,10 @@
                                 <!-- general form elements -->
                                 <div class="row">
                                     <div class="col-md-6 d-flex d-flex justify-content-start">
-                                        <h3 class="card-title">Users</h3>
+                                        <h3 class="card-title">Admins</h3>
                                     </div>
                                     <div class="col-md-6 d-flex d-flex justify-content-end">
-                                        <a href="{{route('users.create')}}">
+                                        <a href="{{route('admins.create')}}">
                                             
                                             <button class="btn btn-primary"><i class="fa fa-plus fa-sm px-2" aria-hidden="true"></i> Add New</button>
                                         </a>
@@ -38,24 +38,32 @@
                                             <th>image</th>
                                             <th>Name</th>
                                             <th>Email</th>
+                                            <th>Role</th>
                                             <th>Controls</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($data as $user)
+                                        @foreach ($data as $admin)
                                             <tr class="p-0 m-0">
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img width="100" height="100" src="{{ $user->image }}"
-                                                        alt="{{ $user->name }}"></td>
-                                                <td>{{ $user->name }}</td>
-                                                <td>{{ $user->email }}</td>
+                                                <td><img width="100" height="100" src="{{ $admin->image }}"
+                                                        alt="{{ $admin->name }}"></td>
+                                                <td>{{ $admin->name }}</td>
+                                                <td>{{ $admin->email }}</td>
                                                 <td>
-                                                    <form action="{{ route('users.destroy', $user->id) }}" method="POST">
-                                                        <a href="{{ route('users.show', $user->id) }}" title="show">
+                                                    @if(!empty($admin->getRoleNames()))
+                                                      @foreach($admin->getRoleNames() as $v)
+                                                         <label class="badge badge-success">{{ $v }}</label>
+                                                      @endforeach
+                                                    @endif
+                                                  </td>
+                                                <td>
+                                                    <form action="{{ route('admins.destroy', $admin->id) }}" method="POST">
+                                                        <a href="{{ route('admins.show', $admin->id) }}" title="show">
                                                             <i class="fas  fa-eye text-secondary"></i>
                                                         </a>
 
-                                                        <a href="{{ route('users.edit', $user->id) }}" title="edit">
+                                                        <a href="{{ route('admins.edit', $admin->id) }}" title="edit">
                                                             <i class="fas  fa-edit  text-secondary "></i>
                                                         </a>
 

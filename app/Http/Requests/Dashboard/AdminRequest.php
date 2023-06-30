@@ -4,10 +4,10 @@ namespace App\Http\Requests\Dashboard;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserRequest extends FormRequest
+class AdminRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Determine if the admin is authorized to make this request.
      *
      * @return bool
      */
@@ -27,7 +27,7 @@ class UserRequest extends FormRequest
         return [
             'image' => $image,
             'name' => 'required',
-            'email' => 'required|email|unique:users,email',
+            'email' => 'required|email|unique:admins,email',
             'password' => 'required|same:confirm-password',
             'roles' => 'required'
         ];

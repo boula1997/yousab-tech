@@ -193,6 +193,46 @@
                         </ul>
                     </li>
                  @endcan
+                 @can('user-list')
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                users
+                                <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('users') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('users.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Show</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                 @endcan
+                 @can('admin-list')
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                admins
+                                <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('admins') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('admins.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Show</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                 @endcan
 
                  @can('page-list')
                     <li class="nav-item">

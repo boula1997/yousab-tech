@@ -8,12 +8,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Create New User</h1>
+                        <h1>Edit Admin</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{ route('users.index') }}">Users</a></li>
-                            <li class="breadcrumb-item active">Create</li>
+                            <li class="breadcrumb-item"><a href="{{route('admins.index')}}">Admins</a></li>
+                            <li class="breadcrumb-item active">Edit</li>
                         </ol>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                         <!-- general form elements -->
                         <div class="card card-secondary">
                             <div class="card-header">
-                                <h3 class="card-title">Create User</h3>
+                                <h3 class="card-title">Edit Admin</h3>
                             </div>
                             <!-- /.card-header -->
 
@@ -45,19 +45,20 @@
                                 </div>
                             @endif
                             {{-- validation messages end --}}
-         
+
                             <!-- form start -->
-                            <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('admins.update',$admin) }}" method="post" enctype="multipart/form-data">
+                                @method('PUT')
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name</label>
-                                        <input type="text" name="name" value="{{ old('name') }}"
+                                        <input type="text" name="name" value="{{ old('name',$admin->name) }}"
                                             class="form-control" id="exampleInputName" placeholder="Enter Name">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email</label>
-                                        <input type="email" name="email" value="{{ old('email') }}"
+                                        <input type="email" name="email" value="{{ old('email',$admin->email) }}"
                                             class="form-control" id="exampleInputEmail" placeholder="Enter Email">
                                     </div>
                                     <div class="form-group">
@@ -68,8 +69,16 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Confirm Password</label>
                                         <input type="password" name="confirm-password" value="{{ old('confirm-password') }}"
-                                            class="form-control" id="exampleInputConfirmpassword"
-                                            placeholder="Enter Confirm Password">
+                                            class="form-control" id="exampleInputConfirmpassword" placeholder="Enter Confirm Password">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Role</label>
+                                        <select name="roles" id="" class="form-control">
+                                            @foreach ($roles as $role)
+                                            <option value="{{$role}}">{{$role}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
 
 
@@ -85,10 +94,10 @@
                                                 <span class="input-group-text">Upload</span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="card-footer text-center">
-                                        <button type="submit" class="btn btn-primary w-20">Submit</button>
-                                    </div>
+                                    </div>    
+                                <div class="card-footer text-center">
+                                    <button type="submit" class="btn btn-primary w-20">Submit</button>
+                                </div>
                             </form>
                         </div>
                         <!-- /.card -->

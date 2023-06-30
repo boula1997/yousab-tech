@@ -1,7 +1,8 @@
 <?php
   
 namespace Database\Seeders;
-  
+
+use App\Models\Admin;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
@@ -17,13 +18,13 @@ class CreateAdminUserSeeder extends Seeder
     public function run()
     {
         
-        $user = User::updateOrCreate([
+        $user = Admin::create([
             'name' => 'Hardik Savani', 
             'email' => 'admin@gmail.com',
             'password' => bcrypt('123456789')
         ]);
     
-        $role = Role::updateOrCreate(['name' => 'Admin']);
+        $role = Role::create(['name' => 'Admin','guard_name'=>'admin']);
      
         $permissions = Permission::pluck('id','id')->all();
    

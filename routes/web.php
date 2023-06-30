@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BlogController;
 // use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\GalleryController;
@@ -15,7 +16,7 @@ use App\Http\Controllers\Admin\CounterController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -72,6 +73,7 @@ Route::group(
 
             Route::resource('roles', RoleController::class);
             Route::resource('users', UserController::class);
+            Route::resource('admins', AdminController::class);
             Route::resource('products', ProductController::class);
 
 

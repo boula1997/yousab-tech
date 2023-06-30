@@ -1,12 +1,11 @@
 <?php
     
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
     
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\UserRequest;
 use App\Models\User;
-use Spatie\Permission\Models\Role;
 use DB;
 use Hash;
 use Illuminate\Support\Arr;
@@ -32,8 +31,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $roles = Role::pluck('name','name')->all();
-        return view('admin.crud.users.create',compact('roles'));
+        return view('admin.crud.users.create');
     }
     
     /**
@@ -48,8 +46,7 @@ class UserController extends Controller
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
     
-        $user = User::create($input);
-        $user->assignRole($request->input('roles'));
+        User::create($input);
     
         return redirect()->route('users.index')
                         ->with('success','User created successfully');
@@ -76,10 +73,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        $roles = Role::pluck('name','name')->all();
-        $userRole = $user->roles->pluck('name','name')->all();
-    
-        return view('admin.crud.users.edit',compact('user','roles','userRole'));
+
+        return view('admin.crud.users.edit',compact('user'));
     }
     
     /**
@@ -101,9 +96,7 @@ class UserController extends Controller
     
         $user = User::find($id);
         $user->update($input);
-        DB::table('model_has_roles')->where('model_id',$id)->delete();
     
-        $user->assignRole($request->input('roles'));
     
         return redirect()->route('users.index')
                         ->with('success','User updated successfully');

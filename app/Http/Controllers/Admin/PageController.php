@@ -14,17 +14,17 @@ class PageController extends Controller
     /**s
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Responses
      */
 
-     function __construct()
-     {
-          $this->middleware('permission:page-list|page-create|page-edit|page-delete', ['only' => ['index','show']]);
-          $this->middleware('permission:page-create', ['only' => ['create','store']]);
-          $this->middleware('permission:page-edit', ['only' => ['edit','update']]);
-          $this->middleware('permission:page-delete', ['only' => ['destroy']]);
-     }
- 
+    function __construct()
+    {
+        $this->middleware('permission:page-list|page-create|page-edit|page-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:page-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:page-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:page-delete', ['only' => ['destroy']]);
+    }
+
     public function index()
     {
         $pages = Page::latest()->get();
@@ -63,8 +63,8 @@ class PageController extends Controller
         $file = $request->file('image');
         $data['image'] = $request->image->store('images');
         $file->move('images', $data['image']);
-        $page=Page::create($data);
-        ModelsFile::create(['url' => $data['image'],'fileable_id'=>$page->id,'fileable_type'=>'App\Models\Page']);
+        $page = Page::create($data);
+        ModelsFile::create(['url' => $data['image'], 'fileable_id' => $page->id, 'fileable_type' => 'App\Models\Page']);
         return redirect()->route('pages.index')
             ->with('success', 'تم الانشاء');
     }
@@ -109,12 +109,13 @@ class PageController extends Controller
         $data = $request->all();
 
         if ($request->hasFile('image')) {
-
-            if (file_exists($page->image))
-                File::delete($page->image);
+            if (file_exists($page->file->url))
+                File::delete($page->file->url);
+            $page->file->delete();
             $file = $request->file('image');
             $data['image'] = $request->image->store('images');
             $file->move('images', $data['image']);
+            ModelsFile::create(['url' => $data['image'], 'fileable_id' => $page->id, 'fileable_type' => 'App\Models\Page']);
         } else {
             $data['image'] = $page->image;
         }
@@ -134,7 +135,8 @@ class PageController extends Controller
     public function destroy(Page $page)
     {
         $page->delete();
-        File::delete($page->image);
+        $page->file->delete();
+        File::delete($page->file->url);
 
 
         return redirect()->route('pages.index')

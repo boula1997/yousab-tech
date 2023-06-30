@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Admin;
 use App\Models\Blog;
 use App\Models\Contact;
 use App\Models\Counter;
@@ -78,6 +79,7 @@ function itemsCount($model)
         "services" => count(Service::get()),
         "teams" => count(Team::get()),
         "users" => count(User::get()),
+        "admins" => count(Admin::get()),
         "videos" => count(Video::get()),
     ];
 

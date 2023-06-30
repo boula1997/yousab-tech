@@ -72,14 +72,6 @@
                                             class="form-control" id="exampleInputConfirmpassword" placeholder="Enter Confirm Password">
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Role</label>
-                                        <select name="" id="" class="form-control">
-                                            @foreach ($roles as $role)
-                                            <option value="{{$role->id}}">{{$role->name}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
 
 
                                     <div class="form-group">

@@ -58,11 +58,19 @@ class PermissionTableSeeder extends Seeder
            'video-list',
            'video-create',
            'video-edit',
-           'video-delete'
+           'video-delete',
+           'user-list',
+           'user-create',
+           'user-edit',
+           'user-delete',
+           'admin-list',
+           'admin-create',
+           'admin-edit',
+           'admin-delete'
         ];
      
         foreach ($permissions as $permission) {
-             Permission::updateOrCreate(['name' => $permission]);
+             Permission::updateOrCreate(['name' => $permission,'guard_name'=>'admin']);
         }
     }
 }
