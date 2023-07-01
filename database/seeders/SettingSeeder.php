@@ -14,30 +14,37 @@ class SettingSeeder extends Seeder
      */
     public function run()
     {
-        Setting::updateOrCreate([
-            'logo'=> 'logo',
-            'tab'=> 'tab',
-            'address'=> 'address',
-            'title'=> 'title',
-            'image'=> 'image',
-            'description'=> 'description',
-            'map'=> 'map',
-            'facebook'=> 'facebook',
-            'twitter'=> 'twitter',
-            'youtube'=> 'youtube',
-            'tiktok'=> 'tiktok',
-            'instgram'=> 'instgram',
-            'phone1'=> 'phone1',
-            'phone2'=> 'phone2',
-            'email1'=> 'email1',
-            'email2'=> 'email2',
-            'appointment1'=> 'appointment1',
-            'appointment2'=> 'appointment2',
-            'phone3'=> 'phone3',
-            'meta_data'=> 'meta_data',
+        Setting::create([
+            'en' => [
+                'appointment1' => 'appointment1',
+                'appointment2' => 'appointment2',
+                'title' => 'title',
+                'address' => 'address',
+                'description' => 'description',
+                'meta_data' => 'meta_data',
+            ],
+            'ar' => [
+                'appointment1' => 'appointment1',
+                'appointment2' => 'appointment2',
+                'title' => 'title',
+                'address' => 'address',
+                'description' => 'description',
+                'meta_data' => 'meta_data',
+            ],
+            'logo' => 'logo',
+            'tab' => 'tab',
+            'image' => 'image',
+            'map' => 'map',
+            'facebook' => 'facebook',
+            'twitter' => 'twitter',
+            'youtube' => 'youtube',
+            'tiktok' => 'tiktok',
+            'instgram' => 'instgram',
+            'phone1' => 'phone1',
+            'phone2' => 'phone2',
+            'email1' => 'email1',
+            'email2' => 'email2',
+            'phone3' => 'phone3',
         ]);
     }
 }
-
-
-

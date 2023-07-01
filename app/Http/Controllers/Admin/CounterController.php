@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Counter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Dashboard\CounterRequest;
 
 class CounterController extends Controller
 {
@@ -46,15 +47,8 @@ class CounterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CounterRequest $request)
     { 
-        $request->validate([
-         'title' => 'required',
-         'count' => 'required',
-      ],['title.required'=>'حقل الاسم مطلوب',
-      'count.required'=>'حقل العدد مطلوب',
-    ]);
-    
     
         Counter::create($request->all());
         return redirect()->route('counters.index')
@@ -90,15 +84,9 @@ class CounterController extends Controller
      * @param  \App\Models\portfolio  $counter
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Counter $counter)
+    public function update(CounterRequest $request, Counter $counter)
     {
-        $request->validate([
-            'title' => 'required',
-            'count' => 'required',
-         ],['title.required'=>'حقل الاسم مطلوب',
-         'count.required'=>'حقل العدد مطلوب',
-       ]);
-         
+
          $data=$request->all();
  
          $counter->update($data);

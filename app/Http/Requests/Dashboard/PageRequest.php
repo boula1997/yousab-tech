@@ -25,6 +25,7 @@ class PageRequest extends FormRequest
         $image = request()->isMethod('put') ? 'nullable' : 'required';
         $rules = [
             'image' =>  $image ,
+            'identifier' => 'required' ,
         ];
         foreach (config('translatable.locales') as $locale) {
             $rules += [$locale . '.title' => ['required', 'string']];

@@ -3,34 +3,35 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Dashboard\ServiceRequest;
 use Illuminate\Support\Facades\File;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use App\Models\File as ModelsFile;
 
 class ServiceController extends Controller
 {
-   /**s
-    * Display a listing of the resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
+    /**s
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Responses
+     */
 
     function __construct()
     {
-         $this->middleware('permission:service-list|service-create|service-edit|service-delete', ['only' => ['index','show']]);
-         $this->middleware('permission:service-create', ['only' => ['create','store']]);
-         $this->middleware('permission:service-edit', ['only' => ['edit','update']]);
-         $this->middleware('permission:service-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:service-list|service-create|service-edit|service-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:service-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:service-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:service-delete', ['only' => ['destroy']]);
     }
-
 
     public function index()
     {
         $services = Service::latest()->get();
         return view('admin.crud.services.Index', compact('services'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('service', 1) - 1) * 5);
     }
- 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -40,35 +41,26 @@ class ServiceController extends Controller
     {
         return view('admin.crud.services.create');
     }
- 
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    { 
-        // dd($request->all());
-        $request->validate([
-            'title' => 'required',
-            'image' => 'required',
-            'description' => 'required',
-         ],['title.required'=>'حقل الاسم مطلوب',
-         'image.required'=>'حقل الصورة مطلوب',
-         'description.required'=>'حقل الوصف مطلوب',
-       ]);
+    public function store(ServiceRequest $request)
+    {
 
-       $data=$request->all();
-
+        $data = $request->except('image');
+        $service = Service::create($data);
         $file = $request->file('image');
-        $data['image']=$request->image->store('images');
-        $file->move('images',$data['image']);
-        Service::create($data);
+        $data['image'] = $request->image->store('images');
+        $file->move('images', $data['image']);
+        ModelsFile::create(['url' => $data['image'], 'fileable_id' => $service->id, 'fileable_type' => 'App\Models\Service']);
         return redirect()->route('services.index')
             ->with('success', 'تم الانشاء');
     }
- 
+
     /**
      * Display the specified resource.
      *
@@ -79,7 +71,7 @@ class ServiceController extends Controller
     {
         return view('admin.crud.services.show', compact('service'));
     }
- 
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -88,7 +80,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-    //    dd($service->title);
+        // dd($service);
         return view('admin.crud.services.edit', compact('service'));
     }
     /**
@@ -100,30 +92,24 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        $request->validate([
-            'title' => 'required',
-         ],['title.required'=>'حقل الاسم مطلوب',
-         'description.required'=>'حقل الوصف مطلوب',]);
-         
-         $data=$request->all();
- 
-         if($request->hasFile('image')){
-
-            if(file_exists($service->image))
-            File::delete($service->image);
+        $data = $request->except('image');
+        $service->update($data);
+        if ($request->hasFile('image')) {
+            if (file_exists($service->file->url))
+                File::delete($service->file->url);
+            $service->file->delete();
             $file = $request->file('image');
-            $data['image']=$request->image->store('images');
-            $file->move('images',$data['image']);
+            $data['image'] = $request->image->store('images');
+            $file->move('images', $data['image']);
+            ModelsFile::create(['url' => $data['image'], 'fileable_id' => $service->id, 'fileable_type' => 'App\Models\Service']);
+        } else {
+            $data['image'] = $service->image;
+        }
 
-         }
- 
-         else
-        { $data['image']=$service->image;}
- 
-         $service->update($data);
- 
- 
-        return redirect()->route('services.index',compact('service'))
+      
+
+
+        return redirect()->route('services.index', compact('service'))
             ->with('success', 'تم التعديل بنجاح');
     }
     /**
@@ -135,10 +121,11 @@ class ServiceController extends Controller
     public function destroy(Service $service)
     {
         $service->delete();
-        File::delete($service->image);
- 
+        $service->file->delete();
+        File::delete($service->file->url);
+
+
         return redirect()->route('services.index')
             ->with('success', 'تم الحذف');
     }
- 
 }

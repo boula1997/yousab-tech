@@ -3,27 +3,28 @@
 @section('content')
     <!-- Content Wrapper. Contains service content -->
     <div class="content-wrapper">
-        <!-- Main content -->
-        <section class="content pt-2">
+         <!-- Main content -->
+         <section class="content pt-2">
             <div class="container-fluid">
                 <div class="row">
                     <!-- left column -->
                     <div class="col-md-12">
-                        <div class="card-header">
-                            <!-- general form elements -->
-                            <div class="row">
-                                <div class="col-md-6 d-flex d-flex justify-content-start">
-                                    <h3 class="card-title">Services</h3>
-                                </div>
-                                <div class="col-md-6 d-flex d-flex justify-content-end">
-                                    <a href="{{route('services.create')}}">
+                        <!-- general form elements -->
+                        <div class="card">
+                            <div class="card-header">
+                                <!-- general form elements -->
+                                <div class="row">
+                                    <div class="col-md-6 d-flex d-flex justify-content-start">
+                                        <h3 class="card-title">services</h3>
+                                    </div>
+                                    <div class="col-md-6 d-flex d-flex justify-content-end">
+                                        <a href="{{route('services.create')}}">
 
-                                        <button class="btn btn-primary"><i class="fa fa-plus fa-sm px-2" aria-hidden="true"></i> Add New</button>
-                                    </a>
+                                            <button class="btn btn-primary"><i class="fa fa-plus fa-sm px-2" aria-hidden="true"></i> Add New</button>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            <!-- /.card-header -->
                             <div class="card-body">
                                 @if ($message = Session::get('success'))
                                     <div class="alert alert-success">
@@ -43,17 +44,16 @@
                                         @foreach ($services as $service)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img width="100" height="100" src="{{ $service->image }}"
-                                                        alt="{{ $service->title }}"></td>
+                                                <td><img width="100" height="100" src="{{ $service->file->url }}" alt="{{ $service->title }}"></td>
                                                 <td>{{ $service->title }}</td>
                                                 <td>
                                                     <form action="{{ route('services.destroy', $service) }}" method="POST">
                                                         <a href="{{ route('services.show', $service) }}" title="show">
-                                                            <i class="fas fa-eye text-secondary"></i>
+                                                            <i class="fas fa-eye text-secondary fa-lg"></i>
                                                         </a>
 
                                                         <a href="{{ route('services.edit', $service) }}" title="edit">
-                                                            <i class="fas fa-edit  text-secondary "></i>
+                                                            <i class="fas fa-edit  text-secondary  fa-lg"></i>
                                                         </a>
 
                                                         @csrf
@@ -61,7 +61,7 @@
 
                                                         <button type="submit" title="delete"
                                                             style="border: none; background-color:transparent;">
-                                                            <i class="fas fa-trash text-secondary"></i>
+                                                            <i class="fas fa-trash fa-lg text-secondary"></i>
                                                         </button>
                                                     </form>
                                                 </td>

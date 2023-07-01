@@ -1,10 +1,10 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains count content -->
+    <!-- Content Wrapper. Contains counter content -->
     <div class="content-wrapper">
-        <!-- Main content -->
-        <section class="content pt-2">
+         <!-- Main content -->
+         <section class="content pt-2">
             <div class="container-fluid">
                 <div class="row">
                     <!-- left column -->
@@ -15,10 +15,10 @@
                                 <!-- general form elements -->
                                 <div class="row">
                                     <div class="col-md-6 d-flex d-flex justify-content-start">
-                                        <h3 class="card-title">Galley</h3>
+                                        <h3 class="card-title">Pages</h3>
                                     </div>
                                     <div class="col-md-6 d-flex d-flex justify-content-end">
-                                        <a href="{{route('blogs.create')}}">
+                                        <a href="{{route('counters.create')}}">
 
                                             <button class="btn btn-primary"><i class="fa fa-plus fa-sm px-2" aria-hidden="true"></i> Add New</button>
                                         </a>
@@ -36,7 +36,7 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Title</th>
-                                            <th>Counter</th>
+                                            <th>Count</th>
                                             <th>Controls</th>
                                         </tr>
                                     </thead>

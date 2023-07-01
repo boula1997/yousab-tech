@@ -275,7 +275,7 @@
                     </li>
                  @endcan
 
-                 @can('blog-lsit')
+                 {{-- @can('blog-lsit') --}}
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
@@ -293,7 +293,7 @@
                             </li>
                         </ul>
                     </li>
-                 @endcan
+                 {{-- @endcan --}}
 
                  @can('counter-list')
                     <li class="nav-item">

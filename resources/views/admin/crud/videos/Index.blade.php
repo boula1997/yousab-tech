@@ -15,12 +15,13 @@
                                 <!-- general form elements -->
                                 <div class="row">
                                     <div class="col-md-6 d-flex d-flex justify-content-start">
-                                        <h3 class="card-title">Videos</h3>
+                                        <h3 class="card-title">videos</h3>
                                     </div>
                                     <div class="col-md-6 d-flex d-flex justify-content-end">
-                                        <a href="{{route('videos.create')}}">
+                                        <a href="{{ route('videos.create') }}">
 
-                                            <button class="btn btn-primary"><i class="fa fa-plus fa-sm px-2" aria-hidden="true"></i> Add New</button>
+                                            <button class="btn btn-primary"><i class="fa fa-plus fa-sm px-2"
+                                                    aria-hidden="true"></i> Add New</button>
                                         </a>
                                     </div>
                                 </div>
@@ -35,8 +36,8 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Title</th>
                                             <th>Youtube Link</th>
+                                            <th>Title</th>
                                             <th>Controls</th>
                                         </tr>
                                     </thead>
@@ -44,8 +45,8 @@
                                         @foreach ($videos as $video)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $video->title }}</td>
                                                 <td>{{ $video->youtube_link }}</td>
+                                                <td>{{ $video->title }}</td>
                                                 <td>
                                                     <form action="{{ route('videos.destroy', $video) }}" method="POST">
                                                         <a href="{{ route('videos.show', $video) }}" title="show">

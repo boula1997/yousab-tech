@@ -3,8 +3,8 @@
 @section('content')
     <!-- Content Wrapper. Contains slider content -->
     <div class="content-wrapper">
-        <!-- Main content -->
-        <section class="content pt-2">
+         <!-- Main content -->
+         <section class="content pt-2">
             <div class="container-fluid">
                 <div class="row">
                     <!-- left column -->
@@ -15,12 +15,12 @@
                                 <!-- general form elements -->
                                 <div class="row">
                                     <div class="col-md-6 d-flex d-flex justify-content-start">
-                                        <h3 class="card-title">Sliders</h3>
+                                        <h3 class="card-title">sliders</h3>
                                     </div>
                                     <div class="col-md-6 d-flex d-flex justify-content-end">
-                                        <a href="{{route('blogs.create')}}">
+                                        <a href="{{route('sliders.create')}}">
 
-                                            <button class="btn btn-primary">Sliders</button>
+                                            <button class="btn btn-primary"><i class="fa fa-plus fa-sm px-2" aria-hidden="true"></i> Add New</button>
                                         </a>
                                     </div>
                                 </div>
@@ -44,7 +44,7 @@
                                         @foreach ($sliders as $slider)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img width="100" height="100" src="{{ $slider->image }}" alt="{{ $slider->title }}"></td>
+                                                <td><img width="100" height="100" src="{{ $slider->file->url }}" alt="{{ $slider->title }}"></td>
                                                 <td>{{ $slider->title }}</td>
                                                 <td>
                                                     <form action="{{ route('sliders.destroy', $slider) }}" method="POST">
