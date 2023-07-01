@@ -44,7 +44,7 @@
                                         @foreach ($pages as $page)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img width="100" height="100" src="{{ $page->image }}" alt="{{ $page->title }}"></td>
+                                                <td><img width="100" height="100" src="{{ $page->file->url }}" alt="{{ $page->title }}"></td>
                                                 <td>{{ $page->title }}</td>
                                                 <td>
                                                     <form action="{{ route('pages.destroy', $page) }}" method="POST">

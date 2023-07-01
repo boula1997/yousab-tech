@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Dashboard\PageRequest;
 use App\Models\File as ModelsFile;
 use App\Models\Page;
 use Illuminate\Http\Request;
@@ -48,17 +49,9 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PageRequest $request)
     {
-        // dd($request->all());
-        $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-        ], [
-            'title.required' => 'حقل الاسم مطلوب',
-            'description.required' => 'حقل الوصف مطلوب',
-        ]);
-
+        
         $data = $request->all();
         $file = $request->file('image');
         $data['image'] = $request->image->store('images');
@@ -88,7 +81,7 @@ class PageController extends Controller
      */
     public function edit(Page $page)
     {
-        //    dd($page->title);
+        // dd($page);
         return view('admin.crud.pages.edit', compact('page'));
     }
     /**

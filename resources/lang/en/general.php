@@ -16,6 +16,17 @@ return [
     'home'  => 'Home',
     'about'  => 'About',
     'title'  => 'Title',
+    'ar'  => 'Arabic',
+    'en'  => 'English',
+    'description'  => 'Description',
+    'image'  => 'Image',
+    'add_new'  => 'Add New',
+    'save'  => 'Save',
+    'cancel'  => 'Cancel',
+    'subtitle'  => 'Subtitle',
+    'identifier'  => 'Identifier',
+    'edit'  => 'Edit',
+    'show'  => 'Show',
 
 
 ];

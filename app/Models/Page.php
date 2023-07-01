@@ -15,7 +15,7 @@ class Page extends Model implements TranslatableContract
     protected $guarded = [];
     public $translatedAttributes = ['title', 'subtitle', 'description'];
     public $timestamps = true;
-    
+
     public function file(): MorphOne
     {
         return $this->morphOne(File::class, 'fileable');

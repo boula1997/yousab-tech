@@ -1,120 +1,133 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Main content -->
-        <section class="content pt-2">
-            <div class="container-fluid">
-                <div class="row">
-                    <!-- left column -->
-                    <div class="col-md-12">
-                        <!-- general form elements -->
-                        <div class="card card-light">
-                            <div class="card-header">
-                                <h3 class="card-title">Edit Page</h3>
-                                <ol class="breadcrumb float-sm-right bg-light p-0 m-0">
-                                    <li class="breadcrumb-item"><a href="{{route('pages.index')}}">Pages</a></li>
-                                    <li class="breadcrumb-item active">Edit</li>
-                                </ol>
-                            </div>
-                            <!-- /.card-header -->
-
-                            {{-- validation messages start --}}
-                            @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <strong>اخطاء!</strong>
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                            {{-- validation messages end --}}
-
-                            <!-- form start -->
-                            <form action="{{ route('pages.update', $page) }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                @method('PUT')
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Title</label>
-                                        <input type="text" name="title" value="{{ old('title', $page->title) }}"
-                                            class="form-control" id="exampleInputName" placeholder="Enter Name">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Subtitle</label>
-                                        <input type="text" name="subtitle" value="{{ old('subtitle', $page->subtitle) }}"
-                                            class="form-control" id="exampleInputName" placeholder="Enter Name">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Identifier</label>
-                                        <input type="text" name="identifier"
-                                            value="{{ old('identifier', $page->identifier) }}" class="form-control"
-                                            id="exampleInputName" placeholder="Enter Name">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="exampleInputDescription">Description</label>
-                                        <textarea id="summernote" name="description">
-                                            {!! old('description'), $page->description !!}
-                                        </textarea>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group mt-30">
-                                                <label for="exampleInputFile">Image</label>
-                                                <div class="input-group">
-                                                    <div class="custom-file">
-                                                        <input type="file" name="image" class="custom-file-input"
-                                                            id="exampleInputFile">
-                                                        <label class="custom-file-label" for="exampleInputFile">Choose
-                                                            file</label>
-                                                    </div>
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text">Upload</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group text-center">
-                                                <label for="exampleInputFile">Image</label>
-
-                                                <img width="200" height="200" src="{{ $page->image }}"
-                                                    alt="">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {{-- <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                    </div> --}}
-                                </div>
-                                <!-- /.card-body -->
-
-                                <div class="card-footer text-center">
-                                    <button type="submit" class="btn btn-primary w-20">Submit</button>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- /.card -->
-
-
+        <form action="{{ route('pages.store') }}" method="post" enctype="multipart/form-data">
+            @method('PUT')
+            @csrf
+            <div class="card card-custom mb-2">
+                <div class="card-header card-header-tabs-line">
+                    <div class="card-title">
+                        <h3 class="card-label">@lang('general.add_new')</h3>
                     </div>
-                    <!--/.col (left) -->
-
                 </div>
-                <!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
+                <div class="card-toolbar">
+                    <ul class="nav nav-tabs nav-bold nav-tabs-line">
+                        @foreach (config('translatable.locales') as $key => $locale)
+                            <li class="nav-item">
+                                <a class="nav-link  @if ($key == 0) active @endif" data-toggle="tab"
+                                    href="{{ '#' . $locale }}">@lang('general.' . $locale)</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content">
+                        @foreach (config('translatable.locales') as $key => $locale)
+                            <div class="tab-pane fade show @if ($key == 0) active @endif"
+                                id="{{ $locale }}" role="tabpanel">
+                                <div class="form-group">
+                                    <label>@lang('general.title') - @lang('general.' . $locale)<span class="text-danger"> * </span></label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                                        </div>
+                                        <input type="text" name="{{ $locale . '[title]' }}"
+                                            placeholder="@lang('general.title')"
+                                            class="form-control  pl-5 min-h-40px @error($locale . '.title') is-invalid @enderror"
+                                            value="{{ old($locale . '.title',$page->translate($locale)->title) }}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>@lang('general.subtitle') - @lang('general.' . $locale)<span class="text-danger"> * </span></label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                                        </div>
+                                        <input type="text" name="{{ $locale . '[subtitle]' }}"
+                                            placeholder="@lang('general.subtitle')"
+                                            class="form-control  pl-5 min-h-40px @error($locale . '.subtitle') is-invalid @enderror"
+                                            value="{{ old($locale . '.subtitle',$page->translate($locale)->subtitle) }}">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-form-group">
+                                    <label>@lang('general.description')(@lang('general.' . $locale))<span class="text-danger">*</span></label>
+                                    <textarea rows="100" class=" @error($locale . '.description') is-invalid @enderror" id="summernote"
+                                        name="{{ $locale . '[description]' }}">
+                                    {!! old($locale . '.description',$page->translate($locale)->description) !!} 
+                                </textarea>
+                                </div>
+                                {{-- <div class="form-group">
+                                    <label>@lang('pages.description') - @lang('general.'.$locale)<span class="text-danger"> * </span></label>
+                                    <textarea name="{{ $locale . '[description]' }}" @error($locale . '.description') is-invalid @enderror class="form-control kt-ckeditor-5">{{ old($locale . '.description') }}</textarea>
+                                </div> --}}
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            <div class="card card-custom">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">{{__('general.identifier')}}</label>
+                                    <input type="text" name="Identifier" value="{{ old('identifier',$page->identifier) }}"
+                                        class="form-control" id="exampleInputName" placeholder="Enter Identifier">
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label class="col-form-label d-block">@lang('general.image')</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" name="image" class="custom-file-input"
+                                                id="exampleInputFile">
+                                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">Upload</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label class="col-form-label d-block">@lang('general.image')</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <img src="{{$page->file->url}}">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-light-success active">@lang('general.save')</button>
+                    <a href="{{ route('pages.index') }}"
+                        class="btn btn-light-success font-weight-bold">@lang('general.cancel')</a>
+                </div>
+            </div>
+        </form>
     </div>
-    <!-- /.content-wrapper -->
 @endsection
 
 @push('scripts')
