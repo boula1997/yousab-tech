@@ -35,7 +35,7 @@
                                         <input type="text" name="{{ $locale . '[title]' }}"
                                             placeholder="@lang('general.title')"
                                             class="form-control  pl-5 min-h-40px @error($locale . '.title') is-invalid @enderror"
-                                            value="{{ old($locale . '.title',$page->translate($locale)->title) }}">
+                                            value="{{ old($locale . '.title', $page->translate($locale)->title) }}">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -47,7 +47,7 @@
                                         <input type="text" name="{{ $locale . '[subtitle]' }}"
                                             placeholder="@lang('general.subtitle')"
                                             class="form-control  pl-5 min-h-40px @error($locale . '.subtitle') is-invalid @enderror"
-                                            value="{{ old($locale . '.subtitle',$page->translate($locale)->subtitle) }}">
+                                            value="{{ old($locale . '.subtitle', $page->translate($locale)->subtitle) }}">
                                     </div>
                                 </div>
 
@@ -57,7 +57,7 @@
                                     <label>@lang('general.description')(@lang('general.' . $locale))<span class="text-danger">*</span></label>
                                     <textarea rows="100" class=" @error($locale . '.description') is-invalid @enderror" id="summernote"
                                         name="{{ $locale . '[description]' }}">
-                                    {!! old($locale . '.description',$page->translate($locale)->description) !!} 
+                                    {!! old($locale . '.description', $page->translate($locale)->description) !!} 
                                 </textarea>
                                 </div>
                                 {{-- <div class="form-group">
@@ -75,16 +75,18 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">{{__('general.identifier')}}</label>
-                                    <input type="text" name="Identifier" value="{{ old('identifier',$page->identifier) }}"
-                                        class="form-control" id="exampleInputName" placeholder="Enter Identifier">
+                                    <label for="exampleInputEmail1">{{ __('general.identifier') }}</label>
+                                    <input type="text" name="Identifier"
+                                        value="{{ old('identifier', $page->identifier) }}" class="form-control"
+                                        id="exampleInputName" placeholder="Enter Identifier">
                                 </div>
                             </div>
 
                         </div>
-                        
+
                     </div>
-                    <div class="row">
+                    <br>
+                    <div class="row mt-5" style="height: 200px">
 
                         <div class="col-md-6">
                             <div class="form-group">
@@ -102,28 +104,24 @@
                                     </div>
                                 </div>
                             </div>
-    
+
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="form-group">
-                                    <label class="col-form-label d-block">@lang('general.image')</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <img src="{{$page->file->url}}">
-                                        </div>
-
+                            <div class="form-group py-5">
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <img src="{{ $page->file->url }}" class="w-50">
                                     </div>
+
                                 </div>
                             </div>
-    
+
                         </div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-light-success active">@lang('general.save')</button>
-                    <a href="{{ route('pages.index') }}"
-                        class="btn btn-light-success font-weight-bold">@lang('general.cancel')</a>
+                    <button type="submit" class="btn btn-success">@lang('general.save')</button>
+                    <a href="{{ route('pages.index') }}" class="btn btn-danger font-weight-bold">@lang('general.cancel')</a>
                 </div>
             </div>
         </form>

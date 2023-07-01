@@ -25,25 +25,21 @@
                         <div class="tab-pane fade show @if ($key == 0) active @endif"
                             id="{{ $locale }}" role="tabpanel">
                             <div class="row">
-                                <div class="col-md-12">
-                                    <div class="mb-7 bg-light p-5 rounded h-100">
+                                <div class="col-md-6">
+                                    <div class="mb-7 bg-light p-3 rounded h-100">
                                         <div class="card-title">
                                             <h5 class="font-weight-bolder text-dark">@lang('general.title'):</h5>
+                                            <p class="m-0">{{ $page->translate($locale)->title }}</p>
                                         </div>
-                                        <p class="m-0">{{ $page->translate($locale)->title }}</p>
                                     </div>
                                 </div>
 
-                            </div>
-                            <br>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="mb-7 bg-light p-5 rounded h-100">
+                                <div class="col-md-6">
+                                    <div class="mb-7 bg-light p-3 rounded h-100">
                                         <div class="card-title">
                                             <h5 class="font-weight-bolder text-dark">@lang('general.subtitle'):</h5>
+                                            <p class="m-0">{{ $page->translate($locale)->subtitle }}</p>
                                         </div>
-                                        <p class="m-0">{{ $page->translate($locale)->subtitle }}</p>
                                     </div>
                                 </div>
 
@@ -52,11 +48,11 @@
                             <br>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="mb-7 bg-light p-5 rounded h-100">
+                                    <div class="mb-7 bg-light p-3 rounded h-100">
                                         <div class="card-title">
                                             <h5 class="font-weight-bolder text-dark">@lang('general.description'):</h5>
+                                            <p class="m-0">{!! $page->translate($locale)->description !!}</p>
                                         </div>
-                                        <p class="m-0">{!! $page->translate($locale)->description !!}</p>
                                     </div>
                                 </div>
                             </div>
@@ -70,10 +66,10 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                @if ($page->url !== null)
+                                @if ($page->file !== null)
                                     <label class="col-form-label d-block">@lang('general.image')</label>
                                     <br>
-                                    <img src="{{ asset($page->file->url) }}" class="w-100">
+                                    <img src="{{ asset($page->file->url) }}" class="w-50">
                                 @endif
                             </div>
                         </div>
