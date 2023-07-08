@@ -173,7 +173,7 @@
                 <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
 
-                 @can('portfolio-list')
+                @can('portfolio-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
@@ -192,8 +192,8 @@
                             </li>
                         </ul>
                     </li>
-                 @endcan
-                 @can('user-list')
+                @endcan
+                @can('user-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
@@ -212,8 +212,8 @@
                             </li>
                         </ul>
                     </li>
-                 @endcan
-                 @can('admin-list')
+                @endcan
+                @can('admin-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
@@ -232,9 +232,9 @@
                             </li>
                         </ul>
                     </li>
-                 @endcan
+                @endcan
 
-                 @can('page-list')
+                @can('page-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
@@ -253,9 +253,9 @@
                             </li>
                         </ul>
                     </li>
-                 @endcan
+                @endcan
 
-                 @can('service-list')
+                @can('service-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
@@ -273,29 +273,29 @@
                             </li>
                         </ul>
                     </li>
-                 @endcan
+                @endcan
 
-                 {{-- @can('blog-lsit') --}}
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
-                            <p>
-                                Blogs <i class="fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">{{ itemsCount('blogs') }}</span>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{ route('blogs.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Show</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                 {{-- @endcan --}}
+                {{-- @can('blog-lsit') --}}
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-copy"></i>
+                        <p>
+                            Blogs <i class="fas fa-angle-left right"></i>
+                            <span class="badge badge-info right">{{ itemsCount('blogs') }}</span>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('blogs.index') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Show</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                {{-- @endcan --}}
 
-                 @can('counter-list')
+                @can('counter-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
@@ -313,9 +313,9 @@
                             </li>
                         </ul>
                     </li>
-                 @endcan
+                @endcan
 
-                 @can('video-list')
+                @can('video-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
@@ -333,9 +333,9 @@
                             </li>
                         </ul>
                     </li>
-                 @endcan
+                @endcan
 
-                 @can('slider-list')
+                @can('slider-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
@@ -353,9 +353,29 @@
                             </li>
                         </ul>
                     </li>
-                 @endcan
+                @endcan
 
-                 @can('setting-lsit')
+                @can('contact-list')
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                Contacts <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('contacts') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('contacts.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Show</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endcan
+
+                @can('setting-lsit')
                     <li class="nav-item">
                         <a href="{{ route('edit.setting') }}" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
@@ -365,17 +385,17 @@
                             </p>
                         </a>
                     </li>
-                 @endcan
+                @endcan
 
-                    <li class="nav-item">
+                <li class="nav-item">
 
-                        <form action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            <i class="nav-icon  fa fa-sign-out text-white" aria-hidden="true"></i>
-                            <button class="btn text-secondary" type="submit">Logout</button>
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <i class="nav-icon  fa fa-sign-out text-white" aria-hidden="true"></i>
+                        <button class="btn text-secondary" type="submit">Logout</button>
 
-                        </form> 
-                    </li>
+                    </form>
+                </li>
 
 
                 @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)

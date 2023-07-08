@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\ContactController;
 // use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\SiteController;
@@ -75,6 +76,7 @@ Route::group(
             Route::resource('users', UserController::class);
             Route::resource('admins', AdminController::class);
             Route::resource('products', ProductController::class);
+            Route::resource('contacts', ContactController::class);
 
 
             Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -100,7 +102,7 @@ Route::group(
 
         Route::get('/', 'App\Http\Controllers\SiteController@home')->name('front.home');
         Route::get('/blog-page', 'App\Http\Controllers\SiteController@blogs')->name('front.blog');
-        Route::get('/contacts', 'App\Http\Controllers\SiteController@contact')->name('front.contact');
+        Route::get('/contact', 'App\Http\Controllers\SiteController@contact')->name('front.contact');
         Route::get('/service', 'App\Http\Controllers\SiteController@services')->name('front.service');
         Route::get('/single-service', 'App\Http\Controllers\SiteController@single_service')->name('front.show.service');
         Route::get('/single-blog', 'App\Http\Controllers\SiteController@single_blog')->name('front.show.blog');
