@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Dashboard\PortfolioRequest;
 use Illuminate\Support\Facades\File;
 use App\Models\Gallery;
 use App\Models\Image;
 use Illuminate\Http\Request;
+use App\Models\File as ModelsFile;
 
 class PortfolioController extends Controller
 {
@@ -47,23 +49,17 @@ class PortfolioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PortfolioRequest $request)
     { 
-        $request->validate([
-            'title' => 'required',
-            'images.*' => 'required',
-         ],['title.required'=>'حقل الاسم مطلوب',
-         'images.*.required'=>'حقل الصورة مطلوب',]);
-
          $portfolio=Gallery::create($request->all());
         //  dd($portfolio);
-        if($request->hasFile('images')!==null){
+        if($request->has('images')!==null){
 
-            $files=$request->file('images');
+            $files=$request->images;
             foreach($files as $file){
                 $data['image']=$file->store('images');
                 $file->move('images',$data['image']);
-                Image::create(['image'=>$data['image'],'gallery_id'=>$portfolio->id]);
+                ModelsFile::create(['url' => $data['image'], 'fileable_id' => $portfolio->id, 'fileable_type' => 'App\Models\Portfolio']);
             }
 
          }
@@ -103,32 +99,29 @@ class PortfolioController extends Controller
      * @param  \App\Models\portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gallery $portfolio)
+    public function update(PortfolioRequest $request, Gallery $portfolio)
     {
-        $request->validate([
-            'title' => 'required',
-            
-         ],['title.required'=>'حقل الاسم مطلوب',
-         ]);
 
         //  dd($request->all());
          if($request->hasFile('images')){
 
-            $files=$request->file('images');
-            foreach($files as $file){
-                $data['image']=$file->store('images');
-                $file->move('images',$data['image']);
-                Image::create(['image'=>$data['image'],'gallery_id'=>$portfolio->id]);
-            }
+             if($request->hasFile('images')!==null){
+                $files=$request->file('images');
+                foreach($files as $file){
+                    $data['image']=$file->store('images');
+                    $file->move('images',$data['image']);
+                    ModelsFile::create(['url' => $data['image'], 'fileable_id' => $portfolio->id, 'fileable_type' => 'App\Models\Portfolio']);
+                }
 
          }
-         if($request->has('delimages')){
 
-            $delimages=$request->input('delimages');
-            foreach($delimages as $delimage){
-                File::delete(Image::where('id',$delimage));
-                Image::where('id',$delimage)->delete();
-            }
+        //  if($request->has('delimages')){
+
+        //     $delimages=$request->input('delimages');
+        //     foreach($delimages as $delimage){
+        //         File::delete(File::where('id',$delimage));
+        //         Image::where('id',$delimage)->delete();
+        //     }
          }
 
         return redirect()->route('portfolios.edit',compact('portfolio'))

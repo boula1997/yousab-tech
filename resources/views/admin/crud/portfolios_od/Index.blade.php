@@ -3,8 +3,8 @@
 @section('content')
     <!-- Content Wrapper. Contains portfolio content -->
     <div class="content-wrapper">
-         <!-- Main content -->
-         <section class="content pt-2">
+        <!-- Main content -->
+        <section class="content pt-2">
             <div class="container-fluid">
                 <div class="row">
                     <!-- left column -->
@@ -15,7 +15,7 @@
                                 <!-- general form elements -->
                                 <div class="row">
                                     <div class="col-md-6 d-flex d-flex justify-content-start">
-                                        <h3 class="card-title">Portfolios</h3>
+                                        <h3 class="card-title">Porfolios</h3>
                                     </div>
                                     <div class="col-md-6 d-flex d-flex justify-content-end">
                                         <a href="{{route('portfolios.create')}}">
