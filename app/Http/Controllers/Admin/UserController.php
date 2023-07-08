@@ -9,7 +9,9 @@ use App\Models\User;
 use DB;
 use Hash;
 use Illuminate\Support\Arr;
-    
+use Illuminate\Support\Facades\File;
+use App\Models\File as ModelsFile;
+
 class UserController extends Controller
 {
     /**
@@ -46,7 +48,15 @@ class UserController extends Controller
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
     
-        User::create($input);
+        $user=User::create($input);
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $data['image'] = $request->image->store('images');
+            $file->move('images', $data['image']);
+            ModelsFile::create(['url' => $data['image'], 'fileable_id' => $user->id, 'fileable_type' => 'App\Models\User']);
+        } 
+    
     
         return redirect()->route('users.index')
                         ->with('success','User created successfully');
@@ -96,6 +106,14 @@ class UserController extends Controller
     
         $user = User::find($id);
         $user->update($input);
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $data['image'] = $request->image->store('images');
+            $file->move('images', $data['image']);
+            ModelsFile::create(['url' => $data['image'], 'fileable_id' => $user->id, 'fileable_type' => 'App\Models\USer']);
+        } 
+    
     
     
         return redirect()->route('users.index')
@@ -110,7 +128,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::find($id)->delete();
+        $user=User::find($id);
+        $user->delete();
+        $user->file->delete();
+        File::delete($user->file->url);
         return redirect()->route('users.index')
                         ->with('success','User deleted successfully');
     }

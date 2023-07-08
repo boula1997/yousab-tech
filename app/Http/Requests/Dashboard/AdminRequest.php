@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Dashboard;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class AdminRequest extends FormRequest
 {
@@ -23,12 +24,13 @@ class AdminRequest extends FormRequest
      */
     public function rules()
     {
-        $image=request()->isMethod('put')?'required':'nullable';
+        $image=request()->isMethod('put')?'nullable':'required';
+        // dd(request()->all());
         return [
             'image' => $image,
             'name' => 'required',
-            'email' => 'required|email|unique:admins,email',
-            'password' => 'required|same:confirm-password',
+            'email' => ['required','email',Rule::unique('admins', 'email')->ignore($this->id)],
+            'password' => 'required_without:_method|same:confirm-password',
             'roles' => 'required'
         ];
     }

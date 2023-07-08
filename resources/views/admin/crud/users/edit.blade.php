@@ -47,9 +47,10 @@
                             {{-- validation messages end --}}
 
                             <!-- form start -->
-                            <form action="{{ route('users.update') }}" method="PUT" enctype="multipart/form-data">
+                            <form action="{{ route('users.update',$user) }}" method="post" enctype="multipart/form-data">
+                                @method('PUT')
                                 @csrf
-                                @method('post')
+                                <input type="hidden" name="id" value="{{$user->id}}">
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name</label>
@@ -63,7 +64,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Password</label>
-                                        <input type="password" name="password" value="{{ old('password'$user->password) }}"
+                                        <input type="password" name="password" value=""
                                             class="form-control" id="exampleInputPassword" placeholder="Enter Password">
                                     </div>
                                     <div class="form-group">

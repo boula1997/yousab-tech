@@ -27,8 +27,8 @@
 
 
     <form action="{{ route('products.update',$product->id) }}" method="POST">
-    	@csrf
         @method('PUT')
+    	@csrf
 
 
          <div class="row">
