@@ -15,7 +15,7 @@
                                 <!-- general form elements -->
                                 <div class="row">
                                     <div class="col-md-6 d-flex d-flex justify-content-start">
-                                        <h3 class="card-title">Portfolios</h3>
+                                        <h3 class="card-title">@lang('general.portfolios')<</h3>
                                     </div>
                                     <div class="col-md-6 d-flex d-flex justify-content-end">
                                         <a href="{{route('portfolios.create')}}">
@@ -35,8 +35,8 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Title</th>
-                                            <th>Controls</th>
+                                            <th>@lang('general.title')</th>
+                                            <th>@lang('general.controls')</th>
                                         </tr>
                                     </thead>
                                     <tbody>

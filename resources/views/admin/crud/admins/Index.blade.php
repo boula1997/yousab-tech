@@ -14,7 +14,7 @@
                                 <!-- general form elements -->
                                 <div class="row">
                                     <div class="col-md-6 d-flex d-flex justify-content-start">
-                                        <h3 class="card-title">Admins</h3>
+                                        <h3 class="card-title">@lang('general.admins')</h3>
                                     </div>
                                     <div class="col-md-6 d-flex d-flex justify-content-end">
                                         <a href="{{route('admins.create')}}">
@@ -35,11 +35,11 @@
                                     <thead class="h-2">
                                         <tr class="p-0 m-0">
                                             <th>#</th>
-                                            <th>image</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Role</th>
-                                            <th>Controls</th>
+                                            <th>@lang('general.iamage')</th>
+                                            <th>@lang('general.name')</th>
+                                            <th>@lang('general.email')</th>
+                                            <th>@lang('general.role')</th>
+                                            <th>@lang('general.controls')</th>
                                         </tr>
                                     </thead>
                                     <tbody>

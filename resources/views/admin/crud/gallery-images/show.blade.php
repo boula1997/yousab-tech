@@ -35,10 +35,10 @@
                     <div class="input-group">
                       <div class="custom-file">
                         <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <label class="custom-file-label" for="exampleInputFile">@lang('general.choose_file')</label>
                       </div>
                       <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
+                        <span class="input-group-text">@lang('general.@lang('general.upload_file')_file')</span>
                       </div>
                     </div>
                   </div>

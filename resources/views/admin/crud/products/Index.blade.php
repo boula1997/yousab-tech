@@ -26,9 +26,9 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Name</th>
-            <th>Details</th>
-            <th width="280px">Action</th>
+            <th>@lang('general.name')</th>
+            <th>@lang('general.details')</th>
+            <th width="280px">@lang('general.action')</th>
         </tr>
 	    @foreach ($products as $product)
 	    <tr>

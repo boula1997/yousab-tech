@@ -131,7 +131,7 @@
                                                             file</label>
                                                     </div>
                                                     <div class="input-group-append">
-                                                        <span class="input-group-text">Upload</span>
+                                                        <span class="input-group-text">@lang('general.@lang('general.upload_file')_file')</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -159,7 +159,7 @@
                                                             file</label>
                                                     </div>
                                                     <div class="input-group-append">
-                                                        <span class="input-group-text">Upload</span>
+                                                        <span class="input-group-text">@lang('general.@lang('general.upload_file')_file')</span>
                                                     </div>
                                                 </div>
                                             </div>

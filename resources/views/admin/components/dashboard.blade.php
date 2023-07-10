@@ -14,10 +14,10 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ route('front.home') }}" class="nav-link">Home</a>
+            <a href="{{ route('front.home') }}" class="nav-link">@lang('general.home')</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
+            <a href="#" class="nav-link">@lang('general.contacts')</a>
         </li>
     </ul>
 
@@ -178,7 +178,7 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                Portfolios
+                                @lang('general.portfolios')
                                 <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('Portfolios') }}</span>
                             </p>
@@ -198,7 +198,7 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                users
+                                @lang('general.users')
                                 <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('users') }}</span>
                             </p>
@@ -218,7 +218,7 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                admins
+                                @lang('general.admins')
                                 <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('admins') }}</span>
                             </p>
@@ -227,7 +227,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('admins.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Show</p>
+                                    <p>@lang('general.show')</p>
                                 </a>
                             </li>
                         </ul>
@@ -239,7 +239,7 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                Pages
+                                @lang('general.pages')
                                 <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('pages') }}</span>
                             </p>
@@ -248,7 +248,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('pages.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Show</p>
+                                    <p>@lang('general.show')</p>
                                 </a>
                             </li>
                         </ul>
@@ -260,7 +260,7 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                Services <i class="fas fa-angle-left right"></i>
+                                @lang('general.services') <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('services') }}</span>
                             </p>
                         </a>
@@ -268,7 +268,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('services.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Show</p>
+                                    <p>@lang('general.show')</p>
                                 </a>
                             </li>
                         </ul>
@@ -288,7 +288,7 @@
                         <li class="nav-item">
                             <a href="{{ route('blogs.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Show</p>
+                                <p>@lang('general.show')</p>
                             </a>
                         </li>
                     </ul>
@@ -300,7 +300,7 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                counters <i class="fas fa-angle-left right"></i>
+                                @lang('general.counters') <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('counters') }}</span>
                             </p>
                         </a>
@@ -308,7 +308,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('counters.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Show</p>
+                                    <p>@lang('general.show')</p>
                                 </a>
                             </li>
                         </ul>
@@ -320,7 +320,7 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                videos <i class="fas fa-angle-left right"></i>
+                                @lang('general.videos') <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('videos') }}</span>
                             </p>
                         </a>
@@ -328,7 +328,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('videos.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Show</p>
+                                    <p>@lang('general.show')</p>
                                 </a>
                             </li>
                         </ul>
@@ -340,7 +340,7 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                Sliders <i class="fas fa-angle-left right"></i>
+                                @lang('general.sliders') <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('sliders') }}</span>
                             </p>
                         </a>
@@ -348,7 +348,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('sliders.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Show</p>
+                                    <p>@lang('general.show')</p>
                                 </a>
                             </li>
                         </ul>
@@ -360,7 +360,7 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                Contacts <i class="fas fa-angle-left right"></i>
+                                @lang('general.contacts') <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('contacts') }}</span>
                             </p>
                         </a>
@@ -368,7 +368,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('contacts.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Show</p>
+                                    <p>@lang('general.show')</p>
                                 </a>
                             </li>
                         </ul>
@@ -380,8 +380,8 @@
                         <a href="{{ route('edit.setting') }}" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
                             <p>
-                                Settings
-                                <span class="right badge badge-danger">New</span>
+                                @lang('general.settings')
+                                <span class="right badge badge-danger">@lang('general.new')</span>
                             </p>
                         </a>
                     </li>
@@ -392,7 +392,7 @@
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <i class="nav-icon  fa fa-sign-out text-white" aria-hidden="true"></i>
-                        <button class="btn text-secondary" type="submit">Logout</button>
+                        <button class="btn text-secondary" type="submit">@lang('general.logout')</button>
 
                     </form>
                 </li>

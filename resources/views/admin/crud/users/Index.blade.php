@@ -14,12 +14,12 @@
                                 <!-- general form elements -->
                                 <div class="row">
                                     <div class="col-md-6 d-flex d-flex justify-content-start">
-                                        <h3 class="card-title">Users</h3>
+                                        <h3 class="card-title"><th>@lang('general.users')</th></h3>
                                     </div>
                                     <div class="col-md-6 d-flex d-flex justify-content-end">
                                         <a href="{{route('users.create')}}">
                                             
-                                            <button class="btn btn-primary"><i class="fa fa-plus fa-sm px-2" aria-hidden="true"></i> Add New</button>
+                                            <button class="btn btn-primary"><i class="fa fa-plus fa-sm px-2" aria-hidden="true"></i> @lang('general.addnew')</button>
                                         </a>
                                     </div>
                                 </div>
@@ -35,10 +35,10 @@
                                     <thead class="h-2">
                                         <tr class="p-0 m-0">
                                             <th>#</th>
-                                            <th>image</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Controls</th>
+                                            <th>@lang('general.image')</th>
+                                            <th>@lang('general.name')</th>
+                                            <th>@lang('general.email')</th>
+                                            <th>@lang('general.controls')</th>
                                         </tr>
                                     </thead>
                                     <tbody>

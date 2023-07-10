@@ -14,7 +14,7 @@
                                 <!-- general form elements -->
                                 <div class="row">
                                     <div class="col-md-6 d-flex d-flex justify-content-start">
-                                        <h3 class="card-title">Contacts</h3>
+                                        <h3 class="card-title">@lang('general.contacts')<</h3>
                                     </div>
                                 </div>
                             </div>
@@ -29,9 +29,9 @@
                                     <thead class="h-2">
                                         <tr class="p-0 m-0">
                                             <th>#</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Controls</th>
+                                            <th>@lang('general.name')</th>
+                                            <th>@lang('general.email')</th>
+                                            <th>@lang('general.controls')</th>
                                         </tr>
                                     </thead>
                                     <tbody>

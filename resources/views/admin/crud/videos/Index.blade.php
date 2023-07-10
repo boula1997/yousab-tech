@@ -15,13 +15,13 @@
                                 <!-- general form elements -->
                                 <div class="row">
                                     <div class="col-md-6 d-flex d-flex justify-content-start">
-                                        <h3 class="card-title">videos</h3>
+                                        <h3 class="card-title"><th>@lang('general.videos')</th></h3>
                                     </div>
                                     <div class="col-md-6 d-flex d-flex justify-content-end">
                                         <a href="{{ route('videos.create') }}">
 
                                             <button class="btn btn-primary"><i class="fa fa-plus fa-sm px-2"
-                                                    aria-hidden="true"></i> Add New</button>
+                                                    aria-hidden="true"></i>@lang('general.addnew')</button>
                                         </a>
                                     </div>
                                 </div>
@@ -36,9 +36,9 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Youtube Link</th>
-                                            <th>Title</th>
-                                            <th>Controls</th>
+                                            <th>@lang('general.youtube_link')</th>
+                                            <th>@lang('general.title')</th>
+                                            <th>@lang('general.controls')</th>
                                         </tr>
                                     </thead>
                                     <tbody>
