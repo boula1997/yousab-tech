@@ -53,37 +53,37 @@ Route::group(
     ],
     function () {
 
-        Route::group(['middleware' => ['auth:admin']], function () {
+        // Route::group(['middleware' => ['auth:admin']], function () {
 
-            Route::get('/dashboard', function () {
-                return view('dashboard');
-            })->name('dashboard');
+        //     Route::get('/dashboard', function () {
+        //         return view('dashboard');
+        //     })->name('dashboard');
 
-            Route::resource('roles', RoleController::class);
-            // Route::resource('home',HomeController::class);
-            Route::resource('blogs', BlogController::class);
-            // Route::resource('contact',ContactController::class);
-            Route::resource('services', ServiceController::class);
-            Route::resource('sliders', SliderController::class);
-            Route::resource('pages', PageController::class);
-            // Route::resource('about',AboutController::class);
-            Route::resource('portfolios', PortfolioController::class);
-            Route::resource('counters', CounterController::class);
-            Route::resource('videos', VideoController::class);
-            Route::resource('tests', ImageController::class);
+        //     Route::resource('roles', RoleController::class);
+        //     // Route::resource('home',HomeController::class);
+        //     Route::resource('blogs', BlogController::class);
+        //     // Route::resource('contact',ContactController::class);
+        //     Route::resource('services', ServiceController::class);
+        //     Route::resource('sliders', SliderController::class);
+        //     Route::resource('pages', PageController::class);
+        //     // Route::resource('about',AboutController::class);
+        //     Route::resource('portfolios', PortfolioController::class);
+        //     Route::resource('counters', CounterController::class);
+        //     Route::resource('videos', VideoController::class);
+        //     Route::resource('tests', ImageController::class);
 
-            Route::resource('roles', RoleController::class);
-            Route::resource('users', UserController::class);
-            Route::resource('admins', AdminController::class);
-            Route::resource('products', ProductController::class);
-            Route::resource('contacts', ContactController::class);
+        //     Route::resource('roles', RoleController::class);
+        //     Route::resource('users', UserController::class);
+        //     Route::resource('admins', AdminController::class);
+        //     Route::resource('products', ProductController::class);
+        //     Route::resource('contacts', ContactController::class);
 
 
-            Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-            Route::get('/admin/dashboard', function () {
-                return view('dashboard');
-            });
-        });
+        //     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        //     Route::get('/admin/dashboard', function () {
+        //         return view('dashboard');
+        //     });
+        // });
 
         Route::get('/', function () {
             return view('welcome');
@@ -112,3 +112,36 @@ Route::group(
         Route::post('/contact', 'App\Http\Controllers\SiteController@contact_post')->name('front.contact.post');
     }
 );
+
+
+Route::group(['middleware' => ['auth:admin']], function () {
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::resource('roles', RoleController::class);
+    // Route::resource('home',HomeController::class);
+    Route::resource('blogs', BlogController::class);
+    // Route::resource('contact',ContactController::class);
+    Route::resource('services', ServiceController::class);
+    Route::resource('sliders', SliderController::class);
+    Route::resource('pages', PageController::class);
+    // Route::resource('about',AboutController::class);
+    Route::resource('portfolios', PortfolioController::class);
+    Route::resource('counters', CounterController::class);
+    Route::resource('videos', VideoController::class);
+    Route::resource('tests', ImageController::class);
+
+    Route::resource('roles', RoleController::class);
+    Route::resource('users', UserController::class);
+    Route::resource('admins', AdminController::class);
+    Route::resource('products', ProductController::class);
+    Route::resource('contacts', ContactController::class);
+
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/admin/dashboard', function () {
+        return view('dashboard');
+    });
+});
