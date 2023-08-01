@@ -113,6 +113,7 @@ return [
     "subtitle" => "الترجمة",
     "migration" => "الهجرة",
     "controls" => "التحكم",
+    "blogs" => "المقالات",
 
 
 
