@@ -112,6 +112,7 @@ return [
     "guard_name" => "guard_name",
     "subtitle" => "الترجمة",
     "migration" => "الهجرة",
+    "controls" => "التحكم",
 
 
 
