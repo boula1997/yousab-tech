@@ -280,7 +280,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>
-                            Blogs <i class="fas fa-angle-left right"></i>
+                            @lang('general.blogs') <i class="fas fa-angle-left right"></i>
                             <span class="badge badge-info right">{{ itemsCount('blogs') }}</span>
                         </p>
                     </a>
