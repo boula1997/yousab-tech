@@ -38,7 +38,7 @@
                         <label class="custom-file-label" for="exampleInputFile">@lang('general.choose_file')</label>
                       </div>
                       <div class="input-group-append">
-                        <span class="input-group-text">@lang('general.@lang('general.upload_file')_file')</span>
+                        <span class="input-group-text">@lang('general.upload_file')</span>
                       </div>
                     </div>
                   </div>
