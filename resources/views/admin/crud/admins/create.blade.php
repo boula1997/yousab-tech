@@ -95,7 +95,7 @@
                                         </div>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <button type="submit" class="btn btn-primary w-20">Submit</button>
+                                        <button type="submit" class="btn btn-primary w-20">@lang('general.save')</button>
                                     </div>
                             </form>
                         </div>

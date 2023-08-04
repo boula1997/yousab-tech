@@ -187,7 +187,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('portfolios.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Show</p>
+                                    <p>@lang('general.show')</p>
                                 </a>
                             </li>
                         </ul>
@@ -207,7 +207,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('users.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Show</p>
+                                    <p>@lang('general.show')</p>
                                 </a>
                             </li>
                         </ul>

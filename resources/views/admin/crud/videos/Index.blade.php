@@ -21,7 +21,7 @@
                                         <a href="{{ route('videos.create') }}">
 
                                             <button class="btn btn-primary"><i class="fa fa-plus fa-sm px-2"
-                                                    aria-hidden="true"></i>@lang('general.addnew')</button>
+                                                    aria-hidden="true"></i>@lang('general.add')</button>
                                         </a>
                                     </div>
                                 </div>

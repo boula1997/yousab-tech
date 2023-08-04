@@ -20,7 +20,7 @@
                                     <div class="col-md-6 d-flex d-flex justify-content-end">
                                         <a href="{{route('pages.create')}}">
 
-                                            <button class="btn btn-primary"><i class="fa fa-plus fa-sm px-2" aria-hidden="true"></i> Add New</button>
+                                            <button class="btn btn-primary"><i class="fa fa-plus fa-sm px-2" aria-hidden="true"></i> @lang('general.add')</button>
                                         </a>
                                     </div>
                                 </div>

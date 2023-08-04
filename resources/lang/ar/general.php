@@ -114,6 +114,13 @@ return [
     "migration" => "الهجرة",
     "controls" => "التحكم",
     "blogs" => "المقالات",
+    "dashboard" => "لوحة التحكم",
+    "userreg" => "المستخدمين المسجلين",
+    "moreinfo" => "المزيد",
+    "add" => "اضافة جديد",
+    "choose_file" => "اختر ملف",
+    "upload_file" => "تحميل الملف",
+
 
 
 

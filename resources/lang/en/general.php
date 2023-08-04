@@ -112,6 +112,12 @@ return [
     "guard_name" => "Guard_name",
     "subtitle" => "Subtitle",
     "migration" => "Migration",
+    "dashboard" => "Dashboard",
+    "userre" => "Registered Users",
+    "moreinfo" => "More Info",
+    "add" => "Add New",
+    "choose_file" => "Choose File",
+    "upload_file" => "Upload File",
 
 
 
