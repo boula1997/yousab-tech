@@ -120,6 +120,7 @@ return [
     "upload_file" => "Upload File",
     "confirm_password" => "Confirm Password",
     "new" => "New",
+    "errors" => "Errors",
 
 
 

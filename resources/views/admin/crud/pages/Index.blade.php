@@ -3,8 +3,8 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-         <!-- Main content -->
-         <section class="content pt-2">
+        <!-- Main content -->
+        <section class="content pt-2">
             <div class="container-fluid">
                 <div class="row">
                     <!-- left column -->
@@ -15,12 +15,13 @@
                                 <!-- general form elements -->
                                 <div class="row">
                                     <div class="col-md-6 d-flex d-flex justify-content-start">
-                                        <h3 class="card-title">@lang('general.pages')<</h3>
+                                        <h3 class="card-title">@lang('general.pages')</h3>
                                     </div>
                                     <div class="col-md-6 d-flex d-flex justify-content-end">
-                                        <a href="{{route('pages.create')}}">
+                                        <a href="{{ route('pages.create') }}">
 
-                                            <button class="btn btn-primary"><i class="fa fa-plus fa-sm px-2" aria-hidden="true"></i> @lang('general.add')</button>
+                                            <button class="btn btn-primary"><i class="fa fa-plus fa-sm px-2"
+                                                    aria-hidden="true"></i> @lang('general.add')</button>
                                         </a>
                                     </div>
                                 </div>
@@ -44,7 +45,8 @@
                                         @foreach ($pages as $page)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img width="100" height="100" src="{{ $page->file->url }}" alt="{{ $page->title }}"></td>
+                                                <td><img width="100" height="100" src="{{ $page->file->url }}"
+                                                        alt="{{ $page->title }}"></td>
                                                 <td>{{ $page->title }}</td>
                                                 <td>
                                                     <form action="{{ route('pages.destroy', $page) }}" method="POST">
@@ -75,13 +77,11 @@
 
                     </div>
 
-                </div>
 
-            </div><!-- /.container-fluid -->
         </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
+    </div><!-- /.container-fluid -->
+    <!-- /.content -->
+
 @endsection
 
 

@@ -122,6 +122,7 @@ return [
     "upload_file" => "تحميل الملف",
     "confirm_password" => "تاكيد كلمة المرور",
     "new" => "جديد",
+    "errors" => "الاخطاء",
 
 
 
