@@ -2,6 +2,18 @@
 
 @section('content')
     <div class="content-wrapper">
+        {{-- validation messages start --}}
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>@lang('general.errors')</strong>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        {{-- validation messages end --}}
         <form action="{{ route('portfolios.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="card card-custom mb-2">
@@ -22,18 +34,6 @@
                 </div>
                 <div class="card-body">
                     <div class="tab-content">
-                        {{-- validation messages start --}}
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <strong>@lang('general.errors')</strong>
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                        {{-- validation messages end --}}
                         @foreach (config('translatable.locales') as $key => $locale)
                             <div class="tab-pane fade show @if ($key == 0) active @endif"
                                 id="{{ $locale }}" role="tabpanel">

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="content-wrapper">
-        <form action="{{ route('counters.update',$counter) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('counters.update', $counter) }}" method="post" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="card card-custom mb-2">
@@ -23,6 +23,18 @@
                 </div>
                 <div class="card-body">
                     <div class="tab-content">
+                        {{-- validation messages start --}}
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <strong>@lang('general.errors')</strong>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        {{-- validation messages end --}}
                         @foreach (config('translatable.locales') as $key => $locale)
                             <div class="tab-pane fade show @if ($key == 0) active @endif"
                                 id="{{ $locale }}" role="tabpanel">
@@ -50,9 +62,8 @@
                             <div class="form-group">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">{{ __('general.count') }}</label>
-                                    <input type="text" name="count"
-                                        value="{{ old('count', $counter->count) }}" class="form-control"
-                                        id="exampleInputName" placeholder="@lang('general.count')">
+                                    <input type="text" name="count" value="{{ old('count', $counter->count) }}"
+                                        class="form-control" id="exampleInputName" placeholder="@lang('general.count')">
                                 </div>
                             </div>
 

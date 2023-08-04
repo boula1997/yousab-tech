@@ -2,6 +2,18 @@
 
 @section('content')
     <div class="content-wrapper">
+        {{-- validation messages start --}}
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>@lang('general.errors')</strong>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        {{-- validation messages end --}}
         <form action="{{ route('counters.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="card card-custom mb-2">
@@ -48,9 +60,9 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">{{__('general.count')}}</label>
-                                    <input type="text" name="count" value="{{ old('count') }}"
-                                        class="form-control" id="exampleInputName" placeholder="@lang('general.count')">
+                                    <label for="exampleInputEmail1">{{ __('general.count') }}</label>
+                                    <input type="text" name="count" value="{{ old('count') }}" class="form-control"
+                                        id="exampleInputName" placeholder="@lang('general.count')">
                                 </div>
                             </div>
 

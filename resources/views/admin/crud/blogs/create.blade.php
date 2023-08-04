@@ -2,6 +2,18 @@
 
 @section('content')
     <div class="content-wrapper">
+        {{-- validation messages start --}}
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>@lang('general.errors')</strong>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        {{-- validation messages end --}}
         <form action="{{ route('blogs.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="card card-custom mb-2">
@@ -22,6 +34,7 @@
                 </div>
                 <div class="card-body">
                     <div class="tab-content">
+
                         @foreach (config('translatable.locales') as $key => $locale)
                             <div class="tab-pane fade show @if ($key == 0) active @endif"
                                 id="{{ $locale }}" role="tabpanel">
@@ -79,7 +92,8 @@
                                         <div class="custom-file">
                                             <input type="file" name="image" class="custom-file-input"
                                                 id="exampleInputFile1">
-                                            <label class="custom-file-label" for="exampleInputFile1">@lang('general.choose_file')</label>
+                                            <label class="custom-file-label"
+                                                for="exampleInputFile1">@lang('general.choose_file')</label>
                                         </div>
                                         <div class="input-group-append">
                                             <span class="input-group-text">@lang('general.upload_file')</span>

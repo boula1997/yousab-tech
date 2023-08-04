@@ -2,6 +2,18 @@
 
 @section('content')
     <div class="content-wrapper">
+        {{-- validation messages start --}}
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>@lang('general.errors')</strong>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        {{-- validation messages end --}}
         <form action="{{ route('videos.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="card card-custom mb-2">
@@ -49,9 +61,10 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">{{__('general.youtube_link')}}</label>
+                                    <label for="exampleInputEmail1">{{ __('general.youtube_link') }}</label>
                                     <input type="text" name="youtube_link" value="{{ old('youtube_link') }}"
-                                        class="form-control" id="exampleInputName" placeholder="{{__('general.youtube_link')}}">
+                                        class="form-control" id="exampleInputName"
+                                        placeholder="{{ __('general.youtube_link') }}">
                                 </div>
                             </div>
 

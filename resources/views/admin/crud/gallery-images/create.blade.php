@@ -14,7 +14,7 @@
                             <div class="card-header">
                                 <h3 class="card-title">Create Gallery</h3>
                                 <ol class="breadcrumb float-sm-right bg-light p-0 m-0">
-                                    <li class="breadcrumb-item"><a href="{{route('galleries.index')}}">Galleries</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('galleries.index') }}">Galleries</a></li>
                                     <li class="breadcrumb-item active">@lang('general.edit')</li>
                                 </ol>
                             </div>
@@ -50,7 +50,8 @@
                                             <div class="custom-file">
                                                 <input type="file" name="image" class="custom-file-input"
                                                     id="exampleInputFile1">
-                                                <label class="custom-file-label" for="exampleInputFile1">@lang('general.choose_file')</label>
+                                                <label class="custom-file-label"
+                                                    for="exampleInputFile1">@lang('general.choose_file')</label>
                                             </div>
                                             <div class="input-group-append">
                                                 <span class="input-group-text">@lang('general.upload_file')</span>
