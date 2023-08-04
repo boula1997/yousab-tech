@@ -21,7 +21,7 @@ class CreateTeamTranslationsTable extends Migration
             $table->unsignedBigInteger('team_id');
             $table->string('locale')->index();
             $table->unique(['team_id', 'locale']);
-            $table->foreign('team_id')->references('id')->on('teams')->delete('cascade');
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
             $table->timestamps();
         });
     }

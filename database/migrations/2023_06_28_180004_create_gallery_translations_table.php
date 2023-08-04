@@ -21,7 +21,7 @@ class CreateGalleryTranslationsTable extends Migration
             $table->unsignedBigInteger('gallery_id');
             $table->string('locale')->index();
             $table->unique(['gallery_id', 'locale']);
-            $table->foreign('gallery_id')->references('id')->on('galleries')->delete('cascade');
+            $table->foreign('gallery_id')->references('id')->on('galleries')->onDelete('cascade');
             $table->timestamps();
         });
     }

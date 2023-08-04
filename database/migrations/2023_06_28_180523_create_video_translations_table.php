@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
 class CreateVideoTranslationsTable extends Migration
 {
     /**
@@ -19,7 +18,7 @@ class CreateVideoTranslationsTable extends Migration
             $table->unsignedBigInteger('video_id');
             $table->string('locale')->index();
             $table->unique(['video_id', 'locale']);
-            $table->foreign('video_id')->references('id')->on('videos')->delete('cascade');
+            $table->foreign('video_id')->references('id')->on('videos')->onDelete('cascade');
             $table->timestamps();
         });
     }

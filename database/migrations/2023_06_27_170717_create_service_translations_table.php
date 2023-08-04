@@ -21,7 +21,7 @@ class CreateServiceTranslationsTable extends Migration
             $table->unsignedBigInteger('service_id');
             $table->string('locale')->index();
             $table->unique(['service_id', 'locale']);
-            $table->foreign('service_id')->references('id')->on('services')->delete('cascade');
+            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
             $table->timestamps();
         });
     }

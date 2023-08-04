@@ -19,7 +19,7 @@ class CreateCounterTranslationsTable extends Migration
             $table->unsignedBigInteger('counter_id');
             $table->string('locale')->index();
             $table->unique(['counter_id', 'locale']);
-            $table->foreign('counter_id')->references('id')->on('counters')->delete('cascade');
+            $table->foreign('counter_id')->references('id')->on('counters')->onDelete('cascade');
             $table->timestamps();
         });
     }

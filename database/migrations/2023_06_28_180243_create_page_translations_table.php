@@ -21,7 +21,7 @@ class CreatePageTranslationsTable extends Migration
             $table->unsignedBigInteger('page_id');
             $table->string('locale')->index();
             $table->unique(['page_id', 'locale']);
-            $table->foreign('page_id')->references('id')->on('pages')->delete('cascade');
+            $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');
             $table->timestamps();
         });
     }
