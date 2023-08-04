@@ -22,7 +22,7 @@ return [
     'add_new'  => 'اضافة جديد',
     'save'  => 'حفظ',
     'cancel'  => 'الغاء',
-    'subtitle'  => 'العتوان الفرعي',
+    'subtitle'  => 'العتFوان الفرعي',
     'identifier'  => 'المعرف',
     'edit'  => 'تعديل',
     'show'  => 'عرض',
@@ -110,7 +110,7 @@ return [
     "name" => "الاسم",
     "remember_token" => "تذكر _token",
     "guard_name" => "guard_name",
-    "subtitle" => "الترجمة",
+    "subtitle" => "العنوان الفرعي",
     "migration" => "الهجرة",
     "controls" => "التحكم",
     "blogs" => "المقالات",
@@ -123,6 +123,7 @@ return [
     "confirm_password" => "تاكيد كلمة المرور",
     "new" => "جديد",
     "errors" => "الاخطاء",
+    "admin" => "المسئول",
 
 
 

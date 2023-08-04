@@ -119,7 +119,7 @@ class AdminController extends Controller
 
         $admin = Admin::find($id);
         $admin->update($input);
-        DB::table('model_has_roles')->where('model_id', $id)->onDelete();
+        DB::table('model_has_roles')->where('model_id', $id)->delete();
 
         $admin->assignRole($request->input('roles'));
 

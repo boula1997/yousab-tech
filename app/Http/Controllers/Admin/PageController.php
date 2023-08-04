@@ -51,13 +51,13 @@ class PageController extends Controller
      */
     public function store(PageRequest $request)
     {
-        
-        $data = $request->all();
+
+        $data = $request->except('image');
         $file = $request->file('image');
-        $data['image'] = $request->image->store('images');
-        $file->move('images', $data['image']);
+        $image = $request->image->store('images');
+        $file->move('images',  $image);
         $page = Page::create($data);
-        ModelsFile::create(['url' => $data['image'], 'fileable_id' => $page->id, 'fileable_type' => 'App\Models\Page']);
+        ModelsFile::create(['url' =>  $image, 'fileable_id' => $page->id, 'fileable_type' => 'App\Models\Page']);
         return redirect()->route('pages.index')
             ->with('success', 'تم الانشاء');
     }
@@ -91,26 +91,19 @@ class PageController extends Controller
      * @param  \App\Models\portfolio  $page
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Page $page)
+    public function update(PageRequest $request, Page $page)
     {
-        $request->validate([
-            'title' => 'required',
-        ], [
-            'title.required' => 'حقل الاسم مطلوب',
-            'description.required' => 'حقل الوصف مطلوب',
-        ]);
-        $data = $request->all();
+
+        $data = $request->except('image');
 
         if ($request->hasFile('image')) {
             if (file_exists($page->file->url))
                 File::delete($page->file->url);
             $page->file->delete();
             $file = $request->file('image');
-            $data['image'] = $request->image->store('images');
-            $file->move('images', $data['image']);
-            ModelsFile::create(['url' => $data['image'], 'fileable_id' => $page->id, 'fileable_type' => 'App\Models\Page']);
-        } else {
-            $data['image'] = $page->image;
+            $image = $request->image->store('images');
+            $file->move('images', $image);
+            ModelsFile::create(['url' => $image, 'fileable_id' => $page->id, 'fileable_type' => 'App\Models\Page']);
         }
 
         $page->update($data);

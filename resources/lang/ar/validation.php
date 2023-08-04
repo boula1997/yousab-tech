@@ -15073,7 +15073,7 @@ return [
         "name" => "الاسم",
         "remember_token" => "تذكر _token",
         "guard_name" => "guard_name",
-        "subtitle" => "الترجمة",
+        "subtitle" => "العنوان الفرعي",
         "migration" => "الهجرة",
 
         "ar"=>[
@@ -15142,7 +15142,7 @@ return [
             "name" => "الاسم باللغة العربية",
             "remember_token" => "تذكر _token باللغة العربية",
             "guard_name" => "guard_name باللغة العربية",
-            "subtitle" => "الترجمة باللغة العربية",
+            "subtitle" => "العنوان الفرعي باللغة العربية",
             "migration" => "الهجرة باللغة العربية",
         ],
         "en"=>[
@@ -15211,7 +15211,7 @@ return [
             "name" => "الاسم باللغة الانجليزية",
             "remember_token" => "تذكر _token باللغة الانجليزية",
             "guard_name" => "guard_name باللغة الانجليزية",
-            "subtitle" => "الترجمة باللغة الانجليزية",
+            "subtitle" => "العنوان الفرعي باللغة الانجليزية",
             "migration" => "الهجرة باللغة الانجليزية",
         ],
     ],

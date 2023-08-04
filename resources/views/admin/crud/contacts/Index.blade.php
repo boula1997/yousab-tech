@@ -14,7 +14,7 @@
                                 <!-- general form elements -->
                                 <div class="row">
                                     <div class="col-md-6 d-flex d-flex justify-content-start">
-                                        <h3 class="card-title">@lang('general.contacts')<</h3>
+                                        <h3 class="card-title">@lang('general.contacts')</h3>
                                     </div>
                                 </div>
                             </div>

@@ -33,17 +33,4 @@ class ContactRequest extends FormRequest
         return $rules;
     }
 
-    public function messages(){
-        $messages=[  
-        'name.required'=>'الاسم مطلوب',
-        'phone.required'=>'الهاتف مطلوب',
-        'phone.regex'=>'صيغة رقم الهاتف غير صحيحة',
-        'phone.min'=>'رقم الهاتف يجب ان يكون 10 ارقام علي الاقل',
-        'email.required'=>'البريد الالكتروني مطلوب',
-        'email.email'=>'صيغة البريد الالكتروني خاطئة',
-        'message.required'=>'الرسالة مطلوبة',];
-
-        return $messages;
-
-    }
 }

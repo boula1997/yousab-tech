@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="content-wrapper">
-        <form action="{{ route('portfolios.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('portfolios.update',$portfolio) }}" method="post" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="card card-custom mb-2">
@@ -23,6 +23,18 @@
                 </div>
                 <div class="card-body">
                     <div class="tab-content">
+                        {{-- validation messages start --}}
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <strong>@lang('general.errors')</strong>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        {{-- validation messages end --}}
                         @foreach (config('translatable.locales') as $key => $locale)
                             <div class="tab-pane fade show @if ($key == 0) active @endif"
                                 id="{{ $locale }}" role="tabpanel">
@@ -36,6 +48,18 @@
                                             placeholder="@lang('general.title')"
                                             class="form-control  pl-5 min-h-40px @error($locale . '.title') is-invalid @enderror"
                                             value="{{ old($locale . '.title', $portfolio->translate($locale)->title) }}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>@lang('general.subtitle') - @lang('general.' . $locale)<span class="text-danger"> * </span></label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                                        </div>
+                                        <input type="text" name="{{ $locale . '[subtitle]' }}"
+                                            placeholder="@lang('general.subtitle')"
+                                            class="form-control  pl-5 min-h-40px @error($locale . '.subtitle') is-invalid @enderror"
+                                            value="{{ old($locale . '.subtitle', $portfolio->translate($locale)->subtitle) }}">
                                     </div>
                                 </div>
 
@@ -66,8 +90,8 @@
                                 <label for="exampleInputFile1">Images</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" name="images[]" class="custom-file-input"
-                                            multiple id="exampleInputFile1">
+                                        <input type="file" name="images[]" class="custom-file-input" multiple
+                                            id="exampleInputFile1">
                                         <label class="custom-file-label" for="exampleInputFile1">Choose
                                             file</label>
                                     </div>
@@ -82,7 +106,7 @@
                     <div class="row">
                         @foreach ($images as $image)
                             <div class="col-md-3">
-                                <input type="checkbox" name="delimages[]" value="{{$image->id}}">
+                                <input type="checkbox" name="delimages[]" value="{{ $image->id }}">
                                 <img width="100" height="100" src="{{ $image->path }}" alt="">
 
                             </div>

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="content-wrapper">
-        <form action="{{ route('sliders.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('sliders.update',$slider) }}" method="post" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="card card-custom mb-2">

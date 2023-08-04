@@ -121,6 +121,7 @@ return [
     "confirm_password" => "Confirm Password",
     "new" => "New",
     "errors" => "Errors",
+    "admin" => "Admin",
 
 
 

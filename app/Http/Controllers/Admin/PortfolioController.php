@@ -12,20 +12,20 @@ use App\Models\File as ModelsFile;
 
 class PortfolioController extends Controller
 {
-     /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
 
-     function __construct()
-     {
-          $this->middleware('permission:portfolio-list|portfolio-create|portfolio-edit|portfolio-delete', ['only' => ['index','show']]);
-          $this->middleware('permission:portfolio-create', ['only' => ['create','store']]);
-          $this->middleware('permission:portfolio-edit', ['only' => ['edit','update']]);
-          $this->middleware('permission:portfolio-delete', ['only' => ['destroy']]);
-     }
- 
+    function __construct()
+    {
+        $this->middleware('permission:portfolio-list|portfolio-create|portfolio-edit|portfolio-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:portfolio-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:portfolio-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:portfolio-delete', ['only' => ['destroy']]);
+    }
+
     public function index()
     {
         $portfolios = Gallery::latest()->get();
@@ -50,19 +50,18 @@ class PortfolioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(PortfolioRequest $request)
-    { 
-         $portfolio=Gallery::create($request->all());
+    {
+        $portfolio = Gallery::create($request->except('images'));
         //  dd($portfolio);
-        if($request->has('images')!==null){
+        if ($request->has('images')) {
 
-            $files=$request->images;
-            foreach($files as $file){
-                $data['image']=$file->store('images');
-                $file->move('images',$data['image']);
+            $files = $request->images;
+            foreach ($files as $file) {
+                $data['image'] = $file->store('images');
+                $file->move('images', $data['image']);
                 ModelsFile::create(['url' => $data['image'], 'fileable_id' => $portfolio->id, 'fileable_type' => 'App\Models\Portfolio']);
             }
-
-         }
+        }
 
         return redirect()->route('portfolios.index')
             ->with('success', 'تم الانشاء');
@@ -76,8 +75,8 @@ class PortfolioController extends Controller
      */
     public function show(Gallery $portfolio)
     {
-        $images=Image::where('gallery_id',$portfolio->id)->get();
-        return view('admin.crud.portfolios.show', compact('portfolio','images'));
+        $images = Image::where('gallery_id', $portfolio->id)->get();
+        return view('admin.crud.portfolios.show', compact('portfolio', 'images'));
     }
 
     /**
@@ -88,9 +87,9 @@ class PortfolioController extends Controller
      */
     public function edit(Gallery $portfolio)
     {
-    //    dd($portfolio->title);
-        $images=Image::where('gallery_id',$portfolio->id)->get();
-        return view('admin.crud.portfolios.edit', compact('portfolio','images'));
+        //    dd($portfolio->title);
+        $images = Image::where('gallery_id', $portfolio->id)->get();
+        return view('admin.crud.portfolios.edit', compact('portfolio', 'images'));
     }
     /**
      * Update the specified resource in storage.
@@ -101,30 +100,17 @@ class PortfolioController extends Controller
      */
     public function update(PortfolioRequest $request, Gallery $portfolio)
     {
+        $portfolio->update($request->except('images'));
+        if ($request->hasFile('images')) {
+            $files = $request->file('images');
+            foreach ($files as $file) {
+                $data['image'] = $file->store('images');
+                $file->move('images', $data['image']);
+                ModelsFile::create(['url' => $data['image'], 'fileable_id' => $portfolio->id, 'fileable_type' => 'App\Models\Portfolio']);
+            }
+        }
 
-        //  dd($request->all());
-         if($request->hasFile('images')){
-
-             if($request->hasFile('images')!==null){
-                $files=$request->file('images');
-                foreach($files as $file){
-                    $data['image']=$file->store('images');
-                    $file->move('images',$data['image']);
-                    ModelsFile::create(['url' => $data['image'], 'fileable_id' => $portfolio->id, 'fileable_type' => 'App\Models\Portfolio']);
-                }
-
-         }
-
-        //  if($request->has('delimages')){
-
-        //     $delimages=$request->input('delimages');
-        //     foreach($delimages as $delimage){
-        //         File::delete(File::where('id',$delimage));
-        //         Image::where('id',$delimage)->onDelete();
-        //     }
-         }
-
-        return redirect()->route('portfolios.edit',compact('portfolio'))
+        return redirect()->route('portfolios.index', compact('portfolio'))
             ->with('success', 'تم التعديل بنجاح');
     }
     /**

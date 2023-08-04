@@ -32,16 +32,5 @@ class ServiceRequest extends FormRequest
         }
         return  $rules;
     }
-    public function messages()
-    {
-        $messages = [
-            'image.required' => trans('requests.image_required'),
-        ];
-        foreach (config('translatable.locales') as $locale) {
-            $messages += [$locale . '.title.required' => trans('requests.title_required_' . $locale)];
-            $messages += [$locale . '.description.required' => trans('requests.desc_required_' . $locale)];
-        }
-        return $messages;
-    }
 
 }

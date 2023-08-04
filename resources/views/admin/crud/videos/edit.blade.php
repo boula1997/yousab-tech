@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="content-wrapper">
-        <form action="{{ route('videos.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('videos.update',$video) }}" method="post" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="card card-custom mb-2">

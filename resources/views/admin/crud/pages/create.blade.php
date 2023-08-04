@@ -22,6 +22,18 @@
                 </div>
                 <div class="card-body">
                     <div class="tab-content">
+                        {{-- validation messages start --}}
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <strong>@lang('general.errors')</strong>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        {{-- validation messages end --}}
                         @foreach (config('translatable.locales') as $key => $locale)
                             <div class="tab-pane fade show @if ($key == 0) active @endif"
                                 id="{{ $locale }}" role="tabpanel">
@@ -37,6 +49,7 @@
                                             value="{{ old($locale . '.title') }}">
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <label>@lang('general.subtitle') - @lang('general.' . $locale)<span class="text-danger"> * </span></label>
                                     <div class="input-group">
@@ -74,8 +87,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">{{__('general.identifier')}}</label>
-                                    <input type="text" name="Identifier" value="{{ old('identifier') }}"
+                                    <label for="exampleInputEmail1">{{ __('general.identifier') }}</label>
+                                    <input type="text" name="identifier" value="{{ old('identifier') }}"
                                         class="form-control" id="exampleInputName" placeholder="@lang('general.identifier')">
                                 </div>
                             </div>
@@ -89,7 +102,8 @@
                                         <div class="custom-file">
                                             <input type="file" name="image" class="custom-file-input"
                                                 id="exampleInputFile1">
-                                            <label class="custom-file-label" for="exampleInputFile1">@lang('general.choose_file')</label>
+                                            <label class="custom-file-label"
+                                                for="exampleInputFile1">@lang('general.choose_file')</label>
                                         </div>
                                         <div class="input-group-append">
                                             <span class="input-group-text">@lang('general.upload_file')</span>
