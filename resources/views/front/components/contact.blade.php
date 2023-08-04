@@ -7,7 +7,7 @@
                 <div class="controls">
                     <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name"
                         required data-validation-required-message="Please enter your name." value="{{ old('name') }}"
-                        placeholder="الاسم بالكامل">
+                        placeholder="{{__('general.name')}}">
                     @error('name')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -18,7 +18,7 @@
                 <div class="controls">
                     <input type="tel" class="form-control @error('phone') is-invalid @enderror" name="phone" id="phone"
                         required data-validation-required-message="Please enter your phone number."
-                        value="{{ old('phone') }}" placeholder="رقم الهاتف">
+                        value="{{ old('phone') }}" placeholder="{{__('general.phone')}}">
                     @error('phone')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -28,7 +28,7 @@
                 <div class="controls">
                     <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
                         id="email" required data-validation-required-message="Please enter your email address."
-                        value="{{ old('email') }}" placeholder="البريد الالكتروني">
+                        value="{{ old('email') }}" placeholder="{{__('general.email')}}">
                     @error('email')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -38,7 +38,7 @@
                 <div class="controls">
                     <textarea rows="5" cols="100" class="form-control @error('message') is-invalid @enderror"
                         name="message" id="message" required
-                        data-validation-required-message="Please enter your message" placeholder="الرسالة"
+                        data-validation-required-message="Please enter your message" placeholder="{{__('general.message')}}"
                         maxlength="999" style="resize:none">{{ old('message') }}</textarea>
                     @error('message')
                     <span class="text-danger">{{ $message }}</span>
@@ -47,7 +47,7 @@
             </div>
             <div id="success"></div>
             <!-- For success/fail messages -->
-            <button type="submit" class="btn btn-primary" id="sendMessageButton">ارسال</button>
+            <button type="submit" class="btn btn-primary" id="sendMessageButton">{{__('general.send')}}</button>
         </form>
     </div>
     <div class="col-md-6">

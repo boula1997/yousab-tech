@@ -15,14 +15,14 @@
                                 <h3 class="card-title">Create Portfolio</h3>
                                 <ol class="breadcrumb float-sm-right bg-light p-0 m-0">
                                     <li class="breadcrumb-item"><a href="{{route('portfolios.index')}}">Portfolios</a></li>
-                                    <li class="breadcrumb-item active">Create</li>
+                                    <li class="breadcrumb-item active">@lang('general.create')</li>
                                 </ol>
                             </div>
                             <!-- /.card-header -->
                             {{-- validation messages start --}}
                             @if ($errors->any())
                                 <div class="alert alert-danger">
-                                    <strong>اخطاء!</strong>
+                                    <strong>@lang('general.errors')</strong>
                                     <ul>
                                         @foreach ($errors->all() as $error)
                                             <li>{{ $error }}</li>
@@ -52,12 +52,12 @@
 
 
                                     <div class="form-group">
-                                        <label for="exampleInputFile">Images</label>
+                                        <label for="exampleInputFile1">Images</label>
                                         <div class="input-group">
                                             <div class="custom-file">
                                                 <input type="file" name="images[]" class="custom-file-input"
-                                                    id="exampleInputFile" multiple>
-                                                <label class="custom-file-label" for="exampleInputFile">@lang('general.choose_file')</label>
+                                                    id="exampleInputFile1" multiple>
+                                                <label class="custom-file-label" for="exampleInputFile1">@lang('general.choose_file')</label>
                                             </div>
                                             <div class="input-group-append">
                                                 <span class="input-group-text">@lang('general.upload_file')</span>

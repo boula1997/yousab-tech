@@ -35,7 +35,7 @@
                                     <thead class="h-2">
                                         <tr class="p-0 m-0">
                                             <th>#</th>
-                                            <th>@lang('general.iamage')</th>
+                                            <th>@lang('general.image')</th>
                                             <th>@lang('general.name')</th>
                                             <th>@lang('general.email')</th>
                                             <th>@lang('general.role')</th>

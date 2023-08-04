@@ -52,7 +52,7 @@
                                     <label for="exampleInputEmail1">{{ __('general.youtube_link') }}</label>
                                     <input type="text" name="youtube_link"
                                         value="{{ old('youtube_link', $video->youtube_link) }}" class="form-control"
-                                        id="exampleInputName" placeholder="Enter Youtube Link">
+                                        id="exampleInputName" placeholder="{{__('general.youtube_link')}}">
                                 </div>
                             </div>
 

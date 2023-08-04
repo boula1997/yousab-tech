@@ -65,7 +65,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="form-group">
-                            <label for="exampleInputFile">Image</label>
+                            <label for="exampleInputFile1">Image</label>
                             <div class="row">
                                 @foreach ($images as $image)
                                     <div class="col-md-3">

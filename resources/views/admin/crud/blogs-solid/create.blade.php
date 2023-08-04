@@ -16,7 +16,7 @@
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active">Create Blog</li>
+                                    <li class="breadcrumb-item active">@lang('general.create') Blog</li>
                                 </ol>
                             </div>
                         </div>
@@ -46,23 +46,23 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name</label>
                                         <input type="text" name="title" value="{{ old('title') }}" class="form-control"
-                                            id="exampleInputName" placeholder="Enter Name">
+                                            id="exampleInputName" placeholder="@lang('general.name')">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleInputDescription">Description</label>
+                                        <label for="exampleInputDescription">@lang('general.description')</label>
                                         <textarea id="summernote" name="description">
                                                 {{ old('description') }}
                                             </textarea>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleInputFile">File input</label>
+                                        <label for="exampleInputFile1">File input</label>
                                         <div class="input-group">
                                             <div class="custom-file">
                                                 <input type="file" name="image" class="custom-file-input"
-                                                    id="exampleInputFile">
-                                                <label class="custom-file-label" for="exampleInputFile">@lang('general.choose_file')</label>
+                                                    id="exampleInputFile1">
+                                                <label class="custom-file-label" for="exampleInputFile1">@lang('general.choose_file')</label>
                                             </div>
                                             <div class="input-group-append">
                                                 <span class="input-group-text">@lang('general.upload_file')</span>

@@ -13,7 +13,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('users.index') }}">Users</a></li>
-                            <li class="breadcrumb-item active">Create</li>
+                            <li class="breadcrumb-item active">@lang('general.create')</li>
                         </ol>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                             {{-- validation messages start --}}
                             @if ($errors->any())
                                 <div class="alert alert-danger">
-                                    <strong>اخطاء!</strong>
+                                    <strong>@lang('general.errors')</strong>
                                     <ul>
                                         @foreach ($errors->all() as $error)
                                             <li>{{ $error }}</li>
@@ -53,33 +53,33 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name</label>
                                         <input type="text" name="name" value="{{ old('name') }}"
-                                            class="form-control" id="exampleInputName" placeholder="Enter Name">
+                                            class="form-control" id="exampleInputName" placeholder="@lang('general.name')">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email</label>
                                         <input type="email" name="email" value="{{ old('email') }}"
-                                            class="form-control" id="exampleInputEmail" placeholder="Enter Email">
+                                            class="form-control" id="exampleInputEmail" placeholder="@lang('general.email')">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Password</label>
                                         <input type="password" name="password" value="{{ old('password') }}"
-                                            class="form-control" id="exampleInputPassword" placeholder="Enter Password">
+                                            class="form-control" id="exampleInputPassword" placeholder="@lang('general.password')">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Confirm Password</label>
                                         <input type="password" name="confirm-password" value="{{ old('confirm-password') }}"
                                             class="form-control" id="exampleInputConfirmpassword"
-                                            placeholder="Enter Confirm Password">
+                                            placeholder="@lang('general.confirm_password')">
                                     </div>
 
 
                                     <div class="form-group">
-                                        <label for="exampleInputFile">Image</label>
+                                        <label for="exampleInputFile1">Image</label>
                                         <div class="input-group">
                                             <div class="custom-file">
                                                 <input type="file" name="image" class="custom-file-input"
-                                                    id="exampleInputFile">
-                                                <label class="custom-file-label" for="exampleInputFile">@lang('general.choose_file')</label>
+                                                    id="exampleInputFile1">
+                                                <label class="custom-file-label" for="exampleInputFile1">@lang('general.choose_file')</label>
                                             </div>
                                             <div class="input-group-append">
                                                 <span class="input-group-text">@lang('general.upload_file')</span>

@@ -78,7 +78,7 @@
                                     <label for="exampleInputEmail1">{{ __('general.identifier') }}</label>
                                     <input type="text" name="Identifier"
                                         value="{{ old('identifier', $page->identifier) }}" class="form-control"
-                                        id="exampleInputName" placeholder="Enter Identifier">
+                                        id="exampleInputName" placeholder="@lang('general.identifier')">
                                 </div>
                             </div>
 
@@ -95,8 +95,8 @@
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file" name="image" class="custom-file-input"
-                                                id="exampleInputFile">
-                                            <label class="custom-file-label" for="exampleInputFile">@lang('general.choose_file')</label>
+                                                id="exampleInputFile1">
+                                            <label class="custom-file-label" for="exampleInputFile1">@lang('general.choose_file')</label>
                                         </div>
                                         <div class="input-group-append">
                                             <span class="input-group-text">@lang('general.upload_file')</span>

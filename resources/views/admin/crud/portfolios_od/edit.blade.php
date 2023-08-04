@@ -12,10 +12,10 @@
                         <!-- general form elements -->
                         <div class="card card-light">
                             <div class="card-header">
-                                <h3 class="card-title">Edit Portfolio</h3>
+                                <h3 class="card-title">@lang('general.edit') Portfolio</h3>
                                 <ol class="breadcrumb float-sm-right bg-light p-0 m-0">
                                     <li class="breadcrumb-item"><a href="{{route('portfolios.index')}}">Portfolios</a></li>
-                                    <li class="breadcrumb-item active">Edit</li>
+                                    <li class="breadcrumb-item active">@lang('general.edit')</li>
                                 </ol>
                             </div>
                             <!-- /.card-header -->
@@ -23,7 +23,7 @@
                             {{-- validation messages start --}}
                             @if ($errors->any())
                                 <div class="alert alert-danger">
-                                    <strong>اخطاء!</strong>
+                                    <strong>@lang('general.errors')</strong>
                                     <ul>
                                         @foreach ($errors->all() as $error)
                                             <li>{{ $error }}</li>
@@ -57,12 +57,12 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group mt-30">
-                                                <label for="exampleInputFile">Images</label>
+                                                <label for="exampleInputFile1">Images</label>
                                                 <div class="input-group">
                                                     <div class="custom-file">
                                                         <input type="file" name="images[]" class="custom-file-input"
-                                                            multiple id="exampleInputFile">
-                                                        <label class="custom-file-label" for="exampleInputFile">Choose
+                                                            multiple id="exampleInputFile1">
+                                                        <label class="custom-file-label" for="exampleInputFile1">Choose
                                                             file</label>
                                                     </div>
                                                     <div class="input-group-append">

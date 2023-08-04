@@ -12,10 +12,10 @@
                         <!-- general form elements -->
                         <div class="card card-light">
                             <div class="card-header">
-                                <h3 class="card-title">Edit Gallery</h3>
+                                <h3 class="card-title">@lang('general.edit') Gallery</h3>
                                 <ol class="breadcrumb float-sm-right bg-light p-0 m-0">
                                     <li class="breadcrumb-item"><a href="{{route('galleries.index')}}">Galleries</a></li>
-                                    <li class="breadcrumb-item active">Edit</li>
+                                    <li class="breadcrumb-item active">@lang('general.edit')</li>
                                 </ol>
                             </div>
                             <!-- /.card-header -->
@@ -23,7 +23,7 @@
                             {{-- validation messages start --}}
                             @if ($errors->any())
                                 <div class="alert alert-danger">
-                                    <strong>اخطاء!</strong>
+                                    <strong>@lang('general.errors')</strong>
                                     <ul>
                                         @foreach ($errors->all() as $error)
                                             <li>{{ $error }}</li>
@@ -40,22 +40,22 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name</label>
                                         <input type="text" name="title" value="{{ old('title') }}"
-                                            class="form-control" id="exampleInputName" placeholder="Enter Name">
+                                            class="form-control" id="exampleInputName" placeholder="@lang('general.name')">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleInputDescription">Description</label>
+                                        <label for="exampleInputDescription">@lang('general.description')</label>
                                         <textarea id="summernote" name="description">
                                         </textarea>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleInputFile">File input</label>
+                                        <label for="exampleInputFile1">File input</label>
                                         <div class="input-group">
                                             <div class="custom-file">
                                                 <input type="file" name="image" class="custom-file-input"
-                                                    id="exampleInputFile">
-                                                <label class="custom-file-label" for="exampleInputFile">@lang('general.choose_file')</label>
+                                                    id="exampleInputFile1">
+                                                <label class="custom-file-label" for="exampleInputFile1">@lang('general.choose_file')</label>
                                             </div>
                                             <div class="input-group-append">
                                                 <span class="input-group-text">@lang('general.upload_file')</span>

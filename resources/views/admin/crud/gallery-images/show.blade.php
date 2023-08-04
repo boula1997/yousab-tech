@@ -24,18 +24,18 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="@lang('general.email')">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="@lang('general.role')">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
+                    <label for="exampleInputFile1">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">@lang('general.choose_file')</label>
+                        <input type="file" class="custom-file-input" id="exampleInputFile1">
+                        <label class="custom-file-label" for="exampleInputFile1">@lang('general.choose_file')</label>
                       </div>
                       <div class="input-group-append">
                         <span class="input-group-text">@lang('general.upload_file')</span>

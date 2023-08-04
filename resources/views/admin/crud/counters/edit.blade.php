@@ -52,7 +52,7 @@
                                     <label for="exampleInputEmail1">{{ __('general.count') }}</label>
                                     <input type="text" name="count"
                                         value="{{ old('count', $counter->count) }}" class="form-control"
-                                        id="exampleInputName" placeholder="Enter Count">
+                                        id="exampleInputName" placeholder="@lang('general.count')">
                                 </div>
                             </div>
 

@@ -46,7 +46,7 @@
 
                                     <div class="row">
                                         <div class="form-group">
-                                            <label for="exampleInputFile">Image</label>
+                                            <label for="exampleInputFile1">Image</label>
                                             <div class="col-md-6">
                                                 <div class="form-group text-center">
                                                     <img width="300" height="300" src="{{ $user->image }}"

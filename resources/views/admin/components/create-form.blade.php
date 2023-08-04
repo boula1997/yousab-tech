@@ -2,7 +2,7 @@
     {{-- validation messages start --}}
     @if ($errors->any())
         <div class="alert alert-danger">
-            <strong>اخطاء!</strong>
+            <strong>@lang('general.errors')</strong>
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>

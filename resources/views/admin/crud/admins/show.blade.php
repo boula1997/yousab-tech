@@ -10,8 +10,8 @@
 
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Admin</a></li>
-                            <li class="breadcrumb-item active">Show</li>
+                            <li class="breadcrumb-item"><a href="#">@lang('general.admins')</a></li>
+                            <li class="breadcrumb-item active">@lang('general.show')</li>
                         </ol>
                     </div>
                 </div>
@@ -27,26 +27,26 @@
                         <!-- general form elements -->
                         <div class="card card-secondary">
                             <div class="card-header">
-                                <h3 class="card-title">Show Admin</h3>
+                                <h3 class="card-title">@lang('general.show') @lang('general.admin')</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
                             <form>
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Name</label>
+                                        <label for="exampleInputEmail1">@lang('general.name')</label>
                                         <p>{{ $admin->name }}</p>
                                     </div>
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email</label>
+                                        <label for="exampleInputEmail1">@lang('general.email')</label>
                                         <p>{{ $admin->email }}</p>
                                     </div>
 
 
                                     <div class="row">
                                         <div class="form-group">
-                                            <label for="exampleInputFile">Image</label>
+                                            <label for="exampleInputFile1">@lang('general.image')</label>
                                             <div class="col-md-6">
                                                 <div class="form-group text-center">
                                                     <img width="300" height="300" src="{{ $admin->image }}"
