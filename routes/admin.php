@@ -39,10 +39,6 @@ Route::group(
     function () {
 
 
-        Route::get('/', function () {
-            return view('welcome');
-        });
-
         Auth::routes();
 
         Route::get('/admin/login', [App\Http\Controllers\Auth\LoginController::class, 'showAdminLoginForm'])->name('admin.login-view');
