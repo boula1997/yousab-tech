@@ -27,7 +27,7 @@ class CounterController extends Controller
     public function index()
     {
         $counters = Counter::latest()->get();
-        return view('admin.crud.counters.Index', compact('counters'))
+        return view('admin.crud.counters.index', compact('counters'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
  

@@ -28,7 +28,7 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::latest()->get();
-        return view('admin.crud.services.Index', compact('services'))
+        return view('admin.crud.services.index', compact('services'))
             ->with('i', (request()->input('service', 1) - 1) * 5);
     }
 

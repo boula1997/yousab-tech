@@ -28,7 +28,7 @@ class SliderController extends Controller
      public function index()
      {
          $sliders = Slider::latest()->get();
-         return view('admin.crud.sliders.Index', compact('sliders'))
+         return view('admin.crud.sliders.index', compact('sliders'))
              ->with('i', (request()->input('slider', 1) - 1) * 5);
      }
  

@@ -29,7 +29,7 @@ class ImageController extends Controller
     {
           // dd(10);
         $tests = Image::latest()->get();
-        return view('admin.crud.gallery-images.Index', compact('tests'))
+        return view('admin.crud.gallery-images.index', compact('tests'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
  

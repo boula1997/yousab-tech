@@ -25,7 +25,7 @@ class VideoController extends Controller
     public function index()
     {
         $videos = Video::latest()->get();
-        return view('admin.crud.videos.Index', compact('videos'))
+        return view('admin.crud.videos.index', compact('videos'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
