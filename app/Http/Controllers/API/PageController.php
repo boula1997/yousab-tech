@@ -19,7 +19,7 @@ class PageController extends Controller
     public function index()
     {
         try {
-            $data['pages'] = PageResource::collection($this->page->get);
+            $data['pages'] = PageResource::collection($this->page->get());
             return successResponse($data);
         } catch (Exception $e) {
             return failedResponse($e->getMessage());

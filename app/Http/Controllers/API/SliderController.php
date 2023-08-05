@@ -19,7 +19,7 @@ class SliderController extends Controller
     public function index()
     {
         try {
-            $data['sliders'] = SliderResource::collection($this->slider->get);
+            $data['sliders'] = SliderResource::collection($this->slider->get());
             return successResponse($data);
         } catch (Exception $e) {
             return failedResponse($e->getMessage());

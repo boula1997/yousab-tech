@@ -19,7 +19,7 @@ class PortfolioController extends Controller
     public function index()
     {
         try {
-            $data['portfolios'] = PortfolioResource::collection($this->portfolio->get);
+            $data['portfolios'] = PortfolioResource::collection($this->portfolio->get());
             return successResponse($data);
         } catch (Exception $e) {
             return failedResponse($e->getMessage());

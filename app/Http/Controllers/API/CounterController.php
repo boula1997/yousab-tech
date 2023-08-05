@@ -19,7 +19,7 @@ class CounterController extends Controller
     public function index()
     {
         try {
-            $data['counters'] = CounterResource::collection($this->counter->get);
+            $data['counters'] = CounterResource::collection($this->counter->get());
             return successResponse($data);
         } catch (Exception $e) {
             return failedResponse($e->getMessage());
