@@ -17,7 +17,7 @@
             {{-- <a href="{{ route('front.home') }}" class="nav-link">@lang('general.home')</a> --}}
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">@lang('general.contacts')</a>
+            <a href="{{ route('dashboard') }}" class="nav-link">@lang('general.home')</a>
         </li>
     </ul>
 
@@ -44,13 +44,31 @@
                     </div>
                 </form>
             </div>
+
+
+
+        </li>
+
+        <li class="nav-item pt-1">
+            @if (app()->getLocale() == 'en')
+                <a rel="alternate" hreflang="ar"
+                    href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">
+                    <img src="{{ asset('flags/ksa.png') }}" class="flag" alt="KSA Flag">
+                </a>
+            @else
+                <a rel="alternate" hreflang="en"
+                    href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">
+                    <img src="{{ asset('flags/us.png') }}" class="flag" alt="US Flag">
+
+                </a>
+            @endif
         </li>
 
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <i class="far fa-comments"></i>
-                <span class="badge badge-danger navbar-badge">3</span>
+                <span class="badge badge-danger navbar-badge">{{itemsCount('contacts')}}</span>
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <a href="#" class="dropdown-item">
@@ -196,25 +214,25 @@
                 @endcan
 
                 @can('role-list')
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            @lang('general.roles')
-                            <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">{{ itemsCount('roles') }}</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('roles.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>@lang('general.show')</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            @endcan
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                @lang('general.roles')
+                                <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('roles') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('roles.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>@lang('general.show')</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endcan
 
                 @can('user-list')
                     <li class="nav-item">
@@ -421,16 +439,6 @@
 
                     </form>
                 </li>
-
-
-                @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                    <li class="nav-item">
-                        <a rel="alternate" hreflang="{{ $localeCode }}"
-                            href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                            {{ $properties['native'] }}
-                        </a>
-                    </li>
-                @endforeach
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

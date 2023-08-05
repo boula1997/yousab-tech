@@ -113,7 +113,7 @@ return [
     "subtitle" => "Subtitle",
     "migration" => "Migration",
     "dashboard" => "Dashboard",
-    "userre" => "Registered Users",
+    "userreg" => "Registered Users",
     "moreinfo" => "More Info",
     "add" => "Add New",
     "choose_file" => "Choose File",
