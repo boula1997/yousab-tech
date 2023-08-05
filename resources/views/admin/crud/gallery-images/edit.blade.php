@@ -45,7 +45,7 @@
 
                                     <div class="form-group">
                                         <label for="exampleInputDescription">@lang('general.description')</label>
-                                        <textarea id="summernote" name="description">
+                                        <textarea  name="description">
                                         </textarea>
                                     </div>
 
@@ -94,7 +94,7 @@
     <script>
         $(function() {
             // Summernote
-            $('#summernote').summernote()
+            $('.summernote').summernote()
 
             // CodeMirror
             CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
