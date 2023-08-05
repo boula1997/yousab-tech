@@ -21,7 +21,7 @@ class SettingSeeder extends Seeder
                 'title' => 'title',
                 'address' => 'address',
                 'description' => 'description',
-                'meta_data' => 'meta_data',
+                'meta_data' => 'Meta Data',
             ],
             'ar' => [
                 'appointment1' => 'appointment1',
@@ -29,7 +29,7 @@ class SettingSeeder extends Seeder
                 'title' => 'title',
                 'address' => 'address',
                 'description' => 'description',
-                'meta_data' => 'meta_data',
+                'meta_data' => 'Meta Data',
             ],
             'logo' => 'logo',
             'tab' => 'tab',

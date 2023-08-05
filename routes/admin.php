@@ -82,6 +82,9 @@ Route::group(
             Route::get('/admin/dashboard', function () {
                 return view('dashboard');
             });
+
+            Route::put('/setting', 'App\Http\Controllers\Admin\SettingController@setting')->name('setting');
+            Route::get('/setting/edit', 'App\Http\Controllers\Admin\SettingController@editSetting')->name('edit.setting');
         });
     }
 );

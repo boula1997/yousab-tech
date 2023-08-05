@@ -128,6 +128,8 @@ return [
     "failed" => "حدث خطأ ما!",
     "roles" => "الادوار",
     "role_mangement" => "ادارة الادوار",
+    "settings" => "الاعدادات",
+
 
 
 

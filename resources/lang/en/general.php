@@ -76,7 +76,7 @@ return [
     "description" => "Description",
     "detail" => "Detail",
     "appointment1" => "Appointment1",
-    "meta_data" => "Meta_data",
+    "meta_data" => "Meta data",
     "facebook" => "Facebook",
     "youtube_link" => "Youtube_link",
     "connection" => "Connection",
@@ -126,6 +126,7 @@ return [
     "failed" => "Something went wrong!",
     "roles" => "Roles",
     "role_mangement" => "Role Mangement",
+    "settings" => "Settings",
 
 
 

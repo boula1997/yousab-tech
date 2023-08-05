@@ -127,7 +127,7 @@
                                                     <div class="custom-file">
                                                         <input type="file" name="logo" class="custom-file-input"
                                                             id="exampleInputFile1">
-                                                        <label class="custom-file-label" for="exampleInputFile1">{{__('general.choosefile_')}}</label>
+                                                        <label class="custom-file-label" for="exampleInputFile1">{{__('general.choose_file')}}</label>
                                                     </div>
                                                     <div class="input-group-append">
                                                         <span class="input-group-text">@lang('general.upload_file')</span>
@@ -154,7 +154,7 @@
                                                     <div class="custom-file">
                                                         <input type="file" name="tab" class="custom-file-input"
                                                             id="exampleInputFile1">
-                                                        <label class="custom-file-label" for="exampleInputFile1">{{__('general.choosefile_')}}</label>
+                                                        <label class="custom-file-label" for="exampleInputFile1">{{__('general.choose_file')}}</label>
                                                     </div>
                                                     <div class="input-group-append">
                                                         <span class="input-group-text">@lang('general.upload_file')</span>
@@ -179,8 +179,10 @@
                                 </div>
                                 <!-- /.card-body -->
 
-                                <div class="card-footer text-center">
+                                <div class="card-footer">
                                     <button type="submit" class="btn btn-outline-primary px-5">@lang('general.save')</button>
+                                    <a href="{{ route('setting') }}" class="btn btn-outline-danger px-5
+                                    ">@lang('general.cancel')</a>
                                 </div>
                             </form>
                         </div>

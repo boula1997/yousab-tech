@@ -424,7 +424,7 @@
                             <i class="nav-icon fas fa-th"></i>
                             <p>
                                 @lang('general.settings')
-                                <span class="right badge badge-danger">@lang('general.new')</span>
+                                {{-- <span class="right badge badge-danger">@lang('general.new')</span> --}}
                             </p>
                         </a>
                     </li>

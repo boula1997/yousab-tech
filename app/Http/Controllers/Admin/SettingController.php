@@ -13,45 +13,47 @@ class SettingController extends Controller
 
     function __construct()
     {
-         $this->middleware('permission:setting-list|setting-create|setting-edit|setting-delete', ['only' => ['index','show']]);
-         $this->middleware('permission:setting-create', ['only' => ['create','store']]);
-         $this->middleware('permission:setting-edit', ['only' => ['edit','update']]);
-         $this->middleware('permission:setting-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:setting-list|setting-create|setting-edit|setting-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:setting-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:setting-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:setting-delete', ['only' => ['destroy']]);
     }
 
 
-    public function setting(Request $request){
-        $setting=Setting::first();
-        $data=$request->all();
-        if(!$request->hasFile('logo'))
-    $data['logo']=$setting->logo;
-    else{
-        File::delete($setting->logo);
-        $file = $request->file('logo');
-        $data['logo']=$request->logo->store('images');
-        $file->move('images',$data['logo']);
+    public function setting(Request $request)
+    {
+        $setting = Setting::first();
+        $data = $request->all();
+        if (!$request->hasFile('logo'))
+            $data['logo'] = $setting->logo;
+        else {
+            File::delete($setting->logo);
+            $file = $request->file('logo');
+            $data['logo'] = $request->logo->store('images');
+            $file->move('images', $data['logo']);
+        }
+
+        if (!$request->hasFile('tab'))
+            $data['tab'] = $setting->tab;
+        else {
+            File::delete($setting->tab);
+            $file2 = $request->file('tab');
+            $data['tab'] = $request->tab->store('images');
+            $file2->move('images', $data['tab']);
+        }
+
+
+
+
+
+        $setting->update($data);
+        return redirect()->route('edit.setting', compact('setting'))
+            ->with('success', 'تم التعديل بنجاح');
     }
 
-    if(!$request->hasFile('tab'))
-    $data['tab']=$setting->tab;
-    else{
-        File::delete($setting->tab);
-        $file2 = $request->file('tab');
-        $data['tab']=$request->tab->store('images');
-        $file2->move('images',$data['tab']);
-    }
-
-
-
-
-
-    $setting->update($data);
-    return redirect()->route('edit.setting',compact('setting'))
-    ->with('success', 'تم التعديل بنجاح');
-    }
-    
-    public function editSetting(){
-        $setting=Setting::first();
-        return view('admin.crud.setting.setting',compact('setting'));
+    public function editSetting()
+    {
+        $setting = Setting::first();
+        return view('admin.crud.setting.setting', compact('setting'));
     }
 }

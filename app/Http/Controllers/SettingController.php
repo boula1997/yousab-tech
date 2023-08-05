@@ -15,7 +15,7 @@ class SettingController extends Controller
     public function index()
     {
         $data=Setting::first();
-        return view('front.layouts.master',compact('data'));
+        return view('admin.crud.setting.setting',compact('data'));
     }
 
     /**
