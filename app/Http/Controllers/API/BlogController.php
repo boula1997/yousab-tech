@@ -19,7 +19,7 @@ class BlogController extends Controller
     public function index()
     {
         try {
-            $data['blogs'] = BlogResource::collection($this->blog->ge());
+            $data['blogs'] = BlogResource::collection($this->blog->get());
             return successResponse($data);
         } catch (Exception $e) {
             return failedResponse($e->getMessage());
