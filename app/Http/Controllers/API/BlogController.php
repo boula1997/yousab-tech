@@ -20,7 +20,7 @@ class BlogController extends Controller
     {
         try {
             $data['blogs'] = BlogResource::collection($this->blog->get());
-            return successResponse($data);
+            return successResponse($data,trans('general.sent_successfully'));
         } catch (Exception $e) {
             return failedResponse($e->getMessage());
         }

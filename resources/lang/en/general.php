@@ -122,6 +122,9 @@ return [
     "new" => "New",
     "errors" => "Errors",
     "admin" => "Admin",
+    "sent_successfully" => "Sent Successfully!",
+    "failed" => "Something went wrong!",
+
 
 
 

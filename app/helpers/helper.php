@@ -40,7 +40,7 @@ function delete_file($file)
         File::delete($file);
 }
 
-function successResponse($data = [], $message = "", $status = 200)
+function successResponse($data = [], $message = "success", $status = 200)
 {
     return response()->json(
         [
@@ -52,7 +52,7 @@ function successResponse($data = [], $message = "", $status = 200)
     );
 }
 
-function failedResponse($data = [], $message = "", $status = 400)
+function failedResponse($data = [], $message = "error", $status = 400)
 {
     return response()->json(
         [

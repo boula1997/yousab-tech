@@ -124,6 +124,8 @@ return [
     "new" => "جديد",
     "errors" => "الاخطاء",
     "admin" => "المسئول",
+    "sent_successfully" => "تم الارسال!",
+    "failed" => "حدث خطأ ما!",
 
 
 
