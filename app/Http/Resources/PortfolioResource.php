@@ -16,7 +16,6 @@ class PortfolioResource extends JsonResource
     {
         return [
             "id" => $this->id,
-            "image" => $this->file->url,
             "title" => $this->title,
             "subtitle" => $this->subtitle,
             "description" => $this->description,

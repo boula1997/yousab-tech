@@ -157,7 +157,8 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ auth('admin')->user()->file? auth('admin')->user()->file->url:''}}" class="img-circle elevation-2" alt="User Image">
+                <img src="{{ auth('admin')->user()->file ? auth('admin')->user()->file->url : '' }}"
+                    class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block">{{ auth('admin')->user()->name }}</a>
@@ -173,19 +174,19 @@
                 <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
 
-                @can('portfolio-list')
+                @can('admin-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                @lang('general.portfolios')
+                                @lang('general.admins')
                                 <i class="fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">{{ itemsCount('Portfolios') }}</span>
+                                <span class="badge badge-info right">{{ itemsCount('admins') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ route('portfolios.index') }}" class="nav-link">
+                                <a href="{{ route('admins.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
@@ -193,6 +194,7 @@
                         </ul>
                     </li>
                 @endcan
+
                 @can('user-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
@@ -213,19 +215,61 @@
                         </ul>
                     </li>
                 @endcan
-                @can('admin-list')
+
+
+                @can('slider-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                @lang('general.admins')
-                                <i class="fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">{{ itemsCount('admins') }}</span>
+                                @lang('general.sliders') <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('sliders') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ route('admins.index') }}" class="nav-link">
+                                <a href="{{ route('sliders.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>@lang('general.show')</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endcan
+
+                @can('service-list')
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                @lang('general.services') <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('services') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('services.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>@lang('general.show')</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endcan
+
+                @can('portfolio-list')
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                @lang('general.portfolios')
+                                <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('Portfolios') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('portfolios.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
@@ -255,18 +299,18 @@
                     </li>
                 @endcan
 
-                @can('service-list')
+                @can('blog-lsit')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                @lang('general.services') <i class="fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">{{ itemsCount('services') }}</span>
+                                @lang('general.blogs') <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('blogs') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ route('services.index') }}" class="nav-link">
+                                <a href="{{ route('blogs.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
@@ -274,26 +318,6 @@
                         </ul>
                     </li>
                 @endcan
-
-                {{-- @can('blog-lsit') --}}
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            @lang('general.blogs') <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">{{ itemsCount('blogs') }}</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('blogs.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>@lang('general.show')</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                {{-- @endcan --}}
 
                 @can('counter-list')
                     <li class="nav-item">
@@ -327,26 +351,6 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('videos.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>@lang('general.show')</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                @endcan
-
-                @can('slider-list')
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
-                            <p>
-                                @lang('general.sliders') <i class="fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">{{ itemsCount('sliders') }}</span>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{ route('sliders.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
