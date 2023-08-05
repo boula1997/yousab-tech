@@ -23,7 +23,7 @@ class SettingController extends Controller
     public function setting(Request $request)
     {
         $setting = Setting::first();
-        $data = $request->all();
+        $data = $request->except('0','1');
         if (!$request->hasFile('logo'))
             $data['logo'] = $setting->logo;
         else {
