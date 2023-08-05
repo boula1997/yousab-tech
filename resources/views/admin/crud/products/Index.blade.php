@@ -28,7 +28,7 @@
             <th>No</th>
             <th>@lang('general.name')</th>
             <th>@lang('general.details')</th>
-            <th width="280px">@lang('general.action')</th>
+            <th width="280px">@lang('general.controls')</th>
         </tr>
 	    @foreach ($products as $product)
 	    <tr>

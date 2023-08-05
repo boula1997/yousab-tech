@@ -126,6 +126,8 @@ return [
     "admin" => "المسئول",
     "sent_successfully" => "تم الارسال!",
     "failed" => "حدث خطأ ما!",
+    "roles" => "الادوار",
+    "role_mangement" => "ادارة الادوار",
 
 
 

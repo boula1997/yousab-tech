@@ -14,7 +14,7 @@
                         </div>
                         <div class="pull-right">
                             @can('role-create')
-                                <a class="btn btn-success" href="{{ route('roles.create') }}"> @lang('general.create_role')</a>
+                                <a class="btn btn-success" href="{{ route('roles.create') }}"> @lang('general.create') @lang('general.role')</a>
                             @endcan
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                     <tr>
                         <th>No</th>
                         <th>@lang('general.name')</th>
-                        <th width="280px">@lang('general.action')</th>
+                        <th width="280px">@lang('general.controls')</th>
                     </tr>
                     @foreach ($roles as $key => $role)
                         <tr>

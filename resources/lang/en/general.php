@@ -124,6 +124,8 @@ return [
     "admin" => "Admin",
     "sent_successfully" => "Sent Successfully!",
     "failed" => "Something went wrong!",
+    "roles" => "Roles",
+    "role_mangement" => "Role Mangement",
 
 
 

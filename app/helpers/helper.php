@@ -15,6 +15,7 @@ use App\Models\Team;
 use App\Models\User;
 use App\Models\Video;
 use Illuminate\Support\Facades\File;
+use Spatie\Permission\Models\Role;
 
 function settings()
 {
@@ -81,6 +82,7 @@ function itemsCount($model)
         "users" => count(User::get()),
         "admins" => count(Admin::get()),
         "videos" => count(Video::get()),
+        "roles" => count(Role::get()),
     ];
 
 
