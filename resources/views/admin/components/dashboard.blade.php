@@ -418,7 +418,7 @@
                     </li>
                 @endcan
 
-                @can('setting-lsit')
+                @can('setting-list')
                     <li class="nav-item">
                         <a href="{{ route('edit.setting') }}" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
