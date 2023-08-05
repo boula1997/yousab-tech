@@ -38,6 +38,10 @@ Route::group(
     ],
     function () {
 
+        Route::get('/admin', function () {
+            return redirect()->route('admin.login-view');
+        });
+
 
         Auth::routes();
 
