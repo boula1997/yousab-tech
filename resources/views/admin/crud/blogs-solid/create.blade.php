@@ -76,7 +76,8 @@
 
 
                                     <div class="card-footer">
-                                        <button type="submit" class="btn btn-primary">@lang('general.save')</button>
+                                        <button type="submit" class="btn btn-outline-primary px-5
+">@lang('general.save')</button>
                                     </div>
                                 @endsection
 

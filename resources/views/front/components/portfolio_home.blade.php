@@ -15,7 +15,8 @@
                         {!! $portfolio->description !!}
                     </div> --}}
                     {{-- <div class="card-footer">
-                        <a href="#" class="btn btn-primary">تصفح الخدمة</a>
+                        <a href="#" class="btn btn-outline-primary px-5
+">تصفح الخدمة</a>
                     </div> --}}
                 </div>
             </div>

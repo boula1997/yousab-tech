@@ -66,7 +66,7 @@
 
                                 <div class="col-form-group">
                                     <label>@lang('general.description')(@lang('general.' . $locale))<span class="text-danger">*</span></label>
-                                    <textarea rows="100" class="summernote @error($locale . '.description') is-invalid @enderror" 
+                                    <textarea rows="100" class="summernote @error($locale . '.description') is-invalid @enderror"
                                         name="{{ $locale . '[description]' }}">
                                     {!! old($locale . '.description') !!} 
                                 </textarea>
@@ -106,9 +106,10 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-light-success active">@lang('general.save')</button>
-                    <a href="{{ route('services.index') }}"
-                        class="btn btn-light-success font-weight-bold">@lang('general.cancel')</a>
+                    <button type="submit" class="btn btn-outline-primary px-5
+">@lang('general.save')</button>
+                    <a href="{{ route('services.index') }}" class="btn btn-outline-danger px-5
+">@lang('general.cancel')</a>
                 </div>
             </div>
         </form>

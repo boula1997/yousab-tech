@@ -117,9 +117,11 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-light-success active">@lang('general.save')</button>
+                    <button type="submit" class="btn btn-outline-primary px-5
+">@lang('general.save')</button>
                     <a href="{{ route('pages.index') }}"
-                        class="btn btn-light-success font-weight-bold">@lang('general.cancel')</a>
+                        class="btn btn-outline-danger px-5
+">@lang('general.cancel')</a>
                 </div>
             </div>
         </form>

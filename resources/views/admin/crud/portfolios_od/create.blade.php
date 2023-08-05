@@ -72,7 +72,7 @@
                                 <!-- /.card-body -->
 
                                 <div class="card-footer text-center">
-                                    <button type="submit" class="btn btn-primary w-20">@lang('general.save')</button>
+                                    <button type="submit" class="btn btn-outline-primary px-5">@lang('general.save')</button>
                                 </div>
                             </form>
                         </div>

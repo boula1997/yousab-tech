@@ -15,7 +15,8 @@
 				<img class="img-fluid" src="images/404.png" alt="" />
 			</div>
 			<p>We can’t find the page your are looking for. You can check out our <a href="#">Homepage</a>.</p>
-			<a class="btn btn-primary" href="#"> Back To Homepage </a>
+			<a class="btn btn-outline-primary px-5
+" href="#"> Back To Homepage </a>
 		</div>
 		<!-- /.jumbotron -->
 

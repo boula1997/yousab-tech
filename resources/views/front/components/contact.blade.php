@@ -47,7 +47,8 @@
             </div>
             <div id="success"></div>
             <!-- For success/fail messages -->
-            <button type="submit" class="btn btn-primary" id="sendMessageButton">{{__('general.send')}}</button>
+            <button type="submit" class="btn btn-outline-primary px-5
+" id="sendMessageButton">{{__('general.send')}}</button>
         </form>
     </div>
     <div class="col-md-6">
