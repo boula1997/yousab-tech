@@ -19,7 +19,7 @@ class ServiceController extends Controller
     public function index()
     {
         try {
-            $data['services'] = ServiceResource::collection($this->service->get);
+            $data['services'] = ServiceResource::collection($this->service->get());
             return successResponse($data);
         } catch (Exception $e) {
             return failedResponse($e->getMessage());

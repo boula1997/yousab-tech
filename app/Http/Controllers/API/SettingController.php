@@ -19,17 +19,7 @@ class SettingController extends Controller
     public function index()
     {
         try {
-            $data['settings'] = SettingResource::collection($this->setting->get);
-            return successResponse($data);
-        } catch (Exception $e) {
-            return failedResponse($e->getMessage());
-        }
-    }
-
-    public function show($id)
-    {
-        try {
-            $data['setting'] = new SettingResource($this->setting->findorfail($id));
+            $data['settings'] = new SettingResource($this->setting->first());
             return successResponse($data);
         } catch (Exception $e) {
             return failedResponse($e->getMessage());

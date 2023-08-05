@@ -53,49 +53,11 @@ Route::group(
     ],
     function () {
 
-        // Route::group(['middleware' => ['auth:admin']], function () {
 
-        //     Route::get('/dashboard', function () {
-        //         return view('dashboard');
-        //     })->name('dashboard');
-
-        //     Route::resource('roles', RoleController::class);
-        //     // Route::resource('home',HomeController::class);
-        //     Route::resource('blogs', BlogController::class);
-        //     // Route::resource('contact',ContactController::class);
-        //     Route::resource('services', ServiceController::class);
-        //     Route::resource('sliders', SliderController::class);
-        //     Route::resource('pages', PageController::class);
-        //     // Route::resource('about',AboutController::class);
-        //     Route::resource('portfolios', PortfolioController::class);
-        //     Route::resource('counters', CounterController::class);
-        //     Route::resource('videos', VideoController::class);
-        //     Route::resource('tests', ImageController::class);
-
-        //     Route::resource('roles', RoleController::class);
-        //     Route::resource('users', UserController::class);
-        //     Route::resource('admins', AdminController::class);
-        //     Route::resource('products', ProductController::class);
-        //     Route::resource('contacts', ContactController::class);
-
-
-        //     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-        //     Route::get('/admin/dashboard', function () {
-        //         return view('dashboard');
-        //     });
-        // });
 
         Route::get('/', function () {
             return view('welcome');
         });
-
-        Auth::routes();
-
-        Route::get('/admin/login', [App\Http\Controllers\Auth\LoginController::class, 'showAdminLoginForm'])->name('admin.login-view');
-        Route::post('/admin/login', [App\Http\Controllers\Auth\LoginController::class, 'adminLogin'])->name('admin.login');
-
-        Route::get('/admin/register', [App\Http\Controllers\Auth\RegisterController::class, 'showAdminRegisterForm'])->name('admin.register-view');
-        Route::post('/admin/register', [App\Http\Controllers\Auth\RegisterController::class, 'createAdmin'])->name('admin.register');
 
         Route::put('/setting', 'App\Http\Controllers\Admin\SettingController@setting')->name('setting');
         Route::get('/setting/edit', 'App\Http\Controllers\Admin\SettingController@editSetting')->name('edit.setting');
@@ -111,38 +73,6 @@ Route::group(
         Route::get('/about', 'App\Http\Controllers\SiteController@about')->name('front.about');
         Route::post('/contact', 'App\Http\Controllers\SiteController@contact_post')->name('front.contact.post');
 
-
-        Route::group(['middleware' => ['auth:admin']], function () {
-
-            Route::get('/dashboard', function () {
-                return view('dashboard');
-            })->name('dashboard');
-        
-            Route::resource('roles', RoleController::class);
-            // Route::resource('home',HomeController::class);
-            Route::resource('blogs', BlogController::class);
-            // Route::resource('contact',ContactController::class);
-            Route::resource('services', ServiceController::class);
-            Route::resource('sliders', SliderController::class);
-            Route::resource('pages', PageController::class);
-            // Route::resource('about',AboutController::class);
-            Route::resource('portfolios', PortfolioController::class);
-            Route::resource('counters', CounterController::class);
-            Route::resource('videos', VideoController::class);
-            Route::resource('tests', ImageController::class);
-        
-            Route::resource('roles', RoleController::class);
-            Route::resource('users', UserController::class);
-            Route::resource('admins', AdminController::class);
-            Route::resource('products', ProductController::class);
-            Route::resource('contacts', ContactController::class);
-        
-        
-            Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-            Route::get('/admin/dashboard', function () {
-                return view('dashboard');
-            });
-        });
     }
 );
 
