@@ -3,6 +3,12 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\BlogController;
+use App\Http\Controllers\API\ServiceController;
+use App\Http\Controllers\API\SettingController;
+use App\Http\Controllers\API\PageController;
+use App\Http\Controllers\API\CounterController;
+use App\Http\Controllers\API\PortfolioController;
+use App\Http\Controllers\API\SliderController;
 use App\Http\Controllers\API\ContactController;
 /*
 |--------------------------------------------------------------------------
