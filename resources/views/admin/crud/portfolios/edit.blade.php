@@ -107,7 +107,7 @@
                         @foreach ($images as $image)
                             <div class="col-md-3">
                                 <input type="checkbox" name="delimages[]" value="{{ $image->id }}">
-                                <img width="100" height="100" src="{{ $image->path }}" alt="">
+                                <img width="100" height="100" src="{{ $image->url }}" alt="">
 
                             </div>
                         @endforeach

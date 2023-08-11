@@ -17,7 +17,8 @@ class Page extends Model implements TranslatableContract
     public $timestamps = true;
 
     public function file(): MorphOne
-    {
+    {   
+        // dd($this->morphOne(File::class, 'fileable'));
         return $this->morphOne(File::class, 'fileable');
     }
 }

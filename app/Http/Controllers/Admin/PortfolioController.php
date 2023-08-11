@@ -59,9 +59,18 @@ class PortfolioController extends Controller
             foreach ($files as $file) {
                 $data['image'] = $file->store('images');
                 $file->move('images', $data['image']);
-                ModelsFile::create(['url' => $data['image'], 'fileable_id' => $portfolio->id, 'fileable_type' => 'App\Models\Portfolio']);
+                ModelsFile::create(['url' => $data['image'], 'fileable_id' => $portfolio->id, 'fileable_type' => 'App\Models\Gallery']);
             }
         }
+
+        if ($request->has('delimages')) {
+            foreach ($request->delimages as $id) {
+                $image=ModelsFile::find($id);
+                File::delete($image->url);
+                $image->delete();
+            }
+        }
+
 
         return redirect()->route('portfolios.index')
             ->with('success', 'تم الانشاء');
@@ -87,8 +96,7 @@ class PortfolioController extends Controller
      */
     public function edit(Gallery $portfolio)
     {
-        //    dd($portfolio->title);
-        $images = Image::where('gallery_id', $portfolio->id)->get();
+        $images = $portfolio->files;
         return view('admin.crud.portfolios.edit', compact('portfolio', 'images'));
     }
     /**
@@ -100,15 +108,24 @@ class PortfolioController extends Controller
      */
     public function update(PortfolioRequest $request, Gallery $portfolio)
     {
-        $portfolio->update($request->except('images'));
+        $portfolio->update($request->except('images','delimages'));
         if ($request->hasFile('images')) {
             $files = $request->file('images');
             foreach ($files as $file) {
                 $data['image'] = $file->store('images');
                 $file->move('images', $data['image']);
-                ModelsFile::create(['url' => $data['image'], 'fileable_id' => $portfolio->id, 'fileable_type' => 'App\Models\Portfolio']);
+                ModelsFile::create(['url' => $data['image'], 'fileable_id' => $portfolio->id, 'fileable_type' => 'App\Models\Gallery']);
             }
         }
+
+        if ($request->has('delimages')) {
+            foreach ($request->delimages as $id) {
+                $image=ModelsFile::find($id);
+                File::delete($image->url);
+                $image->delete();
+            }
+        }
+
 
         return redirect()->route('portfolios.index', compact('portfolio'))
             ->with('success', 'تم التعديل بنجاح');
@@ -121,6 +138,10 @@ class PortfolioController extends Controller
      */
     public function destroy(Gallery $portfolio)
     {
+        foreach($portfolio->files as $image){
+            File::delete($image->url);
+            $image->delete();
+        }
         $portfolio->delete();
 
         return redirect()->route('portfolios.index')
