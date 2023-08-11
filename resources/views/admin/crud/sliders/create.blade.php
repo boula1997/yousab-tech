@@ -94,9 +94,6 @@
                                             <label class="custom-file-label"
                                                 for="exampleInputFile1">@lang('general.choose_file')</label>
                                         </div>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">@lang('general.upload_file')</span>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

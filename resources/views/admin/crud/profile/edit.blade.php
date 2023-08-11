@@ -47,7 +47,7 @@
                             {{-- validation messages end --}}
 
                             <!-- form start -->
-                            <form action="{{ route('admins.update.',$admin) }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('update.profile',$admin) }}" method="post" enctype="multipart/form-data">
                                 @method('PUT')
                                 @csrf
                                 <input type="hidden" name="id" value="{{$admin->id}}">
@@ -73,14 +73,6 @@
                                             class="form-control" id="exampleInputConfirmpassword" placeholder="@lang('general.confirm_password')">
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">@lang('general.role')</label>
-                                        <select name="roles" id="" class="form-control">
-                                            @foreach ($roles as $role)
-                                            <option value="{{$role}}">{{$role}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
 
                                     <div class="row">
                                         <div class="form-group col-md-6">

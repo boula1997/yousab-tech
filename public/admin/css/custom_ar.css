@@ -198,6 +198,11 @@ padding-left: 65rem;
     top: 0;
 }
 
+.input-group-text{
+    transform: rotate(180deg); 
+
+}
+
 
 
 
