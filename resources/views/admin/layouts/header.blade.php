@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  lang="en">
+<html  lang="en" dir="{{app()->getLocale()=='ar'?'rtl':'ltr'}}">
 
 <head>
     <meta charset="utf-8">
@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/css/custom.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('bootstrap-5.3.1-dist\css\bootstrap.css')}}"> --}}
+    {{-- <link rel="stylesheet" href="{{asset('bootstrap-5.3.1-dist\css\bootstrap.rtl.css')}}"> --}}
 </head>
 
 
