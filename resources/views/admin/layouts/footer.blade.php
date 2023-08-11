@@ -13,7 +13,7 @@
 <!-- /.control-sidebar -->
 <!-- ./wrapper -->
 
-{{-- <script src="{{asset('bootstrap-5.3.1-dist\js\bootstrap.js')}}"></script> --}}
+<script src="{{asset('bootstrap-5.3.1-dist\js\bootstrap.js')}}"></script>
 <!-- jQuery -->
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->

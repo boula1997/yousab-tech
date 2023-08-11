@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html  lang="en" dir="{{app()->getLocale()=='ar'?'rtl':'ltr'}}">
+<html  lang="{{app()->getLocale()}}" dir="{{app()->getLocale()=='ar'?'rtl':'ltr'}}">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title',settings()->title)</title>
-
+    
     <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="{{asset('bootstrap-5.3.1-dist\css\bootstrap.css')}}">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -33,8 +34,13 @@
     <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+    @if (app()->getLocale()=='ar')
+        
+    <link rel="stylesheet" href="{{asset('admin/css/custom_ar.css')}}">
+    @else
+        
     <link rel="stylesheet" href="{{asset('admin/css/custom.css')}}">
-    {{-- <link rel="stylesheet" href="{{asset('bootstrap-5.3.1-dist\css\bootstrap.css')}}"> --}}
+    @endif
     {{-- <link rel="stylesheet" href="{{asset('bootstrap-5.3.1-dist\css\bootstrap.rtl.css')}}"> --}}
 </head>
 
