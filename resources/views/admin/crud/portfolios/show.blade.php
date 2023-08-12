@@ -69,7 +69,7 @@
                             <div class="row">
                                 @foreach ($images as $image)
                                     <div class="col-md-3">
-                                        <img width="100" height="100" class="mx-3" src="{{ $image->path }}"
+                                        <img width="100" height="100" class="mx-3" src="{{ $image->url }}"
                                             alt="">
 
                                     </div>

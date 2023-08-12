@@ -84,7 +84,7 @@ class PortfolioController extends Controller
      */
     public function show(Gallery $portfolio)
     {
-        $images = Image::where('gallery_id', $portfolio->id)->get();
+        $images = $portfolio->files;
         return view('admin.crud.portfolios.show', compact('portfolio', 'images'));
     }
 
