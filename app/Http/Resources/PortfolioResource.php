@@ -19,6 +19,7 @@ class PortfolioResource extends JsonResource
             "title" => $this->title,
             "subtitle" => $this->subtitle,
             "description" => $this->description,
+            "images" => $this->files,
         ];
     }
 }
