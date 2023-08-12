@@ -47,7 +47,7 @@
                             {{-- validation messages end --}}
 
                             <!-- form start -->
-                            <form action="{{ route('admins.update.',$admin) }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('admins.update',$admin) }}" method="post" enctype="multipart/form-data">
                                 @method('PUT')
                                 @csrf
                                 <input type="hidden" name="id" value="{{$admin->id}}">
