@@ -75,7 +75,7 @@
 
 
                                     <div class="row">
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group col-md-6 mt-5">
                                             <label for="exampleInputFile1">@lang('general.image')</label>
                                             <div class="input-group">
                                                 <div class="custom-file">
@@ -95,7 +95,7 @@
                                     </div>
 
 
-                                <div class="card-footer text-center">
+                                <div class="card-footer mt-5">
                                     <button type="submit" class="btn btn-outline-primary px-5">@lang('general.save')</button>
                                     <a href="{{ route('services.index') }}" class="btn btn-outline-danger px-5
                                     ">@lang('general.cancel')</a>

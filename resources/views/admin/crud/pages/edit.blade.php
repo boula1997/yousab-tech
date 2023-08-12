@@ -82,7 +82,7 @@
                 </div>
             </div>
             <div class="card card-custom">
-                <div class="card-body">
+                <div class="card-body mt-5">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
@@ -119,7 +119,7 @@
                             </div>
 
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 mt-5">
                             <div class="form-group py-5">
                                 <div class="input-group">
                                     <div class="custom-file">
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">
+                <div class="card-footer mb-5">
                     <button type="submit" class="btn btn-success">@lang('general.save')</button>
                     <a href="{{ route('pages.index') }}" class="btn btn-danger font-weight-bold">@lang('general.cancel')</a>
                 </div>
