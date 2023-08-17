@@ -12,13 +12,16 @@ class PortfolioResource extends JsonResource
      *
      * @return array<string, mixed>
      */
-    public function toArray(Request $request): array
+
+
+    public function toArray($request)
     {
         return [
             "id" => $this->id,
             "title" => $this->title,
             "subtitle" => $this->subtitle,
             "description" => $this->description,
+            "images" => $this->files,
         ];
     }
 }

@@ -14,13 +14,11 @@ class Gallery extends Model implements TranslatableContract
     use HasFactory, Translatable;
     protected $table = 'galleries';
     protected $guarded = [];
-    public $translatedAttributes = ['title','description'];
+    public $translatedAttributes = ['title', 'description'];
     public $timestamps = true;
 
-    public function comments(): MorphMany
+    public function files(): MorphMany
     {
-        return $this->morphMany(Comment::class, 'commentable');
+        return $this->morphMany(File::class, 'fileable');
     }
-    
-
-}   
+}

@@ -265,7 +265,7 @@
                 </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-outline-primary">@lang('general.save')</button>
-                    <a href="{{ route('setting') }}" class="btn btn-outline-danger font-weight-bold">@lang('general.cancel')</a>
+                    <a href="{{ route('dashboard') }}" class="btn btn-outline-danger font-weight-bold">@lang('general.cancel')</a>
                 </div>
             </div>
         </form>
