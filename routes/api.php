@@ -42,7 +42,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::get('page/{id}', 'PageController@show');
 // Route::post('store/contact', 'CContactController@store');
 
-Route::group(['middleware' => ['apiLocalization']], function () {
+Route::group(['middleware' => ['apiLocalization','cors']], function () {
     Route::get('/services', [ServiceController::class, 'index']);
     Route::get('/service/{id}', [ServiceController::class, 'show']);
     
