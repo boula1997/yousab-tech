@@ -14,10 +14,10 @@ return [
     | To learn more: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
     |
     */
-
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],
     'supportsCredentials' => true,
-    'allowedOrigins' => ['*'],
-    'allowedOriginsPatterns' => [],
+    'allowedOrigins' => ['*','https://web.tech.yousab-tech.com/'],
+    'allowedOriginsPatterns' => ['*'],
     'allowedHeaders' => ['*'],
     'allowedMethods' => ['*'],
     'exposedHeaders' => [],
