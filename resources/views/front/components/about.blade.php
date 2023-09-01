@@ -7,7 +7,7 @@
                         <img class="shape-image-sm top_image_bounce" src="assets/img/about/1sm.webp" alt="img">
                         <img class="shape-image" src="assets/img/about/1s.webp" alt="img">
                         <div class="thumb">
-                            <img src="assets/img/about/1.webp" alt="img">
+                            <img src="{{asset('assets/img/about/1.webp')}}" alt="img">
                         </div>
                     </div>
                 </div>

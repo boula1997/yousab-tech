@@ -97,41 +97,11 @@
             </div>
             <div class="collapse navbar-collapse" id="Iitechie_main_menu">
                 <ul class="navbar-nav menu-open text-lg-end">
-                    <li class="menu-item-has-children">
-                        <a href="#">Home</a>
-                        <ul class="sub-menu">
-                            <li><a href="index.html">Home 01</a></li>
-                            <li><a href="index-2.html">Home 02</a></li>
-                            <li><a href="index-3.html">Home 03</a></li>
-                            <li><a href="index-4.html">Home 04</a></li>
-                            <li><a href="index-5.html">Home 05</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Service</a>
-                        <ul class="sub-menu">
-                            <li><a href="service.html">Service</a></li>
-                            <li><a href="service-details.html">Service Single</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Pages</a>
-                        <ul class="sub-menu">
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="team.html">Team</a></li>
-                            <li><a href="team-details.html">Team Details</a></li>
-                            <li><a href="project.html">Project</a></li>
-                            <li><a href="project-details.html">Project Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="blog-details.html">Blog Details</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a class="{{request()->routeIs('front.home')?'active':''}}" href="{{route('front.home')}}">Home</a></li>
+                    <li><a class="{{request()->routeIs('front.service')?'active':''}}" href="{{route('front.service')}}">Services</a></li>
+                    <li><a class="{{request()->routeIs('front.about')?'active':''}}" href="{{route('front.about')}}">About Us</a></li>
+                    <li><a class="{{request()->routeIs('front.home')?'active':''}}" href="{{route('front.home')}}">Project</a></li>
+                    <li><a class="{{request()->routeIs('front.contact')?'active':''}}" href="{{route('front.contact')}}">Contact Us</a></li>
                 </ul>
             </div>
             <div class="nav-right-part nav-right-part-desktop align-self-center">
