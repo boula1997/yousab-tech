@@ -1,54 +1,72 @@
-    <!-- Page Content -->
-    <div class="container">
-		<div class="breadcrumb-main">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item">
-					<a href="index.html">الرئسية</a>
-				</li>
-				<li class="breadcrumb-item active">اسئلة الشائعة</li>
-			</ol>
-		</div>
-
-		<div class="faq-main">
-			<div class="" id="accordion" role="tablist" aria-multiselectable="true">
-				<div class="card accordion-single">
-				  <div class="card-header" role="tab" id="headingOne">
-					<h5 class="mb-0">
-					  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Phasellus ultrices tellus nec pellentesque ornare.</a>
-					</h5>
-				  </div>
-
-				  <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-					<div class="card-body">
-					  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-					</div>
-				  </div>
-				</div>
-				<div class="card accordion-single">
-				  <div class="card-header" role="tab" id="headingTwo">
-					<h5 class="mb-0">
-					  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Morbi malesuada enim non luctus tincidunt.</a>
-					</h5>
-				  </div>
-				  <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-					<div class="card-body">
-					  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-					</div>
-				  </div>
-				</div>
-				<div class="card accordion-single">
-				  <div class="card-header" role="tab" id="headingThree">
-					<h5 class="mb-0">
-					  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Fusce eu dui condimentum, placerat nisl id, egestas est.</a>
-					</h5>
-				  </div>
-				  <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-					<div class="card-body">
-					  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-					</div>
-				  </div>
-				</div>
-			</div>
-		</div>
-
+    <!-- faq area start -->
+    <div class="faq-area pd-top-100 pd-bottom-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 order-lg-last mb-4 mb-lg-0">
+                    <div class="faq-image-wrap">
+                        <div class="thumb">
+                            <img src="assets/img/about/f1.webp" alt="img">
+                            <img class="img-position-1" src="assets/img/about/f2.webp" alt="img">
+                            <img class="img-position-2 top_image_bounce" src="assets/img/about/f3.webp" alt="img">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-xl-5 order-lg-first align-self-center">
+                    <div class="section-title mb-0">
+                        <h5 class="sub-title right-line">Faq</h5>
+                        <h2 class="title">Know more about our it solution</h2>
+                        <p class="content">Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet
+                            adipiscingem neque</p>
+                    </div>
+                    <div class="accordion mt-4" id="accordionExample">
+                        <div class="accordion-item single-accordion-inner">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Why we are?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet
+                                    adipiscingem neque sed ipsum. amquam nunc
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item single-accordion-inner">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    What we do for you?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet
+                                    adipiscingem neque sed ipsum. amquam nunc
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item single-accordion-inner mb-0">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    100% data security
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet
+                                    adipiscingem neque sed ipsum. amquam nunc
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- faq area end -->

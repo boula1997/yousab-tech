@@ -1,99 +1,29 @@
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-</head>
-<style>
-    .sliderBtn {
-        background: rgb(92, 255, 92) !important;
-        background: linear-gradient(90deg, rgba(92, 255, 92, 1) 0%, rgba(0, 163, 0, 1) 100%) !important;
-        color: #fff !important;
-        font-size: 15px;
-
-    }
-
-    .sliderBtn:checked,
-    .sliderBtn:focus,
-    .sliderBtn:visited,
-    .sliderBtn:active,
-    .sliderBtn:hover {
-        background: rgb(92, 255, 92);
-        background: linear-gradient(90deg, rgba(92, 255, 92, 1) 0%, rgba(0, 163, 0, 1) 100%);
-        color: #fff !important;
-        font-size: 15px;
-    }
-
-    .carousel-caption {
-        background: rgba(255, 255, 255, 0.3);
-        margin: auto;
-        bottom: 3rem;
-        height: auto;
-        width: 700px;
-        padding: 40px;
-    }
-
-    @media (max-width: 991px) {
-        .carousel-caption {
-            background: rgba(255, 255, 255, 0.3);
-            margin: auto;
-            bottom: 3rem;
-            height: auto;
-            width: auto;
-            padding: 40px;
-            font-size: 12px;
-        }
-
-        .carousel-caption h3 {
-            font-size: 25px;
-        }
-
-        .carousel-caption p {
-            font-size: 16px;
-        }
-
-        .sliderBtn {
-            background: rgb(92, 255, 92) !important;
-            background: linear-gradient(90deg, rgba(92, 255, 92, 1) 0%, rgba(0, 163, 0, 1) 100%) !important;
-            color: #fff !important;
-            font-size: 13px;
-            margin: auto;
-        }
-    }
-
-</style>
-<header class="slider-main">
-    <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-        <ol class="carousel-indicators">
-            @foreach ($sliders as $slider)
-            <li data-target="#carouselExampleIndicators" data-slide-to="{{$loop->index}}" data-bs-interval="3000"
-                class="{{$loop->index < 1 ? 'active' : ''}}"></li>
-            @endforeach
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <!-- Slide One - Set the background image for this slide in the line below -->
-            @foreach ($sliders as $slider)
-            <div class="carousel-item {{$loop->index==0?'active':''}}"
-                style="background-image: url('{{$slider->image}}')">
-                <div class="carousel-caption d-md-block">
-                    <div class="row">
-                        <div class="col-md-12 animate__animated animate__fadeInDown">
-                            <h3>{{$slider->title}}</h3>
-                            {!! $slider->description !!}
-                            <a href="tel:00966537394580"><button
-                                    class="btn sliderBtn">اتصل بنا للتفاصيل والاسعار <i
-                                        class="fa fa-phone"></i></button>
-                            </a>
+    <!-- banner area start -->
+    <div class="banner-area banner-area-1 bg-black bg-relative">
+        <div class="banner-bg-img" style="background-image: url('./assets/img/banner/2.webp');"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-7 text-center text-lg-end order-lg-last">
+                    <div class="banner-mask-bg-wrap mb-5 mb-lg-0">
+                        <img class="shape-image" src="assets/img/banner/6.webp" alt="img">
+                        <div class="thumb">
+                            <img src="assets/img/banner/7.webp" alt="img">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-9 order-lg-first align-self-center">
+                    <div class="banner-inner style-white  text-center text-lg-start">
+                        <h4 class="sub-title">Best it solution</h4>
+                        <h2 class="title">Creating a better IT solutions</h2>
+                        <p class="content">Dcidunt eget semper nec quam. Sed hendrerit morbi ac felis. Nunc egestas
+                            augue pellentesque</p>
+                        <div class="btn-wrap">
+                            <a class="btn btn-base me-2" href="blog.html">Get Started</a>
+                            <a class="btn btn-border-white" href="contact.html">Contact Us</a>
                         </div>
                     </div>
                 </div>
             </div>
-            @endforeach
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">السابق</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">التالي</span>
-        </a>
     </div>
-</header>
+    <!-- banner area end -->

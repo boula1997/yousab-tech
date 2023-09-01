@@ -55,12 +55,12 @@ Route::group(
 
 
 
-        Route::get('/', function () {
-            return redirect()->route('admin.login-view');
-        });
+        // Route::get('/', function () {
+        //     return redirect()->route('admin.login-view');
+        // });
 
 
-        // Route::get('/', 'App\Http\Controllers\SiteController@home')->name('front.home');
+        Route::get('/', 'App\Http\Controllers\SiteController@home')->name('front.home');
         Route::get('/blog-page', 'App\Http\Controllers\SiteController@blogs')->name('front.blog');
         Route::get('/contact', 'App\Http\Controllers\SiteController@contact')->name('front.contact');
         Route::get('/service', 'App\Http\Controllers\SiteController@services')->name('front.service');

@@ -1,183 +1,108 @@
-<head>
-    <style>
-        footer {
-            background: url({{asset('images/all-title-bg.jpg')}});
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            background-attachment: fixed;
-        }
 
-        footer ul li i:before {
-            content: "\f099";
-            color: white;
-            left: 45px;
-            position: absolute;
-        }
-
-        footer p i {
-            padding-left: 5px
-        }
-
-        .footer-info {
-            align-items: center;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        @media (max-width: 991px) {
-
-            .footer-info {
-                display: block
-            }
-
-            .social_footer_ul {
-                display: block;
-                margin: 0;
-                padding: 0;
-
-            }
-        }
-    </style>
-</head>
-
-@include('front.components.whatsapp')
-
-<footer class="text-center text-black" style="color: black !important">
-    <div class="container bottom_border">
-        <div class="row">
-            <div class="col-md-3 col-sm-12">
-                <h4 class="pt2">موقعنا</h4>
-                <p class="mb10">شركة حدائق الفيروز</p>
-                <p>تصميم وتنسيق الحدائق المنزلية تركيب شلالات ونوافير وديكورات تركيب العشب الصناعي حدائق وملاعب تركيب
-                    العشب الطبيعي بأنواعه توريد وزراعة الأشجار والورود بجميع أنواعها وكل ما يخص الحدائق يوجد مصبات و
-                    نوافير استيل تايواني بكل انواعها</p><br>
-                <p><i class="fa fa-location-arrow"></i> {{ $setting->address }}</p>
-                <p><i class="fa fa-phone"></i> {{ $setting->phone1 }} </p>
-                <p><i class="fa fa fa-envelope"></i> {{ $setting->email1 }}</p>
-            </div>
-            <div class="col-md-3 col-sm-12">
-                <h5 class="headin5_amrc col_white_amrc pt2">تابعنا علي</h5>
-                <!--headin5_amrc ends here-->
-                <ul class="footer_ul2_amrc">
-                    <li>
-                        <a href="{{ $setting->twitter }}" target="_blank"> <i
-                                class="fab fa-twitter fleft padding-right"></i> </a>
-                        <a href="{{ $setting->twitter }}" target="_blank">
-                            <p>صفحتنا علي تويتر</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ $setting->facebook }}" target="_blank"> <i
-                                class="fab fa-facebook fleft padding-right"></i> </a>
-                        <a href="{{ $setting->facebook }}" target="_blank">
-                            <p>صفحتنا الرسمية علي فيسبوك</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ $setting->youtube }}" target="_blank"> <i
-                                class="fab fa-youtube fleft padding-right"></i> </a>
-                        <a href="{{ $setting->youtube }}" target="_blank">
-                            <p>قنانتنا علي اليوتيوب</p>
-                        </a>
-                    </li>
-
-
-                </ul>
-            </div>
-            <div class="col-md-3 col-sm-12">
-                <h5 class="headin5_amrc col_white_amrc pt2">روابط سريعة</h5>
-                <!--headin5_amrc-->
-                <ul class="footer_ul_amrc">
-                    <li><a href="{{ route('front.home') }}">الرئسية</a></li>
-                    <!-- <li><a href="#">المقالات</a></li>
-                    <li><a href="o">فريفنا</a></li> -->
-                    <li><a href="{{ route('front.about') }}">من نحن؟</a></li>
-                    <li><a href="{{ route('front.service') }}">خدماتنا</a></li>
-                    <li><a href="{{ route('front.contact') }}">تواصل معنا</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3 col-sm-12">
-                <h5 class="headin5_amrc col_white_amrc pt2">منشورات حديثة</h5>
-                <!--headin5_amrc-->
-                <ul class="footer_ul_amrc">
-                    @foreach ($blogs_footer as $blog_footer)
-                        <li class="media">
-                            <div class="media-left">
-                                <img class="img-fluid" src="{{ $blog_footer->image }}" alt="" />
-                            </div>
-                            <div class="media-body">
-                                <a href="{{ route('front.blog', $blog_footer) }}">
-                                    <p>{{ $blog_footer->title }}</p>
-                                </a>
-                                <span>{{ $blog_footer->creared_at }}</span>
-                            </div>
-                        </li>
-                    @endforeach
-                </ul>
+    <!-- footer area start -->
+    <footer class="footer-area bg-black bg-cover" style="background-image: url('./assets/img/bg/2.webp');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="widget widget_about">
+                        <h4 class="widget-title">About company</h4>
+                        <div class="details">
+                            <p>Address</p>
+                            <p>Melbourne’s GPO 434 VIC 3074, Australia.</p>
+                            <ul class="social-media">
+                                <li>
+                                    <a class="facebook" href="#">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="twitter" href="#">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="instagram" href="#">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="youtube" href="#">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="widget widget_nav_menu">
+                        <h4 class="widget-title">Service</h4>
+                        <ul>
+                            <li><a href="service.html">Web design</a></li>
+                            <li><a href="service.html">Digital marketing </a></li>
+                            <li><a href="service.html">It management</a></li>
+                            <li><a href="service.html">Cloud services</a></li>
+                            <li><a href="service.html">Machine learning</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="widget widget_nav_menu">
+                        <h4 class="widget-title">Useful link</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="team.html">Team </a></li>
+                            <li><a href="project.html">Portfolio</a></li>
+                            <li><a href="service.html">Service</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="widget widget_subscribe">
+                        <h4 class="widget-title">Contact us</h4>
+                        <div class="single-input-inner style-border style-bg-none">
+                            <input type="text" placeholder="Your Email">
+                            <button><i class="fa fa-arrow-right"></i></button>
+                        </div>
+                        <label><input type="checkbox">Maecenas tempususcondime honcus sem quam libero</label>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container footer-info">
-        <!--foote_bottom_ul_amrc ends here-->
-        <p class="text-center">جميع الحقوق محفوظة &copy; 2022 <a class="text-white"
-                href="{{ route('front.home') }}">شركة حدائق
-                الفيروز</a>
-
-        </p>
-        <div class="footer-logo">
-            <a href="{{ route('front.home') }}"><img width="150px" height="150px" src="{{ $setting->logo }}"
-                    alt="" /></a>
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 align-self-center">
+                        <p>© 2023. All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <ul class="social_footer_ul">
-            <a class="px-3" href="#"><i class="fab fa-facebook-f"></i></a>
-            <a class="px-3" href="{{ $setting->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a class="px-3" href="#"><i class="fab fa-linkedin"></i></a>
-            <a class="px-3" href="{{ $setting->instgram }}" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a class="px-3" href="{{ $setting->youtube }}" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a class="px-3" href="{{ $setting->tiktok }}" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-        </ul>
-        <!--social_footer_ul ends hezre-->
+    </footer>
+    <!-- footer area end -->
+
+    <!-- back to top area start -->
+    <div class="back-to-top">
+        <span class="back-top"><i class="fa fa-angle-up"></i></span>
     </div>
-</footer>
+    <!-- back to top area end -->
 
-<!-- Bootstrap core JavaScript -->
-<script src="{{ asset('jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('site/js/lightbox.js') }}"></script>
-<script>
-    $("#contactForm").on("submit", function(e) {
-        var dataString = $(this).serialize();
-        $.ajax({
-            type: "post",
-            url: "{{ route('front.contact.post') }}",
-            data: dataString,
-            success: function() {
-                $("#contactForm").html("<div id='message' style='text-align: center;'></div>");
-                $("#message")
-                    .html(
-                        `<div  style="background: linear-gradient(50deg, rgba(50, 100, 30, 0) 0%, rgba(0, 50, 0, 1) 15%);" class="p-3 mb-2 rounded-5 text-center text-white">
-                            <h2>تم ارسال رسالتك بنجاح!</h2>
-                            <p>سيتم الرد عليك قريبا</p>
-                        </div>`
-                    )
-                    .append("")
-                    .hide()
-                    .fadeIn(1500, function() {
-                        $("#message").append(
-                            // "<img id='checkmark' src='{{ $setting->logo }}' />"
-                        );
-                    });
-            }
+    <!-- all plugins here -->
+    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/fontawesome.min.js')}}"></script>
+    <script src="{{asset('assets/js/nice-select.min.js')}}"></script>
+    <script src="{{asset('assets/js/magnific.min.js')}}"></script>
+    <script src="{{asset('assets/js/isotope.min.js')}}"></script>
+    <script src="{{asset('assets/js/imageload.min.js')}}"></script>
+    <script src="{{asset('assets/js/owl.min.js')}}"></script>
+    <script src="{{asset('assets/js/slick.min.js')}}"></script>
+    <script src="{{asset('assets/js/tweenmax.min.js')}}"></script>
+    <script src="{{asset('assets/js/waypoint.js')}}"></script>
+    <script src="{{asset('assets/js/counterup.js')}}"></script>
 
-
-        });
-
-        e.preventDefault();
-        return false;
-    });
-</script>
+    <!-- main js  -->
+    <script src="{{asset('assets/js/main.js')}}"></script>
 </body>
-
-
 </html>

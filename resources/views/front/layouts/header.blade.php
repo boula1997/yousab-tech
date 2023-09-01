@@ -1,170 +1,145 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="zxx">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description"
-        content="الفيروز لتنسيق الحدائق و اعمال اللاندسكيب تركيب نجيل و ثيل و مظلات مسابح و شلالات اقل سعر اعلي جودة">
-    <meta name="keywords" content="{{ $setting->meta_data }}">
-    <meta name="google-site-verification" content="l9ckpRd1nnm4e6bib_Il9gnvHUnTVIuGGF-atI5zOM4" />
-    <title>شركة حدائق الفيروز</title>
-    <link rel="icon" href="{{ $setting->tab }}">
-    <!-- Bootstrap core CSS -->
-    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <!-- Fontawesome CSS -->
-    <link href="{{ asset('site/css/all.css') }}" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('site/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('site/css/lightbox.css') }}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Iitechie - IT Solutions and Services Html Template</title>
+    <link rel=icon href="assets/img/favicon.webp" sizes="20x20" type="image/png">
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-    <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
-
-    <style>
-        .navbar {
-            background: rgb(92, 255, 92);
-            background: linear-gradient(90deg, rgba(92, 255, 92, 1) 0%, rgba(0, 163, 0, 1) 100%);
-        }
-
-        .dropdown-item:hover {
-            color: #fff !important;
-            background: rgb(92, 255, 92);
-            background: linear-gradient(90deg, rgba(92, 255, 92, 1) 0%, rgba(0, 163, 0, 1) 100%);
-        }
-
-        .nav-item .active {
-            color: #fff !important;
-        }
-
-        .nav-item a {
-            color: black !important;
-            font-size: 18px;
-            margin-left: 10px;
-        }
-
-        /* @media (min-width: 1200px) {
-            height: 150px;
-            widows: 160px;
-        } */
-    </style>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/fontawesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/custom-icon.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/nice-select.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/magnific.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/owl.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/slick.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
 </head>
 
-<script>
-    window.dataLayer = window.dataLayer || [];
+<body class='sc5'>
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'G-3LMD3XH4D9');
-</script>
-
-<body style="padding: 0 !important">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <!-- Container wrapper -->
-        <div class="container">
-            <!-- Toggle button -->
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-                data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <!-- Collapsible wrapper -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                <!-- Left links -->
-                <ul class="navbar-nav  mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link {{ Route::is('front.home') ? 'active' : '' }}"
-                            href="{{ route('front.home') }}">{{ __('general.home') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ Route::is('front.about') ? 'active' : '' }}"
-                            href="{{ route('front.about') }}">من
-                            نحن؟</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ Route::is('front.service') ? 'active' : '' }}"
-                            href="{{ route('front.service') }}">خدماتنا</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ Route::is('front.blog') ? 'active' : '' }}"
-                            href="{{ route('front.blog') }}">المقالات</a>
-                    </li>
-                    <!-- Navbar dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {{ Route::is('front.portfolio') ? 'active' : '' }}"
-                            href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
-                            aria-expanded="false">
-                            اعمالنا
-                        </a>
-                        <!-- Dropdown menu -->
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            @foreach ($portfolios as $portfolio)
-                                <li class="m-auto">
-                                    <a class="dropdown-item d-flex"
-                                        href="{{ route('front.portfolio', ['id' => $portfolio->id]) }}">{{ $portfolio->title }}</a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ Route::is('front.video') ? 'active' : '' }}"
-                            href="{{ route('front.video') }}">فيديوهاتنا
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ Route::is('front.contact') ? 'active' : '' }}"
-                            href="{{ route('front.contact') }}">تواصل معنا</a>
-                    </li>
-                    <li class="nav-item">
-                        @auth
-                            <form action="{{ route('logout') }}" method="post">
-                                @csrf
-                                <button type="submit" class="btn nav-link">Logout</button>
-                            </form>
-                        @endauth
-
-                        @if (!auth()->user())
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Login</a>
-                    </li>
-                    @endif
-                    </li>
-
-                    @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                        <li>
-                            <a rel="alternate" hreflang="{{ $localeCode }}"
-                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                {{ $properties['native'] }}
-                            </a>
-                        </li>
-                    @endforeach
-
-                </ul>
-                <!-- Left links -->
+    <!-- preloader area start -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="spinner">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
             </div>
-            <!-- Collapsible wrapper -->
-            <!-- Right elements -->
-            <div class="d-flex align-items-center">
-                <!-- Navbar brand -->
-                <a class="navbar-brand mt-2 mt-lg-0" href="{{ route('front.home') }}">
-                    <img src="{{ $setting->logo }}" alt="Logo" loading="lazy"
-                        style="width: 200px; height: 100px; border-radius: 10px; box-shadow: 10px; object-fit:cover; display: block;" />
+        </div>
+    </div>
+    <!-- preloader area end -->
+
+    <!-- search popup start-->
+    <div class="td-search-popup" id="td-search-popup">
+        <form action="index.html" class="search-form">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search.....">
+            </div>
+            <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <!-- search popup end-->
+    <div class="body-overlay" id="body-overlay"></div>
+
+    <!-- navbar start -->
+    <div class="navbar-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <ul class="topbar-right text-md-start text-center">
+                        <li class="d-none d-none d-lg-inline-block">
+                            <p><i class="far fa-clock"></i> Opening Hour 9:00am - 10:00pm</p>
+                        </li>
+                        <li>
+                            <p><i class="far fa-envelope"></i> exam@gmail.com</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="topbar-right text-md-end text-center">
+                        <li class="d-none d-none d-lg-inline-block">
+                            <p>Hot Line: <span>(+00)-333-444-5555</span></p>
+                        </li>
+                        <li class="social-area">
+                            <p class="d-inline-block">Follow Us On:</p>
+                            <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-area navbar-area-1 navbar-expand-lg">
+        <div class="container nav-container navbar-bg">
+            <div class="responsive-mobile-menu">
+                <button class="menu toggle-btn d-block d-lg-none" data-target="#Iitechie_main_menu"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-left"></span>
+                    <span class="icon-right"></span>
+                </button>
+            </div>
+            <div class="logo">
+                <a href="index.html"><img src="assets/img/logo.webp" alt="img"></a>
+            </div>
+            <div class="nav-right-part nav-right-part-mobile">
+                <a class="search-bar-btn" href="#">
+                    <i class="fa fa-search"></i>
                 </a>
             </div>
-
-            <!-- Right elements -->
+            <div class="collapse navbar-collapse" id="Iitechie_main_menu">
+                <ul class="navbar-nav menu-open text-lg-end">
+                    <li class="menu-item-has-children">
+                        <a href="#">Home</a>
+                        <ul class="sub-menu">
+                            <li><a href="index.html">Home 01</a></li>
+                            <li><a href="index-2.html">Home 02</a></li>
+                            <li><a href="index-3.html">Home 03</a></li>
+                            <li><a href="index-4.html">Home 04</a></li>
+                            <li><a href="index-5.html">Home 05</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Service</a>
+                        <ul class="sub-menu">
+                            <li><a href="service.html">Service</a></li>
+                            <li><a href="service-details.html">Service Single</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Pages</a>
+                        <ul class="sub-menu">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="team.html">Team</a></li>
+                            <li><a href="team-details.html">Team Details</a></li>
+                            <li><a href="project.html">Project</a></li>
+                            <li><a href="project-details.html">Project Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Blog</a>
+                        <ul class="sub-menu">
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="blog-details.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="nav-right-part nav-right-part-desktop align-self-center">
+                <a class="search-bar-btn" href="#">
+                    <i class="fa fa-search"></i>
+                </a>
+                <a class="btn btn-base" href="#">Get Started</a>
+            </div>
         </div>
-        <!-- Container wrapper -->
     </nav>
-    <!-- Navbar -->
+    <!-- navbar end -->
