@@ -5,9 +5,9 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-7 text-center text-lg-end order-lg-last">
                     <div class="banner-mask-bg-wrap mb-5 mb-lg-0">
-                        <img class="shape-image" src="assets/img/banner/6.webp" alt="img">
+                        <img class="shape-image" src="{{asset('assets/img/banner/6.webp')}}" alt="img">
                         <div class="thumb">
-                            <img src="assets/img/banner/7.webp" alt="img">
+                            <img src="{{asset('assets/img/banner/7.webp')}}" alt="img">
                         </div>
                     </div>
                 </div>

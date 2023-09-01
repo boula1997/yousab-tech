@@ -5,9 +5,9 @@
                 <div class="col-lg-6 col-md-8 order-lg-last mb-4 mb-lg-0">
                     <div class="faq-image-wrap">
                         <div class="thumb">
-                            <img src="assets/img/about/f1.webp" alt="img">
-                            <img class="img-position-1" src="assets/img/about/f2.webp" alt="img">
-                            <img class="img-position-2 top_image_bounce" src="assets/img/about/f3.webp" alt="img">
+                            <img src="{{asset('assets/img/about/f1.webp')}}" alt="img">
+                            <img class="img-position-1" src="{{asset('assets/img/about/f2.webp')}}" alt="img">
+                            <img class="img-position-2 top_image_bounce" src="{{asset('assets/img/about/f3.webp')}}" alt="img">
                         </div>
                     </div>
                 </div>

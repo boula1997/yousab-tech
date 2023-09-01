@@ -9,7 +9,7 @@
                             <div class="thumb mb-4 mb-md-0" style="background-image: url('./assets/img/about/1.webp');">
                                 <div class="quote-wrap">
                                     <div class="quote">
-                                        <img src="assets/img/testimonial/02.webp" alt="img">
+                                        <img src="{{asset('assets/img/testimonial/02.web')}}p" alt="img">
                                     </div>
                                 </div>
                             </div>
@@ -18,7 +18,7 @@
                             <div class="single-testimonial-inner text-md-center px-lg-5 px-md-4">
                                 <div class="details">
                                     <div class="thumb">
-                                        <img src="assets/img/testimonial/1.webp" alt="img">
+                                        <img src="{{asset('assets/img/testimonial/1.webp')}}" alt="img">
                                     </div>
                                     <h2>Donas Foknar</h2>
                                     <span>Customer,USA</span>
@@ -36,7 +36,7 @@
                             <div class="thumb mb-4 mb-md-0" style="background-image: url('./assets/img/about/1.webp');">
                                 <div class="quote-wrap">
                                     <div class="quote">
-                                        <img src="assets/img/testimonial/02.webp" alt="img">
+                                        <img src="{{asset('assets/img/testimonial/02.web')}}p" alt="img">
                                     </div>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                             <div class="single-testimonial-inner text-md-center px-lg-5 px-md-4">
                                 <div class="details">
                                     <div class="thumb">
-                                        <img src="assets/img/testimonial/1.webp" alt="img">
+                                        <img src="{{asset('assets/img/testimonial/1.webp')}}" alt="img">
                                     </div>
                                     <h2>Donas Foknar</h2>
                                     <span>Customer,USA</span>
@@ -63,7 +63,7 @@
                             <div class="thumb mb-4 mb-md-0" style="background-image: url('./assets/img/about/1.webp');">
                                 <div class="quote-wrap">
                                     <div class="quote">
-                                        <img src="assets/img/testimonial/02.webp" alt="img">
+                                        <img src="{{asset('assets/img/testimonial/02.web')}}p" alt="img">
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                             <div class="single-testimonial-inner text-md-center px-lg-5 px-md-4">
                                 <div class="details">
                                     <div class="thumb">
-                                        <img src="assets/img/testimonial/1.webp" alt="img">
+                                        <img src="{{asset('assets/img/testimonial/1.webp')}}" alt="img">
                                     </div>
                                     <h2>Donas Foknar</h2>
                                     <span>Customer,USA</span>
@@ -90,7 +90,7 @@
                             <div class="thumb mb-4 mb-md-0" style="background-image: url('./assets/img/about/1.webp');">
                                 <div class="quote-wrap">
                                     <div class="quote">
-                                        <img src="assets/img/testimonial/02.webp" alt="img">
+                                        <img src="{{asset('assets/img/testimonial/02.web')}}p" alt="img">
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                             <div class="single-testimonial-inner text-md-center px-lg-5 px-md-4">
                                 <div class="details">
                                     <div class="thumb">
-                                        <img src="assets/img/testimonial/1.webp" alt="img">
+                                        <img src="{{asset('assets/img/testimonial/1.webp')}}" alt="img">
                                     </div>
                                     <h2>Donas Foknar</h2>
                                     <span>Customer,USA</span>
@@ -115,22 +115,22 @@
             <div class="slider testimonial-nav-slider testimonial-nav-slider-2">
                 <div class="item">
                     <div class="thumb">
-                        <img src="assets/img/testimonial/1.webp" alt="img">
+                        <img src="{{asset('assets/img/testimonial/1.webp')}}" alt="img">
                     </div>
                 </div>
                 <div class="item">
                     <div class="thumb">
-                        <img src="assets/img/testimonial/2.webp" alt="img">
+                        <img src="{{asset('assets/img/testimonial/2.webp')}}" alt="img">
                     </div>
                 </div>
                 <div class="item">
                     <div class="thumb">
-                        <img src="assets/img/testimonial/1.webp" alt="img">
+                        <img src="{{asset('assets/img/testimonial/1.webp')}}" alt="img">
                     </div>
                 </div>
                 <div class="item">
                     <div class="thumb">
-                        <img src="assets/img/testimonial/2.webp" alt="img">
+                        <img src="{{asset('assets/img/testimonial/2.webp')}}" alt="img">
                     </div>
                 </div>
             </div>

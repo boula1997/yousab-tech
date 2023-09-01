@@ -88,7 +88,7 @@
                 </button>
             </div>
             <div class="logo">
-                <a href="index.html"><img src="assets/img/logo.webp" alt="img"></a>
+                <a href="index.html"><img src="{{asset('assets/img/logo.webp')}}" alt="img"></a>
             </div>
             <div class="nav-right-part nav-right-part-mobile">
                 <a class="search-bar-btn" href="#">

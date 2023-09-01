@@ -76,27 +76,27 @@
             <div class="client-slider pd-top-90 pd-bottom-110 owl-carousel">
                 <div class="item">
                     <div class="thumb text-center">
-                        <img src="assets/img/client/1.webp" alt="img">
+                        {{asset('<img')}} src="{{asset('assets/img/client/1.webp')}}" alt="img">
                     </div>
                 </div>
                 <div class="item">
                     <div class="thumb text-center">
-                        <img src="assets/img/client/2.webp" alt="img">
+                        <img src="{{asset('assets/img/client/2.webp')}}" alt="img">
                     </div>
                 </div>
                 <div class="item">
                     <div class="thumb text-center">
-                        <img src="assets/img/client/3.webp" alt="img">
+                        <img src="{{asset('assets/img/client/3.webp')}}" alt="img">
                     </div>
                 </div>
                 <div class="item">
                     <div class="thumb text-center">
-                        <img src="assets/img/client/4.webp" alt="img">
+                        <img src="{{asset('assets/img/client/4.webp')}}" alt="img">
                     </div>
                 </div>
                 <div class="item">
                     <div class="thumb text-center">
-                        <img src="assets/img/client/1.webp" alt="img">
+                        <img src="{{asset('assets/img/client/1.webp')}}" alt="img">
                     </div>
                 </div>
             </div>

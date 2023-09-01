@@ -4,8 +4,8 @@
             <div class="row">
                 <div class="col-lg-6 col-md-8">
                     <div class="about-mask-bg-wrap about-mask-bg-wrap-1 mb-4 mb-lg-0">
-                        <img class="shape-image-sm top_image_bounce" src="assets/img/about/1sm.webp" alt="img">
-                        <img class="shape-image" src="assets/img/about/1s.webp" alt="img">
+                        <img class="shape-image-sm top_image_bounce" src="{{asset('assets/img/about/1sm.webp')}}" alt="img">
+                        <img class="shape-image" src="{{asset('assets/img/about/1s.webp')}}" alt="img">
                         <div class="thumb">
                             <img src="{{asset('assets/img/about/1.webp')}}" alt="img">
                         </div>
