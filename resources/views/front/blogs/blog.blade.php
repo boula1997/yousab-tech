@@ -1,12 +1,3 @@
-<style>
-    .hm-gradient {
-        background: #57FA57;
-        border-radius: 4px;
-    }
-
-</style>
-
-
 @extends('front.layouts.master')
 @section('content')
 	<!-- full Title -->
