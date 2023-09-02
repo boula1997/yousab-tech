@@ -100,7 +100,7 @@
                     <li><a class="{{request()->routeIs('front.home')?'active':''}}" href="{{route('front.home')}}">Home</a></li>
                     <li><a class="{{request()->routeIs('front.service')?'active':''}}" href="{{route('front.service')}}">Services</a></li>
                     <li><a class="{{request()->routeIs('front.about')?'active':''}}" href="{{route('front.about')}}">About Us</a></li>
-                    <li><a class="{{request()->routeIs('front.home')?'active':''}}" href="{{route('front.home')}}">Project</a></li>
+                    {{-- <li><a class="{{request()->routeIs('front.home')?'active':''}}" href="{{route('front.home')}}">Project</a></li> --}}
                     <li><a class="{{request()->routeIs('front.contact')?'active':''}}" href="{{route('front.contact')}}">Contact Us</a></li>
                 </ul>
             </div>
