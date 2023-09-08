@@ -22,9 +22,7 @@ class PageRequest extends FormRequest
         //  $this->merge(['user_id' => auth('api')->user()->id]);
 
 
-        $image = request()->isMethod('put') ? 'nullable' : 'required';
         $rules = [
-            'image' =>  $image ,
             'identifier' => 'required' ,
         ];
         foreach (config('translatable.locales') as $locale) {

@@ -14,7 +14,6 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $data=Slider::get();
         return view('front.index',compact('data'));
     }
 
