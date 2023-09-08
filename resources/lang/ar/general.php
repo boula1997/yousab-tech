@@ -12,7 +12,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'home'  => 'الرئسية',
+    'home'  => 'الرئيسية',
     'about'  => 'من نحن',
     'title'  => 'العنوان',
     'ar'  => 'العربية',
