@@ -9,6 +9,7 @@ use App\Models\Image;
 use App\Models\Page;
 use App\Models\Partner;
 use App\Models\Testimonial;
+use App\Models\Process;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Slider;
@@ -78,6 +79,7 @@ function itemsCount($model)
         "partners" => count(Partner::get()),
         "services" => count(Service::get()),
         "testimonials" => count(Testimonial::get()),
+        "processes" => count(Process::get()),
         "sliders" => count(Slider::get()),
         "services" => count(Service::get()),
         "teams" => count(Team::get()),

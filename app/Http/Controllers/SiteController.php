@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Service;
 use App\Models\Testimonial;
+use App\Models\Process;
 use App\Models\Blog;
 use App\Models\Gallery;
 use App\Models\Setting;
@@ -27,6 +28,7 @@ class SiteController extends Controller
     {
         $services=Service::get();
         $testimonials=Testimonial::get();
+        $processes=Process::get();
         $sliders=Slider::get();
         $counters=Counter::get();
         $blogs=Blog::get();
@@ -38,7 +40,7 @@ class SiteController extends Controller
         $blogs_footer=Blog::take(3)->get();
         $portfolios=Gallery::get();
 
-         return view('front.index',compact('services','testimonials','blogs_footer','portfolios','sliders','setting','blogs','contact_section','about_section','advantage_section','setting','blogs','counters'));
+         return view('front.index',compact('testimonials','services','processes','blogs_footer','portfolios','sliders','setting','blogs','contact_section','about_section','advantage_section','setting','blogs','counters'));
 
 
     }
@@ -126,6 +128,27 @@ class SiteController extends Controller
         $blogs_footer=Blog::take(3)->get();
         $portfolios=Gallery::get();
         return view('front.testimonials.single-testimonial',compact('testimonial','setting','blogs_footer','portfolios'));
+    }
+    public function processes()
+    {
+        $processes=Process::get();
+        $setting=Setting::first();
+        $blogs_footer=Blog::take(3)->get();
+        $portfolios=Gallery::get();
+        $process_section=Page::where('identifier','process')->first();
+        $partners=Partner::get();
+        // dd($process_section->title);
+        return view('front.processes.process',compact('processes','setting','blogs_footer','portfolios','process_section','partners'));
+    }
+
+    public function single_process(Request $request)
+    {   
+        $id=$request->input('id');
+        $process=Process::findorfail($id);
+        $setting=Setting::first();
+        $blogs_footer=Blog::take(3)->get();
+        $portfolios=Gallery::get();
+        return view('front.processes.single-process',compact('process','setting','blogs_footer','portfolios'));
     }
 
     public function portfolios(Request $request)

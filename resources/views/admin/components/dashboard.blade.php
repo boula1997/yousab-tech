@@ -298,18 +298,37 @@
                     </ul>
                 </li>
             @endcan
-                @can('testimonial-list')
+            @can('testimonial-list')
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-copy"></i>
+                    <p>
+                        @lang('general.testimonials') <i class="fas fa-angle-left right"></i>
+                        <span class="badge badge-info right">{{ itemsCount('testimonials') }}</span>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('testimonials.index') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@lang('general.show')</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        @endcan    
+            @can('process-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                @lang('general.testimonials') <i class="fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">{{ itemsCount('testimonials') }}</span>
+                                @lang('general.processes') <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('processes') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ route('testimonials.index') }}" class="nav-link">
+                                <a href="{{ route('processes.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
