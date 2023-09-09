@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\TestimonialController;
 // use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\MetaController;
 use App\Http\Controllers\Admin\PortfolioController;
@@ -64,6 +65,7 @@ Route::group(
             Route::resource('blogs', BlogController::class);
             // Route::resource('contact',ContactController::class);
             Route::resource('services', ServiceController::class);
+            Route::resource('testimonials', TestimonialController::class);
             Route::resource('sliders', SliderController::class);
             Route::resource('pages', PageController::class);
             // Route::resource('about',AboutController::class);

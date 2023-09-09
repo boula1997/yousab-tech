@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\TestimonialController;
 // use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\MetaController;
 use App\Http\Controllers\Admin\PortfolioController;
@@ -65,6 +66,8 @@ Route::group(
         Route::get('/contact', 'App\Http\Controllers\SiteController@contact')->name('front.contact');
         Route::get('/service', 'App\Http\Controllers\SiteController@services')->name('front.service');
         Route::get('/single-service', 'App\Http\Controllers\SiteController@single_service')->name('front.show.service');
+        Route::get('/testimonial', 'App\Http\Controllers\SiteController@testimonials')->name('front.testimonial');
+        Route::get('/single-testimonial', 'App\Http\Controllers\SiteController@single_testimonial')->name('front.show.testimonial');
         Route::get('/single-blog', 'App\Http\Controllers\SiteController@single_blog')->name('front.show.blog');
         Route::get('/portfolio', 'App\Http\Controllers\SiteController@portfolios')->name('front.portfolio');
         Route::get('/video', 'App\Http\Controllers\SiteController@videos')->name('front.video');

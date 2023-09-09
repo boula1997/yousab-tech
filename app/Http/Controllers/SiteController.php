@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Service;
+use App\Models\Testimonial;
 use App\Models\Blog;
 use App\Models\Gallery;
 use App\Models\Setting;
@@ -25,6 +26,7 @@ class SiteController extends Controller
     public function home()  
     {
         $services=Service::get();
+        $testimonials=Testimonial::get();
         $sliders=Slider::get();
         $counters=Counter::get();
         $blogs=Blog::get();
@@ -36,7 +38,7 @@ class SiteController extends Controller
         $blogs_footer=Blog::take(3)->get();
         $portfolios=Gallery::get();
 
-         return view('front.index',compact('services','blogs_footer','portfolios','sliders','setting','blogs','contact_section','about_section','advantage_section','setting','blogs','counters'));
+         return view('front.index',compact('services','testimonials','blogs_footer','portfolios','sliders','setting','blogs','contact_section','about_section','advantage_section','setting','blogs','counters'));
 
 
     }
@@ -103,6 +105,27 @@ class SiteController extends Controller
         $blogs_footer=Blog::take(3)->get();
         $portfolios=Gallery::get();
         return view('front.services.single-service',compact('service','setting','blogs_footer','portfolios'));
+    }
+    public function testimonials()
+    {
+        $testimonials=Testimonial::get();
+        $setting=Setting::first();
+        $blogs_footer=Blog::take(3)->get();
+        $portfolios=Gallery::get();
+        $testimonial_section=Page::where('identifier','testimonial')->first();
+        $partners=Partner::get();
+        // dd($testimonial_section->title);
+        return view('front.testimonials.testimonial',compact('testimonials','setting','blogs_footer','portfolios','testimonial_section','partners'));
+    }
+
+    public function single_testimonial(Request $request)
+    {   
+        $id=$request->input('id');
+        $testimonial=Testimonial::findorfail($id);
+        $setting=Setting::first();
+        $blogs_footer=Blog::take(3)->get();
+        $portfolios=Gallery::get();
+        return view('front.testimonials.single-testimonial',compact('testimonial','setting','blogs_footer','portfolios'));
     }
 
     public function portfolios(Request $request)

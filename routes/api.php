@@ -8,6 +8,7 @@ use App\Http\Controllers\API\PortfolioController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\ServiceController;
+use App\Http\Controllers\API\TestimonialController;
 use App\Http\Controllers\API\SettingController;
 use App\Http\Controllers\API\SliderController;
 
@@ -28,8 +29,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Route::get('blogs', 'BlogController@index');
 // Route::get('blogs/{id}', 'BlogController@show');
-// Route::get('services', 'ServiceController@index');
-// Route::get('services/{id}', 'ServiceController@show');
+// Route::get('testimonials', 'TestimonialController@index');
+// Route::get('testimonials/{id}', 'TestimonialController@show');
 // Route::get('sliders', 'SliderController@index');
 // Route::get('sliders/{id}', 'SliderController@show');
 // Route::get('counters', 'CounterController@index');
@@ -45,6 +46,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['middleware' => ['apiLocalization','cors']], function () {
     Route::get('/services', [ServiceController::class, 'index']);
     Route::get('/service/{id}', [ServiceController::class, 'show']);
+    Route::get('/testimonials', [TestimonialController::class, 'index']);
+    Route::get('/testimonial/{id}', [TestimonialController::class, 'show']);
     
     Route::get('/blogs', [BlogController::class, 'index']);
     Route::get('/blog/{id}', [BlogController::class, 'show']);
