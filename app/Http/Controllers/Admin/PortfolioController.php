@@ -109,6 +109,7 @@ class PortfolioController extends Controller
     public function update(PortfolioRequest $request, Gallery $portfolio)
     {
         $portfolio->update($request->except('images','delimages'));
+
         if ($request->hasFile('images')) {
             $files = $request->file('images');
             foreach ($files as $file) {
@@ -118,13 +119,6 @@ class PortfolioController extends Controller
             }
         }
 
-        if ($request->has('delimages')) {
-            foreach ($request->delimages as $id) {
-                $image=ModelsFile::find($id);
-                File::delete($image->url);
-                $image->delete();
-            }
-        }
 
 
         return redirect()->route('portfolios.index', compact('portfolio'))

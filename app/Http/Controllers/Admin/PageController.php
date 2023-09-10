@@ -54,12 +54,12 @@ class PageController extends Controller
 
         $data = $request->except('image');
         $page = Page::create($data);
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
 
             $file = $request->file('image');
             $image = $request->image->store('images');
             $file->move('images',  $image);
-            ModelsFile::create(['url' =>  $image, 'fileable_id' => $page->id, 'fileable_type' => 'App\Models\Page']);
+            ModelsFile::create(['url' =>  $image]);
         }
         return redirect()->route('pages.index')
             ->with('success', 'تم الانشاء');
