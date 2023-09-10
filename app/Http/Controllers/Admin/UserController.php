@@ -11,6 +11,7 @@ use Hash;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 use App\Models\File as ModelsFile;
+use Exception;
 
 class UserController extends Controller
 {
@@ -19,11 +20,26 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    private $user;
+    function __construct(User $user)
+    {
+        $this->middleware('permission:user-list|user-create|user-edit|user-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:user-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:user-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:user-delete', ['only' => ['destroy']]);
+        $this->user = $user;
+    }
+
     public function index(Request $request)
     {
-        $data = User::orderBy('id', 'DESC')->paginate(5);
-        return view('admin.crud.users.index', compact('data'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+        try {
+            $data = User::orderBy('id', 'DESC')->paginate(5);
+            return view('admin.crud.users.index', compact('data'))
+                ->with('i', ($request->input('page', 1) - 1) * 5);
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -45,17 +61,16 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
 
-        $input = $request->all();
-        $input['password'] = Hash::make($input['password']);
-
-        $user = User::create($input);
-
-        $user->uploadFile();
-
-
-
-        return redirect()->route('users.index')
-            ->with('success', 'User created successfully');
+        try {
+            $input = $request->all();
+            $input['password'] = Hash::make($input['password']);
+            $user = User::create($input);
+            $user->uploadFile();
+            return redirect()->route('users.index')
+                ->with('success', 'User created successfully');
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -92,23 +107,21 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, $id)
     {
-
-        $input = $request->except('image');
-        if (!empty($input['password'])) {
-            $input['password'] = Hash::make($input['password']);
-        } else {
-            $input = Arr::except($input, array('password'));
+        try {
+            $input = $request->except('image');
+            if (!empty($input['password'])) {
+                $input['password'] = Hash::make($input['password']);
+            } else {
+                $input = Arr::except($input, array('password'));
+            }
+            $user = User::find($id);
+            $user->update($input);
+            $user->updateFile();
+            return redirect()->route('users.index')
+                ->with('success', 'User updated successfully');
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
-
-        $user = User::find($id);
-        $user->update($input);
-
-        $user->updateFile();
-
-
-
-        return redirect()->route('users.index')
-            ->with('success', 'User updated successfully');
     }
 
     /**
@@ -119,11 +132,14 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
-        $user->deleteFile();
-
-        return redirect()->route('users.index')
-            ->with('success', 'User deleted successfully');
+        try {
+            $user = User::find($id);
+            $user->delete();
+            $user->deleteFile();
+            return redirect()->route('users.index')
+                ->with('success', 'User deleted successfully');
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 }

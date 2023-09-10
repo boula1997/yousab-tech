@@ -11,6 +11,7 @@ use DB;
 use Hash;
 use Illuminate\Support\Arr;
 use App\Models\File as ModelsFile;
+use Exception;
 use Illuminate\Support\Facades\File;
 
 class AdminController extends Controller
@@ -32,9 +33,13 @@ class AdminController extends Controller
 
     public function index(Request $request)
     {
-        $data = Admin::orderBy('id', 'DESC')->paginate(5);
-        return view('admin.crud.admins.index', compact('data'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+        try {
+            $data = Admin::orderBy('id', 'DESC')->paginate(5);
+            return view('admin.crud.admins.index', compact('data'))
+                ->with('i', ($request->input('page', 1) - 1) * 5);
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -56,16 +61,17 @@ class AdminController extends Controller
      */
     public function store(AdminRequest $request)
     {
-
-        $input = $request->except('image');
-        $input['password'] = Hash::make($input['password']);
-
-        $admin = Admin::create($input);
-        $admin->assignRole($request->input('roles'));
-        $admin->uploadFile();
-
-        return redirect()->route('admins.index')
-            ->with('success', 'Admin created successfully');
+        try {
+            $input = $request->except('image');
+            $input['password'] = Hash::make($input['password']);
+            $admin = Admin::create($input);
+            $admin->assignRole($request->input('roles'));
+            $admin->uploadFile();
+            return redirect()->route('admins.index')
+                ->with('success', 'Admin created successfully');
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -91,7 +97,7 @@ class AdminController extends Controller
         $admin = Admin::find($id);
         $roles = Role::pluck('name', 'name')->all();
         $adminRole = $admin->roles->pluck('name', 'name')->all();
-       
+
 
         return view('admin.crud.admins.edit', compact('admin', 'roles', 'adminRole'));
     }
@@ -105,22 +111,23 @@ class AdminController extends Controller
      */
     public function update(AdminRequest $request, $id)
     {
-        $input = $request->except('image');
-        if (!empty($input['password'])) {
-            $input['password'] = Hash::make($input['password']);
-        } else {
-            $input = Arr::except($input, array('password'));
+        try {
+            $input = $request->except('image');
+            if (!empty($input['password'])) {
+                $input['password'] = Hash::make($input['password']);
+            } else {
+                $input = Arr::except($input, array('password'));
+            }
+            $admin = Admin::find($id);
+            $admin->update($input);
+            DB::table('model_has_roles')->where('model_id', $id)->delete();
+            $admin->assignRole($request->input('roles'));
+            $admin->updateFile();
+            return redirect()->route('admins.index')
+                ->with('success', 'Admin updated successfully');
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
-
-        $admin = Admin::find($id);
-        $admin->update($input);
-        DB::table('model_has_roles')->where('model_id', $id)->delete();
-
-        $admin->assignRole($request->input('roles'));
-
-        $admin->updateFile();
-        return redirect()->route('admins.index')
-            ->with('success', 'Admin updated successfully');
     }
 
     /**
@@ -131,11 +138,15 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        $admin = Admin::find($id);
-        $admin->delete();
-        $admin->deleteFile();
-        File::delete($admin->image);
-        return redirect()->route('admins.index')
-            ->with('success', 'Admin deleted successfully');
+        try {
+            $admin = Admin::find($id);
+            $admin->delete();
+            $admin->deleteFile();
+            File::delete($admin->image);
+            return redirect()->route('admins.index')
+                ->with('success', 'Admin deleted successfully');
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 }
