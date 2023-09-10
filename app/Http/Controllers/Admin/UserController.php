@@ -1,7 +1,7 @@
 <?php
-    
+
 namespace App\Http\Controllers\Admin;
-    
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\UserRequest;
@@ -21,11 +21,11 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $data = User::orderBy('id','DESC')->paginate(5);
-        return view('admin.crud.users.index',compact('data'))
+        $data = User::orderBy('id', 'DESC')->paginate(5);
+        return view('admin.crud.users.index', compact('data'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -35,7 +35,7 @@ class UserController extends Controller
     {
         return view('admin.crud.users.create');
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -44,24 +44,20 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-    
+
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
-    
-        $user=User::create($input);
 
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $data['image'] = $request->image->store('images');
-            $file->move('images', $data['image']);
-            ModelsFile::create(['url' => $data['image'], 'fileable_id' => $user->id, 'fileable_type' => 'App\Models\User']);
-        } 
-    
-    
+        $user = User::create($input);
+
+        $user->uploadFile();
+
+
+
         return redirect()->route('users.index')
-                        ->with('success','User created successfully');
+            ->with('success', 'User created successfully');
     }
-    
+
     /**
      * Display the specified resource.
      *
@@ -71,9 +67,9 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view('admin.crud.users.show',compact('user'));
+        return view('admin.crud.users.show', compact('user'));
     }
-    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -84,9 +80,9 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
-        return view('admin.crud.users.edit',compact('user'));
+        return view('admin.crud.users.edit', compact('user'));
     }
-    
+
     /**
      * Update the specified resource in storage.
      *
@@ -96,30 +92,25 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, $id)
     {
-    
-        $input = $request->all();
-        if(!empty($input['password'])){ 
+
+        $input = $request->except('image');
+        if (!empty($input['password'])) {
             $input['password'] = Hash::make($input['password']);
-        }else{
-            $input = Arr::except($input,array('password'));    
+        } else {
+            $input = Arr::except($input, array('password'));
         }
-    
+
         $user = User::find($id);
         $user->update($input);
 
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $data['image'] = $request->image->store('images');
-            $file->move('images', $data['image']);
-            ModelsFile::create(['url' => $data['image'], 'fileable_id' => $user->id, 'fileable_type' => 'App\Models\USer']);
-        } 
-    
-    
-    
+        $user->updateFile();
+
+
+
         return redirect()->route('users.index')
-                        ->with('success','User updated successfully');
+            ->with('success', 'User updated successfully');
     }
-    
+
     /**
      * Remove the specified resource from storage.
      *
@@ -128,11 +119,11 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user=User::find($id);
+        $user = User::find($id);
         $user->delete();
-        $user->file->delete();
-        File::delete($user->image);
+        $user->deleteFile();
+
         return redirect()->route('users.index')
-                        ->with('success','User deleted successfully');
+            ->with('success', 'User deleted successfully');
     }
 }

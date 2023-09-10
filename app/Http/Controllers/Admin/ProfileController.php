@@ -24,7 +24,7 @@ class ProfileController extends Controller
 
     public function update(ProfileRequest $request)
     {
-        $input = $request->all();
+        $input = $request->except('image');
         if (!empty($input['password'])) {
             $input['password'] = Hash::make($input['password']);
         } else {
@@ -33,17 +33,9 @@ class ProfileController extends Controller
 
         $admin = Admin::find(auth('admin')->user()->id);
         $admin->update($input);
+        $admin->updateFile();
 
 
-        if ($request->hasFile('image')) {
-            if ($admin->file && file_exists($admin->image))
-            {File::delete($admin->image);
-            $admin->file->delete();}
-            $file = $request->file('image');
-            $data['image'] = $request->image->store('images');
-            $file->move('images', $data['image']);
-            ModelsFile::create(['url' => $data['image'], 'fileable_id' => $admin->id, 'fileable_type' => 'App\Models\Admin']);
-        }
         return redirect()->route('dashboard')
             ->with('success', 'Admin updated successfully');
     }

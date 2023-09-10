@@ -53,10 +53,7 @@ class ServiceController extends Controller
 
         $data = $request->except('image');
         $service = Service::create($data);
-        $file = $request->file('image');
-        $data['image'] = $request->image->store('images');
-        $file->move('images', $data['image']);
-        ModelsFile::create(['url' => $data['image'], 'fileable_id' => $service->id, 'fileable_type' => 'App\Models\Service']);
+        $service->uploadFile();
         return redirect()->route('services.index')
             ->with('success', 'تم الانشاء');
     }
@@ -94,19 +91,9 @@ class ServiceController extends Controller
     {
         $data = $request->except('image');
         $service->update($data);
-        if ($request->hasFile('image')) {
-            if (file_exists($service->image))
-                File::delete($service->image);
-            $service->file->delete();
-            $file = $request->file('image');
-            $data['image'] = $request->image->store('images');
-            $file->move('images', $data['image']);
-            ModelsFile::create(['url' => $data['image'], 'fileable_id' => $service->id, 'fileable_type' => 'App\Models\Service']);
-        } else {
-            $data['image'] = $service->image;
-        }
+        $service->updateFile();
 
-      
+
 
 
         return redirect()->route('services.index', compact('service'))
@@ -122,7 +109,7 @@ class ServiceController extends Controller
     {
         $service->delete();
         $service->file->delete();
-        File::delete($service->image);
+        $service->deleteFile();
 
 
         return redirect()->route('services.index')

@@ -14,6 +14,7 @@ trait  MorphFiles
 
     public function uploadFiles()
     {
+        $this->deleteFiles();
         if (request()->hasFile('images')) {
             $files = request()->file('images');
             foreach ($files as $file) {
@@ -25,6 +26,7 @@ trait  MorphFiles
     }
     public function updateFiles()
     {
+        $this->deleteFiles();
         if (request()->hasFile('images')) {
             $files = request()->file('images');
             foreach ($files as $file) {
@@ -33,14 +35,16 @@ trait  MorphFiles
                 $this->file()->create(['url' => $data['image']]);
             }
         }
+    }
 
+    public function deleteFiles()
+    {
         if (request()->has('delimages')) {
             foreach (request()->delimages as $id) {
-                $image=$this->file()->find($id);
+                $image = $this->file()->find($id);
                 File::delete($image->url);
                 $image->delete();
             }
         }
-
     }
 }

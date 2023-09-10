@@ -53,10 +53,7 @@ class BlogController extends Controller
 
         $data = $request->except('image');
         $blog = Blog::create($data);
-        $file = $request->file('image');
-        $data['image'] = $request->image->store('images');
-        $file->move('images', $data['image']);
-        ModelsFile::create(['url' => $data['image'], 'fileable_id' => $blog->id, 'fileable_type' => 'App\Models\Blog']);
+        $blog->uploadFile();
         return redirect()->route('blogs.index')
             ->with('success', 'تم الانشاء');
     }
@@ -94,20 +91,7 @@ class BlogController extends Controller
     {
         $data = $request->except('image');
         $blog->update($data);
-
-        if ($request->hasFile('image')) {
-            if (file_exists($blog->image))
-                File::delete($blog->image);
-            $blog->file->delete();
-            $file = $request->file('image');
-            $data['image'] = $request->image->store('images');
-            $file->move('images', $data['image']);
-            ModelsFile::create(['url' => $data['image'], 'fileable_id' => $blog->id, 'fileable_type' => 'App\Models\Blog']);
-        } else {
-            $data['image'] = $blog->image;
-        }
-
-
+        $blog->updateFile();
 
         return redirect()->route('blogs.index', compact('blog'))
             ->with('success', 'تم التعديل بنجاح');
@@ -122,7 +106,7 @@ class BlogController extends Controller
     {
         $blog->delete();
         $blog->file->delete();
-        File::delete($blog->image);
+        $blog->deleteFile();
 
 
         return redirect()->route('blogs.index')

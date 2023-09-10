@@ -53,10 +53,7 @@ class ProcessController extends Controller
 
         $data = $request->except('image');
         $process = Process::create($data);
-        $file = $request->file('image');
-        $data['image'] = $request->image->store('images');
-        $file->move('images', $data['image']);
-        ModelsFile::create(['url' => $data['image'], 'fileable_id' => $process->id, 'fileable_type' => 'App\Models\Process']);
+        $process->uploadFile();
         return redirect()->route('processes.index')
             ->with('success', 'تم الانشاء');
     }
@@ -94,21 +91,7 @@ class ProcessController extends Controller
     {
         $data = $request->except('image');
         $process->update($data);
-        if ($request->hasFile('image')) {
-            if (file_exists($process->image))
-                File::delete($process->image);
-            $process->file->delete();
-            $file = $request->file('image');
-            $data['image'] = $request->image->store('images');
-            $file->move('images', $data['image']);
-            ModelsFile::create(['url' => $data['image'], 'fileable_id' => $process->id, 'fileable_type' => 'App\Models\Process']);
-        } else {
-            $data['image'] = $process->image;
-        }
-
-      
-
-
+        $process->updateFile();
         return redirect()->route('processes.index', compact('process'))
             ->with('success', 'تم التعديل بنجاح');
     }
@@ -122,7 +105,7 @@ class ProcessController extends Controller
     {
         $process->delete();
         $process->file->delete();
-        File::delete($process->image);
+        $process->deleteFile();
 
 
         return redirect()->route('processes.index')

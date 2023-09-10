@@ -21,15 +21,25 @@ trait  MorphFile
             $this->file()->create(['url' =>  $image]);
         }
     }
+
     public function updateFile()
     {
         if (request()->hasFile('image')) {
-            if (file_exists($this->image))
-                File::delete($this->image);
+            $this->deleteFile();
             $file = request()->file('image');
             $image = request()->image->store('images');
             $file->move('images', $image);
             $this->file()->create(['url' => $image]);
         }
+    }
+
+    public function deleteFile()
+    {
+        if (file_exists($this->image))
+            File::delete($this->image);
+        $file = request()->file('image');
+        $image = request()->image->store('images');
+        $file->move('images', $image);
+        $this->file()->create(['url' => $image]);
     }
 }

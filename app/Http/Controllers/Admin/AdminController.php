@@ -57,18 +57,12 @@ class AdminController extends Controller
     public function store(AdminRequest $request)
     {
 
-        $input = $request->all();
+        $input = $request->except('image');
         $input['password'] = Hash::make($input['password']);
 
         $admin = Admin::create($input);
         $admin->assignRole($request->input('roles'));
-
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $data['image'] = $request->image->store('images');
-            $file->move('images', $data['image']);
-            ModelsFile::create(['url' => $data['image'], 'fileable_id' => $admin->id, 'fileable_type' => 'App\Models\Admin']);
-        }
+        $admin->uploadFile();
 
         return redirect()->route('admins.index')
             ->with('success', 'Admin created successfully');
@@ -97,6 +91,7 @@ class AdminController extends Controller
         $admin = Admin::find($id);
         $roles = Role::pluck('name', 'name')->all();
         $adminRole = $admin->roles->pluck('name', 'name')->all();
+       
 
         return view('admin.crud.admins.edit', compact('admin', 'roles', 'adminRole'));
     }
@@ -110,7 +105,7 @@ class AdminController extends Controller
      */
     public function update(AdminRequest $request, $id)
     {
-        $input = $request->all();
+        $input = $request->except('image');
         if (!empty($input['password'])) {
             $input['password'] = Hash::make($input['password']);
         } else {
@@ -123,15 +118,7 @@ class AdminController extends Controller
 
         $admin->assignRole($request->input('roles'));
 
-        if ($request->hasFile('image')) {
-            if ($admin->file && file_exists($admin->image))
-            {File::delete($admin->image);
-            $admin->file->delete();}
-            $file = $request->file('image');
-            $data['image'] = $request->image->store('images');
-            $file->move('images', $data['image']);
-            ModelsFile::create(['url' => $data['image'], 'fileable_id' => $admin->id, 'fileable_type' => 'App\Models\Admin']);
-        }
+        $admin->updateFile();
         return redirect()->route('admins.index')
             ->with('success', 'Admin updated successfully');
     }
@@ -146,7 +133,7 @@ class AdminController extends Controller
     {
         $admin = Admin::find($id);
         $admin->delete();
-        $admin->file->delete();
+        $admin->deleteFile();
         File::delete($admin->image);
         return redirect()->route('admins.index')
             ->with('success', 'Admin deleted successfully');

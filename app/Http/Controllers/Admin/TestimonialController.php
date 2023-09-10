@@ -53,10 +53,7 @@ class TestimonialController extends Controller
 
         $data = $request->except('image');
         $testimonial = Testimonial::create($data);
-        $file = $request->file('image');
-        $data['image'] = $request->image->store('images');
-        $file->move('images', $data['image']);
-        ModelsFile::create(['url' => $data['image'], 'fileable_id' => $testimonial->id, 'fileable_type' => 'App\Models\Testimonial']);
+        $testimonial->uploadFile();
         return redirect()->route('testimonials.index')
             ->with('success', 'تم الانشاء');
     }
@@ -94,20 +91,7 @@ class TestimonialController extends Controller
     {
         $data = $request->except('image');
         $testimonial->update($data);
-        if ($request->hasFile('image')) {
-            if (file_exists($testimonial->image))
-                File::delete($testimonial->image);
-            $testimonial->file->delete();
-            $file = $request->file('image');
-            $data['image'] = $request->image->store('images');
-            $file->move('images', $data['image']);
-            ModelsFile::create(['url' => $data['image'], 'fileable_id' => $testimonial->id, 'fileable_type' => 'App\Models\Testimonial']);
-        } else {
-            $data['image'] = $testimonial->image;
-        }
-
-      
-
+        $testimonial->updateFile();
 
         return redirect()->route('testimonials.index', compact('testimonial'))
             ->with('success', 'تم التعديل بنجاح');
@@ -121,8 +105,8 @@ class TestimonialController extends Controller
     public function destroy(Testimonial $testimonial)
     {
         $testimonial->delete();
-        $testimonial->file->delete();
-        File::delete($testimonial->image);
+        $testimonial->deleteFile();
+
 
 
         return redirect()->route('testimonials.index')

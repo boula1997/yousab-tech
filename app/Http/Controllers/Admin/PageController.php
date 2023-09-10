@@ -54,13 +54,7 @@ class PageController extends Controller
 
         $data = $request->except('image');
         $page = Page::create($data);
-        if ($request->hasFile('image')) {
-
-            $file = $request->file('image');
-            $image = $request->image->store('images');
-            $file->move('images',  $image);
-            ModelsFile::create(['url' =>  $image]);
-        }
+        $page->uploadFile();
         return redirect()->route('pages.index')
             ->with('success', 'تم الانشاء');
     }
@@ -99,17 +93,8 @@ class PageController extends Controller
 
         $data = $request->except('image');
 
-        if ($request->hasFile('image')) {
-            if (file_exists($page->image))
-                File::delete($page->image);
-            $page->file->delete();
-            $file = $request->file('image');
-            $image = $request->image->store('images');
-            $file->move('images', $image);
-            ModelsFile::create(['url' => $image, 'fileable_id' => $page->id, 'fileable_type' => 'App\Models\Page']);
-        }
-
         $page->update($data);
+        $page->updateFile();
 
 
         return redirect()->route('pages.index', compact('page'))
@@ -125,8 +110,7 @@ class PageController extends Controller
     {
         $page->delete();
         $page->file->delete();
-        File::delete($page->image);
-
+        $page->deleteFile();
 
         return redirect()->route('pages.index')
             ->with('success', 'تم الحذف');
