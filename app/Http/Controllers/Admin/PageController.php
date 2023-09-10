@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\PageRequest;
 use App\Models\File as ModelsFile;
 use App\Models\Page;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -24,14 +25,18 @@ class PageController extends Controller
         $this->middleware('permission:page-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:page-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:page-delete', ['only' => ['destroy']]);
-        $this->page=$page;
+        $this->page = $page;
     }
 
     public function index()
     {
-        $pages = $this->page->latest()->get();
-        return view('admin.crud.pages.index', compact('pages'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        try {
+            $pages = $this->page->latest()->get();
+            return view('admin.crud.pages.index', compact('pages'))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -52,12 +57,15 @@ class PageController extends Controller
      */
     public function store(PageRequest $request)
     {
-
-        $data = $request->except('image');
-        $page = $this->page->create($data);
-        $page->uploadFile();
-        return redirect()->route('pages.index')
-            ->with('success', trans('general.created_successfully'));
+        try {
+            $data = $request->except('image');
+            $page = $this->page->create($data);
+            $page->uploadFile();
+            return redirect()->route('pages.index')
+                ->with('success', trans('general.created_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -91,15 +99,15 @@ class PageController extends Controller
      */
     public function update(PageRequest $request, Page $page)
     {
-
-        $data = $request->except('image');
-
-        $page->update($data);
-        $page->updateFile();
-
-
-        return redirect()->route('pages.index', compact('page'))
-            ->with('success', trans('general.update_successfully'));
+        try {
+            $data = $request->except('image');
+            $page->update($data);
+            $page->updateFile();
+            return redirect()->route('pages.index', compact('page'))
+                ->with('success', trans('general.update_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
     /**
      * Remove the specified resource from storage.
@@ -109,11 +117,14 @@ class PageController extends Controller
      */
     public function destroy(Page $page)
     {
-        $page->delete();
-        $page->file->delete();
-        $page->deleteFile();
-
-        return redirect()->route('pages.index')
-            ->with('success', trans('general.deleted_successfully'));
+        try {
+            $page->delete();
+            $page->file->delete();
+            $page->deleteFile();
+            return redirect()->route('pages.index')
+                ->with('success', trans('general.deleted_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 }

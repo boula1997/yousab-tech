@@ -29,9 +29,13 @@ class BlogController extends Controller
 
     public function index()
     {
-        $blogs = $this->blog->latest()->get();
-        return view('admin.crud.blogs.index', compact('blogs'))
-            ->with('i', (request()->input('blog', 1) - 1) * 5);
+        try {
+            $blogs = $this->blog->latest()->get();
+            return view('admin.crud.blogs.index', compact('blogs'))
+                ->with('i', (request()->input('blog', 1) - 1) * 5);
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -53,11 +57,15 @@ class BlogController extends Controller
     public function store(BlogRequest $request)
     {
 
-        $data = $request->except('image');
-        $blog = $this->blog->create($data);
-        $blog->uploadFile();
-        return redirect()->route('blogs.index')
-            ->with('success', trans('general.created_successfully'));
+        try {
+            $data = $request->except('image');
+            $blog = $this->blog->create($data);
+            $blog->uploadFile();
+            return redirect()->route('blogs.index')
+                ->with('success', trans('general.created_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -91,12 +99,15 @@ class BlogController extends Controller
      */
     public function update(BlogRequest $request, Blog $blog)
     {
-        $data = $request->except('image');
-        $blog->update($data);
-        $blog->updateFile();
-
-        return redirect()->route('blogs.index', compact('blog'))
-            ->with('success', trans('general.update_successfully'));
+        try {
+            $data = $request->except('image');
+            $blog->update($data);
+            $blog->updateFile();
+            return redirect()->route('blogs.index', compact('blog'))
+                ->with('success', trans('general.update_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
     /**
      * Remove the specified resource from storage.
@@ -106,12 +117,15 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
-        $blog->delete();
-        $blog->file->delete();
-        $blog->deleteFile();
 
-
-        return redirect()->route('blogs.index')
-            ->with('success', trans('general.deleted_successfully'));
+        try {
+            $blog->delete();
+            $blog->file->delete();
+            $blog->deleteFile();
+            return redirect()->route('blogs.index')
+                ->with('success', trans('general.deleted_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 }

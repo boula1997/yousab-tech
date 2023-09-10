@@ -2,44 +2,60 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Setting;
-use Illuminate\Http\Request;
-use App\Models\Page;
-use App\Models\Blog;
-use App\Models\Partner;
-use App\Models\Contact;
 use App\Http\Requests\ContactRequest;
-
+use App\Models\Contact;
+use App\Models\Service;
+use App\Models\Testimonial;
+use App\Models\Process;
+use App\Models\Gallery;
+use App\Models\Slider;
+use App\Models\Counter;
+use Exception;
 
 class ContactController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Create a new controller instance.
      *
-     * @return \Illuminate\Http\Response
+     * @return void
      */
-    public function index()
+    private $service;
+    private $testimonial;
+    private $contact;
+    private $process;
+    private $counter;
+    private $portfolio;
+
+    public function __construct(Service $service, Testimonial $testimonial, contact $contact, Process $process, Counter $counter, Gallery $portfolio)
     {
-        $contact_section=Page::where('identifier','contact')->first();
-        $setting=Setting::first();
-        $blogs_footer=Blog::take(3)->get();
-        $about_section=Page::where('identifier','about')->first();
-        $advantage_section=Page::where('identifier','advantage')->first();
-        $partners=Partner::get();
-
-        return view('front.contact',compact('setting','blogs_footer','about_section','contact_section','advantage_section','partners'));
-
+        $this->service = $service;
+        $this->testimonial = $testimonial;
+        $this->contact = $contact;
+        $this->process = $process;
+        $this->counter = $counter;
+        $this->portfolio = $portfolio;
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function create()
+    public function index()
     {
-        //
+        try {
+            $services = $this->service->get();
+            $testimonials = $this->testimonial->get();
+            $processes = $this->process->get();
+            $counters = $this->counter->get();
+            $portfolios = $this->portfolio->get();
+            return view('front.index', compact('testimonials', 'services', 'processes', 'portfolios', 'counters'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -50,54 +66,9 @@ class ContactController extends Controller
     public function store(ContactRequest $request)
     {
         // dd($request->input('message'));
-        $data=$request->all();
-        $data['message']=$request->input('message');
+        $data = $request->all();
+        $data['message'] = $request->input('message');
         // dd($data);
-        Contact::create($data);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Setting  $setting
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Setting $setting)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Setting  $setting
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Setting $setting)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Setting  $setting
-     * @return \Illuminate\Http\Response
-     */
-    public function update(ContactRequest $request, Setting $setting)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Setting  $setting
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Setting $setting)
-    {
-        //
+        $this->contact->create($data);
     }
 }

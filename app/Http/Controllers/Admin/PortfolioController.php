@@ -9,6 +9,7 @@ use App\Models\Gallery;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Models\File as ModelsFile;
+use Exception;
 
 class PortfolioController extends Controller
 {
@@ -17,7 +18,7 @@ class PortfolioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-  private $portfolio;
+    private $portfolio;
     function __construct(Gallery $portfolio)
     {
         $this->middleware('permission:portfolio-list|portfolio-create|portfolio-edit|portfolio-delete', ['only' => ['index', 'show']]);
@@ -25,14 +26,18 @@ class PortfolioController extends Controller
         $this->middleware('permission:portfolio-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:portfolio-delete', ['only' => ['destroy']]);
 
-        $this->portfolio=$portfolio;
+        $this->portfolio = $portfolio;
     }
 
     public function index()
     {
-        $portfolios = $this->portfolio->latest()->get();
-        return view('admin.crud.portfolios.index', compact('portfolios'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        try {
+            $portfolios = $this->portfolio->latest()->get();
+            return view('admin.crud.portfolios.index', compact('portfolios'))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -53,11 +58,15 @@ class PortfolioController extends Controller
      */
     public function store(PortfolioRequest $request)
     {
-        $portfolio = $this->portfolio->create($request->except('images'));
-        $portfolio->uploadFiles();
 
-        return redirect()->route('portfolios.index')
-            ->with('success', trans('general.created_successfully'));
+        try {
+            $portfolio = $this->portfolio->create($request->except('images'));
+            $portfolio->uploadFiles();
+            return redirect()->route('portfolios.index')
+                ->with('success', trans('general.created_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -92,12 +101,14 @@ class PortfolioController extends Controller
      */
     public function update(PortfolioRequest $request, Gallery $portfolio)
     {
-        $portfolio->update($request->except('images', 'delimages'));
-
-        $portfolio->updateFiles();
-
-        return redirect()->route('portfolios.index', compact('portfolio'))
-            ->with('success', trans('general.update_successfully'));
+        try {
+            $portfolio->update($request->except('images', 'delimages'));
+            $portfolio->updateFiles();
+            return redirect()->route('portfolios.index', compact('portfolio'))
+                ->with('success', trans('general.update_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
     /**
      * Remove the specified resource from storage.
@@ -107,11 +118,13 @@ class PortfolioController extends Controller
      */
     public function destroy(Gallery $portfolio)
     {
-
-        $portfolio->delete();
-        $portfolio->deleteFiles();
-
-        return redirect()->route('portfolios.index')
-            ->with('success', trans('general.deleted_successfully'));
+        try {
+            $portfolio->delete();
+            $portfolio->deleteFiles();
+            return redirect()->route('portfolios.index')
+                ->with('success', trans('general.deleted_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 }

@@ -3,49 +3,55 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
-use App\Models\Setting;  
-use App\Models\Blog;
-use App\Models\Page;
-use App\Models\Partner;
-use Illuminate\Http\Request;
+use App\Models\Testimonial;
+use App\Models\Process;
+use App\Models\Gallery;
+use App\Models\Slider;
+use App\Models\Counter;
+use Exception;
 
 class ServiceController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Create a new controller instance.
      *
-     * @return \Illuminate\Http\Response
+     * @return void
+     */
+    private $service;
+    private $testimonial;
+    private $slider;
+    private $process;
+    private $counter;
+    private $portfolio;
+
+    public function __construct(Service $service, Testimonial $testimonial, Slider $slider, Process $process, Counter $counter, Gallery $portfolio)
+    {
+        $this->service = $service;
+        $this->testimonial = $testimonial;
+        $this->slider = $slider;
+        $this->process = $process;
+        $this->counter = $counter;
+        $this->portfolio = $portfolio;
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
-        $services=Service::get();
-        $setting=Setting::first();
-        $blogs_footer=Blog::take(3)->get();
-        $service_section=Page::where('identifier','service')->first();
-        $partners=Partner::get();
-        // dd($service_section->title);
-        return view('front.services.service',compact('services','setting','blogs_footer','service_section','partners'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        try {
+            $services = $this->service->get();
+            $testimonials = $this->testimonial->get();
+            $processes = $this->process->get();
+            $sliders = $this->slider->get();
+            $counters = $this->counter->get();
+            $portfolios = $this->portfolio->get();
+            return view('front.index', compact('testimonials', 'services', 'processes', 'portfolios', 'sliders', 'counters'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -56,42 +62,6 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        $setting=Setting::first();
-        $blogs_footer=Blog::take(3)->get();
-        return view('front.services.single-service',compact('service','setting','blogs_footer'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Service  $service
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Service $service)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Service  $service
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Service $service)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Service  $service
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Service $service)
-    {
-        //
+        return view('front.services.single-service', compact('service'));
     }
 }

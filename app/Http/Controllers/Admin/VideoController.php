@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Video;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Exception;
 
 class VideoController extends Controller
 {
@@ -20,14 +21,18 @@ class VideoController extends Controller
         $this->middleware('permission:video-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:video-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:video-delete', ['only' => ['destroy']]);
-        $this->video=$video;
+        $this->video = $video;
     }
 
     public function index()
     {
-        $videos = $this->video->latest()->get();
-        return view('admin.crud.videos.index', compact('videos'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        try {
+            $videos = $this->video->latest()->get();
+            return view('admin.crud.videos.index', compact('videos'))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -48,10 +53,13 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-
-        $this->video->create($request->all());
-        return redirect()->route('videos.index')
-            ->with('success', trans('general.created_successfully'));
+        try {
+            $this->video->create($request->all());
+            return redirect()->route('videos.index')
+                ->with('success', trans('general.created_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -85,14 +93,14 @@ class VideoController extends Controller
      */
     public function update(Request $request, Video $video)
     {
-
-        $data = $request->except('image');
-
-        $video->update($data);
-
-
-        return redirect()->route('videos.index', compact('video'))
-            ->with('success', trans('general.update_successfully'));
+        try {
+            $data = $request->except('image');
+            $video->update($data);
+            return redirect()->route('videos.index', compact('video'))
+                ->with('success', trans('general.update_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
     /**
      * Remove the specified resource from storage.
@@ -102,9 +110,12 @@ class VideoController extends Controller
      */
     public function destroy(Video $video)
     {
-        $video->delete();
-
-        return redirect()->route('videos.index')
-            ->with('success', trans('general.deleted_successfully'));
+        try {
+            $video->delete();
+            return redirect()->route('videos.index')
+                ->with('success', trans('general.deleted_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 }

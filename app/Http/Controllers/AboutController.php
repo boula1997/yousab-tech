@@ -2,97 +2,55 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Setting;
-use Illuminate\Http\Request;
-use App\Models\Page;
-use App\Models\Blog; 
-use App\Models\Team; 
-use App\Models\Partner; 
-
+use App\Models\Service;
+use App\Models\Testimonial;
+use App\Models\Process;
+use App\Models\Gallery;
+use App\Models\Slider;
+use App\Models\Counter;
+use Exception;
 
 class AboutController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Create a new controller instance.
      *
-     * @return \Illuminate\Http\Response
+     * @return void
+     */
+    private $service;
+    private $testimonial;
+    private $slider;
+    private $process;
+    private $counter;
+    private $portfolio;
+
+    public function __construct(Service $service, Testimonial $testimonial, Slider $slider, Process $process, Counter $counter, Gallery $portfolio)
+    {
+        $this->service = $service;
+        $this->testimonial = $testimonial;
+        $this->slider = $slider;
+        $this->process = $process;
+        $this->counter = $counter;
+        $this->portfolio = $portfolio;
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
-        $blogs_footer=Blog::take(3)->get();
-        $about_section=Page::where('identifier','about')->first();
-        $advantage_section=Page::where('identifier','advantage')->first();
-        $setting=Setting::first();
-        $teams=Team::get();
-        $partners=Partner::get();
-
-
-        return view('front.about',compact('setting','blogs_footer','about_section','advantage_section','teams','partners'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Setting  $setting
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Setting $setting)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Setting  $setting
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Setting $setting)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Setting  $setting
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Setting $setting)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Setting  $setting
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Setting $setting)
-    {
-        //
+        try {
+            $services = $this->service->get();
+            $testimonials = $this->testimonial->get();
+            $processes = $this->process->get();
+            $sliders = $this->slider->get();
+            $counters = $this->counter->get();
+            $portfolios = $this->portfolio->get();
+            return view('front.index', compact('testimonials', 'services', 'processes', 'portfolios', 'sliders', 'counters'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 }

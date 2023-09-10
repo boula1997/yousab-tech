@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\File;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Models\File as ModelsFile;
+use Exception;
 
 class ServiceController extends Controller
 {
@@ -28,9 +29,13 @@ class ServiceController extends Controller
 
     public function index()
     {
-        $services = $this->service->latest()->get();
-        return view('admin.crud.services.index', compact('services'))
-            ->with('i', (request()->input('service', 1) - 1) * 5);
+        try {
+            $services = $this->service->latest()->get();
+            return view('admin.crud.services.index', compact('services'))
+                ->with('i', (request()->input('service', 1) - 1) * 5);
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -51,12 +56,15 @@ class ServiceController extends Controller
      */
     public function store(ServiceRequest $request)
     {
-
-        $data = $request->except('image');
-        $service = $this->service->create($data);
-        $service->uploadFile();
-        return redirect()->route('services.index')
-            ->with('success', trans('general.created_successfully'));
+        try {
+            $data = $request->except('image');
+            $service = $this->service->create($data);
+            $service->uploadFile();
+            return redirect()->route('services.index')
+                ->with('success', trans('general.created_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -90,15 +98,15 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        $data = $request->except('image');
-        $service->update($data);
-        $service->updateFile();
-
-
-
-
-        return redirect()->route('services.index', compact('service'))
-            ->with('success', trans('general.update_successfully'));
+        try {
+            $data = $request->except('image');
+            $service->update($data);
+            $service->updateFile();
+            return redirect()->route('services.index', compact('service'))
+                ->with('success', trans('general.update_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
     /**
      * Remove the specified resource from storage.
@@ -108,12 +116,14 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        $service->delete();
-        $service->file->delete();
-        $service->deleteFile();
-
-
-        return redirect()->route('services.index')
-            ->with('success', trans('general.deleted_successfully'));
+        try {
+            $service->delete();
+            $service->file->delete();
+            $service->deleteFile();
+            return redirect()->route('services.index')
+                ->with('success', trans('general.deleted_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 }

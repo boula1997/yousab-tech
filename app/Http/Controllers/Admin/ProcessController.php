@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\File;
 use App\Models\Process;
 use Illuminate\Http\Request;
 use App\Models\File as ModelsFile;
+use Exception;
 
 class ProcessController extends Controller
 {
@@ -23,14 +24,18 @@ class ProcessController extends Controller
         $this->middleware('permission:process-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:process-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:process-delete', ['only' => ['destroy']]);
-        $this->process=$process;
+        $this->process = $process;
     }
 
     public function index()
     {
-        $processes = $this->process->latest()->get();
-        return view('admin.crud.processes.index', compact('processes'))
-            ->with('i', (request()->input('process', 1) - 1) * 5);
+        try {
+            $processes = $this->process->latest()->get();
+            return view('admin.crud.processes.index', compact('processes'))
+                ->with('i', (request()->input('process', 1) - 1) * 5);
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -51,12 +56,15 @@ class ProcessController extends Controller
      */
     public function store(ProcessRequest $request)
     {
-
-        $data = $request->except('image');
-        $process = $this->process->create($data);
-        $process->uploadFile();
-        return redirect()->route('processes.index')
-            ->with('success', trans('general.created_successfully'));
+        try {
+            $data = $request->except('image');
+            $process = $this->process->create($data);
+            $process->uploadFile();
+            return redirect()->route('processes.index')
+                ->with('success', trans('general.created_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -90,11 +98,15 @@ class ProcessController extends Controller
      */
     public function update(Request $request, Process $process)
     {
-        $data = $request->except('image');
-        $process->update($data);
-        $process->updateFile();
-        return redirect()->route('processes.index', compact('process'))
-            ->with('success', trans('general.update_successfully'));
+        try {
+            $data = $request->except('image');
+            $process->update($data);
+            $process->updateFile();
+            return redirect()->route('processes.index', compact('process'))
+                ->with('success', trans('general.update_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
     /**
      * Remove the specified resource from storage.
@@ -104,12 +116,14 @@ class ProcessController extends Controller
      */
     public function destroy(Process $process)
     {
-        $process->delete();
-        $process->file->delete();
-        $process->deleteFile();
-
-
-        return redirect()->route('processes.index')
-            ->with('success', trans('general.deleted_successfully'));
+        try {
+            $process->delete();
+            $process->file->delete();
+            $process->deleteFile();
+            return redirect()->route('processes.index')
+                ->with('success', trans('general.deleted_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 }

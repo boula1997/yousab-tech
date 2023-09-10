@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\File;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use App\Models\File as ModelsFile;
+use Exception;
 
 class SliderController extends Controller
 {
@@ -28,9 +29,13 @@ class SliderController extends Controller
 
     public function index()
     {
-        $sliders = $this->slider->latest()->get();
-        return view('admin.crud.sliders.index', compact('sliders'))
-            ->with('i', (request()->input('slider', 1) - 1) * 5);
+        try {
+            $sliders = $this->slider->latest()->get();
+            return view('admin.crud.sliders.index', compact('sliders'))
+                ->with('i', (request()->input('slider', 1) - 1) * 5);
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -51,12 +56,15 @@ class SliderController extends Controller
      */
     public function store(SliderRequest $request)
     {
-
-        $data = $request->except('image');
-        $slider = $this->slider->create($data);
-        $slider->uploadFile();
-        return redirect()->route('sliders.index')
-            ->with('success', trans('general.created_successfully'));
+        try {
+            $data = $request->except('image');
+            $slider = $this->slider->create($data);
+            $slider->uploadFile();
+            return redirect()->route('sliders.index')
+                ->with('success', trans('general.created_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -90,15 +98,15 @@ class SliderController extends Controller
      */
     public function update(Request $request, Slider $slider)
     {
-        $data = $request->except('image');
-        $slider->update($data);
-        $slider->updateFile();
-
-
-
-
-        return redirect()->route('sliders.index', compact('slider'))
-            ->with('success', trans('general.update_successfully'));
+        try {
+            $data = $request->except('image');
+            $slider->update($data);
+            $slider->updateFile();
+            return redirect()->route('sliders.index', compact('slider'))
+                ->with('success', trans('general.update_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
     /**
      * Remove the specified resource from storage.
@@ -108,11 +116,15 @@ class SliderController extends Controller
      */
     public function destroy(Slider $slider)
     {
-        $slider->delete();
-        $slider->file->delete();
-        $slider->deleteFile();
+        try {
+            $slider->delete();
+            $slider->file->delete();
+            $slider->deleteFile();
 
-        return redirect()->route('sliders.index')
-            ->with('success', trans('general.deleted_successfully'));
+            return redirect()->route('sliders.index')
+                ->with('success', trans('general.deleted_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 }

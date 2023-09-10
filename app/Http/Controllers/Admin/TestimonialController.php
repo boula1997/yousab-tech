@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\File;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use App\Models\File as ModelsFile;
+use Exception;
 
 class TestimonialController extends Controller
 {
@@ -16,21 +17,25 @@ class TestimonialController extends Controller
      *
      * @return \Illuminate\Http\Responses
      */
-   private $testimonial;
+    private $testimonial;
     function __construct(Testimonial $testimonial)
     {
         $this->middleware('permission:testimonial-list|testimonial-create|testimonial-edit|testimonial-delete', ['only' => ['index', 'show']]);
         $this->middleware('permission:testimonial-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:testimonial-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:testimonial-delete', ['only' => ['destroy']]);
-        $this->testimonial=$testimonial;
+        $this->testimonial = $testimonial;
     }
 
     public function index()
     {
-        $testimonials = $this->testimonial->latest()->get();
-        return view('admin.crud.testimonials.index', compact('testimonials'))
-            ->with('i', (request()->input('testimonial', 1) - 1) * 5);
+        try {
+            $testimonials = $this->testimonial->latest()->get();
+            return view('admin.crud.testimonials.index', compact('testimonials'))
+                ->with('i', (request()->input('testimonial', 1) - 1) * 5);
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -51,12 +56,15 @@ class TestimonialController extends Controller
      */
     public function store(TestimonialRequest $request)
     {
-
-        $data = $request->except('image');
-        $testimonial = $this->testimonial->create($data);
-        $testimonial->uploadFile();
-        return redirect()->route('testimonials.index')
-            ->with('success', trans('general.created_successfully'));
+        try {
+            $data = $request->except('image');
+            $testimonial = $this->testimonial->create($data);
+            $testimonial->uploadFile();
+            return redirect()->route('testimonials.index')
+                ->with('success', trans('general.created_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 
     /**
@@ -90,12 +98,16 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, Testimonial $testimonial)
     {
-        $data = $request->except('image');
-        $testimonial->update($data);
-        $testimonial->updateFile();
+        try {
+            $data = $request->except('image');
+            $testimonial->update($data);
+            $testimonial->updateFile();
 
-        return redirect()->route('testimonials.index', compact('testimonial'))
-            ->with('success', trans('general.update_successfully'));
+            return redirect()->route('testimonials.index', compact('testimonial'))
+                ->with('success', trans('general.update_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
     /**
      * Remove the specified resource from storage.
@@ -105,12 +117,13 @@ class TestimonialController extends Controller
      */
     public function destroy(Testimonial $testimonial)
     {
-        $testimonial->delete();
-        $testimonial->deleteFile();
-
-
-
-        return redirect()->route('testimonials.index')
-            ->with('success', trans('general.deleted_successfully'));
+        try {
+            $testimonial->delete();
+            $testimonial->deleteFile();
+            return redirect()->route('testimonials.index')
+                ->with('success', trans('general.deleted_successfully'));
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
     }
 }
