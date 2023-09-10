@@ -69,7 +69,7 @@
                                 @if ($process->file !== null)
                                     <label class="col-form-label d-block">@lang('general.image')</label>
                                     <br>
-                                    <img src="{{ asset($process->file->url) }}" class="w-50">
+                                    <img src="{{ asset($process->image) }}" class="w-50">
                                 @endif
                             </div>
                         </div>

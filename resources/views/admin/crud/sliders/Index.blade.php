@@ -45,7 +45,7 @@
                                         @foreach ($sliders as $slider)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img width="100" height="100" src="{{ $slider->file->url }}" alt="{{ $slider->title }}"></td>
+                                                <td><img width="100" height="100" src="{{ $slider->image }}" alt="{{ $slider->title }}"></td>
                                                 <td>{{ $slider->title }}</td>
                                                 <td>
                                                     <form action="{{ route('sliders.destroy', $slider) }}" method="POST">

@@ -124,8 +124,8 @@ class AdminController extends Controller
         $admin->assignRole($request->input('roles'));
 
         if ($request->hasFile('image')) {
-            if ($admin->file && file_exists($admin->file->url))
-            {File::delete($admin->file->url);
+            if ($admin->file && file_exists($admin->image))
+            {File::delete($admin->image);
             $admin->file->delete();}
             $file = $request->file('image');
             $data['image'] = $request->image->store('images');
@@ -147,7 +147,7 @@ class AdminController extends Controller
         $admin = Admin::find($id);
         $admin->delete();
         $admin->file->delete();
-        File::delete($admin->file->url);
+        File::delete($admin->image);
         return redirect()->route('admins.index')
             ->with('success', 'Admin deleted successfully');
     }

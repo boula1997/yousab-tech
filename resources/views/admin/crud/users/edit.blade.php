@@ -90,7 +90,7 @@
                                         </div>   
                                         
                                         <div class="col-md-6 mt-5">
-                                            <img class="h-100 w-50" src="{{$user->file->url}}" alt="">
+                                            <img class="h-100 w-50" src="{{$user->image}}" alt="">
                                         </div>
                                     </div>
   

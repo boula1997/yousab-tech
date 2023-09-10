@@ -46,7 +46,7 @@
                                         @foreach ($pages as $page)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img width="100" height="100" src="{{ $page->file?$page->file->url:settings()->logo}}"
+                                                <td><img width="100" height="100" src="{{ $page->file?$page->image:settings()->logo}}"
                                                         alt="{{ $page->title }}"></td>
                                                 <td>{{ $page->title }}</td>
                                                 <td>

@@ -96,8 +96,8 @@ class SliderController extends Controller
          $slider->update($data);
  
          if ($request->hasFile('image')) {
-             if (file_exists($slider->file->url))
-                 File::delete($slider->file->url);
+             if (file_exists($slider->image))
+                 File::delete($slider->image);
              $slider->file->delete();
              $file = $request->file('image');
              $data['image'] = $request->image->store('images');
@@ -122,7 +122,7 @@ class SliderController extends Controller
      {
          $slider->delete();
          $slider->file->delete();
-         File::delete($slider->file->url);
+         File::delete($slider->image);
  
  
          return redirect()->route('sliders.index')

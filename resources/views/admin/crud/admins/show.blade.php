@@ -49,7 +49,7 @@
                                             <label for="exampleInputFile1">@lang('general.image')</label>
                                             <div class="col-md-6">
                                                 <div class="form-group text-center">
-                                                    <img width="300" height="300" src="{{ $admin->file->url }}"
+                                                    <img width="300" height="300" src="{{ $admin->image }}"
                                                         alt="">
 
                                                 </div>

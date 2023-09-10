@@ -69,7 +69,7 @@
                                 @if ($testimonial->file !== null)
                                     <label class="col-form-label d-block">@lang('general.image')</label>
                                     <br>
-                                    <img src="{{ asset($testimonial->file->url) }}" class="w-50">
+                                    <img src="{{ asset($testimonial->image) }}" class="w-50">
                                 @endif
                             </div>
                         </div>

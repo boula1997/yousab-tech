@@ -100,8 +100,8 @@ class PageController extends Controller
         $data = $request->except('image');
 
         if ($request->hasFile('image')) {
-            if (file_exists($page->file->url))
-                File::delete($page->file->url);
+            if (file_exists($page->image))
+                File::delete($page->image);
             $page->file->delete();
             $file = $request->file('image');
             $image = $request->image->store('images');
@@ -125,7 +125,7 @@ class PageController extends Controller
     {
         $page->delete();
         $page->file->delete();
-        File::delete($page->file->url);
+        File::delete($page->image);
 
 
         return redirect()->route('pages.index')

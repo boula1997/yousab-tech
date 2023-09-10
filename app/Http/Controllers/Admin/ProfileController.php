@@ -36,8 +36,8 @@ class ProfileController extends Controller
 
 
         if ($request->hasFile('image')) {
-            if ($admin->file && file_exists($admin->file->url))
-            {File::delete($admin->file->url);
+            if ($admin->file && file_exists($admin->image))
+            {File::delete($admin->image);
             $admin->file->delete();}
             $file = $request->file('image');
             $data['image'] = $request->image->store('images');

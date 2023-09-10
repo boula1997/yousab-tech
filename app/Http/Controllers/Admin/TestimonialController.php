@@ -95,8 +95,8 @@ class TestimonialController extends Controller
         $data = $request->except('image');
         $testimonial->update($data);
         if ($request->hasFile('image')) {
-            if (file_exists($testimonial->file->url))
-                File::delete($testimonial->file->url);
+            if (file_exists($testimonial->image))
+                File::delete($testimonial->image);
             $testimonial->file->delete();
             $file = $request->file('image');
             $data['image'] = $request->image->store('images');
@@ -122,7 +122,7 @@ class TestimonialController extends Controller
     {
         $testimonial->delete();
         $testimonial->file->delete();
-        File::delete($testimonial->file->url);
+        File::delete($testimonial->image);
 
 
         return redirect()->route('testimonials.index')

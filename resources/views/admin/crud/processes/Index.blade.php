@@ -45,7 +45,7 @@
                                         @foreach ($processes as $process)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img width="100" height="100" src="{{ $process->file->url }}" alt="{{ $process->title }}"></td>
+                                                <td><img width="100" height="100" src="{{ $process->image }}" alt="{{ $process->title }}"></td>
                                                 <td>{{ $process->title }}</td>
                                                 <td>
                                                     <form action="{{ route('processes.destroy', $process) }}" method="POST">

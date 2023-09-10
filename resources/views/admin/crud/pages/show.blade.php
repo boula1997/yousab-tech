@@ -69,7 +69,7 @@
                                 @if ($page->file !== null)
                                     <label class="col-form-label d-block">@lang('general.image')</label>
                                     <br>
-                                    <img src="{{ asset( $page->file?$page->file->url:settings()->logo) }}" class="w-50">
+                                    <img src="{{ asset( $page->file?$page->image:settings()->logo) }}" class="w-50">
                                 @endif
                             </div>
                         </div>

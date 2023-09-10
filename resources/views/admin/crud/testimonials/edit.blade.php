@@ -108,7 +108,7 @@
                             <div class="form-group py-5">
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <img src="{{ $testimonial->file->url }}" class="w-50">
+                                        <img src="{{ $testimonial->image }}" class="w-50">
                                     </div>
 
                                 </div>

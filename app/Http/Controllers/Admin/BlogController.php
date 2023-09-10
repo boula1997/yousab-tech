@@ -96,8 +96,8 @@ class BlogController extends Controller
         $blog->update($data);
 
         if ($request->hasFile('image')) {
-            if (file_exists($blog->file->url))
-                File::delete($blog->file->url);
+            if (file_exists($blog->image))
+                File::delete($blog->image);
             $blog->file->delete();
             $file = $request->file('image');
             $data['image'] = $request->image->store('images');
@@ -122,7 +122,7 @@ class BlogController extends Controller
     {
         $blog->delete();
         $blog->file->delete();
-        File::delete($blog->file->url);
+        File::delete($blog->image);
 
 
         return redirect()->route('blogs.index')

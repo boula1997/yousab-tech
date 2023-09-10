@@ -176,7 +176,7 @@
         <a href="{{route('edit.profile')}}">
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="{{ auth('admin')->user()->file ? auth('admin')->user()->file->url : '' }}"
+                    <img src="{{ auth('admin')->user()->file ? auth('admin')->user()->image : '' }}"
                         class="img-circle elevation-2" alt="Edit Your Profile">
                 </div>
                 <div class="info">

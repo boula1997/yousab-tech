@@ -131,7 +131,7 @@ class UserController extends Controller
         $user=User::find($id);
         $user->delete();
         $user->file->delete();
-        File::delete($user->file->url);
+        File::delete($user->image);
         return redirect()->route('users.index')
                         ->with('success','User deleted successfully');
     }

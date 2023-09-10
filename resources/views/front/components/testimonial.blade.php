@@ -18,7 +18,7 @@
                             <div class="single-testimonial-inner text-md-center px-lg-5 px-md-4">
                                 <div class="details">
                                     <div class="thumb">
-                                        <img src="{{ asset($testimonial->file->url) }}" alt="img">
+                                        <img src="{{ asset($testimonial->image) }}" alt="img">
                                     </div>
                                     <h2>{{$testimonial->title}}</h2>
                                     <span>{{$testimonial->subttitle}}</span>
@@ -34,7 +34,7 @@
             @foreach ($testimonials as $testimonial)
                 <div class="item">
                     <div class="thumb">
-                        <img src="{{ asset($testimonial->file->url) }}" alt="img">
+                        <img src="{{ asset($testimonial->image) }}" alt="img">
                     </div>
                 </div>
             @endforeach

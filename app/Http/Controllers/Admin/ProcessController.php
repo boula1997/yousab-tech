@@ -95,8 +95,8 @@ class ProcessController extends Controller
         $data = $request->except('image');
         $process->update($data);
         if ($request->hasFile('image')) {
-            if (file_exists($process->file->url))
-                File::delete($process->file->url);
+            if (file_exists($process->image))
+                File::delete($process->image);
             $process->file->delete();
             $file = $request->file('image');
             $data['image'] = $request->image->store('images');
@@ -122,7 +122,7 @@ class ProcessController extends Controller
     {
         $process->delete();
         $process->file->delete();
-        File::delete($process->file->url);
+        File::delete($process->image);
 
 
         return redirect()->route('processes.index')

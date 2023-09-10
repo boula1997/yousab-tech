@@ -69,7 +69,7 @@
                                 @if ($slider->file !== null)
                                     <label class="col-form-label d-block">@lang('general.image')</label>
                                     <br>
-                                    <img src="{{ asset($slider->file->url) }}" class="w-50">
+                                    <img src="{{ asset($slider->image) }}" class="w-50">
                                 @endif
                             </div>
                         </div>

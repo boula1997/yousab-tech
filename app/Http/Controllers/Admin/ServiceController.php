@@ -95,8 +95,8 @@ class ServiceController extends Controller
         $data = $request->except('image');
         $service->update($data);
         if ($request->hasFile('image')) {
-            if (file_exists($service->file->url))
-                File::delete($service->file->url);
+            if (file_exists($service->image))
+                File::delete($service->image);
             $service->file->delete();
             $file = $request->file('image');
             $data['image'] = $request->image->store('images');
@@ -122,7 +122,7 @@ class ServiceController extends Controller
     {
         $service->delete();
         $service->file->delete();
-        File::delete($service->file->url);
+        File::delete($service->image);
 
 
         return redirect()->route('services.index')

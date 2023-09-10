@@ -45,7 +45,7 @@
                                         @foreach ($blogs as $blog)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img width="100" height="100" src="{{ $blog->file->url }}" alt="{{ $blog->title }}"></td>
+                                                <td><img width="100" height="100" src="{{ $blog->image }}" alt="{{ $blog->title }}"></td>
                                                 <td>{{ $blog->title }}</td>
                                                 <td>
                                                     <form action="{{ route('blogs.destroy', $blog) }}" method="POST">

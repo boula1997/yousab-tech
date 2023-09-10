@@ -45,7 +45,7 @@
                                         @foreach ($testimonials as $testimonial)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img width="100" height="100" src="{{ $testimonial->file->url }}" alt="{{ $testimonial->title }}"></td>
+                                                <td><img width="100" height="100" src="{{ $testimonial->image }}" alt="{{ $testimonial->title }}"></td>
                                                 <td>{{ $testimonial->title }}</td>
                                                 <td>
                                                     <form action="{{ route('testimonials.destroy', $testimonial) }}" method="POST">

@@ -123,7 +123,7 @@
                             <div class="form-group py-5">
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <img src="{{  $page->file?$page->file->url:settings()->logo }}" class="w-50">
+                                        <img src="{{  $page->file?$page->image:settings()->logo }}" class="w-50">
                                     </div>
 
                                 </div>

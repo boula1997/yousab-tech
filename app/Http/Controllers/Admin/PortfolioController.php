@@ -84,7 +84,7 @@ class PortfolioController extends Controller
      */
     public function show(Gallery $portfolio)
     {
-        $images = $portfolio->files;
+        $images = $portfolio->images;
         return view('admin.crud.portfolios.show', compact('portfolio', 'images'));
     }
 
@@ -96,7 +96,7 @@ class PortfolioController extends Controller
      */
     public function edit(Gallery $portfolio)
     {
-        $images = $portfolio->files;
+        $images = $portfolio->images;
         return view('admin.crud.portfolios.edit', compact('portfolio', 'images'));
     }
     /**
@@ -138,7 +138,7 @@ class PortfolioController extends Controller
      */
     public function destroy(Gallery $portfolio)
     {
-        foreach($portfolio->files as $image){
+        foreach($portfolio->images as $image){
             File::delete($image->url);
             $image->delete();
         }
