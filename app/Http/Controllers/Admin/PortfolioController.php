@@ -17,18 +17,20 @@ class PortfolioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    function __construct()
+  private $portfolio;
+    function __construct(Gallery $portfolio)
     {
         $this->middleware('permission:portfolio-list|portfolio-create|portfolio-edit|portfolio-delete', ['only' => ['index', 'show']]);
         $this->middleware('permission:portfolio-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:portfolio-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:portfolio-delete', ['only' => ['destroy']]);
+
+        $this->portfolio=$portfolio;
     }
 
     public function index()
     {
-        $portfolios = Gallery::latest()->get();
+        $portfolios = $this->portfolio->latest()->get();
         return view('admin.crud.portfolios.index', compact('portfolios'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -51,11 +53,11 @@ class PortfolioController extends Controller
      */
     public function store(PortfolioRequest $request)
     {
-        $portfolio = Gallery::create($request->except('images'));
+        $portfolio = $this->portfolio->create($request->except('images'));
         $portfolio->uploadFiles();
 
         return redirect()->route('portfolios.index')
-            ->with('success', 'تم الانشاء');
+            ->with('success', trans('general.created_successfully'));
     }
 
     /**
@@ -95,7 +97,7 @@ class PortfolioController extends Controller
         $portfolio->updateFiles();
 
         return redirect()->route('portfolios.index', compact('portfolio'))
-            ->with('success', 'تم التعديل بنجاح');
+            ->with('success', trans('general.update_successfully'));
     }
     /**
      * Remove the specified resource from storage.
@@ -110,6 +112,6 @@ class PortfolioController extends Controller
         $portfolio->deleteFiles();
 
         return redirect()->route('portfolios.index')
-            ->with('success', 'تم الحذف');
+            ->with('success', trans('general.deleted_successfully'));
     }
 }

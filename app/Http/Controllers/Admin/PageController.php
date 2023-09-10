@@ -17,18 +17,19 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Responses
      */
-
-    function __construct()
+    private $page;
+    function __construct(Page $page)
     {
         $this->middleware('permission:page-list|page-create|page-edit|page-delete', ['only' => ['index', 'show']]);
         $this->middleware('permission:page-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:page-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:page-delete', ['only' => ['destroy']]);
+        $this->page=$page;
     }
 
     public function index()
     {
-        $pages = Page::latest()->get();
+        $pages = $this->page->latest()->get();
         return view('admin.crud.pages.index', compact('pages'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -53,10 +54,10 @@ class PageController extends Controller
     {
 
         $data = $request->except('image');
-        $page = Page::create($data);
+        $page = $this->page->create($data);
         $page->uploadFile();
         return redirect()->route('pages.index')
-            ->with('success', 'تم الانشاء');
+            ->with('success', trans('general.created_successfully'));
     }
 
     /**
@@ -98,7 +99,7 @@ class PageController extends Controller
 
 
         return redirect()->route('pages.index', compact('page'))
-            ->with('success', 'تم التعديل بنجاح');
+            ->with('success', trans('general.update_successfully'));
     }
     /**
      * Remove the specified resource from storage.
@@ -113,6 +114,6 @@ class PageController extends Controller
         $page->deleteFile();
 
         return redirect()->route('pages.index')
-            ->with('success', 'تم الحذف');
+            ->with('success', trans('general.deleted_successfully'));
     }
 }

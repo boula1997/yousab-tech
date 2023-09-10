@@ -16,18 +16,20 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Responses
      */
+    private $blog;
 
-    function __construct()
+    function __construct(Blog $blog)
     {
         $this->middleware('permission:blog-list|blog-create|blog-edit|blog-delete', ['only' => ['index', 'show']]);
         $this->middleware('permission:blog-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:blog-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:blog-delete', ['only' => ['destroy']]);
+        $this->blog = $blog;
     }
 
     public function index()
     {
-        $blogs = Blog::latest()->get();
+        $blogs = $this->blog->latest()->get();
         return view('admin.crud.blogs.index', compact('blogs'))
             ->with('i', (request()->input('blog', 1) - 1) * 5);
     }
@@ -52,10 +54,10 @@ class BlogController extends Controller
     {
 
         $data = $request->except('image');
-        $blog = Blog::create($data);
+        $blog = $this->blog->create($data);
         $blog->uploadFile();
         return redirect()->route('blogs.index')
-            ->with('success', 'تم الانشاء');
+            ->with('success', trans('general.created_successfully'));
     }
 
     /**
@@ -94,7 +96,7 @@ class BlogController extends Controller
         $blog->updateFile();
 
         return redirect()->route('blogs.index', compact('blog'))
-            ->with('success', 'تم التعديل بنجاح');
+            ->with('success', trans('general.update_successfully'));
     }
     /**
      * Remove the specified resource from storage.
@@ -110,6 +112,6 @@ class BlogController extends Controller
 
 
         return redirect()->route('blogs.index')
-            ->with('success', 'تم الحذف');
+            ->with('success', trans('general.deleted_successfully'));
     }
 }

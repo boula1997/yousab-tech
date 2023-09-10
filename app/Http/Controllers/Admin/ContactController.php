@@ -13,17 +13,18 @@ class ContactController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    
-    function __construct()
+    private $contact;
+    function __construct(Contact $contact)
     {
          $this->middleware('permission:contact-list|contact-delete', ['only' => ['index','show']]);
          $this->middleware('permission:contact-delete', ['only' => ['destroy']]);
+         $this->contact=$contact;
     }
 
     
     public function index()
     {
-        $data = Contact::latest()->get();
+        $data = $this->contact->latest()->get();
         return view('admin.crud.contacts.index', compact('data'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -52,7 +53,7 @@ class ContactController extends Controller
         $contact->delete();
  
         return redirect()->route('contacts.index')
-            ->with('success', 'تم الحذف');
+            ->with('success', trans('general.deleted_successfully'));
     }
 
 }

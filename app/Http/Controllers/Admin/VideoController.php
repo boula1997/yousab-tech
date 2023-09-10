@@ -13,18 +13,19 @@ class VideoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    function __construct()
+    private $video;
+    function __construct(Video $video)
     {
         $this->middleware('permission:video-list|video-create|video-edit|video-delete', ['only' => ['index', 'show']]);
         $this->middleware('permission:video-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:video-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:video-delete', ['only' => ['destroy']]);
+        $this->video=$video;
     }
 
     public function index()
     {
-        $videos = Video::latest()->get();
+        $videos = $this->video->latest()->get();
         return view('admin.crud.videos.index', compact('videos'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -48,9 +49,9 @@ class VideoController extends Controller
     public function store(Request $request)
     {
 
-        Video::create($request->all());
+        $this->video->create($request->all());
         return redirect()->route('videos.index')
-            ->with('success', 'تم الانشاء');
+            ->with('success', trans('general.created_successfully'));
     }
 
     /**
@@ -91,7 +92,7 @@ class VideoController extends Controller
 
 
         return redirect()->route('videos.index', compact('video'))
-            ->with('success', 'تم التعديل بنجاح');
+            ->with('success', trans('general.update_successfully'));
     }
     /**
      * Remove the specified resource from storage.
@@ -104,6 +105,6 @@ class VideoController extends Controller
         $video->delete();
 
         return redirect()->route('videos.index')
-            ->with('success', 'تم الحذف');
+            ->with('success', trans('general.deleted_successfully'));
     }
 }

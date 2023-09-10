@@ -69,7 +69,7 @@ class ImageController extends Controller
     $data['image']='images/'.$name;
         Image::create($data);
         return redirect()->route('tests.index')
-            ->with('success', 'تم الانشاء');
+            ->with('success', trans('general.created_successfully'));
     }
  
     /**
@@ -124,7 +124,7 @@ class ImageController extends Controller
  
  
         return redirect()->route('tests.index')
-            ->with('success', 'تم التعديل بنجاح');
+            ->with('success', trans('general.update_successfully'));
     }
     /**
      * Remove the specified resource from storage.
@@ -138,6 +138,6 @@ class ImageController extends Controller
         $image->delete();
  
         return redirect()->route('tests.index')
-            ->with('success', 'تم الحذف');
+            ->with('success', trans('general.deleted_successfully'));
     }
 }

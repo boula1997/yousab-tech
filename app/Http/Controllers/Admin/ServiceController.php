@@ -16,18 +16,19 @@ class ServiceController extends Controller
      *
      * @return \Illuminate\Http\Responses
      */
-
-    function __construct()
+    private $service;
+    function __construct(Service $service)
     {
         $this->middleware('permission:service-list|service-create|service-edit|service-delete', ['only' => ['index', 'show']]);
         $this->middleware('permission:service-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:service-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:service-delete', ['only' => ['destroy']]);
+        $this->service = $service;
     }
 
     public function index()
     {
-        $services = Service::latest()->get();
+        $services = $this->service->latest()->get();
         return view('admin.crud.services.index', compact('services'))
             ->with('i', (request()->input('service', 1) - 1) * 5);
     }
@@ -52,10 +53,10 @@ class ServiceController extends Controller
     {
 
         $data = $request->except('image');
-        $service = Service::create($data);
+        $service = $this->service->create($data);
         $service->uploadFile();
         return redirect()->route('services.index')
-            ->with('success', 'تم الانشاء');
+            ->with('success', trans('general.created_successfully'));
     }
 
     /**
@@ -97,7 +98,7 @@ class ServiceController extends Controller
 
 
         return redirect()->route('services.index', compact('service'))
-            ->with('success', 'تم التعديل بنجاح');
+            ->with('success', trans('general.update_successfully'));
     }
     /**
      * Remove the specified resource from storage.
@@ -113,6 +114,6 @@ class ServiceController extends Controller
 
 
         return redirect()->route('services.index')
-            ->with('success', 'تم الحذف');
+            ->with('success', trans('general.deleted_successfully'));
     }
 }

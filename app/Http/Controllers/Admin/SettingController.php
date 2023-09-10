@@ -10,19 +10,20 @@ use Illuminate\Support\Facades\File;
 
 class SettingController extends Controller
 {
-
-    function __construct()
+    private $setting;
+    function __construct(Setting $setting)
     {
         $this->middleware('permission:setting-list|setting-create|setting-edit|setting-delete', ['only' => ['index', 'show']]);
         $this->middleware('permission:setting-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:setting-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:setting-delete', ['only' => ['destroy']]);
+        $this->setting=$setting;
     }
 
 
     public function setting(Request $request)
     {
-        $setting = Setting::first();
+        $setting = $this->setting->first();
         $data = $request->except('0','1');
         if (!$request->hasFile('logo'))
             $data['logo'] = $setting->logo;
@@ -48,12 +49,12 @@ class SettingController extends Controller
 
         $setting->update($data);
         return redirect()->route('edit.setting', compact('setting'))
-            ->with('success', 'تم التعديل بنجاح');
+            ->with('success', trans('general.update_successfully'));
     }
 
     public function editSetting()
     {
-        $setting = Setting::first();
+        $setting = $this->setting->first();
         return view('admin.crud.setting.setting', compact('setting'));
     }
 }

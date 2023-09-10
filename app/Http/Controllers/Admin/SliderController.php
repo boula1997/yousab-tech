@@ -16,18 +16,19 @@ class SliderController extends Controller
      *
      * @return \Illuminate\Http\Responses
      */
-
-    function __construct()
+    private $slider;
+    function __construct(Slider $slider)
     {
         $this->middleware('permission:slider-list|slider-create|slider-edit|slider-delete', ['only' => ['index', 'show']]);
         $this->middleware('permission:slider-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:slider-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:slider-delete', ['only' => ['destroy']]);
+        $this->slider = $slider;
     }
 
     public function index()
     {
-        $sliders = Slider::latest()->get();
+        $sliders = $this->slider->latest()->get();
         return view('admin.crud.sliders.index', compact('sliders'))
             ->with('i', (request()->input('slider', 1) - 1) * 5);
     }
@@ -52,10 +53,10 @@ class SliderController extends Controller
     {
 
         $data = $request->except('image');
-        $slider = Slider::create($data);
+        $slider = $this->slider->create($data);
         $slider->uploadFile();
         return redirect()->route('sliders.index')
-            ->with('success', 'تم الانشاء');
+            ->with('success', trans('general.created_successfully'));
     }
 
     /**
@@ -97,7 +98,7 @@ class SliderController extends Controller
 
 
         return redirect()->route('sliders.index', compact('slider'))
-            ->with('success', 'تم التعديل بنجاح');
+            ->with('success', trans('general.update_successfully'));
     }
     /**
      * Remove the specified resource from storage.
@@ -112,6 +113,6 @@ class SliderController extends Controller
         $slider->deleteFile();
 
         return redirect()->route('sliders.index')
-            ->with('success', 'تم الحذف');
+            ->with('success', trans('general.deleted_successfully'));
     }
 }

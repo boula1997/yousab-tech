@@ -14,19 +14,20 @@ class CounterController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    
-    function __construct()
+    private $counter;
+    function __construct(Counter $counter)
     {
          $this->middleware('permission:counter-list|counter-create|counter-edit|counter-delete', ['only' => ['index','show']]);
          $this->middleware('permission:counter-create', ['only' => ['create','store']]);
          $this->middleware('permission:counter-edit', ['only' => ['edit','update']]);
          $this->middleware('permission:counter-delete', ['only' => ['destroy']]);
+         $this->counter = $counter;
     }
 
     
     public function index()
     {
-        $counters = Counter::latest()->get();
+        $counters = $this->counter->latest()->get();
         return view('admin.crud.counters.index', compact('counters'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -50,9 +51,9 @@ class CounterController extends Controller
     public function store(CounterRequest $request)
     { 
     
-        Counter::create($request->all());
+        $this->counter->create($request->all());
         return redirect()->route('counters.index')
-            ->with('success', 'تم الانشاء');
+            ->with('success', trans('general.created_successfully'));
     }
  
     /**
@@ -93,7 +94,7 @@ class CounterController extends Controller
  
  
         return redirect()->route('counters.index')
-            ->with('success', 'تم التعديل بنجاح');
+            ->with('success', trans('general.update_successfully'));
     }
     /**
      * Remove the specified resource from storage.
@@ -106,6 +107,6 @@ class CounterController extends Controller
         $counter->delete();
  
         return redirect()->route('counters.index')
-            ->with('success', 'تم الحذف');
+            ->with('success', trans('general.deleted_successfully'));
     }
 }

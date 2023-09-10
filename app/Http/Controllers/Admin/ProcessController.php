@@ -16,18 +16,19 @@ class ProcessController extends Controller
      *
      * @return \Illuminate\Http\Responses
      */
-
-    function __construct()
+    private $process;
+    function __construct(Process $process)
     {
         $this->middleware('permission:process-list|process-create|process-edit|process-delete', ['only' => ['index', 'show']]);
         $this->middleware('permission:process-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:process-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:process-delete', ['only' => ['destroy']]);
+        $this->process=$process;
     }
 
     public function index()
     {
-        $processes = Process::latest()->get();
+        $processes = $this->process->latest()->get();
         return view('admin.crud.processes.index', compact('processes'))
             ->with('i', (request()->input('process', 1) - 1) * 5);
     }
@@ -52,10 +53,10 @@ class ProcessController extends Controller
     {
 
         $data = $request->except('image');
-        $process = Process::create($data);
+        $process = $this->process->create($data);
         $process->uploadFile();
         return redirect()->route('processes.index')
-            ->with('success', 'تم الانشاء');
+            ->with('success', trans('general.created_successfully'));
     }
 
     /**
@@ -93,7 +94,7 @@ class ProcessController extends Controller
         $process->update($data);
         $process->updateFile();
         return redirect()->route('processes.index', compact('process'))
-            ->with('success', 'تم التعديل بنجاح');
+            ->with('success', trans('general.update_successfully'));
     }
     /**
      * Remove the specified resource from storage.
@@ -109,6 +110,6 @@ class ProcessController extends Controller
 
 
         return redirect()->route('processes.index')
-            ->with('success', 'تم الحذف');
+            ->with('success', trans('general.deleted_successfully'));
     }
 }

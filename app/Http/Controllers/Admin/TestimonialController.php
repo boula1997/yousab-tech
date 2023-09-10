@@ -16,18 +16,19 @@ class TestimonialController extends Controller
      *
      * @return \Illuminate\Http\Responses
      */
-
-    function __construct()
+   private $testimonial;
+    function __construct(Testimonial $testimonial)
     {
         $this->middleware('permission:testimonial-list|testimonial-create|testimonial-edit|testimonial-delete', ['only' => ['index', 'show']]);
         $this->middleware('permission:testimonial-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:testimonial-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:testimonial-delete', ['only' => ['destroy']]);
+        $this->testimonial=$testimonial;
     }
 
     public function index()
     {
-        $testimonials = Testimonial::latest()->get();
+        $testimonials = $this->testimonial->latest()->get();
         return view('admin.crud.testimonials.index', compact('testimonials'))
             ->with('i', (request()->input('testimonial', 1) - 1) * 5);
     }
@@ -52,10 +53,10 @@ class TestimonialController extends Controller
     {
 
         $data = $request->except('image');
-        $testimonial = Testimonial::create($data);
+        $testimonial = $this->testimonial->create($data);
         $testimonial->uploadFile();
         return redirect()->route('testimonials.index')
-            ->with('success', 'تم الانشاء');
+            ->with('success', trans('general.created_successfully'));
     }
 
     /**
@@ -94,7 +95,7 @@ class TestimonialController extends Controller
         $testimonial->updateFile();
 
         return redirect()->route('testimonials.index', compact('testimonial'))
-            ->with('success', 'تم التعديل بنجاح');
+            ->with('success', trans('general.update_successfully'));
     }
     /**
      * Remove the specified resource from storage.
@@ -110,6 +111,6 @@ class TestimonialController extends Controller
 
 
         return redirect()->route('testimonials.index')
-            ->with('success', 'تم الحذف');
+            ->with('success', trans('general.deleted_successfully'));
     }
 }
