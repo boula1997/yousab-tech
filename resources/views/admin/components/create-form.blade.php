@@ -13,7 +13,7 @@
     {{-- validation messages end --}}
 
 
-    <form action="@yield('form_action')" method="@yield('form_type')" enctype="multipart/form-data" d="form">
+    <form action="@yield('form_action')" method="@yield('form_type')" enctype="multipart/form-data" id="form">
         <div class="card-body">
             @csrf
             @yield('form_content')
