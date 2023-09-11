@@ -66,6 +66,9 @@
 <script src="{{asset('plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
 <script src="{{asset('plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
 <script src="{{asset('plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+<script src="{{asset('js/scripts.bundle.js')}}"></script>
+{{-- <script src="{{asset('js/iconpicker-1.5.0.json')}}"></script> --}}
+<script src="{{asset('js/iconpicker-1.5.0.js')}}"></script>
 @stack('scripts')
 </body>
 

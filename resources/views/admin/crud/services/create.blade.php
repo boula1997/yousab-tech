@@ -84,6 +84,22 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
+                            @include('admin.components.icon', [
+                                'label' => 'icon',
+                                'required' => true,
+                                'value' => 'value',
+                            ])
+                        </div>
+                        <div class="col-md-6">
+                            @include('admin.components.image', [
+                                'label' => 'icon',
+                                'id' => 1,
+                                'name' => 'image',
+                                'required' => true,
+                                'value' => asset('default.jpg'),
+                            ])
+                        </div>
+                        {{-- <div class="col-md-6">
                             <div class="form-group">
                                 <div class="form-group">
                                     <label class="col-form-label d-block">@lang('general.image')</label>
@@ -101,7 +117,7 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div> --}}
 
                     </div>
                 </div>

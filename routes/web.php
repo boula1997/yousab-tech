@@ -1,25 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\BlogController;
-use App\Http\Controllers\Admin\ContactController;
-// use App\Http\Controllers\Admin\ContactController;
-use App\Http\Controllers\Admin\GalleryController;
-use App\Http\Controllers\SiteController;
-use App\Http\Controllers\Admin\ServiceController;
-use App\Http\Controllers\Admin\TestimonialController;
-use App\Http\Controllers\Admin\ProcessController;
-// use App\Http\Controllers\Admin\AboutController;
-use App\Http\Controllers\MetaController;
-use App\Http\Controllers\Admin\PortfolioController;
-use App\Http\Controllers\Admin\SliderController;
-use App\Http\Controllers\Admin\PageController;
-use App\Http\Controllers\Admin\ImageController;
-use App\Http\Controllers\Admin\CounterController;
-use App\Http\Controllers\Admin\VideoController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\RoleController;
-use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -62,20 +43,20 @@ Route::group(
         // });
 
 
-        Route::get('/', 'App\Http\Controllers\SiteController@home')->name('front.home');
-        Route::get('/blog-page', 'App\Http\Controllers\SiteController@blogs')->name('front.blog');
-        Route::get('/contact', 'App\Http\Controllers\SiteController@contact')->name('front.contact');
-        Route::get('/service', 'App\Http\Controllers\SiteController@services')->name('front.service');
-        Route::get('/single-service', 'App\Http\Controllers\SiteController@single_service')->name('front.show.service');
-        Route::get('/testimonial', 'App\Http\Controllers\SiteController@testimonials')->name('front.testimonial');
-        Route::get('/single-testimonial', 'App\Http\Controllers\SiteController@single_testimonial')->name('front.show.testimonial');
-        Route::get('/process', 'App\Http\Controllers\SiteController@processes')->name('front.process');
-        Route::get('/single-process', 'App\Http\Controllers\SiteController@single_process')->name('front.show.process');
-        Route::get('/single-blog', 'App\Http\Controllers\SiteController@single_blog')->name('front.show.blog');
-        Route::get('/portfolio', 'App\Http\Controllers\SiteController@portfolios')->name('front.portfolio');
-        Route::get('/video', 'App\Http\Controllers\SiteController@videos')->name('front.video');
-        Route::get('/about', 'App\Http\Controllers\SiteController@about')->name('front.about');
-        Route::post('/contact', 'App\Http\Controllers\SiteController@contact_post')->name('front.contact.post');
+        Route::get('/', [HomeController::class, 'index'])->name('front.home');
+        Route::get('/blog-page', 'App/Http/Controllers/BlogController@index')->name('front.blog');
+        Route::get('/contact', 'App/Http/Controllers/ContactController@index')->name('front.contact');
+        Route::get('/service', 'App/Http/Controllers/ServiceController@index')->name('front.service');
+        Route::get('/single-service', 'App/Http/Controllers/ServiceController@show')->name('front.show.service');
+        Route::get('/testimonial', 'App/Http/Controllers/TestimonialController@index')->name('front.testimonial');
+        Route::get('/single-testimonial', 'App/Http/Controllers/TestimonialController@show')->name('front.show.testimonial');
+        Route::get('/process', 'App/Http/Controllers/ProcessController@index')->name('front.process');
+        Route::get('/single-process', 'App/Http/Controllers/ProcessController@show')->name('front.show.process');
+        Route::get('/single-blog', 'App/Http/Controllers/BlogController@show')->name('front.show.blog');
+        Route::get('/portfolio', 'App/Http/Controllers/PortfolioController@index')->name('front.portfolio');
+        Route::get('/video', 'App/Http/Controllers/VideoController@index')->name('front.video');
+        Route::get('/about', 'App/Http/Controllers/AboutController@index')->name('front.about');
+        Route::post('/contact', 'App/Http/Controllers/ContactController@store')->name('front.contact.post');
 
     }
 );

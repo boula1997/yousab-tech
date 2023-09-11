@@ -33,12 +33,12 @@
     </div>
 @endif
 
-@section('scripts')
+@push('scripts')
     <script>
         // Default options
         IconPicker.Init({
             // Required: You have to set the path of IconPicker JSON file to "jsonUrl" option. e.g. '/content/plugins/IconPicker/dist/iconpicker-1.5.0.json'
-            jsonUrl: "{{ asset('dashboard/js/iconpicker-1.5.0.json') }}", // Optional: Change the buttons or search placeholder text according to the language.
+            jsonUrl: "{{ asset('js/iconpicker-1.5.0.json') }}", // Optional: Change the buttons or search placeholder text according to the language.
             searchPlaceholder: 'Search Icon',
             showAllButton: "{{ __('words.show_all') }}",
             cancelButton: "{{ __('words.cancel') }}",
@@ -46,4 +46,4 @@
         });
         IconPicker.Run('#GetIconPicker');
     </script>
-@endsection
+@endpush
