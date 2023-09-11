@@ -15,7 +15,7 @@ class CreateCounterTranslationsTable extends Migration
     {
         Schema::create('counter_translations', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->unsignedBigInteger('counter_id');
             $table->string('locale')->index();
             $table->unique(['counter_id', 'locale']);

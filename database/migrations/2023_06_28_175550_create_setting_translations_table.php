@@ -15,12 +15,12 @@ class CreateSettingTranslationsTable extends Migration
     {
         Schema::create('setting_translations', function (Blueprint $table) {
             $table->id();
-            $table->text('address');
-            $table->string('title');
-            $table->text('description');
-            $table->text('appointment1');
-            $table->text('appointment2');
-            $table->text('meta_data');
+            $table->text('address')->nullable();
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->text('appointment1')->nullable();
+            $table->text('appointment2')->nullable();
+            $table->text('meta_data')->nullable();
             $table->unsignedBigInteger('setting_id');
             $table->string('locale')->index();
             $table->unique(['setting_id', 'locale']);

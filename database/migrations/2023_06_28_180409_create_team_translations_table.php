@@ -15,9 +15,9 @@ class CreateTeamTranslationsTable extends Migration
     {
         Schema::create('team_translations', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('subtitle');
-            $table->text('description');
+            $table->string('title')->nullable();
+            $table->string('subtitle')->nullable();
+            $table->text('description')->nullable();
             $table->unsignedBigInteger('team_id');
             $table->string('locale')->index();
             $table->unique(['team_id', 'locale']);

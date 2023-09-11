@@ -14,7 +14,7 @@ class CreateVideoTranslationsTable extends Migration
     {
         Schema::create('video_translations', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->unsignedBigInteger('video_id');
             $table->string('locale')->index();
             $table->unique(['video_id', 'locale']);

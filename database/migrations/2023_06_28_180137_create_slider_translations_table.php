@@ -15,9 +15,9 @@ class CreateSliderTranslationsTable extends Migration
     {
         Schema::create('slider_translations', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('subtitle');
-            $table->text('description');
+            $table->string('title')->nullable();
+            $table->string('subtitle')->nullable();
+            $table->text('description')->nullable();
             $table->unsignedBigInteger('slider_id');
             $table->string('locale')->index();
             $table->unique(['slider_id', 'locale']);
