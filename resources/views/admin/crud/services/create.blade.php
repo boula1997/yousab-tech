@@ -92,12 +92,14 @@
                         </div>
                         <div class="col-md-6">
                             @include('admin.components.image', [
-                                'label' => 'icon',
-                                'id' => 1,
+                                'label' => __('words.image'),
+                                'value' => old('image'),
                                 'name' => 'image',
+                                'id' => 'kt_image_3',
+                                'accept' => 'image/*',
                                 'required' => true,
-                                'value' => asset('default.jpg'),
                             ])
+
                         </div>
                         {{-- <div class="col-md-6">
                             <div class="form-group">
