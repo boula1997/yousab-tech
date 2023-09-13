@@ -136,7 +136,23 @@ return [
 
 
 
-
+    'opening_hour' => 'توقيت العمل',
+    'hotline' => 'اتصل بنا',
+    'follow_us_on' => 'تواصل معنا عبر',
+    'home' => 'الرئيسية',
+    'services' => 'خدماتنا',
+    'about' => 'من نحن',
+    'contact' => 'تواصل معنا',
+    'get_started' => 'ابدأ معنا',
+    'all_services' => 'خدماتنا',
+    'address' => 'العنوان',
+    'team' => 'الفريق',
+    'portfolio' => 'صفحة شخصية',
+    'your_email' => 'بريدك الالكترونى',
+    'fullname' => 'اسمك باللغة العربية كاملا',
+    'email_address' => 'بريدك الالكترونى',
+    'message' => 'رسالتك',
+    'submit' => 'قدم الان',
 
 
 

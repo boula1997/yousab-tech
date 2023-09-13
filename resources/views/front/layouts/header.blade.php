@@ -97,8 +97,8 @@
             </div>
             <div class="collapse navbar-collapse" id="Iitechie_main_menu">
                 <ul class="navbar-nav menu-open text-lg-end">
-                    <li><a class="{{request()->routeIs('front.home')?'active':''}}" href="{{route('front.home')}}">Home</a></li>
-                    <li><a class="{{request()->routeIs('front.service')?'active':''}}" href="{{route('front.service')}}">Services</a></li>
+                    <li><a class="{{request()->routeIs('front.home')?'active':''}}" href="{{route('front.home')}}">{{__('general.home')}}</a></li>
+                    <li><a class="{{request()->routeIs('front.service')?'active':''}}" href="{{route('front.service')}}">{{__('general.services')}}</a></li>
                     <li><a class="{{request()->routeIs('front.about')?'active':''}}" href="{{route('front.about')}}">About Us</a></li>
                     {{-- <li><a class="{{request()->routeIs('front.home')?'active':''}}" href="{{route('front.home')}}">Project</a></li> --}}
                     <li><a class="{{request()->routeIs('front.contact')?'active':''}}" href="{{route('front.contact')}}">Contact Us</a></li>

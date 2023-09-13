@@ -16,15 +16,15 @@ class SettingSeeder extends Seeder
     {
         Setting::create([
             'en' => [
-                'appointment1' => 'appointment1',
+                'appointment1' => 'From 8 Am to 5.5 Pm',
                 'appointment2' => 'appointment2',
-                'title' => 'title',
+                'title' => 'Yousab Tech',
                 'address' => 'address',
                 'description' => 'description',
                 'meta_data' => 'Meta Data',
             ],
             'ar' => [
-                'appointment1' => 'appointment1',
+                'appointment1' => 'من 8 ص ل 5.5 م',
                 'appointment2' => 'appointment2',
                 'title' => 'title',
                 'address' => 'address',

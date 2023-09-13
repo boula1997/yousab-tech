@@ -132,6 +132,24 @@ return [
     "role_mangement" => "Role Mangement",
     "settings" => "Settings",
 
+    'opening_hour' => 'Opening Hour',
+    'hotline' => 'Hot Line',
+    'follow_us_on' => 'Follow Us On',
+    'home' => 'Home',
+    'services' => 'Services',
+    'about' => 'About Us',
+    'contact' => 'Contact Us',
+    'get_started' => 'Get Started',
+    'all_services' => 'All Services',
+    'address' => 'Address',
+    'team' => 'Team',
+    'portfolio' => 'Portfolio',
+    'your_email' => 'Your Email',
+    'fullname' => 'Full Name',
+    'email_address' => 'Email Address',
+    'message' => 'Message',
+    'submit' => 'Submit Now',
+
 
 
 
