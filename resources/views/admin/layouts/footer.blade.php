@@ -69,7 +69,7 @@
 <script src="{{asset('js/scripts.bundle.js')}}"></script>
 {{-- <script src="{{asset('js/iconpicker-1.5.0.json')}}"></script> --}}
 <script src="{{asset('js/iconpicker-1.5.0.js')}}"></script>
+<script src="{{asset('admin/file-upload/image-input.js')}}"></script>
 @stack('scripts')
 </body>
-
 </html>
