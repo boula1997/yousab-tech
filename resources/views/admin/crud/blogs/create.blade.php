@@ -1,8 +1,7 @@
-@extends('admin.layouts.master')
-@extends('admin.components.create-form')
-@section('form_action', route('blog.store'))
+@extends('admin.components.form')
+@section('form_action', route('blogs.store'))
 @section('form_type', 'POST')
-@section('content')
+@section('fields_content')
     @method('post')
     <div class="content-wrapper">
         <div class="card card-custom mb-2">
@@ -21,6 +20,7 @@
                     @endforeach
                 </ul>
             </div>
+
             <div class="card-body">
                 <div class="tab-content">
 
@@ -70,47 +70,45 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <div class="form-group">
-                                <label class="col-form-label d-block">@lang('general.image')</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" name="image" class="custom-file-input"
-                                            id="exampleInputFile1">
-                                        <label class="custom-file-label" for="exampleInputFile1">@lang('general.choose_file')</label>
-                                    </div>
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">@lang('general.upload_file')</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @include('admin.components.image', [
+                            'label' => __('words.image'),
+                            'value' => old('image'),
+                            'name' => 'image',
+                            'id' => 'kt_image_3',
+                            'accept' => 'image/*',
+                            'required' => true,
+                        ])
 
                     </div>
+
 
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-outline-primary px-5
-">@lang('general.save')</button>
-                <a href="{{ route('blogs.index') }}" class="btn btn-outline-danger px-5
-">@lang('general.cancel')</a>
+                <button type="submit"
+                    class="btn btn-outline-primary px-5
+                      ">@lang('general.save')</button>
+                <a href="{{ route('blogs.index') }}"
+                    class="btn btn-outline-danger px-5
+                        ">@lang('general.cancel')</a>
             </div>
         </div>
     </div>
+
+
+    @push('scripts')
+        <script>
+            $(function() {
+                // Summernote
+                $('.summernote').summernote()
+
+                // CodeMirror
+                CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                    mode: "htmlmixed",
+                    theme: "monokai"
+                });
+            })
+        </script>
+    @endpush
+
 @endsection
-
-@push('scripts')
-    <script>
-        $(function() {
-            // Summernote
-            $('.summernote').summernote()
-
-            // CodeMirror
-            CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
-                mode: "htmlmixed",
-                theme: "monokai"
-            });
-        })
-    </script>
-@endpush

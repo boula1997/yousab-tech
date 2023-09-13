@@ -1,8 +1,7 @@
-@extends('admin.layouts.master')
-@extends('admin.components.create-form')
-@section('form_action', route('blog.update', $blog->id))
+@extends('admin.components.form')
+@section('form_action', route('blogs.update', $blog->id))
 @section('form_type', 'POST')
-@section('content')
+@section('fields_content')
     @method('put')
     <div class="content-wrapper">
         @method('PUT')
@@ -88,32 +87,14 @@
                 <div class="row mt-5" style="height: 200px">
 
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <div class="form-group">
-                                <label class="col-form-label d-block">@lang('general.image')</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" name="image" class="custom-file-input"
-                                            id="exampleInputFile1">
-                                        <label class="custom-file-label" for="exampleInputFile1">@lang('general.choose_file')</label>
-                                    </div>
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">@lang('general.upload_file')</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-6 mt-5">
-                        <div class="form-group py-5">
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <img src="{{ $blog->image }}" class="w-50">
-                                </div>
-
-                            </div>
-                        </div>
+                        @include('admin.components.image', [
+                            'label' => __('words.image'),
+                            'value' => old('image', $blog->image),
+                            'name' => 'image',
+                            'id' => 'kt_image_3',
+                            'accept' => 'image/*',
+                            'required' => true,
+                        ])
 
                     </div>
                 </div>
@@ -124,19 +105,20 @@
             </div>
         </div>
     </div>
+
+
+    @push('scripts')
+        <script>
+            $(function() {
+                // Summernote
+                $('.summernote').summernote()
+
+                // CodeMirror
+                CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                    mode: "htmlmixed",
+                    theme: "monokai"
+                });
+            })
+        </script>
+    @endpush
 @endsection
-
-@push('scripts')
-    <script>
-        $(function() {
-            // Summernote
-            $('.summernote').summernote()
-
-            // CodeMirror
-            CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
-                mode: "htmlmixed",
-                theme: "monokai"
-            });
-        })
-    </script>
-@endpush

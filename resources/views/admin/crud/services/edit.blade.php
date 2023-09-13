@@ -67,7 +67,7 @@
 
                                 <div class="col-form-group">
                                     <label>@lang('general.description')(@lang('general.' . $locale))<span class="text-danger">*</span></label>
-                                    <textarea rows="100" class="summernote @error($locale . '.description') is-invalid @enderror" 
+                                    <textarea rows="100" class="summernote @error($locale . '.description') is-invalid @enderror"
                                         name="{{ $locale . '[description]' }}">
                                     {!! old($locale . '.description', $service->translate($locale)->description) !!} 
                                 </textarea>
@@ -86,35 +86,17 @@
                     <div class="row" style="height: 200px">
 
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="form-group">
-                                    <label class="col-form-label d-block">@lang('general.image')</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" name="image" class="custom-file-input"
-                                                id="exampleInputFile1">
-                                            <label class="custom-file-label"
-                                                for="exampleInputFile1">@lang('general.choose_file')</label>
-                                        </div>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">@lang('general.upload_file')</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @include('admin.components.image', [
+                                'label' => __('words.image'),
+                                'value' => old('image', $service->image),
+                                'name' => 'image',
+                                'id' => 'kt_image_3',
+                                'accept' => 'image/*',
+                                'required' => true,
+                            ])
 
                         </div>
-                        <div class="col-md-6 mt-5">
-                            <div class="form-group py-5">
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <img src="{{ $service->image }}" class="w-50">
-                                    </div>
 
-                                </div>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
                 <div class="card-footer mt-5">

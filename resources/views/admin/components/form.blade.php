@@ -1,7 +1,8 @@
+@extends('admin.layouts.master')
 @section('content')
     {{-- validation messages start --}}
     @if ($errors->any())
-        <div class="alert alert-danger">
+        <div class="content-wrapper alert alert-danger">
             <strong>@lang('general.errors')</strong>
             <ul>
                 @foreach ($errors->all() as $error)
@@ -14,10 +15,8 @@
 
 
     <form action="@yield('form_action')" method="@yield('form_type')" enctype="multipart/form-data" id="form">
-        <div class="card-body">
-            @csrf
-            @yield('form_content')
-        </div>
+        @csrf
+        @yield('fields_content')
     </form>
 
 @endsection
