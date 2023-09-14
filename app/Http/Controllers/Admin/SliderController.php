@@ -98,7 +98,7 @@ class SliderController extends Controller
      * @param  \App\Models\portfolio  $slider
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Slider $slider)
+    public function update(SliderRequest $request, Slider $slider)
     {
         try {
             $data = $request->except('image','profile_avatar_remove');

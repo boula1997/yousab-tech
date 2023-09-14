@@ -50,7 +50,7 @@ trait  MorphFile
 
     public function deleteFile()
     {
-        if (isset($this->file) || file_exists($this->file->url)){
+        if (isset($this->file) && file_exists($this->file->url)){
             try{
                 File::delete($this->image);
                 $this->file()->delete();

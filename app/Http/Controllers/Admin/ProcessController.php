@@ -98,7 +98,7 @@ class ProcessController extends Controller
      * @param  \App\Models\portfolio  $process
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Process $process)
+    public function update(ProcessRequest $request, Process $process)
     {
         try {
             $data = $request->except('image','profile_avatar_remove');

@@ -2,19 +2,19 @@
 
 namespace App\Traits;
 
-use App\Models\File;
+use App\Models\File as ModelsFile;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Support\Facades\File;
 
 trait  MorphFiles
 {
     public function files(): MorphMany
     {
-        return $this->morphMany(File::class, 'fileable');
+        return $this->morphMany(ModelsFile::class, 'fileable');
     }
 
     public function uploadFiles()
     {
-        $this->deleteFiles();
         if (request()->hasFile('images')) {
             $files = request()->file('images');
             foreach ($files as $file) {
@@ -25,23 +25,34 @@ trait  MorphFiles
         }
     }
     public function updateFiles()
-    {
-        $this->deleteFiles();
+    {  
+        $this->deleteSpecificFiles();
         if (request()->hasFile('images')) {
             $files = request()->file('images');
             foreach ($files as $file) {
                 $data['image'] = $file->store('images');
                 $file->move('images', $data['image']);
-                $this->file()->create(['url' => $data['image']]);
+                $this->files()->create(['url' => $data['image']]);
+            }
+           
+        }
+    }   
+
+    public function deleteFiles()
+    {
+        if ($this->files()) {
+            foreach ($this->files() as $file) {
+                File::delete($file->url);
+                $file->delete();
             }
         }
     }
 
-    public function deleteFiles()
+    public function deleteSpecificFiles()
     {
         if (request()->has('delimages')) {
             foreach (request()->delimages as $id) {
-                $image = $this->file()->find($id);
+                $image = ModelsFile::find($id);
                 File::delete($image->url);
                 $image->delete();
             }

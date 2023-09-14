@@ -22,4 +22,5 @@ class Gallery extends Model implements TranslatableContract
     {
         return  $this->files;
     }
+    
 }
