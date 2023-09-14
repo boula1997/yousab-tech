@@ -132,9 +132,9 @@ return [
     "role_mangement" => "Role Mangement",
     "settings" => "Settings",
 
-    'opening_hour' => 'Opening Hour',
+    'opening_hour' => 'Opening Hour 9:00am - 5:00pm',
     'hotline' => 'Hot Line',
-    'follow_us_on' => 'Follow Us On',
+    'follow_us_on' => 'Follow Us On :',
     'home' => 'Home',
     'services' => 'Services',
     'about' => 'About Us',
@@ -149,6 +149,9 @@ return [
     'email_address' => 'Email Address',
     'message' => 'Message',
     'submit' => 'Submit Now',
+    'useful_link' => 'Useful links',
+    'all_rights' => '© 2023. All Rights Reserved',
+
 
 
 

@@ -17,8 +17,8 @@
                         <h2 class="title">{{page('home-banner')->subtitle}}</h2>
                         <p class="content">{!! page('home-banner')->description !!}</p>
                         <div class="btn-wrap">
-                            <a class="btn btn-base me-2" href="blog.html">Get Started</a>
-                            <a class="btn btn-border-white" href="contact.html">Contact Us</a>
+                            <a class="btn btn-base me-2" href="blog.html">{{__('general.get_started')}}</a>
+                            <a class="btn btn-border-white" href="contact.html">{{__('general.contact')}}</a>
                         </div>
                     </div>
                 </div>

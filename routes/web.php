@@ -3,6 +3,12 @@
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -45,9 +51,12 @@ Route::group(
 
         Route::get('/', [HomeController::class, 'index'])->name('front.home');
         Route::get('/blog-page', 'App/Http/Controllers/BlogController@index')->name('front.blog');
-        Route::get('/contact', 'App/Http/Controllers/ContactController@index')->name('front.contact');
-        Route::get('/service', 'App/Http/Controllers/ServiceController@index')->name('front.service');
-        Route::get('/single-service', 'App/Http/Controllers/ServiceController@show')->name('front.show.service');
+        // Route::get('/contact', 'App/Http/Controllers/ContactController@index')->name('front.contact');
+        Route::get('/contact', [ContactController::class,'index'])->name('front.contact');
+        // Route::get('/service', 'App/Http/Controllers/ServiceController@index')->name('front.service');
+        Route::get('/service', [ServiceController::class,'index'])->name('front.service');
+        // Route::get('/single-service', 'App/Http/Controllers/ServiceController@show')->name('front.show.service');
+        Route::get('/single-service', [ServiceController::class,'show'])->name('front.show.service');
         Route::get('/testimonial', 'App/Http/Controllers/TestimonialController@index')->name('front.testimonial');
         Route::get('/single-testimonial', 'App/Http/Controllers/TestimonialController@show')->name('front.show.testimonial');
         Route::get('/process', 'App/Http/Controllers/ProcessController@index')->name('front.process');
@@ -55,8 +64,10 @@ Route::group(
         Route::get('/single-blog', 'App/Http/Controllers/BlogController@show')->name('front.show.blog');
         Route::get('/portfolio', 'App/Http/Controllers/PortfolioController@index')->name('front.portfolio');
         Route::get('/video', 'App/Http/Controllers/VideoController@index')->name('front.video');
-        Route::get('/about', 'App/Http/Controllers/AboutController@index')->name('front.about');
-        Route::post('/contact', 'App/Http/Controllers/ContactController@store')->name('front.contact.post');
+        // Route::get('/about', 'App/Http/Controllers/AboutController@index')->name('front.about');
+        Route::get('/about', [AboutController::class,'index'])->name('front.about');
+        // Route::post('/contact', 'App/Http/Controllers/ContactController@store')->name('front.contact.post');
+        Route::post('/contact', [ContactController::class,'store'])->name('front.contact.post');
 
     }
 );

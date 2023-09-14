@@ -10,16 +10,16 @@
                             <div class="consulting-contact-form mx-4">
                                 <h3 class="mb-3">Free consulting </h3>
                                 <div class="single-input-inner style-bg">
-                                    <input type="text" name="name" placeholder="Full Name">
+                                    <input type="text" name="name" placeholder={{__('general.fullname')}}>
                                 </div>
                                 <div class="single-input-inner style-bg">
-                                    <input type="text" name="email" placeholder="Email Address">
+                                    <input type="text" name="email" placeholder={{__('general.email_address')}}>
                                 </div>
                                 <div class="single-input-inner style-bg">
-                                    <textarea name="message" placeholder="Message"></textarea>
+                                    <textarea name="message" placeholder={{__('general.message')}}></textarea>
                                 </div>
                                 <div class="btn-wrap pb-3">
-                                    <button type="submit" class="btn btn-base">Submit Now </button>
+                                    <button type="submit" class="btn btn-base">{{__('general.submit')}}</button>
                                 </div>
                                 <p class="form-messege mb-0 mt-20 text-center"></p>
                             </div>

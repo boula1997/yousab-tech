@@ -136,9 +136,9 @@ return [
 
 
 
-    'opening_hour' => 'توقيت العمل',
+    'opening_hour' => 'توقيت العمل من 9:00 ص - 5:00 م',
     'hotline' => 'اتصل بنا',
-    'follow_us_on' => 'تواصل معنا عبر',
+    'follow_us_on' => ' : تواصل معنا عبر',
     'home' => 'الرئيسية',
     'services' => 'خدماتنا',
     'about' => 'من نحن',
@@ -147,12 +147,15 @@ return [
     'all_services' => 'خدماتنا',
     'address' => 'العنوان',
     'team' => 'الفريق',
-    'portfolio' => 'صفحة شخصية',
+    'portfolio' => 'صفحة الشخصية',
     'your_email' => 'بريدك الالكترونى',
     'fullname' => 'اسمك باللغة العربية كاملا',
     'email_address' => 'بريدك الالكترونى',
     'message' => 'رسالتك',
     'submit' => 'قدم الان',
+    'useful_link' => 'روابط تساعدك',
+    'all_rights' => 'جميع الحقوق محفوظه © yousab 2023',
+
 
 
 

@@ -5,9 +5,9 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="widget widget_about">
-                        <h4 class="widget-title">About company</h4>
+                        <h4 class="widget-title">{{__('general.about')}}</h4>
                         <div class="details">
-                            <p>Address</p>
+                            <p>{{__('general.address')}}</p>
                             <p>Melbourne’s GPO 434 VIC 3074, Australia.</p>
                             <ul class="social-media">
                                 <li>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="widget widget_nav_menu">
-                        <h4 class="widget-title">Service</h4>
+                        <h4 class="widget-title">{{__('general.services')}}</h4>
                         <ul>
                             <li><a href="service.html">Web design</a></li>
                             <li><a href="service.html">Digital marketing </a></li>
@@ -48,21 +48,21 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="widget widget_nav_menu">
-                        <h4 class="widget-title">Useful link</h4>
+                        <h4 class="widget-title">{{__('general.useful_link')}}</h4>
                         <ul>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="team.html">Team </a></li>
-                            <li><a href="project.html">Portfolio</a></li>
-                            <li><a href="service.html">Service</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="about.html">{{__('general.about')}}</a></li>
+                            <li><a href="team.html">{{__('general.team')}}</a></li>
+                            <li><a href="project.html">{{__('general.portfolio')}}</a></li>
+                            <li><a href="service.html">{{__('general.services')}}</a></li>
+                            <li><a href="contact.html">{{__('general.contact')}}</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="widget widget_subscribe">
-                        <h4 class="widget-title">Contact us</h4>
+                        <h4 class="widget-title">{{__('general.contact')}}</h4>
                         <div class="single-input-inner style-border style-bg-none">
-                            <input type="text" placeholder="Your Email">
+                            <input type="text" placeholder={{__('general.your_email')}}>
                             <button><i class="fa fa-arrow-right"></i></button>
                         </div>
                         <label><input type="checkbox">Maecenas tempususcondime honcus sem quam libero</label>
@@ -74,7 +74,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 align-self-center">
-                        <p>© 2023. All Rights Reserved</p>
+                        <p>{{__('general.all_rights')}}</p>
                     </div>
                 </div>
             </div>
