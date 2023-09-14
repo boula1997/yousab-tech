@@ -1,6 +1,7 @@
-@extends('admin.layouts.master')
-
-@section('content')
+@extends('admin.components.form')
+@section('form_action', route('videos.store'))
+@section('form_type', 'POST')
+@section('fields_cont')
     <div class="content-wrapper">
         {{-- validation messages start --}}
         @if ($errors->any())

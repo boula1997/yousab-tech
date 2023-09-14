@@ -1,20 +1,9 @@
-@extends('admin.layouts.master')
-
-@section('content')
+@extends('admin.components.form')
+@section('form_action', route('portfolios.store'))
+@section('form_type', 'POST')
+@section('fields_content')
+    @method('post')
     <div class="content-wrapper">
-        {{-- validation messages start --}}
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <strong>@lang('general.errors')</strong>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-        {{-- validation messages end --}}
-        <form action="{{ route('portfolios.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
@@ -108,13 +97,12 @@
                 </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-outline-primary px-5
-">@lang('general.save')</button>
-                    <a href="{{ route('portfolios.index') }}"
-                        class="btn btn-outline-danger px-5
-">@lang('general.cancel')</a>
+                        ">@lang('general.save')</button>
+                                        <a href="{{ route('portfolios.index') }}"
+                                            class="btn btn-outline-danger px-5
+                        ">@lang('general.cancel')</a>
                 </div>
             </div>
-        </form>
     </div>
 @endsection
 
