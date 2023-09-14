@@ -35,6 +35,7 @@ class PageController extends Controller
             return view('admin.crud.pages.index', compact('pages'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -58,12 +59,13 @@ class PageController extends Controller
     public function store(PageRequest $request)
     {
         try {
-            $data = $request->except('image');
+            $data = $request->except('image','profile_avatar_remove');
             $page = $this->page->create($data);
             $page->uploadFile();
             return redirect()->route('pages.index')
                 ->with('success', trans('general.created_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -100,12 +102,13 @@ class PageController extends Controller
     public function update(PageRequest $request, Page $page)
     {
         try {
-            $data = $request->except('image');
+            $data = $request->except('image','profile_avatar_remove');
             $page->update($data);
             $page->updateFile();
             return redirect()->route('pages.index', compact('page'))
                 ->with('success', trans('general.update_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -124,6 +127,7 @@ class PageController extends Controller
             return redirect()->route('pages.index')
                 ->with('success', trans('general.deleted_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }

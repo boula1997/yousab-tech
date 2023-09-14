@@ -38,6 +38,7 @@ class AdminController extends Controller
             return view('admin.crud.admins.index', compact('data'))
                 ->with('i', ($request->input('page', 1) - 1) * 5);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -62,7 +63,7 @@ class AdminController extends Controller
     public function store(AdminRequest $request)
     {
         try {
-            $input = $request->except('image');
+            $input = $request->except('image','profile_avatar_remove');
             $input['password'] = Hash::make($input['password']);
             $admin = Admin::create($input);
             $admin->assignRole($request->input('roles'));
@@ -70,6 +71,7 @@ class AdminController extends Controller
             return redirect()->route('admins.index')
                 ->with('success', 'Admin created successfully');
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -112,7 +114,7 @@ class AdminController extends Controller
     public function update(AdminRequest $request, $id)
     {
         try {
-            $input = $request->except('image');
+            $input = $request->except('image','profile_avatar_remove');
             if (!empty($input['password'])) {
                 $input['password'] = Hash::make($input['password']);
             } else {
@@ -126,6 +128,7 @@ class AdminController extends Controller
             return redirect()->route('admins.index')
                 ->with('success', 'Admin updated successfully');
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -146,6 +149,7 @@ class AdminController extends Controller
             return redirect()->route('admins.index')
                 ->with('success', 'Admin deleted successfully');
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }

@@ -2,7 +2,6 @@
 @section('form_action', route('blogs.update', $blog->id))
 @section('form_type', 'POST')
 @section('fields_content')
-    @method('put')
     <div class="content-wrapper">
         @method('PUT')
         @csrf
@@ -24,18 +23,6 @@
             </div>
             <div class="card-body">
                 <div class="tab-content">
-                    {{-- validation messages start --}}
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <strong>@lang('general.errors')</strong>
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    {{-- validation messages end --}}
                     @foreach (config('translatable.locales') as $key => $locale)
                         <div class="tab-pane fade show @if ($key == 0) active @endif"
                             id="{{ $locale }}" role="tabpanel">
@@ -73,10 +60,6 @@
                                     {!! old($locale . '.description', $blog->translate($locale)->description) !!} 
                                 </textarea>
                             </div>
-                            {{-- <div class="form-group">
-                                    <label>@lang('blogs.description') - @lang('general.'.$locale)<span class="text-danger"> * </span></label>
-                                    <textarea name="{{ $locale . '[description]' }}" @error($locale . '.description') is-invalid @enderror class="form-control kt-ckeditor-5">{{ old($locale . '.description') }}</textarea>
-                                </div> --}}
                         </div>
                     @endforeach
                 </div>

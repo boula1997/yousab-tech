@@ -1,10 +1,10 @@
-@extends('admin.layouts.master')
-
-@section('content')
+@extends('admin.components.form')
+@section('form_action', route('pages.update', $page->id))
+@section('form_type', 'POST')
+@section('fields_content')
     <div class="content-wrapper">
-        <form action="{{ route('pages.update',$page) }}" method="post" enctype="multipart/form-data">
-            @method('PUT')
-            @csrf
+        @method('PUT')
+        @csrf
             <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
                     <div class="card-title">
@@ -23,18 +23,7 @@
                 </div>
                 <div class="card-body">
                     <div class="tab-content">
-                        {{-- validation messages start --}}
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <strong>@lang('general.errors')</strong>
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                        {{-- validation messages end --}}
+
                         @foreach (config('translatable.locales') as $key => $locale)
                             <div class="tab-pane fade show @if ($key == 0) active @endif"
                                 id="{{ $locale }}" role="tabpanel">
@@ -101,34 +90,15 @@
                     <div class="row mt-5" style="height: 200px">
 
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="form-group">
-                                    <label class="col-form-label d-block">@lang('general.image')</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" name="image" class="custom-file-input"
-                                                id="exampleInputFile1">
-                                            <label class="custom-file-label"
-                                                for="exampleInputFile1">@lang('general.choose_file')</label>
-                                        </div>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">@lang('general.upload_file')</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-md-6 mt-5">
-                            <div class="form-group py-5">
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <img src="{{  $page->file?$page->image:settings()->logo }}" class="w-50">
-                                    </div>
-
-                                </div>
-                            </div>
-
+                            @include('admin.components.image', [
+                                'label' => __('words.image'),
+                                'value' => old('image', $page->image),
+                                'name' => 'image',
+                                'id' => 'kt_image_3',
+                                'accept' => 'image/*',
+                                'required' => true,
+                            ])
+    
                         </div>
                     </div>
                 </div>

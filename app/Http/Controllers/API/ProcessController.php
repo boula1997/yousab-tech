@@ -22,6 +22,7 @@ class ProcessController extends Controller
             $data['processes'] = ProcessResource::collection($this->process->get());
             return successResponse($data);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return failedResponse($e->getMessage());
         }
     }
@@ -32,6 +33,7 @@ class ProcessController extends Controller
             $data['process'] = new ProcessResource($this->process->findorfail($id));
             return successResponse($data);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return failedResponse($e->getMessage());
         }
     }

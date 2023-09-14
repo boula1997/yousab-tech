@@ -34,6 +34,7 @@ class ProcessController extends Controller
             return view('admin.crud.processes.index', compact('processes'))
                 ->with('i', (request()->input('process', 1) - 1) * 5);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -57,12 +58,13 @@ class ProcessController extends Controller
     public function store(ProcessRequest $request)
     {
         try {
-            $data = $request->except('image');
+            $data = $request->except('image','profile_avatar_remove');
             $process = $this->process->create($data);
             $process->uploadFile();
             return redirect()->route('processes.index')
                 ->with('success', trans('general.created_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -99,12 +101,13 @@ class ProcessController extends Controller
     public function update(Request $request, Process $process)
     {
         try {
-            $data = $request->except('image');
+            $data = $request->except('image','profile_avatar_remove');
             $process->update($data);
             $process->updateFile();
             return redirect()->route('processes.index', compact('process'))
                 ->with('success', trans('general.update_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -123,6 +126,7 @@ class ProcessController extends Controller
             return redirect()->route('processes.index')
                 ->with('success', trans('general.deleted_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }

@@ -22,6 +22,7 @@ class BlogController extends Controller
             $data['blogs'] = BlogResource::collection($this->blog->get());
             return successResponse($data,trans('general.sent_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return failedResponse($e->getMessage());
         }
     }
@@ -32,6 +33,7 @@ class BlogController extends Controller
             $data['blog'] = new BlogResource($this->blog->findorfail($id));
             return successResponse($data);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return failedResponse($e->getMessage());
         }
     }

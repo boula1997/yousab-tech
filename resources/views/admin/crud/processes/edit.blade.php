@@ -1,10 +1,10 @@
-@extends('admin.layouts.master')
-
-@section('content')
+@extends('admin.components.form')
+@section('form_action', route('processes.update', $process->id))
+@section('form_type', 'POST')
+@section('fields_content')
     <div class="content-wrapper">
-        <form action="{{ route('processes.update', $process) }}" method="post" enctype="multipart/form-data">
-            @method('PUT')
-            @csrf
+        @method('PUT')
+        @csrf
             <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
                     <div class="card-title">
@@ -23,18 +23,6 @@
                 </div>
                 <div class="card-body">
                     <div class="tab-content">
-                        {{-- validation messages start --}}
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <strong>@lang('general.errors')</strong>
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                        {{-- validation messages end --}}
                         @foreach (config('translatable.locales') as $key => $locale)
                             <div class="tab-pane fade show @if ($key == 0) active @endif"
                                 id="{{ $locale }}" role="tabpanel">
@@ -72,10 +60,6 @@
                                     {!! old($locale . '.description', $process->translate($locale)->description) !!} 
                                 </textarea>
                                 </div>
-                                {{-- <div class="form-group">
-                                    <label>@lang('processes.description') - @lang('general.'.$locale)<span class="text-danger"> * </span></label>
-                                    <textarea name="{{ $locale . '[description]' }}" @error($locale . '.description') is-invalid @enderror class="form-control kt-ckeditor-5">{{ old($locale . '.description') }}</textarea>
-                                </div> --}}
                             </div>
                         @endforeach
                     </div>
@@ -86,34 +70,15 @@
                     <div class="row" style="height: 200px">
 
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="form-group">
-                                    <label class="col-form-label d-block">@lang('general.image')</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" name="image" class="custom-file-input"
-                                                id="exampleInputFile1">
-                                            <label class="custom-file-label"
-                                                for="exampleInputFile1">@lang('general.choose_file')</label>
-                                        </div>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">@lang('general.upload_file')</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-md-6 mt-5">
-                            <div class="form-group py-5">
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <img src="{{ $process->image }}" class="w-50">
-                                    </div>
-
-                                </div>
-                            </div>
-
+                            @include('admin.components.image', [
+                                'label' => __('words.image'),
+                                'value' => old('image', $process->image),
+                                'name' => 'image',
+                                'id' => 'kt_image_3',
+                                'accept' => 'image/*',
+                                'required' => true,
+                            ])
+    
                         </div>
                     </div>
                 </div>
@@ -122,7 +87,6 @@
                     <a href="{{ route('processes.index') }}" class="btn btn-danger font-weight-bold">@lang('general.cancel')</a>
                 </div>
             </div>
-        </form>
     </div>
 @endsection
 

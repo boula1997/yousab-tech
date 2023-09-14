@@ -2,7 +2,6 @@
 @section('form_action', route('testimonials.update', $testimonial->id))
 @section('form_type', 'POST')
 @section('fields_content')
-    @method('put')
     <div class="content-wrapper">
         @method('PUT')
         @csrf

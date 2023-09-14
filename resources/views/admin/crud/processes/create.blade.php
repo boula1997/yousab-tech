@@ -72,21 +72,14 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <div class="form-group">
-                                <label class="col-form-label d-block">@lang('general.image')</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" name="image" class="custom-file-input"
-                                            id="exampleInputFile1">
-                                        <label class="custom-file-label" for="exampleInputFile1">@lang('general.choose_file')</label>
-                                    </div>
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">@lang('general.upload_file')</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @include('admin.components.image', [
+                            'label' => __('words.image'),
+                            'value' => old('image'),
+                            'name' => 'image',
+                            'id' => 'kt_image_3',
+                            'accept' => 'image/*',
+                            'required' => true,
+                        ])
 
                     </div>
 

@@ -2,6 +2,7 @@
 @section('content')
     {{-- validation messages start --}}
     @if ($errors->any())
+    
         <div class="content-wrapper alert alert-danger">
             <strong>@lang('general.errors')</strong>
             <ul>

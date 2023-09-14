@@ -30,6 +30,7 @@ class ContactController extends Controller
             return view('admin.crud.contacts.index', compact('data'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -60,6 +61,7 @@ class ContactController extends Controller
             return redirect()->route('contacts.index')
                 ->with('success', trans('general.deleted_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }

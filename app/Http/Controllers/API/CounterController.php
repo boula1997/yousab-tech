@@ -22,6 +22,7 @@ class CounterController extends Controller
             $data['counters'] = CounterResource::collection($this->counter->get());
             return successResponse($data);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return failedResponse($e->getMessage());
         }
     }
@@ -32,6 +33,7 @@ class CounterController extends Controller
             $data['counter'] = new CounterResource($this->counter->findorfail($id));
             return successResponse($data);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return failedResponse($e->getMessage());
         }
     }

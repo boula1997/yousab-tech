@@ -38,6 +38,7 @@ class UserController extends Controller
             return view('admin.crud.users.index', compact('data'))
                 ->with('i', ($request->input('page', 1) - 1) * 5);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -69,6 +70,7 @@ class UserController extends Controller
             return redirect()->route('users.index')
                 ->with('success', 'User created successfully');
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -108,7 +110,7 @@ class UserController extends Controller
     public function update(UserRequest $request, $id)
     {
         try {
-            $input = $request->except('image');
+            $input = $request->except('image','profile_avatar_remove');
             if (!empty($input['password'])) {
                 $input['password'] = Hash::make($input['password']);
             } else {
@@ -120,6 +122,7 @@ class UserController extends Controller
             return redirect()->route('users.index')
                 ->with('success', 'User updated successfully');
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -139,6 +142,7 @@ class UserController extends Controller
             return redirect()->route('users.index')
                 ->with('success', 'User deleted successfully');
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }

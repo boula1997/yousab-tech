@@ -46,9 +46,9 @@
                                         @foreach ($data as $admin)
                                             <tr class="p-0 m-0">
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img width="100" height="100" src="{{ $admin->file?$admin->image:'' }}"
+                                                <td><img width="100" height="100" src="{{ $admin->image }}"
                                                         alt="{{ $admin->name }}"></td>
-                                                <td>{{ $admin->name }}</td>
+                                                <td>{{ $admin->name }}</td> 
                                                 <td>{{ $admin->email }}</td>
                                                 <td>
                                                     @if(!empty($admin->getRoleNames()))

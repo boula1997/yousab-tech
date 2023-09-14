@@ -34,6 +34,7 @@ class ServiceController extends Controller
             return view('admin.crud.services.index', compact('services'))
                 ->with('i', (request()->input('service', 1) - 1) * 5);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -57,12 +58,13 @@ class ServiceController extends Controller
     public function store(ServiceRequest $request)
     {
         try {
-            $data = $request->except('image');
+            $data = $request->except('image','profile_avatar_remove');
             $service = $this->service->create($data);
             $service->uploadFile();
             return redirect()->route('services.index')
                 ->with('success', trans('general.created_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -99,12 +101,13 @@ class ServiceController extends Controller
     public function update(Request $request, Service $service)
     {
         try {
-            $data = $request->except('image');
+            $data = $request->except('image','profile_avatar_remove');
             $service->update($data);
             $service->updateFile();
             return redirect()->route('services.index', compact('service'))
                 ->with('success', trans('general.update_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -123,6 +126,7 @@ class ServiceController extends Controller
             return redirect()->route('services.index')
                 ->with('success', trans('general.deleted_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }

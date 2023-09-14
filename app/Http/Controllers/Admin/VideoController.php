@@ -31,6 +31,7 @@ class VideoController extends Controller
             return view('admin.crud.videos.index', compact('videos'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -58,6 +59,7 @@ class VideoController extends Controller
             return redirect()->route('videos.index')
                 ->with('success', trans('general.created_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -94,11 +96,12 @@ class VideoController extends Controller
     public function update(Request $request, Video $video)
     {
         try {
-            $data = $request->except('image');
+            $data = $request->except('image','profile_avatar_remove');
             $video->update($data);
             return redirect()->route('videos.index', compact('video'))
                 ->with('success', trans('general.update_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -115,6 +118,7 @@ class VideoController extends Controller
             return redirect()->route('videos.index')
                 ->with('success', trans('general.deleted_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }

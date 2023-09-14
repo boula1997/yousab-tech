@@ -17,9 +17,4 @@ class File extends Model
     {
         return $this->morphTo();
     }
-
-    public function getUrlAttribute($val)
-    {
-        return $val? asset($val):asset(settings()->logo);
-    }
 }

@@ -17,6 +17,7 @@ class ContactController extends Controller
             $data = Contact::create($request->all());
             return successResponse($data);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return failedResponse($e->getMessage());
         }
     }

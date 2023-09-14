@@ -34,6 +34,7 @@ class BlogController extends Controller
             return view('admin.crud.blogs.index', compact('blogs'))
                 ->with('i', (request()->input('blog', 1) - 1) * 5);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -58,12 +59,13 @@ class BlogController extends Controller
     {
 
         try {
-            $data = $request->except('image');
+            $data = $request->except('image','profile_avatar_remove');
             $blog = $this->blog->create($data);
             $blog->uploadFile();
             return redirect()->route('blogs.index')
                 ->with('success', trans('general.created_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -100,12 +102,13 @@ class BlogController extends Controller
     public function update(BlogRequest $request, Blog $blog)
     {
         try {
-            $data = $request->except('image');
+            $data = $request->except('image','profile_avatar_remove');
             $blog->update($data);
             $blog->updateFile();
             return redirect()->route('blogs.index', compact('blog'))
                 ->with('success', trans('general.update_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -125,6 +128,7 @@ class BlogController extends Controller
             return redirect()->route('blogs.index')
                 ->with('success', trans('general.deleted_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }

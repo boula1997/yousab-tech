@@ -36,6 +36,7 @@ class PortfolioController extends Controller
             return view('admin.crud.portfolios.index', compact('portfolios'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -65,6 +66,7 @@ class PortfolioController extends Controller
             return redirect()->route('portfolios.index')
                 ->with('success', trans('general.created_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -107,6 +109,7 @@ class PortfolioController extends Controller
             return redirect()->route('portfolios.index', compact('portfolio'))
                 ->with('success', trans('general.update_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -124,6 +127,7 @@ class PortfolioController extends Controller
             return redirect()->route('portfolios.index')
                 ->with('success', trans('general.deleted_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }

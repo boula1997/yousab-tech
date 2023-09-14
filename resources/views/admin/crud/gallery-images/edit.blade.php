@@ -1,8 +1,10 @@
-@extends('admin.layouts.master')
-
-@section('content')
-    <!-- Content Wrapper. Contains page content -->
+@extends('admin.components.form')
+@section('form_action', route('galleries.update', $gallery->id))
+@section('form_type', 'POST')
+@section('fields_content')
     <div class="content-wrapper">
+        @method('PUT')
+        @csrf
         <!-- Main content -->
         <section class="content pt-2">
             <div class="container-fluid">

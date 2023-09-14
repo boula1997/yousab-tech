@@ -1,8 +1,10 @@
-@extends('admin.layouts.master')
-
-@section('content')
-    <!-- Content Wrapper. Contains page content -->
+@extends('admin.components.form')
+@section('form_action', route('blogs.update', $blog->id))
+@section('form_type', 'POST')
+@section('fields_content')
     <div class="content-wrapper">
+        @method('PUT')
+        @csrf
     @section('title', settings()->website_title . '|' . 'Create Blog')
 
     @section('breadcrumb')
@@ -39,47 +41,45 @@
                         <!-- /.card-header -->
 
 
-                        @section('form_content')
-                            @method('put')
-                            <!-- form start -->
+                        <!-- form start -->
 
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Name</label>
-                                <input type="text" name="title" value="{{ old('title'), $blog->title }}"
-                                    class="form-control" id="exampleInputName" placeholder="Enter Name">
-                            </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" name="title" value="{{ old('title'), $blog->title }}"
+                                class="form-control" id="exampleInputName" placeholder="Enter Name">
+                        </div>
 
-                            <div class="form-group">
-                                <label for="exampleInputDescription">Description</label>
-                                <textarea  name="description">
+                        <div class="form-group">
+                            <label for="exampleInputDescription">Description</label>
+                            <textarea name="description">
                                     {{ old('description'), $blog->description }}
                                </textarea>
-                            </div>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="exampleInputFile1">File input</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" name="image" class="custom-file-input"
-                                            id="exampleInputFile1">
-                                        <label class="custom-file-label" for="exampleInputFile1">@lang('general.choose_file')</label>
-                                    </div>
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">@lang('general.upload_file')</span>
-                                    </div>
+                        <div class="form-group">
+                            <label for="exampleInputFile1">File input</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" name="image" class="custom-file-input"
+                                        id="exampleInputFile1">
+                                    <label class="custom-file-label" for="exampleInputFile1">@lang('general.choose_file')</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">@lang('general.upload_file')</span>
                                 </div>
                             </div>
-                            {{-- <div class="form-check">
+                        </div>
+                        {{-- <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Check me out</label>
                              </div> --}}
 
 
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-outline-primary px-5
-">@lang('general.save')</button>
-                            </div>
-                        @endsection
+                        <div class="card-footer">
+                            <button type="submit"
+                                class="btn btn-outline-primary px-5
+                                                ">@lang('general.save')</button>
+                        </div>
 
                     </div>
                     <!-- /.card -->

@@ -36,7 +36,7 @@
                             <!-- /.card-header -->
 
                             <!-- form start -->
-                            @csrf
+                        
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">@lang('general.name')</label>
@@ -67,8 +67,6 @@
                                         @endforeach
                                     </select>
                                 </div>
-
-
                                 <div class="form-group">
                                     @include('admin.components.image', [
                                         'label' => __('words.image'),
@@ -78,7 +76,7 @@
                                         'accept' => 'image/*',
                                         'required' => true,
                                     ])
-            
+
                                 </div>
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-outline-primary px-5">@lang('general.save')</button>
@@ -96,6 +94,7 @@
                     </div>
                     <!-- /.row -->
                 </div><!-- /.container-fluid -->
+            </div>
         </section>
         <!-- /.content -->
     </div>

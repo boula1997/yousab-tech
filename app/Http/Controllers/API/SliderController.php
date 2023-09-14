@@ -22,6 +22,7 @@ class SliderController extends Controller
             $data['sliders'] = SliderResource::collection($this->slider->get());
             return successResponse($data);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return failedResponse($e->getMessage());
         }
     }
@@ -32,6 +33,7 @@ class SliderController extends Controller
             $data['slider'] = new SliderResource($this->slider->findorfail($id));
             return successResponse($data);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return failedResponse($e->getMessage());
         }
     }

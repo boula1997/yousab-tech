@@ -2,7 +2,6 @@
 @section('form_action', route('counters.update', $counter->id))
 @section('form_type', 'POST')
 @section('fields_content')
-    @method('put')
     <div class="content-wrapper">
         @method('PUT')
         @csrf

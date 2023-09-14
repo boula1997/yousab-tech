@@ -34,6 +34,7 @@ class TestimonialController extends Controller
             return view('admin.crud.testimonials.index', compact('testimonials'))
                 ->with('i', (request()->input('testimonial', 1) - 1) * 5);
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -57,12 +58,13 @@ class TestimonialController extends Controller
     public function store(TestimonialRequest $request)
     {
         try {
-            $data = $request->except('image');
+            $data = $request->except('image','profile_avatar_remove');
             $testimonial = $this->testimonial->create($data);
             $testimonial->uploadFile();
             return redirect()->route('testimonials.index')
                 ->with('success', trans('general.created_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -99,13 +101,14 @@ class TestimonialController extends Controller
     public function update(Request $request, Testimonial $testimonial)
     {
         try {
-            $data = $request->except('image');
+            $data = $request->except('image','profile_avatar_remove');
             $testimonial->update($data);
             $testimonial->updateFile();
 
             return redirect()->route('testimonials.index', compact('testimonial'))
                 ->with('success', trans('general.update_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -123,6 +126,7 @@ class TestimonialController extends Controller
             return redirect()->route('testimonials.index')
                 ->with('success', trans('general.deleted_successfully'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }

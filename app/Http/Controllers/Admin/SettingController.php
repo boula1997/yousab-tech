@@ -48,6 +48,7 @@ class SettingController extends Controller
                     ->with('success', trans('general.update_successfully'));
             }
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
@@ -58,6 +59,7 @@ class SettingController extends Controller
             $setting = $this->setting->first();
             return view('admin.crud.setting.setting', compact('setting'));
         } catch (Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }

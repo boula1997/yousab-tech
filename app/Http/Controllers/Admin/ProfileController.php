@@ -24,7 +24,7 @@ class ProfileController extends Controller
 
     public function update(ProfileRequest $request)
     {
-        $input = $request->except('image');
+        $input = $request->except('image','profile_avatar_remove');
         if (!empty($input['password'])) {
             $input['password'] = Hash::make($input['password']);
         } else {
