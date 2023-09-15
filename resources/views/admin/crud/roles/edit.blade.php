@@ -2,6 +2,7 @@
 @section('form_action', route('roles.update', $role->id))
 @section('form_type', 'POST')
 @section('fields_content')
+@method('put')
     <!-- Content Wrapper. Contains blog content -->
     <div class="content-wrapper">
         <!-- Content Header (blog header) -->
