@@ -32,7 +32,7 @@
                                         <p style="text-align: end">{{ $message }} </p>
                                     </div>
                                 @endif
-                                <table id="example1" class="table table-bordered table-hover">
+                                <table id="example1" class="table  table-hover">
                                     <thead class="h-2">
                                         <tr class="p-0 m-0">
                                             <th>#</th>

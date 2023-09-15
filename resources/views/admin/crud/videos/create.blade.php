@@ -2,28 +2,15 @@
 @section('form_action', route('videos.store'))
 @section('form_type', 'POST')
 @section('fields_cont')
-    <div class="content-wrapper">
-        {{-- validation messages start --}}
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <strong>@lang('general.errors')</strong>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-        {{-- validation messages end --}}
-        <form action="{{ route('videos.store') }}" method="post" enctype="multipart/form-data">
-            @csrf
+    <div class="content-wrapper p-5">
+        <div class="container">
             <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
                     <div class="card-title">
                         <h3 class="card-label">@lang('general.add_new')</h3>
                     </div>
                 </div>
-                <div class="card-toolbar">
+                <div class="card-toolbar px-3">
                     <ul class="nav nav-tabs nav-bold nav-tabs-line">
                         @foreach (config('translatable.locales') as $key => $locale)
                             <li class="nav-item">
@@ -74,14 +61,15 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-outline-primary px-5
-">@lang('general.save')</button>
+                    <button type="submit"
+                        class="btn btn-outline-primary px-5
+                            ">@lang('general.save')</button>
                     <a href="{{ route('videos.index') }}"
                         class="btn btn-outline-danger px-5
-">@lang('general.cancel')</a>
+                            ">@lang('general.cancel')</a>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 @endsection
 
