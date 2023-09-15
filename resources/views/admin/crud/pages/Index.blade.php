@@ -50,7 +50,7 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td><img width="100" height="100"
-                                                            src="{{ $page->file ? $page->image : settings()->logo }}"
+                                                            src="{{ $page->file ? $page->image}}"
                                                             alt="{{ $page->title }}"></td>
                                                     <td>{{ $page->title }}</td>
                                                     <td>

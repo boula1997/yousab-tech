@@ -17,9 +17,10 @@
                                         <h3 class="card-title">@lang('general.admins')</h3>
                                     </div>
                                     <div class="col-md-6 d-flex d-flex justify-content-end">
-                                        <a href="{{route('admins.create')}}">
-                                            
-                                            <button class="btn btn-outline-primary px-5"><i class="fa fa-plus fa-sm px-2" aria-hidden="true"></i> @lang('general.add')</button>
+                                        <a href="{{ route('admins.create') }}">
+
+                                            <button class="btn btn-outline-primary px-5"><i class="fa fa-plus fa-sm px-2"
+                                                    aria-hidden="true"></i> @lang('general.add')</button>
                                         </a>
                                     </div>
                                 </div>
@@ -48,15 +49,15 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td><img width="100" height="100" src="{{ $admin->image }}"
                                                         alt="{{ $admin->name }}"></td>
-                                                <td>{{ $admin->name }}</td> 
+                                                <td>{{ $admin->name }}</td>
                                                 <td>{{ $admin->email }}</td>
                                                 <td>
-                                                    @if(!empty($admin->getRoleNames()))
-                                                      @foreach($admin->getRoleNames() as $v)
-                                                         <label class="badge badge-success">{{ $v }}</label>
-                                                      @endforeach
+                                                    @if (!empty($admin->getRoleNames()))
+                                                        @foreach ($admin->getRoleNames() as $v)
+                                                            <label class="badge badge-success">{{ $v }}</label>
+                                                        @endforeach
                                                     @endif
-                                                  </td>
+                                                </td>
                                                 <td>
                                                     <form action="{{ route('admins.destroy', $admin->id) }}" method="POST">
                                                         <a href="{{ route('admins.show', $admin->id) }}" title="show">
