@@ -1,15 +1,17 @@
 @extends('admin.layouts.master')
 @section('content')
     {{-- validation messages start --}}
-    @if ($errors->any()) 
+    @if ($errors->any())
         <div class="content-wrapper p-3">
             <div class="container alert alert-danger p-2">
-                <strong>@lang('general.errors')</strong>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+                <div class="row">
+                    <strong>@lang('general.errors')</strong>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
         </div>
     @endif

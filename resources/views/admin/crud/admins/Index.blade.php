@@ -27,11 +27,7 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                @if ($message = Session::get('success'))
-                                    <div class="alert alert-success">
-                                        <p style="text-align: end">{{ $message }} </p>
-                                    </div>
-                                @endif
+                              @include('admin.components.alert-success')
                                 <table id="example1" class="table  table-hover">
                                     <thead class="h-2">
                                         <tr class="p-0 m-0">

@@ -8,11 +8,7 @@
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                    @include('admin.components.alert-success')
 
                     <form method="POST" action="{{ route('password.email') }}">
                         @csrf
