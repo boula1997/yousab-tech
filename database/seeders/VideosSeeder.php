@@ -13,17 +13,28 @@ class VideosSeeder extends Seeder
      */
     public function run(): void
     {
-        $youtube_link = ["www.youtube.com","www.google.com"];
+
+
+        $title_ar = ["رفع المواقع","انشاء المواقع"];
+        $title_en = ["Upload websites","Create websites"];
+        // $youtube_link = ["www.youtube.com","www.google.com"];
     
       
-       
 
-        for ($i = 0; $i < 2; $i++) {
-            $Video_Translation = Video::create([
-              
-                    'youtube_link' => $youtube_link[$i],
-               
+        for ($i = 0; $i < count($title_ar); $i++) {
+            $Video = Video::create([
+                'ar' => [
+                   
+                    'title' => $title_ar[$i],
+                    // 'youtube_link' => $youtube_link[$i],
+                   
+                ],
+                'en' => [
+                    'title' => $title_en[$i],
+                    // 'youtube_link' => $youtube_link[$i],
+                ],
             ]);
+          
           }
     }
 }

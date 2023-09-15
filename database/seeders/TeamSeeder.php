@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\SliderTranslation;
+use App\Models\Team;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class Sliders_translationsSeeder extends Seeder
+class TeamSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,26 +19,20 @@ class Sliders_translationsSeeder extends Seeder
         $subtitle_en = [null,null];
         $description_ar = ["نقوم برفع المواقع مجانا","نقوم بانشاء المواقع"];
         $description_en = ["ًWe upload websites for free","We create websites"];
-        $slider_id = ["11","11"];
-        $locale_ar = ["ar","ar"];
-        $locale_en = ["en","en"];
+      
        
 
         for ($i = 0; $i < count($title_ar); $i++) {
-            $Slider_Translation = SliderTranslation::create([
+            $Team = Team::create([
                 'ar' => [
                     'title' => $title_ar[$i],
                     'description' => $description_ar[$i],
-                    'subtitle' => $subtitle_ar[$i],
-                    'locale'=>$locale_ar[$i],
-                    'slider_id'=>$slider_id[$i],
+                    'subtitle' => $subtitle_ar[$i],  
                 ],
                 'en' => [
                     'title' => $title_en[$i],
                     'description' => $description_en[$i],
                     'subtitle' => $subtitle_en[$i],
-                    'locale'=>$locale_en[$i],
-                    'slider_id'=>$slider_id[$i],
                 ],
             ]);
           }
