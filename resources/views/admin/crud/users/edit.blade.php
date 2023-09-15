@@ -4,7 +4,7 @@
 @section('fields_content')
     <div class="content-wrapper">
         @method('PUT')
-        @csrf
+    
         <!-- Content Header (blog header) -->
         <section class="content-header">
             <div class="container-fluid">

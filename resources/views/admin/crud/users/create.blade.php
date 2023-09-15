@@ -35,7 +35,6 @@
                             <!-- /.card-header -->
 
                             <!-- form start -->
-                            @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">@lang('general.name')</label>

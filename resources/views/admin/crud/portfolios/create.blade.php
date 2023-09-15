@@ -4,7 +4,7 @@
 @section('fields_content')
     @method('post')
     <div class="content-wrapper">
-            @csrf
+        
             <div class="container p-5">
 
                 <div class="card card-custom mb-2">

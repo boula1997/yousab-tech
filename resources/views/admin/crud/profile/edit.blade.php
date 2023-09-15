@@ -1,10 +1,9 @@
 @extends('admin.components.form')
-@section('form_action', route('update.profile', $admin->id))
+@section('form_action', route('admins.update', $admin->id))
 @section('form_type', 'POST')
 @section('fields_content')
     <div class="content-wrapper">
         @method('PUT')
-        @csrf
         <div class="container p-5">
 
             <!-- Content Header (blog header) -->

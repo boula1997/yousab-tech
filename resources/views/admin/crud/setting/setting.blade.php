@@ -4,7 +4,6 @@
 @section('fields_content')
     <div class="content-wrapper">
         @method('PUT')
-        @csrf
         <div class="container p-5">
             <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
