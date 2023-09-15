@@ -1,7 +1,7 @@
 @extends('admin.components.form')
 @section('form_action', route('services.store'))
 @section('form_type', 'POST')
-@section('fields_cont')
+@section('fields_contents')
 
 @section('content')
     <div class="content-wrapper">
