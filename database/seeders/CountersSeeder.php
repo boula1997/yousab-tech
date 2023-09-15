@@ -15,7 +15,7 @@ class CountersSeeder extends Seeder
     {
         $title_ar = ["مشاريع قيد التنفيذ","مشاريع تحت الانشاء"];
         $title_en = ["build projects","new project"];
-       
+        $count=['999','800'];
       
 
         for ($i = 0; $i < count($title_ar); $i++) {
@@ -27,6 +27,7 @@ class CountersSeeder extends Seeder
                 'en' => [
                     'title' => $title_en[$i],
                 ],
+               'count'=>$count[$i]
             ]);
         }
     }

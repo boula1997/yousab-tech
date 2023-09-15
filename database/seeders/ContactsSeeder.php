@@ -17,7 +17,7 @@ class ContactsSeeder extends Seeder
         $name = ["Ibrahim Samy","Kero Boula","ابراهيم سامى"];
         $email = ["ibrahimsamy308@gmail.com","Kero@gmail.com","ibrahim@gmail.com"];
         $Phone = ["01289189890","0124578960","450015885"];
-        $message_ar = ["ًكيفيه عمل موقع بتكلفه اقل","كيفيه استخدام الموقع","ًWe upload websites for free"];
+        $message = ["ًكيفيه عمل موقع بتكلفه اقل","كيفيه استخدام الموقع","ًWe upload websites for free"];
       
       
 
@@ -27,7 +27,7 @@ class ContactsSeeder extends Seeder
                     'name' => $name[$i],
                     'email' => $email[$i],
                     'phone' => $Phone[$i],
-                    'message'=>$message_ar[$i],
+                    'message'=>$message[$i],
                     
                 
             ]);

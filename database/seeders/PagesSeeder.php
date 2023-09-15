@@ -19,6 +19,7 @@ class PagesSeeder extends Seeder
         $subtitle_en = [null,null];
         $description_ar = ["نقوم برفع المواقع مجانا","نقوم بانشاء المواقع"];
         $description_en = ["ًWe upload websites for free","We create websites"];
+        $identifier=["",""];
       
        
 
@@ -36,6 +37,7 @@ class PagesSeeder extends Seeder
                     'subtitle' => $subtitle_en[$i],
                    
                 ],
+                'identifier'=>$identifier[$i]
             ]);
      }
     }
