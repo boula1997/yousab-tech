@@ -3,7 +3,7 @@
 @section('form_type', 'POST')
 @section('fields_content')
     @method('post')
-
+       <div class="content-wrapper">
         <div class="container p-5">
             <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
