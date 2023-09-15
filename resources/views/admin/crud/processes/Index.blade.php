@@ -21,7 +21,7 @@
                                         <a href="{{route('processes.create')}}">
 
                                             <button class="btn btn-outline-primary px-5
-"><i class="fa fa-plus fa-sm px-2" aria-hidden="true"></i> @lang('general.add')</button>
+                                                "><i class="fa fa-plus fa-sm px-2" aria-hidden="true"></i> @lang('general.add')</button>
                                         </a>
                                     </div>
                                 </div>

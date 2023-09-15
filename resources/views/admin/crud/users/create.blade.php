@@ -1,7 +1,7 @@
 @extends('admin.components.form')
 @section('form_action', route('users.store'))
 @section('form_type', 'POST')
-@section('fields_cont')
+@section('fields_content')
     <!-- Content Wrapper. Contains blog content -->
     <div class="content-wrapper">
         <!-- Content Header (blog header) -->
@@ -9,11 +9,11 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Create New User</h1>
+                        <h1>@lang('general.create')</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{ route('users.index') }}">Users</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('users.index') }}">@lang('general.users')</a></li>
                             <li class="breadcrumb-item active">@lang('general.create')</li>
                         </ol>
                     </div>
@@ -33,61 +33,60 @@
                                 <h3 class="card-title"> @lang('general.create') @lang('general.user')</h3>
                             </div>
                             <!-- /.card-header -->
-         
+
                             <!-- form start -->
-                            <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">@lang('general.name')</label>
-                                        <input type="text" name="name" value="{{ old('name') }}"
-                                            class="form-control" id="exampleInputName" placeholder="@lang('general.name')">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">@lang('general.email')</label>
-                                        <input type="email" name="email" value="{{ old('email') }}"
-                                            class="form-control" id="exampleInputEmail" placeholder="@lang('general.email')">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">@lang('general.password')</label>
-                                        <input type="password" name="password" value="{{ old('password') }}"
-                                            class="form-control" id="exampleInputPassword" placeholder="@lang('general.password')">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">@lang('general.confirm_password')</label>
-                                        <input type="password" name="confirm-password" value="{{ old('confirm-password') }}"
-                                            class="form-control" id="exampleInputConfirmpassword"
-                                            placeholder="@lang('general.confirm_password')">
-                                    </div>
+                            @csrf
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">@lang('general.name')</label>
+                                    <input type="text" name="name" value="{{ old('name') }}" class="form-control"
+                                        id="exampleInputName" placeholder="@lang('general.name')">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">@lang('general.email')</label>
+                                    <input type="email" name="email" value="{{ old('email') }}" class="form-control"
+                                        id="exampleInputEmail" placeholder="@lang('general.email')">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">@lang('general.password')</label>
+                                    <input type="password" name="password" value="{{ old('password') }}"
+                                        class="form-control" id="exampleInputPassword" placeholder="@lang('general.password')">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">@lang('general.confirm_password')</label>
+                                    <input type="password" name="confirm-password" value="{{ old('confirm-password') }}"
+                                        class="form-control" id="exampleInputConfirmpassword"
+                                        placeholder="@lang('general.confirm_password')">
+                                </div>
 
 
-                                    <div class="form-group">
-                                        @include('admin.components.image', [
-                                            'label' => __('general.image'),
-                                            'value' => old('image'),
-                                            'name' => 'image',
-                                            'id' => 'kt_image_3',
-                                            'accept' => 'image/*',
-                                            'required' => true,
-                                        ])
-                
-                                    </div>
-                                    <div class="card-footer text-center">
-                                        <button type="submit" class="btn btn-outline-primary px-5">@lang('general.save')</button>
-                                        <a href="{{ route('users.index') }}" class="btn btn-outline-danger px-5
+                                <div class="form-group">
+                                    @include('admin.components.image', [
+                                        'label' => __('general.image'),
+                                        'value' => old('image'),
+                                        'name' => 'image',
+                                        'id' => 'kt_image_3',
+                                        'accept' => 'image/*',
+                                        'required' => true,
+                                    ])
+
+                                </div>
+                                <div class="card-footer text-center">
+                                    <button type="submit" class="btn btn-outline-primary px-5">@lang('general.save')</button>
+                                    <a href="{{ route('users.index') }}"
+                                        class="btn btn-outline-danger px-5
                                         ">@lang('general.cancel')</a>
-                                    </div>
-                            </form>
-                        </div>
-                        <!-- /.card -->
+                                </div>
+                            </div>
+                            <!-- /.card -->
 
+
+                        </div>
+                        <!--/.col (left) -->
 
                     </div>
-                    <!--/.col (left) -->
-
-                </div>
-                <!-- /.row -->
-            </div><!-- /.container-fluid -->
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
         </section>
         <!-- /.content -->
     </div>

@@ -1,56 +1,93 @@
-@extends('admin.layouts.master')
+@extends('admin.components.form')
+@section('form_action', route('roles.store'))
+@section('form_type', 'POST')
+@section('fields_content')
+    <!-- Content Wrapper. Contains blog content -->
+    <div class="content-wrapper">
+        <!-- Content Header (blog header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>@lang('general.create')</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="{{ route('roles.index') }}">@lang('general.roles')</a></li>
+                            <li class="breadcrumb-item active">@lang('general.create')</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
 
-@section('content')
-    <div class="content-wrapper px-3">
-        <div class="row">
-            <div class="col-lg-12 margin-tb">
-                <div class="pull-left">
-                    <h2>Create New Role</h2>
-                </div>
-                <div class="pull-right">
-                    <a class="btn btn-outline-primary px-5
-" href="{{ route('roles.index') }}"> Back</a>
-                </div>
-            </div>
-        </div>
-        
-        
-        @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-                </ul>
-            </div>
-        @endif
-        
-        
-        {!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!}
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Name:</strong>
-                    {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Permission:</strong>
-                    <br/>
-                    @foreach($permission as $value)
-                        <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
-                        {{ $value->name }}</label>
-                    <br/>
-                    @endforeach
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-outline-primary px-5
-">@lang('general.save')</button>
-            </div>
-        </div>
-        {!! Form::close() !!}
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="card card-secondary">
+                            <div class="card-header">
+                                <h3 class="card-title"> @lang('general.create') @lang('general.user')</h3>
+                            </div>
+                            <!-- /.card-header -->
+
+                            <!-- form start -->
+                            <div class="row p-3">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>@lang('general.name'):</strong>
+                                        {!! Form::text('name', null, ['placeholder' => 'Name', 'class' => 'form-control']) !!}
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>@lang('general.permission'):</strong>
+                                        <br />
+                                        <div class="row">
+                                            @foreach ($permission as $value)
+                                                <div class="col-3">
+                                                    <label>{{ Form::checkbox('permission[]', $value->id, false, ['class' => 'name']) }}
+                                                        {{ $value->name }}</label>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                    <button type="submit"
+                                        class="btn btn-outline-primary px-5
+                                           ">@lang('general.save')</button>
+                                </div>
+                            </div>
+                            <!-- /.card -->
+
+
+                        </div>
+                        <!--/.col (left) -->
+
+                    </div>
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
     </div>
+    <!-- /.content-wrapper -->
 @endsection
+
+@push('scripts')
+    <script>
+        $(function() {
+            // Summernote
+            $('.summernote').summernote()
+
+            // CodeMirror
+            CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                mode: "htmlmixed",
+                theme: "monokai"
+            });
+        })
+    </script>
+@endpush
