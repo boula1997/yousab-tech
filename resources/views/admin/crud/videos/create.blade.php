@@ -1,7 +1,7 @@
 @extends('admin.components.form')
 @section('form_action', route('videos.store'))
 @section('form_type', 'POST')
-@section('fields_contents')
+@section('fields_content')
     <div class="content-wrapper p-5">
         <div class="container">
             <div class="card card-custom mb-2">

@@ -1,7 +1,7 @@
 @extends('admin.components.form')
 @section('form_action', route('services.store'))
 @section('form_type', 'POST')
-@section('fields_contents')
+@section('fields_content')
 
 @section('content')
     <div class="content-wrapper">
@@ -70,12 +70,12 @@
             <div class="card card-custom">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-6">
+                        {{-- <div class="col-md-6">
                             @include('admin.components.icon', [
                                 'label' => 'icon',
                                 'required' => true,
                                 'value' => 'value',
-                            ])
+                            ]) --}}
                         </div>
                         <div class="col-md-6">
                             @include('admin.components.image', [
