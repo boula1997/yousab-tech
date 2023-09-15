@@ -5,13 +5,14 @@
     <div class="content-wrapper">
         @method('PUT')
         @csrf
+        <div class="container p-5">
             <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
                     <div class="card-title">
                         <h3 class="card-label">@lang('general.add_new')</h3>
                     </div>
                 </div>
-                <div class="card-toolbar">
+                <div class="card-toolbar px-3">
                     <ul class="nav nav-tabs nav-bold nav-tabs-line">
                         @foreach (config('translatable.locales') as $key => $locale)
                             <li class="nav-item">
@@ -55,7 +56,7 @@
 
                                 <div class="col-form-group">
                                     <label>@lang('general.description')(@lang('general.' . $locale))<span class="text-danger">*</span></label>
-                                    <textarea rows="100" class="summernote @error($locale . '.description') is-invalid @enderror" 
+                                    <textarea rows="100" class="summernote @error($locale . '.description') is-invalid @enderror"
                                         name="{{ $locale . '[description]' }}">
                                     {!! old($locale . '.description', $process->translate($locale)->description) !!} 
                                 </textarea>
@@ -78,7 +79,7 @@
                                 'accept' => 'image/*',
                                 'required' => true,
                             ])
-    
+
                         </div>
                     </div>
                 </div>
@@ -87,6 +88,7 @@
                     <a href="{{ route('processes.index') }}" class="btn btn-danger font-weight-bold">@lang('general.cancel')</a>
                 </div>
             </div>
+        </div>
     </div>
 @endsection
 
