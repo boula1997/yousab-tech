@@ -26,7 +26,7 @@ class SettingController extends Controller
     {
         try {
             $setting = $this->setting->first();
-            $data = $request->except('0', '1');
+            $data = $request->except('0', '1', 'profile_avatar_remove');
             if (!$request->hasFile('logo'))
                 $data['logo'] = $setting->logo;
             else {
@@ -43,10 +43,10 @@ class SettingController extends Controller
                 $file2 = $request->file('tab');
                 $data['tab'] = $request->tab->store('images');
                 $file2->move('images', $data['tab']);
-                $setting->update($data);
-                return redirect()->route('edit.setting', compact('setting'))
-                    ->with('success', trans('general.update_successfully'));
             }
+            $setting->update($data);
+            return redirect()->route('edit.setting', compact('setting'))
+                ->with('success', trans('general.update_successfully'));
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
