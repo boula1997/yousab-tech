@@ -22,9 +22,8 @@ class ProcessRequest extends FormRequest
         //  $this->merge(['user_id' => auth('api')->user()->id]);
 
 
-        $image = request()->isMethod('put') ? 'nullable' : 'required';
         $rules = [
-            'image' =>  $image ,
+            'image' =>  'nullable' ,
         ];
         foreach (config('translatable.locales') as $locale) {
             $rules += [$locale . '.title' => ['required', 'string']];

@@ -4,74 +4,31 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section-title style-white text-center">
-                        <h5 class="sub-title double-line">Work Process</h5>
-                        <h2 class="title">How to work it</h2>
-                        <p class="content">Dcidunt eget semper nec quam. Sed hendrerit. acfelis Nunc egestas augue
-                            atpellentesque laoreet</p>
+                        <h5 class="sub-title double-line">{{ page('process-section')->subtitle }}</h5>
+                        <h2 class="title">{{ page('process-section')->title }}</h2>
+                        <div class="content text-white">{!! page('process-section')->description !!}</div>
                     </div>
                 </div>
             </div>
             <div class="row">
+                @foreach ($processes as $process)
+                    
                 <div class="col-lg-3 col-md-6">
                     <div class="single-work-inner style-two text-center">
                         <div class="count-wrap">
                             <div class="count-inner">
-                                <h2>01</h2>
+                                <h2>0{{ $loop->iteration }}</h2>
                             </div>
                         </div>
                         <div class="details-wrap">
                             <div class="details-inner">
-                                <h4>Select a project</h4>
-                                <p>Vestibulum ante ipsumusn eratultrices posu world </p>
+                                <h4>{{ $process->title }}</h4>
+                                <p>{!! $process->description !!}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-work-inner style-two text-center">
-                        <div class="count-wrap">
-                            <div class="count-inner">
-                                <h2>02</h2>
-                            </div>
-                        </div>
-                        <div class="details-wrap">
-                            <div class="details-inner">
-                                <h4>Project analysis</h4>
-                                <p>Vestibulum ante ipsumusn eratultrices posu world </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-work-inner style-two text-center">
-                        <div class="count-wrap">
-                            <div class="count-inner">
-                                <h2>03</h2>
-                            </div>
-                        </div>
-                        <div class="details-wrap">
-                            <div class="details-inner">
-                                <h4>Execute</h4>
-                                <p>Vestibulum ante ipsumusn eratultrices posu world </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-work-inner style-two text-center">
-                        <div class="count-wrap">
-                            <div class="count-inner">
-                                <h2>04</h2>
-                            </div>
-                        </div>
-                        <div class="details-wrap">
-                            <div class="details-inner">
-                                <h4>Deliver result</h4>
-                                <p>Vestibulum ante ipsumusn eratultrices posu world </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="client-slider pd-top-90 pd-bottom-110 owl-carousel">
                 <div class="item">

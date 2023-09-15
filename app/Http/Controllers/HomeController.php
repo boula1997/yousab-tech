@@ -44,7 +44,7 @@ class HomeController extends Controller
         try {
             $services = $this->service->get();
             $testimonials = $this->testimonial->get();
-            $processes = $this->process->get();
+            $processes = $this->process->take(9)->latest()->get();
             $sliders = $this->slider->get();
             $counters = $this->counter->get();
             $portfolios = $this->portfolio->get();

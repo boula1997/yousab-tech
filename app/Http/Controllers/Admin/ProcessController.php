@@ -121,7 +121,6 @@ class ProcessController extends Controller
     {
         try {
             $process->delete();
-            $process->file->delete();
             $process->deleteFile();
             return redirect()->route('processes.index')
                 ->with('success', trans('general.deleted_successfully'));
