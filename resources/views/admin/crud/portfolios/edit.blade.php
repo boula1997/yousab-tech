@@ -92,7 +92,7 @@
                     <div class="row">
                         @foreach ($images as $image)
 
-                            <div class="col-3">
+                            <div class="col-md-3 mt-3">
                                 <div
                                     class="custom-control custom-switch custom-switch-off-success custom-switch-on-danger">
                                     <input type="checkbox"  name="delimages[]"
