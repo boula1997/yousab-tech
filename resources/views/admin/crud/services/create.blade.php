@@ -2,8 +2,6 @@
 @section('form_action', route('services.store'))
 @section('form_type', 'POST')
 @section('fields_content')
-
-@section('content')
     <div class="content-wrapper">
         <div class="container p-5">
             <div class="card card-custom mb-2">
@@ -75,31 +73,31 @@
                                 'required' => true,
                                 'value' => 'value',
                             ]) --}}
-                        </div>
-                        <div class="col-md-6">
-                            @include('admin.components.image', [
-                                'label' => __('general.image'),
-                                'value' => old('image'),
-                                'name' => 'image',
-                                'id' => 'kt_image_3',
-                                'accept' => 'image/*',
-                                'required' => true,
-                            ])
-
-                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        @include('admin.components.image', [
+                            'label' => __('general.image'),
+                            'value' => old('image'),
+                            'name' => 'image',
+                            'id' => 'kt_image_3',
+                            'accept' => 'image/*',
+                            'required' => true,
+                        ])
 
                     </div>
-                </div>
-                <div class="card-footer">
-                    <button type="submit"
-                        class="btn btn-outline-primary px-5
-                        ">@lang('general.save')</button>
-                    <a href="{{ route('services.index') }}"
-                        class="btn btn-outline-danger px-5
-                        ">@lang('general.cancel')</a>
+
                 </div>
             </div>
+            <div class="card-footer">
+                <button type="submit"
+                    class="btn btn-outline-primary px-5
+                        ">@lang('general.save')</button>
+                <a href="{{ route('services.index') }}"
+                    class="btn btn-outline-danger px-5
+                        ">@lang('general.cancel')</a>
+            </div>
         </div>
+    </div>
     </div>
 @endsection
 
