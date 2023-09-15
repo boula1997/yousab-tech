@@ -133,6 +133,8 @@ return [
     "roles" => "الادوار",
     "role_mangement" => "ادارة الادوار",
     "settings" => "الاعدادات",
+    "logo" => "اللوجو",
+    "tab" => "التاب",
 
 
 
@@ -141,6 +143,7 @@ return [
     'follow_us_on' => ' : تواصل معنا عبر',
     'home' => 'الرئيسية',
     'services' => 'خدماتنا',
+    'search' => 'بحث',
     'about' => 'من نحن',
     'contact' => 'تواصل معنا',
     'get_started' => 'ابدأ معنا',

@@ -62,23 +62,16 @@
 
 
                                 <div class="row">
-                                    <div class="form-group col-md-6 mt-5">
-                                        <label for="exampleInputFile1">@lang('general.image')</label>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" name="image" class="custom-file-input"
-                                                    id="exampleInputFile1">
-                                                <label class="custom-file-label"
-                                                    for="exampleInputFile1">@lang('general.choose_file')</label>
-                                            </div>
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">@lang('general.upload_file')</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                     <div class="col-md-6">
-                                        <img class="h-100 w-50" src="{{ $admin->image }}" alt="">
+                                        @include('admin.components.image', [
+                                            'label' => __('general.image'),
+                                            'value' => old('image', $admin->image),
+                                            'name' => 'image',
+                                            'id' => 'kt_image_3',
+                                            'accept' => 'image/*',
+                                            'required' => true,
+                                        ])
+                
                                     </div>
                                 </div>
 

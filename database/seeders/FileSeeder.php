@@ -25,8 +25,7 @@ class FileSeeder extends Seeder
                     'url' => $url[$i],
                     'fileable_id' => $fileable_id[$i],
                     'fileable_id' => $fileable_id[$i],
-                
-                
+
             ]);
         }
     }

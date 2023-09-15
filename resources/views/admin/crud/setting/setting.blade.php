@@ -209,7 +209,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         @include('admin.components.image', [
-                            'label' => __('words.image'),
+                            'label' => __('general.logo'),
                             'value' => old('image', $setting->logo),
                             'name' => 'image',
                             'id' => 'kt_image_2',
@@ -220,7 +220,7 @@
                     </div>
                     <div class="col-md-6">
                         @include('admin.components.image', [
-                            'label' => __('words.image'),
+                            'label' => __('general.tab'),
                             'value' => old('image', $setting->tab),
                             'name' => 'image',
                             'id' => 'kt_image_3',

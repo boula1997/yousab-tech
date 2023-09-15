@@ -10,8 +10,8 @@
 
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">User</a></li>
-                            <li class="breadcrumb-item active">Show</li>
+                            <li class="breadcrumb-item"><a href="#">@lang('general.user')</a></li>
+                            <li class="breadcrumb-item active">@lang('general.show')</li>
                         </ol>
                     </div>
                 </div>
@@ -34,19 +34,19 @@
                             <form>
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Name</label>
+                                        <label for="exampleInputEmail1">@lang('general.name')</label>
                                         <p>{{ $user->name }}</p>
                                     </div>
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email</label>
+                                        <label for="exampleInputEmail1">@lang('general.email')</label>
                                         <p>{{ $user->email }}</p>
                                     </div>
 
 
                                     <div class="row">
                                         <div class="form-group">
-                                            <label for="exampleInputFile1">Image</label>
+                                            <label for="exampleInputFile1">@lang('general.image')</label>
                                             <div class="col-md-6">
                                                 <div class="form-group text-center">
                                                     <img width="300" height="300" src="{{ $user->image }}"

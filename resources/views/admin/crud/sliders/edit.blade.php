@@ -87,7 +87,7 @@
 
                     <div class="col-md-6">
                         @include('admin.components.image', [
-                            'label' => __('words.image'),
+                            'label' => __('general.image'),
                             'value' => old('image', $slider->image),
                             'name' => 'image',
                             'id' => 'kt_image_3',

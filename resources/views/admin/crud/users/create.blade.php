@@ -30,7 +30,7 @@
                         <!-- general form elements -->
                         <div class="card card-secondary">
                             <div class="card-header">
-                                <h3 class="card-title">Create User</h3>
+                                <h3 class="card-title"> @lang('general.create') @lang('general.user')</h3>
                             </div>
                             <!-- /.card-header -->
          
@@ -39,22 +39,22 @@
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Name</label>
+                                        <label for="exampleInputEmail1">@lang('general.name')</label>
                                         <input type="text" name="name" value="{{ old('name') }}"
                                             class="form-control" id="exampleInputName" placeholder="@lang('general.name')">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email</label>
+                                        <label for="exampleInputEmail1">@lang('general.email')</label>
                                         <input type="email" name="email" value="{{ old('email') }}"
                                             class="form-control" id="exampleInputEmail" placeholder="@lang('general.email')">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Password</label>
+                                        <label for="exampleInputEmail1">@lang('general.password')</label>
                                         <input type="password" name="password" value="{{ old('password') }}"
                                             class="form-control" id="exampleInputPassword" placeholder="@lang('general.password')">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Confirm Password</label>
+                                        <label for="exampleInputEmail1">@lang('general.confirm_password')</label>
                                         <input type="password" name="confirm-password" value="{{ old('confirm-password') }}"
                                             class="form-control" id="exampleInputConfirmpassword"
                                             placeholder="@lang('general.confirm_password')">
@@ -63,7 +63,7 @@
 
                                     <div class="form-group">
                                         @include('admin.components.image', [
-                                            'label' => __('words.image'),
+                                            'label' => __('general.image'),
                                             'value' => old('image'),
                                             'name' => 'image',
                                             'id' => 'kt_image_3',
