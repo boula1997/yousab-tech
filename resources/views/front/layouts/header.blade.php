@@ -10,16 +10,17 @@
     <link rel=icon href="assets/img/favicon.webp" sizes="20x20" type="image/png">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/animate.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/fontawesome.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/custom-icon.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/nice-select.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/magnific.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/owl.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/slick.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/custom-icon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 </head>
 
 <body class='sc5'>
@@ -54,7 +55,7 @@
                 <div class="col-sm-6">
                     <ul class="topbar-right text-md-start text-center">
                         <li class="d-none d-none d-lg-inline-block">
-                            <p><i class="far fa-clock"></i> {{__('general.opening_hour')}}</p>
+                            <p><i class="far fa-clock"></i> {{ __('general.opening_hour') }}</p>
                         </li>
                         <li>
                             <p><i class="far fa-envelope"></i> exam@gmail.com</p>
@@ -64,10 +65,10 @@
                 <div class="col-sm-6">
                     <ul class="topbar-right text-md-end text-center">
                         <li class="d-none d-none d-lg-inline-block">
-                            <p>{{__('general.hotline')}} <span>: (+00)-333-444-5555</span></p>
+                            <p>{{ __('general.hotline') }} <span>: (+00)-333-444-5555</span></p>
                         </li>
                         <li class="social-area">
-                            <p class="d-inline-block">{{__('general.follow_us_on')}}</p>
+                            <p class="d-inline-block">{{ __('general.follow_us_on') }}</p>
                             <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                             <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                             <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
@@ -88,7 +89,7 @@
                 </button>
             </div>
             <div class="logo">
-                <a href="index.html"><img src="{{asset('assets/img/logo.webp')}}" alt="img"></a>
+                <a href="index.html"><img src="{{ asset('assets/img/logo.webp') }}" alt="img"></a>
             </div>
             <div class="nav-right-part nav-right-part-mobile">
                 <a class="search-bar-btn" href="#">
@@ -97,18 +98,32 @@
             </div>
             <div class="collapse navbar-collapse" id="Iitechie_main_menu">
                 <ul class="navbar-nav menu-open text-lg-end">
-                    <li><a class="{{request()->routeIs('front.home')?'active':''}}" href="{{route('front.home')}}">{{__('general.home')}}</a></li>
-                    <li><a class="{{request()->routeIs('front.service')?'active':''}}" href="{{route('front.service')}}">{{__('general.services')}}</a></li>
-                    <li><a class="{{request()->routeIs('front.about')?'active':''}}" href="{{route('front.about')}}">{{__('general.about')}}</a></li>
+                    <li><a class="{{ request()->routeIs('front.home') ? 'active' : '' }}"
+                            href="{{ route('front.home') }}">{{ __('general.home') }}</a></li>
+                    <li><a class="{{ request()->routeIs('front.service') ? 'active' : '' }}"
+                            href="{{ route('front.service') }}">{{ __('general.services') }}</a></li>
+                    <li><a class="{{ request()->routeIs('front.about') ? 'active' : '' }}"
+                            href="{{ route('front.about') }}">{{ __('general.about') }}</a></li>
                     {{-- <li><a class="{{request()->routeIs('front.home')?'active':''}}" href="{{route('front.home')}}">Project</a></li> --}}
-                    <li><a class="{{request()->routeIs('front.contact')?'active':''}}" href="{{route('front.contact')}}">{{__('general.contact')}}</a></li>
+                    <li><a class="{{ request()->routeIs('front.contact') ? 'active' : '' }}"
+                            href="{{ route('front.contact') }}">{{ __('general.contact') }}</a></li>
+                    @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li class="{{ app()->getLocale() == $localeCode ? 'd-none' : '' }}">
+                            <a rel="alternate" hreflang="{{ $localeCode }}"
+                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                <img src="{{ asset('flags/' . $localeCode . '.png') }}" class="flag" alt="KSA Flag">
+                            </a>
+                        </li>
+                    @endforeach
+
                 </ul>
+
             </div>
             <div class="nav-right-part nav-right-part-desktop align-self-center">
                 <a class="search-bar-btn" href="#">
                     <i class="fa fa-search"></i>
                 </a>
-                <a class="btn btn-base" href="#">{{__('general.get_started')}}</a>
+                <a class="btn btn-base" href="#">{{ __('general.get_started') }}</a>
             </div>
         </div>
     </nav>

@@ -49,26 +49,21 @@
 
         </li>
 
-        <li class="nav-item pt-1">
-            @if (app()->getLocale() == 'en')
-                <a rel="alternate" hreflang="ar"
-                    href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">
-                    <img src="{{ asset('flags/ksa.png') }}" class="flag" alt="KSA Flag">
+        @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+            <li class="{{ app()->getLocale() == $localeCode ? 'd-none' : '' }}">
+                <a rel="alternate" hreflang="{{ $localeCode }}"
+                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                    <img src="{{ asset('flags/'.$localeCode.'.png') }}" class="flag" alt="KSA Flag">
                 </a>
-            @else
-                <a rel="alternate" hreflang="en"
-                    href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">
-                    <img src="{{ asset('flags/us.png') }}" class="flag" alt="US Flag">
+            </li>
+        @endforeach
 
-                </a>
-            @endif
-        </li>
 
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
-            <a class="nav-link"  href="{{route('contacts.index')}}">
+            <a class="nav-link" href="{{ route('contacts.index') }}">
                 <i class="far fa-comments"></i>
-                <span class="badge badge-danger navbar-badge">{{itemsCount('contacts')}}</span>
+                <span class="badge badge-danger navbar-badge">{{ itemsCount('contacts') }}</span>
             </a>
             {{-- <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <a href="#" class="dropdown-item">
@@ -173,14 +168,14 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <a href="{{route('edit.profile')}}">
+        <a href="{{ route('edit.profile') }}">
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
                     <img src="{{ auth('admin')->user()->file ? auth('admin')->user()->image : '' }}"
                         class="img-circle elevation-2" alt="Edit Your Profile">
                 </div>
                 <div class="info">
-                    <a href="{{route('edit.profile')}}" class="d-block">{{ auth('admin')->user()->name }}</a>
+                    <a href="{{ route('edit.profile') }}" class="d-block">{{ auth('admin')->user()->name }}</a>
                 </div>
             </div>
         </a>
@@ -280,44 +275,44 @@
                 @endcan
 
                 @can('service-list')
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            @lang('general.services') <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">{{ itemsCount('services') }}</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('services.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>@lang('general.show')</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            @endcan
-            @can('testimonial-list')
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-copy"></i>
-                    <p>
-                        @lang('general.testimonials') <i class="fas fa-angle-left right"></i>
-                        <span class="badge badge-info right">{{ itemsCount('testimonials') }}</span>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{ route('testimonials.index') }}" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>@lang('general.show')</p>
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                @lang('general.services') <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('services') }}</span>
+                            </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('services.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>@lang('general.show')</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                </ul>
-            </li>
-        @endcan    
-            @can('process-list')
+                @endcan
+                @can('testimonial-list')
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                @lang('general.testimonials') <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('testimonials') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('testimonials.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>@lang('general.show')</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endcan
+                @can('process-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
