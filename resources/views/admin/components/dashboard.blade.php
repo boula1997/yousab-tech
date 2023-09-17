@@ -53,7 +53,7 @@
             <li class="{{ app()->getLocale() == $localeCode ? 'd-none' : '' }}">
                 <a rel="alternate" hreflang="{{ $localeCode }}"
                     href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                    <img src="{{ asset('flags/'.$localeCode.'.png') }}" class="flag" alt="KSA Flag">
+                    <img src="{{ asset('flags/' . $localeCode . '.png') }}" class="flag" alt="KSA Flag">
                 </a>
             </li>
         @endforeach
@@ -167,18 +167,23 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <!-- Sidebar user panel (optional) -->
-        <a href="{{ route('edit.profile') }}">
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="image">
-                    <img src="{{ auth('admin')->user()->file ? auth('admin')->user()->image : '' }}"
-                        class="img-circle elevation-2" alt="Edit Your Profile">
+        {{-- <div class="d-flex justify-content-center">
+            <img class="logo-side" src="{{ settings()->logo }}" alt="">
+        </div> --}}
+        <div class="">
+            <!-- Sidebar user panel (optional) -->
+            <a href="{{ route('edit.profile') }}">
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="{{ auth('admin')->user()->file ? auth('admin')->user()->image : '' }}"
+                            class="img-circle elevation-2" alt="Edit Your Profile">
+                    </div>
+                    <div class="info">
+                        <a href="{{ route('edit.profile') }}" class="d-block">{{ auth('admin')->user()->name }}</a>
+                    </div>
                 </div>
-                <div class="info">
-                    <a href="{{ route('edit.profile') }}" class="d-block">{{ auth('admin')->user()->name }}</a>
-                </div>
-            </div>
-        </a>
+            </a>
+        </div>
 
 
 
@@ -466,7 +471,7 @@
                     </li>
                 @endcan
 
-                <li class="nav-item">
+                <li class="nav-item pb-3">
 
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
