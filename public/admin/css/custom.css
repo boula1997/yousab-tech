@@ -12,9 +12,15 @@
 /*==============================================
     GENERAL  STYLES    
     =============================================*/
+
 body {
     font-family: 'Open Sans', sans-serif;
     line-height:30px;
+}
+
+.navbar-top ul li {
+    margin-right: 0 !important;
+    margin-left: 25px !important;
 }
 
  #wrapper {
