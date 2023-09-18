@@ -19,7 +19,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/owl.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    @if (app()->getLocale()=='ar')
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+    @endif
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 </head>
 
