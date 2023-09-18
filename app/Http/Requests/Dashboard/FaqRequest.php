@@ -4,7 +4,7 @@ namespace App\Http\Requests\Dashboard;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BlogRequest extends FormRequest
+class FaqRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +22,7 @@ class BlogRequest extends FormRequest
         //  $this->merge(['user_id' => auth('api')->user()->id]);
 
 
-        $image = request()->isMethod('put') ? 'nullable' : 'required';
         $rules = [
-            'image' =>  $image ,
         ];
         foreach (config('translatable.locales') as $locale) {
             $rules += [$locale . '.title' => ['required', 'string']];

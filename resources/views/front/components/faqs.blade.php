@@ -36,13 +36,12 @@
             <h2>المقالات</h2>
 
             <div class="row">
-                @foreach ($blogs as $blog)
+                @foreach ($faqs as $faq)
                 <div class="col-md-4 col-sm-12 articleItem mb-5 animate__animated animate__fadeInDown" style="height: 300px" data-aos="fade-up" data-aos-duration="3000">
                     <div class="card" style="height: 300px">
                         <div class="card-img" style="height: 300px">
-                            <img class="card-img-top h-100" src="{{ $blog->image }}" alt="" />
                             <h4 class="card-title" style="position: absolute; bottom: 0; right:0; background: ">
-                                <a href="{{ route('front.show.blog', ['id'=>$blog->id]) }}">{{ $blog->title }}</a>
+                                <a href="{{ route('front.show.faq', ['id'=>$faq->id]) }}">{{ $faq->title }}</a>
                             </h4>
                         </div>
                     </div>

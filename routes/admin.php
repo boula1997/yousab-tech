@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\ContactController;
 // use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\GalleryController;
@@ -63,7 +63,7 @@ Route::group(
         
             Route::resource('roles', RoleController::class);
             // Route::resource('home',HomeController::class);
-            Route::resource('blogs', BlogController::class);
+            Route::resource('faqs', FaqController::class);
             // Route::resource('contact',ContactController::class);
             Route::resource('services', ServiceController::class);
             Route::resource('testimonials', TestimonialController::class);

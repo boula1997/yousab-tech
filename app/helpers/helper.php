@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\Admin;
-use App\Models\Blog;
+use App\Models\Faq;
 use App\Models\Contact;
 use App\Models\Counter;
 use App\Models\Gallery;
@@ -70,7 +70,7 @@ function failedResponse($data = [], $message = "error", $status = 400)
 function itemsCount($model)
 {
     $items = [
-        "blogs" => count(Blog::get()),
+        "faqs" => count(Faq::get()),
         "contacts" => count(Contact::get()),
         "counters" => count(Counter::get()),
         "Portfolios" => count(Gallery::get()),

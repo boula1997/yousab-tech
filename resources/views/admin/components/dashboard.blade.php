@@ -379,18 +379,18 @@
                     </li>
                 @endcan
 
-                @can('blog-list')
+                @can('faq-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                @lang('general.blogs') <i class="fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">{{ itemsCount('blogs') }}</span>
+                                @lang('general.faqs') <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('faqs') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ route('blogs.index') }}" class="nav-link">
+                                <a href="{{ route('faqs.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>

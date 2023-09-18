@@ -1,5 +1,5 @@
 @extends('admin.components.form')
-@section('form_action', route('blogs.store'))
+@section('form_action', route('faqs.store'))
 @section('form_type', 'POST')
 @section('fields_content')
     @method('post')
@@ -41,19 +41,6 @@
                                             value="{{ old($locale . '.title') }}">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label>@lang('general.subtitle') - @lang('general.' . $locale)<span class="text-danger"> * </span></label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="flaticon-edit"></i></span>
-                                        </div>
-                                        <input type="text" name="{{ $locale . '[subtitle]' }}"
-                                            placeholder="@lang('general.subtitle')"
-                                            class="form-control  pl-5 min-h-40px @error($locale . '.subtitle') is-invalid @enderror"
-                                            value="{{ old($locale . '.subtitle') }}">
-                                    </div>
-                                </div>
-
 
 
                                 <div class="col-form-group">
@@ -70,28 +57,11 @@
                 </div>
             </div>
             <div class="card card-custom">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            @include('admin.components.image', [
-                                'label' => __('general.image'),
-                                'value' => old('image'),
-                                'name' => 'image',
-                                'id' => 'kt_image_3',
-                                'accept' => 'image/*',
-                                'required' => true,
-                            ])
-
-                        </div>
-
-
-                    </div>
-                </div>
                 <div class="card-footer">
                     <button type="submit"
                         class="btn btn-outline-primary px-5
                           ">@lang('general.save')</button>
-                    <a href="{{ route('blogs.index') }}"
+                    <a href="{{ route('faqs.index') }}"
                         class="btn btn-outline-danger px-5
                             ">@lang('general.cancel')</a>
                 </div>

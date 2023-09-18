@@ -1,5 +1,5 @@
 @extends('admin.components.form')
-@section('form_action', route('blogs.update', $blog->id))
+@section('form_action', route('faqs.update', $faq->id))
 @section('form_type', 'POST')
 @section('fields_content')
     <div class="content-wrapper">
@@ -37,22 +37,10 @@
                                         <input type="text" name="{{ $locale . '[title]' }}"
                                             placeholder="@lang('general.title')"
                                             class="form-control  pl-5 min-h-40px @error($locale . '.title') is-invalid @enderror"
-                                            value="{{ old($locale . '.title', $blog->translate($locale)->title) }}">
+                                            value="{{ old($locale . '.title', $faq->translate($locale)->title) }}">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label>@lang('general.subtitle') - @lang('general.' . $locale)<span class="text-danger"> *
-                                        </span></label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="flaticon-edit"></i></span>
-                                        </div>
-                                        <input type="text" name="{{ $locale . '[subtitle]' }}"
-                                            placeholder="@lang('general.subtitle')"
-                                            class="form-control  pl-5 min-h-40px @error($locale . '.subtitle') is-invalid @enderror"
-                                            value="{{ old($locale . '.subtitle', $blog->translate($locale)->subtitle) }}">
-                                    </div>
-                                </div>
+
 
 
 
@@ -60,7 +48,7 @@
                                     <label>@lang('general.description')(@lang('general.' . $locale))<span class="text-danger">*</span></label>
                                     <textarea rows="100" class="summernote @error($locale . '.description') is-invalid @enderror"
                                         name="{{ $locale . '[description]' }}">
-                                        {!! old($locale . '.description', $blog->translate($locale)->description) !!} 
+                                        {!! old($locale . '.description', $faq->translate($locale)->description) !!} 
                                     </textarea>
                                 </div>
                             </div>
@@ -69,25 +57,9 @@
                 </div>
             </div>
             <div class="card card-custom">
-                <div class="card-body mb-5">
-                    <div class="row mt-5" style="height: 200px">
-
-                        <div class="col-md-6">
-                            @include('admin.components.image', [
-                                'label' => __('general.image'),
-                                'value' => old('image', $blog->image),
-                                'name' => 'image',
-                                'id' => 'kt_image_3',
-                                'accept' => 'image/*',
-                                'required' => true,
-                            ])
-
-                        </div>
-                    </div>
-                </div>
                 <div class="card-footer mt-5">
                     <button type="submit" class="btn btn-success">@lang('general.save')</button>
-                    <a href="{{ route('blogs.index') }}" class="btn btn-danger font-weight-bold">@lang('general.cancel')</a>
+                    <a href="{{ route('faqs.index') }}" class="btn btn-danger font-weight-bold">@lang('general.cancel')</a>
                 </div>
             </div>
         </div>

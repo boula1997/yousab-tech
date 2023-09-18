@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains blog content -->
+    <!-- Content Wrapper. Contains faq content -->
     <div class="content-wrapper">
         <div class="container p-5">
 
@@ -17,10 +17,10 @@
                                     <!-- general form elements -->
                                     <div class="row">
                                         <div class="col-md-6 d-flex d-flex justify-content-start">
-                                            <h3 class="card-title">@lang('general.blogs')</h3>
+                                            <h3 class="card-title">@lang('general.faqs')</h3>
                                         </div>
                                         <div class="col-md-6 d-flex d-flex justify-content-end">
-                                            <a href="{{ route('blogs.create') }}">
+                                            <a href="{{ route('faqs.create') }}">
 
                                                 <button
                                                     class="btn btn-outline-primary px-5
@@ -37,25 +37,22 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>@lang('general.image')</th>
                                                 <th>@lang('general.title')</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($blogs as $blog)
+                                            @foreach ($faqs as $faq)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td><img width="100" height="100" src="{{ $blog->image }}"
-                                                            alt="{{ $blog->title }}"></td>
-                                                    <td>{{ $blog->title }}</td>
+                                                    <td>{{ $faq->title }}</td>
                                                     <td>
-                                                        <form action="{{ route('blogs.destroy', $blog) }}" method="POST">
-                                                            <a href="{{ route('blogs.show', $blog) }}" title="show">
+                                                        <form action="{{ route('faqs.destroy', $faq) }}" method="POST">
+                                                            <a href="{{ route('faqs.show', $faq) }}" title="show">
                                                                 <i class="fas fa-eye text-secondary fa-lg"></i>
                                                             </a>
 
-                                                            <a href="{{ route('blogs.edit', $blog) }}" title="edit">
+                                                            <a href="{{ route('faqs.edit', $faq) }}" title="edit">
                                                                 <i class="fas fa-edit  text-secondary  fa-lg"></i>
                                                             </a>
 

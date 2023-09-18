@@ -3,23 +3,23 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\BlogResource;
-use App\Models\Blog;
+use App\Http\Resources\FaqResource;
+use App\Models\Faq;
 use Exception;
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class FaqController extends Controller
 {
-    private $blog;
-    public function __construct(Blog $blog)
+    private $faq;
+    public function __construct(Faq $faq)
     {
-        $this->blog = $blog;
+        $this->faq = $faq;
     }
 
     public function index()
     {
         try {
-            $data['blogs'] = BlogResource::collection($this->blog->get());
+            $data['faqs'] = FaqResource::collection($this->faq->get());
             return successResponse($data,trans('general.sent_successfully'));
         } catch (Exception $e) {
             dd($e->getMessage());
@@ -30,7 +30,7 @@ class BlogController extends Controller
     public function show($id)
     {
         try {
-            $data['blog'] = new BlogResource($this->blog->findorfail($id));
+            $data['faq'] = new FaqResource($this->faq->findorfail($id));
             return successResponse($data);
         } catch (Exception $e) {
             dd($e->getMessage());

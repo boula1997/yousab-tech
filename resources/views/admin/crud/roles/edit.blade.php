@@ -2,7 +2,7 @@
 @section('form_action', route('roles.update', $role->id))
 @section('form_type', 'POST')
 @section('fields_content')
-@method('put')
+    @method('put')
     <!-- Content Wrapper. Contains blog content -->
     <div class="content-wrapper">
         <!-- Content Header (blog header) -->
@@ -40,7 +40,7 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <strong>@lang('general.name'):</strong>
-                                        {!! Form::text('name', old('name',$role->name), ['placeholder' => 'Name', 'class' => 'form-control']) !!}
+                                        {!! Form::text('name', old('name', $role->name), ['placeholder' => 'Name', 'class' => 'form-control']) !!}
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -52,21 +52,22 @@
                                                 <div class="col-md-3">
                                                     <div
                                                         class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                                        <input type="checkbox" @checked(in_array($value->id, $rolePermissions) ? true : false) name="permission[]"
-                                                            value="{{ $value->id }}" class="custom-control-input"
-                                                            id="customSwitch{{ $value->id  }}">
-                                                        <label class="custom-control-label" 
-                                                            for="customSwitch{{ $value->id  }}">{{ $value->name }}</label>
+                                                        <input type="checkbox" @checked(in_array($value->id, $rolePermissions) ? true : false)
+                                                            name="permission[]" value="{{ $value->id }}"
+                                                            class="custom-control-input"
+                                                            id="customSwitch{{ $value->id }}">
+                                                        <label class="custom-control-label"
+                                                            for="customSwitch{{ $value->id }}">{{ $value->name }}</label>
                                                     </div>
                                                 </div>
                                             @endforeach
+                                            <div class="text-center">
+                                                <button type="submit"
+                                                    class="btn btn-outline-primary px-5 mb-5 w-25
+                                                ">@lang('general.save')</button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                                    <button type="submit"
-                                        class="btn btn-outline-primary px-5
-                                        ">@lang('general.save')</button>
                                 </div>
                             </div>
                             <!-- /.card -->
@@ -98,9 +99,9 @@
         })
     </script>
 
-<script>
-    $(function() {
-        bsCustomFileInput.init();
-    });
-</script>
+    <script>
+        $(function() {
+            bsCustomFileInput.init();
+        });
+    </script>
 @endpush
