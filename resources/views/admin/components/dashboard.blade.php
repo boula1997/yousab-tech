@@ -479,7 +479,7 @@
                         <button class="btn text-secondary" type="submit">@lang('general.logout')</button>
 
                     </form>
-                </li>
+                </li>   
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
