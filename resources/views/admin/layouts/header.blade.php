@@ -38,10 +38,8 @@
     <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
     @if (app()->getLocale()=='ar')
-        
     <link rel="stylesheet" href="{{asset('admin/css/custom_ar.css')}}">
     @else
-        
     <link rel="stylesheet" href="{{asset('admin/css/custom.css')}}">
     @endif
     {{-- <link rel="stylesheet" href="{{asset('bootstrap-5.3.1-dist\css\bootstrap.rtl.css')}}"> --}}
