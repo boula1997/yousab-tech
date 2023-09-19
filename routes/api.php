@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\FaqController;
-use App\Http\Controllers\API\ContactController;
+use App\Http\Controllers\API\MessageController;
 use App\Http\Controllers\API\CounterController;
 use App\Http\Controllers\API\PageController;
 use App\Http\Controllers\API\PortfolioController;

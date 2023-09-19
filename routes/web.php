@@ -51,8 +51,8 @@ Route::group(
 
         Route::get('/', [HomeController::class, 'index'])->name('front.home');
         Route::get('/faq-page', 'App/Http/Controllers/FaqController@index')->name('front.faq');
-        // Route::get('/contact', 'App/Http/Controllers/ContactController@index')->name('front.contact');
-        Route::get('/contact', [ContactController::class,'index'])->name('front.contact');
+        // Route::get('/message', 'App/Http/Controllers/MessageController@index')->name('front.message');
+        Route::get('/message', [MessageController::class,'index'])->name('front.message');
         // Route::get('/service', 'App/Http/Controllers/ServiceController@index')->name('front.service');
         Route::get('/service', [ServiceController::class,'index'])->name('front.service');
         // Route::get('/single-service', 'App/Http/Controllers/ServiceController@show')->name('front.show.service');
