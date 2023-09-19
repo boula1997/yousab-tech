@@ -54,13 +54,13 @@
                             <li><a href="team.html">{{__('general.team')}}</a></li>
                             <li><a href="project.html">{{__('general.portfolio')}}</a></li>
                             <li><a href="service.html">{{__('general.services')}}</a></li>
-                            <li><a href="contact.html">{{__('general.contact')}}</a></li>
+                            <li><a href="message.html">{{__('general.message')}}</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="widget widget_subscribe">
-                        <h4 class="widget-title">{{__('general.contact')}}</h4>
+                        <h4 class="widget-title">{{__('general.message')}}</h4>
                         <div class="single-input-inner style-border style-bg-none">
                             <input type="text" placeholder={{__('general.your_email')}}>
                             <button><i class="fa fa-arrow-right"></i></button>

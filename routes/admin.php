@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BlogController;
-use App\Http\Controllers\Admin\ContactController;
-// use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\MessageController;
+// use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -64,7 +64,7 @@ Route::group(
             Route::resource('roles', RoleController::class);
             // Route::resource('home',HomeController::class);
             Route::resource('blogs', BlogController::class);
-            // Route::resource('contact',ContactController::class);
+            // Route::resource('message',MessageController::class);
             Route::resource('services', ServiceController::class);
             Route::resource('testimonials', TestimonialController::class);
             Route::resource('processes', ProcessController::class);
@@ -80,7 +80,7 @@ Route::group(
             Route::resource('users', UserController::class);
             Route::resource('admins', AdminController::class);
             Route::resource('products', ProductController::class);
-            Route::resource('contacts', ContactController::class);
+            Route::resource('messages', MessageController::class);
         
         
             Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

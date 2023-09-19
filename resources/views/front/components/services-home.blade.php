@@ -9,7 +9,7 @@
                              <div class="text-white">{!! page('service-section')->description !!}</div>
                              
                         <div class="btn-wrap mt-4 pt-1 mb-4">
-                            <a class="btn btn-small btn-border-white mt-2" href="contact.html">{{__('general.contact')}}</a>
+                            <a class="btn btn-small btn-border-white mt-2" href="message.html">{{__('general.message')}}</a>
                             <a class="btn btn-small btn-black mt-2" href="service.html">{{__('general.all_services')}}</a>
                         </div>
                     </div>

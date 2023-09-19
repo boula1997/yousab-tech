@@ -17,7 +17,7 @@
                                 <div class="mb-7 bg-light p-3 rounded h-100">
                                     <div class="card-title">
                                         <h5 class="font-weight-bolder text-dark">@lang('general.name'):</h5>
-                                        <p class="m-0">{{ $contact->name }}</p>
+                                        <p class="m-0">{{ $message->name }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -26,7 +26,7 @@
                                 <div class="mb-7 bg-light p-3 rounded h-100">
                                     <div class="card-title">
                                         <h5 class="font-weight-bolder text-dark">@lang('general.email'):</h5>
-                                        <p class="m-0">{{ $contact->email }}</p>
+                                        <p class="m-0">{{ $message->email }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                                 <div class="mb-7 bg-light p-3 rounded h-100">
                                     <div class="card-title">
                                         <h5 class="font-weight-bolder text-dark">@lang('general.message'):</h5>
-                                        <p class="m-0">{{ $contact->message }}</p>
+                                        <p class="m-0">{{ $message->message }}</p>
                                     </div>
                                 </div>
                             </div>

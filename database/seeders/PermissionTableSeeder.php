@@ -75,8 +75,8 @@ class PermissionTableSeeder extends Seeder
            'admin-create',
            'admin-edit',
            'admin-delete',
-           'contact-list',
-           'contact-delete'
+           'message-list',
+           'message-delete'
         ];
      
         foreach ($permissions as $permission) {

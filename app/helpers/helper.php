@@ -2,7 +2,7 @@
 
 use App\Models\Admin;
 use App\Models\Blog;
-use App\Models\Contact;
+use App\Models\Message;
 use App\Models\Counter;
 use App\Models\Gallery;
 use App\Models\Image;
@@ -71,7 +71,7 @@ function itemsCount($model)
 {
     $items = [
         "blogs" => count(Blog::get()),
-        "contacts" => count(Contact::get()),
+        "messages" => count(Message::get()),
         "counters" => count(Counter::get()),
         "Portfolios" => count(Gallery::get()),
         "images" => count(Image::get()),

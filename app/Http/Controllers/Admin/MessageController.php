@@ -3,31 +3,31 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Contact;
+use App\Models\Message;
 use Exception;
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class MessageController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    private $contact;
-    function __construct(Contact $contact)
+    private $message;
+    function __construct(Message $message)
     {
-        $this->middleware('permission:contact-list|contact-delete', ['only' => ['index', 'show']]);
-        $this->middleware('permission:contact-delete', ['only' => ['destroy']]);
-        $this->contact = $contact;
+        $this->middleware('permission:message-list|message-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:message-delete', ['only' => ['destroy']]);
+        $this->message = $message;
     }
 
 
     public function index()
     {
         try {
-            $data = $this->contact->latest()->get();
-            return view('admin.crud.contacts.index', compact('data'))
+            $data = $this->message->latest()->get();
+            return view('admin.crud.messages.index', compact('data'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
         } catch (Exception $e) {
             dd($e->getMessage());
@@ -39,26 +39,26 @@ class ContactController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $contact)
+    public function show(Message $message)
     {
-        return view('admin.crud.contacts.show', compact('contact'));
+        return view('admin.crud.messages.show', compact('message'));
     }
 
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy(Message $message)
     {
         try {
-            $contact->delete();
-            return redirect()->route('contacts.index')
+            $message->delete();
+            return redirect()->route('messages.index')
                 ->with('success', trans('general.deleted_successfully'));
         } catch (Exception $e) {
             dd($e->getMessage());

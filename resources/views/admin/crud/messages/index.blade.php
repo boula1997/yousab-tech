@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains contact content -->
+    <!-- Content Wrapper. Contains message content -->
     <div class="content-wrapper">
         <div class="conainer p-5">
 
@@ -16,7 +16,7 @@
                                     <!-- general form elements -->
                                     <div class="row">
                                         <div class="col-md-6 d-flex d-flex justify-content-start">
-                                            <h3 class="card-title">@lang('general.contacts')</h3>
+                                            <h3 class="card-title">@lang('general.messages')</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -33,14 +33,14 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($data as $contact)
+                                            @foreach ($data as $message)
                                                 <tr class="p-0 m-0">
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $contact->name }}</td>
-                                                    <td>{{ $contact->email }}</td>
+                                                    <td>{{ $message->name }}</td>
+                                                    <td>{{ $message->email }}</td>
                                                     <td>
-                                                        <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST">
-                                                            <a href="{{ route('contacts.show', $contact->id) }}" title="show">
+                                                        <form action="{{ route('messages.destroy', $message->id) }}" method="POST">
+                                                            <a href="{{ route('messages.show', $message->id) }}" title="show">
                                                                 <i class="fas  fa-eye text-secondary"></i>
                                                             </a>
     

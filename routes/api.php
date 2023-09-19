@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\BlogController;
-use App\Http\Controllers\API\ContactController;
+use App\Http\Controllers\API\MessageController;
 use App\Http\Controllers\API\CounterController;
 use App\Http\Controllers\API\PageController;
 use App\Http\Controllers\API\PortfolioController;
@@ -42,7 +42,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::get('portfolio/{id}', 'PortfolioController@show');
 // Route::get('pages', 'PageController@index');
 // Route::get('page/{id}', 'PageController@show');
-// Route::post('store/contact', 'CContactController@store');
+// Route::post('store/message', 'CMessageController@store');
 
 Route::group(['middleware' => ['apiLocalization','cors']], function () {
     Route::get('/services', [ServiceController::class, 'index']);
@@ -75,5 +75,5 @@ Route::group(['middleware' => ['apiLocalization','cors']], function () {
 
 
 
-Route::post('/contact', [ContactController::class, 'store']);
+Route::post('/message', [MessageController::class, 'store']);
 

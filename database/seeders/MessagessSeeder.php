@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Contact;
+use App\Models\Message;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ContactsSeeder extends Seeder
+class MessagesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -22,7 +22,7 @@ class ContactsSeeder extends Seeder
       
 
         for ($i = 0; $i <3 ; $i++) {
-            $contact = Contact::create([
+            $message = Message::create([
            
                     'name' => $name[$i],
                     'email' => $email[$i],
