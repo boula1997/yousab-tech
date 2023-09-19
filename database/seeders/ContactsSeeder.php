@@ -13,23 +13,21 @@ class ContactsSeeder extends Seeder
      */
     public function run(): void
     {
-       
-        $name = ["Ibrahim Samy","Kero Boula","ابراهيم سامى"];
-        $email = ["ibrahimsamy308@gmail.com","Kero@gmail.com","ibrahim@gmail.com"];
-        $Phone = ["01289189890","0124578960","450015885"];
-        $message = ["ًكيفيه عمل موقع بتكلفه اقل","كيفيه استخدام الموقع","ًWe upload websites for free"];
-      
+        $title_ar = ["مشاريع قيد التنفيذ","مشاريع تحت الانشاء"];
+        $title_en = ["build projects","new project"];
+        $count=['999','800'];
       
 
-        for ($i = 0; $i <3 ; $i++) {
-            $contact = Contact::create([
-           
-                    'name' => $name[$i],
-                    'email' => $email[$i],
-                    'phone' => $Phone[$i],
-                    'message'=>$message[$i],
-                    
-                
+        for ($i = 0; $i < count($title_ar); $i++) {
+            $Contact_Translation = Contact::create([
+                'ar' => [
+                    'title' => $title_ar[$i],
+    
+                ],
+                'en' => [
+                    'title' => $title_en[$i],
+                ],
+               'count'=>$count[$i]
             ]);
         }
     }

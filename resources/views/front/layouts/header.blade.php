@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/owl.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    @if (app()->getLocale()=='ar')
-    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+    @if (app()->getLocale() == 'ar')
+        <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
     @endif
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 </head>
@@ -29,7 +29,7 @@
 
     <!-- preloader area start -->
     <div class="preloader" id="preloader">
-        <div class="preloader-inner">   
+        <div class="preloader-inner">
             <div class="spinner">
                 <div class="dot1"></div>
                 <div class="dot2"></div>
@@ -107,13 +107,14 @@
                     <li><a class="{{ request()->routeIs('front.about') ? 'active' : '' }}"
                             href="{{ route('front.about') }}">{{ __('general.about') }}</a></li>
                     {{-- <li><a class="{{request()->routeIs('front.home')?'active':''}}" href="{{route('front.home')}}">Project</a></li> --}}
-                    <li><a class="{{ request()->routeIs('front.contact') ? 'active' : '' }}"
-                            href="{{ route('front.contact') }}">{{ __('general.contact') }}</a></li>
+                    <li><a class="{{ request()->routeIs('front.message') ? 'active' : '' }}"
+                            href="{{ route('front.message') }}">{{ __('general.message') }}</a></li>
                     @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                         <li class="{{ app()->getLocale() == $localeCode ? 'd-none' : '' }}">
                             <a rel="alternate" hreflang="{{ $localeCode }}"
                                 href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                <img src="{{ asset('flags/' . $localeCode . '.png') }}" class="flag" alt="KSA Flag">
+                                <img src="{{ asset('flags/' . $localeCode . '.png') }}" class="flag"
+                                    alt="KSA Flag">
                             </a>
                         </li>
                     @endforeach

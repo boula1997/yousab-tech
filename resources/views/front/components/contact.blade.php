@@ -1,46 +1,88 @@
-        
-            <div class="g-map-inner">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14604.929175165831!2d90.36542960000001!3d23.774741049999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1639502123533!5m2!1sen!2sbd"></iframe>
-            </div>
-            <div class="g-map-contact">
-                <div class="row justify-content-end">
-                    <div class="col-lg-5 col-md-7">
-                        <form class="contact-form-wrap" action="mail.php" method="post" id="contact-form">
-                            <div class="consulting-contact-form mx-4">
-                                <h3 class="mb-3">Free consulting </h3>
-                                <div class="single-input-inner style-bg">
-                                    <input type="text" name="name" placeholder={{__('general.fullname')}}>
-                                </div>
-                                <div class="single-input-inner style-bg">
-                                    <input type="text" name="email" placeholder={{__('general.email_address')}}>
-                                </div>
-                                <div class="single-input-inner style-bg">
-                                    <textarea name="message" placeholder={{__('general.message')}}></textarea>
-                                </div>
-                                <div class="btn-wrap pb-3">
-                                    <button type="submit" class="btn btn-base">{{__('general.submit')}}</button>
-                                </div>
-                                <p class="form-messege mb-0 mt-20 text-center"></p>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        
-        <!-- call to action start -->
-        <div class="call-to-action-area pd-top-120 pd-bottom-120 text-center bg-overlay-base"
-            style="background-image: url('./assets/img/bg/5.webp');">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 col-md-8">
-                        <div class="single-call-to-action-inner style-white">
-                            <h5>We are here to answer your questions 24/7</h5>
-                            <h2>Need for it solution services</h2>
-                            <a class="btn btn-black mt-3" href="contact.html">Contact With Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    {{-- <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}
+{{-- <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"> --}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+    .contact-icon {
+        font-size: 2em !important;
+        margin-top: 10%;
+        color: white;
+    }
+
+    .contact-h2 {
+        color: white;
+    }
+
+    /* .intro {
+  height: auto;
+  min-height: 100vh;
+  text-align: center;
+  background-color: teal;
+} */
+
+</style>
+<script>
+    function inVisible(element) {
+        //Checking if the element is
+        //visible in the viewport
+        var WindowTop = $(window).scrollTop();
+        var WindowBottom = WindowTop + $(window).height();
+        var ElementTop = element.offset().top;
+        var ElementBottom = ElementTop + element.height();
+        //animating the element if it is
+        //visible in the viewport
+        if ((ElementBottom <= WindowBottom) && ElementTop >= WindowTop)
+            animate(element);
+    }
+
+    function animate(element) {
+        //Animating the element if not animated before
+        if (!element.hasClass('ms-animated')) {
+            var maxval = element.data('max');
+            var html = element.html();
+            element.addClass("ms-animated");
+            $({
+                countNum: element.html()
+            }).animate({
+                countNum: maxval
+            }, {
+                //duration 5 seconds
+                duration: 5000,
+                easing: 'linear',
+                step: function () {
+                    element.html(Math.floor(this.countNum) + html);
+                },
+                complete: function () {
+                    element.html(this.countNum + html);
+                }
+            });
+        }
+
+    }
+
+    //When the document is ready
+    $(function () {
+        //This is triggered when the
+        //user scrolls the page
+        $(window).scroll(function () {
+            //Checking if each items to animate are
+            //visible in the viewport
+            $("h2[data-max]").each(function () {
+                inVisible($(this));
+            });
+        })
+    });
+
+</script>
+
+<div class="container-fluid text-center">
+    {{-- <h1>Some cool facts</h1> --}}
+    <div class="row pt-5">
+        @foreach ($contacts as $contact)
+        <div class="col-sm-3 pt-3 pb-4" style="background-color: #00FF00">
+            <h2 class="contact-h2" data-max="{{$contact->count}}"></h2>
+            <h2 class="contact-h2">{{$contact->title}}</h2>
         </div>
-        <!-- call to action start -->
+            
+        @endforeach
+    </div>
+</div>

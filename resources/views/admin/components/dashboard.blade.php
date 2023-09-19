@@ -61,9 +61,9 @@
 
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
-            <a class="nav-link" href="{{ route('contacts.index') }}">
+            <a class="nav-link" href="{{ route('messages.index') }}">
                 <i class="far fa-comments"></i>
-                <span class="badge badge-danger navbar-badge">{{ itemsCount('contacts') }}</span>
+                <span class="badge badge-danger navbar-badge">{{ itemsCount('messages') }}</span>
             </a>
             {{-- <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <a href="#" class="dropdown-item">
@@ -418,6 +418,25 @@
                         </ul>
                     </li>
                 @endcan
+                @can('contact-list')
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                @lang('general.contacts') <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('contacts') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('contacts.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>@lang('general.show')</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endcan
 
                 @can('video-list')
                     <li class="nav-item">
@@ -439,18 +458,18 @@
                     </li>
                 @endcan
 
-                @can('contact-list')
+                @can('message-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                @lang('general.contacts') <i class="fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">{{ itemsCount('contacts') }}</span>
+                                @lang('general.messages') <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('messages') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ route('contacts.index') }}" class="nav-link">
+                                <a href="{{ route('messages.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>

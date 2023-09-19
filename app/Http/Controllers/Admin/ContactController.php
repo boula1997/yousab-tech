@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Contact;
-use Exception;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Dashboard\ContactRequest;
+use Exception;
 
 class ContactController extends Controller
 {
@@ -17,7 +18,9 @@ class ContactController extends Controller
     private $contact;
     function __construct(Contact $contact)
     {
-        $this->middleware('permission:contact-list|contact-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:contact-list|contact-create|contact-edit|contact-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:contact-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:contact-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:contact-delete', ['only' => ['destroy']]);
         $this->contact = $contact;
     }
@@ -26,8 +29,8 @@ class ContactController extends Controller
     public function index()
     {
         try {
-            $data = $this->contact->latest()->get();
-            return view('admin.crud.contacts.index', compact('data'))
+            $contacts = $this->contact->latest()->get();
+            return view('admin.crud.contacts.index', compact('contacts'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
         } catch (Exception $e) {
             dd($e->getMessage());
@@ -35,6 +38,33 @@ class ContactController extends Controller
         }
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('admin.crud.contacts.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(ContactRequest $request)
+    {
+        try {
+            $this->contact->create($request->all());
+            return redirect()->route('contacts.index')
+                ->with('success', trans('general.created_successfully'));
+        } catch (Exception $e) {
+            dd($e->getMessage());
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
+    }
 
     /**
      * Display the specified resource.
@@ -47,7 +77,36 @@ class ContactController extends Controller
         return view('admin.crud.contacts.show', compact('contact'));
     }
 
-
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Contact  $contact
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Contact $contact)
+    {
+        //    dd($contact->title);
+        return view('admin.crud.contacts.edit', compact('contact'));
+    }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\portfolio  $contact
+     * @return \Illuminate\Http\Response
+     */
+    public function update(ContactRequest $request, Contact $contact)
+    {
+        try {
+            $data = $request->all();
+            $contact->update($data);
+            return redirect()->route('contacts.index')
+                ->with('success', trans('general.update_successfully'));
+        } catch (Exception $e) {
+            dd($e->getMessage());
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *

@@ -18,7 +18,7 @@
                         <p class="content">{!! page('home-banner')->description !!}</p>
                         <div class="btn-wrap">
                             <a class="btn btn-base me-2" href="blog.html">{{__('general.get_started')}}</a>
-                            <a class="btn btn-border-white" href="contact.html">{{__('general.contact')}}</a>
+                            <a class="btn btn-border-white" href="message.html">{{__('general.message')}}</a>
                         </div>
                     </div>
                 </div>

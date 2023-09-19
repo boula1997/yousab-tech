@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\FaqController;
-use App\Http\Controllers\Admin\ContactController;
-// use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\MessageController;
+// use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\CounterController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
@@ -64,7 +65,7 @@ Route::group(
             Route::resource('roles', RoleController::class);
             // Route::resource('home',HomeController::class);
             Route::resource('faqs', FaqController::class);
-            // Route::resource('contact',ContactController::class);
+            // Route::resource('message',MessageController::class);
             Route::resource('services', ServiceController::class);
             Route::resource('testimonials', TestimonialController::class);
             Route::resource('processes', ProcessController::class);
@@ -73,6 +74,7 @@ Route::group(
             // Route::resource('about',AboutController::class);
             Route::resource('portfolios', PortfolioController::class);
             Route::resource('counters', CounterController::class);
+            Route::resource('contacts', ContactController::class);
             Route::resource('videos', VideoController::class);
             Route::resource('tests', ImageController::class);
         
@@ -80,7 +82,7 @@ Route::group(
             Route::resource('users', UserController::class);
             Route::resource('admins', AdminController::class);
             Route::resource('products', ProductController::class);
-            Route::resource('contacts', ContactController::class);
+            Route::resource('messages', MessageController::class);
         
         
             Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
