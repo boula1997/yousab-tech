@@ -3,36 +3,36 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Dashboard\BlogRequest;
+use App\Http\Requests\Dashboard\FaqRequest;
 use App\Models\File as ModelsFile;
-use App\Models\Blog;
+use App\Models\Faq;
 use Exception;
 use Illuminate\Support\Facades\File;
 
-class BlogController extends Controller
+class FaqController extends Controller
 {
     /**s
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Responses
      */
-    private $blog;
+    private $faq;
 
-    function __construct(Blog $blog)
+    function __construct(Faq $faq)
     {
-        $this->middleware('permission:blog-list|blog-create|blog-edit|blog-delete', ['only' => ['index', 'show']]);
-        $this->middleware('permission:blog-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:blog-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:blog-delete', ['only' => ['destroy']]);
-        $this->blog = $blog;
+        $this->middleware('permission:faq-list|faq-create|faq-edit|faq-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:faq-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:faq-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:faq-delete', ['only' => ['destroy']]);
+        $this->faq = $faq;
     }
 
     public function index()
     {
         try {
-            $blogs = $this->blog->latest()->get();
-            return view('admin.crud.blogs.index', compact('blogs'))
-                ->with('i', (request()->input('blog', 1) - 1) * 5);
+            $faqs = $this->faq->latest()->get();
+            return view('admin.crud.faqs.index', compact('faqs'))
+                ->with('i', (request()->input('faq', 1) - 1) * 5);
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
@@ -46,7 +46,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('admin.crud.blogs.create');
+        return view('admin.crud.faqs.create');
     }
 
     /**
@@ -55,14 +55,13 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BlogRequest $request)
+    public function store(FaqRequest $request)
     {
 
         try {
             $data = $request->except('image','profile_avatar_remove');
-            $blog = $this->blog->create($data);
-            $blog->uploadFile();
-            return redirect()->route('blogs.index')
+            $faq = $this->faq->create($data);
+            return redirect()->route('faqs.index')
                 ->with('success', trans('general.created_successfully'));
         } catch (Exception $e) {
             dd($e->getMessage());
@@ -73,39 +72,38 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
+    public function show(Faq $faq)
     {
-        return view('admin.crud.blogs.show', compact('blog'));
+        return view('admin.crud.faqs.show', compact('faq'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit(Faq $faq)
     {
-        // dd($blog);
-        return view('admin.crud.blogs.edit', compact('blog'));
+        // dd($faq);
+        return view('admin.crud.faqs.edit', compact('faq'));
     }
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\portfolio  $blog
+     * @param  \App\Models\portfolio  $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(BlogRequest $request, Blog $blog)
+    public function update(FaqRequest $request, Faq $faq)
     {
         try {
             $data = $request->except('image','profile_avatar_remove');
-            $blog->update($data);
-            $blog->updateFile();
-            return redirect()->route('blogs.index', compact('blog'))
+            $faq->update($data);
+            return redirect()->route('faqs.index', compact('faq'))
                 ->with('success', trans('general.update_successfully'));
         } catch (Exception $e) {
             dd($e->getMessage());
@@ -115,17 +113,15 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $blog)
+    public function destroy(Faq $faq)
     {
 
         try {
-            $blog->delete();
-            $blog->file->delete();
-            $blog->deleteFile();
-            return redirect()->route('blogs.index')
+            $faq->delete();
+            return redirect()->route('faqs.index')
                 ->with('success', trans('general.deleted_successfully'));
         } catch (Exception $e) {
             dd($e->getMessage());

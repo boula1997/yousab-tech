@@ -13,8 +13,8 @@ class ServiceSeeder extends Seeder
      */
     public function run(): void
     {
-        $title_ar = ["رفع المواقع","انشاء المواقع"];
-        $title_en = ["Upload websites","Create websites"];
+        $title_ar = ["استضافة مواقع الويب","انشاء مواقع الويب","ادارة مواقع الويب","تطوير مواقع الويب"];
+        $title_en = ["Hosting Websites","Creating Websites","Managing Websites","Web Development"];
         $subtitle_ar = [null,null];
         $subtitle_en = [null,null];
         $description_ar = ["نقوم برفع المواقع مجانا","نقوم بانشاء المواقع"];

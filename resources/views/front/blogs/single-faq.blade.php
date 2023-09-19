@@ -24,7 +24,7 @@
 <div class="full-title">
     <div class="container text-center">
         <!-- Page Heading/Breadcrumbs -->
-        <h1 class="mt-4 mb-3">{{ $blog->title }}
+        <h1 class="mt-4 mb-3">{{ $faq->title }}
         </h1>
     </div>
 </div>
@@ -33,7 +33,7 @@
         <div class="hm-gradient mb-5">
             <div class="container p-4" style="font-size: 20px">
                 <a style="color: #4E3A14" href="index.html">الرئيسية</a> / <span
-                    style="color: white">{{ $blog->title }}</span>
+                    style="color: white">{{ $faq->title }}</span>
             </div>
         </div>
     </div>
@@ -42,12 +42,10 @@
 <div class="about-main container">
     <div class="row">
         <div class="col-md-8 col-sm-12">
-            <p>تم اﻹنشاء فى {{ $blog->created_at }}</p>
-            {!! $blog->description !!}
+            <p>تم اﻹنشاء فى {{ $faq->created_at }}</p>
+            {!! $faq->description !!}
         </div>
         <div class="col-md-4 col-sm-12" style="height: 400px;">
-            <img style="height: 100%; object-fit: cover" class="img-fluid rounded" src="{{ $blog->image }}"
-                alt="{{$blog->title}}" />
         </div>
     </div>
 </div>

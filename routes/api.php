@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\API\BlogController;
-use App\Http\Controllers\API\MessageController;
+use App\Http\Controllers\API\FaqController;
+use App\Http\Controllers\API\ContactController;
 use App\Http\Controllers\API\CounterController;
 use App\Http\Controllers\API\PageController;
 use App\Http\Controllers\API\PortfolioController;
@@ -28,8 +28,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::get('blogs', 'BlogController@index');
-// Route::get('blogs/{id}', 'BlogController@show');
+// Route::get('faqs', 'FaqController@index');
+// Route::get('faqs/{id}', 'FaqController@show');
 // Route::get('processes', 'ProcessController@index');
 // Route::get('processes/{id}', 'ProcessController@show');
 // Route::get('sliders', 'SliderController@index');
@@ -52,8 +52,8 @@ Route::group(['middleware' => ['apiLocalization','cors']], function () {
     Route::get('/processes', [ProcessController::class, 'index']);
     Route::get('/process/{id}', [ProcessController::class, 'show']);
     
-    Route::get('/blogs', [BlogController::class, 'index']);
-    Route::get('/blog/{id}', [BlogController::class, 'show']);
+    Route::get('/faqs', [FaqController::class, 'index']);
+    Route::get('/faq/{id}', [FaqController::class, 'show']);
     
     Route::get('/sliders', [SliderController::class, 'index']);
     Route::get('/slider/{id}', [SliderController::class, 'show']);
