@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             FaqSeeder::class,
             MessagesSeeder::class,
             CountersSeeder::class,
+            ContactsSeeder::class,
             GalleriesSeeder::class,
             PagesSeeder::class,
             PremissionsSeeder::class,

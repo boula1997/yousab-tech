@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\CounterController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
@@ -73,6 +74,7 @@ Route::group(
             // Route::resource('about',AboutController::class);
             Route::resource('portfolios', PortfolioController::class);
             Route::resource('counters', CounterController::class);
+            Route::resource('contacts', ContactController::class);
             Route::resource('videos', VideoController::class);
             Route::resource('tests', ImageController::class);
         
