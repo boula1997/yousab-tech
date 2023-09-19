@@ -10,9 +10,10 @@
                     </div>
                 </div>
             </div>
+            
         </div>
         <div class="project-slider-2 slider-control-square owl-carousel">
-            @foreach ($portfolios as $portfolio)
+            @foreach ($portfolios as $portfolio)  
                 <div class="item">
                     <div class="single-project-inner style-two">
                         <div class="thumb">
@@ -21,6 +22,7 @@
                         <div class="details-wrap">
                             <h3><a href="project-details.html">{{$portfolio->title}}</a></h3>
                             <a href="project-details.html">{{$portfolio->subtitle}}<i class="fas fa-arrow-right"></i></a>
+                            <p> {{$portfolio->description }} <p>
                         </div>
                     </div>
                 </div>

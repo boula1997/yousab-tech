@@ -13,10 +13,9 @@
                 </div>
                 <div class="col-lg-6 pe-xl-5 order-lg-first align-self-center">
                     <div class="section-title mb-0">
-                        <h5 class="sub-title right-line">Faq</h5>
-                        <h2 class="title">Know more about our it solution</h2>
-                        <p class="content">Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet
-                            adipiscingem neque</p>
+                        <h5 class="sub-title right-line">{{ page('faq')->title }}</h5>
+                        <h2 class="title">{{ page('faq')->subtitle }}</h2>
+                        {!! page('faq')->description !!}
                     </div>
                     <div class="accordion mt-4" id="accordionExample">
                         <div class="accordion-item single-accordion-inner">
