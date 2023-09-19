@@ -43,8 +43,24 @@
                 <div class="col-md-6">
                     <div class="mb-7 bg-light p-3 rounded h-100">
                         <div class="card-title">
-                            <h5 class="font-weight-bolder text-dark">@lang('general.count'):</h5>
-                            <p class="m-0">{{ $contact->count }}</p>
+                            <h5 class="font-weight-bolder text-dark">@lang('general.contact'):</h5>
+                            <p class="m-0">{{ $contact->contact }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-7 bg-light p-3 rounded h-100">
+                        <div class="card-title">
+                            <h5 class="font-weight-bolder text-dark">@lang('general.type'):</h5>
+                            <p class="m-0">{{ $contact->type }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-7 bg-light p-3 rounded h-100">
+                        <div class="card-title">
+                            <h5 class="font-weight-bolder text-dark">@lang('general.icon'):</h5>
+                            <i class="{{ $contact->icon }}"></i>
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@
 @section('fields_content')
     <div class="content-wrapper">
         @method('PUT')
-        
+
         <div class="container p-5">
 
             [ <div class="card card-custom mb-2">
@@ -73,29 +73,56 @@
                 </div>
             </div>
             <div class="card card-custom">
-                <div class="card-body mb-5">
-                    <div class="row mt-5" style="height: 200px">
-
+                <div class="card-body">
+                    <div class="row">
                         <div class="col-md-6">
-                            <div class="col-md-12">
+                            <div class="form-group">
                                 <div class="form-group">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">{{ __('general.count') }}</label>
-                                        <input type="text" name="count" value="{{ old('count', $contact->count) }}"
-                                            class="form-control" id="exampleInputName" placeholder="@lang('general.count')">
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1">{{ __('general.type') }}</label>
+                                        <select class="form-select form-select-lg" name="" id="">
+                                            <option selected>Select one</option>
+                                            <option value="social">social</option>
+                                            <option value="whatsapp">whatsapp</option>
+                                            <option value="phone">phone</option>
+                                            <option value="email">email</option>
+                                        </select>
                                     </div>
+                                    <input type="text" name="type" value="{{ old('type') }}" class="form-control"
+                                        id="exampleInputName" placeholder="@lang('general.type')">
                                 </div>
-
                             </div>
+
                         </div>
-                        <div class="card-footer mt-5">
-                            <button type="submit" class="btn btn-success">@lang('general.save')</button>
-                            <a href="{{ route('contacts.index') }}"
-                                class="btn btn-danger font-weight-bold">@lang('general.cancel')</a>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">{{ __('general.contact') }}</label>
+                                    <input type="text" name="contact" value="{{ old('contact') }}" class="form-control"
+                                        id="exampleInputName" placeholder="@lang('general.contact')">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            @include('admin.components.icon', [
+                                'label' => 'icon',
+                                'required' => true,
+                                'value' => 'value',
+                            ])
+
                         </div>
                     </div>
+                    <div class="card-footer">
+                        <button type="submit"
+                            class="btn btn-outline-primary px-5
+                          ">@lang('general.save')</button>
+                        <a href="{{ route('contacts.index') }}"
+                            class="btn btn-outline-danger px-5
+                            ">@lang('general.cancel')</a>
+                    </div>
                 </div>
-            </div>]
+            </div>
         </div>
 
 

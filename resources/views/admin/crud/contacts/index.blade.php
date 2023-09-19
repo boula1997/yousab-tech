@@ -37,7 +37,7 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>@lang('general.title')</th>
-                                                <th>@lang('general.count')</th>
+                                                <th>@lang('general.contact')</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
                                         </thead>
@@ -46,7 +46,7 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $contact->title }}</td>
-                                                    <td>{{ $contact->count }}</td>
+                                                    <td>{{ $contact->contact }}</td>
                                                     <td>
                                                         <form action="{{ route('contacts.destroy', $contact) }}"
                                                             method="POST">

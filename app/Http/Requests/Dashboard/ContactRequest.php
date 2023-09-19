@@ -23,7 +23,9 @@ class ContactRequest extends FormRequest
 
 
         $rules = [
-            'count' =>  'required',
+            'contact' =>  'required',
+            'type' =>  'required',
+            'icon' =>  'required',
         ];
         foreach (config('translatable.locales') as $locale) {
             $rules += [$locale . '.title' => ['required', 'string']];

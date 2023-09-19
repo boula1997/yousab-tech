@@ -52,43 +52,67 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">{{ __('general.count') }}</label>
-                                    <input type="text" name="count" value="{{ old('count') }}" class="form-control"
-                                        id="exampleInputName" placeholder="@lang('general.count')">
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1">{{ __('general.type') }}</label>
+                                        <select class="form-select form-select-lg" name="" id="">
+                                            <option selected>Select one</option>
+                                            <option value="social">social</option>
+                                            <option value="whatsapp">whatsapp</option>
+                                            <option value="phone">phone</option>
+                                            <option value="email">email</option>
+                                        </select>
+                                    </div>
+                                    <input type="text" name="type" value="{{ old('type') }}" class="form-control"
+                                        id="exampleInputName" placeholder="@lang('general.type')">
                                 </div>
                             </div>
 
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">{{ __('general.contact') }}</label>
+                                    <input type="text" name="contact" value="{{ old('contact') }}" class="form-control"
+                                        id="exampleInputName" placeholder="@lang('general.contact')">
+                                </div>
+                            </div>
 
+                        </div>
+                        <div class="col-md-6">
+                            @include('admin.components.icon', [
+                                'label' => 'icon',
+                                'required' => true,
+                                'value' => 'value',
+                            ])
 
+                        </div>
                     </div>
-                </div>
-                <div class="card-footer">
-                    <button type="submit"
-                        class="btn btn-outline-primary px-5
+                    <div class="card-footer">
+                        <button type="submit"
+                            class="btn btn-outline-primary px-5
                           ">@lang('general.save')</button>
-                    <a href="{{ route('contacts.index') }}"
-                        class="btn btn-outline-danger px-5
+                        <a href="{{ route('contacts.index') }}"
+                            class="btn btn-outline-danger px-5
                             ">@lang('general.cancel')</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-    @push('scripts')
-        <script>
-            $(function() {
-                // Summernote
-                $('.summernote').summernote()
+        @push('scripts')
+            <script>
+                $(function() {
+                    // Summernote
+                    $('.summernote').summernote()
 
-                // CodeMirror
-                CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
-                    mode: "htmlmixed",
-                    theme: "monokai"
-                });
-            })
-        </script>
-    @endpush
+                    // CodeMirror
+                    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                        mode: "htmlmixed",
+                        theme: "monokai"
+                    });
+                })
+            </script>
+        @endpush
 
-@endsection
+    @endsection
