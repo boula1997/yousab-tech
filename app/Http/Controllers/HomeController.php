@@ -8,6 +8,8 @@ use App\Models\Process;
 use App\Models\Gallery;
 use App\Models\Slider;
 use App\Models\Counter;
+use App\Models\Faq;
+use App\Models\Setting;
 use Exception;
 
 class HomeController extends Controller
@@ -23,8 +25,10 @@ class HomeController extends Controller
     private $process;
     private $counter;
     private $portfolio;
+    private $fag;
+    // private $settings;
 
-    public function __construct(Service $service, Testimonial $testimonial, Slider $slider, Process $process, Counter $counter, Gallery $portfolio)
+    public function __construct(Service $service, Testimonial $testimonial, Slider $slider, Process $process, Counter $counter, Gallery $portfolio,Faq $fag)
     {
         $this->service = $service;
         $this->testimonial = $testimonial;
@@ -32,6 +36,8 @@ class HomeController extends Controller
         $this->process = $process;
         $this->counter = $counter;
         $this->portfolio = $portfolio;
+        $this->fag=$fag;
+        // $this->settings=$settings;
     }
 
     /**
@@ -48,7 +54,10 @@ class HomeController extends Controller
             $sliders = $this->slider->get();
             $counters = $this->counter->get();
             $portfolios = $this->portfolio->get();
-            return view('front.index', compact('testimonials', 'services', 'processes', 'portfolios', 'sliders', 'counters'));
+            $fags=$this->fag->get();
+            // $settings=$this->settings->get();
+
+            return view('front.index', compact('testimonials', 'services', 'processes', 'portfolios', 'sliders', 'counters','fags'));
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);

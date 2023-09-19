@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Iitechie - IT Solutions and Services Html Template</title>
-    <link rel=icon href="assets/img/favicon.webp" sizes="20x20" type="image/png">
+    <title>Yousab</title>
+    {{-- <link rel=icon href="assets/img/favicon.webp" sizes="20x20" type="image/png"> --}}
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
@@ -60,21 +60,21 @@
                             <p><i class="far fa-clock"></i> {{ __('general.opening_hour') }}</p>
                         </li>
                         <li>
-                            <p><i class="far fa-envelope"></i> exam@gmail.com</p>
+                            <p><i class="far fa-envelope"></i> {{settings()->email1}}</p>
                         </li>
                     </ul>
                 </div>
                 <div class="col-sm-6">
                     <ul class="topbar-right text-md-end text-center">
                         <li class="d-none d-none d-lg-inline-block">
-                            <p>{{ __('general.hotline') }} <span>: (+00)-333-444-5555</span></p>
+                            <p>{{ __('general.hotline') }} <span>: {{settings()->phone1}}</span></p>
                         </li>
                         <li class="social-area">
                             <p class="d-inline-block">{{ __('general.follow_us_on') }}</p>
-                            <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
+                            <a href="{{settings()->facebook}}"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                            <a href="{{settings()->twitter}}"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                            <a href="{{settings()->instgram}}"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="{{settings()->youtube}}"><i class="fab fa-youtube" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -91,7 +91,7 @@
                 </button>
             </div>
             <div class="logo">
-                <a href="index.html"><img src="{{ asset('assets/img/logo.webp') }}" alt="img"></a>
+                <a href=""><img src="{{ asset('settings()->logo') }}" alt="img"></a>
             </div>
             <div class="nav-right-part nav-right-part-mobile">
                 <a class="search-bar-btn" href="#">

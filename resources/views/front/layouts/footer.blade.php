@@ -8,25 +8,27 @@
                         <h4 class="widget-title">{{__('general.about')}}</h4>
                         <div class="details">
                             <p>{{__('general.address')}}</p>
-                            <p>Melbourne’s GPO 434 VIC 3074, Australia.</p>
+                            {{-- <p>Melbourne’s GPO 434 VIC 3074, Australia.</p> --}}
+                            {{-- {{settings()->address}} --}}
+                            <p>000000 {{settings()->address}}</p>
                             <ul class="social-media">
                                 <li>
-                                    <a class="facebook" href="#">
+                                    <a class="facebook" href="{{settings()->facebook}}">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="twitter" href="#">
+                                    <a class="twitter" href="{{settings()->twitter}}">
                                         <i class="fab fa-twitter"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="instagram" href="#">
+                                    <a class="instagram" href="{{settings()->instgram}}">
                                         <i class="fab fa-instagram"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="youtube" href="#">
+                                    <a class="youtube" href="{{settings()->youtube}}">
                                         <i class="fab fa-youtube"></i>
                                     </a>
                                 </li>
