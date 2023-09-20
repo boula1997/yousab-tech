@@ -10,7 +10,7 @@
     {{-- <link rel=icon href="assets/img/favicon.webp" sizes="20x20" type="image/png"> --}}
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+
     <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/custom-icon.css') }}">
@@ -20,8 +20,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     @if (app()->getLocale() == 'ar')
+        <link rel="stylesheet" href="{{ asset('bootstrap-5.3.1-dist/css/bootstrap.rtl.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/style_ar.css') }}">
     @else
+        <link rel="stylesheet" href="{{ asset('bootstrap-5.3.1-dist/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     @endif
 </head>
