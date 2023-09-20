@@ -3146,6 +3146,7 @@ ul {
 .banner-inner {
   position: relative;
   z-index: 5;
+  text-align: right !important;
 }
 
 .banner-inner .sub-title {
@@ -4875,6 +4876,11 @@ ul {
 .single-accordion-inner.style-2 .accordion-collapse.show {
   background: var(--main-color);
   color: #fff;
+}
+
+.accordion-button::after {
+  margin-right: auto;
+  margin-left: 0;
 }
 
 .single-project-inner {
