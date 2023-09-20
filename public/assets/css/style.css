@@ -4376,6 +4376,7 @@ ul {
   background: #fff;
   padding: 0 30px 30px 30px;
   margin-top: 44px;
+  height: 200px;
 }
 
 .single-work-inner.style-two .count-inner {
@@ -4907,6 +4908,8 @@ ul {
 .single-project-inner .thumb img {
   -webkit-transition: 0.7s;
   transition: 0.7s;
+  object-fit: contain;
+  height: 366px;
 }
 
 .single-project-inner .thumb .icon {
