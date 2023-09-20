@@ -8,25 +8,27 @@
                         <h4 class="widget-title">{{__('general.about')}}</h4>
                         <div class="details">
                             <p>{{__('general.address')}}</p>
-                            <p>Melbourne’s GPO 434 VIC 3074, Australia.</p>
+                            {{-- <p>Melbourne’s GPO 434 VIC 3074, Australia.</p> --}}
+                            {{-- {{settings()->address}} --}}
+                            <p>000000 {{settings()->address}}</p>
                             <ul class="social-media">
                                 <li>
-                                    <a class="facebook" href="#">
+                                    <a class="facebook" href="{{settings()->facebook}}">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="twitter" href="#">
+                                    <a class="twitter" href="{{settings()->twitter}}">
                                         <i class="fab fa-twitter"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="instagram" href="#">
+                                    <a class="instagram" href="{{settings()->instgram}}">
                                         <i class="fab fa-instagram"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="youtube" href="#">
+                                    <a class="youtube" href="{{settings()->youtube}}">
                                         <i class="fab fa-youtube"></i>
                                     </a>
                                 </li>
@@ -54,13 +56,13 @@
                             <li><a href="team.html">{{__('general.team')}}</a></li>
                             <li><a href="project.html">{{__('general.portfolio')}}</a></li>
                             <li><a href="service.html">{{__('general.services')}}</a></li>
-                            <li><a href="contact.html">{{__('general.contact')}}</a></li>
+                            <li><a href="message.html">{{__('general.message')}}</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="widget widget_subscribe">
-                        <h4 class="widget-title">{{__('general.contact')}}</h4>
+                        <h4 class="widget-title">{{__('general.message')}}</h4>
                         <div class="single-input-inner style-border style-bg-none">
                             <input type="text" placeholder={{__('general.your_email')}}>
                             <button><i class="fa fa-arrow-right"></i></button>

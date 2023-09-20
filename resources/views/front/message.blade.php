@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 @section('content')
 @include('front.components.breadcrumb')
-    @include('front.components.contact')
+    @include('front.components.message')
     </div>
 @endsection

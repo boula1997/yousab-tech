@@ -75,14 +75,14 @@
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>{{itemsCount('blogs')}}</h3>
+                                    <h3>{{itemsCount('faqs')}}</h3>
 
-                                    <p>@lang('general.blogs')</p>
+                                    <p>@lang('general.faqs')</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
                                 </div>
-                                <a href="{{route('blogs.index')}}" class="small-box-footer">@lang('general.moreinfo') <i
+                                <a href="{{route('faqs.index')}}" class="small-box-footer">@lang('general.moreinfo') <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>

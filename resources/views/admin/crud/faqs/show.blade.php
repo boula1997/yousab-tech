@@ -30,16 +30,7 @@
                                         <div class="mb-7 bg-light p-3 rounded h-100">
                                             <div class="card-title">
                                                 <h5 class="font-weight-bolder text-dark">@lang('general.title'):</h5>
-                                                <p class="m-0">{{ $blog->translate($locale)->title }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="mb-7 bg-light p-3 rounded h-100">
-                                            <div class="card-title">
-                                                <h5 class="font-weight-bolder text-dark">@lang('general.subtitle'):</h5>
-                                                <p class="m-0">{{ $blog->translate($locale)->subtitle }}</p>
+                                                <p class="m-0">{{ $faq->translate($locale)->title }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -52,29 +43,13 @@
                                         <div class="mb-7 bg-light p-3 rounded h-100">
                                             <div class="card-title">
                                                 <h5 class="font-weight-bolder text-dark">@lang('general.description'):</h5>
-                                                <p class="m-0">{!! $blog->translate($locale)->description !!}</p>
+                                                <p class="m-0">{!! $faq->translate($locale)->description !!}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         @endforeach
-                    </div>
-                </div>
-
-                <div class="card card-custom">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    @if ($blog->file !== null)
-                                        <label class="col-form-label d-block">@lang('general.image')</label>
-                                        <br>
-                                        <img src="{{ asset($blog->image) }}" class="w-50">
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

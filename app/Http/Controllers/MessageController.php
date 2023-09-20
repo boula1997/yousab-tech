@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ContactRequest;
-use App\Models\Contact;
+use App\Http\Requests\MessageRequest;
+use App\Models\Message;
 use App\Models\Service;
 use App\Models\Testimonial;
 use App\Models\Process;
@@ -12,7 +12,7 @@ use App\Models\Slider;
 use App\Models\Counter;
 use Exception;
 
-class ContactController extends Controller
+class MessageController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -21,16 +21,16 @@ class ContactController extends Controller
      */
     private $service;
     private $testimonial;
-    private $contact;
+    private $message;
     private $process;
     private $counter;
     private $portfolio;
 
-    public function __construct(Service $service, Testimonial $testimonial, contact $contact, Process $process, Counter $counter, Gallery $portfolio)
+    public function __construct(Service $service, Testimonial $testimonial, message $message, Process $process, Counter $counter, Gallery $portfolio)
     {
         $this->service = $service;
         $this->testimonial = $testimonial;
-        $this->contact = $contact;
+        $this->message = $message;
         $this->process = $process;
         $this->counter = $counter;
         $this->portfolio = $portfolio;
@@ -64,12 +64,12 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ContactRequest $request)
+    public function store(MessageRequest $request)
     {
         // dd($request->input('message'));
         $data = $request->all();
         $data['message'] = $request->input('message');
         // dd($data);
-        $this->contact->create($data);
+        $this->message->create($data);
     }
 }

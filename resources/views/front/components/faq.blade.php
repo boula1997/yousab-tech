@@ -5,36 +5,42 @@
                 <div class="col-lg-6 col-md-8 order-lg-last mb-4 mb-lg-0">
                     <div class="faq-image-wrap">
                         <div class="thumb">
+
+                            {{-- <img src="{{ asset( page('faq')->image) }}" alt="img"> --}}
+                            
                             <img src="{{asset('assets/img/about/f1.webp')}}" alt="img">
-                            <img class="img-position-1" src="{{asset('assets/img/about/f2.webp')}}" alt="img">
-                            <img class="img-position-2 top_image_bounce" src="{{asset('assets/img/about/f3.webp')}}" alt="img">
+                            {{-- <img class="img-position-1" src="{{asset('assets/img/about/f2.webp')}}" alt="img"> --}}
+                            {{-- <img class="img-position-2 top_image_bounce" src="{{asset('assets/img/about/f3.webp')}}" alt="img"> --}}
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 pe-xl-5 order-lg-first align-self-center">
                     <div class="section-title mb-0">
-                        <h5 class="sub-title right-line">Faq</h5>
-                        <h2 class="title">Know more about our it solution</h2>
-                        <p class="content">Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet
-                            adipiscingem neque</p>
+                        <h5 class="sub-title right-line">{{ page('faq')->title }}</h5>
+                        <h2 class="title">{{ page('faq')->subtitle }}</h2>
+                        {!! page('faq')->description !!}
                     </div>
-                    <div class="accordion mt-4" id="accordionExample">
-                        <div class="accordion-item single-accordion-inner">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Why we are?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet
-                                    adipiscingem neque sed ipsum. amquam nunc
+                    
+                    @foreach ($fags as $fag)
+                        <div class="accordion mt-4" id="accordionExample">
+                            <div class="accordion-item single-accordion-inner">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        {{$fag->title}}
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        {!! $fag->description !!}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item single-accordion-inner">
+                     @endforeach
+                       
+                        {{-- <div class="accordion-item single-accordion-inner">
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -63,8 +69,8 @@
                                     adipiscingem neque sed ipsum. amquam nunc
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </div> --}}
+                        {{-- @dd($settings) --}}
                 </div>
             </div>
         </div>

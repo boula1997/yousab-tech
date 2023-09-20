@@ -22,9 +22,10 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             AdminsSeeder::class,
-            BlogSeeder::class,
-            ContactsSeeder::class,
+            FaqSeeder::class,
+            MessagesSeeder::class,
             CountersSeeder::class,
+            ContactsSeeder::class,
             GalleriesSeeder::class,
             PagesSeeder::class,
             PremissionsSeeder::class,

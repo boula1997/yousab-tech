@@ -23,14 +23,18 @@ class PermissionTableSeeder extends Seeder
            'product-create',
            'product-edit',
            'product-delete',
-           'blog-list',
-           'blog-create',
-           'blog-edit',
-           'blog-delete',
+           'faq-list',
+           'faq-create',
+           'faq-edit',
+           'faq-delete',
            'counter-list',
            'counter-create',
            'counter-edit',
            'counter-delete',
+           'contact-list',
+           'contact-create',
+           'contact-edit',
+           'contact-delete',
            'image-list',
            'image-create',
            'image-edit',
@@ -75,8 +79,8 @@ class PermissionTableSeeder extends Seeder
            'admin-create',
            'admin-edit',
            'admin-delete',
-           'contact-list',
-           'contact-delete'
+           'message-list',
+           'message-delete'
         ];
      
         foreach ($permissions as $permission) {

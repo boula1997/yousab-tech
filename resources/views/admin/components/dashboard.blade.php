@@ -53,7 +53,7 @@
             <li class="{{ app()->getLocale() == $localeCode ? 'd-none' : '' }}">
                 <a rel="alternate" hreflang="{{ $localeCode }}"
                     href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                    <img src="{{ asset('flags/'.$localeCode.'.png') }}" class="flag" alt="KSA Flag">
+                    <img src="{{ asset('flags/' . $localeCode . '.png') }}" class="flag" alt="KSA Flag">
                 </a>
             </li>
         @endforeach
@@ -61,9 +61,9 @@
 
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
-            <a class="nav-link" href="{{ route('contacts.index') }}">
+            <a class="nav-link" href="{{ route('messages.index') }}">
                 <i class="far fa-comments"></i>
-                <span class="badge badge-danger navbar-badge">{{ itemsCount('contacts') }}</span>
+                <span class="badge badge-danger navbar-badge">{{ itemsCount('messages') }}</span>
             </a>
             {{-- <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <a href="#" class="dropdown-item">
@@ -167,18 +167,23 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <!-- Sidebar user panel (optional) -->
-        <a href="{{ route('edit.profile') }}">
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="image">
-                    <img src="{{ auth('admin')->user()->file ? auth('admin')->user()->image : '' }}"
-                        class="img-circle elevation-2" alt="Edit Your Profile">
+        {{-- <div class="d-flex justify-content-center">
+            <img class="logo-side" src="{{ settings()->logo }}" alt="">
+        </div> --}}
+        <div class="">
+            <!-- Sidebar user panel (optional) -->
+            <a href="{{ route('edit.profile') }}">
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="{{ auth('admin')->user()->file ? auth('admin')->user()->image : '' }}"
+                            class="img-circle elevation-2" alt="Edit Your Profile">
+                    </div>
+                    <div class="info">
+                        <a href="{{ route('edit.profile') }}" class="d-block">{{ auth('admin')->user()->name }}</a>
+                    </div>
                 </div>
-                <div class="info">
-                    <a href="{{ route('edit.profile') }}" class="d-block">{{ auth('admin')->user()->name }}</a>
-                </div>
-            </div>
-        </a>
+            </a>
+        </div>
 
 
 
@@ -374,18 +379,18 @@
                     </li>
                 @endcan
 
-                @can('blog-list')
+                @can('faq-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                @lang('general.blogs') <i class="fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">{{ itemsCount('blogs') }}</span>
+                                @lang('general.faqs') <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('faqs') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ route('blogs.index') }}" class="nav-link">
+                                <a href="{{ route('faqs.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
@@ -406,6 +411,25 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('counters.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>@lang('general.show')</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endcan
+                @can('contact-list')
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                @lang('general.contacts') <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('contacts') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('contacts.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
@@ -434,18 +458,18 @@
                     </li>
                 @endcan
 
-                @can('contact-list')
+                @can('message-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                @lang('general.contacts') <i class="fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">{{ itemsCount('contacts') }}</span>
+                                @lang('general.messages') <i class="fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('messages') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ route('contacts.index') }}" class="nav-link">
+                                <a href="{{ route('messages.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
@@ -466,7 +490,7 @@
                     </li>
                 @endcan
 
-                <li class="nav-item">
+                <li class="nav-item pb-3">
 
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
@@ -474,7 +498,7 @@
                         <button class="btn text-secondary" type="submit">@lang('general.logout')</button>
 
                     </form>
-                </li>
+                </li>   
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

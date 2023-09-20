@@ -16,8 +16,7 @@
                 </div>
             </div>
         </div>
-        <img class="img-fluid rounded mb-4" src="{{$blog_section->image}}" alt="{{$blog_section->title}}" />
-        @include('front.components.blogs')
+        @include('front.components.faqs')
         @include('front.components.partners')
     </div>
 @endsection

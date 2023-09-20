@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\API\BlogController;
-use App\Http\Controllers\API\ContactController;
+use App\Http\Controllers\API\FaqController;
+use App\Http\Controllers\API\MessageController;
 use App\Http\Controllers\API\CounterController;
+use App\Http\Controllers\API\ContactController;
 use App\Http\Controllers\API\PageController;
 use App\Http\Controllers\API\PortfolioController;
 use Illuminate\Http\Request;
@@ -28,21 +29,23 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::get('blogs', 'BlogController@index');
-// Route::get('blogs/{id}', 'BlogController@show');
+// Route::get('faqs', 'FaqController@index');
+// Route::get('faqs/{id}', 'FaqController@show');
 // Route::get('processes', 'ProcessController@index');
 // Route::get('processes/{id}', 'ProcessController@show');
 // Route::get('sliders', 'SliderController@index');
 // Route::get('sliders/{id}', 'SliderController@show');
 // Route::get('counters', 'CounterController@index');
 // Route::get('counter/{id}', 'CounterController@show');
+// Route::get('contacts', 'ContactController@index');
+// Route::get('contact/{id}', 'ContactController@show');
 // Route::get('settings', 'SettingController@index');
 // Route::get('setting/{id}', 'SettingController@show');
 // Route::get('portfolios', 'PortfolioController@index');
 // Route::get('portfolio/{id}', 'PortfolioController@show');
 // Route::get('pages', 'PageController@index');
 // Route::get('page/{id}', 'PageController@show');
-// Route::post('store/contact', 'CContactController@store');
+// Route::post('store/message', 'CMessageController@store');
 
 Route::group(['middleware' => ['apiLocalization','cors']], function () {
     Route::get('/services', [ServiceController::class, 'index']);
@@ -52,8 +55,8 @@ Route::group(['middleware' => ['apiLocalization','cors']], function () {
     Route::get('/processes', [ProcessController::class, 'index']);
     Route::get('/process/{id}', [ProcessController::class, 'show']);
     
-    Route::get('/blogs', [BlogController::class, 'index']);
-    Route::get('/blog/{id}', [BlogController::class, 'show']);
+    Route::get('/faqs', [FaqController::class, 'index']);
+    Route::get('/faq/{id}', [FaqController::class, 'show']);
     
     Route::get('/sliders', [SliderController::class, 'index']);
     Route::get('/slider/{id}', [SliderController::class, 'show']);
@@ -61,6 +64,8 @@ Route::group(['middleware' => ['apiLocalization','cors']], function () {
     
     Route::get('/counters', [CounterController::class, 'index']);
     Route::get('/counter/{id}', [CounterController::class, 'show']);
+    Route::get('/contacts', [ContactController::class, 'index']);
+    Route::get('/contact/{id}', [ContactController::class, 'show']);
     
     Route::get('/settings', [SettingController::class, 'index']);
     
@@ -75,5 +80,5 @@ Route::group(['middleware' => ['apiLocalization','cors']], function () {
 
 
 
-Route::post('/contact', [ContactController::class, 'store']);
+Route::post('/message', [MessageController::class, 'store']);
 
