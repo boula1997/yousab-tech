@@ -45,7 +45,7 @@
     @else
     {{-- <link rel="stylesheet" href="{{asset('admin/css/custom.css')}}"> --}}
     <link rel="stylesheet" href="{{asset('bootstrap-5.3.1-dist\css\bootstrap.rtl.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('dust/css/image.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/image.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('css/style.bundle.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min_ar.css') }}">
     @endif
