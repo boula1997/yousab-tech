@@ -7,8 +7,6 @@
     <title>@yield('title',settings()->title)</title>
     
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="{{ asset('css/style.bundle.css') }}">
-    <link rel="stylesheet" href="{{asset('bootstrap-5.3.1-dist\css\bootstrap.css')}}">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -24,7 +22,7 @@
     <!-- JQVMap -->
     <link rel="stylesheet" href="{{ asset('plugins/jqvmap/jqvmap.min.css') }}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+ 
     <link rel="stylesheet" href="{{ asset('css/iconpicker-1.5.0.css') }}">
    
     <!-- overlayScrollbars -->
@@ -38,10 +36,16 @@
     <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/css/custom.css')}}">
-    @if (app()->getLocale()=='ar')
-    <link rel="stylesheet" href="{{asset('admin/css/custom_ar.css')}}">
+    @if (app()->getLocale()=='en')
+    {{-- <link rel="stylesheet" href="{{asset('admin/css/custom_ar.css')}}"> --}}
+    <link rel="stylesheet" href="{{asset('bootstrap-5.3.1-dist\css\bootstrap.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/style.bundle.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
     @else
-    <link rel="stylesheet" href="{{asset('admin/css/custom.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('admin/css/custom.css')}}"> --}}
+    <link rel="stylesheet" href="{{asset('bootstrap-5.3.1-dist\css\bootstrap.rtl.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/style.bundle.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min_ar.css') }}">
     @endif
     {{-- <link rel="stylesheet" href="{{asset('bootstrap-5.3.1-dist\css\bootstrap.rtl.css')}}"> --}}
 </head>
