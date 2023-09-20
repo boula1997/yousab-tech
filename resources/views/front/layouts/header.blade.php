@@ -20,9 +20,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     @if (app()->getLocale() == 'ar')
-        <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style_ar.css') }}">
+    @else
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     @endif
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
 
 <body class='sc5'>
