@@ -167,10 +167,10 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        {{-- <div class="d-flex justify-content-center">
-            <img class="logo-side" src="{{ settings()->logo }}" alt="">
-        </div> --}}
-        <div class="">
+        <div class="d-flex justify-content-center">
+            <img class="logo-side pt-3" style="height: 120px" src="{{ settings()->logo }}" alt="">
+        </div>
+        {{-- <div class="">
             <!-- Sidebar user panel (optional) -->
             <a href="{{ route('edit.profile') }}">
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -183,7 +183,7 @@
                     </div>
                 </div>
             </a>
-        </div>
+        </div> --}}
 
 
 

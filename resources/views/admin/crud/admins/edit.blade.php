@@ -84,7 +84,7 @@
                                     </div>
 
 
-                                    <div class="card-footer  mt-5">
+                                    <div class="card-footer mb-5  mt-5">
                                         <button type="submit"
                                             class="btn btn-outline-primary px-5">@lang('general.save')</button>
                                         <a href="{{ route('services.index') }}"

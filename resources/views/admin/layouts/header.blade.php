@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', settings()->title)</title>
-
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -36,9 +35,6 @@
     <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/css/custom.css') }}">
-    {{-- <link rel="stylesheet" href="{{asset('admin/css/custom_ar.css')}}"> --}}
-    {{-- <link rel="stylesheet" href= "{{ asset('css/style.bundle.css') }}"> --}}
-    {{-- <link rel="stylesheet" href="{{asset('admin/css/custom.css')}}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/style.bundle.css') }}"> --}}
     @if (app()->getLocale() == 'en')
         <link rel="stylesheet" href="{{ asset('bootstrap-5.3.1-dist\css\bootstrap.min.css') }}">

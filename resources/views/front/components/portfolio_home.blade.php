@@ -14,7 +14,7 @@
                     {{-- <div class="card-body">
                         {!! $portfolio->description !!}
                     </div> --}}
-                    {{-- <div class="card-footer">
+                    {{-- <div class="card-footer mb-5">
                         <a href="#" class="btn btn-outline-primary px-5
 ">تصفح الخدمة</a>
                     </div> --}}

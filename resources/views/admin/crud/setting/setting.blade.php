@@ -4,7 +4,7 @@
 @section('fields_content')
     <div class="content-wrapper">
         @method('PUT')
-        <div class="container p-5">
+        <div class="container p-3">
             <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
                     {{-- <div class="card-title">
@@ -202,8 +202,8 @@
                         <div class="col-md-6">
                             @include('admin.components.image', [
                                 'label' => __('general.logo'),
-                                'value' => old('image', $setting->logo),
-                                'name' => 'image',
+                                'value' => old('logo', $setting->logo),
+                                'name' => 'logo',
                                 'id' => 'kt_image_2',
                                 'accept' => 'image/*',
                                 'required' => true,
@@ -213,8 +213,8 @@
                         <div class="col-md-6">
                             @include('admin.components.image', [
                                 'label' => __('general.tab'),
-                                'value' => old('image', $setting->tab),
-                                'name' => 'image',
+                                'value' => old('tab', $setting->tab),
+                                'name' => 'tab',
                                 'id' => 'kt_image_3',
                                 'accept' => 'image/*',
                                 'required' => true,
@@ -223,7 +223,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">
+                <div class="card-footer mb-5">
                     <button type="submit" class="btn btn-outline-primary">@lang('general.save')</button>
                     <a href="{{ route('dashboard') }}"
                         class="btn btn-outline-danger font-weight-bold">@lang('general.cancel')</a>
