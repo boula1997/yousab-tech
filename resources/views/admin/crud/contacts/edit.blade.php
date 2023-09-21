@@ -40,33 +40,6 @@
                                             value="{{ old($locale . '.title', $contact->translate($locale)->title) }}">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label>@lang('general.subtitle') - @lang('general.' . $locale)<span class="text-danger"> *
-                                        </span></label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="flaticon-edit"></i></span>
-                                        </div>
-                                        <input type="text" name="{{ $locale . '[subtitle]' }}"
-                                            placeholder="@lang('general.subtitle')"
-                                            class="form-control  pl-5 min-h-40px @error($locale . '.subtitle') is-invalid @enderror"
-                                            value="{{ old($locale . '.subtitle', $contact->translate($locale)->subtitle) }}">
-                                    </div>
-                                </div>
-
-
-
-                                <div class="col-form-group">
-                                    <label>@lang('general.description')(@lang('general.' . $locale))<span class="text-danger">*</span></label>
-                                    <textarea rows="100" class="summernote @error($locale . '.description') is-invalid @enderror"
-                                        name="{{ $locale . '[description]' }}">
-                                        {!! old($locale . '.description', $contact->translate($locale)->description) !!} 
-                                    </textarea>
-                                </div>
-                                {{-- <div class="form-group">
-                                        <label>@lang('contacts.description') - @lang('general.'.$locale)<span class="text-danger"> * </span></label>
-                                        <textarea name="{{ $locale . '[description]' }}" @error($locale . '.description') is-invalid @enderror class="form-control kt-ckeditor-5">{{ old($locale . '.description') }}</textarea>
-                                    </div> --}}
                             </div>
                         @endforeach
                     </div>
@@ -108,7 +81,7 @@
                             @include('admin.components.icon', [
                                 'label' => 'icon',
                                 'required' => true,
-                                'value' => 'value',
+                                'value' => '{{ $contact->icon }}',
                             ])
 
                         </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx" dir="rtl">
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     {{-- <link rel=icon href="assets/img/favicon.webp" sizes="20x20" type="image/png"> --}}
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+
     <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/custom-icon.css') }}">
@@ -18,11 +18,14 @@
     <link rel="stylesheet" href="{{ asset('assets/css/magnific.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/owl.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    @if (app()->getLocale() == 'ar')
-        <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
-    @endif
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+    @if (app()->getLocale() == 'ar')
+        <link rel="stylesheet" href="{{ asset('bootstrap-5.3.1-dist/css/bootstrap.rtl.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style_ar.css') }}">
+    @else
+        <link rel="stylesheet" href="{{ asset('bootstrap-5.3.1-dist/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    @endif
 </head>
 
 <body class='sc5'>
@@ -60,21 +63,23 @@
                             <p><i class="far fa-clock"></i> {{ __('general.opening_hour') }}</p>
                         </li>
                         <li>
-                            <p><i class="far fa-envelope"></i> {{settings()->email1}}</p>
+                            <p><i class="far fa-envelope"></i> {{ settings()->email1 }}</p>
                         </li>
                     </ul>
                 </div>
                 <div class="col-sm-6">
                     <ul class="topbar-right text-md-end text-center">
                         <li class="d-none d-none d-lg-inline-block">
-                            <p>{{ __('general.hotline') }} <span>: {{settings()->phone1}}</span></p>
+                            <p>{{ __('general.hotline') }} <span>: {{ settings()->phone1 }}</span></p>
                         </li>
                         <li class="social-area">
                             <p class="d-inline-block">{{ __('general.follow_us_on') }}</p>
-                            <a href="{{settings()->facebook}}"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                            <a href="{{settings()->twitter}}"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                            <a href="{{settings()->instgram}}"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                            <a href="{{settings()->youtube}}"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                            <a href="{{ settings()->facebook }}"><i class="fab fa-facebook-f"
+                                    aria-hidden="true"></i></a>
+                            <a href="{{ settings()->twitter }}"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                            <a href="{{ settings()->instgram }}"><i class="fab fa-instagram"
+                                    aria-hidden="true"></i></a>
+                            <a href="{{ settings()->youtube }}"><i class="fab fa-youtube" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                 </div>

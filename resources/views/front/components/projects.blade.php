@@ -12,7 +12,7 @@
             </div>
             
         </div>
-        <div class="project-slider-2 slider-control-square owl-carousel">
+        <div class="project-slider-2 slider-control-square owl-carousel" dir="ltr">
             @foreach ($portfolios as $portfolio)  
                 <div class="item">
                     <div class="single-project-inner style-two">
