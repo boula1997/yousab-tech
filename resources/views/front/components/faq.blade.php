@@ -8,7 +8,7 @@
 
                             {{-- <img src="{{ asset( page('faq')->image) }}" alt="img"> --}}
                             
-                            <img src="{{asset('assets/img/about/f1.webp')}}" alt="img">
+                            <img src="{{page('faq-section')->image}}" alt="img">
                             {{-- <img class="img-position-1" src="{{asset('assets/img/about/f2.webp')}}" alt="img"> --}}
                             {{-- <img class="img-position-2 top_image_bounce" src="{{asset('assets/img/about/f3.webp')}}" alt="img"> --}}
                         </div>
