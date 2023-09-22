@@ -13,12 +13,13 @@ class TestimonialsSeeder extends Seeder
      */
     public function run(): void
     {
-        $title_ar = ["رفع المواقع","انشاء المواقع"];
         $title_en = ["Upload websites","Create websites"];
-        $subtitle_ar =[null,null];
         $subtitle_en = [null,null];
-        $description_ar = ["نقوم برفع المواقع مجانا","نقوم بانشاء المواقع"];
         $description_en = ["ًWe upload websites for free","We create websites"];
+        
+        $title_ar = ["رفع المواقع","انشاء المواقع"];
+        $subtitle_ar =[null,null];
+        $description_ar = ["نقوم برفع المواقع مجانا","نقوم بانشاء المواقع"];
        
        
 

@@ -33,7 +33,8 @@
             <div class="client-slider pd-top-90 pd-bottom-110 owl-carousel" dir="ltr">
                 <div class="item">
                     <div class="thumb text-center">
-                        {{asset('<img')}} src="{{asset('assets/img/client/1.webp')}}" alt="img">
+                        <img src="{{asset('assets/img/client/1.webp')}}" alt="img">
+                    
                     </div>
                 </div>
                 <div class="item">
