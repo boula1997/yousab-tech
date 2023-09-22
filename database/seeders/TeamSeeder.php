@@ -13,13 +13,28 @@ class TeamSeeder extends Seeder
      */
     public function run(): void
     {
-        $title_ar = ["رفع المواقع","انشاء المواقع"];
-        $title_en = ["Upload websites","Create websites"];
-        $subtitle_ar =[null,null];
-        $subtitle_en = [null,null];
-        $description_ar = ["نقوم برفع المواقع مجانا","نقوم بانشاء المواقع"];
-        $description_en = ["ًWe upload websites for free","We create websites"];
+        $title_en = ["Karshin Kumar",
+                     "Macal Jonsons",
+                     "Estoner William",
+                     "Casses Tomas"];
+        $subtitle_en = ["Founder",
+                        "Director",
+                        "HR",
+                        "IT Maneger"];
+        $description_en = [null,null,null,null];
       
+        $title_ar = ["كارشين كومار",
+                     "ماكال جونسون",
+                     "استونر ويليام",
+                     "كاس توماس"];
+        $subtitle_ar =["مؤسس",
+                        "مدير",
+                        "الموارد البشرية",
+                        "مدير تكنولوجيا المعلومات"];
+        $description_ar =  [null,null,null,null];
+
+        $image=[];
+       
        
 
         for ($i = 0; $i < count($title_ar); $i++) {
