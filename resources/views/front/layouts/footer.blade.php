@@ -10,7 +10,7 @@
                             <p>{{__('general.address')}}</p>
                             {{-- <p>Melbourne’s GPO 434 VIC 3074, Australia.</p> --}}
                             {{-- {{settings()->address}} --}}
-                            <p>000000 {{settings()->address}}</p>
+                            <p>{{settings()->translate(app()->getLocale())->address}}</p>
                             <ul class="social-media">
                                 <li>
                                     <a class="facebook" href="{{settings()->facebook}}">
@@ -76,7 +76,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 align-self-center">
-                        <p>{{__('general.all_rights')}}</p>
+                        <p>{{__('general.all_rights')}}{{settings()->title}}</p>
                     </div>
                 </div>
             </div>
