@@ -94,3 +94,10 @@ function itemsCount($model)
 
     return $items[$model];
 }
+
+function services(){
+    $services = Service::latest()->take(6)->get();
+   
+    return $services;
+    
+}

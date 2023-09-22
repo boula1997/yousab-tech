@@ -9,11 +9,11 @@
                                 <img src="assets/img/service/service-single.webp" alt="img">
                             </div>
                             <div class="details">
-                                <h2>It management</h2>
+                                <h2>{{$service->title}}</h2>
                                 <p>Cras varius. Donec vitae orci sed dolor rutrum auctor. Fusce egestas elit eget lorem. Suspendisse nisl elit, rhoncus eget elementum acondimentum eget, diam. Nam at tortor in tellus interdum sagitliquam lobortis. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Curabitur blandit mollis lacus. Nam adipiscing. Vestibulum eu odio. Vivamus laoreet.</p>
                                 <p>Lorem available market standard dummy text available market industry Lorem Ipsum simply dummy text of free available market.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,</p>
-                                <h4 class="pt-4 mb-4">Key benefits</h4>
-                                <div class="row">
+                                {{-- <h4 class="pt-4 mb-4">Key benefits</h4> --}}
+                                {{-- <div class="row">
                                     <div class="col-md-6">
                                         <div class="media single-choose-inner">
                                             <div class="media-left">
@@ -62,9 +62,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <h4>More information</h4>
-                                <div class="row">
+                                </div> --}}
+                                {{-- <h4>More information</h4> --}}
+                                {{-- <div class="row">
                                     <div class="col-md-8">
                                         <div class="accordion mt-2" id="accordionExample">
                                             <div class="accordion-item single-accordion-inner style-2">
@@ -110,14 +110,14 @@
                                             <img src="assets/img/service/01.webp" alt="img">
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-12">
                     <div class="td-service-sidebar">
-                        <div class="widget widget_catagory">
+                        {{-- <div class="widget widget_catagory">
                             <h4 class="widget-title">Catagory</h4>                                
                             <ul class="catagory-items">
                                 <li><a href="blog.html">Digital marketing</a></li>
@@ -128,8 +128,8 @@
                                 <li><a href="blog.html">Digital Marketing</a></li>
                                 <li><a href="blog.html">IT Consultancy</a></li>
                             </ul>
-                        </div> 
-                        <div class="widget widget_archive">
+                        </div>  --}}
+                        {{-- <div class="widget widget_archive">
                             <h4 class="widget-title">Achivment</h4>                                
                             <ul class="catagory-items">
                                 <li><a href="blog.html">Digital marketing</a></li>
@@ -140,14 +140,14 @@
                                 <li><a href="blog.html">Digital Marketing</a></li>
                                 <li><a href="blog.html">IT Consultancy</a></li>
                             </ul>
-                        </div>
-                        <div class="widget widget_catagory">
+                        </div> --}}
+                        {{-- <div class="widget widget_catagory">
                             <h4 class="widget-title">Download</h4>                                
                             <ul class="catagory-items">
                                 <li><a href="PDFLINK" download>Download PDF</a></li>
                                 <li><a href="PDFLINK" download>Download DOC</a></li>
                             </ul>
-                        </div> 
+                        </div>  --}}
                     </div>
                 </div>
             </div>

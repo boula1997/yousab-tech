@@ -35,7 +35,7 @@ Route::group(
         // Route::get('/service', 'App/Http/Controllers/ServiceController@index')->name('front.service');
         Route::get('/service', [ServiceController::class,'index'])->name('front.service');
         // Route::get('/single-service', 'App/Http/Controllers/ServiceController@show')->name('front.show.service');
-        Route::get('/single-service', [ServiceController::class,'show'])->name('front.show.service');
+        Route::get('/single-service/{id}', [ServiceController::class,'show'])->name('front.show.service');
         Route::get('/testimonial', 'App/Http/Controllers/TestimonialController@index')->name('front.testimonial');
         Route::get('/single-testimonial', 'App/Http/Controllers/TestimonialController@show')->name('front.show.testimonial');
         Route::get('/process', 'App/Http/Controllers/ProcessController@index')->name('front.process');

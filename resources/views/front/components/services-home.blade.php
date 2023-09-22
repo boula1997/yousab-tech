@@ -1,6 +1,6 @@
     <!-- service area start -->
     <div class="service-area bg-overlay pd-top-120 pd-bottom-90"
-        style="background-image: url({{ page('service-section')->image }});">
+        style="background-image: url('./assets/img/bg/3.webp');">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
@@ -24,7 +24,8 @@
                                     <i class="{{ $service->icon }}"></i>
                                 </div>
                                 <div class="details">
-                                    <h3><a href="service-details.html">{{$service->title}}</a></h3>
+                                    
+                                    <h3><a href="{{route('front.show.service',$service->id)}}">{{$service->title}}</a></h3>
                                       {!! $service->description !!}
                                 </div>
                             </div>

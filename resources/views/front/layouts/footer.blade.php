@@ -40,11 +40,16 @@
                     <div class="widget widget_nav_menu">
                         <h4 class="widget-title">{{__('general.services')}}</h4>
                         <ul>
-                            <li><a href="service.html">Web design</a></li>
-                            <li><a href="service.html">Digital marketing </a></li>
+                            @foreach (services() as $service)
+                            
+                            <li><a href="{{route('front.show.service',$service->id)}}">{{$service->title}}</a></li> 
+                            
+                            @endforeach
+                            
+                            {{-- <li><a href="service.html">Digital marketing </a></li>
                             <li><a href="service.html">It management</a></li>
                             <li><a href="service.html">Cloud services</a></li>
-                            <li><a href="service.html">Machine learning</a></li>
+                            <li><a href="service.html">Machine learning</a></li> --}}
                         </ul>
                     </div>
                 </div>

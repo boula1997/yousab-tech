@@ -10,7 +10,7 @@
                                 <i class="{{ $service->icon }}"></i>
                             </div>
                             <div class="details">
-                                <h3><a href="service-details.html">{{$service->title}}</a></h3>
+                                <h3><a href="{{route('front.show.service',$service->id)}}">{{$service->title}}</a></h3>
                                 {!! $service->description !!}
                             </div>
                         </div>

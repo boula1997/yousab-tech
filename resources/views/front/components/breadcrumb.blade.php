@@ -5,10 +5,15 @@
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-8">
                     <div class="breadcrumb-inner text-center">
-                        <h2 class="page-title">Our Services</h2>
+                        <h2 class="page-title">{{$name}}</h2>
                         <ul class="page-list">
-                            <li><a href="index.html">Home</a></li>
-                            <li>Services</li>
+                            <li><a href="{{route('front.home')}}">{{__('general.home')}}</a></li>
+                            @if ($mid)
+                                
+                            <li><a href="{{route('front.services')}}">{{__('general.services')}}</a></li>
+                                
+                            @endif
+                            <li>{{$name}}</li>
                         </ul>
                     </div>
                 </div>

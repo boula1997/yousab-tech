@@ -154,6 +154,7 @@ return [
     'all_rights' => 'All Rights Reserved @',
     'select_icon' => 'Select Icon',
     'type' => 'Type',
+    'our_services'=>'Our Services'
 
 
 
