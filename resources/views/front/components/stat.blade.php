@@ -68,15 +68,15 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="thumb border-radius-5 mb-4 mb-md-0 image-hover-animate">
-                                <img src="assets/img/other/1.webp" alt="img">
+                                <img src="{{ page('skills-section')->image }}" alt="img">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="thumb border-radius-5 mb-4 image-hover-animate">
-                                <img src="assets/img/other/2.webp" alt="img">
+                                <img src="{{ page('skills-section')->image }}" alt="img">
                             </div>
                             <div class="thumb border-radius-5 image-hover-animate">
-                                <img src="assets/img/other/3.webp" alt="img">
+                                <img src="{{ page('skills-section')->image }}" alt="img">
                             </div>
                         </div>
                     </div>
