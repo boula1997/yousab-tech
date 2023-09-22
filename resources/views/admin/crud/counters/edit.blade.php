@@ -74,7 +74,7 @@
             </div>
             <div class="card card-custom">
                 <div class="card-body mb-5">
-                    <div class="row mt-5" style="height: 200px">
+                    <div class="row mt-5" >
 
                         <div class="col-md-6">
                             <div class="col-md-12">

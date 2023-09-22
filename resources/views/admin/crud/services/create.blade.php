@@ -67,46 +67,39 @@
             <div class="card card-custom">
                 <div class="card-body">
                     <div class="row">
-                        {{-- <div class="col-md-6">
+                        <div class="col-md-6">
+                            @include('admin.components.image', [
+                                'label' => __('general.image'),
+                                'value' => old('image'),
+                                'name' => 'image',
+                                'id' => 'kt_image_3',
+                                'accept' => 'image/*',
+                                'required' => true,
+                            ])
+
+                        </div>
+
+                        <div class="col-md-6">
                             @include('admin.components.icon', [
                                 'label' => 'icon',
                                 'required' => true,
                                 'value' => 'value',
-                            ]) --}}
-                    </div>
-                    <div class="col-md-6">
-                        @include('admin.components.image', [
-                            'label' => __('general.image'),
-                            'value' => old('image'),
-                            'name' => 'image',
-                            'id' => 'kt_image_3',
-                            'accept' => 'image/*',
-                            'required' => true,
-                        ])
+                            ])
+
+                        </div>
 
                     </div>
-
-                    <div class="col-md-6">
-                        @include('admin.components.icon', [
-                            'label' => 'icon',
-                            'required' => true,
-                            'value' => '{{old('icon',$service->icon)}}',
-                        ])
-
-                    </div>
-
+                </div>
+                <div class="card-footer mb-5">
+                    <button type="submit"
+                        class="btn btn-outline-primary px-5
+                        ">@lang('general.save')</button>
+                    <a href="{{ route('services.index') }}"
+                        class="btn btn-outline-danger px-5
+                        ">@lang('general.cancel')</a>
                 </div>
             </div>
-            <div class="card-footer mb-5">
-                <button type="submit"
-                    class="btn btn-outline-primary px-5
-                        ">@lang('general.save')</button>
-                <a href="{{ route('services.index') }}"
-                    class="btn btn-outline-danger px-5
-                        ">@lang('general.cancel')</a>
-            </div>
         </div>
-    </div>
     </div>
 @endsection
 

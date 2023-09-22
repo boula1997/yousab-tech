@@ -72,7 +72,7 @@
             </div>
             <div class="card card-custom">
                 <div class="card-body mb-5">
-                    <div class="row" style="height: 200px">
+                    <div class="row" >
 
                         <div class="col-md-6">
                             @include('admin.components.image', [
@@ -90,7 +90,7 @@
                             @include('admin.components.icon', [
                                 'label' => 'icon',
                                 'required' => true,
-                                'value' => '{{ pld('icon')}}',
+                                'value' => 'value',
                             ])
 
                         </div>
@@ -99,7 +99,8 @@
                 </div>
                 <div class="card-footer mb-5 mt-5">
                     <button type="submit" class="btn btn-outline-success">@lang('general.save')</button>
-                    <a href="{{ route('services.index') }}" class="btn btn-outline-danger font-weight-bold">@lang('general.cancel')</a>
+                    <a href="{{ route('services.index') }}"
+                        class="btn btn-outline-danger font-weight-bold">@lang('general.cancel')</a>
                 </div>
             </div>
         </div>

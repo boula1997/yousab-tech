@@ -68,7 +68,7 @@
             </div>
             <div class="card card-custom">
                 <div class="card-body mb-5">
-                    <div class="row" style="height: 200px">
+                    <div class="row" >
 
                         <div class="col-md-6">
                             @include('admin.components.image', [

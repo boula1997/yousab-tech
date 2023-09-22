@@ -87,7 +87,7 @@
     
                     </div>
                     <br>
-                    <div class="row mt-5" style="height: 200px">
+                    <div class="row mt-5" >
     
                         <div class="col-md-6">
                             @include('admin.components.image', [
