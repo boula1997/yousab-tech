@@ -133,7 +133,7 @@ return [
     "role_mangement" => "Role Mangement",
     "settings" => "Settings",
 
-    'opening_hour' => 'Opening Hour 9:00am - 5:00pm',
+    'opening_hour' => 'Opening Hour ',
     'hotline' => 'Hot Line',
     'follow_us_on' => 'Follow Us On :',
     'home' => 'Home',
@@ -151,7 +151,7 @@ return [
     'message' => 'Message',
     'submit' => 'Submit Now',
     'useful_link' => 'Useful links',
-    'all_rights' => '© 2023. All Rights Reserved',
+    'all_rights' => 'All Rights Reserved @',
 
 
 

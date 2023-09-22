@@ -21,24 +21,29 @@
                         {!! page('faq-section')->description !!}
                     </div>
                     
-                    @foreach ($fags as $fag)
-                        <div class="accordion mt-4" id="accordionExample">
+                  
+                    <div class="accordion mt-4" id="accordionExample">
+                        
+                            @foreach ($fags as $fag)
+                        
                             <div class="accordion-item single-accordion-inner">
-                                <h2 class="accordion-header" id="headingOne">
+                                <h2 class="accordion-header" id="headingOne{{$loop->index}}">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        data-bs-target="#collapseOne{{$loop->index}}" aria-expanded="true" aria-controls="collapseOne{{$loop->index}}">
                                         {{$fag->title}}
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                <div id="collapseOne{{$loop->index}}" class="accordion-collapse collapse show" aria-labelledby="headingOne{{$loop->index}}"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         {!! $fag->description !!}
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                     @endforeach
+                        
+                        
+                            @endforeach
+                    </div> 
                        
                         {{-- <div class="accordion-item single-accordion-inner">
                             <h2 class="accordion-header" id="headingTwo">

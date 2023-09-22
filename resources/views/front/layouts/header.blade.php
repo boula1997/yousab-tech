@@ -60,7 +60,7 @@
                 <div class="col-sm-6">
                     <ul class="topbar-right text-md-start text-center">
                         <li class="d-none d-none d-lg-inline-block">
-                            <p><i class="far fa-clock"></i> {{ __('general.opening_hour') }}</p>
+                            <p><i class="far fa-clock"></i> {{ __('general.opening_hour') }}{{settings()->translate(app()->getLocale())->appointment1}}</p>
                         </li>
                         <li>
                             <p><i class="far fa-envelope"></i> {{ settings()->email1 }}</p>
