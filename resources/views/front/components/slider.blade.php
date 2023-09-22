@@ -13,8 +13,8 @@
                 </div>
                 <div class="col-lg-6 col-md-9 order-lg-first align-self-center">
                     <div class="banner-inner style-white  text-center text-lg-start">
-                        <h4 class="sub-title">{{page('home-banner')->title}}</h4>
-                        <h2 class="title">{{page('home-banner')->subtitle}}</h2>
+                        <h4 class="sub-title">{{page('home-banner')->subtitle}}</h4>
+                        <h2 class="title">{{page('home-banner')->title}}</h2>
                         <p class="content">{!! page('home-banner')->description !!}</p>
                         <div class="btn-wrap">
                             <a class="btn btn-base me-2" href="blog.html">{{__('general.get_started')}}</a>

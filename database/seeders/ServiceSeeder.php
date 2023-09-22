@@ -15,10 +15,10 @@ class ServiceSeeder extends Seeder
     {
         $title_ar = ["استضافة مواقع الويب","انشاء مواقع الويب","ادارة مواقع الويب","تطوير مواقع الويب"];
         $title_en = ["Hosting Websites","Creating Websites","Managing Websites","Web Development"];
-        $subtitle_ar = [null,null];
-        $subtitle_en = [null,null];
-        $description_ar = ["نقوم برفع المواقع مجانا","نقوم بانشاء المواقع"];
-        $description_en = ["ًWe upload websites for free","We create websites"];
+        $subtitle_ar = [null,null,null,null];
+        $subtitle_en = [null,null,null,null];
+        $description_ar = ["نقوم برفع المواقع مجانا","نقوم بانشاء المواقع",null,null];
+        $description_en = ["ًWe upload websites for free","We create websites",null,null];
         $images = [];
 
         for ($i = 0; $i < count($title_ar); $i++) {

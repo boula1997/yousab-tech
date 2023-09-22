@@ -5,9 +5,9 @@
             <div class="row">
                 <div class="col-lg-6 pe-5 mb-5 mb-lg-0">
                     <div class="section-title mb-0">
-                        <h5 class="sub-title right-line"> {{page('skills')->title}} </h5>
-                        <h2 class="title">{{page('skills')->subtitle}}</h2>
-                        {!! page('skills')->description !!}
+                        <h5 class="sub-title right-line"> {{page('skills-section')->title}} </h5>
+                        <h2 class="title">{{page('skills-section')->subtitle}}</h2>
+                        {!! page('skills-section')->description !!}
                     </div>
                     <div class="skill-progress-area mt-4">
                         <div class="single-progressbar">

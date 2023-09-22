@@ -15,11 +15,12 @@ class ContactsSeeder extends Seeder
     {
         $title_ar = ["مشاريع قيد التنفيذ","مشاريع تحت الانشاء"];
         $title_en = ["build projects","new project"];
-        $count=['999','800'];
+        $icon=['fa fa-facebook','fa fa-twitter'];
+        $contact=["https://www.facebook.com","https://www.twitter.com"];
       
 
         for ($i = 0; $i < count($title_ar); $i++) {
-            $Contact_Translation = Contact::create([
+            $contact = Contact::create([
                 'ar' => [
                     'title' => $title_ar[$i],
     
@@ -27,7 +28,8 @@ class ContactsSeeder extends Seeder
                 'en' => [
                     'title' => $title_en[$i],
                 ],
-               'count'=>$count[$i]
+               'icon'=>$icon[$i],
+                'contact'=>$contact[$i],
             ]);
         }
     }

@@ -88,7 +88,7 @@ class PagesSeeder extends Seeder
             "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>",
             "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>"];    
 
-            $identifiers=["home-banner","about-us","sevice-section","portfolio-section","process-section","faq-section","skills-section"];  
+            $identifiers=["home-banner","about-us","service-section","portfolio-section","process-section","faq-section","skills-section"];  
 
              $images=[];
        
@@ -110,7 +110,7 @@ class PagesSeeder extends Seeder
                 'identifier'=>$identifiers[$i]
             ]);
 
-            $page->file()->create(["url"=>$images[$i]]);
+            // $page->file()->create(["url"=>$images[$i]]);
      }
     }
 }
