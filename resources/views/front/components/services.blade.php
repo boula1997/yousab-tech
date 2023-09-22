@@ -2,18 +2,23 @@
     <div class="service-area pd-top-120 pd-bottom-90">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-service-inner style-hover-base text-center">
-                        <div class="icon-box">
-                            <i class="icomoon-profile"></i>
-                        </div>
-                        <div class="details">
-                            <h3><a href="service-details.html">Web design</a></h3>
-                            <p>Curabitur ullamcorper ultricies nisiam tiamns rhoncus. Maecenas tempus tellus endimentum </p>
+                @foreach ($services as $service)
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-service-inner style-hover-base text-center">
+                            <div class="icon-box">
+                                <i class="{{ $service->icon }}"></i>
+                            </div>
+                            <div class="details">
+                                <h3><a href="service-details.html">{{$service->title}}</a></h3>
+                                {!! $service->description !!}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
+                    
+                @endforeach
+             
+                {{-- <div class="col-lg-4 col-md-6">
                     <div class="single-service-inner style-hover-base text-center">
                         <div class="icon-box">
                             <i class="icomoon-layer"></i>
@@ -100,7 +105,7 @@
                             <p>Curabitur ullamcorper ultricies nisiam tiamns rhoncus. Maecenas tempus tellus endimentum </p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
