@@ -25,10 +25,10 @@ class HomeController extends Controller
     private $process;
     private $counter;
     private $portfolio;
-    private $fag;
+    private $faq;
     // private $settings;
 
-    public function __construct(Service $service, Testimonial $testimonial, Slider $slider, Process $process, Counter $counter, Gallery $portfolio,Faq $fag)
+    public function __construct(Service $service, Testimonial $testimonial, Slider $slider, Process $process, Counter $counter, Gallery $portfolio,Faq $faq)
     {
         $this->service = $service;
         $this->testimonial = $testimonial;
@@ -36,7 +36,7 @@ class HomeController extends Controller
         $this->process = $process;
         $this->counter = $counter;
         $this->portfolio = $portfolio;
-        $this->fag=$fag;
+        $this->faq=$faq;
         // $this->settings=$settings;
     }
 
@@ -54,10 +54,10 @@ class HomeController extends Controller
             $sliders = $this->slider->get();
             $counters = $this->counter->get();
             $portfolios = $this->portfolio->get();
-            $fags=$this->fag->get();
+            $faqs=$this->faq->get();
             // $settings=$this->settings->get();
 
-            return view('front.index', compact('testimonials', 'services', 'processes', 'portfolios', 'sliders', 'counters','fags'));
+            return view('front.index', compact('testimonials', 'services', 'processes', 'portfolios', 'sliders', 'counters','faqs'));
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);

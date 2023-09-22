@@ -24,19 +24,19 @@
                   
                     <div class="accordion mt-4" id="accordionExample">
                         
-                            @foreach ($fags as $fag)
+                            @foreach ($faqs as $faq)
                         
                             <div class="accordion-item single-accordion-inner">
                                 <h2 class="accordion-header" id="headingOne{{$loop->index}}">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseOne{{$loop->index}}" aria-expanded="true" aria-controls="collapseOne{{$loop->index}}">
-                                        {{$fag->title}}
+                                        {{$faq->title}}
                                     </button>
                                 </h2>
                                 <div id="collapseOne{{$loop->index}}" class="accordion-collapse collapse show" aria-labelledby="headingOne{{$loop->index}}"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        {!! $fag->description !!}
+                                        {!! $faq->description !!}
                                     </div>
                                 </div>
                             </div>
