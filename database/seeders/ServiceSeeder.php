@@ -42,6 +42,7 @@ class ServiceSeeder extends Seeder
                                 endimentum </p>"];
 
         $images = [];
+        $icons=[""];
 
         for ($i = 0; $i < count($title_ar); $i++) {
             $service = Service::create([
