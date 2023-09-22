@@ -21,7 +21,7 @@
                         <div class="col-md-6">
                             <div class="single-service-inner style-white text-center">
                                 <div class="icon-box">
-                                    <i class="{{ $service->icon }}r"></i>
+                                    <i class="{{ $service->icon }}"></i>
                                 </div>
                                 <div class="details">
                                     <h3><a href="service-details.html">{{$service->title}}</a></h3>
