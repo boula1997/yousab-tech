@@ -13,12 +13,60 @@ class TestimonialsSeeder extends Seeder
      */
     public function run(): void
     {
-        $title_ar = ["رفع المواقع","انشاء المواقع"];
-        $title_en = ["Upload websites","Create websites"];
-        $subtitle_ar =[null,null];
-        $subtitle_en = [null,null];
-        $description_ar = ["نقوم برفع المواقع مجانا","نقوم بانشاء المواقع"];
-        $description_en = ["ًWe upload websites for free","We create websites"];
+      
+        $title_en = ["Donas Foknar",
+                     "Donas Foknar",
+                     "Donas Foknar",
+                     "Donas Foknar",
+                     "Donas Foknar"];
+        $subtitle_en = ["Customer,USA",
+                        "Customer,USA",
+                        "Customer,USA",
+                        "Customer,USA",
+                        "Customer,USA"];
+        $description_en = ["<p> Eollicitudin nisi nulla eget augue. Maecenas quis turpaliquet, porta lorem et,
+        dictum purus. Curabitur vel congue diamamet condimentum metus. Donec feugiat
+        fermentposuere. Morbi porttitor augue id </p>",
+        "<p> Eollicitudin nisi nulla eget augue. Maecenas quis turpaliquet, porta lorem et,
+        dictum purus. Curabitur vel congue diamamet condimentum metus. Donec feugiat
+        fermentposuere. Morbi porttitor augue id </p>",
+        "<p> Eollicitudin nisi nulla eget augue. Maecenas quis turpaliquet, porta lorem et,
+        dictum purus. Curabitur vel congue diamamet condimentum metus. Donec feugiat
+        fermentposuere. Morbi porttitor augue id </p>",
+        "<p> Eollicitudin nisi nulla eget augue. Maecenas quis turpaliquet, porta lorem et,
+        dictum purus. Curabitur vel congue diamamet condimentum metus. Donec feugiat
+        fermentposuere. Morbi porttitor augue id </p>",
+        "<p> Eollicitudin nisi nulla eget augue. Maecenas quis turpaliquet, porta lorem et,
+        dictum purus. Curabitur vel congue diamamet condimentum metus. Donec feugiat
+        fermentposuere. Morbi porttitor augue id </p>"];
+
+        
+        $title_ar = ["دوناس فونار",
+                     "دوناس فونار",
+                     "دوناس فونار",
+                     "دوناس فونار",
+                     "دوناس فونار"];
+        $subtitle_ar =[ "العميل، الولايات المتحدة الأمريكية",
+                        "العميل، الولايات المتحدة الأمريكية",
+                        "العميل، الولايات المتحدة الأمريكية",
+                        "العميل، الولايات المتحدة الأمريكية",
+                        "العميل، الولايات المتحدة الأمريكية",];
+        $description_ar =["<p> Eollicitudin nisi nulla eget augue. Maecenas quis turpaliquet, porta lorem et,
+                            dictum purus. Curabitur vel congue diamamet condimentum metus. Donec feugiat
+                            fermentposuere. Morbi porttitor augue id </p>",
+                            "<p> Eollicitudin nisi nulla eget augue. Maecenas quis turpaliquet, porta lorem et,
+                            dictum purus. Curabitur vel congue diamamet condimentum metus. Donec feugiat
+                            fermentposuere. Morbi porttitor augue id </p>",
+                            "<p> Eollicitudin nisi nulla eget augue. Maecenas quis turpaliquet, porta lorem et,
+                            dictum purus. Curabitur vel congue diamamet condimentum metus. Donec feugiat
+                            fermentposuere. Morbi porttitor augue id </p>",
+                            "<p> Eollicitudin nisi nulla eget augue. Maecenas quis turpaliquet, porta lorem et,
+                            dictum purus. Curabitur vel congue diamamet condimentum metus. Donec feugiat
+                            fermentposuere. Morbi porttitor augue id </p>",
+                            "<p> Eollicitudin nisi nulla eget augue. Maecenas quis turpaliquet, porta lorem et,
+                            dictum purus. Curabitur vel congue diamamet condimentum metus. Donec feugiat
+                            fermentposuere. Morbi porttitor augue id </p>"];
+ 
        
        
 
