@@ -152,6 +152,8 @@ return [
     'submit' => 'Submit Now',
     'useful_link' => 'Useful links',
     'all_rights' => 'All Rights Reserved @',
+    'select_icon' => 'Select Icon',
+    'type' => 'Type',
 
 
 

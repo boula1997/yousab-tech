@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         $this->call([
-            CreateAdminUserSeeder::class,
             FaqSeeder::class,
             MessagesSeeder::class,
             CountersSeeder::class,
@@ -29,6 +28,7 @@ class DatabaseSeeder extends Seeder
             GalleriesSeeder::class,
             PagesSeeder::class,
             PermissionTableSeeder::class,
+            CreateAdminUserSeeder::class,
             ProcessesSeeder::class,
             SettingSeeder::class,
             ServiceSeeder::class,

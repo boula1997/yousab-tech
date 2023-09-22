@@ -25,7 +25,7 @@
 
                 <button type="button" class="btn btn-warning ml-5" id="GetIconPicker"
                     data-iconpicker-input="input#IconInput"
-                    data-iconpicker-preview="i#IconPreview">{{ __('words.select_icon') }}</button>
+                    data-iconpicker-preview="i#IconPreview">{{ __('general.select_icon') }}</button>
                 <input type="text" class="form-control iconpicker" id="IconInput" name="icon"
                     value="{{ $value }}" hidden>
             </div>

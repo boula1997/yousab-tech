@@ -43,12 +43,7 @@ class ServiceController extends Controller
     {
         try {
             $services = $this->service->get();
-            $testimonials = $this->testimonial->get();
-            $processes = $this->process->get();
-            $sliders = $this->slider->get();
-            $counters = $this->counter->get();
-            $portfolios = $this->portfolio->get();
-            return view('front.index', compact('testimonials', 'services', 'processes', 'portfolios', 'sliders', 'counters'));
+            return view('front.services.service', compact( 'services'));
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
