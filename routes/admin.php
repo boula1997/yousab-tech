@@ -46,7 +46,12 @@ Route::group(
         });
 
 
+
         Auth::routes();
+        // cancel login and register for front temporarly
+        Route::get('/login', function () {
+            return redirect()->route('admin.login-view');
+        });
 
         Route::get('/admin/login', [App\Http\Controllers\Auth\LoginController::class, 'showAdminLoginForm'])->name('admin.login-view');
         Route::post('/admin/login', [App\Http\Controllers\Auth\LoginController::class, 'adminLogin'])->name('admin.login')->middleware('guest:admin');

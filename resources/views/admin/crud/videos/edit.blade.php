@@ -4,7 +4,7 @@
 @section('fields_content')
     <div class="content-wrapper">
         @method('PUT')
-        <div class="container p-5">
+        <div class="container p-3">
             <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
                     <div class="card-title">
@@ -61,9 +61,9 @@
                     </div>
                     <br>
                 </div>
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-success">@lang('general.save')</button>
-                    <a href="{{ route('videos.index') }}" class="btn btn-danger font-weight-bold">@lang('general.cancel')</a>
+                <div class="card-footer mb-5">
+                    <button type="submit" class="btn btn-outline-success">@lang('general.save')</button>
+                    <a href="{{ route('videos.index') }}" class="btn btn-outline-danger font-weight-bold">@lang('general.cancel')</a>
                 </div>
             </div>
         </div>

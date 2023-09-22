@@ -4,7 +4,7 @@
 @section('fields_content')
     <div class="content-wrapper">
         @method('PUT')
-        <div class="container p-5">
+        <div class="container p-3">
 
             <!-- Content Header (blog header) -->
             <section class="content-header">
@@ -77,7 +77,7 @@
                                     </div>
 
 
-                                    <div class="card-footer mt-5">
+                                    <div class="card-footer mb-5 mt-5">
                                         <button type="submit"
                                             class="btn btn-outline-primary px-5">@lang('general.save')</button>
                                         <a href="{{ route('services.index') }}"

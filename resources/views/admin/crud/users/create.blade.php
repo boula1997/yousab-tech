@@ -70,7 +70,7 @@
                                     ])
 
                                 </div>
-                                <div class="card-footer text-center">
+                                <div class="card-footer mb-5 text-center">
                                     <button type="submit" class="btn btn-outline-primary px-5">@lang('general.save')</button>
                                     <a href="{{ route('users.index') }}"
                                         class="btn btn-outline-danger px-5

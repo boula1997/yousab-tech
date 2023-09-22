@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Yousab</title>
+    <title>{{ settings()->website_title }}</title>
     {{-- <link rel=icon href="assets/img/favicon.webp" sizes="20x20" type="image/png"> --}}
 
     <!-- Stylesheet -->
@@ -96,7 +96,7 @@
                 </button>
             </div>
             <div class="logo">
-                <a href=""><img src="{{ asset('settings()->logo') }}" alt="img"></a>
+                <a href=""><img src="{{ asset(settings()->logo) }}" alt="img"></a>
             </div>
             <div class="nav-right-part nav-right-part-mobile">
                 <a class="search-bar-btn" href="#">

@@ -4,7 +4,7 @@
     <!-- Content Wrapper. Contains contact content -->
     <div class="content-wrapper">
         <!-- Main content -->
-        <div class="container p-5">
+        <div class="container p-3">
             <section class="content pt-2">
                 <div class="container-fluid">
                     <div class="row">

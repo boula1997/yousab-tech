@@ -27,25 +27,20 @@ class SettingController extends Controller
         try {
             $setting = $this->setting->first();
             $data = $request->except('0', '1', 'profile_avatar_remove');
-            if (!$request->hasFile('logo'))
-                $data['logo'] = $setting->logo;
-            else {
-                File::delete($setting->logo);
+            if ($request->hasFile('logo'))
+                {File::delete($setting->logo);
                 $file = $request->file('logo');
                 $data['logo'] = $request->logo->store('images');
-                $file->move('images', $data['logo']);
-            }
+                $file->move('images', $data['logo']); }
 
-            if (!$request->hasFile('tab'))
-                $data['tab'] = $setting->tab;
-            else {
+            if ($request->hasFile('tab')){
                 File::delete($setting->tab);
                 $file2 = $request->file('tab');
                 $data['tab'] = $request->tab->store('images');
                 $file2->move('images', $data['tab']);
             }
             $setting->update($data);
-            return redirect()->route('edit.setting', compact('setting'))
+            return redirect()->route('edit.setting')
                 ->with('success', trans('general.update_successfully'));
         } catch (Exception $e) {
             dd($e->getMessage());

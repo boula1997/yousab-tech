@@ -11,7 +11,7 @@
 						<h6 class="card-subtitle mb-2 text-muted">{{$team->subtitle}}</h6>
 						<p class="card-text">{!! $team->description  !!}</p>
 					</div>
-					<div class="card-footer">
+					<div class="card-footer mb-5">
 						<ul>
 							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
 							<li><a href="https://twitter.com/zahratalbistan?t=xWf6sJLW9pUGKz0NjyeWcg&s=08" target="_blank"><i class="fab fa-twitter"></i></a></li>

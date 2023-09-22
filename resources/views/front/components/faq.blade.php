@@ -16,9 +16,9 @@
                 </div>
                 <div class="col-lg-6 pe-xl-5 order-lg-first align-self-center">
                     <div class="section-title mb-0">
-                        <h5 class="sub-title right-line">{{ page('faq')->title }}</h5>
-                        <h2 class="title">{{ page('faq')->subtitle }}</h2>
-                        {!! page('faq')->description !!}
+                        <h5 class="sub-title right-line">{{ page('faq-section')->title }}</h5>
+                        <h2 class="title">{{ page('faq-section')->subtitle }}</h2>
+                        {!! page('faq-section')->description !!}
                     </div>
                     
                   
