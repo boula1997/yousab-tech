@@ -1,6 +1,6 @@
     <!-- service area start -->
     <div class="service-area bg-overlay pd-top-120 pd-bottom-90"
-        style="background-image: url('./assets/img/bg/3.webp');">
+        style="background-image: url({{ page('service-section')->image }});">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
