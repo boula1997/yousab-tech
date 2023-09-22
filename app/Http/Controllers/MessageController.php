@@ -49,7 +49,7 @@ class MessageController extends Controller
             $processes = $this->process->get();
             $counters = $this->counter->get();
             $portfolios = $this->portfolio->get();
-            return view('front.index', compact('testimonials', 'services', 'processes', 'portfolios', 'counters'));
+            return view('front.message', compact('testimonials', 'services', 'processes', 'portfolios', 'counters'));
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);

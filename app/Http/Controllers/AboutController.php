@@ -42,13 +42,8 @@ class AboutController extends Controller
     public function index()
     {
         try {
-            $services = $this->service->get();
-            $testimonials = $this->testimonial->get();
-            $processes = $this->process->get();
-            $sliders = $this->slider->get();
             $counters = $this->counter->get();
-            $portfolios = $this->portfolio->get();
-            return view('front.index', compact('testimonials', 'services', 'processes', 'portfolios', 'sliders', 'counters'));
+            return view('front.about', compact( 'counters'));
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);

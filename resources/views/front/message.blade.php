@@ -2,5 +2,4 @@
 @section('content')
 @include('front.components.breadcrumb')
     @include('front.components.message')
-    </div>
 @endsection
