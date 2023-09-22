@@ -6,12 +6,15 @@
                     <div class="blog-details-page-content">
                         <div class="single-blog-inner">
                             <div class="thumb">
-                                <img src="assets/img/service/service-single.webp" alt="img">
+                                <img src="{{ asset($service->title) }}" alt="img">
                             </div>
                             <div class="details">
                                 <h2>{{$service->title}}</h2>
-                                <p>Cras varius. Donec vitae orci sed dolor rutrum auctor. Fusce egestas elit eget lorem. Suspendisse nisl elit, rhoncus eget elementum acondimentum eget, diam. Nam at tortor in tellus interdum sagitliquam lobortis. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Curabitur blandit mollis lacus. Nam adipiscing. Vestibulum eu odio. Vivamus laoreet.</p>
-                                <p>Lorem available market standard dummy text available market industry Lorem Ipsum simply dummy text of free available market.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,</p>
+                                {!! $service->description !!}
+                               
+                                {{-- <p>Cras varius. Donec vitae orci sed dolor rutrum auctor. Fusce egestas elit eget lorem. Suspendisse nisl elit, rhoncus eget elementum acondimentum eget, diam. Nam at tortor in tellus interdum sagitliquam lobortis. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Curabitur blandit mollis lacus. Nam adipiscing. Vestibulum eu odio. Vivamus laoreet.</p>
+                                <p>Lorem available market standard dummy text available market industry Lorem Ipsum simply dummy text of free available market.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,</p> --}}
+                               
                                 {{-- <h4 class="pt-4 mb-4">Key benefits</h4> --}}
                                 {{-- <div class="row">
                                     <div class="col-md-6">

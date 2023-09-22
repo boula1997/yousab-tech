@@ -108,7 +108,7 @@
                     <li><a class="{{ request()->routeIs('front.home') ? 'active' : '' }}"
                             href="{{ route('front.home') }}">{{ __('general.home') }}</a></li>
                     <li><a class="{{ request()->routeIs('front.service') ? 'active' : '' }}"
-                            href="{{ route('front.service') }}">{{ __('general.services') }}</a></li>
+                            href="{{ route('front.service')}}">{{ __('general.services') }}</a></li>
                     <li><a class="{{ request()->routeIs('front.about') ? 'active' : '' }}"
                             href="{{ route('front.about') }}">{{ __('general.about') }}</a></li>
                     {{-- <li><a class="{{request()->routeIs('front.home')?'active':''}}" href="{{route('front.home')}}">Project</a></li> --}}

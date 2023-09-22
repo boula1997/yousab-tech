@@ -10,7 +10,7 @@
                             <li><a href="{{route('front.home')}}">{{__('general.home')}}</a></li>
                             @if ($mid)
                                 
-                            <li><a href="{{route('front.services')}}">{{__('general.services')}}</a></li>
+                            <li><a href="{{route('front.service')}}">{{__('general.services')}}</a></li>
                                 
                             @endif
                             <li>{{$name}}</li>

@@ -57,11 +57,11 @@
                     <div class="widget widget_nav_menu">
                         <h4 class="widget-title">{{__('general.useful_link')}}</h4>
                         <ul>
-                            <li><a href="about.html">{{__('general.about')}}</a></li>
+                            <li><a href="{{ route('front.about') }}">{{__('general.about')}}</a></li>
                             <li><a href="team.html">{{__('general.team')}}</a></li>
                             <li><a href="project.html">{{__('general.portfolio')}}</a></li>
-                            <li><a href="service.html">{{__('general.services')}}</a></li>
-                            <li><a href="message.html">{{__('general.message')}}</a></li>
+                            <li><a href="{{ route('front.service')}}">{{__('general.services')}}</a></li>
+                            <li><a href="{{ route('front.message') }}">{{__('general.message')}}</a></li>
                         </ul>
                     </div>
                 </div>
