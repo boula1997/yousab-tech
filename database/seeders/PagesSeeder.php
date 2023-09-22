@@ -34,7 +34,7 @@ class PagesSeeder extends Seeder
         "Professional Skill"];
 
         $description_en = [
-        "ً<p>Dcidunt eget semper nec quam. Sed hendrerit morbi ac felis. Nunc egestas augue pellentesque</p>",
+        "<p>Dcidunt eget semper nec quam. Sed hendrerit morbi ac felis. Nunc egestas augue pellentesque</p>",
 
         "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque sed imquam nunullam quis ante. Etiam sit amet orci.
 

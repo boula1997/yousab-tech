@@ -15,11 +15,30 @@ class FaqSeeder extends Seeder
      */
     public function run(): void
     {
-        $title_ar = ["رفع المواقع","انشاء المواقع"];
-        $title_en = ["Upload websites","Create websites"];
-        $description_ar = ["نقوم برفع المواقع مجانا","نقوم بانشاء المواقع"];
-        $description_en = ["ًWe upload websites for free","We create websites"];
 
+        $title_en = [" Why we are?",
+                     " What we do for you?",
+                     " 100% data security"];
+        $description_en = ["<p> Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet
+                            adipiscingem neque sed ipsum. amquam nunc</P>",
+                            "Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet
+                            adipiscingem neque sed ipsum. amquam nunc</P>",
+                            "Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet
+                            adipiscingem neque sed ipsum. amquam nunc</P>"];
+
+        $title_ar = ["لماذا نحن؟",
+                     "دوام؟",
+                     "أمن البيانات بنسبة %100" ];
+        $description_ar = ["<p> Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet
+                            adipiscingem neque sed ipsum. amquam nunc</P>",
+                            "Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet
+                            adipiscingem neque sed ipsum. amquam nunc</P>",
+                            "Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet
+                            adipiscingem neque sed ipsum. amquam nunc</P>"];
+      
+
+        $image=[];
+        
         for ($i = 0; $i < count($title_ar); $i++) {
             $FaqTranslation = Faq::create([
                 'ar' => [

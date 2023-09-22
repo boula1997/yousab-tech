@@ -13,13 +13,27 @@ class ProcessesSeeder extends Seeder
      */
     public function run(): void
     {
-        $title_ar = ["رفع المواقع","انشاء المواقع"];
-        $title_en = ["Upload websites","Create websites"];
-        $subtitle_ar =[null,null];
-        $subtitle_en = [null,null];
-        $description_ar = ["نقوم برفع المواقع مجانا","نقوم بانشاء المواقع"];
-        $description_en = ["ًWe upload websites for free","We create websites"];
-     
+        $title_en = ["Select a project",
+                     "Project analysis",
+                     "Execute",
+                     "Deliver result"];
+        $subtitle_en = [null,null,null,null];
+        $description_en = [ "<p>Vestibulum ante ipsumusn eratultrices posu world </p>",
+                            "<p>Vestibulum ante ipsumusn eratultrices posu world </p>",
+                            "<p>Vestibulum ante ipsumusn eratultrices posu world </p>",
+                            "<p>Vestibulum ante ipsumusn eratultrices posu world </p>"];
+
+        $title_ar = ["اختر مشروعًا",
+                     "تحليل المشروع", 
+                     "ينفذ",
+                     "تسليم النتيجة"];
+        $subtitle_ar =[null,null,null,null];
+        $description_ar =  [ "<p>Vestibulum ante ipsumusn eratultrices posu world </p>",
+        "<p>Vestibulum ante ipsumusn eratultrices posu world </p>",
+        "<p>Vestibulum ante ipsumusn eratultrices posu world </p>",
+        "<p>Vestibulum ante ipsumusn eratultrices posu world </p>"];
+      
+        $image=[];
        
 
         for ($i = 0; $i < count($title_ar); $i++) {
