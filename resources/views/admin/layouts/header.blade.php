@@ -44,5 +44,6 @@
         <link rel="stylesheet" href="{{ asset('bootstrap-5.3.1-dist\css\bootstrap.rtl.min.css') }}">
         <link rel="stylesheet" href="{{ asset('dist/css/image.css') }}">
         <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min_ar.css') }}">
+        <link rel="stylesheet" href="{{ asset('dist/css/admin_ar.css') }}">
     @endif
 </head>
