@@ -101,3 +101,10 @@ function services(){
     return $services;
     
 }
+
+function contacts(){
+    $contacts = Contact::latest()->get();
+   
+    return $contacts;
+    
+}
