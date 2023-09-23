@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 @section('content')
-@include('front.components.breadcrumb',['name'=>(__('general.our_services')),'mid'=>(__('general.services'))])
+@include('front.components.breadcrumb',['name'=>$service->title,'mid'=>(__('general.services')),'route_mid'=>'front.service'])
 @include('front.components.single-service')
 
 @endsection
