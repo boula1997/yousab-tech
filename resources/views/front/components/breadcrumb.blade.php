@@ -8,9 +8,6 @@
                         <h2 class="page-title">{{ $name }}</h2>
                         <ul class="page-list">
                             <li><a href="{{ route('front.home') }}">{{ __('general.home') }}</a></li>
-                            <li><a href="{{$route}}">{{ $name }}</a></li>
-                            {{-- <li>{{ $mid }}</li> --}}
-
                             @if (isset($mid) && isset($route) && isset($value))
                                 <li>{{ $value }}</li>
                             @endif
