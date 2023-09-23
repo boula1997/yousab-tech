@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
 @section('content')
-@include('front.components.breadcrumb',['name'=>(__('general.message')),'mid'=>(__('general.message'))])
+@include('front.components.breadcrumb',['name'=>(__('general.contact_us')),'mid'=>(__('general.contact_us'))])
     @include('front.components.message')
 @endsection
