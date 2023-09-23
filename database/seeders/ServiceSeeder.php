@@ -42,7 +42,10 @@ class ServiceSeeder extends Seeder
                                 endimentum </p>"];
 
         $images = [];
-        $icons=[""];
+        $icons=["fa fa-facebook",
+                "fa fa-twitter",
+                "far fa-bell",
+                "fa fa-facebook"];
 
         for ($i = 0; $i < count($title_ar); $i++) {
             $service = Service::create([
@@ -56,6 +59,7 @@ class ServiceSeeder extends Seeder
                     'description' => $description_en[$i],
                     'subtitle' => $subtitle_en[$i],
                 ],
+                'icon'=>$icons[$i],
             ]);
         }
     }
