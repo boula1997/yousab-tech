@@ -1,6 +1,6 @@
     <!-- page title start -->
     <div class="breadcrumb-area bg-black bg-relative">
-        <div class="banner-bg-img" style="background-image: url({{asset('./assets/img/bg/1.webp')}});"></div>
+        <div class="banner-bg-img" style="background-image: url({{asset('assets/img/bg/1.webp')}});"></div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-8">
