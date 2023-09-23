@@ -3944,13 +3944,21 @@ ul {
 
 .single-service-inner.style-white {
   background: rgba(3, 11, 24, 0.6);
-  height: 310px;
+  height: 345px;
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
-.single-service-inner.style-white .icon-box i {
-  color: var(--main-color);
+.single-service-inner.style-white .icon-box .svg-inline--fa {
+  color: #0060FF;
+  font-size: 44px;
+  transition: all 0.3s ease-in-out;
+}
+
+.single-service-inner.style-white:hover .icon-box .svg-inline--fa {
+  color: #fff;
+  transition: all 0.3s ease-in-out;
 }
 
 .single-service-inner.style-white h3 {
