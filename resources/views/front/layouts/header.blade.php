@@ -113,7 +113,7 @@
                             href="{{ route('front.about') }}">{{ __('general.about') }}</a></li>
                     {{-- <li><a class="{{request()->routeIs('front.home')?'active':''}}" href="{{route('front.home')}}">Project</a></li> --}}
                     <li><a class="{{ request()->routeIs('front.message') ? 'active' : '' }}"
-                            href="{{ route('front.message') }}">{{ __('general.message') }}</a></li>
+                            href="{{ route('front.message') }}">{{ __('general.contact_us') }}</a></li>
                     @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                         <li class="{{ app()->getLocale() == $localeCode ? 'd-none' : '' }}">
                             <a rel="alternate" hreflang="{{ $localeCode }}"

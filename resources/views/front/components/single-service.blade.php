@@ -6,7 +6,7 @@
                     <div class="blog-details-page-content">
                         <div class="single-blog-inner">
                             <div class="thumb">
-                                <img src="{{ asset($service->title) }}" alt="img">
+                                <img src="{{ $service->image }}" alt="img">
                             </div>
                             <div class="details">
                                 <h2>{{$service->title}}</h2>

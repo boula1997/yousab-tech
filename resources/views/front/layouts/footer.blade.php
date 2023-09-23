@@ -58,10 +58,10 @@
                         <h4 class="widget-title">{{__('general.useful_link')}}</h4>
                         <ul>
                             <li><a href="{{ route('front.about') }}">{{__('general.about')}}</a></li>
-                            <li><a href="team.html">{{__('general.team')}}</a></li>
-                            <li><a href="project.html">{{__('general.portfolio')}}</a></li>
+                            {{-- <li><a href="team.html">{{__('general.team')}}</a></li>
+                            <li><a href="project.html">{{__('general.portfolio')}}</a></li> --}}
                             <li><a href="{{ route('front.service')}}">{{__('general.services')}}</a></li>
-                            <li><a href="{{ route('front.message') }}">{{__('general.message')}}</a></li>
+                            <li><a href="{{ route('front.message') }}">{{__('general.contact_us')}}</a></li>
                         </ul>
                     </div>
                 </div>
