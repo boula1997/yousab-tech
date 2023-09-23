@@ -21,8 +21,8 @@
                         </div>
                         <div class="details-wrap">
                             <h3><a href="project-details.html">{{$portfolio->title}}</a></h3>
-                            <a href="project-details.html">{{$portfolio->subtitle}}<i class="fas fa-arrow-right"></i></a>
                             <p> {{$portfolio->description }} <p>
+                            <a href="project-details.html">{{$portfolio->subtitle}}<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

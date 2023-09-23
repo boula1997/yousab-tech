@@ -250,7 +250,7 @@ code {
   width: 50%;
 }
 
-.flag{
+.flag {
   height: 20px;
   width: 20px;
 }
@@ -1924,6 +1924,10 @@ ul {
   color: #fff;
 }
 
+.section-title.style-white p {
+  color: #fff;
+}
+
 .section-title.style-white .content {
   color: #fff;
 }
@@ -2090,7 +2094,7 @@ ul {
 .navbar-area .nav-container .navbar-collapse .navbar-nav {
   display: block;
   width: 100%;
-  text-align: left;
+  text-align: right;
 }
 
 .navbar-area .nav-container .navbar-collapse .navbar-nav li {
@@ -2172,7 +2176,7 @@ ul {
 
 .navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu {
   position: absolute;
-  text-align: left;
+  text-align: right;
   min-width: 210px;
   margin: 0;
   padding: 0;
@@ -2737,7 +2741,7 @@ ul {
 
   .navbar-area .nav-container .navbar-collapse .navbar-nav li {
     display: block;
-    text-align: left;
+    text-align: right;
     line-height: 30px;
     padding: 10px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -2971,7 +2975,7 @@ ul {
   }
 
   .widget ul {
-    text-align: left;
+    text-align: right;
   }
 
   .navbar-collapse {
@@ -3940,6 +3944,9 @@ ul {
 
 .single-service-inner.style-white {
   background: rgba(3, 11, 24, 0.6);
+  height: 310px;
+  display: flex;
+  align-items: center;
 }
 
 .single-service-inner.style-white .icon-box i {
@@ -4377,7 +4384,7 @@ ul {
   background: #fff;
   padding: 0 30px 30px 30px;
   margin-top: 44px;
-  height: 200px;
+  height: 250px;
 }
 
 .single-work-inner.style-two .count-inner {
@@ -4951,15 +4958,19 @@ ul {
 
 .single-project-inner .details-wrap h3 {
   margin-bottom: 5px;
+  text-align: right;
 }
 
 .single-project-inner .details-wrap p {
   margin-bottom: 0;
+  float: right;
+  display: inline-block;
 }
 
 .single-project-inner .details-wrap a i,
 .single-project-inner .details-wrap a svg {
-  margin-right: 5px;
+  margin-right: 10px;
+  transform: rotateY(180deg);
 }
 
 .single-project-inner:hover .thumb .icon {
@@ -5675,6 +5686,10 @@ ul {
 
 .section-title.bg-base.style-white .btn {
   padding: 0 20px;
+}
+
+.section-title.bg-base.style-white p {
+  color: white;
 }
 
 /*---------------------------------------------------
@@ -8785,6 +8800,10 @@ ul {
 
 .footer-area .widget_subscribe .single-input-inner input {
   padding-left: 40px;
+}
+
+.footer-area .widget_subscribe .single-input-inner button {
+  transform: rotateY(180deg);
 }
 
 .footer-area .widget_subscribe button {
