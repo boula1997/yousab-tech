@@ -13,10 +13,25 @@ class ContactsSeeder extends Seeder
      */
     public function run(): void
     {
-        $title_ar = ["مشاريع قيد التنفيذ","مشاريع تحت الانشاء"];
-        $title_en = ["build projects","new project"];
-        $icon=['fa fa-facebook','fa fa-twitter'];
-        $contact=["https://www.facebook.com","https://www.twitter.com"];
+        $title_en = ["Ibrahim Samy",
+                     "Boula Nessiem",
+                     "Tadrous Nessiem",
+                     "Emad Osama"];
+
+        $title_ar =["ابراهيم سامى",
+                    "بولا نسيم",
+                    "تادروس نسيم",
+                    "عماد اسامه"];
+       
+        $icon=["fa fa-facebook",
+                "fa fa-twitter",
+                "far fa-bell",
+                "fa fa-facebook"];
+
+        $contact=["https://www.facebook.com",
+                  "https://www.twitter.com",
+                  "https://www.facebook.com",
+                  "https://www.twitter.com"];
       
 
         for ($i = 0; $i < count($title_ar); $i++) {
