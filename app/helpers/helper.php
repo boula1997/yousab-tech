@@ -18,6 +18,7 @@ use App\Models\Team;
 use App\Models\User;
 use App\Models\Video;
 use Illuminate\Support\Facades\File;
+use Jackiedo\Cart\Facades\Cart;
 use Spatie\Permission\Models\Role;
 
 function settings()
@@ -108,3 +109,21 @@ function contacts(){
     return $contacts;
     
 }
+
+
+if (!function_exists('cart')) {
+
+    function cart()
+    {
+
+        return Cart::name('shopping')->useForCommercial();
+    }
+}
+if (!function_exists('favourite')) {
+
+    function favourite()
+    {
+        return cart()->newInstance('favourites')->useForCommercial(false);
+    }
+}
+
