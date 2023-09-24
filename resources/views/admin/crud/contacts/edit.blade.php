@@ -51,18 +51,23 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="form-group">
-                                    <div class="mb-3">
-                                        <label for="exampleInputEmail1">{{ __('general.type') }}</label>
-                                        <select class="form-select form-select-lg" name="" id="">
-                                            <option selected>Select one</option>
-                                            <option value="social">social</option>
-                                            <option value="whatsapp">whatsapp</option>
-                                            <option value="phone">phone</option>
-                                            <option value="email">email</option>
-                                        </select>
+                                    <div class="form-group">
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1">{{ __('general.type') }}</label>
+                                            <select class="form-select form-select-lg" name="type" id="">
+                                                <option {{ $contact->type = '' ? 'selected' : '' }} value="">
+                                                    {{ __('general.selectOne') }}</option>
+                                                <option {{ $contact->type = 'social' ? 'selected' : '' }} value="social">
+                                                    {{ __('general.social') }}</option>
+                                                <option {{ $contact->type = 'whatsapp' ? 'selected' : '' }} value="whatsapp">
+                                                    {{ __('general.whatsapp') }}</option>
+                                                <option {{ $contact->type = 'phone' ? 'selected' : '' }} value="phone">
+                                                    {{ __('general.phone') }}</option>
+                                                <option {{ $contact->type = 'email' ? 'selected' : '' }} value="email">
+                                                    {{ __('general.email') }}</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <input type="text" name="type" value="{{ old('type') }}" class="form-control"
-                                        id="exampleInputName" placeholder="@lang('general.type')">
                                 </div>
                             </div>
 
