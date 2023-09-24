@@ -99,10 +99,6 @@
                                         {!! old($locale . '.description', $setting->translate($locale)->description) !!} 
                                     </textarea>
                                 </div>
-                                {{-- <div class="form-group">
-                                        <label>@lang('settings.description') - @lang('general.'.$locale)<span class="text-danger"> * </span></label>
-                                        <textarea name="{{ $locale . '[description]' }}" @error($locale . '.description') is-invalid @enderror class="form-control kt-ckeditor-5">{{ old($locale . '.description') }}</textarea>
-                                    </div> --}}
                             </div>
                         @endforeach
                     </div>
@@ -110,94 +106,6 @@
             </div>
             <div class="card card-custom">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label for="exampleInputEmail1">{{ __('general.map') }}</label>
-                                        <input type="text" name="map" value="{{ old('map', $setting->map) }}"
-                                            class="form-control" id="exampleInputName"
-                                            placeholder="{{ __('general.map') }}">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="exampleInputEmail1">{{ __('general.facebook') }}</label>
-                                        <input type="text" name="facebook"
-                                            value="{{ old('facebook', $setting->facebook) }}" class="form-control"
-                                            id="exampleInputName" placeholder="{{ __('general.facebook') }}">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label for="exampleInputEmail1">{{ __('general.twitter') }}</label>
-                                        <input type="text" name="twitter"
-                                            value="{{ old('twitter', $setting->twitter) }}" class="form-control"
-                                            id="exampleInputName" placeholder="{{ __('general.twitter') }}">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="exampleInputEmail1">{{ __('general.youtube') }}</label>
-                                        <input type="text" name="youtube"
-                                            value="{{ old('youtube', $setting->youtube) }}" class="form-control"
-                                            id="exampleInputName" placeholder="{{ __('general.youtube') }}">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label for="exampleInputEmail1">{{ __('general.tiktok') }}</label>
-                                        <input type="text" name="tiktok"
-                                            value="{{ old('tiktok', $setting->tiktok) }}" class="form-control"
-                                            id="exampleInputName" placeholder="{{ __('general.tiktok') }}">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="exampleInputEmail1">{{ __('general.instgram') }}</label>
-                                        <input type="text" name="instgram"
-                                            value="{{ old('instgram', $setting->instgram) }}" class="form-control"
-                                            id="exampleInputName" placeholder="{{ __('general.instgram') }}">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label for="exampleInputEmail1">{{ __('general.phone1') }}</label>
-                                        <input type="text" name="phone1"
-                                            value="{{ old('phone1', $setting->phone1) }}" class="form-control"
-                                            id="exampleInputName" placeholder="{{ __('general.phone1') }}">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="exampleInputEmail1">{{ __('general.phone2') }}</label>
-                                        <input type="text" name="phone2"
-                                            value="{{ old('phone2', $setting->phone2) }}" class="form-control"
-                                            id="exampleInputName" placeholder="{{ __('general.phone2') }}">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label for="exampleInputEmail1">{{ __('general.phone3') }}</label>
-                                        <input type="text" name="phone3"
-                                            value="{{ old('phone3', $setting->phone3) }}" class="form-control"
-                                            id="exampleInputName" placeholder="{{ __('general.phone3') }}">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="exampleInputEmail1">{{ __('general.email1') }}</label>
-                                        <input type="text" name="email1"
-                                            value="{{ old('email1', $setting->email1) }}" class="form-control"
-                                            id="exampleInputName" placeholder="{{ __('general.email1') }}">
-                                    </div>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <label for="exampleInputEmail1">{{ __('general.email2') }}</label>
-                                    <input type="text" name="email2" value="{{ old('email2', $setting->email2) }}"
-                                        class="form-control" id="exampleInputName"
-                                        placeholder="{{ __('general.email2') }}">
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             @include('admin.components.image', [

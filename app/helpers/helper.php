@@ -96,19 +96,13 @@ function itemsCount($model)
     return $items[$model];
 }
 
-function services(){
+function services()
+{
     $services = Service::latest()->take(6)->get();
-   
+
     return $services;
-    
 }
 
-function contacts(){
-    $contacts = Contact::latest()->get();
-   
-    return $contacts;
-    
-}
 
 
 if (!function_exists('cart')) {
@@ -127,3 +121,10 @@ if (!function_exists('favourite')) {
     }
 }
 
+if (!function_exists('contacts')) {
+
+    function contacts($type)
+    {
+        return isset($ype) ?  Contact::where('type', $type)->get() : Contact::latest()->get();;
+    }
+}
