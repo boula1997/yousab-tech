@@ -4,7 +4,7 @@
 @section('fields_content')
     <div class="content-wrapper">
         @method('PUT')
-    
+
         <div class="container p-3">
 
             <div class="card card-custom mb-2">
@@ -25,7 +25,7 @@
                 </div>
                 <div class="card-body">
                     <div class="tab-content">
-    
+
                         @foreach (config('translatable.locales') as $key => $locale)
                             <div class="tab-pane fade show @if ($key == 0) active @endif"
                                 id="{{ $locale }}" role="tabpanel">
@@ -35,7 +35,8 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="flaticon-edit"></i></span>
                                         </div>
-                                        <input type="text" name="{{ $locale . '[title]' }}" placeholder="@lang('general.title')"
+                                        <input type="text" name="{{ $locale . '[title]' }}"
+                                            placeholder="@lang('general.title')"
                                             class="form-control  pl-5 min-h-40px @error($locale . '.title') is-invalid @enderror"
                                             value="{{ old($locale . '.title', $page->translate($locale)->title) }}">
                                     </div>
@@ -52,9 +53,9 @@
                                             value="{{ old($locale . '.subtitle', $page->translate($locale)->subtitle) }}">
                                     </div>
                                 </div>
-    
-    
-    
+
+
+
                                 <div class="col-form-group">
                                     <label>@lang('general.description')(@lang('general.' . $locale))<span class="text-danger">*</span></label>
                                     <textarea rows="100" class="summernote @error($locale . '.description') is-invalid @enderror"
@@ -78,33 +79,53 @@
                             <div class="form-group">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">{{ __('general.identifier') }}</label>
-                                    <input type="text" name="identifier" value="{{ old('identifier', $page->identifier) }}"
-                                        class="form-control" id="exampleInputName" placeholder="@lang('general.identifier')">
+                                    <input type="text" name="identifier"
+                                        value="{{ old('identifier', $page->identifier) }}" class="form-control"
+                                        id="exampleInputName" placeholder="@lang('general.identifier')">
                                 </div>
                             </div>
-    
+
                         </div>
-    
+
                     </div>
                     <br>
-                    <div class="row mt-5" >
-    
-                        <div class="col-md-6">
-                            @include('admin.components.image', [
-                                'label' => __('general.image'),
-                                'value' => old('image', $page->image),
-                                'name' => 'image',
-                                'id' => 'kt_image_3',
-                                'accept' => 'image/*',
-                                'required' => true,
-                            ])
-    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group mt-30">
+                                <label for="exampleInputFile1">{{ __('general.images') }}</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" name="images[]" class="custom-file-input" multiple
+                                            id="exampleInputFile1">
+                                        <label class="custom-file-label" for="exampleInputFile1">{{ __('general.choose') }}
+                                            {{ __('general.file') }}</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">@lang('general.upload_file')</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="row">
+                        @foreach ($images as $image)
+                            <div class="col-md-3 mt-3">
+                                <div class="custom-control custom-switch custom-switch-off-success custom-switch-on-danger">
+                                    <input type="checkbox" name="delimages[]" value="{{ $image->id }}"
+                                        class="custom-control-input" id="customSwitch{{ $image->id }}">
+                                    <img width="100" height="100" src="{{ asset($image->url) }}" alt=""
+                                        for="customSwitch{{ $image->id }}">
+                                    <label class="custom-control-label" for="customSwitch{{ $image->id }}"></label>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="card-footer mb-5 mb-5">
                     <button type="submit" class="btn btn-outline-success">@lang('general.save')</button>
-                    <a href="{{ route('pages.index') }}" class="btn btn-outline-danger font-weight-bold">@lang('general.cancel')</a>
+                    <a href="{{ route('pages.index') }}"
+                        class="btn btn-outline-danger font-weight-bold">@lang('general.cancel')</a>
                 </div>
             </div>
         </div>

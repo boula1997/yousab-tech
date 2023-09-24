@@ -62,10 +62,6 @@
                                         {!! old($locale . '.description') !!} 
                                     </textarea>
                                     </div>
-                                    {{-- <div class="form-group">
-                                        <label>@lang('portfolios.description') - @lang('general.'.$locale)<span class="text-danger"> * </span></label>
-                                        <textarea name="{{ $locale . '[description]' }}" @error($locale . '.description') is-invalid @enderror class="form-control kt-ckeditor-5">{{ old($locale . '.description') }}</textarea>
-                                    </div> --}}
                                 </div>
                             @endforeach
                         </div>
@@ -74,7 +70,6 @@
                 <div class="card card-custom">
                     <div class="card-body">
                         <div class="row">
-    
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-group">
@@ -92,9 +87,7 @@
                                         </div>
                                     </div>
                                 </div>
-    
                             </div>
-    
                         </div>
                     </div>
                     <div class="card-footer mb-5">

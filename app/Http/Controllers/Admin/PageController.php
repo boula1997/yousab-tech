@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\File;
 
 class PageController extends Controller
 {
-    /**s
+    /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Responses
+     * @return \Illuminate\Http\Response
      */
     private $page;
     function __construct(Page $page)
@@ -25,6 +25,7 @@ class PageController extends Controller
         $this->middleware('permission:page-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:page-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:page-delete', ['only' => ['destroy']]);
+
         $this->page = $page;
     }
 
@@ -58,10 +59,10 @@ class PageController extends Controller
      */
     public function store(PageRequest $request)
     {
+
         try {
-            $data = $request->except('image','profile_avatar_remove');
-            $page = $this->page->create($data);
-            $page->uploadFile();
+            $page = $this->page->create($request->except('images'));
+            $page->uploadFiles();
             return redirect()->route('pages.index')
                 ->with('success', trans('general.created_successfully'));
         } catch (Exception $e) {
@@ -78,7 +79,8 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
-        return view('admin.crud.pages.show', compact('page'));
+        $images = $page->images;
+        return view('admin.crud.pages.show', compact('page', 'images'));
     }
 
     /**
@@ -89,22 +91,21 @@ class PageController extends Controller
      */
     public function edit(Page $page)
     {
-        // dd($page);
-        return view('admin.crud.pages.edit', compact('page'));
+        $images = $page->images;
+        return view('admin.crud.pages.edit', compact('page', 'images'));
     }
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\portfolio  $page
+     * @param  \App\Models\page  $page
      * @return \Illuminate\Http\Response
      */
     public function update(PageRequest $request, Page $page)
     {
         try {
-            $data = $request->except('image','profile_avatar_remove');
-            $page->update($data);
-            $page->updateFile();
+            $page->update($request->except('images', 'delimages'));
+            $page->updateFiles();
             return redirect()->route('pages.index', compact('page'))
                 ->with('success', trans('general.update_successfully'));
         } catch (Exception $e) {
@@ -122,8 +123,7 @@ class PageController extends Controller
     {
         try {
             $page->delete();
-            $page->file->delete();
-            $page->deleteFile();
+            $page->deleteFiles();
             return redirect()->route('pages.index')
                 ->with('success', trans('general.deleted_successfully'));
         } catch (Exception $e) {

@@ -65,13 +65,16 @@
                 <div class="card card-custom">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    @if ($page->file !== null)
-                                        <label class="col-form-label d-block">@lang('general.image')</label>
-                                        <br>
-                                        <img src="{{ asset( $page->file?$page->image:settings()->logo) }}" class="w-50">
-                                    @endif
+                            <div class="form-group">
+                                <label for="exampleInputFile1">{{ __('general.images') }}</label>
+                                <div class="row">
+                                    @foreach ($images as $image)
+                                        <div class="col-md-3">
+                                            <img width="100" height="100" class="mx-3" src="{{ $image->url }}"
+                                                alt="">
+
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

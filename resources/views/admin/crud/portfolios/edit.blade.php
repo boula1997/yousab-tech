@@ -73,13 +73,13 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group mt-30">
-                                <label for="exampleInputFile1">Images</label>
+                                <label for="exampleInputFile1">{{ __('general.images') }}</label>
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input type="file" name="images[]" class="custom-file-input" multiple
                                             id="exampleInputFile1">
-                                        <label class="custom-file-label" for="exampleInputFile1">Choose
-                                            file</label>
+                                        <label class="custom-file-label" for="exampleInputFile1">{{ __('general.choose') }}
+                                            {{ __('general.file') }}</label>
                                     </div>
                                     <div class="input-group-append">
                                         <span class="input-group-text">@lang('general.upload_file')</span>

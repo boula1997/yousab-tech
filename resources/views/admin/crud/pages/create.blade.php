@@ -3,7 +3,7 @@
 @section('form_type', 'POST')
 @section('fields_content')
     @method('post')
-       <div class="content-wrapper">
+    <div class="content-wrapper">
         <div class="container p-3">
             <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
@@ -61,10 +61,6 @@
                                         {!! old($locale . '.description') !!} 
                                     </textarea>
                                 </div>
-                                {{-- <div class="form-group">
-                                        <label>@lang('pages.description') - @lang('general.'.$locale)<span class="text-danger"> * </span></label>
-                                        <textarea name="{{ $locale . '[description]' }}" @error($locale . '.description') is-invalid @enderror class="form-control kt-ckeditor-5">{{ old($locale . '.description') }}</textarea>
-                                    </div> --}}
                             </div>
                         @endforeach
                     </div>
@@ -84,18 +80,22 @@
 
                         </div>
                         <div class="col-md-6">
-                            <div class="col-md-6">
-                                @include('admin.components.image', [
-                                    'label' => __('general.image'),
-                                    'value' => old('image'),
-                                    'name' => 'image',
-                                    'id' => 'kt_image_3',
-                                    'accept' => 'image/*',
-                                    'required' => true,
-                                ])
-
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label class="col-form-label d-block">@lang('general.image')</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" name="images[]" class="custom-file-input"
+                                                id="exampleInputFile1" multiple>
+                                            <label class="custom-file-label"
+                                                for="exampleInputFile1">@lang('general.choose_file')</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">@lang('general.upload_file')</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-
                         </div>
 
                     </div>
