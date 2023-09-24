@@ -7,5 +7,6 @@
     @include('front.components.testimonial')
     @include('front.components.process')
     @include('front.components.faq')
+    @include('front.components.team')
     @include('front.components.stat')
 @endsection
