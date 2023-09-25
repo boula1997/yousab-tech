@@ -19,21 +19,13 @@ class MessageController extends Controller
      *
      * @return void
      */
-    private $service;
-    private $testimonial;
-    private $message;
-    private $process;
-    private $counter;
-    private $portfolio;
 
-    public function __construct(Service $service, Testimonial $testimonial, message $message, Process $process, Counter $counter, Gallery $portfolio)
+    private $message;
+
+
+    public function __construct(message $message)
     {
-        $this->service = $service;
-        $this->testimonial = $testimonial;
         $this->message = $message;
-        $this->process = $process;
-        $this->counter = $counter;
-        $this->portfolio = $portfolio;
     }
 
     /**
@@ -44,12 +36,7 @@ class MessageController extends Controller
     public function index()
     {
         try {
-            $services = $this->service->get();
-            $testimonials = $this->testimonial->get();
-            $processes = $this->process->get();
-            $counters = $this->counter->get();
-            $portfolios = $this->portfolio->get();
-            return view('front.message', compact('testimonials', 'services', 'processes', 'portfolios', 'counters'));
+            return view('front.message');
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
@@ -66,10 +53,13 @@ class MessageController extends Controller
      */
     public function store(MessageRequest $request)
     {
-        // dd($request->input('message'));
-        $data = $request->all();
-        $data['message'] = $request->input('message');
-        // dd($data);
-        $this->message->create($data);
+        try {
+            $data = $request->all();
+            $message = $this->message->create($data);
+            // Mail::to(Message_Mail)->send(new MessageMail($message));
+            return response()->json(['success' => trans('message.sent_successfully')]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => __($e->getMessage())]);
+        }
     }
 }
