@@ -49,26 +49,9 @@
                                                             alt="{{ $testimonial->title }}"></td>
                                                     <td>{{ $testimonial->title }}</td>
                                                     <td>
-                                                        <form action="{{ route('testimonials.destroy', $testimonial) }}"
-                                                            method="POST">
-                                                            <a href="{{ route('testimonials.show', $testimonial) }}"
-                                                                title="show">
-                                                                <i class="fas fa-eye text-secondary fa-lg"></i>
-                                                            </a>
-
-                                                            <a href="{{ route('testimonials.edit', $testimonial) }}"
-                                                                title="edit">
-                                                                <i class="fas fa-edit  text-secondary  fa-lg"></i>
-                                                            </a>
-
-                                                            @csrf
-                                                            @method('DELETE')
-
-                                                            <button type="submit" title="delete"
-                                                                style="border: none; background-color:transparent;">
-                                                                <i class="fas fa-trash fa-lg text-secondary"></i>
-                                                            </button>
-                                                        </form>
+                                                        @include('admin.components.controls', [
+                                                            'route' => 'testimonials',
+                                                        ])
                                                     </td>
                                                 </tr>
                                             @endforeach

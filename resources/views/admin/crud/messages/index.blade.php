@@ -39,19 +39,9 @@
                                                     <td>{{ $message->name }}</td>
                                                     <td>{{ $message->email }}</td>
                                                     <td>
-                                                        <form action="{{ route('messages.destroy', $message->id) }}" method="POST">
-                                                            <a href="{{ route('messages.show', $message->id) }}" title="show">
-                                                                <i class="fas  fa-eye text-secondary"></i>
-                                                            </a>
-    
-                                                            @csrf
-                                                            @method('DELETE')
-    
-                                                            <button type="submit" title="delete"
-                                                                style="border: none; background-color:transparent;">
-                                                                <i class="fas  fa-trash text-secondary"></i>
-                                                            </button>
-                                                        </form>
+                                                        @include('admin.components.controls', [
+                                                            'route' => 'messages',
+                                                        ])
                                                     </td>
                                                 </tr>
                                             @endforeach

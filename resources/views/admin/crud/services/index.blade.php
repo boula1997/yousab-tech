@@ -49,24 +49,9 @@
                                                             alt="{{ $service->title }}"></td>
                                                     <td>{{ $service->title }}</td>
                                                     <td>
-                                                        <form action="{{ route('services.destroy', $service) }}"
-                                                            method="POST">
-                                                            <a href="{{ route('services.show', $service) }}" title="show">
-                                                                <i class="fas fa-eye text-secondary fa-lg"></i>
-                                                            </a>
-
-                                                            <a href="{{ route('services.edit', $service) }}" title="edit">
-                                                                <i class="fas fa-edit  text-secondary  fa-lg"></i>
-                                                            </a>
-
-                                                            @csrf
-                                                            @method('DELETE')
-
-                                                            <button type="submit" title="delete"
-                                                                style="border: none; background-color:transparent;">
-                                                                <i class="fas fa-trash fa-lg text-secondary"></i>
-                                                            </button>
-                                                        </form>
+                                                        @include('admin.components.controls', [
+                                                            'route' => 'services',
+                                                        ])
                                                     </td>
                                                 </tr>
                                             @endforeach

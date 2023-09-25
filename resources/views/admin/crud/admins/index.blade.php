@@ -55,23 +55,9 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <form action="{{ route('admins.destroy', $admin->id) }}" method="POST">
-                                                        <a href="{{ route('admins.show', $admin->id) }}" title="show">
-                                                            <i class="fas  fa-eye text-secondary"></i>
-                                                        </a>
-
-                                                        <a href="{{ route('admins.edit', $admin->id) }}" title="edit">
-                                                            <i class="fas  fa-edit  text-secondary "></i>
-                                                        </a>
-
-                                                        @csrf
-                                                        @method('DELETE')
-
-                                                        <button type="submit" title="delete"
-                                                            style="border: none; background-color:transparent;">
-                                                            <i class="fas  fa-trash text-secondary"></i>
-                                                        </button>
-                                                    </form>
+                                                    @include('admin.components.controls', [
+                                                        'route' => 'admins',
+                                                    ])
                                                 </td>
                                             </tr>
                                         @endforeach

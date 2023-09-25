@@ -47,17 +47,9 @@
                                                 <td>{{ ++$i }}</td>
                                                 <td>{{ $role->name }}</td>
                                                 <td>
-                                                    <a class="btn btn-info"
-                                                        href="{{ route('roles.show', $role->id) }}">@lang('general.show')</a>
-                                                    @can('role-edit')
-                                                        <a class="btn btn-outline-primary"
-                                                            href="{{ route('roles.edit', $role->id) }}">@lang('general.edit')</a>
-                                                    @endcan
-                                                    @can('role-delete')
-                                                        {!! Form::open(['method' => 'DELETE', 'route' => ['roles.destroy', $role->id], 'style' => 'display:inline']) !!}
-                                                        {!! Form::submit('Delete', ['class' => 'btn btn-outline-danger']) !!}
-                                                        {!! Form::close() !!}
-                                                    @endcan
+                                                    @include('admin.components.controls', [
+                                                        'route' => 'roles',
+                                                    ])
                                                 </td>
                                             </tr>
                                         @endforeach

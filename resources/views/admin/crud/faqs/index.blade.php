@@ -47,23 +47,9 @@
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $faq->title }}</td>
                                                     <td>
-                                                        <form action="{{ route('faqs.destroy', $faq) }}" method="POST">
-                                                            <a href="{{ route('faqs.show', $faq) }}" title="show">
-                                                                <i class="fas fa-eye text-secondary fa-lg"></i>
-                                                            </a>
-
-                                                            <a href="{{ route('faqs.edit', $faq) }}" title="edit">
-                                                                <i class="fas fa-edit  text-secondary  fa-lg"></i>
-                                                            </a>
-
-                                                            @csrf
-                                                            @method('DELETE')
-
-                                                            <button type="submit" title="delete"
-                                                                style="border: none; background-color:transparent;">
-                                                                <i class="fas fa-trash fa-lg text-secondary"></i>
-                                                            </button>
-                                                        </form>
+                                                        @include('admin.components.controls', [
+                                                            'route' => 'faqs',
+                                                        ])
                                                     </td>
                                                 </tr>
                                             @endforeach

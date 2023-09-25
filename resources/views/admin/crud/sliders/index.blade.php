@@ -49,24 +49,9 @@
                                                             alt="{{ $slider->title }}"></td>
                                                     <td>{{ $slider->title }}</td>
                                                     <td>
-                                                        <form action="{{ route('sliders.destroy', $slider) }}"
-                                                            method="POST">
-                                                            <a href="{{ route('sliders.show', $slider) }}" title="show">
-                                                                <i class="fas fa-eye text-secondary fa-lg"></i>
-                                                            </a>
-
-                                                            <a href="{{ route('sliders.edit', $slider) }}" title="edit">
-                                                                <i class="fas fa-edit  text-secondary  fa-lg"></i>
-                                                            </a>
-
-                                                            @csrf
-                                                            @method('DELETE')
-
-                                                            <button type="submit" title="delete"
-                                                                style="border: none; background-color:transparent;">
-                                                                <i class="fas fa-trash fa-lg text-secondary"></i>
-                                                            </button>
-                                                        </form>
+                                                        @include('admin.components.controls', [
+                                                            'route' => 'sliders',
+                                                        ])
                                                     </td>
                                                 </tr>
                                             @endforeach

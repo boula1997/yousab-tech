@@ -45,28 +45,13 @@
                                             @foreach ($pages as $page)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td><img width="100" height="100"
-                                                            src="{{$page->image}}"
+                                                    <td><img width="100" height="100" src="{{ $page->image }}"
                                                             alt="{{ $page->title }}"></td>
                                                     <td>{{ $page->title }}</td>
                                                     <td>
-                                                        <form action="{{ route('pages.destroy', $page) }}" method="POST">
-                                                            <a href="{{ route('pages.show', $page) }}" title="show">
-                                                                <i class="fas fa-eye text-secondary fa-lg"></i>
-                                                            </a>
-
-                                                            <a href="{{ route('pages.edit', $page) }}" title="edit">
-                                                                <i class="fas fa-edit  text-secondary  fa-lg"></i>
-                                                            </a>
-
-                                                            @csrf
-                                                            @method('DELETE')
-
-                                                            <button type="submit" title="delete"
-                                                                style="border: none; background-color:transparent;">
-                                                                <i class="fas fa-trash fa-lg text-secondary"></i>
-                                                            </button>
-                                                        </form>
+                                                        @include('admin.components.controls', [
+                                                            'route' => 'pages',
+                                                        ])
                                                     </td>
                                                 </tr>
                                             @endforeach

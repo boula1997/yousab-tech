@@ -47,26 +47,9 @@
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $portfolio->title }}</td>
                                                     <td>
-                                                        <form action="{{ route('portfolios.destroy', $portfolio) }}"
-                                                            method="POST">
-                                                            <a href="{{ route('portfolios.show', $portfolio) }}"
-                                                                title="show">
-                                                                <i class="fas fa-eye text-secondary fa-lg"></i>
-                                                            </a>
-
-                                                            <a href="{{ route('portfolios.edit', $portfolio) }}"
-                                                                title="edit">
-                                                                <i class="fas fa-edit  text-secondary  fa-lg"></i>
-                                                            </a>
-
-                                                            @csrf
-                                                            @method('DELETE')
-
-                                                            <button type="submit" title="delete"
-                                                                style="border: none; background-color:transparent;">
-                                                                <i class="fas fa-trash fa-lg text-secondary"></i>
-                                                            </button>
-                                                        </form>
+                                                        @include('admin.components.controls', [
+                                                            'route' => 'portfolios',
+                                                        ])
                                                     </td>
                                                 </tr>
                                             @endforeach

@@ -50,23 +50,9 @@
                                                     <td>{{ $video->youtube_link }}</td>
                                                     <td>{{ $video->title }}</td>
                                                     <td>
-                                                        <form action="{{ route('videos.destroy', $video) }}" method="POST">
-                                                            <a href="{{ route('videos.show', $video) }}" title="show">
-                                                                <i class="fas fa-eye text-secondary fa-lg"></i>
-                                                            </a>
-
-                                                            <a href="{{ route('videos.edit', $video) }}" title="edit">
-                                                                <i class="fas fa-edit  text-secondary  fa-lg"></i>
-                                                            </a>
-
-                                                            @csrf
-                                                            @method('DELETE')
-
-                                                            <button type="submit" title="delete"
-                                                                style="border: none; background-color:transparent;">
-                                                                <i class="fas fa-trash fa-lg text-secondary"></i>
-                                                            </button>
-                                                        </form>
+                                                        @include('admin.components.controls', [
+                                                            'route' => 'videos',
+                                                        ])
                                                     </td>
                                                 </tr>
                                             @endforeach

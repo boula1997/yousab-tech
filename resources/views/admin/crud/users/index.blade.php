@@ -47,23 +47,9 @@
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
                                                 <td>
-                                                    <form action="{{ route('users.destroy', $user->id) }}" method="POST">
-                                                        <a href="{{ route('users.show', $user->id) }}" title="show">
-                                                            <i class="fas  fa-eye text-secondary"></i>
-                                                        </a>
-
-                                                        <a href="{{ route('users.edit', $user->id) }}" title="edit">
-                                                            <i class="fas  fa-edit  text-secondary "></i>
-                                                        </a>
-
-                                                        @csrf
-                                                        @method('DELETE')
-
-                                                        <button type="submit" title="delete"
-                                                            style="border: none; background-color:transparent;">
-                                                            <i class="fas  fa-trash text-secondary"></i>
-                                                        </button>
-                                                    </form>
+                                                    @include('admin.components.controls', [
+                                                        'route' => 'users',
+                                                    ])
                                                 </td>
                                             </tr>
                                         @endforeach
