@@ -4,7 +4,7 @@
 @section('fields_content')
     <div class="content-wrapper">
         @method('PUT')
-    
+
         <div class="container p-3">
             <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
@@ -91,24 +91,25 @@
 
                     <div class="row">
                         @foreach ($images as $image)
-
-                            <div class="col-md-3 mt-3">
-                                <div
-                                    class="custom-control custom-switch custom-switch-off-success custom-switch-on-danger">
-                                    <input type="checkbox"  name="delimages[]"
-                                        value="{{ $image->id }}" class="custom-control-input"
-                                        id="customSwitch{{ $image->id  }}">
-                                    <img width="100" height="100" src="{{ asset($image->url) }}" alt="" for="customSwitch{{ $image->id  }}">
-                                    <label class="custom-control-label"
-                                        for="customSwitch{{ $image->id  }}"></label>
+                            @if (isset($image->id))
+                                <div class="col-md-3 mt-3">
+                                    <div
+                                        class="custom-control custom-switch custom-switch-off-success custom-switch-on-danger">
+                                        <input type="checkbox" name="delimages[]" value="{{ $image->id }}"
+                                            class="custom-control-input" id="customSwitch{{ $image->id }}">
+                                        <img width="100" height="100" src="{{ asset($image->url) }}" alt=""
+                                            for="customSwitch{{ $image->id }}">
+                                        <label class="custom-control-label" for="customSwitch{{ $image->id }}"></label>
+                                    </div>
                                 </div>
-                            </div>
+                            @endif
                         @endforeach
                     </div>
                 </div>
                 <div class="card-footer mb-5">
                     <button type="submit" class="btn btn-outline-success">@lang('general.save')</button>
-                    <a href="{{ route('portfolios.index') }}" class="btn btn-outline-danger font-weight-bold">@lang('general.cancel')</a>
+                    <a href="{{ route('portfolios.index') }}"
+                        class="btn btn-outline-danger font-weight-bold">@lang('general.cancel')</a>
                 </div>
             </div>
         </div>
@@ -129,9 +130,9 @@
         })
     </script>
 
-<script>
-    $(function() {
-        bsCustomFileInput.init();
-    });
-</script>
+    <script>
+        $(function() {
+            bsCustomFileInput.init();
+        });
+    </script>
 @endpush

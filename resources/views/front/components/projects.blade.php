@@ -17,7 +17,7 @@
                 <div class="item">
                     <div class="single-project-inner style-two">
                         <div class="thumb">
-                            <img src="{{count($portfolio->files)>0?$portfolio->files[0]->url:asset('default.jpg')}}" alt="img">
+                            <img src="{{isset($portfolio->images[0]->url)?$portfolio->images[0]->url:$portfolio->images[0]}}" alt="img">
                         </div>
                         <div class="details-wrap">
                             <h3><a href="project-details.html">{{$portfolio->title}}</a></h3>

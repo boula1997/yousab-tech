@@ -15,7 +15,7 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="single-team-inner style-1 text-center">
 						<div class="thumb">
-							<img src="assets/img/team/1.webp" alt="img">
+							<img src="{{ $team->image }}" alt="img">
 							<ul class="social-media">
 								<li>
 									<a class="facebook" href="#">

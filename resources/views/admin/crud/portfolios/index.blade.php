@@ -37,6 +37,7 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
+                                                <th>@lang('general.image')</th>
                                                 <th>@lang('general.title')</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
@@ -45,6 +46,9 @@
                                             @foreach ($portfolios as $portfolio)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
+                                                    <td><img width="100" height="100"
+                                                        src="{{asset(isset($portfolio->images[0]->url)?$portfolio->images[0]->url:$portfolio->images[0])}}"
+                                                        alt="{{ $portfolio->title }}"></td>
                                                     <td>{{ $portfolio->title }}</td>
                                                     <td>
                                                         <form action="{{ route('portfolios.destroy', $portfolio) }}"
