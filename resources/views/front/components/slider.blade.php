@@ -7,7 +7,7 @@
                     <div class="banner-mask-bg-wrap mb-5 mb-lg-0">
                         <img class="shape-image" src="{{asset('assets/img/banner/6.webp')}}" alt="img">
                         <div class="thumb">
-                            <img src="{{asset(page('home-banner')->image)}}" alt="img">
+                            <img src="{{page('home-banner')->images[0]}}" alt="img">
                         </div>
                     </div>
                 </div>

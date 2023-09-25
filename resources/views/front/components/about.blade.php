@@ -8,7 +8,7 @@
                             alt="img">
                         <img class="shape-image" src="{{ asset('assets/img/about/1s.webp') }}" alt="img">
                         <div class="thumb">
-                            <img src="{{ asset(page('about-us')->image) }}" alt="img">
+                            <img src="{{ asset(page('about-us')->images[0]) }}" alt="img">
                         </div>
                     </div>
                 </div>

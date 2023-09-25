@@ -4,9 +4,9 @@
 		<div class="row justify-content-center">
 			<div class="col-lg-6">
 				<div class="section-title text-center">
-					<h5 class="sub-title double-line">{{ page('team')->title }}</h5>
-					<h2 class="title">{{ page('team')->subtitle }}</h2>
-					<p class="content">{!! page('team')->description !!}</p>
+					<h5 class="sub-title double-line">{{ page('team-section')->title }}</h5>
+					<h2 class="title">{{ page('team-section')->subtitle }}</h2>
+					<p class="content">{!! page('team-section')->description !!}</p>
 				</div>
 			</div>
 		</div>
@@ -15,7 +15,7 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="single-team-inner style-1 text-center">
 						<div class="thumb">
-							<img src="assets/img/team/1.webp" alt="img">
+							<img src="{{ $team->image }}" alt="img">
 							<ul class="social-media">
 								<li>
 									<a class="facebook" href="#">

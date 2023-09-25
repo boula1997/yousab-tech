@@ -20,7 +20,7 @@ class Gallery extends Model implements TranslatableContract
 
     public function getImagesAttribute()
     {
-        return  $this->files;
+        return  count($this->files)>0?$this->files:["default.jpg"];
     }
     
 }

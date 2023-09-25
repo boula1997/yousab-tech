@@ -36,7 +36,6 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>@lang('general.title')</th>
                                                 <th>@lang('general.contact')</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
@@ -45,7 +44,6 @@
                                             @foreach ($contacts as $contact)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $contact->title }}</td>
                                                     <td>{{ $contact->contact }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [

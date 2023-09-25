@@ -21,7 +21,8 @@ class PagesSeeder extends Seeder
         "Our latest Portfolio for your choice",
         "How to work it",
         "Know more about our it solution",
-        "We have professional skilled"
+        "We have professional skilled",
+        "team title"
     ];
 
         $subtitle_en = [
@@ -31,7 +32,8 @@ class PagesSeeder extends Seeder
         "Porfolio Template",
         "Work Process",
         "More Details",
-        "Professional Skill"];
+        "Professional Skill",
+         "team subtitle" ];
 
         $description_en = [
         "<p>Dcidunt eget semper nec quam. Sed hendrerit morbi ac felis. Nunc egestas augue pellentesque</p>",
@@ -48,7 +50,8 @@ class PagesSeeder extends Seeder
 
         "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>",
         "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>",
-        "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>"];
+        "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>",
+        "<p>team description</p>"];
 
 
         // Arabic Data
@@ -59,7 +62,8 @@ class PagesSeeder extends Seeder
             "أحدث محفظة لدينا لاختيارك",
             "كيف تعمل",
             "تعرف على المزيد حول حل تكنولوجيا المعلومات لدينا",
-            "لدينا مهارة مهنية"
+            "لدينا مهارة مهنية",
+            "عنوان التيم"
         ];
     
             $subtitle_ar = [
@@ -69,7 +73,7 @@ class PagesSeeder extends Seeder
             "محفظة قالب",
             "آلية العمل",
             "المزيد من التفاصيل",
-            "مهارة احترافية"];
+            "مهارة احترافية","عنوان فرعي التيم"];
     
             $description_ar = [
             "ً<p>Dcidunt eget semper nec quam. Sed hendrerit morbi ac felis. Nunc egestas augue pellentesque</p>",
@@ -86,9 +90,9 @@ class PagesSeeder extends Seeder
     
             "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>",
             "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>",
-            "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>"];    
+            "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>","<p>وصف التيم</p>"];    
 
-            $identifiers=["home-banner","about-us","service-section","portfolio-section","process-section","faq-section","skills-section"];  
+            $identifiers=["home-banner","about-us","service-section","portfolio-section","process-section","faq-section","skills-section","team-section"];  
 
              $images=[];
        
