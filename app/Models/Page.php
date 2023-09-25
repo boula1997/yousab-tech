@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Traits\MorphFile;
+use App\Traits\MorphFiles;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 class Page extends Model implements TranslatableContract
 {
-    use HasFactory, Translatable,MorphFile;
+    use HasFactory, Translatable,MorphFiles;
     protected $table = 'pages';
     protected $guarded = [];
     public $translatedAttributes = ['title', 'subtitle', 'description'];
@@ -19,7 +19,7 @@ class Page extends Model implements TranslatableContract
 
     public function getImagesAttribute()
     {
-        return  $this->files;
+        return  count($this->files)>0?$this->files:["default.jpg"];
     }
     
 }

@@ -34,7 +34,7 @@
                                             </div>
                                         </div>
                                     </div>
-    
+
                                     <div class="col-md-6">
                                         <div class="mb-7 bg-light p-3 rounded h-100">
                                             <div class="card-title">
@@ -43,7 +43,7 @@
                                             </div>
                                         </div>
                                     </div>
-    
+
                                 </div>
                                 <br>
                                 <br>
@@ -61,7 +61,7 @@
                         @endforeach
                     </div>
                 </div>
-    
+
                 <div class="card card-custom">
                     <div class="card-body">
                         <div class="row">
@@ -69,11 +69,12 @@
                                 <label for="exampleInputFile1">{{ __('general.images') }}</label>
                                 <div class="row">
                                     @foreach ($images as $image)
-                                        <div class="col-md-3">
-                                            <img width="100" height="100" class="mx-3" src="{{ $image->url }}"
-                                                alt="">
-
-                                        </div>
+                                        @if (isset($image->id))
+                                            <div class="col-md-3">
+                                                <img width="100" height="100" class="mx-3" src="{{ $image->url }}"
+                                                    alt="">
+                                            </div>
+                                        @endif
                                     @endforeach
                                 </div>
                             </div>
