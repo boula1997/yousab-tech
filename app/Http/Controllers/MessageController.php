@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\MessageRequest;
+use App\Mail\MessageMail;
 use App\Models\Message;
 use App\Models\Service;
 use App\Models\Testimonial;
@@ -11,6 +12,8 @@ use App\Models\Gallery;
 use App\Models\Slider;
 use App\Models\Counter;
 use Exception;
+use Illuminate\Contracts\Mail\Mailer;
+use Illuminate\Support\Facades\Mail;
 
 class MessageController extends Controller
 {
@@ -56,7 +59,7 @@ class MessageController extends Controller
         try {
             $data = $request->all();
             $message = $this->message->create($data);
-            // Mail::to(Message_Mail)->send(new MessageMail($message));
+            Mail::to(Message_Mail)->send(new MessageMail($message));
             return response()->json(['success' => trans('message.sent_successfully')]);
         } catch (\Exception $e) {
             return response()->json(['error' => __($e->getMessage())]);

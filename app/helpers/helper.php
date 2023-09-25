@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\File;
 use Jackiedo\Cart\Facades\Cart;
 use Spatie\Permission\Models\Role;
 
+const Message_Mail = "app@gmail.com";
+
 function settings()
 {
     return Setting::first();
