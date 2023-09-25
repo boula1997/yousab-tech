@@ -46,12 +46,14 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td><img width="100" height="100"
-                                                            src="{{asset(isset($page->images[0]->url)?$page->images[0]->url:$page->images[0])}}"
+                                                            src="{{ asset(isset($page->images[0]->url) ? $page->images[0]->url : $page->images[0]) }}"
                                                             alt="{{ $page->title }}"></td>
                                                     <td>{{ $page->title }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'pages',
+                                                            'role' => 'page',
+                                                            'module' => $page,
                                                         ])
                                                     </td>
                                                 </tr>

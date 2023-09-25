@@ -51,6 +51,8 @@
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'sliders',
+                                                            'role' => 'slider',
+                                                            'module' => $slider,
                                                         ])
                                                     </td>
                                                 </tr>

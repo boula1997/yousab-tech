@@ -49,6 +49,8 @@
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'faqs',
+                                                            'role' => 'faq',
+                                                            'module' => $faq,
                                                         ])
                                                     </td>
                                                 </tr>

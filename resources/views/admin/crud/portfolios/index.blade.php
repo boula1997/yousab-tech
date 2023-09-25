@@ -53,6 +53,8 @@
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'portfolios',
+                                                            'role' => 'portfolio',
+                                                            'module' => $portfolio,
                                                         ])
                                                     </td>
                                                 </tr>

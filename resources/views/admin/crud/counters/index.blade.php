@@ -49,7 +49,9 @@
                                                     <td>{{ $counter->count }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
-                                                            'route' => 'contacts',
+                                                            'route' => 'counters',
+                                                            'role' => 'counter',
+                                                            'module' => $counter,
                                                         ])
                                                     </td>
                                                 </tr>

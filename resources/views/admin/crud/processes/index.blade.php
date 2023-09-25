@@ -51,6 +51,8 @@
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'processes',
+                                                            'role' => 'process',
+                                                            'module' => $process,
                                                         ])
                                                     </td>
                                                 </tr>

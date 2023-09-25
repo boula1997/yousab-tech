@@ -15,20 +15,19 @@ class ContactsSeeder extends Seeder
     {
        
         $icon=["fa fa-facebook",
-                "fa fa-twitter",
-                "far fa-bell",
-                "fa fa-facebook"];
+                "fa fa-twitter"];
 
         $contacts=["https://www.facebook.com",
-                  "https://www.twitter.com",
-                  "https://www.facebook.com",
                   "https://www.twitter.com"];
+
+      $type=['social','social'];
       
 
         for ($i = 0; $i < count($contacts); $i++) {
             $contact = Contact::create([
                'icon'=>$icon[$i],
                 'contact'=>$contacts[$i],
+                'type'=>$type[$i],
             ]);
         }
     }

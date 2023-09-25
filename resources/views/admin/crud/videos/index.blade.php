@@ -52,6 +52,8 @@
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'videos',
+                                                            'role' => 'video',
+                                                            'module' => $video,
                                                         ])
                                                     </td>
                                                 </tr>

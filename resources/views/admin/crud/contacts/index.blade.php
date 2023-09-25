@@ -16,7 +16,7 @@
                                     <!-- general form elements -->
                                     <div class="row">
                                         <div class="col-md-6 d-flex d-flex justify-content-start">
-                                            <h3 class="card-title">@lang('general.pages')</h3>
+                                            <h3 class="card-title">@lang('general.contacts')</h3>
                                         </div>
                                         <div class="col-md-6 d-flex d-flex justify-content-end">
                                             <a href="{{ route('contacts.create') }}">
@@ -47,7 +47,9 @@
                                                     <td>{{ $contact->contact }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
-                                                            'route' => 'pages',
+                                                            'route' => 'contacts',
+                                                            'role' => 'contact',
+                                                            'module' => $contact,
                                                         ])
                                                     </td>
                                                 </tr>

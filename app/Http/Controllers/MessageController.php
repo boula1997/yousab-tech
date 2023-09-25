@@ -59,7 +59,7 @@ class MessageController extends Controller
         try {
             $data = $request->all();
             $message = $this->message->create($data);
-            Mail::to(Message_Mail)->send(new MessageMail($message));
+            // Mail::to(Message_Mail)->send(new MessageMail($message));
             return response()->json(['success' => trans('message.sent_successfully')]);
         } catch (\Exception $e) {
             return response()->json(['error' => __($e->getMessage())]);

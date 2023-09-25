@@ -49,6 +49,8 @@
                                                 <td>
                                                     @include('admin.components.controls', [
                                                         'route' => 'users',
+                                                        'role' => 'user',
+                                                        'module' => $user,
                                                     ])
                                                 </td>
                                             </tr>

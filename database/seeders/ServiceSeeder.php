@@ -41,7 +41,7 @@ class ServiceSeeder extends Seeder
                             "<p>Curabitur ullamcorper ultricies nisiam tiamns rhoncus. Maecenas tempus tellus
                                 endimentum </p>"];
 
-        $images = [];
+        $images = ["images/LQj24b9OP3W6DmNSaC528IndOKm8sG7svbdbjEoz.jpg"];
         $icons=["fa fa-facebook",
                 "fa fa-twitter",
                 "far fa-bell",
@@ -61,6 +61,8 @@ class ServiceSeeder extends Seeder
                 ],
                 'icon'=>$icons[$i],
             ]);
+
+            // $service->file()->create(["url"=>$images[$i]]);
         }
     }
 }

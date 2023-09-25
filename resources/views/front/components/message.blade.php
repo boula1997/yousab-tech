@@ -7,6 +7,7 @@
         </div>
         <div class="col-lg-5 col-md-7">
             <form class="message-form-wrap"  method="post" id="message-form">
+                @csrf
                 <div class="consulting-message-form mx-4">
                     <h3 class="mb-3">{{ __('general.free_consulting') }}</h3>
                     <div class="single-input-inner style-bg">
@@ -64,7 +65,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: "{{ route('message.store') }}",
+                url: "{{ route('front.message.post') }}",
                 data: {
                     "_token": "{{ csrf_token() }}",
                     'name': $("input[name=name]").val(),

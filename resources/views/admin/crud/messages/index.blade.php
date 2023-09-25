@@ -41,6 +41,8 @@
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'messages',
+                                                            'role' => 'message',
+                                                            'module' => $message,
                                                         ])
                                                     </td>
                                                 </tr>
