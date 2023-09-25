@@ -22,7 +22,7 @@ class PagesSeeder extends Seeder
         "How to work it",
         "Know more about our it solution",
         "We have professional skilled",
-        "team title"
+        "Expert Team"
     ];
 
         $subtitle_en = [
@@ -33,7 +33,7 @@ class PagesSeeder extends Seeder
         "Work Process",
         "More Details",
         "Professional Skill",
-         "team subtitle" ];
+        "Meet with our expert" ];
 
         $description_en = [
         "<p>Dcidunt eget semper nec quam. Sed hendrerit morbi ac felis. Nunc egestas augue pellentesque</p>",
@@ -51,7 +51,7 @@ class PagesSeeder extends Seeder
         "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>",
         "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>",
         "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>",
-        "<p>team description</p>"];
+        "<p>Dcidunt eget semper nec quam. Sed hendrerit. acfelis Nunc egestas augue atpellentesque laoreet</p>"];
 
 
         // Arabic Data
@@ -63,7 +63,7 @@ class PagesSeeder extends Seeder
             "كيف تعمل",
             "تعرف على المزيد حول حل تكنولوجيا المعلومات لدينا",
             "لدينا مهارة مهنية",
-            "عنوان التيم"
+            "فريق الخبراء"
         ];
     
             $subtitle_ar = [
@@ -73,7 +73,8 @@ class PagesSeeder extends Seeder
             "محفظة قالب",
             "آلية العمل",
             "المزيد من التفاصيل",
-            "مهارة احترافية","عنوان فرعي التيم"];
+            "مهارة احترافية",
+            "اجتمع مع خبراءنا"];
     
             $description_ar = [
             "ً<p>Dcidunt eget semper nec quam. Sed hendrerit morbi ac felis. Nunc egestas augue pellentesque</p>",
