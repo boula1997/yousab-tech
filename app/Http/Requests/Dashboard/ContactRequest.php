@@ -27,9 +27,7 @@ class ContactRequest extends FormRequest
             'type' =>  'required',
             'icon' =>  'required',
         ];
-        foreach (config('translatable.locales') as $locale) {
-            $rules += [$locale . '.title' => ['required', 'string']];
-        }
+        
         return  $rules;
     }
 
