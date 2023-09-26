@@ -95,7 +95,14 @@ class PagesSeeder extends Seeder
 
             $identifiers=["home-banner","about-us","service-section","portfolio-section","process-section","faq-section","skills-section","team-section"];  
 
-             $images=[];
+             $images=[  "images/6Uc5BhjmQJtfneedg6lKQ4U0Mh4SHOs5OAd8StZd.webp",
+                        "images/dbfWCgbV5jglKcWKTYT6SeIsuAsQxCQ4GGDLHXex.webp",
+                        "",
+                        "",
+                        "images/t3yoUSNqjSfBswYwUkKK9tP2rPpMnkIrItqdx3xs.webp",
+                        "images/BWVhP3LxzAbnUwUs4WHGM7GKsYxPLK5DX0P5uokh.webp",
+                        ""
+                    ];
        
 
         for ($i = 0; $i < count($title_ar); $i++) {
@@ -115,7 +122,7 @@ class PagesSeeder extends Seeder
                 'identifier'=>$identifiers[$i]
             ]);
 
-            // $page->file()->create(["url"=>$images[$i]]);
+            $page->file()->create(["url"=>$images[$i]]);
      }
     }
 }

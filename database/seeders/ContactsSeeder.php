@@ -20,7 +20,7 @@ class ContactsSeeder extends Seeder
         $contacts=["https://www.facebook.com",
                   "https://www.twitter.com"];
 
-      $type=['social','social'];
+        $type=['social','social'];
       
 
         for ($i = 0; $i < count($contacts); $i++) {
