@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Dashboard\MessageRequest;
+use App\Mail\MessageMail;
 use App\Models\Message;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class MessageController extends Controller
 {
@@ -19,6 +22,7 @@ class MessageController extends Controller
     {
         $this->middleware('permission:message-list|message-delete', ['only' => ['index', 'show']]);
         $this->middleware('permission:message-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:message-reply', ['only' => ['reply']]);
         $this->message = $message;
     }
 
@@ -63,6 +67,28 @@ class MessageController extends Controller
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
+    }
+    public function reply(MessageRequest $request)
+    {
+        try {
+            $this->message->create($request->all());
+            return view('admin.crud.messages.reply');
+        } catch (Exception $e) {
+            dd($e->getMessage());
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
+        }
+    }
+    public function emailReply(MessageRequest $request)
+    {
+        try {
+            $data = $request->all();
+            $message = $this->message->create($data);
+            Mail::to(Message_Mail)->send(new MessageMail($message));
+            return redirect()->route('messages.index')
+                ->with('success', trans('general.replied_successfully'));
+        } catch (\Exception $e) {
+            return response()->json(['error' => __($e->getMessage())]);
         }
     }
 }

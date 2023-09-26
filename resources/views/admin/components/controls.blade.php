@@ -20,5 +20,11 @@
                 <i class="fas fa-trash fa-lg text-secondary"></i>
             </button>
         @endcan
+
+        @can($role . '-reply')
+            <a href="{{ route($route . '.edit', $module) }}" title="edit">
+                <i class="fas fa-reply text-secondary  fa-lg"></i>
+            </a>
+        @endcan
     </form>
 @endif
