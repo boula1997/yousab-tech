@@ -93,15 +93,19 @@ class PagesSeeder extends Seeder
             "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>",
             "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>","<p>وصف التيم</p>"];    
 
-            $identifiers=["home-banner","about-us","service-section","portfolio-section","process-section","faq-section","skills-section","team-section"];  
+            $identifiers=["home-banner","about-us","service-section",
+                          "portfolio-section","process-section","faq-section",
+                          "skills-section","team-section"];  
 
              $images=[  ["images/6Uc5BhjmQJtfneedg6lKQ4U0Mh4SHOs5OAd8StZd.webp",],
                         ["images/dbfWCgbV5jglKcWKTYT6SeIsuAsQxCQ4GGDLHXex.webp"],
                         null,
                         null,
-                        ["images/t3yoUSNqjSfBswYwUkKK9tP2rPpMnkIrItqdx3xs.webp"],
-                        ["images/BWVhP3LxzAbnUwUs4WHGM7GKsYxPLK5DX0P5uokh.webp"],
                         null,
+                        ["images/8dTGgGdIWqURKxo2SYehtgjCL3AKeSKmINcUVMyy.webp"],
+                        ["images/l2K1cEb5wcsPVzhHhj2OWNcQXBPKKrofxrfhgu5W.webp",
+                         "images/khyVZVtSks0zZfm3NQAA3496oI8ovcN3rzKD9rX4.webp",
+                         "images/NzpSLncvvrosX4WqGDJLZtWvY3Xrvxzw6saO8xr6.webp"],
                         null
                     ];
        
