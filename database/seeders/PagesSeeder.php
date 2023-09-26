@@ -22,7 +22,9 @@ class PagesSeeder extends Seeder
         "How to work it",
         "Know more about our it solution",
         "We have professional skilled",
-        "Expert Team"
+        "Expert Team",
+        "Contact",
+        "We are here to answer your questions 24/7"
     ];
 
         $subtitle_en = [
@@ -33,7 +35,9 @@ class PagesSeeder extends Seeder
         "Work Process",
         "More Details",
         "Professional Skill",
-        "Meet with our expert" ];
+        "Meet with our expert",
+        "Get in touch",
+        "Need for it solution services" ];
 
         $description_en = [
         "<p>Dcidunt eget semper nec quam. Sed hendrerit morbi ac felis. Nunc egestas augue pellentesque</p>",
@@ -51,7 +55,9 @@ class PagesSeeder extends Seeder
         "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>",
         "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>",
         "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>",
-        "<p>Dcidunt eget semper nec quam. Sed hendrerit. acfelis Nunc egestas augue atpellentesque laoreet</p>"];
+        "<p>Dcidunt eget semper nec quam. Sed hendrerit. acfelis Nunc egestas augue atpellentesque laoreet</p>",
+        "<p>Dcidunt eget semper nec quam. Sed hendrerit. acfelis Nunc egestas augue atpellentesque laoreet</p>",
+        null ];
 
 
         // Arabic Data
@@ -63,7 +69,9 @@ class PagesSeeder extends Seeder
             "كيف تعمل",
             "تعرف على المزيد حول حل تكنولوجيا المعلومات لدينا",
             "لدينا مهارة مهنية",
-            "فريق الخبراء"
+            "فريق الخبراء",
+            "تواصل معنا ",
+            "نحن هنا للإجابة على أسئلتك على مدار اليوم"
         ];
     
             $subtitle_ar = [
@@ -74,7 +82,9 @@ class PagesSeeder extends Seeder
             "آلية العمل",
             "المزيد من التفاصيل",
             "مهارة احترافية",
-            "اجتمع مع خبراءنا"];
+            "اجتمع مع خبراءنا",
+            "ابقى على تواصل",
+            "تحتاج إلى خدمات الحل"];
     
             $description_ar = [
             "ً<p>Dcidunt eget semper nec quam. Sed hendrerit morbi ac felis. Nunc egestas augue pellentesque</p>",
@@ -91,11 +101,14 @@ class PagesSeeder extends Seeder
     
             "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>",
             "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>",
-            "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>","<p>وصف التيم</p>"];    
+            "<p>Maecenas tempus, tellus eget condime honcus sem quam semper libero sit amet adipiscingem neque</p>",
+            "<p>وصف التيم</p>",
+            "<p>Dcidunt eget semper nec quam. Sed hendrerit. acfelis Nunc egestas augue atpellentesque laoreet</p>",
+            null];    
 
             $identifiers=["home-banner","about-us","service-section",
                           "portfolio-section","process-section","faq-section",
-                          "skills-section","team-section"];  
+                          "skills-section","team-section","contact-section","solution-section"];  
 
              $images=[  ["images/6Uc5BhjmQJtfneedg6lKQ4U0Mh4SHOs5OAd8StZd.webp",],
                         ["images/dbfWCgbV5jglKcWKTYT6SeIsuAsQxCQ4GGDLHXex.webp"],
@@ -106,6 +119,8 @@ class PagesSeeder extends Seeder
                         ["images/l2K1cEb5wcsPVzhHhj2OWNcQXBPKKrofxrfhgu5W.webp",
                          "images/khyVZVtSks0zZfm3NQAA3496oI8ovcN3rzKD9rX4.webp",
                          "images/NzpSLncvvrosX4WqGDJLZtWvY3Xrvxzw6saO8xr6.webp"],
+                        null,
+                        null,
                         null
                     ];
        

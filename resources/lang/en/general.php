@@ -155,14 +155,7 @@ return [
     'select_icon' => 'Select Icon',
     'type' => 'Type',
     'our_services'=>'Our Services',
-    'images'=>'Images'
-
-
-
-
-
-
-
-
+    'images'=>'Images',
+    'free_consulting'=>'Free Consulting'
 
 ];
