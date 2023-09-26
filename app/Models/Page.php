@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\MorphFile;
 use App\Traits\MorphFiles;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -11,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 class Page extends Model implements TranslatableContract
 {
-    use HasFactory, Translatable,MorphFiles;
+    use HasFactory, Translatable,MorphFiles,MorphFile;
     protected $table = 'pages';
     protected $guarded = [];
     public $translatedAttributes = ['title', 'subtitle', 'description'];

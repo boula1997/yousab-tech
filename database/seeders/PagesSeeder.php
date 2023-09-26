@@ -95,7 +95,7 @@ class PagesSeeder extends Seeder
 
             $identifiers=["home-banner","about-us","service-section","portfolio-section","process-section","faq-section","skills-section","team-section"];  
 
-             $images=[  "images/6Uc5BhjmQJtfneedg6lKQ4U0Mh4SHOs5OAd8StZd.webp",
+             $images=[  ["images/6Uc5BhjmQJtfneedg6lKQ4U0Mh4SHOs5OAd8StZd.webp"],
                         "images/dbfWCgbV5jglKcWKTYT6SeIsuAsQxCQ4GGDLHXex.webp",
                         "",
                         "",
