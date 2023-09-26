@@ -91,7 +91,7 @@ return [
     "phone2" => "الهاتف2",
     "email2" => "البريد الإلكتروني 2",
     "address" => "عنوان",
-    "appointment2" => "الموعد 2",
+    "copyright" => "حقوق الملكية",
     "created_at" => "أنشئت في",
     "email_verified_at" => "eMail_verified_at",
     "failed_at" => "فشل",

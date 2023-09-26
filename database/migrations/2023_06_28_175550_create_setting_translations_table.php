@@ -19,7 +19,7 @@ class CreateSettingTranslationsTable extends Migration
             $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->text('appointment1')->nullable();
-            $table->text('appointment2')->nullable();
+            $table->text('copyright')->nullable();
             $table->text('meta_data')->nullable();
             $table->unsignedBigInteger('setting_id');
             $table->string('locale')->index();

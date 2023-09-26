@@ -90,7 +90,7 @@ return [
     "phone2" => "Phone2",
     "email2" => "Email2",
     "address" => "Address",
-    "appointment2" => "Appointment2",
+    "copyright" => "copyright",
     "created_at" => "Created_at",
     "email_verified_at" => "Email_verified_at",
     "failed_at" => "Failed_at",

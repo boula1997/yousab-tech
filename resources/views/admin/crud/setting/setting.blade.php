@@ -64,16 +64,16 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>@lang('general.appointment2') - @lang('general.' . $locale)<span class="text-danger"> *
+                                    <label>@lang('general.copyright') - @lang('general.' . $locale)<span class="text-danger"> *
                                         </span></label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="flaticon-edit"></i></span>
                                         </div>
-                                        <input type="text" name="{{ $locale . '[appointment2]' }}"
-                                            placeholder="@lang('general.appointment2')"
-                                            class="form-control  pl-5 min-h-40px @error($locale . '.appointment2') is-invalid @enderror"
-                                            value="{{ old($locale . '.appointment2', $setting->translate($locale)->appointment2) }}">
+                                        <input type="text" name="{{ $locale . '[copyright]' }}"
+                                            placeholder="@lang('general.copyright')"
+                                            class="form-control  pl-5 min-h-40px @error($locale . '.copyright') is-invalid @enderror"
+                                            value="{{ old($locale . '.copyright', $setting->translate($locale)->copyright) }}">
                                     </div>
                                 </div>
                                 <div class="form-group">

@@ -24,7 +24,7 @@ class SettingResource extends JsonResource
             "emails" => contacts('email'),
             "tab" => $this->tab,
             "appointment1" => $this->appointment1,
-            "appointment2" => $this->appointment2,
+            "copyright" => $this->copyright,
             "description" => $this->description,
             "meta_data" => $this->meta_data,
             "title" => $this->title,
