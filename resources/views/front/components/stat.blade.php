@@ -68,15 +68,15 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="thumb border-radius-5 mb-4 mb-md-0 image-hover-animate">
-                                <img src="{{ page('skills-section')->images[0] }}" alt="img">
+                                <img src="{{ asset(isset(page('skills-section')->images[0]->url) ? page('skills-section')->images[0]->url : page('skills-section')->images[0]) }}" alt="img">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="thumb border-radius-5 mb-4 image-hover-animate">
-                                <img src="{{ page('skills-section')->images[0] }}" alt="img">
+                                <img src="{{ asset(isset(page('skills-section')->images[1]->url) ? page('skills-section')->images[1]->url : page('skills-section')->images[1]) }}" alt="img">
                             </div>
                             <div class="thumb border-radius-5 image-hover-animate">
-                                <img src="{{ page('skills-section')->images[0] }}" alt="img">
+                                <img src="{{ asset(isset(page('skills-section')->images[2]->url) ? page('skills-section')->images[2]->url : page('skills-section')->images[2]) }}" alt="img">
                             </div>
                         </div>
                     </div>
