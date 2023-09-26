@@ -19,6 +19,6 @@ class Slider extends Model implements TranslatableContract
 
     public function getImageAttribute()
     {
-        return  $this->file ? asset($this->file->url) : asset('default.jpg');
+        return   file_exists($this->file) ? asset($this->file->url) : asset('default.jpg');
     }
 }

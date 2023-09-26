@@ -11,13 +11,6 @@
                     <div  class="card-img">
                         <a href="{{ $portfolio->image }}" data-lightbox="portfolio" data-title="{{ $portfolio->title }}"><img style="margin: 1%" class="img-fluid" src="{{ $portfolio->image }}" alt="" /></a>
                     </div>
-                    {{-- <div class="card-body">
-                        {!! $portfolio->description !!}
-                    </div> --}}
-                    {{-- <div class="card-footer mb-5">
-                        <a href="#" class="btn btn-outline-primary px-5
-">تصفح الخدمة</a>
-                    </div> --}}
                 </div>
             </div>
             @endforeach

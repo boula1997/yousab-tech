@@ -28,7 +28,6 @@
             border-top-left-radius: 5px;
             opacity: 0.8;
         }
-
     </style>
 </head>
 
@@ -39,24 +38,17 @@
     <div class="row">
 
         @foreach ($images as $image)
-        {{-- <div class="col-lg-4">
-            <div class="card">
-                <a href="{{ $image->path }}" data-lightbox="portfolio"
-        data-title="{{ $portfolio->title }}"><img style="margin: 1%" class="img-fluid" src="{{ $image->path }}"
-            alt="" /></a>
+            <div class="col-md-4 col-sm-12 articleItem mb-5 animate__animated animate__fadeInDown" style="height: 300px"
+                data-aos="fade-up" data-aos-duration="3000">
+                <div class="card" style="height: 300px">
+                    <div class="card-img" style="height: 300px">
+                        <a href="{{ $image->path }}" data-lightbox="portfolio" data-title="{{ $portfolio->title }}">
+                            <img class="card-img-top img-fluid h-100" src="{{ $image->path }}" alt="" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </div>
-</div> --}}
-<div class="col-md-4 col-sm-12 articleItem mb-5 animate__animated animate__fadeInDown" style="height: 300px"
-    data-aos="fade-up" data-aos-duration="3000">
-    <div class="card" style="height: 300px">
-        <div class="card-img" style="height: 300px">
-            <a href="{{ $image->path }}" data-lightbox="portfolio" data-title="{{ $portfolio->title }}">
-                <img class="card-img-top img-fluid h-100" src="{{ $image->path }}" alt="" />
-            </a>
-        </div>
-    </div>
-</div>
-@endforeach
-</div>
-<!-- /.row -->
+    <!-- /.row -->
 </div>
