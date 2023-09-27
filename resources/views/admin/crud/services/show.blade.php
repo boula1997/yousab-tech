@@ -66,7 +66,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <img src="{{ asset($service->image) }}" class="w-50">
+                                    <img src="{{ $service->image }}" class="w-50">
                                 </div>
                             </div>
 
