@@ -8,7 +8,7 @@
 
                             {{-- <img src="{{ asset( page('faq')->images[0]) }}" alt="img"> --}}
                             
-                            <img src="{{ asset(file_exists(page('faq-section')->images[0]->url) ? page('faq-section')->images[0]->url : asset('default.jpg')) }}" alt="img">
+                            <img src="{{ asset(isset(page('faq-section')->images[0]->url) ? page('faq-section')->images[0]->url : asset('default.jpg')) }}" alt="img">
                             {{-- <img class="img-position-1" src="{{asset('assets/img/about/f2.webp')}}" alt="img"> --}}
                             {{-- <img class="img-position-2 top_image_bounce" src="{{asset('assets/img/about/f3.webp')}}" alt="img"> --}}
                         </div>

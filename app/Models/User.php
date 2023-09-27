@@ -44,6 +44,6 @@ class User extends Authenticatable
     ];
 
     public function getImageAttribute(){
-        return  $this->file->url;
+        return  $this->file?asset($this->file->url): asset('default.jpg');
    }
 }

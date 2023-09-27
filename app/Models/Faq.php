@@ -17,7 +17,7 @@ class Faq extends Model implements TranslatableContract
     public $timestamps = true;
     
     public function getImageAttribute(){
-         return  $this->file->url;
+         return  $this->file?asset($this->file->url): asset('default.jpg');
     }
 
 }
