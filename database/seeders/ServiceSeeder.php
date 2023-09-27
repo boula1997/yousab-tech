@@ -41,11 +41,14 @@ class ServiceSeeder extends Seeder
                             "<p>Curabitur ullamcorper ultricies nisiam tiamns rhoncus. Maecenas tempus tellus
                                 endimentum </p>"];
 
-        $images = ["images/LQj24b9OP3W6DmNSaC528IndOKm8sG7svbdbjEoz.jpg"];
-        $icons=["fa fa-facebook",
-                "fa fa-twitter",
+        $images = ["images/LQj24b9OP3W6DmNSaC528IndOKm8sG7svbdbjEoz.jpg",
+                    "images/LQj24b9OP3W6DmNSaC528IndOKm8sG7svbdbjEoz.jpg",
+                    "images/LQj24b9OP3W6DmNSaC528IndOKm8sG7svbdbjEoz.jpg",
+                    "images/LQj24b9OP3W6DmNSaC528IndOKm8sG7svbdbjEoz.jpg" ];
+        $icons=["fab fa-facebook-f",
+                "fab fa-twitter",
                 "far fa-bell",
-                "fa fa-facebook"];
+                "fab fa-facebook-f"];
 
         for ($i = 0; $i < count($title_ar); $i++) {
             $service = Service::create([
@@ -62,7 +65,7 @@ class ServiceSeeder extends Seeder
                 'icon'=>$icons[$i],
             ]);
 
-            // $service->file()->create(["url"=>$images[$i]]);
+            $service->file()->create(["url"=>$images[$i]]);
         }
     }
 }

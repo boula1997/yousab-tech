@@ -42,7 +42,7 @@
                                         @foreach ($data as $user)
                                             <tr class="p-0 m-0">
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img width="100" height="100" src="{{ $user->file?$user->image:'' }}"
+                                                <td><img width="100" height="100" src="{{$user->image}}"
                                                         alt="{{ $user->name }}"></td>
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>

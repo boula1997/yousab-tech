@@ -1,3 +1,57 @@
+<div class="team-area info-box-two pd-top-115 pd-bottom-90">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-9">
+                <div class="section-title text-center">
+                    <h5 class="sub-title double-line">{{ page('contact-section')->title }}</h5>
+                    <h2 class="title">{{ page('contact-section')->subtitle }}</h2>
+                    <p class="content">{!! page('contact-section')->description !!} </p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-contact-inner text-center">
+                    <div class="icon-box">
+                        <i class="icomoon-pin"></i>
+                    </div>
+                    <div class="details-wrap">
+                        <div class="details-inner">
+                            <h3>Office address</h3>
+                            <p>7895 Piermont, Albuquerque, NM 198866, USA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- <div class="col-lg-4 col-md-6">
+                <div class="single-contact-inner text-center">
+                    <div class="icon-box">
+                        <i class=" icomoon-email"></i>
+                    </div>
+                    <div class="details-wrap">
+                        <div class="details-inner">
+                            <h3>Email Address</h3>
+                            <p>support@gmail.com <br> www.infomar.net</p>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+            {{-- <div class="col-lg-4 col-md-6">
+                <div class="single-contact-inner text-center">
+                    <div class="icon-box">
+                        <i class=" icomoon-telephone"></i>
+                    </div>
+                    <div class="details-wrap">
+                        <div class="details-inner">
+                            <h3>Phone Number</h3>
+                            <p>+012 (345) 678 99 <br> +12345678</p>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+        </div>
+    </div>
+</div>
 <div class="g-map-message">
     <div class="row justify-content-end">
         <div class="col-lg-7 col-md-5">
@@ -43,9 +97,9 @@
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8">
                 <div class="single-call-to-action-inner style-white">
-                    <h5>We are here to answer your questions 24/7</h5>
-                    <h2>Need for it solution services</h2>
-                    <a class="btn btn-black mt-3" href="message.html">Message With Us</a>
+                    <h5>{{ page('solution-section')->title }}</h5>
+                    <h2>{{ page('solution-section')->subtitle }}</h2>
+                    <a class="btn btn-black mt-3" href="">{{__('general.message')}}</a>
                 </div>
             </div>
         </div>

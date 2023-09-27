@@ -163,7 +163,8 @@ return [
     'select_icon' => 'اختر ايقونة',
     'type' => 'النوع',
     'our_services'=>'خدماتنا',
-    'images'=>'الصور'
+    'images'=>'الصور',
+    'free_consulting'=>'خدمات استشارية'
 
 
 
