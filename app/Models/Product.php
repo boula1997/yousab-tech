@@ -21,6 +21,6 @@ class Product extends Model implements TranslatableContract
     protected $guarded = [];
     public $translatedAttributes = ['title', 'subtitle', 'description'];
     public function getImageAttribute(){
-        return  $this->file?asset($this->file->url): asset('default.jpg');
+        return  $this->file->url;
    }
 }

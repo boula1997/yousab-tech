@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Admin extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles,MorphFile;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, MorphFile;
 
     /**
      * The attributes that are mass assignable.
@@ -46,8 +46,8 @@ class Admin extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getImageAttribute(){
-        return  $this->file?asset($this->file->url): asset('default.jpg');
-   }
-
+    public function getImageAttribute()
+    {
+        return  $this->file->url;
+    }
 }
