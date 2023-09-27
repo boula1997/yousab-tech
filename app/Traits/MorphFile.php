@@ -50,14 +50,15 @@ trait  MorphFile
 
     public function deleteFile()
     {
-        if (isset($this->file) && file_exists($this->file->url)){
-            try{
-                File::delete($this->image);
-                $this->file()->delete();
+        try{
+                if (isset($this->file)){
+                $this->file()->delete();}
+                if(file_exists($this->file)){
+                    File::delete($this->image);
+                }
             }catch(Exception $e){
                 dd($e->getMessage());
                 return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
-    }
     }
 }

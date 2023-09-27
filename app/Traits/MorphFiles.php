@@ -42,8 +42,10 @@ trait  MorphFiles
     {
         if ($this->files()) {
             foreach ($this->files() as $file) {
-                File::delete($file->url);
-                $file->delete();
+                if(file_exists($file->url))
+                  File::delete($file->url);
+                if(isset($file->url))
+                  $file->delete();
             }
         }
     }
@@ -53,8 +55,10 @@ trait  MorphFiles
         if (request()->has('delimages')) {
             foreach (request()->delimages as $id) {
                 $image = ModelsFile::find($id);
-                File::delete($image->url);
-                $image->delete();
+                if(file_exists($image->url))
+                  File::delete($image->url);
+                if(isset($image->url))
+                  $image->delete();
             }
         }
     }
