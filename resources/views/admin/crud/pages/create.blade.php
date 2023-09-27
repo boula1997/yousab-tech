@@ -79,26 +79,8 @@
                             </div>
 
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="form-group">
-                                    <label class="col-form-label d-block">@lang('general.image')</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" name="images[]" class="custom-file-input"
-                                                id="exampleInputFile1" multiple>
-                                            <label class="custom-file-label"
-                                                for="exampleInputFile1">@lang('general.choose_file')</label>
-                                        </div>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">@lang('general.upload_file')</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
+                    @include('admin.components.images')
                 </div>
                 <div class="card-footer mb-5">
                     <button type="submit"

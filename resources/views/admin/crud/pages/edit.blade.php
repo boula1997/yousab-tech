@@ -63,10 +63,6 @@
                                         {!! old($locale . '.description', $page->translate($locale)->description) !!} 
                                     </textarea>
                                 </div>
-                                {{-- <div class="form-group">
-                                        <label>@lang('pages.description') - @lang('general.'.$locale)<span class="text-danger"> * </span></label>
-                                        <textarea name="{{ $locale . '[description]' }}" @error($locale . '.description') is-invalid @enderror class="form-control kt-ckeditor-5">{{ old($locale . '.description') }}</textarea>
-                                    </div> --}}
                             </div>
                         @endforeach
                     </div>
@@ -89,41 +85,7 @@
 
                     </div>
                     <br>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group mt-30">
-                                <label for="exampleInputFile1">{{ __('general.images') }}</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" name="images[]" class="custom-file-input" multiple
-                                            id="exampleInputFile1">
-                                        <label class="custom-file-label" for="exampleInputFile1">{{ __('general.choose') }}
-                                            {{ __('general.file') }}</label>
-                                    </div>
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">@lang('general.upload_file')</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        @foreach ($images as $image)
-                            @if (isset($image->id))
-                                <div class="col-md-3 mt-3">
-                                    <div
-                                        class="custom-control custom-switch custom-switch-off-success custom-switch-on-danger">
-                                        <input type="checkbox" name="delimages[]" value="{{ $image->id }}"
-                                            class="custom-control-input" id="customSwitch{{ $image->id }}">
-                                        <img width="100" height="100" src="{{ asset($image->url) }}" alt=""
-                                            for="customSwitch{{ $image->id }}">
-                                        <label class="custom-control-label" for="customSwitch{{ $image->id }}"></label>
-                                    </div>
-                                </div>
-                            @endif
-                        @endforeach
-                    </div>
+                    @include('admin.components.images', ['images' => $images])
                 </div>
                 <div class="card-footer mb-5 mb-5">
                     <button type="submit" class="btn btn-outline-success">@lang('general.save')</button>
