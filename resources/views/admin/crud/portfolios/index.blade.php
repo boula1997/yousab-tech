@@ -47,8 +47,8 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td><img width="100" height="100"
-                                                        src="{{asset(isset($portfolio->images[0]->url)?$portfolio->images[0]->url:$portfolio->images[0])}}"
-                                                        alt="{{ $portfolio->title }}"></td>
+                                                            src="{{ $portfolio->images[0]->url }}"
+                                                            alt="{{ $portfolio->title }}"></td>
                                                     <td>{{ $portfolio->title }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [

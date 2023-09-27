@@ -46,7 +46,7 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td><img width="100" height="100"
-                                                            src="{{ asset(file_exists($page->images[0]->url) ? $page->images[0]->url : asset('default.jpg')) }}"
+                                                            src="{{ $page->images[0]->url  }}"
                                                             alt="{{ $page->title }}"></td>
                                                     <td>{{ $page->title }}</td>
                                                     <td>
