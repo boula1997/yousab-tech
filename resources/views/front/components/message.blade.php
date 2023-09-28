@@ -63,19 +63,19 @@
                 <div class="consulting-message-form mx-4">
                     <h3 class="mb-3">{{ __('general.free_consulting') }}</h3>
                     <div class="single-input-inner style-bg">
-                        <input type="text" name="name" placeholder={{ __('general.fullname') }}>
+                        <input type="text" name="name" placeholder="{{ __('general.fullname') }}">
                         <div id="name" class="err"></div>
                     </div>
                     <div class="single-input-inner style-bg">
-                        <input type="text" name="email" placeholder={{ __('general.email_address') }}>
+                        <input type="text" name="email" placeholder="{{ __('general.email_address') }}">
                         <div id="email" class="err"></div>
                     </div>
                     <div class="single-input-inner style-bg">
-                        <input type="text" name="phone" placeholder={{ __('general.phone') }}>
+                        <input type="text" name="phone" placeholder="{{ __('general.phone') }}">
                         <div id="phone" class="err"></div>
                     </div>
                     <div class="single-input-inner style-bg">
-                        <textarea name="message" id="message"  placeholder={{ __('general.message') }}></textarea>
+                        <textarea name="message" id="message"  placeholder="{{ __('general.message') }}"></textarea>
                         <div id="message_err"  class="err"></div>
                     </div>
                     <div class="btn-wrap pb-3">
