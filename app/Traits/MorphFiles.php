@@ -22,7 +22,7 @@ trait  MorphFiles
                 $file->move('images', $data['image']);
                 $this->files()->create(['url' => $data['image']]);
             }
-        }
+        }   
     }
     public function updateFiles()
     {  
