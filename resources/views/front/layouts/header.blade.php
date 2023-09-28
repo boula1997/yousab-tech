@@ -99,11 +99,11 @@
             <div class="logo">
                 <a href=""><img src="{{ asset(settings()->logo) }}" alt="img"></a>
             </div>
-            <div class="nav-right-part nav-right-part-mobile">
+            {{-- <div class="nav-right-part nav-right-part-mobile">
                 <a class="search-bar-btn" href="#">
                     <i class="fa fa-search"></i>
                 </a>
-            </div>
+            </div> --}}
             <div class="collapse navbar-collapse" id="Iitechie_main_menu">
                 <ul class="navbar-nav menu-open text-lg-end">
                     <li><a class="{{ request()->routeIs('front.home') ? 'active' : '' }}"

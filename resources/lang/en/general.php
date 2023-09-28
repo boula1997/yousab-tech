@@ -156,6 +156,10 @@ return [
     'type' => 'Type',
     'our_services'=>'Our Services',
     'images'=>'Images',
-    'free_consulting'=>'Free Consulting'
+    'free_consulting'=>'Free Consulting',
+    'selectOne'=>'Select One',
+    'social'=>'Social Media',
+    'whatsapp'=>'Whatsapp',
+    'icon'=>'Icon'
 
 ];

@@ -44,7 +44,7 @@
                         </div>
                         <div class="col-md-6">
                             @include('admin.components.icon', [
-                                'label' => 'icon',
+                                'label' => 'label' ,
                                 'required' => true,
                                 'value' => 'fas fa-desktop',
                             ])

@@ -2,7 +2,8 @@
     <div class="col-12 col-md-4">
         <div class="form-group">
             <label>
-                {{ $label }}
+                {{-- {{ $label }} --}}
+                {{__('general.icon')}}
                 @if ($required)
                     <span class="text-danger"> * </span>
                 @endif
