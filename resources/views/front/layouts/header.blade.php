@@ -129,9 +129,9 @@
 
             </div>
             <div class="nav-right-part nav-right-part-desktop align-self-center">
-                <a class="search-bar-btn" href="#">
+                {{-- <a class="search-bar-btn" href="#">
                     <i class="fa fa-search"></i>
-                </a>
+                </a> --}}
                 <a class="btn btn-base" href="#">{{ __('general.get_started') }}</a>
             </div>
         </div>

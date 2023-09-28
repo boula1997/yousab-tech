@@ -45,8 +45,15 @@ Route::group(
         Route::get('/about', [AboutController::class,'index'])->name('front.about');
         // Route::post('/message', 'App/Http/Controllers/MessageController@store')->name('front.message.post');
         Route::post('/message', [MessageController::class,'store'])->name('front.message.post');
+        
+        // Route::get('/single_portfolio', function () {
+    
+        //     return view("front.portfolio.single_portfolio");
+        // });
 
     }
 );
+
+ 
 
 
