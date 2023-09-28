@@ -33,7 +33,10 @@ class TeamSeeder extends Seeder
                         "مدير تكنولوجيا المعلومات"];
         $description_ar =  [null,null,null,null];
 
-        $image=[];
+        $image=["images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp",
+                "images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp",
+                "images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp",
+                "images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp"];
        
        
 
@@ -50,6 +53,7 @@ class TeamSeeder extends Seeder
                     'subtitle' => $subtitle_en[$i],
                 ],
             ]);
+            $Team->file()->create(["url"=>$image[$i]]);
           }
     }
 }
