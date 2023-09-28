@@ -16,7 +16,7 @@
     </div>
 </div>
 
-@if ($images)
+@if (isset($images))
     <div class="row">
         @foreach ($images as $image)
             @if (isset($image->id))

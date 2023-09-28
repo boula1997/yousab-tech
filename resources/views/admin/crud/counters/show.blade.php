@@ -4,11 +4,8 @@
     <div class="content-wrapper">
         <div class="container p-3">
             <div class="card card-custom card-stretch gutter-b">
-                <div class="card-header card-header-tabs-line">
-                    <div class="card-title">
-                        <h3 class="card-label">@lang('general.show')</h3>
-                    </div>
-                </div>
+                @include('admin.components.breadcrumb', ['module' => 'counters', 'action' => 'show'])
+
                 <div class="card-toolbar px-3">
                     <ul class="nav nav-tabs nav-bold nav-tabs-line">
                         @foreach (config('translatable.locales') as $key => $locale)

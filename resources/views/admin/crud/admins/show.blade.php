@@ -4,19 +4,7 @@
     <!-- Content Wrapper. Contains admin content -->
     <div class="content-wrapper">
         <!-- Content Header (admin header) -->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">@lang('general.admins')</a></li>
-                            <li class="breadcrumb-item active">@lang('general.show')</li>
-                        </ol>
-                    </div>
-                </div>
-            </div><!-- /.container-fluid -->
-        </section>
+        @include('admin.components.breadcrumb', ['module' => 'admins', 'action' => 'show'])
 
         <!-- Main content -->
         <section class="content">
@@ -37,45 +25,36 @@
                                         <label for="exampleInputEmail1">@lang('general.name')</label>
                                         <p>{{ $admin->name }}</p>
                                     </div>
-                                <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">@lang('general.email')</label>
                                         <p>{{ $admin->email }}</p>
                                     </div>
+                                    <div class="form-group">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <img width="300" height="300" src="{{ $admin->image }}" alt="">
 
-
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label for="exampleInputFile1">@lang('general.image')</label>
-                                            <div class="col-md-6">
-                                                <div class="form-group text-center">
-                                                    <img width="300" height="300" src="{{ $admin->image }}"
-                                                        alt="">
-
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                 </div>
+                                <!-- /.card-body -->
 
+
+                            </form>
                         </div>
-                        <!-- /.card-body -->
+                        <!-- /.card -->
 
 
-                        </form>
                     </div>
-                    <!-- /.card -->
-
+                    <!--/.col (left) -->
 
                 </div>
-                <!--/.col (left) -->
-
-            </div>
-            <!-- /.row -->
-    </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 @endsection

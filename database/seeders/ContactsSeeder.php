@@ -14,8 +14,8 @@ class ContactsSeeder extends Seeder
     public function run(): void
     {
        
-        $icon=[ "fa fa-facebook",
-                "fa fa-twitter",
+        $icon=[ "fab fa-facebook-f",
+                "fab fa-twitter",
                 "fas fa-mail-bulk",
                 "fas fa-phone",
                 "fab fa-whatsapp"];

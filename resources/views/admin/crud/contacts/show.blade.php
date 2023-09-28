@@ -3,12 +3,11 @@
 @section('content')
     <div class="content-wrapper">
         <div class="container p-3">
-            <div class="card card-custom card-stretch gutter-b">
+            <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
-                    <div class="card-title">
-                        <h3 class="card-label">@lang('general.show')</h3>
-                    </div>
+                    @include('admin.components.breadcrumb', ['module' => 'contacts', 'action' => 'show'])
                 </div>
+            </div>
 
             <div class="row">
                 <div class="col-md-6">
