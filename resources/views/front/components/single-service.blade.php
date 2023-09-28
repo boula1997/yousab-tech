@@ -1,4 +1,4 @@
-    <!-- project details page start -->
+    <!-- Service details page start -->
     <div class="project-area pd-top-120 mb-4">
         <div class="container">
             <div class="row">
