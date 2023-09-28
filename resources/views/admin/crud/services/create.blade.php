@@ -83,7 +83,7 @@
                             @include('admin.components.icon', [
                                 'label' => 'icon',
                                 'required' => true,
-                                'value' => 'value',
+                                'value' => 'fas fa-desktop',
                             ])
 
                         </div>

@@ -72,7 +72,7 @@
             </div>
             <div class="card card-custom">
                 <div class="card-body mb-5">
-                    <div class="row" >
+                    <div class="row">
 
                         <div class="col-md-6">
                             @include('admin.components.image', [
@@ -90,7 +90,7 @@
                             @include('admin.components.icon', [
                                 'label' => 'icon',
                                 'required' => true,
-                                'value' => 'value',
+                                'value' => old('icon', $service->icon),
                             ])
 
                         </div>

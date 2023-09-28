@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ settings()->website_title }}</title>
     {{-- <link rel=icon href="assets/img/favicon.webp" sizes="20x20" type="image/png"> --}}
-
+    <link rel="icon" type="image/x-icon" href="{{ settings()->tab }}">
     <!-- Stylesheet -->
 
     <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">

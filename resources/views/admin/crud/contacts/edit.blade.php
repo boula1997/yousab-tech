@@ -56,7 +56,7 @@
                             @include('admin.components.icon', [
                                 'label' => 'icon',
                                 'required' => true,
-                                'value' => '{{ $contact->icon }}',
+                                'value' => old('icon', $contact->icon),,
                             ])
 
                         </div>
