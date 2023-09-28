@@ -5,11 +5,9 @@
     <div class="content-wrapper p-5">
         <div class="container">
             <div class="card card-custom mb-2">
-                <div class="card-header card-header-tabs-line">
-                    @include('admin.components.breadcrumb', ['module' => 'videos', 'action' => 'create'])
-                </div>
+            <div class="card-header card-header-tabs-line">
+                @include('admin.components.breadcrumb', ['module' => 'videos', 'action' => 'create'])
             </div>
-            <div class="card card-custom mb-2">
                 <div class="card-toolbar px-3">
                     <ul class="nav nav-tabs nav-bold nav-tabs-line">
                         @foreach (config('translatable.locales') as $key => $locale)

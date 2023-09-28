@@ -4,13 +4,12 @@
 @section('fields_content')
     <div class="content-wrapper">
         @method('PUT')
-        <div class="container p-3">
+                <div class="container p-3">
+            @include('admin.components.errors')
 
             <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
-                    <div class="card-title">
-                        <h3 class="card-label">@lang('general.add_new')</h3>
-                    </div>
+                    @include('admin.components.breadcrumb', ['module' => 'services', 'action' => 'edit'])
                 </div>
                 <div class="card-toolbar px-3">
                     <ul class="nav nav-tabs nav-bold nav-tabs-line">

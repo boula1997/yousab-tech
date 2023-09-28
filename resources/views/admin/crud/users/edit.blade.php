@@ -3,38 +3,21 @@
 @section('form_type', 'POST')
 @section('fields_content')
     <div class="content-wrapper">
-        @method('PUT')
-    
-        <!-- Content Header (blog header) -->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>@lang('general.edit') User</h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{ route('users.index') }}">Users</a></li>
-                            <li class="breadcrumb-item active">@lang('general.edit')</li>
-                        </ol>
-                    </div>
-                </div>
-            </div><!-- /.container-fluid -->
-        </section>
+        @include('admin.components.errors')
 
+        @method('PUT')
         <!-- Main content -->
-        <section class="content">
+        <section class="content py-3">
             <div class="container-fluid">
                 <div class="row">
                     <!-- left column -->
                     <div class="col-md-12">
                         <!-- general form elements -->
-                        <div class="card card-secondary">
-                            <div class="card-header">
-                                <h3 class="card-title">@lang('general.edit') @lang('general.user')</h3>
+                        <div class="card card-custom">
+                            <div class="card card-header">
+                                @include('admin.components.breadcrumb', ['module' => 'users', 'action' => 'edit'])
+    
                             </div>
-                            <!-- /.card-header -->
-
 
                             <input type="hidden" name="id" value="{{ $user->id }}">
                             <div class="card-body mb-5">

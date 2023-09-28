@@ -17,7 +17,7 @@
                                     <!-- general form elements -->
                                     <div class="row">
                                         <div class="col-md-6 d-flex d-flex justify-content-start">
-                                            <h3 class="card-title">@lang('general.faqs')</h3>
+                                            <h1 class="card-title fw-bold">@lang('general.faqs')</h3>
                                         </div>
                                         <div class="col-md-6 d-flex d-flex justify-content-end">
                                             <a href="{{ route('faqs.create') }}">

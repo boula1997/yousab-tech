@@ -5,11 +5,14 @@
     <div class="content-wrapper">
         @method('PUT')
         
-        <div class="container p-3">
-
-             <div class="card card-custom mb-2">
-                @include('admin.components.breadcrumb', ['module' => 'counters', 'action' => 'edit'])
-
+                <div class="container p-3">
+            @include('admin.components.errors')
+            <div class="card card-custom mb-2">
+            </div>
+            <div class="card card-custom mb-2">
+                 <div class="card-header card-header-tabs-line">
+                     @include('admin.components.breadcrumb', ['module' => 'counters', 'action' => 'edit'])
+                 </div>
                 <div class="card-toolbar px-3">
                     <ul class="nav nav-tabs nav-bold nav-tabs-line">
                         @foreach (config('translatable.locales') as $key => $locale)

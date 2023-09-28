@@ -16,7 +16,7 @@
                                     <!-- general form elements -->
                                     <div class="row">
                                         <div class="col-md-6 d-flex d-flex justify-content-start">
-                                            <h3 class="card-title">
+                                            <h1 class="card-title fw-bold">
                                                 <th>@lang('general.videos')</th>
                                             </h3>
                                         </div>

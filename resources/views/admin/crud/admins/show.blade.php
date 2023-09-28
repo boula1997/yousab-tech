@@ -3,22 +3,20 @@
 @section('content')
     <!-- Content Wrapper. Contains admin content -->
     <div class="content-wrapper">
-        <!-- Content Header (admin header) -->
-        @include('admin.components.breadcrumb', ['module' => 'admins', 'action' => 'show'])
 
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
+                    <div class="card card-custom mb-2">
+                    </div>
                     <!-- left column -->
                     <div class="col-md-12">
                         <!-- general form elements -->
-                        <div class="card card-secondary">
-                            <div class="card-header">
-                                <h3 class="card-title">@lang('general.show') @lang('general.admin')</h3>
+                        <div class="card card-custom">
+                            <div class="card-header card-header-tabs-line">
+                                @include('admin.components.breadcrumb', ['module' => 'admins', 'action' => 'show'])
                             </div>
-                            <!-- /.card-header -->
-                            <!-- form start -->
                             <form>
                                 <div class="card-body">
                                     <div class="form-group">

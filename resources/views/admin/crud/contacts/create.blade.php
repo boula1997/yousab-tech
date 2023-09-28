@@ -5,12 +5,11 @@
     @method('post')
     <div class="content-wrapper">
         <div class="container p-3">
-            <div class="card card-custom mb-2">
+            @include('admin.components.errors')
+            <div class="card card-custom">
                 <div class="card-header card-header-tabs-line">
                     @include('admin.components.breadcrumb', ['module' => 'contacts', 'action' => 'create'])
                 </div>
-            </div>
-            <div class="card card-custom">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">

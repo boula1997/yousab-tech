@@ -4,23 +4,21 @@
 @section('fields_content')
 
     <div class="content-wrapper">
+        
         @method('PUT')
-        <!-- Content Header (blog header) -->
-        @include('admin.components.breadcrumb', ['module' => 'admins', 'action' => 'edit'])
-
         <!-- Main content -->
         <section class="content">
+            @include('admin.components.errors')
+
             <div class="container-fluid">
                 <div class="row">
                     <!-- left column -->
                     <div class="col-md-12">
                         <!-- general form elements -->
-                        <div class="card card-secondary">
-                            <div class="card-header">
-                                <h3 class="card-title">@lang('general.edit') @lang('general.admins')</h3>
+                        <div class="card card-custom">
+                            <div class="card-header card-header-tabs-line">
+                                @include('admin.components.breadcrumb', ['module' => 'admins', 'action' => 'edit'])
                             </div>
-                            <!-- /.card-header -->
-
                             <!-- form start -->
                             <input type="hidden" name="id" value="{{ $admin->id }}">
                             <div class="card-body">
