@@ -54,13 +54,11 @@
 </div>
 <div class="g-map-message">
     <div class="row justify-content-end">
-        <div class="col-lg-7 col-md-5">
-            <div class="g-map-inner">
-                {!! settings()->map !!}
-            </div>
-        </div>
         <div class="col-lg-5 col-md-7">
-            <form class="message-form-wrap"  method="post" id="message-form">
+            <div class="alert alert-success d-none mx-3">
+                <p style="text-align: start"></p>
+            </div>
+            <form class="message-form-wrap" method="post" id="message-form">
                 @csrf
                 <div class="consulting-message-form mx-4">
                     <h3 class="mb-3">{{ __('general.free_consulting') }}</h3>
@@ -77,8 +75,8 @@
                         <div id="phone" class="err"></div>
                     </div>
                     <div class="single-input-inner style-bg">
-                        <textarea name="message" placeholder={{ __('general.message') }}></textarea>
-                        <div id="message" class="err"></div>
+                        <textarea name="message" id="message"  placeholder={{ __('general.message') }}></textarea>
+                        <div id="message_err"  class="err"></div>
                     </div>
                     <div class="btn-wrap pb-3">
                         <button type="submit" class="btn btn-base">{{ __('general.submit') }}</button>
@@ -86,6 +84,11 @@
                     <p class="form-messege mb-0 mt-20 text-center"></p>
                 </div>
             </form>
+        </div>
+        <div class="col-lg-7 col-md-5">
+            <div class="g-map-inner">
+                {!! settings()->map !!}
+            </div>
         </div>
     </div>
 </div>
@@ -99,7 +102,7 @@
                 <div class="single-call-to-action-inner style-white">
                     <h5>{{ page('solution-section')->title }}</h5>
                     <h2>{{ page('solution-section')->subtitle }}</h2>
-                    <a class="btn btn-black mt-3" href="">{{__('general.message')}}</a>
+                    <a class="btn btn-black mt-3" href="">{{ __('general.message') }}</a>
                 </div>
             </div>
         </div>
@@ -108,7 +111,7 @@
 <!-- call to action start -->
 
 
-@push('scripts')
+@push('js')
     <script>
         $('#message-form').submit(function(e) {
             e.preventDefault();
@@ -132,9 +135,9 @@
                     if (response) {
                         this.reset();
                         if (response.success) {
-                            $('.success').removeClass('d-none').text(response.success);
+                            $('.alert-success').removeClass('d-none').text(response.success);
                             setTimeout(() => {
-                                $('.success').addClass('d-none').text(response.success);
+                                $('.alert-success').addClass('d-none').text(response.success);
                             }, 5000);
                         } else
                             $('.error').removeClass('d-none').text(response.error);
@@ -162,7 +165,7 @@
                     }
 
                     if (response.responseJSON.errors.message) {
-                        $("#message").append(
+                        $("#message_err").append(
                             `<div class="alert alert-danger text-initial my-1" style="text-align:initial !important">${response.responseJSON.errors.message}</div>`
                         );
                     }

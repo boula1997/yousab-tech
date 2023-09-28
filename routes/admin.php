@@ -91,8 +91,8 @@ Route::group(
             Route::resource('products', ProductController::class);
             Route::resource('messages', MessageController::class);
         
-            Route::get('/reply-message', [App\Http\Controllers\MessageController::class, 'reply'])->name('messages.reply');
-            Route::post('/reply-email', [App\Http\Controllers\MessageController::class, 'emailReply'])->name('email.reply');
+            Route::get('/reply-message/{id}', [App\Http\Controllers\Admin\MessageController::class, 'reply'])->name('messages.reply');
+            Route::post('/reply-email/{id}/reply', [App\Http\Controllers\Admin\MessageController::class, 'emailReply'])->name('messages.emailReply');
         
             Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
             Route::get('/admin/dashboard', function () {

@@ -1,5 +1,5 @@
 @extends('admin.components.form')
-@section('form_action', route('email.reply'))
+@section('form_action', route('messages.emailReply',$message->id))
 @section('form_type', 'POST')
 @section('fields_content')
     @method('post')

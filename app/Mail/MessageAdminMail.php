@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Http\Requests\Dashboard\MessageRequest;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -11,21 +12,21 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Address;
 
 
-class MessageMail extends Mailable
+class MessageAdminMail extends Mailable
 {
     use Queueable, SerializesModels;
-    public $message;
+    public $data;
 
-    public function __construct($message)
+    public function __construct($data)
     {
-        $this->message = $message;
+        $this->data = $data;
     }
 
 
     public function envelope()
     {
         return new Envelope(
-            from: new Address($this->message->email, $this->message->name),
+            from: new Address(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME')),
             subject: settings()->website_title,
         );
     }
@@ -34,7 +35,7 @@ class MessageMail extends Mailable
     public function content()
     {
         return new Content(
-            view: 'mail.message_mail',
+            view: 'mail.message_admin_mail',
         );
     }
 

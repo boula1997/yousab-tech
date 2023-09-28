@@ -22,7 +22,7 @@
         @endcan
 
         @can($role . '-reply')
-            <a href="{{ route($route . '.edit', $module) }}" title="edit">
+            <a href="{{ route($route . '.reply', $module->id) }}" title="reply">
                 <i class="fas fa-reply text-secondary  fa-lg"></i>
             </a>
         @endcan

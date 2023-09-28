@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\MessageRequest;
 use App\Mail\MessageMail;
+use App\Mail\MessageUserMail;
 use App\Models\Message;
 use App\Models\Service;
 use App\Models\Testimonial;
@@ -59,7 +60,7 @@ class MessageController extends Controller
         try {
             $data = $request->all();
             $message = $this->message->create($data);
-            Mail::to(Message_Mail)->send(new MessageMail($message));
+            Mail::to(env('MAIL_FROM_ADDRESS'))->send(new MessageUserMail($message));
             return response()->json(['success' => trans('message.sent_successfully')]);
         } catch (\Exception $e) {
             return response()->json(['error' => __($e->getMessage())]);

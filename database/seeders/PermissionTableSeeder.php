@@ -80,7 +80,8 @@ class PermissionTableSeeder extends Seeder
            'admin-edit',
            'admin-delete',
            'message-list',
-           'message-delete'
+           'message-delete',
+           'message-reply',
         ];
      
         foreach ($permissions as $permission) {

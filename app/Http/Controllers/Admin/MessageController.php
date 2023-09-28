@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\MessageRequest;
+use App\Mail\MessageAdminMail;
 use App\Mail\MessageMail;
 use App\Models\Message;
 use Exception;
@@ -69,22 +70,22 @@ class MessageController extends Controller
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
-    public function reply(MessageRequest $request)
+    public function reply($id)
     {
         try {
-            $this->message->create($request->all());
-            return view('admin.crud.messages.reply');
+            $message=$this->message->find($id);
+            return view('admin.crud.messages.reply',compact('message'));
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
-    public function emailReply(MessageRequest $request)
+    public function emailReply($id,MessageRequest $request)
     {
         try {
             $data = $request->all();
-            $message = $this->message->create($data);
-            Mail::to(Message_Mail)->send(new MessageMail($message));
+            $message=$this->message->find($id);
+            Mail::to($message->email)->send(new MessageAdminMail($data));
             return redirect()->route('messages.index')
                 ->with('success', trans('general.replied_successfully'));
         } catch (\Exception $e) {
