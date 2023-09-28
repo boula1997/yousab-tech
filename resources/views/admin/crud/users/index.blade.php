@@ -14,7 +14,7 @@
                                 <!-- general form elements -->
                                 <div class="row">
                                     <div class="col-md-6 d-flex d-flex justify-content-start">
-                                        <h3 class="card-title"><th>@lang('general.users')</th></h3>
+                                        <h1 class="card-title fw-bold"><th>@lang('general.users')</th></h3>
                                     </div>
                                     <div class="col-md-6 d-flex d-flex justify-content-end">
                                         <a href="{{route('users.create')}}">

@@ -25,7 +25,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-7 bg-light p-3 rounded h-100">
-                                            <div class="card-title">
+                                            <div class="card-title fw-bold">
                                                 <h5 class="font-weight-bolder text-dark">@lang('general.title'):</h5>
                                                 <p class="m-0">{{ $portfolio->translate($locale)->title }}</p>
                                             </div>
@@ -34,7 +34,7 @@
 
                                     <div class="col-md-6">
                                         <div class="mb-7 bg-light p-3 rounded h-100">
-                                            <div class="card-title">
+                                            <div class="card-title fw-bold">
                                                 <h5 class="font-weight-bolder text-dark">@lang('general.subtitle'):</h5>
                                                 <p class="m-0">{{ $portfolio->translate($locale)->subtitle }}</p>
                                             </div>
@@ -47,7 +47,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="mb-7 bg-light p-3 rounded h-100">
-                                            <div class="card-title">
+                                            <div class="card-title fw-bold">
                                                 <h5 class="font-weight-bolder text-dark">@lang('general.description'):</h5>
                                                 <p class="m-0">{!! $portfolio->translate($locale)->description !!}</p>
                                             </div>

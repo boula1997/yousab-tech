@@ -5,21 +5,23 @@
     @method('post')
     <!-- Content Wrapper. Contains blog content -->
     <div class="content-wrapper">
-  
-
         <!-- Main content -->
         <section class="content">
+            @include('admin.components.errors')
             <div class="container-fluid">
                 <div class="row">
+
                     <!-- left column -->
                     <div class="col-md-12">
-                        <div class="card card-custom mb-2">
-                            <div class="card-header card-header-tabs-line">
-                                @include('admin.components.breadcrumb', ['module' => 'admins', 'action' => 'create'])
-                            </div>
-                        </div>
+
                         <!-- general form elements -->
-                        <div class="card card-custom">                        
+                        <div class="card card-custom">
+                            <div class="card-header card-header-tabs-line">
+                                @include('admin.components.breadcrumb', [
+                                    'module' => 'admins',
+                                    'action' => 'create',
+                                ])
+                            </div>
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">@lang('general.name')</label>

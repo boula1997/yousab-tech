@@ -5,9 +5,7 @@
         <div class="container p-3">
             <div class="card card-custom card-stretch gutter-b">
                 <div class="card-header card-header-tabs-line">
-                    <div class="card-title">
-                        <h3 class="card-label">@lang('general.show')</h3>
-                    </div>
+                    @include('admin.components.breadcrumb', ['module' => 'testimonials', 'action' => 'show'])
                 </div>
                 <div class="card-toolbar px-3">
                     <ul class="nav nav-tabs nav-bold nav-tabs-line">
@@ -27,7 +25,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-7 bg-light p-3 rounded h-100">
-                                            <div class="card-title">
+                                            <div class="card-title fw-bold">
                                                 <h5 class="font-weight-bolder text-dark">@lang('general.title'):</h5>
                                                 <p class="m-0">{{ $testimonial->translate($locale)->title }}</p>
                                             </div>
@@ -36,7 +34,7 @@
 
                                     <div class="col-md-6">
                                         <div class="mb-7 bg-light p-3 rounded h-100">
-                                            <div class="card-title">
+                                            <div class="card-title fw-bold">
                                                 <h5 class="font-weight-bolder text-dark">@lang('general.subtitle'):</h5>
                                                 <p class="m-0">{{ $testimonial->translate($locale)->subtitle }}</p>
                                             </div>
@@ -49,7 +47,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="mb-7 bg-light p-3 rounded h-100">
-                                            <div class="card-title">
+                                            <div class="card-title fw-bold">
                                                 <h5 class="font-weight-bolder text-dark">@lang('general.description'):</h5>
                                                 <p class="m-0">{!! $testimonial->translate($locale)->description !!}</p>
                                             </div>

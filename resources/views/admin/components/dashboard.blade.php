@@ -11,7 +11,7 @@
     <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class=" px-1 fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             {{-- <a href="{{ route('front.home') }}" class="nav-link">@lang('general.home')</a> --}}
@@ -26,7 +26,7 @@
         <!-- Navbar Search -->
         <li class="nav-item">
             <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                <i class="fas fa-search"></i>
+                <i class=" px-1 fas fa-search"></i>
             </a>
             <div class="navbar-search-block">
                 <form class="form-inline">
@@ -35,10 +35,10 @@
                             aria-label="Search">
                         <div class="input-group-append">
                             <button class="btn btn-navbar" type="submit">
-                                <i class="fas fa-search"></i>
+                                <i class=" px-1 fas fa-search"></i>
                             </button>
                             <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                <i class="fas fa-times"></i>
+                                <i class=" px-1 fas fa-times"></i>
                             </button>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
             <a class="nav-link" href="{{ route('messages.index') }}">
-                <i class="far fa-comments"></i>
+                <i class=" px-1 far fa-comments"></i>
                 <span class="badge badge-danger navbar-badge">{{ itemsCount('messages') }}</span>
             </a>
             {{-- <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
@@ -74,10 +74,10 @@
                         <div class="media-body">
                             <h3 class="dropdown-item-title">
                                 Brad Diesel
-                                <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                                <span class="float-right text-sm text-danger"><i class=" px-1 fas fa-star"></i></span>
                             </h3>
                             <p class="text-sm">Call me whenever you can...</p>
-                            <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                            <p class="text-sm text-muted"><i class=" px-1 far fa-clock mr-1"></i> 4 Hours Ago</p>
                         </div>
                     </div>
                     <!-- Message End -->
@@ -91,10 +91,10 @@
                         <div class="media-body">
                             <h3 class="dropdown-item-title">
                                 John Pierce
-                                <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                                <span class="float-right text-sm text-muted"><i class=" px-1 fas fa-star"></i></span>
                             </h3>
                             <p class="text-sm">I got your message bro</p>
-                            <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                            <p class="text-sm text-muted"><i class=" px-1 far fa-clock mr-1"></i> 4 Hours Ago</p>
                         </div>
                     </div>
                     <!-- Message End -->
@@ -108,10 +108,10 @@
                         <div class="media-body">
                             <h3 class="dropdown-item-title">
                                 Nora Silvester
-                                <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                                <span class="float-right text-sm text-warning"><i class=" px-1 fas fa-star"></i></span>
                             </h3>
                             <p class="text-sm">The subject goes here</p>
-                            <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                            <p class="text-sm text-muted"><i class=" px-1 far fa-clock mr-1"></i> 4 Hours Ago</p>
                         </div>
                     </div>
                     <!-- Message End -->
@@ -123,24 +123,24 @@
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="far fa-bell"></i>
+                <i class=" px-1 far fa-bell"></i>
                 <span class="badge badge-warning navbar-badge">15</span>
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <span class="dropdown-item dropdown-header">15 Notifications</span>
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item">
-                    <i class="fas fa-envelope mr-2"></i> 4 new messages
+                    <i class=" px-1 fas fa-envelope mr-2"></i> 4 new messages
                     <span class="float-right text-muted text-sm">3 mins</span>
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item">
-                    <i class="fas fa-users mr-2"></i> 8 friend requests
+                    <i class=" px-1 fas fa-users mr-2"></i> 8 friend requests
                     <span class="float-right text-muted text-sm">12 hours</span>
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item">
-                    <i class="fas fa-file mr-2"></i> 3 new reports
+                    <i class=" px-1 fas fa-file mr-2"></i> 3 new reports
                     <span class="float-right text-muted text-sm">2 days</span>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -149,12 +149,12 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                <i class="fas fa-expand-arrows-alt"></i>
+                <i class=" px-1 fas fa-expand-arrows-alt"></i>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                <i class="fas fa-th-large"></i>
+                <i class=" px-1 fas fa-th-large"></i>
             </a>
         </li>
     </ul>
@@ -198,17 +198,17 @@
                 @can('admin-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-users-cog"></i>
+                            <i class=" px-1 fas fa-users-cog"></i>
                             <p>
                                 @lang('general.admins')
-                                <i class="fas fa-angle-left right"></i>
+                                <i class=" px-1 fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('admins') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('admins.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
                             </li>
@@ -219,17 +219,17 @@
                 @can('role-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-user-tag"></i>
+                            <i class=" px-1 fas fa-user-tag"></i>
                             <p>
                                 @lang('general.roles')
-                                <i class="fas fa-angle-left right"></i>
+                                <i class=" px-1 fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('roles') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('roles.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
                             </li>
@@ -240,17 +240,17 @@
                 @can('user-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-users"></i>
+                            <i class=" px-1 fas fa-users"></i>
                             <p>
                                 @lang('general.users')
-                                <i class="fas fa-angle-left right"></i>
+                                <i class=" px-1 fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('users') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('users.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
                             </li>
@@ -262,16 +262,16 @@
                 @can('slider-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-sliders-h"></i>
+                            <i class=" px-1 fas fa-sliders-h"></i>
                             <p>
-                                @lang('general.sliders') <i class="fas fa-angle-left right"></i>
+                                @lang('general.sliders') <i class=" px-1 fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('sliders') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('sliders.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
                             </li>
@@ -282,16 +282,16 @@
                 @can('service-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fab fa-servicestack"></i>
+                            <i class=" px-1 fab fa-servicestack"></i>
                             <p>
-                                @lang('general.services') <i class="fas fa-angle-left right"></i>
+                                @lang('general.services') <i class=" px-1 fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('services') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('services.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
                             </li>
@@ -301,16 +301,16 @@
                 @can('testimonial-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-comments"></i>
+                            <i class=" px-1 fas fa-comments"></i>
                             <p>
-                                @lang('general.testimonials') <i class="fas fa-angle-left right"></i>
+                                @lang('general.testimonials') <i class=" px-1 fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('testimonials') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('testimonials.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
                             </li>
@@ -320,16 +320,16 @@
                 @can('process-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-microchip"></i>
+                            <i class=" px-1 fas fa-microchip"></i>
                             <p>
-                                @lang('general.processes') <i class="fas fa-angle-left right"></i>
+                                @lang('general.processes') <i class=" px-1 fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('processes') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('processes.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
                             </li>
@@ -340,17 +340,17 @@
                 @can('portfolio-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-portrait"></i>
+                            <i class=" px-1 fas fa-portrait"></i>
                             <p>
                                 @lang('general.portfolios')
-                                <i class="fas fa-angle-left right"></i>
+                                <i class=" px-1 fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('Portfolios') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('portfolios.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
                             </li>
@@ -361,17 +361,17 @@
                 @can('page-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-file"></i>
+                            <i class=" px-1 fas fa-file"></i>
                             <p>
                                 @lang('general.pages')
-                                <i class="fas fa-angle-left right"></i>
+                                <i class=" px-1 fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('pages') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('pages.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
                             </li>
@@ -382,16 +382,16 @@
                 @can('faq-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-tags"></i>
+                            <i class=" px-1 fas fa-tags"></i>
                             <p>
-                                @lang('general.faqs') <i class="fas fa-angle-left right"></i>
+                                @lang('general.faqs') <i class=" px-1 fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('faqs') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('faqs.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
                             </li>
@@ -402,16 +402,16 @@
                 @can('counter-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-globe"></i>
+                            <i class=" px-1 fas fa-globe"></i>
                             <p>
-                                @lang('general.counters') <i class="fas fa-angle-left right"></i>
+                                @lang('general.counters') <i class=" px-1 fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('counters') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('counters.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
                             </li>
@@ -421,16 +421,16 @@
                 @can('contact-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="far fa-address-card"></i>
+                            <i class=" px-1 far fa-address-card"></i>
                             <p>
-                                @lang('general.contacts') <i class="fas fa-angle-left right"></i>
+                                @lang('general.contacts') <i class=" px-1 fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('contacts') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('contacts.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
                             </li>
@@ -441,16 +441,16 @@
                 @can('video-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                          <i class="fas fa-play-circle"></i>
+                          <i class=" px-1 fas fa-play-circle"></i>
                             <p>
-                                @lang('general.videos') <i class="fas fa-angle-left right"></i>
+                                @lang('general.videos') <i class=" px-1 fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('videos') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('videos.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
                             </li>
@@ -461,16 +461,16 @@
                 @can('message-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-envelope-open-text"></i>
+                            <i class=" px-1 fas fa-envelope-open-text"></i>
                             <p>
-                                @lang('general.messages') <i class="fas fa-angle-left right"></i>
+                                @lang('general.messages') <i class=" px-1 fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('messages') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('messages.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
                             </li>
@@ -481,7 +481,7 @@
                 @can('setting-list')
                     <li class="nav-item">
                         <a href="{{ route('edit.setting') }}" class="nav-link">
-                            <i class="fas fa-cogs"></i>
+                            <i class=" px-1 fas fa-cogs"></i>
                             <p>
                                 @lang('general.settings')
                                 {{-- <span class="right badge badge-danger">@lang('general.new')</span> --}}
@@ -494,7 +494,7 @@
 
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <i class="nav-icon  fa fa-sign-out text-white" aria-hidden="true"></i>
+                        <i class=" px-1 nav-icon  fa fa-sign-out text-white" aria-hidden="true"></i>
                         <button class="btn text-secondary" type="submit">@lang('general.logout')</button>
 
                     </form>

@@ -18,7 +18,7 @@
             transition: all 0.7s ease-in-out;
         }
 
-        .card-title {
+        .card-title fw-bold {
             background-color: white;
             opacity: 0.9;
             color: #01a401;

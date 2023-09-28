@@ -4,21 +4,6 @@
 @section('fields_content')
     <!-- Content Wrapper. Contains blog content -->
     <div class="content-wrapper">
-        <!-- Content Header (blog header) -->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="card card-custom mb-2">
-                        <div class="card-header card-header-tabs-line">
-                            @include('admin.components.breadcrumb', [
-                                'module' => 'roles',
-                                'action' => 'create',
-                            ])
-                        </div>
-                    </div>
-                </div>
-            </div><!-- /.container-fluid -->
-        </section>
 
         <!-- Main content -->
         <section class="content">
@@ -28,6 +13,12 @@
                     <div class="col-md-12">
                         <!-- general form elements -->
                         <div class="card card-custom">
+                            <div class="card-header card-header-tabs-line">
+                                @include('admin.components.breadcrumb', [
+                                    'module' => 'roles',
+                                    'action' => 'create',
+                                ])
+                            </div>
                             <!-- form start -->
                             <div class="row p-3 mb-5">
                                 <div class="col-xs-12 col-sm-12 col-md-12">

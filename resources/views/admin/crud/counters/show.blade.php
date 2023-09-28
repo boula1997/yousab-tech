@@ -4,8 +4,9 @@
     <div class="content-wrapper">
         <div class="container p-3">
             <div class="card card-custom card-stretch gutter-b">
-                @include('admin.components.breadcrumb', ['module' => 'counters', 'action' => 'show'])
-
+                <div class="card-header card-header-tabs-line">
+                    @include('admin.components.breadcrumb', ['module' => 'counters', 'action' => 'show'])
+                </div>
                 <div class="card-toolbar px-3">
                     <ul class="nav nav-tabs nav-bold nav-tabs-line">
                         @foreach (config('translatable.locales') as $key => $locale)
@@ -24,7 +25,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-7 bg-light p-3 rounded h-100">
-                                            <div class="card-title">
+                                            <div class="card-title fw-bold">
                                                 <h5 class="font-weight-bolder text-dark">@lang('general.title'):</h5>
                                                 <p class="m-0">{{ $counter->translate($locale)->title }}</p>
                                             </div>
@@ -39,7 +40,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="mb-7 bg-light p-3 rounded h-100">
-                        <div class="card-title">
+                        <div class="card-title fw-bold">
                             <h5 class="font-weight-bolder text-dark">@lang('general.count'):</h5>
                             <p class="m-0">{{ $counter->count }}</p>
                         </div>

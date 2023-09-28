@@ -16,7 +16,7 @@
                                     <!-- general form elements -->
                                     <div class="row">
                                         <div class="col-md-6 d-flex d-flex justify-content-start">
-                                            <h3 class="card-title">@lang('general.messages')</h3>
+                                            <h1 class="card-title fw-bold">@lang('general.messages')</h3>
                                         </div>
                                     </div>
                                 </div>

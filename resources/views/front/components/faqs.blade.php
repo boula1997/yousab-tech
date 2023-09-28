@@ -18,7 +18,7 @@
                 transition: all 0.7s ease-in-out;
             }
 
-            .card-title {
+            .card-title fw-bold {
                 background-color: white;
                 opacity: 0.9;
                 color: #01a401;
@@ -40,7 +40,7 @@
                 <div class="col-md-4 col-sm-12 articleItem mb-5 animate__animated animate__fadeInDown" style="height: 300px" data-aos="fade-up" data-aos-duration="3000">
                     <div class="card" style="height: 300px">
                         <div class="card-img" style="height: 300px">
-                            <h4 class="card-title" style="position: absolute; bottom: 0; right:0; background: ">
+                            <h4 class="card-title fw-bold" style="position: absolute; bottom: 0; right:0; background: ">
                                 <a href="{{ route('front.show.faq', ['id'=>$faq->id]) }}">{{ $faq->title }}</a>
                             </h4>
                         </div>

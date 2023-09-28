@@ -5,24 +5,7 @@
     <div class="content-wrapper">
         @method('PUT')
         <div class="container p-3">
-
-            <!-- Content Header (blog header) -->
-            <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>@lang('general.edit') @lang('general.admins')</h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="{{ route('admins.index') }}">@lang('general.admins')</a></li>
-                                <li class="breadcrumb-item active">@lang('general.edit')</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div><!-- /.container-fluid -->
-            </section>
-
+            @include('admin.components.errors')
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
@@ -31,8 +14,11 @@
                         <div class="col-md-12">
                             <!-- general form elements -->
                             <div class="card card-secondary">
-                                <div class="card-header">
-                                    <h3 class="card-title">@lang('general.edit') @lang('general.admins')</h3>
+                                <div class="card-header card-header-tabs-line">
+                                    @include('admin.components.breadcrumb', [
+                                        'module' => 'profile',
+                                        'action' => 'edit',
+                                    ])
                                 </div>
                                 <!-- /.card-header -->
 
