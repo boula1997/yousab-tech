@@ -154,7 +154,7 @@ return [
     'team' => 'الفريق',
     'portfolio' => 'صفحة الشخصية',
     'your_email' => 'بريدك الالكترونى',
-    'fullname' => 'اسمك باللغة العربية كاملا',
+    'fullname' => 'اسمك بالكامل',
     'email_address' => 'بريدك الالكترونى',
     'message' => 'رسالتك',
     'submit' => 'قدم الان',
@@ -164,11 +164,10 @@ return [
     'type' => 'النوع',
     'our_services'=>'خدماتنا',
     'images'=>'الصور',
-    'free_consulting'=>'خدمات استشارية'
-
-
-
-
-
+    'free_consulting'=>'خدمات استشارية',
+    'selectOne'=>'يرجى تحديد',
+    'social'=>'وسائل التواصل الاجتماعي',
+    'whatsapp'=>'واتساب',
+    'icon'=>'أيقونة'
 
 ];

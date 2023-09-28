@@ -198,7 +198,7 @@
                 @can('admin-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
+                            <i class="fas fa-users-cog"></i>
                             <p>
                                 @lang('general.admins')
                                 <i class="fas fa-angle-left right"></i>
@@ -219,7 +219,7 @@
                 @can('role-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
+                            <i class="fas fa-user-tag"></i>
                             <p>
                                 @lang('general.roles')
                                 <i class="fas fa-angle-left right"></i>
@@ -240,7 +240,7 @@
                 @can('user-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
+                            <i class="fas fa-users"></i>
                             <p>
                                 @lang('general.users')
                                 <i class="fas fa-angle-left right"></i>
@@ -262,7 +262,7 @@
                 @can('slider-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
+                            <i class="fas fa-sliders-h"></i>
                             <p>
                                 @lang('general.sliders') <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('sliders') }}</span>
@@ -282,7 +282,7 @@
                 @can('service-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
+                            <i class="fab fa-servicestack"></i>
                             <p>
                                 @lang('general.services') <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('services') }}</span>
@@ -301,7 +301,7 @@
                 @can('testimonial-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
+                            <i class="fas fa-comments"></i>
                             <p>
                                 @lang('general.testimonials') <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('testimonials') }}</span>
@@ -320,7 +320,7 @@
                 @can('process-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
+                            <i class="fas fa-microchip"></i>
                             <p>
                                 @lang('general.processes') <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('processes') }}</span>
@@ -340,7 +340,7 @@
                 @can('portfolio-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
+                            <i class="fas fa-portrait"></i>
                             <p>
                                 @lang('general.portfolios')
                                 <i class="fas fa-angle-left right"></i>
@@ -361,7 +361,7 @@
                 @can('page-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
+                            <i class="fas fa-file"></i>
                             <p>
                                 @lang('general.pages')
                                 <i class="fas fa-angle-left right"></i>
@@ -382,7 +382,7 @@
                 @can('faq-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
+                            <i class="fas fa-tags"></i>
                             <p>
                                 @lang('general.faqs') <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('faqs') }}</span>
@@ -402,7 +402,7 @@
                 @can('counter-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
+                            <i class="fas fa-globe"></i>
                             <p>
                                 @lang('general.counters') <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('counters') }}</span>
@@ -421,7 +421,7 @@
                 @can('contact-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
+                            <i class="far fa-address-card"></i>
                             <p>
                                 @lang('general.contacts') <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('contacts') }}</span>
@@ -441,7 +441,7 @@
                 @can('video-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
+                          <i class="fas fa-play-circle"></i>
                             <p>
                                 @lang('general.videos') <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('videos') }}</span>
@@ -461,7 +461,7 @@
                 @can('message-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
+                            <i class="fas fa-envelope-open-text"></i>
                             <p>
                                 @lang('general.messages') <i class="fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('messages') }}</span>
@@ -481,7 +481,7 @@
                 @can('setting-list')
                     <li class="nav-item">
                         <a href="{{ route('edit.setting') }}" class="nav-link">
-                            <i class="nav-icon fas fa-th"></i>
+                            <i class="fas fa-cogs"></i>
                             <p>
                                 @lang('general.settings')
                                 {{-- <span class="right badge badge-danger">@lang('general.new')</span> --}}

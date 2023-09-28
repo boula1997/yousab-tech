@@ -1,3 +1,4 @@
+@include('front.components.breadcrumb',['name'=>(__('general.about'))])
     <!-- about area start -->
     <div class="about-area pd-top-100">
         <div class="container">
