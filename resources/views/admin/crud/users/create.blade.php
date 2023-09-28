@@ -8,14 +8,10 @@
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>@lang('general.create')</h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{ route('users.index') }}">@lang('general.users')</a></li>
-                            <li class="breadcrumb-item active">@lang('general.create')</li>
-                        </ol>
+                    <div class="card card-custom mb-2">
+                        <div class="card-header card-header-tabs-line">
+                            @include('admin.components.breadcrumb', ['module' => 'roles', 'action' => 'create'])
+                        </div>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -28,12 +24,7 @@
                     <!-- left column -->
                     <div class="col-md-12">
                         <!-- general form elements -->
-                        <div class="card card-secondary">
-                            <div class="card-header">
-                                <h3 class="card-title"> @lang('general.create') @lang('general.user')</h3>
-                            </div>
-                            <!-- /.card-header -->
-
+                        <div class="card card-custom">
                             <!-- form start -->
                             <div class="card-body">
                                 <div class="form-group">

@@ -5,12 +5,12 @@
         <div class="container p-3">
 
             <div class="card card-custom card-stretch gutter-b">
-                <div class="card-header card-header-tabs-line">
-                    <div class="card-title">
-                        <h3 class="card-label">@lang('general.show')</h3>
+                <div class="card card-custom mb-2">
+                    <div class="card-header card-header-tabs-line">
+                        @include('admin.components.breadcrumb', ['module' => 'messages', 'action' => 'show'])
                     </div>
                 </div>
-                <div class="card-body p-10">
+                <div class="card-body p-5">
                     <div class="tab-content">
                         <div class="row">
                             <div class="col-md-6">

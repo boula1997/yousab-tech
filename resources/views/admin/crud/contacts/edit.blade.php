@@ -7,13 +7,10 @@
 
         <div class="container p-3">
 
-            [ <div class="card card-custom mb-2">
+            <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
-                    <div class="card-title">
-                        <h3 class="card-label">@lang('general.add_new')</h3>
-                    </div>
+                    @include('admin.components.breadcrumb', ['module' => 'contacts', 'action' => 'edit'])
                 </div>
-
             </div>
             <div class="card card-custom">
                 <div class="card-body">
@@ -56,7 +53,7 @@
                             @include('admin.components.icon', [
                                 'label' => 'icon',
                                 'required' => true,
-                                'value' => old('icon', $contact->icon),,
+                                'value' => old('icon', $contact->icon),
                             ])
 
                         </div>

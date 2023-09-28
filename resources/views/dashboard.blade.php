@@ -10,7 +10,7 @@
                             <h1 class="m-0">@lang('general.dashboard')</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
+                            <ol class="breadcrumb float-sm-{{ app()->getLocale() =='ar'?'left':'right' }}">
                                 <li class="breadcrumb-item"><a href="#">@lang('general.home')</a></li>
                                 <li class="breadcrumb-item active">@lang('general.dashboard')</li>
                             </ol>
@@ -37,7 +37,7 @@
                                     <i class="ion ion-bag"></i>
                                 </div>
                                 <a href="{{route('services.index')}}" class="small-box-footer">@lang('general.moreinfo') <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                        class="fas fa-arrow-circle-{{ app()->getLocale() =='ar'?'left':'right' }}"></i></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -52,7 +52,7 @@
                                     <i class="ion ion-bag"></i>
                                 </div>
                                 <a href="{{route('testimonials.index')}}" class="small-box-footer">@lang('general.moreinfo') <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                        class="fas fa-arrow-circle-{{ app()->getLocale() =='ar'?'left':'right' }}"></i></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -67,7 +67,7 @@
                                     <i class="ion ion-bag"></i>
                                 </div>
                                 <a href="{{route('processes.index')}}" class="small-box-footer">@lang('general.moreinfo') <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                        class="fas fa-arrow-circle-{{ app()->getLocale() =='ar'?'left':'right' }}"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -83,7 +83,7 @@
                                     <i class="ion ion-stats-bars"></i>
                                 </div>
                                 <a href="{{route('faqs.index')}}" class="small-box-footer">@lang('general.moreinfo') <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                        class="fas fa-arrow-circle-{{ app()->getLocale() =='ar'?'left':'right' }}"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -99,7 +99,7 @@
                                     <i class="ion ion-person-add"></i>
                                 </div>
                                 <a href="" class="small-box-footer">@lang('general.moreinfo') <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                        class="fas fa-arrow-circle-{{ app()->getLocale() =='ar'?'left':'right' }}"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -115,7 +115,7 @@
                                     <i class="ion ion-pie-graph"></i>
                                 </div>
                                 <a href="{{route('pages.index')}}" class="small-box-footer">@lang('general.moreinfo') <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                        class="fas fa-arrow-circle-{{ app()->getLocale() =='ar'?'left':'right' }}"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
