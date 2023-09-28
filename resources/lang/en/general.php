@@ -160,6 +160,8 @@ return [
     'selectOne'=>'Select One',
     'social'=>'Social Media',
     'whatsapp'=>'Whatsapp',
-    'icon'=>'Icon'
+    'icon'=>'Icon',
+    'subject'=>'Subject',
+    'reply'=>'Reply'
 
 ];
