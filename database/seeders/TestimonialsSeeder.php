@@ -67,7 +67,11 @@ class TestimonialsSeeder extends Seeder
                             dictum purus. Curabitur vel congue diamamet condimentum metus. Donec feugiat
                             fermentposuere. Morbi porttitor augue id </p>"];
  
-        $image=[];
+        $image=["images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp",
+                "images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp",
+                "images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp",
+                "images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp",
+                "images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp"];
        
 
         for ($i = 0; $i < count($title_ar); $i++) {
@@ -85,6 +89,7 @@ class TestimonialsSeeder extends Seeder
                   
                 ],
             ]);
+            $Testimonial->file()->create(["url"=>$image[$i]]);
           }
     }
 }
