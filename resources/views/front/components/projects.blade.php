@@ -12,7 +12,6 @@
             </div>
 
         </div>
-<<<<<<< HEAD
         <div class="project-slider-2 slider-control-square owl-carousel" dir="ltr">
             @foreach ($portfolios as $portfolio)  
                 <div class="item">
@@ -24,8 +23,11 @@
                             <h3><a href="{{route('front.show.portfolio',$portfolio->id)}}">{{$portfolio->title}}</a></h3>
                             <p> {{$portfolio->description }} <p>
                             <a href="{{route('front.show.portfolio',$portfolio->id)}}">{{$portfolio->subtitle}}<i class="fas fa-arrow-right"></i></a>
-=======
-
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+         </div>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 @foreach (services() as $portfolio)
@@ -42,10 +44,10 @@
                                             class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
->>>>>>> df7a52c18a51332ccacaf655c2d8b6ffc453e580
                         </div>
                     </div>
                 @endforeach
             </div>
         </div>
+    </div>
         <!-- project area end -->
