@@ -14,7 +14,7 @@ class Setting extends Model implements TranslatableContract
     use HasFactory, Translatable;
     protected $table = 'settings';
     protected $guarded = [];
-    public $translatedAttributes = ['title', 'subtitle', 'description'];
+    public $translatedAttributes = ['title', 'subtitle', 'description','copyright'];
     public $timestamps = true;
 
 
