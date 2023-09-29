@@ -63,13 +63,12 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="widget widget_subscribe">
-                    <h4 class="widget-title">{{ __('general.contact_us') }}</h4>
+                <div class="widget widget_subscribe d-block">
+                    <h4 class="widget-title">{{ __('general.subscrip_now') }}</h4>
                     <div class="single-input-inner style-border style-bg-none">
                         <input type="text" placeholder="{{ __('general.your_email') }}">
                         <button><i class="fa fa-arrow-right"></i></button>
                     </div>
-                    <label><input type="checkbox">Maecenas tempususcondime honcus sem quam libero</label>
                 </div>
             </div>
         </div>
@@ -91,6 +90,8 @@
     <span class="back-top"><i class="fa fa-angle-up"></i></span>
 </div>
 <!-- back to top area end -->
+
+@include('front.components.whatsapp')
 
 <!-- all plugins here -->
 <script src="{{ asset('assets/js/jquery.min.js') }}"></script>

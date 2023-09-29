@@ -127,6 +127,6 @@ if (!function_exists('contacts')) {
 
     function contacts($type)
     {
-        return isset($ype) ?  Contact::where('type', $type)->get() : Contact::latest()->get();;
+        return isset($type) ?  Contact::where('type', $type)->get() : Contact::latest()->get();;
     }
 }

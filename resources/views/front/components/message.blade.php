@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="single-contact-inner text-center">
                     <div class="icon-box">
                         <i class=" icomoon-email"></i>
@@ -31,12 +31,12 @@
                     <div class="details-wrap">
                         <div class="details-inner">
                             <h3>Email Address</h3>
-                            <p>support@gmail.com <br> www.infomar.net</p>
+                            <p>{{ contacts('email')[0]->contact }} <br> {{ contacts('email')[0]->contact }}</p>
                         </div>
                     </div>
                 </div>
-            </div> --}}
-            {{-- <div class="col-lg-4 col-md-6">
+            </div>
+            <div class="col-lg-4 col-md-6">
                 <div class="single-contact-inner text-center">
                     <div class="icon-box">
                         <i class=" icomoon-telephone"></i>
@@ -44,11 +44,11 @@
                     <div class="details-wrap">
                         <div class="details-inner">
                             <h3>Phone Number</h3>
-                            <p>+012 (345) 678 99 <br> +12345678</p>
+                            <p>{{ contacts('phone')[0]->contact }} <br> {{ contacts('whatsapp')[0]->contact }}</p>
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
         </div>
     </div>
 </div>
