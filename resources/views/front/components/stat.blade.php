@@ -4,12 +4,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 pe-5 mb-5 mb-lg-0">
-                    <div class="section-title mb-0">
+                    <div class="section-title mb-0" data-aos="fade-up"
+                    data-aos-duration="3000" >
                         <h5 class="sub-title right-line"> {{ page('skills-section')->title }} </h5>
                         <h2 class="title">{{ page('skills-section')->subtitle }}</h2>
                         {!! page('skills-section')->description !!}
                     </div>
-                    <div class="skill-progress-area mt-4">
+                    <div class="skill-progress-area mt-4" data-aos="fade-right">
                         <div class="single-progressbar">
                             <h6>Web development</h6>
                             <div class="progress-item" id="progress-running">
@@ -64,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 px-lg-5">
+                <div class="col-lg-6 px-lg-5" data-aos="fade-left">
                     <div class="row">
                         @if (count(page('skills-section')->images)== 3)
                             <div class="col-md-6">

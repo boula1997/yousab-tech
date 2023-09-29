@@ -1,7 +1,8 @@
  <!-- team area start -->
  <div class="team-area pd-top-115 pd-bottom-90" data-aos="fade-up-left">
      <div class="container">
-         <div class="row justify-content-center">
+         <div class="row justify-content-center" data-aos="fade-up"
+         data-aos-duration="3000">>
              <div class="col-lg-6">
                  <div class="section-title text-center">
                      <h5 class="sub-title double-line">{{ page('team-section')->title }}</h5>
@@ -11,7 +12,7 @@
              </div>
          </div>
          <div class="row">
-             <div class="swiper mySwiper">
+             <div class="swiper mySwiper" data-aos="zoom-in">
                  <div class="swiper-wrapper">
                      @foreach (services() as $portfolio)
                          <div class="swiper-slide">

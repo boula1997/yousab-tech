@@ -3,8 +3,8 @@
         style="background-image: url('./assets/img/bg/3.webp');">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="section-title border-radius-5 p-35 bg-base style-white mb-lg-0">
+                <div class="col-lg-4" data-aos="fade-up">
+                    <div class="section-title border-radius-5 p-35 bg-base style-white mb-lg-0" >
                         <h2 class="title mt-4">{{page('service-section')->title}}</h2>
                              <div class="text-white">{!! page('service-section')->description !!}</div>
                              
@@ -14,7 +14,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-8" data-aos="fade-up">
                     <div class="row">
                         @foreach ($services as $service)
                             

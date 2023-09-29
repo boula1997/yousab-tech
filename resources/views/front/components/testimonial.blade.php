@@ -5,7 +5,7 @@
             @foreach ($testimonials as $testimonial)
                 <div class="item" dir="ltr">
                     <div class="row">
-                        <div class="col-lg-5 col-md-6">
+                        <div class="col-lg-5 col-md-6" data-aos="fade-right" >
                             <div class="thumb mb-4 mb-md-0" style="background-image: url({{ $testimonial->image }});">
                                 <div class="quote-wrap">
                                     <div class="quote">
@@ -14,8 +14,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-5 col-md-6 align-self-center" dir="ltr">
-                            <div class="single-testimonial-inner text-md-center px-lg-5 px-md-4">
+                        <div class="col-xl-5 col-md-6 align-self-center" dir="ltr" data-aos="fade-left">
+                            <div class="single-testimonial-inner text-md-center px-lg-5 px-md-4" >
                                 <div class="details">
                                     <div class="thumb">
                                         <img src="{{ $testimonial->image }}" alt="img">

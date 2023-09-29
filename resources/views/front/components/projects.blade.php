@@ -1,7 +1,7 @@
     <!-- project area start -->
     <div class="project-area bg-black pd-top-115">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" data-aos="fade-up">
                 <div class="col-lg-7">
                     <div class="section-title style-white text-center">
                         <h5 class="sub-title double-line">{{ page('portfolio-section')->subtitle }}</h5>
@@ -12,7 +12,7 @@
             </div>
 
         </div>
-        <div class="project-slider-2 slider-control-square owl-carousel" dir="ltr">
+        {{-- <div class="project-slider-2 slider-control-square owl-carousel" dir="ltr">
             @foreach ($portfolios as $portfolio)  
                 <div class="item">
                     <div class="single-project-inner style-two">
@@ -28,10 +28,11 @@
                 </div>
             @endforeach
          </div>
-        <div class="swiper mySwiper">
+        </div> --}}  
+        <div class="swiper mySwiper" >
             <div class="swiper-wrapper">
                 @foreach (services() as $portfolio)
-                    <div class="swiper-slide">
+                    <div class="swiper-slide"  data-aos="zoom-in">
                         <div class="item">
                             <div class="single-project-inner style-two">
                                 <div class="thumb">

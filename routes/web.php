@@ -48,10 +48,10 @@ Route::group(
 
         Route::get('/single-portfolio/{id}', [ServiceController::class,'showportfolio'])->name('front.show.portfolio');
         
-        Route::get('/reply', function () {
+        // Route::get('/reply', function () {
     
-            return view("mail.replyemail");
-        });
+        //     return view("mail.replyemail");
+        // });
 
     }
 );

@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-8">
-                    <div class="about-mask-bg-wrap about-mask-bg-wrap-1 mb-4 mb-lg-0">
+                    <div class="about-mask-bg-wrap about-mask-bg-wrap-1 mb-4 mb-lg-0"  data-aos="fade-right">
                         <img class="shape-image-sm top_image_bounce" src="{{ asset('assets/img/about/1sm.webp') }}"
                             alt="img">
                         <img class="shape-image" src="{{ asset('assets/img/about/1s.webp') }}" alt="img">
@@ -13,7 +13,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 align-self-center">
+                <div class="col-lg-6 align-self-center" data-aos="fade-left">
                     <div class="section-title px-lg-5 mb-0">
                         <h5 class="sub-title right-line">{{ page('about-us')->title }}</h5>
                         <h2 class="title">{{ page('about-us')->subtitle }}</h2>

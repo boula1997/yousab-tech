@@ -1,8 +1,8 @@
     <!-- how it work area start -->
     <div class="how-it-work-area bg-blue pd-top-110 pd-top-110" id="process">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
+            <div class="row justify-content-center" data-aos="fade-up">
+                <div class="col-lg-6" >
                     <div class="section-title style-white text-center">
                         <h5 class="sub-title double-line">{{ page('process-section')->subtitle }}</h5>
                         <h2 class="title">{{ page('process-section')->title }}</h2>
@@ -12,7 +12,7 @@
             </div>
             <div class="row">
                 @foreach ($processes as $process)
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-md-6" data-aos="zoom-in">
                         <div class="single-work-inner style-two text-center">
                             <div class="count-wrap">
                                 <div class="count-inner">
