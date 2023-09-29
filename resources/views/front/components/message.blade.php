@@ -1,6 +1,6 @@
 <div class="team-area info-box-two pd-top-115 pd-bottom-90">
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" data-aos="fade-up">
             <div class="col-lg-6 col-md-9">
                 <div class="section-title text-center">
                     <h5 class="sub-title double-line">{{ page('contact-section')->title }}</h5>
@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="flip-left">
                 <div class="single-contact-inner text-center">
                     <div class="icon-box">
                         <i class="icomoon-pin"></i>
@@ -18,13 +18,13 @@
                     <div class="details-wrap">
                         <div class="details-inner">
                             <h3>Office address</h3>
-                            <p>7895 Piermont, Albuquerque, NM 198866, USA</p>
+                            <p>{{ settings()->translate(app()->getLocale())->address }}</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
-                <div class="single-contact-inner text-center">
+                <div class="single-contact-inner text-center" data-aos="flip-left">
                     <div class="icon-box">
                         <i class=" icomoon-email"></i>
                     </div>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
-                <div class="single-contact-inner text-center">
+                <div class="single-contact-inner text-center" data-aos="flip-left">
                     <div class="icon-box">
                         <i class=" icomoon-telephone"></i>
                     </div>
@@ -54,7 +54,7 @@
 </div>
 <div class="g-map-message">
     <div class="row justify-content-end">
-        <div class="col-lg-5 col-md-7">
+        <div class="col-lg-5 col-md-7" data-aos="fade-right">
             <div class="alert alert-success d-none mx-3">
                 <p style="text-align: start"></p>
             </div>
@@ -85,7 +85,7 @@
                 </div>
             </form>
         </div>
-        <div class="col-lg-7 col-md-5">
+        <div class="col-lg-7 col-md-5"  data-aos="fade-left">
             <div class="g-map-inner">
                 {!! settings()->map !!}
             </div>
@@ -93,23 +93,7 @@
     </div>
 </div>
 
-<!-- call to action start -->
-<div class="call-to-action-area pd-top-120 pd-bottom-120 text-center bg-overlay-base"
-    style="background-image: url({{asset('assets/img/bg/5.webp')}});">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-8">
-                <div class="single-call-to-action-inner style-white">
-                    <h5>{{ page('solution-section')->title }}</h5>
-                    <h2>{{ page('solution-section')->subtitle }}</h2>
-                    <a class="btn btn-black mt-3" href="{{route('front.message')}}">{{ __('general.message') }}</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- call to action start -->
-
+@include('front.components.solution')
 
 @push('js')
     <script>

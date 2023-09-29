@@ -31,15 +31,15 @@
         </div> --}}  
         <div class="swiper mySwiper" >
             <div class="swiper-wrapper">
-                @foreach (services() as $portfolio)
+                @foreach ($portfolios as $portfolio)
                     <div class="swiper-slide"  data-aos="zoom-in">
                         <div class="item">
                             <div class="single-project-inner style-two">
                                 <div class="thumb">
-                                    <img src="{{ $portfolio->image }}" alt="img">
+                                    <img src="{{ isset($portfolio->images[0]->url)? $portfolio->images[0]->url:asset('default.jpg') }}" alt="img">
                                 </div>
                                 <div class="details-wrap">
-                                    <h3><a href="project-details.html">{{ $portfolio->title }}</a></h3>
+                                    <h3><a href="{{route('front.show.portfolio',$portfolio->id)}}">{{ $portfolio->title }}</a></h3>
                                     <p> {!! $portfolio->description !!} </p>
                                     <a href="project-details.html">{{ $portfolio->subtitle }}<i
                                             class="fas fa-arrow-right"></i></a>

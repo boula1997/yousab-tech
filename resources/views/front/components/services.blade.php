@@ -4,7 +4,7 @@
             <div class="row">
                 @foreach ($services as $service)
 
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6" data-aos="zoom-in">
                         <div class="single-service-inner style-hover-base text-center">
                             <div class="icon-box">
                                 <i class="{{ $service->icon }}"></i>
