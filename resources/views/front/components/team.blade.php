@@ -1,5 +1,5 @@
  <!-- team area start -->
- <div class="team-area pd-top-115 pd-bottom-90">
+ <div class="team-area pd-top-115 pd-bottom-90" data-aos="fade-up-left">
      <div class="container">
          <div class="row justify-content-center">
              <div class="col-lg-6">

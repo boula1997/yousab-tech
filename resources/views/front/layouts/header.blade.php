@@ -19,10 +19,14 @@
     <link rel="stylesheet" href="{{ asset('assets/css/owl.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('lightbox-dist/css/lightbox.min.css') }}">
+   
     <!-- Swiper JS - V10.2.0 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css"
         integrity="sha512-pJrGHWDVOeiy4UkMtHu0fpD8oLLssFcaW0fsVXUkA1/jDLopa554Z1AZo5SKtekHnnmyat0ipiP0snKDrt0GNg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="{{ asset('assets/css/general.css') }}">
     @if (app()->getLocale() == 'ar')
         <link rel="stylesheet" href="{{ asset('bootstrap-5.3.1-dist/css/bootstrap.rtl.min.css') }}">
@@ -138,7 +142,7 @@
                 {{-- <a class="search-bar-btn" href="#">
                     <i class="fa fa-search"></i>
                 </a> --}}
-                <a class="btn btn-base" href="#">{{ __('general.get_started') }}</a>
+                <a class="btn btn-base" href="#process">{{ __('general.get_started') }}</a>
             </div>
         </div>
     </nav>

@@ -40,7 +40,8 @@
                     <h4 class="widget-title">{{ __('general.services') }}</h4>
                     <ul>
                         @foreach (services() as $service)
-                            <li><a href="{{ route('front.show.service', $service->id) }}">{{ $service->title }}</a></li>
+                            <li><a href="{{ route('front.show.service', $service->id) }}">{{ $service->title }}</a>
+                            </li>
                         @endforeach
 
                         {{-- <li><a href="service.html">Digital marketing </a></li>
@@ -106,6 +107,7 @@
 <script src="{{ asset('assets/js/tweenmax.min.js') }}"></script>
 <script src="{{ asset('assets/js/waypoint.js') }}"></script>
 <script src="{{ asset('assets/js/counterup.js') }}"></script>
+<script src="{{ asset('lightbox-dist/js/lightbox.min.js') }}"></script>
 <!-- Swiper JS - V10.2.0 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"
     integrity="sha512-k2o1KZdvUi59PUXirfThShW9Gdwtk+jVYum6t7RmyCNAVyF9ozijFpvLEWmpgqkHuqSWpflsLf5+PEW6Lxy/wA=="
@@ -144,6 +146,33 @@
                 spaceBetween: 40
             }
         }
+    });
+</script>
+
+<!-- aos -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        // Global settings:
+        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+        initClassName: 'aos-init', // class applied after initialization
+        animatedClassName: 'aos-animate', // class applied on animation
+        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+        debounceDelay: 80, // the delay on debounce used while resizing window (advanced)
+        throttleDelay: 130, // the delay on throttle used while scrolling the page (advanced)
+
+
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 120, // offset (in px) from the original trigger point
+        delay: 50, // values from 0 to 3000, with step 50ms
+        duration: 800, // values from 0 to 3000, with step 50ms
+        easing: 'ease', // default easing for AOS animations
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
     });
 </script>
 

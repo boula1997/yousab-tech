@@ -1,5 +1,5 @@
     <!-- how it work area start -->
-    <div class="how-it-work-area bg-blue pd-top-110 pd-top-110">
+    <div class="how-it-work-area bg-blue pd-top-110 pd-top-110" id="process">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
