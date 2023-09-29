@@ -20,9 +20,9 @@
                             <img src="{{isset($portfolio->images[0]->url)?$portfolio->images[0]->url:$portfolio->images[0]}}" alt="img">
                         </div>
                         <div class="details-wrap">
-                            <h3><a href="project-details.html">{{$portfolio->title}}</a></h3>
+                            <h3><a href="{{route('front.show.portfolio',$portfolio->id)}}">{{$portfolio->title}}</a></h3>
                             <p> {{$portfolio->description }} <p>
-                            <a href="project-details.html">{{$portfolio->subtitle}}<i class="fas fa-arrow-right"></i></a>
+                            <a href="{{route('front.show.portfolio',$portfolio->id)}}">{{$portfolio->subtitle}}<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

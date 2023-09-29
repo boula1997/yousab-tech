@@ -170,6 +170,7 @@ return [
     'whatsapp'=>'واتساب',
     'icon'=>'أيقونة',
     'subject'=>'موضوع',
-    'reply'=>'رد'
+    'reply'=>'رد',
+    'visit_our_website'=>'قم بزيارة موقعنا'
 
 ];

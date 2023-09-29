@@ -61,4 +61,10 @@ class ServiceController extends Controller
         $service= $this->service->findorfail($id);
         return view('front.services.single-service', compact('service'));
     }
+
+    public function showportfolio($id)
+    {
+        $portfolio= $this->portfolio->findorfail($id);
+        return view('front.portfolio.single_portfolio', compact('portfolio'));
+    }
 }

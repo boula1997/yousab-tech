@@ -162,6 +162,7 @@ return [
     'whatsapp'=>'Whatsapp',
     'icon'=>'Icon',
     'subject'=>'Subject',
-    'reply'=>'Reply'
+    'reply'=>'Reply',
+    'visit_our_website'=>'Visit Our Website'
 
 ];
