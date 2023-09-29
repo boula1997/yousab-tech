@@ -19,11 +19,11 @@
 <script type="text/javascript">
     (function () {
         var options = {
-            call: "00966500774150", // Call phone number
-            whatsapp: "966500774150", // WhatsApp number
+            call: "01126785910", // Call phone number
+            whatsapp: "+201208050298", // WhatsApp number
             call_to_action: "تواصل معنا", // Call to action
             button_color: "#FF6550", // Color of button
-            position: "right", // Position may be 'right' or 'left'
+            position: "left", // Position may be 'right' or 'left'
             order: "call,whatsapp", // Order of buttons
         };
         var proto = 'https:', host = "getbutton.io", url = proto + '//static.' + host;

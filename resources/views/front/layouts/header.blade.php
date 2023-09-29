@@ -19,6 +19,14 @@
     <link rel="stylesheet" href="{{ asset('assets/css/owl.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('lightbox-dist/css/lightbox.min.css') }}">
+   
+    <!-- Swiper JS - V10.2.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css"
+        integrity="sha512-pJrGHWDVOeiy4UkMtHu0fpD8oLLssFcaW0fsVXUkA1/jDLopa554Z1AZo5SKtekHnnmyat0ipiP0snKDrt0GNg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="{{ asset('assets/css/general.css') }}">
     @if (app()->getLocale() == 'ar')
         <link rel="stylesheet" href="{{ asset('bootstrap-5.3.1-dist/css/bootstrap.rtl.min.css') }}">
@@ -61,7 +69,9 @@
                 <div class="col-sm-6">
                     <ul class="topbar-right text-md-start text-center">
                         <li class="d-none d-none d-lg-inline-block">
-                            <p><i class="far fa-clock"></i> {{ __('general.opening_hour') }}{{settings()->translate(app()->getLocale())->appointment1}}</p>
+                            <p><i class="far fa-clock"></i>
+                                {{ __('general.opening_hour') }}{{ settings()->translate(app()->getLocale())->appointment1 }}
+                            </p>
                         </li>
                         <li>
                             <p><i class="far fa-envelope"></i> {{ settings()->email1 }}</p>
@@ -109,7 +119,7 @@
                     <li><a class="{{ request()->routeIs('front.home') ? 'active' : '' }}"
                             href="{{ route('front.home') }}">{{ __('general.home') }}</a></li>
                     <li><a class="{{ request()->routeIs('front.service') ? 'active' : '' }}"
-                            href="{{ route('front.service')}}">{{ __('general.services') }}</a></li>
+                            href="{{ route('front.service') }}">{{ __('general.services') }}</a></li>
                     <li><a class="{{ request()->routeIs('front.about') ? 'active' : '' }}"
                             href="{{ route('front.about') }}">{{ __('general.about') }}</a></li>
                     {{-- <li><a class="{{request()->routeIs('front.home')?'active':''}}" href="{{route('front.home')}}">Project</a></li> --}}
@@ -132,7 +142,7 @@
                 {{-- <a class="search-bar-btn" href="#">
                     <i class="fa fa-search"></i>
                 </a> --}}
-                <a class="btn btn-base" href="#">{{ __('general.get_started') }}</a>
+                <a class="btn btn-base" href="#process">{{ __('general.get_started') }}</a>
             </div>
         </div>
     </nav>
