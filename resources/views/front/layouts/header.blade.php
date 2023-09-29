@@ -74,23 +74,28 @@
                             </p>
                         </li>
                         <li>
-                            <p><i class="far fa-envelope"></i> {{ settings()->email1 }}</p>
+                            <p><i class="far fa-envelope"></i> {{ contacts('email')[0]->contact }}</p>
                         </li>
                     </ul>
                 </div>
                 <div class="col-sm-6">
                     <ul class="topbar-right text-md-end text-center">
                         <li class="d-none d-none d-lg-inline-block">
-                            <p>{{ __('general.hotline') }} <span>: {{ settings()->phone1 }}</span></p>
+                            <p>{{ __('general.hotline') }} <span>: {{ contacts('phone')[0]->contact }} </span></p>
                         </li>
                         <li class="social-area">
                             <p class="d-inline-block">{{ __('general.follow_us_on') }}</p>
-                            <a href="{{ settings()->facebook }}"><i class="fab fa-facebook-f"
-                                    aria-hidden="true"></i></a>
-                            <a href="{{ settings()->twitter }}"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                            @foreach (contacts('social') as $contact)
+
+                            <a href="{{ $contact->contact }}"><i class="{{ $contact->icon }}"
+                                aria-hidden="true"></i></a>  
+                            
+                            @endforeach
+                           
+                            {{-- <a href="{{ settings()->twitter }}"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                             <a href="{{ settings()->instgram }}"><i class="fab fa-instagram"
                                     aria-hidden="true"></i></a>
-                            <a href="{{ settings()->youtube }}"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                            <a href="{{ settings()->youtube }}"><i class="fab fa-youtube" aria-hidden="true"></i></a> --}}
                         </li>
                     </ul>
                 </div>

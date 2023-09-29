@@ -11,12 +11,19 @@
                         {{-- {{settings()->address}} --}}
                         <p>{{ settings()->translate(app()->getLocale())->address }}</p>
                         <ul class="social-media">
-                            <li>
-                                <a class="facebook" href="{{ settings()->facebook }}">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li>
+                            @foreach (contacts('social') as $contact)
+
+                            {{-- <a href="{{ $contact->contact }}"><i class="{{ $contact->icon }}"
+                                aria-hidden="true"></i></a>   --}}
+                                <li>
+                                    <a class="facebook" href="{{ $contact->contact }}">
+                                        <i class="{{ $contact->icon }}"></i>
+                                    </a>
+                                </li>
+                            @endforeach
+                           
+                           
+                            {{-- <li>
                                 <a class="twitter" href="{{ settings()->twitter }}">
                                     <i class="fab fa-twitter"></i>
                                 </a>
@@ -30,7 +37,7 @@
                                 <a class="youtube" href="{{ settings()->youtube }}">
                                     <i class="fab fa-youtube"></i>
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </div>
