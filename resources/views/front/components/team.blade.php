@@ -2,7 +2,7 @@
  <div class="team-area pd-top-115 pd-bottom-90" data-aos="fade-up-left">
      <div class="container">
          <div class="row justify-content-center" data-aos="fade-up"
-         data-aos-duration="3000">>
+         data-aos-duration="3000">
              <div class="col-lg-6">
                  <div class="section-title text-center">
                      <h5 class="sub-title double-line">{{ page('team-section')->title }}</h5>
@@ -14,13 +14,13 @@
          <div class="row">
              <div class="swiper mySwiper" data-aos="zoom-in">
                  <div class="swiper-wrapper">
-                     @foreach (services() as $portfolio)
+                     @foreach ($teams as $team)
                          <div class="swiper-slide">
                              <div class="single-team-inner style-1 text-center">
                                  <div class="thumb">
 									<div class="img-team-container">
 
-										<img src="{{ $portfolio->image }}" alt="img">
+										<img src="{{ $team->image }}" alt="img">
 									</div>
                                      <ul class="social-media">
                                          <li>
@@ -47,8 +47,8 @@
                                  </div>
                                  <div class="details-wrap">
                                      <div class="details-inner">
-                                         <h4><a href="team-details.html">{{ $portfolio->title }}</a></h4>
-                                         <p>{{ $portfolio->subtitle }}</p>
+                                         <h4><a href="team-details.html">{{ $team->title }}</a></h4>
+                                         <p>{{ $team->subtitle }}</p>
                                      </div>
                                  </div>
                              </div>

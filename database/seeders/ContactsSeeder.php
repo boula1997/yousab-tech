@@ -15,18 +15,20 @@ class ContactsSeeder extends Seeder
     {
        
         $icon=[ "fab fa-facebook-f",
-                "fab fa-twitter",
+                "fab fa-linkedin-in",
+                "fab fa-instagram",
                 "fas fa-mail-bulk",
                 "fas fa-phone",
                 "fab fa-whatsapp"];
 
-        $contacts=["https://www.facebook.com",
-                   "https://www.twitter.com",
+        $contacts=["https://www.facebook.com/YousabTech?mibextid=ZbWKwL",
+                   "www.linkedin.com/in/yousab-tech-3707b428b",
+                   "",
                    "yousabtech@gmail.com",
-                   "01289189890",
-                   "01289189890"];
+                   "01126785910",
+                   "01208050298"];
 
-        $type=['social','social','email','phone','whatsapp'];
+        $type=['social','social','social','email','phone','whatsapp'];
       
 
         for ($i = 0; $i < count($contacts); $i++) {

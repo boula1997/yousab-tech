@@ -171,6 +171,7 @@ return [
     'icon'=>'أيقونة',
     'subject'=>'موضوع',
     'reply'=>'رد',
-    'visit_our_website'=>'قم بزيارة موقعنا'
+    'visit_our_website'=>'قم بزيارة موقعنا',
+    'subscribe_now'=>'اشترك فى قائمتنا البريدية'
 
 ];

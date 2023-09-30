@@ -147,7 +147,7 @@
                 {{-- <a class="search-bar-btn" href="#">
                     <i class="fa fa-search"></i>
                 </a> --}}
-                <a class="btn btn-base" href="#process">{{ __('general.get_started') }}</a>
+                <a class="btn btn-base" href="{{ request()->routeIs('front.home')?'#process':route('front.home').'#process'}}">{{ __('general.get_started') }}</a>
             </div>
         </div>
     </nav>

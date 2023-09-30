@@ -1,9 +1,8 @@
     <!-- faq area start -->
-    <div class="faq-area pd-top-100 pd-bottom-120">
+    <div class="faq-area pd-top-100 ">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-8 order-lg-last mb-4 mb-lg-0" data-aos="fade-left"data-aos="fade-up"
-                     data-aos-duration="3000" >
+                <div class="col-lg-6 col-md-8 order-lg-last mb-4 mb-lg-0" data-aos="fade-left"data-aos="fade-up" data-aos-duration="3000" >
                     <div class="faq-image-wrap">
                         <div class="thumb">
 
@@ -17,7 +16,7 @@
                 </div>
                 <div class="col-lg-6 pe-xl-5 order-lg-first align-self-center">
                     <div class="section-title mb-0" data-aos="fade-up"
-                    data-aos-duration="3000">>
+                    data-aos-duration="3000">
                         <h5 class="sub-title right-line">{{ page('faq-section')->title }}</h5>
                         <h2 class="title">{{ page('faq-section')->subtitle }}</h2>
                         {!! page('faq-section')->description !!}

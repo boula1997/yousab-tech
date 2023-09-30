@@ -72,7 +72,7 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="widget widget_subscribe d-block">
-                    <h4 class="widget-title">{{ __('general.subscrip_now') }}</h4>
+                    <h4 class="widget-title">{{ __('general.subscribe_now') }}</h4>
                     <div class="single-input-inner style-border style-bg-none">
                         <input type="text" placeholder="{{ __('general.your_email') }}">
                         <button><i class="fa fa-arrow-right"></i></button>

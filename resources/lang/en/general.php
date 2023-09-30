@@ -163,6 +163,7 @@ return [
     'icon'=>'Icon',
     'subject'=>'Subject',
     'reply'=>'Reply',
-    'visit_our_website'=>'Visit Our Website'
+    'visit_our_website'=>'Visit Our Website',
+    'subscribe_now'=>'Subscribe To Our Newsletter'
 
 ];
