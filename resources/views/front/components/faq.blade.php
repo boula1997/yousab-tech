@@ -27,15 +27,28 @@
                         
                             @foreach ($faqs as $faq)
                         
-                            <div class="accordion-item single-accordion-inner" data-aos="fade-right">
+                            {{-- <div class="accordion-item single-accordion-inner" data-aos="fade-right">
                                 <h2 class="accordion-header" id="headingOne{{$loop->index}}">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne{{$loop->index}}" aria-expanded="true" aria-controls="collapseOne{{$loop->index}}">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne{{$loop->index}}" aria-expanded="false" aria-controls="collapseOne{{$loop->index}}">
                                         {{$faq->title}}
                                     </button>
                                 </h2>
                                 <div id="collapseOne{{$loop->index}}" class="accordion-collapse collapse show" aria-labelledby="headingOne{{$loop->index}}"
                                     data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        {!! $faq->description !!}
+                                    </div>
+                                </div>
+                            </div> --}}
+
+                            <div class="accordion-item single-accordion-inner aos-init aos-animate" data-aos="fade-right">
+                                <h2 class="accordion-header" id="headingOne{{$loop->index}}">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne{{$loop->index}}" aria-expanded="false" aria-controls="collapseOne{{$loop->index}}">
+                                        {{$faq->title}}
+                                    </button>
+                                </h2>
+                                <div id="collapseOne{{$loop->index}}" class="accordion-collapse collapse" aria-labelledby="headingOne{{$loop->index}}" data-bs-parent="#accordionExample" style="">
                                     <div class="accordion-body">
                                         {!! $faq->description !!}
                                     </div>
