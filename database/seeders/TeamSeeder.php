@@ -13,27 +13,33 @@ class TeamSeeder extends Seeder
      */
     public function run(): void
     {
-        $title_en = ["Karshin Kumar",
-                     "Macal Jonsons",
-                     "Estoner William",
-                     "Casses Tomas"];
-        $subtitle_en = ["Founder",
-                        "Director",
-                        "HR",
-                        "IT Maneger"];
-        $description_en = [null,null,null,null];
+        $title_en = ["Boula Nessim",
+                     "Ibrahim Samy",
+                     "Kerolos Edward",
+                     "Tadrous Emil",
+                     "Gerges Makram"];
+        $subtitle_en = ["Software Engineer",
+                        "Software Engineer",
+                        "Web Designer",
+                        "Web Developer",
+                        "Manager"];
+        $description_en = [null,null,null,null,null];
       
-        $title_ar = ["كارشين كومار",
-                     "ماكال جونسون",
-                     "استونر ويليام",
-                     "كاس توماس"];
-        $subtitle_ar =["مؤسس",
-                        "مدير",
-                        "الموارد البشرية",
-                        "مدير تكنولوجيا المعلومات"];
-        $description_ar =  [null,null,null,null];
+        $title_ar = ["بولا نسيم",
+                     "ابراهيم سامى",
+                     "كيرلس ادوارد",
+                     "تادرس اميل",
+                     "جرجس مكرم"];
+
+        $subtitle_ar =["مهندس برمجيات",
+                       "مهندس برمجيات",
+                        "مصمم ويب ",
+                        "مطور ويب",
+                        "مدير"];
+        $description_ar =  [null,null,null,null,null];
 
         $image=["images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp",
+                "images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp",
                 "images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp",
                 "images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp",
                 "images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp"];

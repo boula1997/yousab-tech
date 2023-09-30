@@ -13,25 +13,33 @@ class ProcessesSeeder extends Seeder
      */
     public function run(): void
     {
-        $title_en = ["Select a project",
-                     "Project analysis",
-                     "Execute",
-                     "Deliver result"];
+        $title_en = ["Define Your Goals and Requirements",
+                     "Initial Consultation",
+                     "Proposal and Agreement",
+                     "Executing and Delivering"];
         $subtitle_en = [null,null,null,null];
-        $description_en = [ "<p>Vestibulum ante ipsumusn eratultrices posu world </p>",
-                            "<p>Vestibulum ante ipsumusn eratultrices posu world </p>",
-                            "<p>Vestibulum ante ipsumusn eratultrices posu world </p>",
-                            "<p>Vestibulum ante ipsumusn eratultrices posu world </p>"];
+        $description_en = [ "<p>Clearly identify your goals and objectives for the website.</p>",
 
-        $title_ar = ["اختر مشروعًا",
-                     "تحليل المشروع", 
-                     "ينفذ",
-                     "تسليم النتيجة"];
+                            "<p>Connect with us to have a full illustration to discuss your project goals </p>",
+
+                            "<p>we will provide you with a proposal that outlines the project scope, timeline, and cost.</p>",
+
+                            "<p>reviewing the website and deliver it to client once he is satisfied with the output. </p>"];
+
+        $title_ar = ["حدد أهدافك ومتطلباتك:",
+                     "المشاورات الأولية", 
+                     "الاقتراح والاتفاق",
+                     "تنفيذ وتسليم الموقع"];
         $subtitle_ar =[null,null,null,null];
-        $description_ar =  [ "<p>Vestibulum ante ipsumusn eratultrices posu world </p>",
-        "<p>Vestibulum ante ipsumusn eratultrices posu world </p>",
-        "<p>Vestibulum ante ipsumusn eratultrices posu world </p>",
-        "<p>Vestibulum ante ipsumusn eratultrices posu world </p>"];
+
+        $description_ar =  [ 
+                            "<p>حدد بوضوح أهدافك وغاياتك للموقع.</p>",
+
+                            "<p>تواصل معنا للحصول على رسم توضيحي كامل لمناقشة أهداف مشروعك </p>",
+
+                            "<p>سنزودك بمقترح يوضح نطاق المشروع والجدول الزمني والتكلفة.</p>",
+
+                            "<p>مراجعة الموقع وتسليمه للعميل بمجرد رضاه عن المخرجات.</p>"];
       
         $image=[];
        
