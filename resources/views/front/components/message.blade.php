@@ -93,7 +93,7 @@
     </div>
 </div>
 
-@include('front.components.solution')
+{{-- @include('front.components.solution') --}}
 
 @push('js')
     <script>
