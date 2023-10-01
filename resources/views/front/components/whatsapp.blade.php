@@ -21,7 +21,7 @@
         var options = {
             call: "01126785910", // Call phone number
             whatsapp: "+201208050298", // WhatsApp number
-            call_to_action: "تواصل معنا", // Call to action
+            call_to_action: `${{ {__('general.contact_us')} }}`, // Call to action
             button_color: "#FF6550", // Color of button
             position: "left", // Position may be 'right' or 'left'
             order: "call,whatsapp", // Order of buttons
