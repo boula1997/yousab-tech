@@ -38,11 +38,11 @@ class TeamSeeder extends Seeder
                         "مدير"];
         $description_ar =  [null,null,null,null,null];
 
-        $image=["images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp",
+        $image=["images/YE92B4LXiM6QhFcQbr5YKECGaMU5k8NokXve9o1m.jpg",
+                "images/YQXLPLiQgi8H1E9YE77J3lwUX0qSOYXkHMP192Nz.png",
                 "images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp",
-                "images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp",
-                "images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp",
-                "images/w66o7ZleB0PAmRNOOiLp37gmh9iwImRphogPhjFy.webp"];
+                "images/tAgfJG0vAJHhQsCii9FR441z6tGs9fyGKj92MUzy.jpg",
+                "images/LoMGh0c87mS3qdo0SCaRgZ1vr60ugJrv6aUFlakd.jpg"];
        
        
 
