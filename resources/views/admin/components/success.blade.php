@@ -1,4 +1,4 @@
-@if(Session::has('error'))
+@if(Session::has('success'))
     <script>
         toastr.options = {
             "closeButton": true,
@@ -18,7 +18,7 @@
             "hideMethod": "fadeOut"
         };
 
-        toastr.error("{{ Session::get('error') }}");
+        toastr.success("{{ Session::get('success') }}");
     </script>
 @endif
 
