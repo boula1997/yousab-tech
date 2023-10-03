@@ -13,7 +13,6 @@ use App\Models\Testimonial;
 use App\Models\Process;
 use App\Models\Service;
 use App\Models\Setting;
-use App\Models\Partner;
 use App\Models\Team;
 use App\Models\User;
 use App\Models\Video;
