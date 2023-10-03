@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains slider content -->
+    <!-- Content Wrapper. Contains partner content -->
     <div class="content-wrapper">
         <div class="container p-3">
             <!-- Main content -->
@@ -16,10 +16,10 @@
                                     <!-- general form elements -->
                                     <div class="row">
                                         <div class="col-md-6 d-flex d-flex justify-content-start">
-                                            <h1 class="card-title fw-bold">@lang('general.sliders')</h3>
+                                            <h1 class="card-title fw-bold">@lang('general.partners')</h3>
                                         </div>
                                         <div class="col-md-6 d-flex d-flex justify-content-end">
-                                            <a href="{{ route('sliders.create') }}">
+                                            <a href="{{ route('partners.create') }}">
 
                                                 <button
                                                     class="btn btn-outline-primary px-5
@@ -42,17 +42,17 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($sliders as $slider)
+                                            @foreach ($partners as $partner)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td><img width="100" height="100" src="{{ $slider->image }}"
-                                                            alt="{{ $slider->title }}"></td>
-                                                    <td>{{ $slider->title }}</td>
+                                                    <td><img width="100" height="100" src="{{ $partner->image }}"
+                                                            alt="{{ $partner->title }}"></td>
+                                                    <td>{{ $partner->title }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
-                                                            'route' => 'sliders',
-                                                            'role' => 'slider',
-                                                            'module' => $slider,
+                                                            'route' => 'partners',
+                                                            'role' => 'partner',
+                                                            'module' => $partner,
                                                         ])
                                                     </td>
                                                 </tr>

@@ -12,7 +12,7 @@ use App\Http\Controllers\API\ServiceController;
 use App\Http\Controllers\API\TestimonialController;
 use App\Http\Controllers\API\ProcessController;
 use App\Http\Controllers\API\SettingController;
-use App\Http\Controllers\API\SliderController;
+use App\Http\Controllers\API\PartnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,8 +33,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::get('faqs/{id}', 'FaqController@show');
 // Route::get('processes', 'ProcessController@index');
 // Route::get('processes/{id}', 'ProcessController@show');
-// Route::get('sliders', 'SliderController@index');
-// Route::get('sliders/{id}', 'SliderController@show');
+// Route::get('partners', 'PartnerController@index');
+// Route::get('partners/{id}', 'PartnerController@show');
 // Route::get('counters', 'CounterController@index');
 // Route::get('counter/{id}', 'CounterController@show');
 // Route::get('contacts', 'ContactController@index');
@@ -58,8 +58,8 @@ Route::group(['middleware' => ['apiLocalization','cors']], function () {
     Route::get('/faqs', [FaqController::class, 'index']);
     Route::get('/faq/{id}', [FaqController::class, 'show']);
     
-    Route::get('/sliders', [SliderController::class, 'index']);
-    Route::get('/slider/{id}', [SliderController::class, 'show']);
+    Route::get('/partners', [PartnerController::class, 'index']);
+    Route::get('/partner/{id}', [PartnerController::class, 'show']);
     
     
     Route::get('/counters', [CounterController::class, 'index']);

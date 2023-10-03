@@ -3,36 +3,36 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Dashboard\SliderRequest;
+use App\Http\Requests\Dashboard\PartnerRequest;
 use Illuminate\Support\Facades\File;
-use App\Models\Slider;
+use App\Models\Partner;
 use Illuminate\Http\Request;
 use App\Models\File as ModelsFile;
 use Exception;
 
-class SliderController extends Controller
+class PartnerController extends Controller
 {
     /**s
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Responses
      */
-    private $slider;
-    function __construct(Slider $slider)
+    private $partner;
+    function __construct(Partner $partner)
     {
-        $this->middleware('permission:slider-list|slider-create|slider-edit|slider-delete', ['only' => ['index', 'show']]);
-        $this->middleware('permission:slider-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:slider-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:slider-delete', ['only' => ['destroy']]);
-        $this->slider = $slider;
+        $this->middleware('permission:partner-list|partner-create|partner-edit|partner-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:partner-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:partner-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:partner-delete', ['only' => ['destroy']]);
+        $this->partner = $partner;
     }
 
     public function index()
     {
         try {
-            $sliders = $this->slider->latest()->get();
-            return view('admin.crud.sliders.index', compact('sliders'))
-                ->with('i', (request()->input('slider', 1) - 1) * 5);
+            $partners = $this->partner->latest()->get();
+            return view('admin.crud.partners.index', compact('partners'))
+                ->with('i', (request()->input('partner', 1) - 1) * 5);
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
@@ -46,7 +46,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        return view('admin.crud.sliders.create');
+        return view('admin.crud.partners.create');
     }
 
     /**
@@ -55,13 +55,13 @@ class SliderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(SliderRequest $request)
+    public function store(PartnerRequest $request)
     {
         try {
             $data = $request->except('image','profile_avatar_remove');
-            $slider = $this->slider->create($data);
-            $slider->uploadFile();
-            return redirect()->route('sliders.index')
+            $partner = $this->partner->create($data);
+            $partner->uploadFile();
+            return redirect()->route('partners.index')
                 ->with('success', trans('general.created_successfully'));
         } catch (Exception $e) {
             dd($e->getMessage());
@@ -72,39 +72,39 @@ class SliderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Slider  $slider
+     * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function show(Slider $slider)
+    public function show(Partner $partner)
     {
-        return view('admin.crud.sliders.show', compact('slider'));
+        return view('admin.crud.partners.show', compact('partner'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Slider  $slider
+     * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function edit(Slider $slider)
+    public function edit(Partner $partner)
     {
-        // dd($slider);
-        return view('admin.crud.sliders.edit', compact('slider'));
+        // dd($partner);
+        return view('admin.crud.partners.edit', compact('partner'));
     }
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\portfolio  $slider
+     * @param  \App\Models\portfolio  $partner
      * @return \Illuminate\Http\Response
      */
-    public function update(SliderRequest $request, Slider $slider)
+    public function update(PartnerRequest $request, Partner $partner)
     {
         try {
             $data = $request->except('image','profile_avatar_remove');
-            $slider->update($data);
-            $slider->updateFile();
-            return redirect()->route('sliders.index', compact('slider'))
+            $partner->update($data);
+            $partner->updateFile();
+            return redirect()->route('partners.index', compact('partner'))
                 ->with('success', trans('general.update_successfully'));
         } catch (Exception $e) {
             dd($e->getMessage());
@@ -114,17 +114,17 @@ class SliderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Slider  $slider
+     * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Slider $slider)
+    public function destroy(Partner $partner)
     {
         try {
-            $slider->delete();
-            $slider->file->delete();
-            $slider->deleteFile();
+            $partner->delete();
+            $partner->file->delete();
+            $partner->deleteFile();
 
-            return redirect()->route('sliders.index')
+            return redirect()->route('partners.index')
                 ->with('success', trans('general.deleted_successfully'));
         } catch (Exception $e) {
             dd($e->getMessage());

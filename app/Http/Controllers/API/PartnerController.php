@@ -3,23 +3,23 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\SliderResource;
-use App\Models\Slider;
+use App\Http\Resources\PartnerResource;
+use App\Models\Partner;
 use Exception;
 use Illuminate\Http\Request;
 
-class SliderController extends Controller
+class PartnerController extends Controller
 {
-    private $slider;
-    public function __construct(Slider $slider)
+    private $partner;
+    public function __construct(Partner $partner)
     {
-        $this->slider = $slider;
+        $this->partner = $partner;
     }
 
     public function index()
     {
         try {
-            $data['sliders'] = SliderResource::collection($this->slider->get());
+            $data['partners'] = PartnerResource::collection($this->partner->get());
             return successResponse($data);
         } catch (Exception $e) {
             dd($e->getMessage());
@@ -30,7 +30,7 @@ class SliderController extends Controller
     public function show($id)
     {
         try {
-            $data['slider'] = new SliderResource($this->slider->findorfail($id));
+            $data['partner'] = new PartnerResource($this->partner->findorfail($id));
             return successResponse($data);
         } catch (Exception $e) {
             dd($e->getMessage());

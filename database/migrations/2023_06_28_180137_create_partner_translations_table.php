@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSliderTranslationsTable extends Migration
+class CreatePartnerTranslationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateSliderTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('slider_translations', function (Blueprint $table) {
+        Schema::create('partner_translations', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
             $table->string('subtitle')->nullable();
             $table->text('description')->nullable();
-            $table->unsignedBigInteger('slider_id');
+            $table->unsignedBigInteger('partner_id');
             $table->string('locale')->index();
-            $table->unique(['slider_id', 'locale']);
-            $table->foreign('slider_id')->references('id')->on('sliders')->onDelete('cascade');
+            $table->unique(['partner_id', 'locale']);
+            $table->foreign('partner_id')->references('id')->on('partners')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class CreateSliderTranslationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('slider_translations');
+        Schema::dropIfExists('partner_translations');
     }
 }

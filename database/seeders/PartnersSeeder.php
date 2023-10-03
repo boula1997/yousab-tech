@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Slider;
+use App\Models\Partner;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class SlidersSeeder extends Seeder
+class PartnersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -23,7 +23,7 @@ class SlidersSeeder extends Seeder
        
 
         for ($i = 0; $i < count($title_ar); $i++) {
-            $Slider = Slider::create([
+            $Partner = Partner::create([
                 'ar' => [
                     'title' => $title_ar[$i],
                     'description' => $description_ar[$i],

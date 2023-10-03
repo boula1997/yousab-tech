@@ -12,7 +12,7 @@ use App\Http\Controllers\Admin\ProcessController;
 // use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\MetaController;
 use App\Http\Controllers\Admin\PortfolioController;
-use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\CounterController;
@@ -76,7 +76,7 @@ Route::group(
             Route::resource('services', ServiceController::class);
             Route::resource('testimonials', TestimonialController::class);
             Route::resource('processes', ProcessController::class);
-            Route::resource('sliders', SliderController::class);
+            Route::resource('partners', PartnerController::class);
             Route::resource('pages', PageController::class);
             // Route::resource('about',AboutController::class);
             Route::resource('portfolios', PortfolioController::class);

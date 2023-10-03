@@ -259,18 +259,18 @@
                 @endcan
 
 
-                @can('slider-list')
+                @can('partner-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class=" px-1 fas fa-sliders-h"></i>
+                            <i class=" px-1 fas fa-partners-h"></i>
                             <p>
-                                @lang('general.sliders') <i class=" px-1 fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">{{ itemsCount('sliders') }}</span>
+                                @lang('general.partners') <i class=" px-1 fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('partners') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ route('sliders.index') }}" class="nav-link">
+                                <a href="{{ route('partners.index') }}" class="nav-link">
                                     <i class=" px-1 far fa-circle nav-icon"></i>
                                     <p>@lang('general.show')</p>
                                 </a>
