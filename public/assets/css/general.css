@@ -1,13 +1,14 @@
-.text-white p{
-    color:white;
+.text-white p {
+    color: white;
 }
 
 .whats {
 
-    .img-team-container{
+    .img-team-container {
 
         height: 250px;
     }
+
     position: fixed;
     bottom: 5%;
     right: 2%;
@@ -22,23 +23,38 @@
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
-    -webkit-box-shadow: 2px 2px 5px #b0afaf, -2px -2px 5px #b0afaf;
-    box-shadow: 2px 2px 5px #b0afaf, -2px -2px 5px #b0afaf;
+    -webkit-box-shadow: 2px 2px 5px #b0afaf,
+    -2px -2px 5px #b0afaf;
+    box-shadow: 2px 2px 5px #b0afaf,
+    -2px -2px 5px #b0afaf;
 }
+
 .whats:hover {
     -webkit-box-shadow: 2px 2px 5px #7a7979, -2px -2px 5px #7a7979;
     box-shadow: 2px 2px 5px #7a7979, -2px -2px 5px #7a7979;
 }
+
 .whats i {
     font-size: 45px;
     color: #fff;
 }
 
 
-.img-team-container{
+.img-team-container {
 
     height: 250px;
 }
+
 .banner-area-1 {
     padding: 180px 0 140px 0 !important;
+}
+
+
+.text-limit {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: var(--lines) !important;
+    line-clamp: var(--lines) !important;
+    -webkit-box-orient: vertical !important;
 }

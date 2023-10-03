@@ -21,8 +21,8 @@
                             </div>
                             <div class="details-wrap">
                                 <div class="details-inner">
-                                    <h4>{{ $process->title }}</h4>
-                                    <p>{!! $process->description !!}</p>
+                                    <h4 class="text-limit" style="--lines:1;">{{ $process->title }}</h4>
+                                    <p class="text-limit" style="--lines:5;">{!! $process->description !!}</p>
                                 </div>
                             </div>
                         </div>

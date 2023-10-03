@@ -10,8 +10,9 @@
                                 <i class="{{ $service->icon }} fs-1"></i>
                             </div>
                             <div class="details">
-                                <h3><a href="{{route('front.show.service',$service->id)}}">{{$service->title}}</a></h3>
-                                {!! $service->description !!}
+                                <h3><a href="{{route('front.show.service',$service->id)}}" class="text-limit" style="--lines:1;">{{$service->title}}</a></h3>
+                                <p class="text-limit" style="--lines:1;"> {!! $service->description !!}</p>
+                               
                             </div>
                         </div>
                     </div>
