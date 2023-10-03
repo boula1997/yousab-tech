@@ -3,36 +3,36 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Dashboard\PartnerRequest;
+use App\Http\Requests\Dashboard\TeamRequest;
 use Illuminate\Support\Facades\File;
-use App\Models\Partner;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use App\Models\File as ModelsFile;
 use Exception;
 
-class PartnerController extends Controller
+class TeamController extends Controller
 {
     /**s
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Responses
      */
-    private $partner;
-    function __construct(Partner $partner)
+    private $team;
+    function __construct(Team $team)
     {
-        $this->middleware('permission:partner-list|partner-create|partner-edit|partner-delete', ['only' => ['index', 'show']]);
-        $this->middleware('permission:partner-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:partner-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:partner-delete', ['only' => ['destroy']]);
-        $this->partner = $partner;
+        $this->middleware('permission:team-list|team-create|team-edit|team-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:team-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:team-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:team-delete', ['only' => ['destroy']]);
+        $this->team = $team;
     }
 
     public function index()
     {
         try {
-            $partners = $this->partner->latest()->get();
-            return view('admin.crud.partners.index', compact('partners'))
-                ->with('i', (request()->input('partner', 1) - 1) * 5);
+            $teams = $this->team->latest()->get();
+            return view('admin.crud.teams.index', compact('teams'))
+                ->with('i', (request()->input('team', 1) - 1) * 5);
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
@@ -46,7 +46,7 @@ class PartnerController extends Controller
      */
     public function create()
     {
-        return view('admin.crud.partners.create');
+        return view('admin.crud.teams.create');
     }
 
     /**
@@ -55,13 +55,13 @@ class PartnerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PartnerRequest $request)
+    public function store(TeamRequest $request)
     {
         try {
             $data = $request->except('image','profile_avatar_remove');
-            $partner = $this->partner->create($data);
-            $partner->uploadFile();
-            return redirect()->route('partners.index')
+            $team = $this->team->create($data);
+            $team->uploadFile();
+            return redirect()->route('teams.index')
                 ->with('success', trans('general.created_successfully'));
         } catch (Exception $e) {
             dd($e->getMessage());
@@ -72,39 +72,39 @@ class PartnerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Partner  $partner
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function show(Partner $partner)
+    public function show(Team $team)
     {
-        return view('admin.crud.partners.show', compact('partner'));
+        return view('admin.crud.teams.show', compact('team'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Partner  $partner
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function edit(Partner $partner)
+    public function edit(Team $team)
     {
-        // dd($partner);
-        return view('admin.crud.partners.edit', compact('partner'));
+        // dd($team);
+        return view('admin.crud.teams.edit', compact('team'));
     }
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\portfolio  $partner
+     * @param  \App\Models\portfolio  $team
      * @return \Illuminate\Http\Response
      */
-    public function update(PartnerRequest $request, Partner $partner)
+    public function update(TeamRequest $request, Team $team)
     {
         try {
             $data = $request->except('image','profile_avatar_remove');
-            $partner->update($data);
-            $partner->updateFile();
-            return redirect()->route('partners.index', compact('partner'))
+            $team->update($data);
+            $team->updateFile();
+            return redirect()->route('teams.index', compact('team'))
                 ->with('success', trans('general.update_successfully'));
         } catch (Exception $e) {
             dd($e->getMessage());
@@ -114,17 +114,17 @@ class PartnerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Partner  $partner
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Partner $partner)
+    public function destroy(Team $team)
     {
         try {
-            $partner->delete();
-            $partner->file->delete();
-            $partner->deleteFile();
+            $team->delete();
+            $team->file->delete();
+            $team->deleteFile();
 
-            return redirect()->route('partners.index')
+            return redirect()->route('teams.index')
                 ->with('success', trans('general.deleted_successfully'));
         } catch (Exception $e) {
             dd($e->getMessage());

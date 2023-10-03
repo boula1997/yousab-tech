@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             SettingSeeder::class,
             ServiceSeeder::class,
             PartnersSeeder::class,
+            TeamsSeeder::class,
             TeamSeeder::class,
             TestimonialsSeeder::class,
             UsersSeeder::class,

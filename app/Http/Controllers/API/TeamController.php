@@ -3,23 +3,23 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\PartnerResource;
-use App\Models\Partner;
+use App\Http\Resources\TeamResource;
+use App\Models\Team;
 use Exception;
 use Illuminate\Http\Request;
 
-class PartnerController extends Controller
+class TeamController extends Controller
 {
-    private $partner;
-    public function __construct(Partner $partner)
+    private $team;
+    public function __construct(Team $team)
     {
-        $this->partner = $partner;
+        $this->team = $team;
     }
 
     public function index()
     {
         try {
-            $data['partners'] = PartnerResource::collection($this->partner->get());
+            $data['teams'] = TeamResource::collection($this->team->get());
             return successResponse($data);
         } catch (Exception $e) {
             dd($e->getMessage());
@@ -30,7 +30,7 @@ class PartnerController extends Controller
     public function show($id)
     {
         try {
-            $data['partner'] = new PartnerResource($this->partner->findorfail($id));
+            $data['team'] = new TeamResource($this->team->findorfail($id));
             return successResponse($data);
         } catch (Exception $e) {
             dd($e->getMessage());

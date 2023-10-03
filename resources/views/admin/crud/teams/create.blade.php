@@ -1,5 +1,5 @@
 @extends('admin.components.form')
-@section('form_action', route('partners.store'))
+@section('form_action', route('teams.store'))
 @section('form_type', 'POST')
 @section('fields_content')
     @method('post')
@@ -9,7 +9,7 @@
             @include('admin.components.errors')
             <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
-                    @include('admin.components.breadcrumb', ['module' => 'partners', 'action' => 'create'])
+                    @include('admin.components.breadcrumb', ['module' => 'teams', 'action' => 'create'])
                 </div>
                 <div class="card-toolbar px-3">
                     <ul class="nav nav-tabs nav-bold nav-tabs-line">
@@ -89,7 +89,7 @@
                     <button type="submit"
                         class="btn btn-outline-primary px-5
                           ">@lang('general.save')</button>
-                    <a href="{{ route('partners.index') }}"
+                    <a href="{{ route('teams.index') }}"
                         class="btn btn-outline-danger px-5
                             ">@lang('general.cancel')</a>
                 </div>

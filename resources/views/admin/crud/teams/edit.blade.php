@@ -1,5 +1,5 @@
 @extends('admin.components.form')
-@section('form_action', route('partners.update', $partner->id))
+@section('form_action', route('teams.update', $team->id))
 @section('form_type', 'POST')
 @section('fields_content')
     <div class="content-wrapper">
@@ -8,7 +8,7 @@
             @include('admin.components.errors')
             <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
-                    @include('admin.components.breadcrumb', ['module' => 'partners', 'action' => 'edit'])
+                    @include('admin.components.breadcrumb', ['module' => 'teams', 'action' => 'edit'])
                 </div>
                 <div class="card-toolbar px-3">
                     <ul class="nav nav-tabs nav-bold nav-tabs-line">
@@ -33,7 +33,7 @@
                                         </div>
                                         <input type="text" name="{{ $locale . '[title]' }}" placeholder="@lang('general.title')"
                                             class="form-control  pl-5 min-h-40px @error($locale . '.title') is-invalid @enderror"
-                                            value="{{ old($locale . '.title', $partner->translate($locale)->title) }}">
+                                            value="{{ old($locale . '.title', $team->translate($locale)->title) }}">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -46,7 +46,7 @@
                                         <input type="text" name="{{ $locale . '[subtitle]' }}"
                                             placeholder="@lang('general.subtitle')"
                                             class="form-control  pl-5 min-h-40px @error($locale . '.subtitle') is-invalid @enderror"
-                                            value="{{ old($locale . '.subtitle', $partner->translate($locale)->subtitle) }}">
+                                            value="{{ old($locale . '.subtitle', $team->translate($locale)->subtitle) }}">
                                     </div>
                                 </div>
     
@@ -56,11 +56,11 @@
                                     <label>@lang('general.description')(@lang('general.' . $locale))<span class="text-danger">*</span></label>
                                     <textarea rows="100" class="summernote @error($locale . '.description') is-invalid @enderror"
                                         name="{{ $locale . '[description]' }}">
-                                        {!! old($locale . '.description', $partner->translate($locale)->description) !!} 
+                                        {!! old($locale . '.description', $team->translate($locale)->description) !!} 
                                     </textarea>
                                 </div>
                                 {{-- <div class="form-group">
-                                        <label>@lang('partners.description') - @lang('general.'.$locale)<span class="text-danger"> * </span></label>
+                                        <label>@lang('teams.description') - @lang('general.'.$locale)<span class="text-danger"> * </span></label>
                                         <textarea name="{{ $locale . '[description]' }}" @error($locale . '.description') is-invalid @enderror class="form-control kt-ckeditor-5">{{ old($locale . '.description') }}</textarea>
                                     </div> --}}
                             </div>
@@ -75,7 +75,7 @@
                         <div class="col-md-6">
                             @include('admin.components.image', [
                                 'label' => __('general.image'),
-                                'value' => old('image', $partner->image),
+                                'value' => old('image', $team->image),
                                 'name' => 'image',
                                 'id' => 'kt_image_3',
                                 'accept' => 'image/*',
@@ -87,7 +87,7 @@
                 </div>
                 <div class="card-footer mb-5 mt-5">
                     <button type="submit" class="btn btn-outline-success">@lang('general.save')</button>
-                    <a href="{{ route('partners.index') }}" class="btn btn-outline-danger font-weight-bold">@lang('general.cancel')</a>
+                    <a href="{{ route('teams.index') }}" class="btn btn-outline-danger font-weight-bold">@lang('general.cancel')</a>
                 </div>
             </div>
         </div>

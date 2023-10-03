@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePartnerTranslationsTable extends Migration
+class CreateTeamTranslationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreatePartnerTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('partner_translations', function (Blueprint $table) {
+        Schema::create('team_translations', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
             $table->string('subtitle')->nullable();
             $table->text('description')->nullable();
-            $table->unsignedBigInteger('partner_id');
+            $table->unsignedBigInteger('team_id');
             $table->string('locale')->index();
-            $table->unique(['partner_id', 'locale']);
-            $table->foreign('partner_id')->references('id')->on('partners')->onDelete('cascade');
+            $table->unique(['team_id', 'locale']);
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class CreatePartnerTranslationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('partner_translations');
+        Schema::dropIfExists('team_translations');
     }
 }

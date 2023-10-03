@@ -13,6 +13,7 @@ use App\Http\Controllers\API\TestimonialController;
 use App\Http\Controllers\API\ProcessController;
 use App\Http\Controllers\API\SettingController;
 use App\Http\Controllers\API\PartnerController;
+use App\Http\Controllers\API\TeamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,8 +34,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::get('faqs/{id}', 'FaqController@show');
 // Route::get('processes', 'ProcessController@index');
 // Route::get('processes/{id}', 'ProcessController@show');
-// Route::get('partners', 'PartnerController@index');
-// Route::get('partners/{id}', 'PartnerController@show');
+// Route::get('teams', 'TeamController@index');
+// Route::get('teams/{id}', 'TeamController@show');
 // Route::get('counters', 'CounterController@index');
 // Route::get('counter/{id}', 'CounterController@show');
 // Route::get('contacts', 'ContactController@index');
@@ -60,6 +61,8 @@ Route::group(['middleware' => ['apiLocalization','cors']], function () {
     
     Route::get('/partners', [PartnerController::class, 'index']);
     Route::get('/partner/{id}', [PartnerController::class, 'show']);
+    Route::get('/teams', [TeamController::class, 'index']);
+    Route::get('/team/{id}', [TeamController::class, 'show']);
     
     
     Route::get('/counters', [CounterController::class, 'index']);

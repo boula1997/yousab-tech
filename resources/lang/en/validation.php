@@ -169,6 +169,8 @@ return [
         "service_id" => "Service",
         "process_id" => "Process",
         "partner_id" => "Partner",
+
+        "team_id" => "Team",
         "contact_id" => "Contact",
         "role_id" => "Role",
         "page_id" => "Page",
@@ -238,6 +240,8 @@ return [
             "video_id" => "Video in Arabic",
             "process_id" => "Process in Arabic",
             "partner_id" => "Partner in Arabic",
+
+            "team_id" => "Team in Arabic",
             "contact_id" => "Contact in Arabic",
             "role_id" => "Role in Arabic",
             "page_id" => "Page in Arabic",
@@ -309,6 +313,8 @@ return [
             "video_id" => "Video in English",
             "process_id" => "Process in English",
             "partner_id" => "Partner in English",
+
+            "team_id" => "Team in English",
             "contact_id" => "Contact in English",
             "role_id" => "Role in English",
             "page_id" => "Page in English",

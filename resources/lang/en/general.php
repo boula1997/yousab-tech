@@ -39,6 +39,8 @@ return [
     'contacts'  => 'Contacts',
     'videos'  => 'Videos',
     'partners'  => 'Partners',
+
+    'teams'  => 'Teams',
     'messages'  => 'Messages',
     'logout'  => 'Logout',
     'login'  => 'Login',
@@ -58,6 +60,8 @@ return [
     "testimonial" => "Testimonial",
     "process" => "Process",
     "partner" => "Partner",
+
+    "team" => "Team",
     "contact" => "Contact",
     "role" => "Role",
     "page" => "Page",

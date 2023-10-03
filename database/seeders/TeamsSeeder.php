@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Partner;
+use App\Models\Team;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class PartnersSeeder extends Seeder
+class TeamsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -23,7 +23,7 @@ class PartnersSeeder extends Seeder
        
 
         for ($i = 0; $i < count($title_ar); $i++) {
-            $Partner = Partner::create([
+            $Team = Team::create([
                 'ar' => [
                     'title' => $title_ar[$i],
                     'description' => $description_ar[$i],

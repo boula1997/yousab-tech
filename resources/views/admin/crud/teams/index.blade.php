@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains partner content -->
+    <!-- Content Wrapper. Contains team content -->
     <div class="content-wrapper">
         <div class="container p-3">
             <!-- Main content -->
@@ -16,10 +16,10 @@
                                     <!-- general form elements -->
                                     <div class="row">
                                         <div class="col-md-6 d-flex d-flex justify-content-start">
-                                            <h1 class="card-title fw-bold">@lang('general.partners')</h3>
+                                            <h1 class="card-title fw-bold">@lang('general.teams')</h3>
                                         </div>
                                         <div class="col-md-6 d-flex d-flex justify-content-end">
-                                            <a href="{{ route('partners.create') }}">
+                                            <a href="{{ route('teams.create') }}">
 
                                                 <button
                                                     class="btn btn-outline-primary px-5
@@ -42,17 +42,17 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($partners as $partner)
+                                            @foreach ($teams as $team)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td><img width="100" height="100" src="{{ $partner->image }}"
-                                                            alt="{{ $partner->title }}"></td>
-                                                    <td>{{ $partner->title }}</td>
+                                                    <td><img width="100" height="100" src="{{ $team->image }}"
+                                                            alt="{{ $team->title }}"></td>
+                                                    <td>{{ $team->title }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
-                                                            'route' => 'partners',
-                                                            'role' => 'partner',
-                                                            'module' => $partner,
+                                                            'route' => 'teams',
+                                                            'role' => 'team',
+                                                            'module' => $team,
                                                         ])
                                                     </td>
                                                 </tr>
