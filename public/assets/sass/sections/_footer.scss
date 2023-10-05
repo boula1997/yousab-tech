@@ -3,7 +3,7 @@
 ---------------------------------------------------*/
 .footer-area {
 	position: relative;
-	padding-top: 115px;
+	padding-top: 80px;
     &:after {
         content: '';
         position: absolute;
@@ -25,7 +25,7 @@
 	}
 	.widget_about {
 		.thumb {
-			margin-bottom: 20px;
+			
 			img {
 				max-width: 125px;
 			}

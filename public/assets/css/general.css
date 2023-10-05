@@ -62,3 +62,7 @@
 .description p{
     text-align: justify !important;
 }
+
+.footer-image{
+    width:150px !important;
+}
