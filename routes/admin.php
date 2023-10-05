@@ -80,6 +80,7 @@ Route::group(
             Route::resource('partners', PartnerController::class);
             Route::resource('teams', TeamController::class);
             Route::resource('pages', PageController::class);
+            Route::resource('partners', PartnerController::class);
             // Route::resource('about',AboutController::class);
             Route::resource('portfolios', PortfolioController::class);
             Route::resource('counters', CounterController::class);

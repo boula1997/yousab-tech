@@ -42,6 +42,7 @@ return [
 
     'teams'  => 'Teams',
     'messages'  => 'Messages',
+    'partners'  => 'Partners',
     'logout'  => 'Logout',
     'login'  => 'Login',
     'show'  => 'Show',
@@ -56,6 +57,7 @@ return [
     "model" => "Model",
     "team" => "Team",
     "video" => "Video",
+    "partner" => "Partner",
     "service" => "Service",
     "testimonial" => "Testimonial",
     "process" => "Process",
@@ -63,6 +65,7 @@ return [
 
     "team" => "Team",
     "contact" => "Contact",
+    "partner" => "Partner",
     "role" => "Role",
     "page" => "Page",
     "tokenable" => "Tokenable",
@@ -149,6 +152,7 @@ return [
     'address' => 'Address',
     'team' => 'Team',
     'portfolio' => 'Portfolio',
+    'partner' => 'Partner',
     'your_email' => 'Your Email',
     'fullname' => 'Full Name',
     'email_address' => 'Email Address',
