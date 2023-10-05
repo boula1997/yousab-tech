@@ -84,7 +84,7 @@ function itemsCount($model)
         "services" => count(Service::get()),
         "testimonials" => count(Testimonial::get()),
         "processes" => count(Process::get()),
-        "partners" => count(Partner::get()),
+        // "partners" => count(Partner::get()),
         "services" => count(Service::get()),
         "users" => count(User::get()),
         "admins" => count(Admin::get()),

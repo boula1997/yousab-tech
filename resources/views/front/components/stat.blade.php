@@ -1,6 +1,6 @@
     <!-- skill area start -->
     <div class="skill-area bg-relative bg-sky pd-top-120 pd-bottom-120">
-        <img class="half-bg-right" src="assets/img/bg/4.webp" alt="img">
+        <img class="half-bg-right" src="{{ asset('assets/img/bg/4.webp') }}" alt="img">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 pe-5 mb-5 mb-lg-0">

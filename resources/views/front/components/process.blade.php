@@ -22,7 +22,7 @@
                             <div class="details-wrap">
                                 <div class="details-inner">
                                     <h4 class="text-limit" style="--lines:1;">{{ $process->title }}</h4>
-                                    <p class="text-limit" style="--lines:5;">{!! $process->description !!}</p>
+                                    <div class="text-limit description" style="--lines:5;">{!! $process->description !!}</div>
                                 </div>
                             </div>
                         </div>
