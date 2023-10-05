@@ -5,7 +5,7 @@
     <div class="content-wrapper">
         @method('PUT')
 
-        @include('admin.components.errors')
+        @include('admin.components.alert-error')
         <div class="card card-custom mb-2">
             <div class="card-header card-header-tabs-line">
                 @include('admin.components.breadcrumb', ['module' => 'processes', 'action' => 'edit'])

@@ -6,7 +6,7 @@
         @method('PUT')
 
                 <div class="container p-3">
-            @include('admin.components.errors')
+            @include('admin.components.alert-error')
 
             <div class="card card-custom">
                 <div class="card-header card-header-tabs-line">

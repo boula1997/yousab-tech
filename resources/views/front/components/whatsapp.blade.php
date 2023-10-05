@@ -24,7 +24,7 @@
                 whatsapp: "+201208050298", // WhatsApp number
                 call_to_action: "{{__('general.contact_us')}}", // Call to action
                 button_color: "#0060FF", // Color of button
-                position: "left", // Position may be 'right' or 'left'
+                position: "{{ app()->getLocale()=='ar'? 'right' : left }}", // Position may be 'right' or 'left'
                 order: "call,whatsapp", // Order of buttons
             };
             var proto = 'https:', host = "getbutton.io", url = proto + '//static.' + host;

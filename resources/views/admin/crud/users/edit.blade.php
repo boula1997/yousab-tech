@@ -3,7 +3,7 @@
 @section('form_type', 'POST')
 @section('fields_content')
     <div class="content-wrapper">
-        @include('admin.components.errors')
+        @include('admin.components.alert-error')
 
         @method('PUT')
         <!-- Main content -->

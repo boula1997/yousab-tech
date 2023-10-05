@@ -4,9 +4,9 @@
 @section('fields_content')
     @method('post')
     <div class="content-wrapper">
-        
-                <div class="container p-3">
-            @include('admin.components.errors')
+
+        <div class="container p-3">
+            @include('admin.components.alert-error')
             <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
                     @include('admin.components.breadcrumb', ['module' => 'partners', 'action' => 'create'])
@@ -21,10 +21,10 @@
                         @endforeach
                     </ul>
                 </div>
-    
+
                 <div class="card-body">
                     <div class="tab-content">
-    
+
                         @foreach (config('translatable.locales') as $key => $locale)
                             <div class="tab-pane fade show @if ($key == 0) active @endif"
                                 id="{{ $locale }}" role="tabpanel">
@@ -34,11 +34,12 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="flaticon-edit"></i></span>
                                         </div>
-                                        <input type="text" name="{{ $locale . '[title]' }}" placeholder="@lang('general.title')"
+                                        <input type="text" name="{{ $locale . '[title]' }}"
+                                            placeholder="@lang('general.title')"
                                             class="form-control  pl-5 min-h-40px @error($locale . '.title') is-invalid @enderror"
                                             value="{{ old($locale . '.title') }}">
                                     </div>
-                                </div>    
+                                </div>
                             </div>
                         @endforeach
                     </div>
@@ -56,10 +57,10 @@
                                 'accept' => 'image/*',
                                 'required' => true,
                             ])
-    
+
                         </div>
-    
-    
+
+
                     </div>
                 </div>
                 <div class="card-footer mb-5">

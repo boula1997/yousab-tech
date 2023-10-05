@@ -61,7 +61,7 @@ class MessageController extends Controller
             $data = $request->all();
             $message = $this->message->create($data);
             Mail::to(env('MAIL_FROM_ADDRESS'))->send(new MessageUserMail($message));
-            return response()->json(['success' => trans('message.sent_successfully')]);
+            return response()->json(['success' => trans('general.sent_successfully')]);
         } catch (\Exception $e) {
             return response()->json(['error' => __($e->getMessage())]);
         }

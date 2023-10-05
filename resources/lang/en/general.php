@@ -140,6 +140,10 @@ return [
     "roles" => "Roles",
     "role_mangement" => "Role Mangement",
     "settings" => "Settings",
+    "choose" => "Choose",
+    "file" => "File",
+    "instagram" => "Instagram",
+    "linkedin" => "LinkedIn",
 
     'opening_hour' => 'Opening Hour ',
     'hotline' => 'Hot Line',

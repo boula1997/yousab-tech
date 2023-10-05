@@ -4,7 +4,7 @@
 @section('fields_content')
     <!-- Content Wrapper. Contains blog content -->
     <div class="content-wrapper">
-        @include('admin.components.errors')
+        @include('admin.components.alert-error')
 
         <!-- Content Header (blog header) -->
         <section class="content-header">

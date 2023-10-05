@@ -141,6 +141,12 @@ return [
     "logo" => "اللوجو",
     "tab" => "التاب",
 
+    "choose" => "اختر",
+    "file" => "ملف",
+
+    "instagram" => "انستجرام",
+    "linkedin" => "لينكدان",
+
 
 
     'opening_hour' => 'توقيت العمل ',

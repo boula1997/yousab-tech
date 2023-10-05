@@ -5,7 +5,7 @@
     @method('post')
     <div class="content-wrapper">
         <div class="container p-3">
-            @include('admin.components.errors')
+            @include('admin.components.alert-error')
             <div class="card card-custom">
                 <div class="card-header card-header-tabs-line">
                     @include('admin.components.breadcrumb', ['module' => 'contacts', 'action' => 'create'])

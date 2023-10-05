@@ -8,7 +8,7 @@
         @method('PUT')
         <!-- Main content -->
         <section class="content">
-            @include('admin.components.errors')
+            @include('admin.components.alert-error')
 
             <div class="container-fluid">
                 <div class="row">

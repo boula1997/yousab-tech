@@ -23,7 +23,7 @@ class ContactsSeeder extends Seeder
 
         $contacts=["https://www.facebook.com/YousabTech?mibextid=ZbWKwL",
                    "www.linkedin.com/in/yousab-tech-3707b428b",
-                   "################",
+                   "https://www.instagram.com",
                    "yousabtech@gmail.com",
                    "01126785910",
                    "01208050298"];

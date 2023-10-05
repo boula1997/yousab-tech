@@ -13,15 +13,15 @@
             <div class="row">
                 @foreach ($processes as $process)
                     <div class="col-lg-3 col-md-6" data-aos="zoom-in">
-                        <div class="single-work-inner style-two text-center">
-                            <div class="count-wrap">
+                        <div class="single-work-inner style-two">
+                            <div class="count-wrap text-center">
                                 <div class="count-inner">
                                     <h2>0{{ $loop->iteration }}</h2>
                                 </div>
                             </div>
                             <div class="details-wrap">
                                 <div class="details-inner">
-                                    <h4 class="text-limit" style="--lines:1;">{{ $process->title }}</h4>
+                                    <h4 class="text-limit" style="--lines:1;" title="{{ $process->title }}">{{ $process->title }}</h4>
                                     <div class="text-limit description" style="--lines:5;">{!! $process->description !!}</div>
                                 </div>
                             </div>

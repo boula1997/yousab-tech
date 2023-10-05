@@ -5,7 +5,7 @@
     <div class="content-wrapper">
         @method('PUT')
         <div class="container p-3">
-            @include('admin.components.errors')
+            @include('admin.components.alert-error')
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
