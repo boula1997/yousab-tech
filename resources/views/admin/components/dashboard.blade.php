@@ -168,7 +168,7 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="d-flex justify-content-center">
-            <img class="logo-side pt-3" style="height: 120px" src="{{ settings()->logo }}" alt="">
+            <img class="logo-side pt-3" style="height: 120px" src="{{ settings()->white_logo }}" alt="">
         </div>
         {{-- <div class="">
             <!-- Sidebar user panel (optional) -->
