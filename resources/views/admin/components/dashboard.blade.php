@@ -265,7 +265,7 @@
                             <i class="far fa-handshake"></i>
                             <p>
                                 @lang('general.partners') <i class=" px-1 fas fa-angle-left right"></i>
-                                {{-- <span class="badge badge-info right">{{ itemsCount('partners') }}</span> --}}
+                                <span class="badge badge-info right">{{ itemsCount('partners') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
