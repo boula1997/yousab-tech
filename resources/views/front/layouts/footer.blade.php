@@ -1,5 +1,5 @@
 <!-- footer area start -->
-<footer class="footer-area bg-black bg-cover" style="background-image: url({{ asset('./assets/img/bg/2.webp') }});">
+<footer class="footer-area bg-black bg-cover mt-5" style="background-image: url({{ asset('./assets/img/bg/2.webp') }});">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6">
