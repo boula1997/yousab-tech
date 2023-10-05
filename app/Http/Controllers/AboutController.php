@@ -6,7 +6,7 @@ use App\Models\Service;
 use App\Models\Testimonial;
 use App\Models\Process;
 use App\Models\Gallery;
-use App\Models\Slider;
+use App\Models\Team;
 use App\Models\Counter;
 use Exception;
 
@@ -19,16 +19,16 @@ class AboutController extends Controller
      */
     private $service;
     private $testimonial;
-    private $slider;
+    private $team;
     private $process;
     private $counter;
     private $portfolio;
 
-    public function __construct(Service $service, Testimonial $testimonial, Slider $slider, Process $process, Counter $counter, Gallery $portfolio)
+    public function __construct(Service $service, Testimonial $testimonial, Team $team, Process $process, Counter $counter, Gallery $portfolio)
     {
         $this->service = $service;
         $this->testimonial = $testimonial;
-        $this->slider = $slider;
+        $this->team = $team;
         $this->process = $process;
         $this->counter = $counter;
         $this->portfolio = $portfolio;

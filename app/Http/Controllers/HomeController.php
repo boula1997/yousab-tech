@@ -6,11 +6,10 @@ use App\Models\Service;
 use App\Models\Testimonial;
 use App\Models\Process;
 use App\Models\Gallery;
-use App\Models\Slider;
+use App\Models\Team;
 use App\Models\Counter;
 use App\Models\Faq;
 use App\Models\Setting;
-use App\Models\Team;
 use Exception;
 
 class HomeController extends Controller
@@ -22,7 +21,7 @@ class HomeController extends Controller
      */
     private $service;
     private $testimonial;
-    private $slider;
+    private $team;
     private $process;
     private $counter;
     private $portfolio;
@@ -30,11 +29,11 @@ class HomeController extends Controller
     // private $settings;
     private $teams;
 
-    public function __construct(Service $service, Testimonial $testimonial, Slider $slider, Process $process, Counter $counter, Gallery $portfolio,Faq $faq,Team $teams)
+    public function __construct(Service $service, Testimonial $testimonial, Team $team, Process $process, Counter $counter, Gallery $portfolio,Faq $faq,Team $teams)
     {
         $this->service = $service;
         $this->testimonial = $testimonial;
-        $this->slider = $slider;
+        $this->team = $team;
         $this->process = $process;
         $this->counter = $counter;
         $this->portfolio = $portfolio;
@@ -54,14 +53,14 @@ class HomeController extends Controller
             $services = $this->service->get();
             $testimonials = $this->testimonial->get();
             $processes = $this->process->take(9)->latest()->get();
-            $sliders = $this->slider->get();
+            $teams = $this->team->get();
             $counters = $this->counter->get();
             $portfolios = $this->portfolio->get();
             $faqs=$this->faq->get();
             // $settings=$this->settings->get();
             $teams=$this->teams->get();
 
-            return view('front.index', compact('testimonials', 'services', 'processes', 'portfolios', 'sliders', 'counters','faqs','teams'));
+            return view('front.index', compact('testimonials', 'services', 'processes', 'portfolios', 'teams', 'counters','faqs','teams'));
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);

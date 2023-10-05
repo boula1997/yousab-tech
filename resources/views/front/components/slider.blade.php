@@ -17,7 +17,7 @@
                         <h2 class="title fs-1">{{page('home-banner')->title}}</h2>
                         <p class="content">{!! page('home-banner')->description !!}</p>
                         <div class="btn-wrap">
-                            <a class="btn btn-base me-2" href="{{ request()->routeIs('fr }}} }}ont.home')?'#process':route('front.home').'#process'}}" >{{__('general.get_started')}}</a>
+                            <a class="btn btn-base me-2" href="{{ request()->routeIs('front.home')?'#process':route('front.home').'#process'}}" >{{__('general.get_started')}}</a>
                             <a class="btn btn-border-white" href="{{ route('front.message') }}">{{__('general.message')}}</a>
                         </div>
                     </div>

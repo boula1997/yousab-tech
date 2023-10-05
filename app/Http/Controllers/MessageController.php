@@ -10,7 +10,7 @@ use App\Models\Service;
 use App\Models\Testimonial;
 use App\Models\Process;
 use App\Models\Gallery;
-use App\Models\Slider;
+use App\Models\Team;
 use App\Models\Counter;
 use Exception;
 use Illuminate\Contracts\Mail\Mailer;
