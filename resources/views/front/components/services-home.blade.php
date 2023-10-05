@@ -5,8 +5,8 @@
             <div class="row">
                 <div class="col-lg-4" data-aos="fade-up">
                     <div class="section-title border-radius-5 p-35 bg-base style-white mb-lg-0" >
-                        <h2 class="title mt-4">{{page('service-section')->title}}</h2>
-                             <div class="text-white">{!! page('service-section')->description !!}</div>
+                        <h2 class="title mt-4 text-limit" style='--lines: 1;'>{{page('service-section')->title}}</h2>
+                             <div class="text-white text-limit" style='--lines: 6;'>{!! page('service-section')->description !!}</div>
                              
                         <div class="btn-wrap mt-4 pt-1 mb-4">
                             <a class="btn btn-small btn-border-white mt-2" href="message.html">{{__('general.message')}}</a>
@@ -24,9 +24,8 @@
                                     <i class="{{ $service->icon }}"></i>
                                 </div>
                                 <div class="details">
-                                    
-                                    <h3><a href="{{route('front.show.service',$service->id)}}">{{$service->title}}</a></h3>
-                                      {!! $service->description !!}
+                                    <h3><a href="{{route('front.show.service',$service->id)}}" class="text-limit" style='--lines: 1;'>{{$service->title}}</a></h3>
+                                      <div class="text-limit" style="--lines:5;">{!! $service->description !!}</div>
                                 </div>
                             </div>
                         </div>
