@@ -13,36 +13,25 @@ class PartnerSeeder extends Seeder
      */
     public function run(): void
     {
-        $title_en = ["Boula Nessim",
-                     "Ibrahim Samy",
-                     "Kerolos Edward",
-                     "Tadrous Emil",
-                     "Gerges Makram"];
-        $subtitle_en = ["Software Engineer",
-                        "Software Engineer",
-                        "Web Designer",
-                        "Web Developer",
-                        "Manager"];
-        $description_en = [null,null,null,null,null];
+        $title_en = ["SEO Mind",
+                     "Boosterio",
+                     "Atomic SEO",
+                     "Green Host"];
+        $subtitle_en = [null,null,null,null];
+        $description_en = [null,null,null,null];
       
-        $title_ar = ["بولا نسيم",
-                     "ابراهيم سامى",
-                     "كيرلس ادوارد",
-                     "تادرس اميل",
-                     "جرجس مكرم"];
+        $title_ar = ["SEO Mind",
+                    "Boosterio",
+                    "Atomic SEO",
+                    "Green Host"];
 
-        $subtitle_ar =["مهندس برمجيات",
-                       "مهندس برمجيات",
-                        "مصمم ويب ",
-                        "مطور ويب",
-                        "مدير"];
-        $description_ar =  [null,null,null,null,null];
+        $subtitle_ar = [null,null,null,null];
+        $description_ar =  [null,null,null,null];
 
-        $image=["images/YE92B4LXiM6QhFcQbr5YKECGaMU5k8NokXve9o1m.jpg",
-                "images/YQXLPLiQgi8H1E9YE77J3lwUX0qSOYXkHMP192Nz.png",
-                "images/pekmLKsEWdfVwDSwbG0sSIZARXfO8GavZPaoOF1D.jpg",
-                "images/tAgfJG0vAJHhQsCii9FR441z6tGs9fyGKj92MUzy.jpg",
-                "images/zlqIgyZxaZJCmqfSvsxqkTIFsou1vItih8tUaqXi.jpg"];
+        $image=["images/tykEYLJg6IvrEdpzYcHTmLm5WWErcSklnEZcOjcI.webp",
+                "images/HsWogOvEjxPtEStdNr913ols44RFifVERaoyxkwh.webp",
+                "images/PF6upRmlXRiiLF1JVifLw2q43EI50i0dnTGHP6xu.webp",
+                "images/TpVI2ZX1wEb42aAx56kLkGIpwGHyW1sPLeBgF5e8.webp"];
        
        
 

@@ -500,7 +500,7 @@
                 @can('setting-list')
                     <li class="nav-item">
                         <a href="{{ route('edit.setting') }}" class="nav-link">
-                            <i class=" px-1 fas fa-cogs"></i>
+                            <i class="fas fa-cog"></i>
                             <p>
                                 @lang('general.settings')
                                 {{-- <span class="right badge badge-danger">@lang('general.new')</span> --}}

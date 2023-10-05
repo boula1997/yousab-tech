@@ -80,7 +80,7 @@ class ServiceSeeder extends Seeder
 
         $icons=["far fa-window-restore",
                 "fas fa-shopping-cart",
-                "far fa-life-ring",
+                "fas fa-cog",
                 "fab fa-ioxhost"];
 
         for ($i = 0; $i < count($title_ar); $i++) {
