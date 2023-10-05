@@ -4929,8 +4929,9 @@ ul {
 .single-project-inner .thumb img {
   -webkit-transition: 0.7s;
   transition: 0.7s;
-  object-fit: contain;
-  height: 366px;
+  object-fit: cover;
+  height: auto;
+  width: auto;
 }
 
 .single-project-inner .thumb .icon {
