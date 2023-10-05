@@ -173,6 +173,13 @@ return [
     'subject'=>'Subject',
     'reply'=>'Reply',
     'visit_our_website'=>'Visit Our Website',
-    'subscribe_now'=>'Subscribe To Our Newsletter'
+    'subscribe_now'=>'Subscribe To Our Newsletter',
+    'show_more'=>'Show More',
+    'show_less'=>'Show Less',
+    'created_successfully'=>'Created Successfully',
+    'update_successfully'=>'Updated Successfully',
+    'deleted_successfully'=>'Deleted Successfully',
+    'something_wrong'=>'Something Wrong',
+    'show_all'=>'Show all'
 
 ];

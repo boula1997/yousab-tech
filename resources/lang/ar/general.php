@@ -176,6 +176,13 @@ return [
     'subject'=>'موضوع',
     'reply'=>'رد',
     'visit_our_website'=>'قم بزيارة موقعنا',
-    'subscribe_now'=>'اشترك فى قائمتنا البريدية'
+    'subscribe_now'=>'اشترك فى قائمتنا البريدية',
+    'show_more'=>'اعرض اكثر',
+    'show_less'=>'اعرض اقل',
+    'created_successfully'=>'تم الانشاء بنجاح',
+    'update_successfully'=>'تم التعديل بنجاح',
+    'deleted_successfully'=>'تم الحذف بنجاح',
+    'something_wrong'=>'يوجد خطأ ما !!',
+    'show_all'=>'عرض الكل'
 
 ];
