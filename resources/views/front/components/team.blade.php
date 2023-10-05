@@ -24,22 +24,22 @@
 									</div>
                                      <ul class="social-media">
                                          <li>
-                                             <a class="facebook" href="#">
+                                             <a class="facebook" href="{{ $team->facebook }}">
                                                  <i class="fab fa-facebook-f"></i>
                                              </a>
                                          </li>
                                          <li>
-                                             <a class="twitter" href="#">
+                                             <a class="twitter" href="{{ $team->twitter }}">
                                                  <i class="fab fa-twitter"></i>
                                              </a>
                                          </li>
                                          <li>
-                                             <a class="instagram" href="#">
+                                             <a class="instagram" href="{{ $team->instagram }}">
                                                  <i class="fab fa-instagram"></i>
                                              </a>
                                          </li>
                                          <li>
-                                             <a class="youtube" href="#">
+                                             <a class="youtube" href="{{ $team->youtube }}">
                                                  <i class="fab fa-youtube"></i>
                                              </a>
                                          </li>

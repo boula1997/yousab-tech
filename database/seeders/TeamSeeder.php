@@ -38,6 +38,11 @@ class TeamSeeder extends Seeder
                         "مدير"];
         $description_ar =  [null,null,null,null,null];
 
+        $facebooks=["https://www.facebook.com","https://www.facebook.com","https://www.facebook.com","https://www.facebook.com","https://www.facebook.com"];
+        $twitters=["https://www.twitter.com","https://www.twitter.com","https://www.twitter.com","https://www.twitter.com","https://www.twitter.com"];
+        $instagrams=["https://www.instagram.com","https://www.instagram.com","https://www.instagram.com","https://www.instagram.com","https://www.instagram.com"];
+        $linkedins=["https://www.linkedin.com","https://www.linkedin.com","https://www.linkedin.com","https://www.linkedin.com","https://www.linkedin.com"];
+
         $image=["images/YE92B4LXiM6QhFcQbr5YKECGaMU5k8NokXve9o1m.jpg",
                 "images/YQXLPLiQgi8H1E9YE77J3lwUX0qSOYXkHMP192Nz.png",
                 "images/pekmLKsEWdfVwDSwbG0sSIZARXfO8GavZPaoOF1D.jpg",
@@ -58,6 +63,10 @@ class TeamSeeder extends Seeder
                     'description' => $description_en[$i],
                     'subtitle' => $subtitle_en[$i],
                 ],
+                "facebook"=>$facebooks[$i],
+                "twitter"=>$twitters[$i],
+                "instagram"=>$instagrams[$i],
+                "linkedin"=>$linkedins[$i],
             ]);
             $Team->file()->create(["url"=>$image[$i]]);
           }
