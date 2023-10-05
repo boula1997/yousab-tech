@@ -27,7 +27,7 @@
                     <div class="accordion mt-4" id="accordionExample">
 
                         @foreach ($faqs as $faq)
-                            <div class="accordion-item single-accordion-inner aos-init aos-animate {{ $loop->iteration>3?'d-none':'' }}"
+                            <div class="accordion-item single-accordion-inner aos-init aos-animate {{ $loop->iteration > 3 ? 'd-none showMore' : '' }}"
                                 data-aos="fade-right">
                                 <h2 class="accordion-header" id="headingOne{{ $loop->index }}">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -46,7 +46,7 @@
                             </div>
                         @endforeach
                         <div class="text-center">
-                            <a class="btn btn-base me-2">{{__('general.show_more')}}</a>
+                            <a class="btn btn-base me-2" id="showMore">{{ __('general.show_more') }}</a>
                         </div>
                     </div>
 
@@ -59,8 +59,18 @@
 
     @push('js')
         <script>
-            $(document).ready(function(){
-                
+            $(document).ready(function() {
+                $(document).on('click','#showMore', function() {
+                    $('.showMore').removeClass('d-none');
+                    $('#showMore').text("{{ __('general.show_less') }}");
+                    $('#showMore').attr('id', 'showLess');
+                });
+
+                $(document).on('click','#showLess', function() {
+                    $('.showMore').addClass('d-none');
+                    $('#showLess').text("{{ __('general.show_more') }}");
+                    $('#showLess').attr('id', 'showMore');
+                });
             })
         </script>
     @endpush
