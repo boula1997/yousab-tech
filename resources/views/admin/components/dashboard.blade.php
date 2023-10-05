@@ -262,7 +262,7 @@
                 @can('partner-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class=" px-1 fas fa-partners-h"></i>
+                            <i class="far fa-handshake"></i>
                             <p>
                                 @lang('general.partners') <i class=" px-1 fas fa-angle-left right"></i>
                                 {{-- <span class="badge badge-info right">{{ itemsCount('partners') }}</span> --}}
@@ -281,7 +281,7 @@
                 @can('team-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class=" px-1 fas fa-teams-h"></i>
+                            <i class="fas fa-user-friends"></i>
                             <p>
                                 @lang('general.teams') <i class=" px-1 fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('teams') }}</span>
