@@ -14,7 +14,7 @@ class Partner extends Model implements TranslatableContract
     use HasFactory, Translatable, MorphFile;
     protected $table = 'partners';
     protected $guarded = [];
-    public $translatedAttributes = ['title', 'subtitle', 'description'];
+    public $translatedAttributes = ['title'];
     public $timestamps = true;
 
     public function getImageAttribute()
