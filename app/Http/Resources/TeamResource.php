@@ -20,6 +20,10 @@ class TeamResource extends JsonResource
             "title" => $this->title,
             "subtitle" => $this->subtitle,
             "description" => $this->description,
+            "facebook" => $this->facebook,
+            "twitter" => $this->twitter,
+            "instagram" => $this->instagram,
+            "linkedin" => $this->linkedin,
         ];
     }
 }

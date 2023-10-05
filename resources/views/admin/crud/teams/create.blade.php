@@ -70,6 +70,54 @@
             <div class="card card-custom">
                 <div class="card-body">
                     <div class="row">
+                        <div class="col-md-6 form-group">
+                            <label>@lang('general.facebook')<span class="text-danger"> *
+                                </span></label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                                </div>
+                                <input type="text" name="facebook" placeholder="@lang('general.facebook')"
+                                    class="form-control  pl-5 min-h-40px @error('facebook') is-invalid @enderror"
+                                    value="{{ old('facebook') }}">
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>@lang('general.twitter')<span class="text-danger"> *
+                                </span></label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                                </div>
+                                <input type="text" name="twitter" placeholder="@lang('general.twitter')"
+                                    class="form-control  pl-5 min-h-40px @error('twitter') is-invalid @enderror"
+                                    value="{{ old('twitter') }}">
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>@lang('general.instagram')<span class="text-danger"> *
+                                </span></label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                                </div>
+                                <input type="text" name="instagram" placeholder="@lang('general.instagram')"
+                                    class="form-control  pl-5 min-h-40px @error('instagram') is-invalid @enderror"
+                                    value="{{ old('instagram') }}">
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>@lang('general.linkedin')<span class="text-danger"> *
+                                </span></label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                                </div>
+                                <input type="text" name="linkedin" placeholder="@lang('general.linkedin')"
+                                    class="form-control  pl-5 min-h-40px @error('linkedin') is-invalid @enderror"
+                                    value="{{ old('linkedin') }}">
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             @include('admin.components.image', [
                                 'label' => __('general.image'),

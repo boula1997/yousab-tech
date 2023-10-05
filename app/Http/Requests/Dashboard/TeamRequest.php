@@ -25,6 +25,10 @@ class TeamRequest extends FormRequest
         $image = request()->isMethod('put') ? 'nullable' : 'required';
         $rules = [
             'image' =>  $image ,
+            'facebook' =>  'nullable|url' ,
+            'twitter' =>  'nullable|url' ,
+            'instagram' =>  'nullable|url' ,
+            'linkedin' =>  'nullable|url' ,
         ];
         foreach (config('translatable.locales') as $locale) {
             $rules += [$locale . '.title' => ['required', 'string']];

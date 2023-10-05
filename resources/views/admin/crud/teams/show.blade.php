@@ -40,7 +40,7 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    
                                 </div>
                                 <br>
                                 <br>
@@ -55,24 +55,56 @@
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
-                </div>
-
-                <div class="card card-custom">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    @if ($team->file !== null)
+                    
+                    <div class="card card-custom">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-7 bg-light p-3 rounded h-100">
+                                        <div class="card-title fw-bold">
+                                            <h5 class="font-weight-bolder text-dark">@lang('general.facebook'):</h5>
+                                            <p class="m-0">{{ $team->facebook }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-7 bg-light p-3 rounded h-100">
+                                        <div class="card-title fw-bold">
+                                            <h5 class="font-weight-bolder text-dark">@lang('general.twitter'):</h5>
+                                            <p class="m-0">{{ $team->twitter }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-7 bg-light p-3 rounded h-100">
+                                        <div class="card-title fw-bold">
+                                            <h5 class="font-weight-bolder text-dark">@lang('general.instagram'):</h5>
+                                            <p class="m-0">{{ $team->instagram }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-7 bg-light p-3 rounded h-100">
+                                        <div class="card-title fw-bold">
+                                            <h5 class="font-weight-bolder text-dark">@lang('general.linkedin'):</h5>
+                                            <p class="m-0">{{ $team->linkedin }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @if ($team->file !== null)
                                         <label class="col-form-label d-block">@lang('general.image')</label>
                                         <br>
                                         <img src="{{ asset($team->image) }}" class="w-50">
-                                    @endif
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
