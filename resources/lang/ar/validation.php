@@ -15061,6 +15061,7 @@ return [
         "last_used_at" => "last_used_at",
         "phone" => "الهاتف",
         "logo" => "الشعار",
+        "white_logo" => "الشعارالابيض",
         "uuid" => "uuid",
         "email" => "البريد إلكتروني",
         "identifier" => "المعرف",
