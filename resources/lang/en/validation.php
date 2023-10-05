@@ -213,7 +213,7 @@ return [
         "last_used_at" => "Last_used_at",
         "phone" => "Phone",
         "logo" => "Logo",
-    "white_logo" => "ًWhite Logo",
+    "white_logo" => "White Logo",
 
         "uuid" => "Uuid",
         "email" => "Email",
