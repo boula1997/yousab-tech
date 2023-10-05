@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
-                    @include('admin.components.alert-success')
+                    
 
 
                 </div>

@@ -9,11 +9,11 @@ use App\Models\Gallery;
 use App\Models\Image;
 use App\Models\Page;
 use App\Models\Team;
+use App\Models\Partner;
 use App\Models\Testimonial;
 use App\Models\Process;
 use App\Models\Service;
 use App\Models\Setting;
-use App\Models\Partner;
 use App\Models\User;
 use App\Models\Video;
 use Illuminate\Support\Facades\File;
@@ -81,10 +81,11 @@ function itemsCount($model)
         "images" => count(Image::get()),
         "pages" => count(Page::get()),
         "teams" => count(Team::get()),
+        "partners" => count(Partner::get()),
         "services" => count(Service::get()),
         "testimonials" => count(Testimonial::get()),
         "processes" => count(Process::get()),
-        // "partners" => count(Partner::get()),
+        "partners" => count(Partner::get()),
         "services" => count(Service::get()),
         "users" => count(User::get()),
         "admins" => count(Admin::get()),

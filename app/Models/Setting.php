@@ -26,4 +26,8 @@ class Setting extends Model implements TranslatableContract
     {
         return file_exists($val) ? asset($val) :  asset('default.jpg');
     }
+    public function getwhiteLogoAttribute($val)
+    {
+        return file_exists($val) ? asset($val) :  asset('default.jpg');
+    }
 }

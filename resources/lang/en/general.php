@@ -42,6 +42,7 @@ return [
 
     'teams'  => 'Teams',
     'messages'  => 'Messages',
+    'partners'  => 'Partners',
     'logout'  => 'Logout',
     'login'  => 'Login',
     'show'  => 'Show',
@@ -56,6 +57,7 @@ return [
     "model" => "Model",
     "team" => "Team",
     "video" => "Video",
+    "partner" => "Partner",
     "service" => "Service",
     "testimonial" => "Testimonial",
     "process" => "Process",
@@ -63,6 +65,7 @@ return [
 
     "team" => "Team",
     "contact" => "Contact",
+    "partner" => "Partner",
     "role" => "Role",
     "page" => "Page",
     "tokenable" => "Tokenable",
@@ -102,6 +105,7 @@ return [
     "last_used_at" => "Last_used_at",
     "phone" => "Phone",
     "logo" => "Logo",
+    "white_logo" => "White Logo",
     "uuid" => "Uuid",
     "email" => "Email",
     "identifier" => "Identifier",
@@ -149,6 +153,7 @@ return [
     'address' => 'Address',
     'team' => 'Team',
     'portfolio' => 'Portfolio',
+    'partner' => 'Partner',
     'your_email' => 'Your Email',
     'fullname' => 'Full Name',
     'email_address' => 'Email Address',
@@ -168,6 +173,13 @@ return [
     'subject'=>'Subject',
     'reply'=>'Reply',
     'visit_our_website'=>'Visit Our Website',
-    'subscribe_now'=>'Subscribe To Our Newsletter'
+    'subscribe_now'=>'Subscribe To Our Newsletter',
+    'show_more'=>'Show More',
+    'show_less'=>'Show Less',
+    'created_successfully'=>'Created Successfully',
+    'update_successfully'=>'Updated Successfully',
+    'deleted_successfully'=>'Deleted Successfully',
+    'something_wrong'=>'Something Wrong',
+    'show_all'=>'Show all'
 
 ];

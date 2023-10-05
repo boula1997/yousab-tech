@@ -168,7 +168,7 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="d-flex justify-content-center">
-            <img class="logo-side pt-3" style="height: 120px" src="{{ settings()->logo }}" alt="">
+            <img class="logo-side pt-3" style="height: 120px" src="{{ settings()->white_logo }}" alt="">
         </div>
         {{-- <div class="">
             <!-- Sidebar user panel (optional) -->
@@ -262,10 +262,10 @@
                 @can('partner-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class=" px-1 fas fa-partners-h"></i>
+                            <i class="far fa-handshake"></i>
                             <p>
                                 @lang('general.partners') <i class=" px-1 fas fa-angle-left right"></i>
-                                {{-- <span class="badge badge-info right">{{ itemsCount('partners') }}</span> --}}
+                                <span class="badge badge-info right">{{ itemsCount('partners') }}</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
@@ -281,7 +281,7 @@
                 @can('team-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class=" px-1 fas fa-teams-h"></i>
+                            <i class="fas fa-user-friends"></i>
                             <p>
                                 @lang('general.teams') <i class=" px-1 fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('teams') }}</span>
@@ -500,7 +500,7 @@
                 @can('setting-list')
                     <li class="nav-item">
                         <a href="{{ route('edit.setting') }}" class="nav-link">
-                            <i class=" px-1 fas fa-cogs"></i>
+                            <i class="fas fa-cog"></i>
                             <p>
                                 @lang('general.settings')
                                 {{-- <span class="right badge badge-danger">@lang('general.new')</span> --}}

@@ -1,10 +1,10 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains counter content -->
+    <!-- Content Wrapper. Contains partner content -->
     <div class="content-wrapper">
-        <!-- Main content -->
         <div class="container p-3">
+            <!-- Main content -->
             <section class="content pt-2">
                 <div class="container-fluid">
                     <div class="row">
@@ -16,14 +16,14 @@
                                     <!-- general form elements -->
                                     <div class="row">
                                         <div class="col-md-6 d-flex d-flex justify-content-start">
-                                            <h1 class="card-title fw-bold">@lang('general.pages')</h3>
+                                            <h1 class="card-title fw-bold">@lang('general.partners')</h3>
                                         </div>
                                         <div class="col-md-6 d-flex d-flex justify-content-end">
-                                            <a href="{{ route('counters.create') }}">
+                                            <a href="{{ route('partners.create') }}">
 
                                                 <button
                                                     class="btn btn-outline-primary px-5
-                                                    "><i
+                                                   "><i
                                                         class="fa fa-plus fa-sm px-2" aria-hidden="true"></i>
                                                     @lang('general.add')</button>
                                             </a>
@@ -36,22 +36,23 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
+                                                <th>@lang('general.image')</th>
                                                 <th>@lang('general.title')</th>
-                                                <th>@lang('general.count')</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($counters as $counter)
+                                            @foreach ($partners as $partner)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $counter->title }}</td>
-                                                    <td>{{ $counter->count }}</td>
+                                                    <td><img width="100" height="100" src="{{ $partner->image }}"
+                                                            alt="{{ $partner->title }}"></td>
+                                                    <td>{{ $partner->title }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
-                                                            'route' => 'counters',
-                                                            'role' => 'counter',
-                                                            'module' => $counter,
+                                                            'route' => 'partners',
+                                                            'role' => 'partner',
+                                                            'module' => $partner,
                                                         ])
                                                     </td>
                                                 </tr>
@@ -68,8 +69,8 @@
 
                 </div><!-- /.container-fluid -->
             </section>
+            <!-- /.content -->
         </div>
-        <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 @endsection

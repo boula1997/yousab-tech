@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
-                    @include('admin.components.alert-success')
+                    
 
                     <form method="POST" action="{{ route('password.email') }}">
                         @csrf

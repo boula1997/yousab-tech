@@ -1,45 +1,21 @@
 <!-- footer area start -->
-<footer class="footer-area bg-black bg-cover" style="background-image: url({{ asset('./assets/img/bg/2.webp') }});">
+<footer class="footer-area bg-black bg-cover mt-5" style="background-image: url({{ asset('./assets/img/bg/2.webp') }});">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6">
-                <div class="widget widget_about">
-                    <h4 class="widget-title">{{ __('general.about') }}</h4>
-                    <div class="details">
-                        <p>{{ __('general.address') }}</p>
-                        {{-- <p>Melbourne’s GPO 434 VIC 3074, Australia.</p> --}}
-                        {{-- {{settings()->address}} --}}
-                        <p>{{ settings()->translate(app()->getLocale())->address }}</p>
-                        <ul class="social-media">
-                            @foreach (contacts('social') as $contact)
+                <div class="widget widget_about d-flex justify-content-start align-items-center flex-column">
+                    <img class="footer-image" src="{{ settings()->white_logo }}" alt="">
+                    <div class="description text-limit tetx-white" style="--lines:4;">{!! page('about-us')->description !!}</div>
+                    <ul class="social-media mt-3">
+                        @foreach (contacts('social') as $contact)
+                            <li>
+                                <a class="facebook" href="{{ $contact->contact }}">
+                                    <i class="{{ $contact->icon }}"></i>
+                                </a>
+                            </li>
+                        @endforeach
 
-                            {{-- <a href="{{ $contact->contact }}"><i class="{{ $contact->icon }}"
-                                aria-hidden="true"></i></a>   --}}
-                                <li>
-                                    <a class="facebook" href="{{ $contact->contact }}">
-                                        <i class="{{ $contact->icon }}"></i>
-                                    </a>
-                                </li>
-                            @endforeach
-                           
-                           
-                            {{-- <li>
-                                <a class="twitter" href="{{ settings()->twitter }}">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="instagram" href="{{ settings()->instgram }}">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="youtube" href="{{ settings()->youtube }}">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                            </li> --}}
-                        </ul>
-                    </div>
+                    </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
@@ -50,11 +26,6 @@
                             <li><a href="{{ route('front.show.service', $service->id) }}">{{ $service->title }}</a>
                             </li>
                         @endforeach
-
-                        {{-- <li><a href="service.html">Digital marketing </a></li>
-                            <li><a href="service.html">It management</a></li>
-                            <li><a href="service.html">Cloud services</a></li>
-                            <li><a href="service.html">Machine learning</a></li> --}}
                     </ul>
                 </div>
             </div>
@@ -62,9 +33,8 @@
                 <div class="widget widget_nav_menu">
                     <h4 class="widget-title">{{ __('general.useful_link') }}</h4>
                     <ul>
+                        <li><a href="{{ route('front.home') }}">{{ __('general.home') }}</a></li>
                         <li><a href="{{ route('front.about') }}">{{ __('general.about') }}</a></li>
-                        {{-- <li><a href="team.html">{{__('general.team')}}</a></li>
-                            <li><a href="project.html">{{__('general.portfolio')}}</a></li> --}}
                         <li><a href="{{ route('front.service') }}">{{ __('general.services') }}</a></li>
                         <li><a href="{{ route('front.message') }}">{{ __('general.contact_us') }}</a></li>
                     </ul>

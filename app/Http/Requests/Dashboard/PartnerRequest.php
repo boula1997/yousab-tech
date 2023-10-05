@@ -4,7 +4,7 @@ namespace App\Http\Requests\Dashboard;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TeamRequest extends FormRequest
+class PartnerRequest extends FormRequest
 {
      /**
      * Determine if the user is authorized to make this request.
@@ -25,10 +25,6 @@ class TeamRequest extends FormRequest
         $image = request()->isMethod('put') ? 'nullable' : 'required';
         $rules = [
             'image' =>  $image ,
-            'facebook' =>  'nullable|url' ,
-            'twitter' =>  'nullable|url' ,
-            'instagram' =>  'nullable|url' ,
-            'linkedin' =>  'nullable|url' ,
         ];
         foreach (config('translatable.locales') as $locale) {
             $rules += [$locale . '.title' => ['required', 'string']];

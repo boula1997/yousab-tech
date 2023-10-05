@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class TeamResource extends JsonResource
+class PartnerResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -20,10 +20,6 @@ class TeamResource extends JsonResource
             "title" => $this->title,
             "subtitle" => $this->subtitle,
             "description" => $this->description,
-            "facebook" => $this->facebook,
-            "twitter" => $this->twitter,
-            "instagram" => $this->instagram,
-            "linkedin" => $this->linkedin,
         ];
     }
 }

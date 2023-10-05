@@ -77,10 +77,11 @@ class ServiceSeeder extends Seeder
                     "images/tqmoHh1nzC4Zg0IE4JykvWbBigfJpdIxMqxNcYPF.jpg",
                     "images/fih4AHmLMdr3mBpXqeeellC00S18BZm5dDCHcntw.jpg",
                     "images/yvxLurP4RFhTzwsih8n5pYC62eHgY74TDzQ3J8xF.jpg"];
-        $icons=["fab fa-facebook-f",
-                "fab fa-twitter",
-                "far fa-bell",
-                "fab fa-facebook-f"];
+
+        $icons=["far fa-window-restore",
+                "fas fa-shopping-cart",
+                "fas fa-cog",
+                "fab fa-ioxhost"];
 
         for ($i = 0; $i < count($title_ar); $i++) {
             $service = Service::create([
