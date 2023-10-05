@@ -5,14 +5,17 @@
                 @foreach ($services as $service)
 
                     <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                        <div class="single-service-inner style-hover-base text-center">
-                            <div class="icon-box">
-                                <i class="{{ $service->icon }} fs-1"></i>
-                            </div>
-                            <div class="details">
-                                <h3><a href="{{route('front.show.service',$service->id)}}" class="text-limit" style="--lines:1;">{{$service->title}}</a></h3>
-                                <p class="text-limit" style="--lines:1;"> {!! $service->description !!}</p>
-                               
+                        <div class="boxShadow-service m-4">
+
+                            <div class="single-service-inner style-hover-base text-center">
+                                <div class="icon-box">
+                                    <i class="{{ $service->icon }} fs-1"></i>
+                                </div>
+                                <div class="details">
+                                    <a href="{{route('front.show.service',$service->id)}}" class="text-limit" style="--lines:1;"><h4>{{$service->title}}</h4></a>
+                                    <div class="description text-limit" style="--lines:6;"> {!! $service->description !!}</div>
+                                   
+                                </div>
                             </div>
                         </div>
                     </div>

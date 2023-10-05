@@ -24,7 +24,7 @@
                                     <i class="{{ $service->icon }}"></i>
                                 </div>
                                 <div class="details">
-                                    <h3><a href="{{route('front.show.service',$service->id)}}" class="text-limit" style='--lines: 1;' title="{{$service->title}}">{{$service->title}}</a></h3>
+                                    <h3><a href="{{route('front.show.service',$service->id)}}" class="text-limit" style='--lines: 2;' title="{{$service->title}}">{{$service->title}}</a></h3>
                                       <div class="text-limit description" style="--lines:5;">{!! $service->description !!}</div>
                                 </div>
                             </div>

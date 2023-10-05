@@ -66,3 +66,19 @@
 .footer-image{
     width:150px !important;
 }
+
+.boxShadow-service{
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; */
+    box-shadow: rgba(0, 96, 255, 0.4) -5px 5px, rgba(0, 96, 255, 0.3) -10px 10px, rgba(0, 96, 255, 0.2) -15px 15px, rgba(0, 96, 255, 0.1) -20px 20px, rgba(0, 96, 255, 0.05) -25px 25px;
+}
+
+.boxShadow-contact{
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+:lang(ar).boxShadow-service{
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; */
+        /* box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; */
+        box-shadow: rgba(0, 96, 255, 0.4) 5px 5px, rgba(0, 96, 255, 0.3) 10px 10px, rgba(0, 96, 255, 0.2) 15px 15px, rgba(0, 96, 255, 0.1) 20px 20px, rgba(0, 96, 255, 0.05) 25px 25px;
+    
+}

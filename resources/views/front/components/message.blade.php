@@ -11,40 +11,46 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6" data-aos="flip-left">
-                <div class="single-contact-inner text-center">
-                    <div class="icon-box">
-                        <i class="icomoon-pin"></i>
-                    </div>
-                    <div class="details-wrap">
-                        <div class="details-inner">
-                            <h3>Office address</h3>
-                            <p>{{ settings()->translate(app()->getLocale())->address }}</p>
+                <div class="boxShadow-contact">
+                    <div class="single-contact-inner text-center">
+                        <div class="icon-box">
+                            <i class="icomoon-pin"></i>
+                        </div>
+                        <div class="details-wrap">
+                            <div class="details-inner">
+                                <h3>Office address</h3>
+                                <p>{{ settings()->translate(app()->getLocale())->address }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
-                <div class="single-contact-inner text-center" data-aos="flip-left">
-                    <div class="icon-box">
-                        <i class=" icomoon-email"></i>
-                    </div>
-                    <div class="details-wrap">
-                        <div class="details-inner">
-                            <h3>Email Address</h3>
-                            <p>{{ contacts('email')[0]->contact }} <br> {{ contacts('email')[0]->contact }}</p>
+                <div class="boxShadow-contact">
+                    <div class="single-contact-inner text-center" data-aos="flip-left">
+                        <div class="icon-box">
+                            <i class=" icomoon-email"></i>
+                        </div>
+                        <div class="details-wrap">
+                            <div class="details-inner">
+                                <h3>Email Address</h3>
+                                <p>{{ contacts('email')[0]->contact }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
-                <div class="single-contact-inner text-center" data-aos="flip-left">
-                    <div class="icon-box">
-                        <i class=" icomoon-telephone"></i>
-                    </div>
-                    <div class="details-wrap">
-                        <div class="details-inner">
-                            <h3>Phone Number</h3>
-                            <p>{{ contacts('phone')[0]->contact }} <br> {{ contacts('whatsapp')[0]->contact }}</p>
+                <div class="boxShadow-contact">
+                    <div class="single-contact-inner text-center" data-aos="flip-left">
+                        <div class="icon-box">
+                            <i class=" icomoon-telephone"></i>
+                        </div>
+                        <div class="details-wrap">
+                            <div class="details-inner">
+                                <h3>Phone Number</h3>
+                                <p>{{ contacts('phone')[0]->contact }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -75,8 +81,8 @@
                         <div id="phone" class="err"></div>
                     </div>
                     <div class="single-input-inner style-bg">
-                        <textarea name="message" id="message"  placeholder="{{ __('general.message') }}"></textarea>
-                        <div id="message_err"  class="err"></div>
+                        <textarea name="message" id="message" placeholder="{{ __('general.message') }}"></textarea>
+                        <div id="message_err" class="err"></div>
                     </div>
                     <div class="btn-wrap pb-3">
                         <button type="submit" class="btn btn-base">{{ __('general.submit') }}</button>
@@ -85,7 +91,7 @@
                 </div>
             </form>
         </div>
-        <div class="col-lg-7 col-md-5"  data-aos="fade-left">
+        <div class="col-lg-7 col-md-5" data-aos="fade-left">
             <div class="g-map-inner">
                 {!! settings()->map !!}
             </div>
