@@ -13,29 +13,21 @@ class PartnerSeeder extends Seeder
      */
     public function run(): void
     {
-        $title_en = ["Boula Nessim",
-                     "Ibrahim Samy",
-                     "Kerolos Edward",
-                     "Tadrous Emil",
-                     "Gerges Makram"];
-        $subtitle_en = ["Software Engineer",
-                        "Software Engineer",
-                        "Web Designer",
-                        "Web Developer",
-                        "Manager"];
-        $description_en = [null,null,null,null,null];
+        $title_en = ["SEO Mind",
+        "Boosterio",
+        "Atomic SEO",
+        "Green Host"];
+
+        $subtitle_en =    [null,null,null,null];
+        $description_en = [null,null,null,null];
       
         $title_ar = ["SEO Mind",
                     "Boosterio",
                     "Atomic SEO",
                     "Green Host"];
 
-        $subtitle_ar =["مهندس برمجيات",
-                       "مهندس برمجيات",
-                        "مصمم ويب ",
-                        "مطور ويب",
-                        "مدير"];
-        $description_ar =  [null,null,null,null,null];
+        $subtitle_ar =     [null,null,null,null];
+        $description_ar =  [null,null,null,null];
 
         $image=["images/tykEYLJg6IvrEdpzYcHTmLm5WWErcSklnEZcOjcI.webp",
                 "images/HsWogOvEjxPtEStdNr913ols44RFifVERaoyxkwh.webp",
