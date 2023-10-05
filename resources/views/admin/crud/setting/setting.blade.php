@@ -121,6 +121,17 @@
                         </div>
                         <div class="col-md-6">
                             @include('admin.components.image', [
+                                'label' => __('general.white_logo'),
+                                'value' => old('white_logo', $setting->white_logo),
+                                'name' => 'white_logo',
+                                'id' => 'kt_image_2',
+                                'accept' => 'image/*',
+                                'required' => true,
+                            ])
+
+                        </div>
+                        <div class="col-md-6">
+                            @include('admin.components.image', [
                                 'label' => __('general.tab'),
                                 'value' => old('tab', $setting->tab),
                                 'name' => 'tab',
