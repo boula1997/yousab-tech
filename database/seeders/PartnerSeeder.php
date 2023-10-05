@@ -17,17 +17,11 @@ class PartnerSeeder extends Seeder
         "Boosterio",
         "Atomic SEO",
         "Green Host"];
-
-        $subtitle_en =    [null,null,null,null];
-        $description_en = [null,null,null,null];
       
         $title_ar = ["SEO Mind",
                     "Boosterio",
                     "Atomic SEO",
                     "Green Host"];
-
-        $subtitle_ar =     [null,null,null,null];
-        $description_ar =  [null,null,null,null];
 
         $image=["images/tykEYLJg6IvrEdpzYcHTmLm5WWErcSklnEZcOjcI.webp",
                 "images/HsWogOvEjxPtEStdNr913ols44RFifVERaoyxkwh.webp",

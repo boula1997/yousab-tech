@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
             ProcessesSeeder::class,
             SettingSeeder::class,
             ServiceSeeder::class,
-            // PartnersSeeder::class,
+            PartnerSeeder::class,
             TeamSeeder::class,
             TestimonialsSeeder::class,
             UsersSeeder::class,
