@@ -33,7 +33,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    @include('admin.components.alert-success')
+                                    
                                     <table id="example1" class="table  table-hover">
                                         <thead>
                                             <tr>
