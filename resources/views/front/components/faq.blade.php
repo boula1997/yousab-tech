@@ -46,7 +46,7 @@
                             </div>
                         @endforeach
                         <div class="text-center">
-                            <a class="btn btn-base me-2" id="showMore">{{ __('general.show_more') }}</a>
+                            <a class="btn btn-base me-2 w-100" id="showMore">{{ __('general.show_more') }}</a>
                         </div>
                     </div>
 

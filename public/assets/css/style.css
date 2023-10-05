@@ -4086,6 +4086,9 @@ ul {
   -webkit-transition: 0.4s;
   transition: 0.4s;
   width: 100%;
+  height: inherit;
+  object-fit: cover;
+  object-position: top;
 }
 
 .single-team-inner .details-inner {

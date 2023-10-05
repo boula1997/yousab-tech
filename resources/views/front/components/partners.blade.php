@@ -1,5 +1,5 @@
 <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper pb-4">
         <div class="swiper-slide" data-aos="zoom-in">
             <div class="item">
                 <div class="thumb text-center swiper-image-container">

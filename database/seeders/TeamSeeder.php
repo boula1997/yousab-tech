@@ -15,7 +15,7 @@ class TeamSeeder extends Seeder
     {
         $title_en = ["Boula Nessim",
                      "Ibrahim Samy",
-                     "Kerolos Edward",
+                     "Kyrillos Edward",
                      "Tadrous Emil",
                      "Gerges Makram"];
         $subtitle_en = ["Software Engineer",
