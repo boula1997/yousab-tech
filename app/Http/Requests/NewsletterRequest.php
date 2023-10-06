@@ -24,10 +24,7 @@ class NewsletterRequest extends FormRequest
     public function rules()
     {
         $rules= [
-            'name'=>'required',
-            'phone'=>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'email'=>'required|email',
-            'newsletter'=>'required',
         ];
 
         return $rules;

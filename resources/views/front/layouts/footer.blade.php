@@ -44,8 +44,14 @@
                 <div class="widget widget_subscribe d-block">
                     <h4 class="widget-title">{{ __('general.subscribe_now') }}</h4>
                     <div class="single-input-inner style-border style-bg-none">
-                        <input type="text" placeholder="{{ __('general.your_email') }}">
-                        <button><i class="fa fa-arrow-right"></i></button>
+                        <div class="alert alert-success d-none mx-3">
+                            <p style="text-align: start"></p>
+                        </div>
+                        <form action="{{ route('front.newsletter.post') }}" id="newsletter-form">
+                            <input type="text" name="newsletterEmail" placeholder="{{ __('general.your_newsletterEmail') }}">
+                            <div id="newsletterEmail" class="err"></div>
+                            <button type="submit" id="btn-newsletter"><i class="fa fa-arrow-right"></i></button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -156,6 +162,49 @@
 <!-- main js  -->
 <script src="{{ asset('assets/js/main.js') }}"></script>
 @stack('js')
+
+<script>
+    $('#newsletter-form').submit(function(e) {
+        e.preventDefault();
+        let formData = new FormData(this);
+        $(".err").empty();
+        $(".err").addClass("d-none");
+        $('#btn-newsletter').attr('disabled', 'disabled');
+
+        $.ajax({
+            type: 'POST',
+            url: "{{ route('front.message.post') }}",
+            data: {
+                "_token": "{{ csrf_token() }}",
+                'newsletterEmail': $("input[name=newsletterEmail]").val(),
+            },
+            success: (response) => {
+                $('#btn-newsletter').removeAttr('disabled');
+                if (response) {
+                    this.reset();
+                    if (response.success) {
+                        $('.alert-success').removeClass('d-none').text(response.success);
+                        setTimeout(() => {
+                            $('.alert-success').addClass('d-none').text(response.success);
+                        }, 5000);
+                    } else
+                        $('.error').removeClass('d-none').text(response.error);
+                }
+            },
+            error: function(response) {
+                $('#btn-newsletter').removeAttr('disabled');
+
+                $(".err").addClass("d-block");
+                $(".err").removeClass("d-none");
+                if (response.responseJSON.errors.newsletterEmail) {
+                    $("#newsletterEmail").append(
+                        `<div class="alert alert-danger text-initial my-1" style="text-align:initial !important">${response.responseJSON.errors.newsletterEmail}</div>`
+                    );
+                }
+            }
+        });
+    });
+</script>
 </body>
 
 </html>

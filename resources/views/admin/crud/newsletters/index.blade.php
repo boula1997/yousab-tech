@@ -37,7 +37,6 @@
                                         <thead class="h-2">
                                             <tr class="p-0 m-0">
                                                 <th>#</th>
-                                                <th>@lang('general.name')</th>
                                                 <th>@lang('general.email')</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
@@ -47,7 +46,7 @@
                                                 <tr class="p-0 m-0">
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $newsletter->name }}</td>
-                                                    <td>{{ $newsletter->email }}</td>
+                                                    <td>{{ $newsletter->newsletterEmail }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'newsletters',
