@@ -10,6 +10,7 @@ use App\Models\Team;
 use App\Models\Counter;
 use App\Models\Faq;
 use App\Models\Setting;
+use App\Models\Partner;
 use Exception;
 
 class HomeController extends Controller
@@ -28,8 +29,9 @@ class HomeController extends Controller
     private $faq;
     // private $settings;
     private $teams;
+    private $partners;
 
-    public function __construct(Service $service, Testimonial $testimonial, Team $team, Process $process, Counter $counter, Gallery $portfolio,Faq $faq,Team $teams)
+    public function __construct(Service $service, Testimonial $testimonial, Team $team, Process $process, Counter $counter, Gallery $portfolio,Faq $faq,Team $teams,Partner $partners)
     {
         $this->service = $service;
         $this->testimonial = $testimonial;
@@ -40,6 +42,7 @@ class HomeController extends Controller
         $this->faq=$faq;
         $this->teams=$teams;
         // $this->settings=$settings;
+        $this->partners=$partners;
     }
 
     /**
@@ -59,8 +62,9 @@ class HomeController extends Controller
             $faqs=$this->faq->get();
             // $settings=$this->settings->get();
             $teams=$this->teams->get();
+            $partners=$this->partners->get();
 
-            return view('front.index', compact('testimonials', 'services', 'processes', 'portfolios', 'teams', 'counters','faqs','teams'));
+            return view('front.index', compact('testimonials', 'services', 'processes', 'portfolios', 'teams', 'counters','faqs','teams','partners'));
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);

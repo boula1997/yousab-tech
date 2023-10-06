@@ -18,7 +18,7 @@
                         </div>
                         <div class="details-wrap">
                             <div class="details-inner">
-                                <h3>Office address</h3>
+                                <h3>{{ __('general.address') }}</h3>
                                 <p>{{ settings()->translate(app()->getLocale())->address }}</p>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                         </div>
                         <div class="details-wrap">
                             <div class="details-inner">
-                                <h3>Email Address</h3>
+                                <h3>{{ __('general.email') }}</h3>
                                 <p>{{ contacts('email')[0]->contact }}</p>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                         </div>
                         <div class="details-wrap">
                             <div class="details-inner">
-                                <h3>Phone Number</h3>
+                                <h3>{{ __('general.phone') }}</h3>
                                 <p>{{ contacts('phone')[0]->contact }}</p>
                             </div>
                         </div>
@@ -68,6 +68,7 @@
                 @csrf
                 <div class="consulting-message-form mx-4">
                     <h3 class="mb-3">{{ __('general.free_consulting') }}</h3>
+                    <img src="{{ asset('images/Spinner-2.gif') }}" alt="GIF">
                     <div class="single-input-inner style-bg">
                         <input type="text" name="name" placeholder="{{ __('general.fullname') }}">
                         <div id="name" class="err"></div>

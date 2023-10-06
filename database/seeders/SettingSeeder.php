@@ -16,7 +16,7 @@ class SettingSeeder extends Seeder
     {
         Setting::create([
             'en' => [
-                'appointment1' => 'From 8 Am to 5.5 Pm',
+                'appointment1' => ': 24/7',
                 'copyright' => 'Copyright reserved by Yousab Tech © 2023',
                 'title' => 'Yousab Tech',
                 'address' => 'Online',
@@ -24,7 +24,7 @@ class SettingSeeder extends Seeder
                 'meta_data' => 'Web Development Company',
             ],
             'ar' => [
-                'appointment1' => 'من 8 ص ل 5.5 م',
+                'appointment1' => ': 24/7',
                 'copyright' => 'جميع الحقوق محفوظة لدي يوساب تك © 2023 ',
                 'title' => 'يوساب تك',
                 'address' => 'عبر الانترنت',
