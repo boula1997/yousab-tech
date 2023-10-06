@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\FaqController;
 use App\Http\Controllers\API\MessageController;
 use App\Http\Controllers\API\CounterController;
+use App\Http\Controllers\API\NewsletterController;
 use App\Http\Controllers\API\ContactController;
 use App\Http\Controllers\API\PageController;
 use App\Http\Controllers\API\PortfolioController;
@@ -48,6 +49,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::get('page/{id}', 'PageController@show');
 // Route::post('store/message', 'CMessageController@store');
 
+// Route::post('store/newsletter', 'CNewsletterController@store');
 Route::group(['middleware' => ['apiLocalization','cors']], function () {
     Route::get('/services', [ServiceController::class, 'index']);
     Route::get('/service/{id}', [ServiceController::class, 'show']);
@@ -85,5 +87,6 @@ Route::group(['middleware' => ['apiLocalization','cors']], function () {
 
 
 
+Route::post('/newsletter', [NewsletterController::class, 'store']);
 Route::post('/message', [MessageController::class, 'store']);
 

@@ -86,6 +86,9 @@ class PermissionTableSeeder extends Seeder
            'message-list',
            'message-delete',
            'message-reply',
+           'newsletter-list',
+           'newsletter-delete',
+           'newsletter-reply',
         ];
      
         foreach ($permissions as $permission) {

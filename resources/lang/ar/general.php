@@ -189,6 +189,8 @@ return [
     'update_successfully'=>'تم التعديل بنجاح',
     'deleted_successfully'=>'تم الحذف بنجاح',
     'something_wrong'=>'يوجد خطأ ما !!',
-    'show_all'=>'عرض الكل'
+    'show_all'=>'عرض الكل',
+    'credentials_error'=>'هذه المدخلات لا تتناسب مع قاعدة بياناتنا',
+
 
 ];

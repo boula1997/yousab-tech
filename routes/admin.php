@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\MessageController;
 // use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\NewsletterController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TestimonialController;
@@ -75,6 +76,7 @@ Route::group(
             Route::resource('faqs', FaqController::class);
             // Route::resource('message',MessageController::class);
             Route::resource('services', ServiceController::class);
+            // Route::resource('newsletter',NewsletterController::class);
             Route::resource('testimonials', TestimonialController::class);
             Route::resource('processes', ProcessController::class);
             Route::resource('partners', PartnerController::class);
@@ -98,6 +100,10 @@ Route::group(
             Route::post('/reply-email/{id}/reply', [App\Http\Controllers\Admin\MessageController::class, 'emailReply'])->name('messages.emailReply');
         
             Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+            Route::resource('newsletters', NewsletterController::class);
+        
+            Route::get('/reply-newsletter', [App\Http\Controllers\Admin\NewsletterController::class, 'reply'])->name('newsletters.reply');
+            Route::post('/reply-email/reply', [App\Http\Controllers\Admin\NewsletterController::class, 'emailReply'])->name('newsletters.emailReply');
             Route::get('/admin/dashboard', function () {
                 return view('dashboard');
             });

@@ -24,7 +24,7 @@ class NewsLetterMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            from: new Address(settings()->newsletter_email, env('MAIL_FROM_NAME')),
+            from: new Address(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME')),
             subject: $this->mail_data['subject'],
         );
     }

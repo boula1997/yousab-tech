@@ -43,6 +43,7 @@ return [
     'teams'  => 'Teams',
     'messages'  => 'Messages',
     'partners'  => 'Partners',
+    'newsletters'  => 'Newsletters',
     'logout'  => 'Logout',
     'login'  => 'Login',
     'show'  => 'Show',
@@ -119,6 +120,7 @@ return [
     "locale" => "Locale",
     // "message" => "Message",
     "tab" => "Tab",
+    // "newsletter" => "Newsletter",
     "model_type" => "Model_type",
     "name" => "Name",
     "remember_token" => "Remember_token",
@@ -163,6 +165,7 @@ return [
     'email_address' => 'Email Address',
     'message' => 'Message',
     'submit' => 'Submit Now',
+    'newsletter' => 'Newsletter',
     'useful_link' => 'Useful links',
     'all_rights' => 'All Rights Reserved @',
     'select_icon' => 'Select Icon',
@@ -184,6 +187,7 @@ return [
     'update_successfully'=>'Updated Successfully',
     'deleted_successfully'=>'Deleted Successfully',
     'something_wrong'=>'Something Wrong',
-    'show_all'=>'Show all'
+    'show_all'=>'Show all',
+    'credentials_error'=>'Theses credentials does not match',
 
 ];

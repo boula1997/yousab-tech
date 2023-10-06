@@ -4,6 +4,7 @@ use App\Models\Admin;
 use App\Models\Faq;
 use App\Models\Message;
 use App\Models\Counter;
+use App\Models\Newsletter;
 use App\Models\Contact;
 use App\Models\Gallery;
 use App\Models\Image;
@@ -22,6 +23,7 @@ use Spatie\Permission\Models\Role;
 
 const Message_Mail = "app@gmail.com";
 
+const Newsletter_Mail = "app@gmail.com";
 function settings()
 {
     return Setting::first();
@@ -76,6 +78,7 @@ function itemsCount($model)
         "faqs" => count(Faq::get()),
         "messages" => count(Message::get()),
         "counters" => count(Counter::get()),
+        "newsletters" => count(Newsletter::get()),
         "contacts" => count(Contact::get()),
         "Portfolios" => count(Gallery::get()),
         "images" => count(Image::get()),

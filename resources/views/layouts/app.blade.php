@@ -21,6 +21,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">    
 </head>
 <body>
     <div id="app" style="background-image: url('{{ asset('images/background-image.png') }}');">
@@ -43,9 +47,9 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
+                            @if (Route::has('admin.login-view'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('admin.login-view') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
@@ -79,6 +83,8 @@
         </nav>
 
         <main class="py-4">
+            @include('admin.components.success')
+            @include('admin.components.errors')
             @yield('content')
         </main>
     </div>

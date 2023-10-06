@@ -7,6 +7,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\MessageController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use App\Http\Controllers\NewsletterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,8 @@ Route::group(
         // Route::get('/message', 'App/Http/Controllers/MessageController@index')->name('front.message');
         Route::get('/message', [MessageController::class,'index'])->name('front.message');
         // Route::get('/service', 'App/Http/Controllers/ServiceController@index')->name('front.service');
+        // Route::get('/newsletter', 'App/Http/Controllers/NewsletterController@index')->name('front.newsletter');
+        Route::get('/newsletter', [NewsletterController::class,'index'])->name('front.newsletter');
         Route::get('/service', [ServiceController::class,'index'])->name('front.service');
         // Route::get('/single-service', 'App/Http/Controllers/ServiceController@show')->name('front.show.service');
         Route::get('/single-service/{id}', [ServiceController::class,'show'])->name('front.show.service');
@@ -47,6 +50,8 @@ Route::group(
         Route::post('/message', [MessageController::class,'store'])->name('front.message.post');
 
         Route::get('/single-portfolio/{id}', [ServiceController::class,'showportfolio'])->name('front.show.portfolio');
+        // Route::post('/newsletter', 'App/Http/Controllers/NewsletterController@store')->name('front.newsletter.post');
+        Route::post('/newsletter', [NewsletterController::class,'store'])->name('front.newsletter.post');
         
         // Route::get('/reply', function () {
     
