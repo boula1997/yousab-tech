@@ -189,5 +189,8 @@ return [
     'something_wrong'=>'Something Wrong',
     'show_all'=>'Show all',
     'credentials_error'=>'Theses credentials does not match',
+    'dselectAll'=>'Deselect All',
+    'selectAll'=>'Select All',
+
 
 ];

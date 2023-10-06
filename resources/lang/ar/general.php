@@ -191,6 +191,8 @@ return [
     'something_wrong'=>'يوجد خطأ ما !!',
     'show_all'=>'عرض الكل',
     'credentials_error'=>'هذه المدخلات لا تتناسب مع قاعدة بياناتنا',
+    'dselectAll'=>'الغاء تحديد الكل',
+    'selectAll'=>'تحديد الكل',
 
 
 ];
