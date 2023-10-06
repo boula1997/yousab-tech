@@ -31,7 +31,7 @@ class SettingSeeder extends Seeder
                 'description' => 'نحن شركة تطوير لمواقع الويب متخصصون في انشاء,صيانة وادارة مواقع الويب',
                 'meta_data' => 'شركة خدمات ويب',
             ],
-            'logo' => 'images/esrFDI9ill0bm0wxe2inrrQTirOIvGlpxP7Cj378.png',
+            'logo' => 'images/v47eEip5Lddzad14CyZEdqNBCuHG7arjKK4sXlf8.png',
             'white_logo' => 'images/M8wYYa6zQnLin0iqw5wsCbXELXeJcY9duAPAcstX.png',
             'tab' => 'images/esrFDI9ill0bm0wxe2inrrQTirOIvGlpxP7Cj378.png',
             'image' => 'image',

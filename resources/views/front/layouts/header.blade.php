@@ -112,7 +112,7 @@
                 </button>
             </div>
             <div class="logo">
-                <a href="{{ route('front.home') }}"><img src="{{ asset(settings()->logo) }}" alt="img"></a>
+                <a href="{{ route('front.home') }}"><img class="logo" src="{{ asset(settings()->logo) }}" alt="img"></a>
             </div>
             {{-- <div class="nav-right-part nav-right-part-mobile">
                 <a class="search-bar-btn" href="#">
