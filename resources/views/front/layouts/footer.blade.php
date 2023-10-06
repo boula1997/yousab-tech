@@ -45,14 +45,15 @@
                     <p style="text-align: start"></p>
                 </div>
                 <div class="widget widget_subscribe d-block">
-                    <img class="d-none p-5  "
-                        id="spinner-newsletter" src="{{ asset('images/Spinner-2.gif') }}" alt="GIF">
-                    <h4 class="widget-title">{{ __('general.subscribe_now') }}</h4>
+                    <h4 class="widget-title">{{ __('general.subscribe_now') }} </h4>
                     <div class="single-input-inner style-border style-bg-none">
                         <form action="{{ route('front.newsletter.post') }}" id="newsletter-form">
                             <input type="text" name="newsletterEmail" placeholder="{{ __('general.your_email') }}">
                             <div id="newsletterEmail" class="err"></div>
-                            <button type="submit" id="btn-newsletter"><i class="fa fa-arrow-right"></i></button>
+                            <button type="submit" id="btn-newsletter">
+                                <i
+                                class="fa fa-spinner fa-spin d-none" id="spinner-newsletter"></i> <i class="fa fa-arrow-right"></i>
+                            </button>
                         </form>
                     </div>
                 </div>

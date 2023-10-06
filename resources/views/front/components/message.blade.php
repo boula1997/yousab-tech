@@ -85,7 +85,9 @@
                         <div id="message_err" class="err"></div>
                     </div>
                     <div class="btn-wrap pb-3">
-                        <button type="submit" class="btn btn-base" id="btn-contact">{{ __('general.submit') }}</button> <img class="p-5 d-none" id="spinner-contact" src="{{ asset('images/Spinner-2.gif') }}" alt="GIF">
+                        <button type="submit" class="btn btn-base" id="btn-contact"><i
+                                class="fa fa-spinner fa-spin d-none" id="spinner-contact"></i>
+                            {{ __('general.submit') }}</button>
                     </div>
                     <p class="form-messege mb-0 mt-20 text-center"></p>
                 </div>
@@ -108,7 +110,7 @@
             let formData = new FormData(this);
             $(".err").empty();
             $(".err").addClass("d-none");
-            $('#btn-contact').attr('disabled', 'disabled');
+            $('#btn-contact').attr('disabled', 'disabled').addClass('bg-secondary');
             $('#spinner-contact').removeClass('d-none');
             $.ajax({
                 type: 'POST',
@@ -121,22 +123,18 @@
                     'message': $("#message").val(),
                 },
                 success: (response) => {
+                    this.reset();
                     $('#spinner-contact').addClass('d-none');
-                    $('#btn-contact').removeAttr('disabled');
-                    if (response) {
-                        this.reset();
-                        if (response.success) {
-                            $('.alert-success').removeClass('d-none').text(response.success);
-                            setTimeout(() => {
-                                $('.alert-success').addClass('d-none').text(response.success);
-                            }, 5000);
-                        } else
-                            $('.error').removeClass('d-none').text(response.error);
-                    }
+                    $('#btn-contact').removeAttr('disabled').removeClass(
+                        'bg-secondary');
+                    $('.alert-success').removeClass('d-none').text(response.success);
+                    setTimeout(() => {
+                        $('.alert-success').addClass('d-none').text(response.success);
+                    }, 5000);
                 },
                 error: function(response) {
                     $('#spinner-contact').addClass('d-none');
-                    $('#btn-contact').removeAttr('disabled');
+                    $('#btn-contact').removeAttr('disabled').removeClass('bg-secondary');
 
                     $(".err").addClass("d-block");
                     $(".err").removeClass("d-none");
