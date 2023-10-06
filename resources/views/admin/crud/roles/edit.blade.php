@@ -35,6 +35,8 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <strong>@lang('general.permission'):</strong>
+                                        @include('admin.components.selectAll',['on'=>'success','off'=>'danger'] )
+
                                         <br />
                                         <div class="row">
                                             @foreach ($permission as $value)

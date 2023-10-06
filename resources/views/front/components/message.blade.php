@@ -68,7 +68,6 @@
                 @csrf
                 <div class="consulting-message-form mx-4">
                     <h3 class="mb-3">{{ __('general.free_consulting') }}</h3>
-                    <img src="{{ asset('images/Spinner-2.gif') }}" alt="GIF">
                     <div class="single-input-inner style-bg">
                         <input type="text" name="name" placeholder="{{ __('general.fullname') }}">
                         <div id="name" class="err"></div>
@@ -86,7 +85,7 @@
                         <div id="message_err" class="err"></div>
                     </div>
                     <div class="btn-wrap pb-3">
-                        <button type="submit" class="btn btn-base">{{ __('general.submit') }}</button>
+                        <button type="submit" class="btn btn-base">{{ __('general.submit') }}</button> <img class="p-5 d-none" id="spinner-contact" src="{{ asset('images/Spinner-2.gif') }}" alt="GIF">
                     </div>
                     <p class="form-messege mb-0 mt-20 text-center"></p>
                 </div>
@@ -110,7 +109,7 @@
             $(".err").empty();
             $(".err").addClass("d-none");
             $('#btn-contact').attr('disabled', 'disabled');
-
+            $('#spinner-contact').removeClass('d-none');
             $.ajax({
                 type: 'POST',
                 url: "{{ route('front.message.post') }}",
@@ -122,6 +121,7 @@
                     'message': $("#message").val(),
                 },
                 success: (response) => {
+                    $('#spinner-contact').addClass('d-none');
                     $('#btn-contact').removeAttr('disabled');
                     if (response) {
                         this.reset();
@@ -135,6 +135,7 @@
                     }
                 },
                 error: function(response) {
+                    $('#spinner-contact').addClass('d-none');
                     $('#btn-contact').removeAttr('disabled');
 
                     $(".err").addClass("d-block");

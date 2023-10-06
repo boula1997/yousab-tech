@@ -41,14 +41,16 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
+                <div class="alert alert-success d-none">
+                    <p style="text-align: start"></p>
+                </div>
                 <div class="widget widget_subscribe d-block">
+                    <img class="d-none p-5"
+                        id="spinner-newsletter" src="{{ asset('images/Spinner-2.gif') }}" alt="GIF">
                     <h4 class="widget-title">{{ __('general.subscribe_now') }}</h4>
                     <div class="single-input-inner style-border style-bg-none">
-                        <div class="alert alert-success d-none mx-3">
-                            <p style="text-align: start"></p>
-                        </div>
                         <form action="{{ route('front.newsletter.post') }}" id="newsletter-form">
-                            <input type="text" name="newsletterEmail" placeholder="{{ __('general.your_newsletterEmail') }}">
+                            <input type="text" name="newsletterEmail" placeholder="{{ __('general.your_email') }}">
                             <div id="newsletterEmail" class="err"></div>
                             <button type="submit" id="btn-newsletter"><i class="fa fa-arrow-right"></i></button>
                         </form>
@@ -164,21 +166,23 @@
 @stack('js')
 
 <script>
-    $('#newsletter-form').submit(function(e) {
+    $('#newsletter-form').on('click', function(e) {
         e.preventDefault();
         let formData = new FormData(this);
         $(".err").empty();
         $(".err").addClass("d-none");
         $('#btn-newsletter').attr('disabled', 'disabled');
+        $('#spinner-newsletter').removeClass('d-none');
 
         $.ajax({
             type: 'POST',
-            url: "{{ route('front.message.post') }}",
+            url: "{{ route('front.newsletter.post') }}",
             data: {
                 "_token": "{{ csrf_token() }}",
                 'newsletterEmail': $("input[name=newsletterEmail]").val(),
             },
             success: (response) => {
+                $('#spinner-newsletter').addClass('d-none');
                 $('#btn-newsletter').removeAttr('disabled');
                 if (response) {
                     this.reset();
@@ -192,6 +196,7 @@
                 }
             },
             error: function(response) {
+                $('#spinner-newsletter').addClass('d-none');
                 $('#btn-newsletter').removeAttr('disabled');
 
                 $(".err").addClass("d-block");
@@ -205,6 +210,7 @@
         });
     });
 </script>
+
 </body>
 
 </html>

@@ -29,6 +29,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
+                                        @include('admin.components.selectAll',['on'=>'success','off'=>'danger'])
                                         <strong>@lang('general.permission'):</strong>
                                         <br />
                                         <div class="row">

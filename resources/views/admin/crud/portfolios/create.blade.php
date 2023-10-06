@@ -71,7 +71,7 @@
             </div>
             <div class="card card-custom">
                 <div class="card-body">
-                    @include('admin.components.images')
+                    @include('admin.components.images',['on'=>'success','off'=>'danger'])
                 </div>
                 <div class="card-footer mb-5">
                     <button type="submit"
