@@ -68,6 +68,7 @@
                 @csrf
                 <div class="consulting-message-form mx-4">
                     <h3 class="mb-3">{{ __('general.free_consulting') }}</h3>
+                    <img src="{{ asset('images/Spinner-2.gif') }}" alt="GIF">
                     <div class="single-input-inner style-bg">
                         <input type="text" name="name" placeholder="{{ __('general.fullname') }}">
                         <div id="name" class="err"></div>
