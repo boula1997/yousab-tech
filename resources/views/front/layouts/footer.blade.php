@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="widget widget_about d-flex justify-content-start align-items-center flex-column">
-                    <img class="footer-image" src="{{ settings()->white_logo }}" alt="">
+                    <a href="{{ route('front.home') }}"> <img class="footer-image" src="{{ settings()->white_logo }}" alt=""></a>
                     <div class="description text-limit tetx-white" style="--lines:4;">{!! page('about-us')->description !!}</div>
                     <ul class="social-media mt-3">
                         @foreach (contacts('social') as $contact)
