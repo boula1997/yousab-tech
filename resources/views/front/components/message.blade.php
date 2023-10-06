@@ -85,7 +85,7 @@
                         <div id="message_err" class="err"></div>
                     </div>
                     <div class="btn-wrap pb-3">
-                        <button type="submit" class="btn btn-base">{{ __('general.submit') }}</button> <img class="p-5 d-none" id="spinner-contact" src="{{ asset('images/Spinner-2.gif') }}" alt="GIF">
+                        <button type="submit" class="btn btn-base">{{ __('general.submit') }}</button> <img class="p-5 d-none" id="spinner-contact" src="{{ asset('images/5.gif') }}" alt="GIF">
                     </div>
                     <p class="form-messege mb-0 mt-20 text-center"></p>
                 </div>
