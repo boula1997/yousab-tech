@@ -5,7 +5,7 @@
             "debug": false,
             "newestOnTop": false,
             "progressBar": true,
-            "positionClass": "{{app()->getLocale() == 'ar' ? 'toast-top-left' : 'toast-top-right'}}",
+            "positionClass": "{{app()->getLocale() == 'ar' ? 'toast-top-right' : 'toast-top-left'}}",
             "preventDuplicates": false,
             "onclick": null,
             "showDuration": "300",

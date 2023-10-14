@@ -61,10 +61,7 @@
 
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
-            <a class="nav-link" href="{{ route('messages.index') }}">
-                <i class=" px-1 far fa-comments"></i>
-                <span class="badge badge-danger navbar-badge">{{ itemsCount('messages') }}</span>
-            </a>
+            
             {{-- <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <a href="#" class="dropdown-item">
                     <!-- Message Start -->
