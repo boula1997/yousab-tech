@@ -191,6 +191,8 @@ return [
     'credentials_error'=>'Theses credentials does not match',
     'dselectAll'=>'Deselect All',
     'selectAll'=>'Select All',
+    'delete_confirm'=>'Delete Confirm',
+    'delete_message'=>'Are you sure you want to delete',
 
 
 ];

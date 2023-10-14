@@ -194,5 +194,8 @@ return [
     'dselectAll'=>'الغاء تحديد الكل',
     'selectAll'=>'تحديد الكل',
 
+    'delete_confirm'=>'تاكيد الحذف',
+    'delete_message'=>'هل انت متاكد انك تريد حذف',
+
 
 ];
