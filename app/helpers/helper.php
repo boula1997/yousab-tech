@@ -132,3 +132,11 @@ if (!function_exists('contacts')) {
         return isset($type) ?  Contact::where('type', $type)->get() : Contact::latest()->get();;
     }
 }
+
+if (!function_exists('contact')) {
+
+    function contact($type)
+    {
+      Contact::where('type', $type)->first();
+    }
+}
