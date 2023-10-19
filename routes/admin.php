@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\ProcessController;
 // use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\MetaController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\PartnerController;
@@ -78,6 +79,7 @@ Route::group(
             Route::resource('services', ServiceController::class);
             // Route::resource('newsletter',NewsletterController::class);
             Route::resource('testimonials', TestimonialController::class);
+            Route::resource('categories', CategoryController::class);
             Route::resource('processes', ProcessController::class);
             Route::resource('partners', PartnerController::class);
             Route::resource('teams', TeamController::class);

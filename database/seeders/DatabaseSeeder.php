@@ -7,6 +7,7 @@ use App\Models\Admin;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Team;
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -36,6 +37,7 @@ class DatabaseSeeder extends Seeder
             PartnerSeeder::class,
             TeamSeeder::class,
             TestimonialsSeeder::class,
+            CategorySeeder::class,
             UsersSeeder::class,
             VideosSeeder::class,
           

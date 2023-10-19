@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\ServiceController;
 use App\Http\Controllers\API\TestimonialController;
 use App\Http\Controllers\API\ProcessController;
+use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\SettingController;
 use App\Http\Controllers\API\PartnerController;
 use App\Http\Controllers\API\TeamController;
@@ -56,6 +57,8 @@ Route::group(['middleware' => ['apiLocalization','cors']], function () {
     Route::get('/testimonials', [TestimonialController::class, 'index']);
     Route::get('/testimonial/{id}', [TestimonialController::class, 'show']);
     Route::get('/processes', [ProcessController::class, 'index']);
+    Route::get('/categories', [CategoryController::class, 'index']);
+    Route::get('/category/{id}', [CategoryController::class, 'show']);
     Route::get('/process/{id}', [ProcessController::class, 'show']);
     
     Route::get('/faqs', [FaqController::class, 'index']);
