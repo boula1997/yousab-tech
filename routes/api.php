@@ -13,6 +13,7 @@ use App\Http\Controllers\API\ServiceController;
 use App\Http\Controllers\API\TestimonialController;
 use App\Http\Controllers\API\ProcessController;
 use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\SettingController;
 use App\Http\Controllers\API\PartnerController;
 use App\Http\Controllers\API\TeamController;
@@ -23,7 +24,7 @@ use App\Http\Controllers\API\TeamController;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
+| routes are loaded by the RouteProductProvider within a group which
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
@@ -59,6 +60,8 @@ Route::group(['middleware' => ['apiLocalization','cors']], function () {
     Route::get('/processes', [ProcessController::class, 'index']);
     Route::get('/categories', [CategoryController::class, 'index']);
     Route::get('/category/{id}', [CategoryController::class, 'show']);
+    Route::get('/products', [ProductController::class, 'index']);
+    Route::get('/product/{id}', [ProductController::class, 'show']);
     Route::get('/process/{id}', [ProcessController::class, 'show']);
     
     Route::get('/faqs', [FaqController::class, 'index']);

@@ -34,7 +34,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
+| routes are loaded by the RouteProductProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
 */
@@ -81,6 +81,7 @@ Route::group(
             Route::resource('testimonials', TestimonialController::class);
             Route::resource('categories', CategoryController::class);
             Route::resource('processes', ProcessController::class);
+            Route::resource('products', ProductController::class);
             Route::resource('partners', PartnerController::class);
             Route::resource('teams', TeamController::class);
             Route::resource('pages', PageController::class);

@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains service content -->
+    <!-- Content Wrapper. Contains product content -->
     <div class="content-wrapper">
         <div class="container p-3">
             <!-- Main content -->
@@ -16,10 +16,10 @@
                                     <!-- general form elements -->
                                     <div class="row">
                                         <div class="col-md-6 d-flex d-flex justify-content-start">
-                                            <h1 class="card-title fw-bold">@lang('general.services')</h3>
+                                            <h1 class="card-title fw-bold">@lang('general.products')</h3>
                                         </div>
                                         <div class="col-md-6 d-flex d-flex justify-content-end">
-                                            <a href="{{ route('services.create') }}">
+                                            <a href="{{ route('products.create') }}">
 
                                                 <button
                                                     class="btn btn-outline-primary px-5
@@ -42,17 +42,17 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($services as $service)
+                                            @foreach ($products as $product)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td><img width="100" height="100" src="{{ $service->image }}"
-                                                            alt="{{ $service->title }}"></td>
-                                                    <td>{{ $service->title }}</td>
+                                                    <td><img width="100" height="100" src="{{ $product->image }}"
+                                                            alt="{{ $product->title }}"></td>
+                                                    <td>{{ $product->title }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
-                                                            'route' => 'services',
-                                                            'role' => 'service',
-                                                            'module' => $service,
+                                                            'route' => 'products',
+                                                            'role' => 'product',
+                                                            'module' => $product,
                                                         ])
                                                     </td>
                                                 </tr>

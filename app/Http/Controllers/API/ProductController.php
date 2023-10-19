@@ -3,23 +3,23 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\ServiceResource;
-use App\Models\Service;
+use App\Http\Resources\ProductResource;
+use App\Models\Product;
 use Exception;
 use Illuminate\Http\Request;
 
-class ServiceController extends Controller
+class ProductController extends Controller
 {
-    private $service;
-    public function __construct(Service $service)
+    private $product;
+    public function __construct(Product $product)
     {
-        $this->service = $service;
+        $this->product = $product;
     }
 
     public function index()
     {
         try {
-            $data['services'] = ServiceResource::collection($this->service->get());
+            $data['products'] = ProductResource::collection($this->product->get());
             return successResponse($data);
         } catch (Exception $e) {
             dd($e->getMessage());
@@ -30,7 +30,7 @@ class ServiceController extends Controller
     public function show($id)
     {
         try {
-            $data['service'] = new ServiceResource($this->service->findorfail($id));
+            $data['product'] = new ProductResource($this->product->findorfail($id));
             return successResponse($data);
         } catch (Exception $e) {
             dd($e->getMessage());

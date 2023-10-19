@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Service;
+use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ServiceSeeder extends Seeder
+class ProductSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,26 +19,26 @@ class ServiceSeeder extends Seeder
                      "Website Hosting"];
         $subtitle_en = [null,null,null,null];
         $description_en = [ "<p>We specialize in creating custom websites that fit your specific business needs. Our team of experienced developers and designers work closely with you to understand your requirements and develop a website that reflects your brand identity. We take advantage of the latest web technologies and responsive design principles to ensure that your website looks amazing and works flawlessly across devices and in addition to a control panel to make you able to control all     site content</p>",
-                            "<p>If you're looking to sell products or services online, our e-commerce development services can help. We have expertise in building secure and scalable e-commerce platforms that offer seamless user experiences and robust payment integration. From product catalogs and shopping carts to inventory management and order processing, we create e-commerce solutions that drive conversions and maximize revenue</p>",
+                            "<p>If you're looking to sell products or products online, our e-commerce development products can help. We have expertise in building secure and scalable e-commerce platforms that offer seamless user experiences and robust payment integration. From product catalogs and shopping carts to inventory management and order processing, we create e-commerce solutions that drive conversions and maximize revenue</p>",
 
-                            "<p>We believe in long-term partnerships with our clients. Our website maintenance and support services ensure that your website remains secure, up-to-date, and optimized for performance. We provide regular updates, security patches, and backups to protect your website from vulnerabilities. Our support team is available to address any issues, answer questions, and provide ongoing technical assistance </p>",
-                            "<p>At our web development company, we offer comprehensive hosting services to ensure that your website performs optimally and remains accessible to your visitors. Our hosting service provides a reliable and secure environment for your website to thrive. Here's an overview of our hosting service:
+                            "<p>We believe in long-term partnerships with our clients. Our website maintenance and support products ensure that your website remains secure, up-to-date, and optimized for performance. We provide regular updates, security patches, and backups to protect your website from vulnerabilities. Our support team is available to address any issues, answer questions, and provide ongoing technical assistance </p>",
+                            "<p>At our web development company, we offer comprehensive hosting products to ensure that your website performs optimally and remains accessible to your visitors. Our hosting product provides a reliable and secure environment for your website to thrive. Here's an overview of our hosting product:
 
                                 Reliable Hosting Infrastructure: We maintain a robust hosting infrastructure with state-of-the-art servers and network equipment. Our servers are optimized for performance, offering fast load times and minimal downtime. We prioritize reliability to ensure that your website is accessible to visitors around the clock.
                                 
-                                Scalable Solutions: Our hosting service is designed to accommodate your website's growth. Whether you have a small business website or a complex web application, we offer scalable hosting solutions that can adapt to your changing needs. As your website expands, we can seamlessly scale up the hosting resources to handle increased traffic and data requirements.
+                                Scalable Solutions: Our hosting product is designed to accommodate your website's growth. Whether you have a small business website or a complex web application, we offer scalable hosting solutions that can adapt to your changing needs. As your website expands, we can seamlessly scale up the hosting resources to handle increased traffic and data requirements.
                                 
-                                Security Measures: We prioritize the security of your website and the data it contains. Our hosting service includes robust security measures such as firewalls, intrusion detection systems, and regular security updates. We also implement SSL certificates to encrypt data transmission, safeguarding sensitive information and building trust with your visitors.
+                                Security Measures: We prioritize the security of your website and the data it contains. Our hosting product includes robust security measures such as firewalls, intrusion detection systems, and regular security updates. We also implement SSL certificates to encrypt data transmission, safeguarding sensitive information and building trust with your visitors.
                                 
-                                Backup and Disaster Recovery: We understand the importance of data protection. Our hosting service includes regular backups of your website and its associated data. In the event of a technical issue or unexpected event, we can quickly restore your website to minimize downtime and data loss.
+                                Backup and Disaster Recovery: We understand the importance of data protection. Our hosting product includes regular backups of your website and its associated data. In the event of a technical issue or unexpected event, we can quickly restore your website to minimize downtime and data loss.
                                 
                                 Technical Support: Our dedicated support team is available to assist you with any hosting-related concerns or technical issues. Whether you have questions about server configurations, need assistance with DNS settings, or require troubleshooting, our knowledgeable support staff is just a phone call or email away.
                                 
-                                Compatibility with Web Technologies: Our hosting service supports a wide range of web technologies and programming languages. Whether your website is built with PHP, Python, Node.js, or other frameworks, our hosting environment can accommodate your specific requirements.
+                                Compatibility with Web Technologies: Our hosting product supports a wide range of web technologies and programming languages. Whether your website is built with PHP, Python, Node.js, or other frameworks, our hosting environment can accommodate your specific requirements.
                                 
-                                Content Delivery Network (CDN): To enhance the performance of your website, we can integrate a Content Delivery Network (CDN) into our hosting service. A CDN helps deliver your website content quickly to visitors from various geographical locations, improving load times and user experience.
+                                Content Delivery Network (CDN): To enhance the performance of your website, we can integrate a Content Delivery Network (CDN) into our hosting product. A CDN helps deliver your website content quickly to visitors from various geographical locations, improving load times and user experience.
                                 
-                                Email Hosting: Along with website hosting, we also offer email hosting services. You can have professional email addresses associated with your domain name, providing a seamless and unified communication experience for your business.
+                                Email Hosting: Along with website hosting, we also offer email hosting products. You can have professional email addresses associated with your domain name, providing a seamless and unified communication experience for your business.
                                 
                                  </p>"];
 
@@ -84,7 +84,7 @@ class ServiceSeeder extends Seeder
                 "fab fa-ioxhost"];
 
         for ($i = 0; $i < count($title_ar); $i++) {
-            $service = Service::create([
+            $product = Product::create([
                 'ar' => [
                     'title' => $title_ar[$i],
                     'description' => $description_ar[$i],
@@ -98,7 +98,7 @@ class ServiceSeeder extends Seeder
                 'icon'=>$icons[$i],
             ]);
 
-            $service->file()->create(["url"=>$images[$i]]);
+            $product->file()->create(["url"=>$images[$i]]);
         }
     }
 }

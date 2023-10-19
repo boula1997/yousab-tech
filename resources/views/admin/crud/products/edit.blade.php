@@ -1,13 +1,15 @@
 @extends('admin.components.form')
-@section('form_action', route('services.store'))
+@section('form_action', route('products.update', $product->id))
 @section('form_type', 'POST')
 @section('fields_content')
     <div class="content-wrapper">
+        @method('PUT')
                 <div class="container p-3">
             @include('admin.components.alert-error')
+
             <div class="card card-custom mb-2">
                 <div class="card-header card-header-tabs-line">
-                    @include('admin.components.breadcrumb', ['module' => 'services', 'action' => 'create'])
+                    @include('admin.components.breadcrumb', ['module' => 'products', 'action' => 'edit'])
                 </div>
                 <div class="card-toolbar px-3">
                     <ul class="nav nav-tabs nav-bold nav-tabs-line">
@@ -33,7 +35,7 @@
                                         <input type="text" name="{{ $locale . '[title]' }}"
                                             placeholder="@lang('general.title')"
                                             class="form-control  pl-5 min-h-40px @error($locale . '.title') is-invalid @enderror"
-                                            value="{{ old($locale . '.title') }}">
+                                            value="{{ old($locale . '.title', $product->translate($locale)->title) }}">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -45,7 +47,7 @@
                                         <input type="text" name="{{ $locale . '[subtitle]' }}"
                                             placeholder="@lang('general.subtitle')"
                                             class="form-control  pl-5 min-h-40px @error($locale . '.subtitle') is-invalid @enderror"
-                                            value="{{ old($locale . '.subtitle') }}">
+                                            value="{{ old($locale . '.subtitle', $product->translate($locale)->subtitle) }}">
                                     </div>
                                 </div>
 
@@ -55,21 +57,26 @@
                                     <label>@lang('general.description')(@lang('general.' . $locale))<span class="text-danger">*</span></label>
                                     <textarea rows="100" class="summernote @error($locale . '.description') is-invalid @enderror"
                                         name="{{ $locale . '[description]' }}">
-                                        {!! old($locale . '.description') !!} 
+                                        {!! old($locale . '.description', $product->translate($locale)->description) !!} 
                                     </textarea>
                                 </div>
+                                {{-- <div class="form-group">
+                                        <label>@lang('products.description') - @lang('general.'.$locale)<span class="text-danger"> * </span></label>
+                                        <textarea name="{{ $locale . '[description]' }}" @error($locale . '.description') is-invalid @enderror class="form-control kt-ckeditor-5">{{ old($locale . '.description') }}</textarea>
+                                    </div> --}}
                             </div>
                         @endforeach
                     </div>
                 </div>
             </div>
             <div class="card card-custom">
-                <div class="card-body">
+                <div class="card-body mb-5">
                     <div class="row">
+
                         <div class="col-md-6">
                             @include('admin.components.image', [
                                 'label' => __('general.image'),
-                                'value' => old('image'),
+                                'value' => old('image', $product->image),
                                 'name' => 'image',
                                 'id' => 'kt_image_3',
                                 'accept' => 'image/*',
@@ -82,20 +89,17 @@
                             @include('admin.components.icon', [
                                 'label' => 'icon',
                                 'required' => true,
-                                'value' => 'fas fa-desktop',
+                                'value' => old('icon', $product->icon),
                             ])
 
                         </div>
 
                     </div>
                 </div>
-                <div class="card-footer mb-5">
-                    <button type="submit"
-                        class="btn btn-outline-primary px-5
-                        ">@lang('general.save')</button>
-                    <a href="{{ route('services.index') }}"
-                        class="btn btn-outline-danger px-5
-                        ">@lang('general.cancel')</a>
+                <div class="card-footer mb-5 mt-5">
+                    <button type="submit" class="btn btn-outline-success">@lang('general.save')</button>
+                    <a href="{{ route('products.index') }}"
+                        class="btn btn-outline-danger font-weight-bold">@lang('general.cancel')</a>
                 </div>
             </div>
         </div>
