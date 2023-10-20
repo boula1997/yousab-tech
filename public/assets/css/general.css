@@ -85,3 +85,15 @@
 .logo{
     width: 80px !important; 
 }
+
+
+.owl-stage-outer{
+    position:relative;
+    overflow:hidden;
+    -webkit-transform:translate3d(0,0,0);
+    direction: ltr;
+   }
+   
+.owl-carousel{
+    direction: ltr !important;
+   }
