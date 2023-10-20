@@ -10,10 +10,10 @@ use Astrotomic\Translatable\Translatable;
 
 
 
-class Service extends Model implements TranslatableContract
+class Category extends Model implements TranslatableContract
 {
     use HasFactory, Translatable, MorphFile;
-    protected $table = 'services';
+    protected $table = 'categories';
     public $translatedAttributes = ['title', 'subtitle', 'description'];
     protected $guarded = [];
     public $timestamps = true;

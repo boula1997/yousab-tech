@@ -16,6 +16,7 @@ use App\Models\Process;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\User;
+use App\Models\Product;
 use App\Models\Video;
 use Illuminate\Support\Facades\File;
 use Jackiedo\Cart\Facades\Cart;
@@ -89,7 +90,7 @@ function itemsCount($model)
         "testimonials" => count(Testimonial::get()),
         "processes" => count(Process::get()),
         "partners" => count(Partner::get()),
-        "services" => count(Service::get()),
+        "products" => count(Product::get()),
         "users" => count(User::get()),
         "admins" => count(Admin::get()),
         "videos" => count(Video::get()),
@@ -105,6 +106,13 @@ function services()
     $services = Service::latest()->take(6)->get();
 
     return $services;
+}
+
+function products()
+{
+    $products = Product::latest()->take(6)->get();
+
+    return $products;
 }
 
 
@@ -130,5 +138,13 @@ if (!function_exists('contacts')) {
     function contacts($type)
     {
         return isset($type) ?  Contact::where('type', $type)->get() : Contact::latest()->get();;
+    }
+}
+
+if (!function_exists('contact')) {
+
+    function contact($type)
+    {
+      Contact::where('type', $type)->first();
     }
 }

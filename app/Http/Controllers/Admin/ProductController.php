@@ -3,36 +3,36 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Dashboard\ServiceRequest;
+use App\Http\Requests\Dashboard\ProductRequest;
 use Illuminate\Support\Facades\File;
-use App\Models\Service;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\File as ModelsFile;
 use Exception;
 
-class ServiceController extends Controller
+class ProductController extends Controller
 {
     /**s
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Responses
      */
-    private $service;
-    function __construct(Service $service)
+    private $product;
+    function __construct(Product $product)
     {
-        $this->middleware('permission:service-list|service-create|service-edit|service-delete', ['only' => ['index', 'show']]);
-        $this->middleware('permission:service-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:service-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:service-delete', ['only' => ['destroy']]);
-        $this->service = $service;
+        $this->middleware('permission:product-list|product-create|product-edit|product-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:product-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:product-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:product-delete', ['only' => ['destroy']]);
+        $this->product = $product;
     }
 
     public function index()
     {
         try {
-            $services = $this->service->latest()->get();
-            return view('admin.crud.services.index', compact('services'))
-                ->with('i', (request()->input('service', 1) - 1) * 5);
+            $products = $this->product->latest()->get();
+            return view('admin.crud.products.index', compact('products'))
+                ->with('i', (request()->input('product', 1) - 1) * 5);
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
@@ -46,7 +46,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('admin.crud.services.create');
+        return view('admin.crud.products.create');
     }
 
     /**
@@ -55,13 +55,13 @@ class ServiceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ServiceRequest $request)
+    public function store(ProductRequest $request)
     {
         try {
             $data = $request->except('image','profile_avatar_remove');
-            $service = $this->service->create($data);
-            $service->uploadFile();
-            return redirect()->route('services.index')
+            $product = $this->product->create($data);
+            $product->uploadFile();
+            return redirect()->route('products.index')
                 ->with('success', trans('general.created_successfully'));
         } catch (Exception $e) {
             dd($e->getMessage());
@@ -72,39 +72,39 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $service)
+    public function show(Product $product)
     {
-        return view('admin.crud.services.show', compact('service'));
+        return view('admin.crud.products.show', compact('product'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Service $service)
+    public function edit(Product $product)
     {
-        // dd($service);
-        return view('admin.crud.services.edit', compact('service'));
+        // dd($product);
+        return view('admin.crud.products.edit', compact('product'));
     }
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\portfolio  $service
+     * @param  \App\Models\portfolio  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Service $service)
+    public function update(Request $request, Product $product)
     {
         try {
             $data = $request->except('image','profile_avatar_remove');
-            $service->update($data);
-            $service->updateFile();
-            return redirect()->route('services.index', compact('service'))
+            $product->update($data);
+            $product->updateFile();
+            return redirect()->route('products.index', compact('product'))
                 ->with('success', trans('general.update_successfully'));
         } catch (Exception $e) {
             dd($e->getMessage());
@@ -114,16 +114,16 @@ class ServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Service $service)
+    public function destroy(Product $product)
     {
         try {
-            $service->delete();
-            $service->file->delete();
-            $service->deleteFile();
-            return redirect()->route('services.index')
+            $product->delete();
+            $product->file->delete();
+            $product->deleteFile();
+            return redirect()->route('products.index')
                 ->with('success', trans('general.deleted_successfully'));
         } catch (Exception $e) {
             dd($e->getMessage());
