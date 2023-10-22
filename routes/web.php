@@ -55,7 +55,7 @@ Route::group(
         
         // Route::get('/reply', function () {
     
-        //     return view("mail.replyemail");
+        //     return view("mail.replymessage");
         // });
 
     }
