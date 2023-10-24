@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Admin;
+use App\Models\Category;
 use App\Models\Faq;
 use App\Models\Message;
 use App\Models\Counter;
@@ -95,6 +96,7 @@ function itemsCount($model)
         "admins" => count(Admin::get()),
         "videos" => count(Video::get()),
         "roles" => count(Role::get()),
+        "categories" => count(Category::get()),
     ];
 
 
