@@ -22,7 +22,7 @@
                                     </div>
                                     <h2>{{$testimonial->title}}</h2>
                                     <span>{{$testimonial->subttitle}}</span>
-                                        {!! $testimonial->description !!}
+                                        <div class="description">{!! $testimonial->description !!}</div>
                                 </div>
                             </div>
                         </div>

@@ -20,12 +20,12 @@
     <link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('lightbox-dist/css/lightbox.min.css') }}">
-   
+
     <!-- Swiper JS - V10.2.0 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css"
         integrity="sha512-pJrGHWDVOeiy4UkMtHu0fpD8oLLssFcaW0fsVXUkA1/jDLopa554Z1AZo5SKtekHnnmyat0ipiP0snKDrt0GNg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-            <!-- aos -->
+    <!-- aos -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="{{ asset('assets/css/general.css') }}">
     @if (app()->getLocale() == 'ar')
@@ -39,16 +39,7 @@
 
 <body class='sc5'>
 
-    <!-- preloader area start -->
-    <div class="preloader" id="preloader">
-        <div class="preloader-inner">
-            <div class="spinner">
-                <div class="dot1"></div>
-                <div class="dot2"></div>
-            </div>
-        </div>
-    </div>
-    <!-- preloader area end -->
+    @include('front.components.preloader')
 
     <!-- search popup start-->
     <div class="td-search-popup" id="td-search-popup">
@@ -86,12 +77,10 @@
                         <li class="social-area">
                             <p class="d-inline-block">{{ __('general.follow_us_on') }}</p>
                             @foreach (contacts('social') as $contact)
-
-                            <a href="{{ $contact->contact }}"><i class="{{ $contact->icon }}"
-                                aria-hidden="true"></i></a>  
-                            
+                                <a href="{{ $contact->contact }}"><i class="{{ $contact->icon }}"
+                                        aria-hidden="true"></i></a>
                             @endforeach
-                           
+
                             {{-- <a href="{{ settings()->twitter }}"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                             <a href="{{ settings()->instgram }}"><i class="fab fa-instagram"
                                     aria-hidden="true"></i></a>
@@ -112,7 +101,8 @@
                 </button>
             </div>
             <div class="logo">
-                <a href="{{ route('front.home') }}"><img class="logo" src="{{ asset(settings()->logo) }}" alt="img"></a>
+                <a href="{{ route('front.home') }}"><img class="logo" src="{{ asset(settings()->logo) }}"
+                        alt="img"></a>
             </div>
             {{-- <div class="nav-right-part nav-right-part-mobile">
                 <a class="search-bar-btn" href="#">
@@ -147,7 +137,8 @@
                 {{-- <a class="search-bar-btn" href="#">
                     <i class="fa fa-search"></i>
                 </a> --}}
-                <a class="btn btn-base" href="{{ request()->routeIs('front.home')?'#process':route('front.home').'#process'}}">{{ __('general.get_started') }}</a>
+                <a class="btn btn-base"
+                    href="{{ request()->routeIs('front.home') ? '#process' : route('front.home') . '#process' }}">{{ __('general.get_started') }}</a>
             </div>
         </div>
     </nav>
