@@ -46,31 +46,22 @@ Route::group(
     ],
     function () {
 
-        Route::get('/admin', function () {
-            return redirect()->route('admin.login-view');
-        });
-
-
-
-        Auth::routes();
-        // cancel login and register for front temporarly
-        Route::get('/login', function () {
-            return redirect()->route('admin.login-view');
-        });
-
-        Route::get('/admin/login', [App\Http\Controllers\Auth\LoginController::class, 'showAdminLoginForm'])->name('admin.login-view');
-        Route::post('/admin/login', [App\Http\Controllers\Auth\LoginController::class, 'adminLogin'])->name('admin.login')->middleware('guest:admin');
-
-        Route::get('/admin/register', [App\Http\Controllers\Auth\RegisterController::class, 'showAdminRegisterForm'])->name('admin.register-view');
-        Route::post('/admin/register', [App\Http\Controllers\Auth\RegisterController::class, 'createAdmin'])->name('admin.register');
-
-
-
-        Route::group(['middleware' => ['auth:admin']], function () {
-
-            Route::get('/dashboard', function () {
-                return view('dashboard');
-            })->name('dashboard');
+        Route::group(['prefix' => 'dashboard'], function () {    
+            Auth::routes();
+            // cancel login and register for front temporarly
+            Route::get('/login', function () {
+                return redirect()->route('admin.login-view');
+            });
+    
+            Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showAdminLoginForm'])->name('admin.login-view');
+            Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'adminLogin'])->name('admin.login')->middleware('guest:admin');
+            Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showAdminRegisterForm'])->name('admin.register-view');
+            Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'createAdmin'])->name('admin.register');           
+            Route::group(['middleware' => ['auth:admin']], function () {
+    
+                Route::get('/', function () {
+                    return view('dashboard');
+                })->name('dashboard');
         
             Route::resource('roles', RoleController::class);
             // Route::resource('home',HomeController::class);
@@ -117,5 +108,6 @@ Route::group(
             Route::put('/profile', [App\Http\Controllers\Admin\ProfileController::class, 'update'])->name('update.profile');
             Route::get('/profile', [App\Http\Controllers\Admin\ProfileController::class, 'edit'])->name('edit.profile');
         });
-    }
+    });
+}
 );
