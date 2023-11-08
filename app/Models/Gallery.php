@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\MorphFile;
 use App\Traits\MorphFiles;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,7 +13,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Gallery extends Model implements TranslatableContract
 {
-    use HasFactory, Translatable,MorphFiles;
+    use HasFactory, Translatable,MorphFiles,MorphFile;
     protected $table = 'galleries';
     protected $guarded = [];
     public $translatedAttributes = ['title', 'description'];

@@ -32,7 +32,6 @@ class GalleriesSeeder extends Seeder
                     "images/ipHIqPYZfDEcp6EjxpQzumYCBPt0GzsFnhtCt294.png",
                     "images/mOPxVTc5mVCGnZTkxFFokefhj9jR52Ws1k1kTbMZ.png",
                    ],
-
                 ];
       
 
@@ -50,9 +49,9 @@ class GalleriesSeeder extends Seeder
                     'subtitle' => $subtitle_en[$i],
                 ]
             ]);
-            // if(isset($images[$i]))
-            // foreach($images[$i] as $image)
-            // $Gallery->file()->create(["url"=>$image]);
+            if(isset($images[$i]))
+            foreach($images[$i] as $image)
+            $Gallery->file()->create(["url"=>$image]);
         }
     }
 }

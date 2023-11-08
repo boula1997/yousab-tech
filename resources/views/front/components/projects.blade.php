@@ -12,27 +12,32 @@
             </div>
 
         </div>
- 
-        <div class="swiper mySwiper" >
+
+        <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 @foreach ($portfolios as $portfolio)
-                    <div class="swiper-slide"  data-aos="zoom-in">
-                        <div class="item">
-                            <div class="single-project-inner style-two">
-                                <div class="thumb">
-                                    <img src="{{ isset($portfolio->images[0]->url)? $portfolio->images[0]->url:asset('default.jpg') }}" alt="img">
-                                </div>
-                                <div class="details-wrap">
-                                    <h3><a href="{{route('front.show.portfolio',$portfolio->id)}}">{{ $portfolio->title }}</a></h3>
-                                    <p> {!! $portfolio->description !!} </p>
-                                    <a href="project-details.html">{{ $portfolio->subtitle }}<i
-                                            class="fas fa-arrow-right"></i></a>
+                    @foreach ($portfolio->images as $image)
+                        <div class="swiper-slide" data-aos="zoom-in">
+                            <div class="item">
+                                <div class="single-project-inner style-two">
+                                    <div class="thumb">
+                                        <img src="{{ isset($image->url) ? $image->url : asset('default.jpg') }}"
+                                            alt="img">
+                                    </div>
+                                    <div class="details-wrap">
+                                        <h3><a
+                                                href="{{ route('front.show.portfolio', $portfolio->id) }}">{{ $portfolio->title }}</a>
+                                        </h3>
+                                        <p> {!! $portfolio->description !!} </p>
+                                        <a href="project-details.html">{{ $portfolio->subtitle }}<i
+                                                class="fas fa-arrow-right"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 @endforeach
             </div>
         </div>
     </div>
-        <!-- project area end -->
+    <!-- project area end -->
