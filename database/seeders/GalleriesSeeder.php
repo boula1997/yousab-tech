@@ -31,6 +31,13 @@ class GalleriesSeeder extends Seeder
                     "images/fu4OVbhm6tLlfpM0JOESaKkSMRLuF6OuOlVT13DF.png",
                     "images/ipHIqPYZfDEcp6EjxpQzumYCBPt0GzsFnhtCt294.png",
                     "images/mOPxVTc5mVCGnZTkxFFokefhj9jR52Ws1k1kTbMZ.png",
+                    "images/NBuecH0kpfPECl0Hjqk4KRh60BnDzVpVTm1l3aaQ.png",
+                    "images/bwq9e5TPGiu6FZj1xtmqeMYhJwTs3FQtOSDjBWg1.png",
+                    "images/lHoEcIQO2nOpcFTPJeLWktWtwqSPNcteQ46NFWlA.png",
+                    "images/rCkgzRr6gD7Eozb4hzrZdGRWKbDZmMKEsGWBCjgw.png",
+                    "images/PT070XhctXpMgtxLv6liva7IKqZdpvAZCacOt73V.png",
+                    "images/hcYqQxwjM2yv6m5BTKSuYQ8jh3Nnk358woGX8y5C.png",
+                    "images/Sq4e5UYueEeU3E7yy70isDq0WfKOwgujUHCo2PuD.png",
                    ],
                 ];
       
