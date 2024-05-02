@@ -14,8 +14,7 @@
                                 <h4><a href="team-details.html">{{ $portfolio->title }}</a></h4>
                                 <p>{{ $portfolio->title }}</p>
                                 <a href="{{ route('front.show.portfolio',$portfolio->id) }}">
-                                <button class="btn btn-outline-primary">{{ __('general.show') }}</button>
-
+                                <button class="btn btn-primary">{{ __('general.show') }}</button>
                                 </a>
                             </div>
                         </div>

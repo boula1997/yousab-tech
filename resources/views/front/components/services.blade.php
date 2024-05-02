@@ -3,21 +3,29 @@
         <div class="container">
             <div class="row">
                 @foreach ($services as $service)
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-team-inner text-center">
+                        <div class="thumb">
+                            <img src="{{ $service->image }}" style="height: 300px" alt="img">
+                        </div>
+                        <div class="details-wrap" style="height: 100px"> 
+                            <div class="details-inner">
+                                <h4><a href="{{ route('front.show.service',$service->id) }}">{{ $service->title }}</a></h4>
+                                <p>{{ $service->subtitle }}</p>
+                            </div>
+                        </div>
+                        <div class="hover-details-wrap">
+                            <div class="hover-details-inner">
+                                <div class="text-white text-justify text-limit" style='--lines: 6;'>{!! $service->description !!}</div>
+                                <a href="{{ route('front.show.service',$service->id) }}">
 
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                        <div class="boxShadow-contact">
-                            <div class="single-service-inner style-hover-base text-center">
-                                <div class="icon-box">
-                                    <i class="{{ $service->icon }} fs-1"></i>
-                                </div>
-                                <div class="details">
-                                    <a href="{{route('front.show.service',$service->id)}}" class="text-limit" style="--lines:1;"><h4>{{$service->title}}</h4></a>
-                                    <div class="description text-limit" style="--lines:6;"> {!! $service->description !!}</div>
-                                   
-                                </div>
+                                    <button class="btn btn-secondary mt-3">{{ __('general.show') }}</button>
+                                </a>
+
                             </div>
                         </div>
                     </div>
+                </div>
                     
                 @endforeach
             
