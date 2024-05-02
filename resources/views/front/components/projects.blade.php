@@ -25,7 +25,7 @@
                                     </div>
                                     <div class="details-wrap">
                                         <h3><a
-                                                href="#">{{ $portfolio->title }}</a>
+                                                href="{{ route('front.show.portfolio',$portfolio->id) }}">{{ $portfolio->title }}</a>
                                         </h3>
                                         <p> {!! $portfolio->description !!} </p>
                                         <a href="{{ route('front.show.portfolio',$portfolio->id) }}">{{ $portfolio->subtitle }}<i
