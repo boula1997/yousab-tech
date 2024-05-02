@@ -21,7 +21,7 @@
                         <div class="exp-wrap mt-3">
                             <div class="row">
                                 @foreach ($counters as $counter)
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-3">
                                         <div class="single-exp-inner">
                                             <h2><span class="counter">{{ $counter->count }}</span> <sub></sub></h2>
                                             <h5>{{ $counter->title }}</h5>
