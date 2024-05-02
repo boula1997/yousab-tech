@@ -33,7 +33,7 @@ class TeamSeeder extends Seeder
                         "Web Developer",
                         "Web Developer",
                     ];
-        $description_en = [null,null,null,null,null];
+        $description_en = [null,null,null,null,null,null,null,null];
       
         $title_ar = [
                      "جرجس مكرم",
@@ -51,6 +51,7 @@ class TeamSeeder extends Seeder
                        "مهندس برمجيات",
                        "مهندس برمجيات",
                         "مصمم ويب ",
+                        "مطور ويب",
                         "مطور ويب",
                         "مطور ويب",
                         "مطور ويب",
