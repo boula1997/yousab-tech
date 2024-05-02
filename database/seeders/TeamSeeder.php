@@ -106,7 +106,7 @@ class TeamSeeder extends Seeder
                 "images/pekmLKsEWdfVwDSwbG0sSIZARXfO8GavZPaoOF1D.jpg",
                 "images/tAgfJG0vAJHhQsCii9FR441z6tGs9fyGKj92MUzy.jpg",
                 "images/zlqIgyZxaZJCmqfSvsxqkTIFsou1vItih8tUaqXi.jpg",
-                "images/zlqIgyZxaZJCmqfSvsxqkTIFsou1vItih8tUaqXi.jpg",
+                "images/melad.jpeg",
                 "images/zaid_sayed.jpeg",
             ];
        
