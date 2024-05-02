@@ -17,7 +17,7 @@ class SettingSeeder extends Seeder
         Setting::create([
             'en' => [
                 'appointment1' => ': 24/7',
-                'copyright' => 'Copyright reserved by Yousab Tech © 2023',
+                'copyright' => 'Copyright reserved by Yousab Tech © 2024',
                 'title' => 'Yousab Tech',
                 'address' => 'Online',
                 'description' => 'We are a web development company specialized in creating, fixing and mangaing websites using latest technologies and web services',
