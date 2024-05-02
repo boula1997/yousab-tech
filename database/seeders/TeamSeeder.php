@@ -41,7 +41,7 @@ class TeamSeeder extends Seeder
                      "ابراهيم سامى",
                      "كيرلس ادوارد",
                      "تادرس اميل",
-                     "احمد السيلي",
+                    //  "احمد السيلي",
                      "ميلاد يوسف",
                      "زياد محمد",
                     ];
@@ -52,7 +52,7 @@ class TeamSeeder extends Seeder
                        "مهندس برمجيات",
                         "مصمم ويب ",
                         "مطور ويب",
-                        "مطور ويب",
+                        // "مطور ويب",
                         "مطور ويب",
                         "مطور ويب",
                     ];
@@ -64,7 +64,7 @@ class TeamSeeder extends Seeder
             "https://www.facebook.com",
             "https://www.facebook.com",
             "https://www.facebook.com",
-            "https://www.facebook.com",
+            // "https://www.facebook.com",
             "https://www.facebook.com",
             "https://www.facebook.com",
         ];
@@ -74,7 +74,7 @@ class TeamSeeder extends Seeder
             "https://www.twitter.com",
             "https://www.twitter.com",
             "https://www.twitter.com",
-            "https://www.twitter.com",
+            // "https://www.twitter.com",
             "https://www.twitter.com",
             "https://www.twitter.com",
         ];
@@ -84,7 +84,7 @@ class TeamSeeder extends Seeder
             "https://www.instagram.com",
             "https://www.instagram.com",
             "https://www.instagram.com",
-            "https://www.instagram.com",
+            // "https://www.instagram.com",
             "https://www.instagram.com",
             "https://www.instagram.com",
         ];
@@ -94,7 +94,7 @@ class TeamSeeder extends Seeder
             "https://www.linkedin.com",
             "https://www.linkedin.com",
             "https://www.linkedin.com",
-            "https://www.linkedin.com",
+            // "https://www.linkedin.com",
             "https://www.linkedin.com",
             "https://www.linkedin.com",
         ];
@@ -105,7 +105,7 @@ class TeamSeeder extends Seeder
                 "images/YQXLPLiQgi8H1E9YE77J3lwUX0qSOYXkHMP192Nz.png",
                 "images/pekmLKsEWdfVwDSwbG0sSIZARXfO8GavZPaoOF1D.jpg",
                 "images/tAgfJG0vAJHhQsCii9FR441z6tGs9fyGKj92MUzy.jpg",
-                "images/zlqIgyZxaZJCmqfSvsxqkTIFsou1vItih8tUaqXi.jpg",
+                // "images/zlqIgyZxaZJCmqfSvsxqkTIFsou1vItih8tUaqXi.jpg",
                 "images/melad.jpeg",
                 "images/zaid_sayed.jpeg",
             ];
