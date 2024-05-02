@@ -99,11 +99,12 @@ class TeamSeeder extends Seeder
             "https://www.linkedin.com",
         ];
 
-        $image=["images/YE92B4LXiM6QhFcQbr5YKECGaMU5k8NokXve9o1m.jpg",
+        $image=[
+            "images/zlqIgyZxaZJCmqfSvsxqkTIFsou1vItih8tUaqXi.jpg",
+            "images/YE92B4LXiM6QhFcQbr5YKECGaMU5k8NokXve9o1m.jpg",
                 "images/YQXLPLiQgi8H1E9YE77J3lwUX0qSOYXkHMP192Nz.png",
                 "images/pekmLKsEWdfVwDSwbG0sSIZARXfO8GavZPaoOF1D.jpg",
                 "images/tAgfJG0vAJHhQsCii9FR441z6tGs9fyGKj92MUzy.jpg",
-                "images/zlqIgyZxaZJCmqfSvsxqkTIFsou1vItih8tUaqXi.jpg",
                 "images/zlqIgyZxaZJCmqfSvsxqkTIFsou1vItih8tUaqXi.jpg",
                 "images/zlqIgyZxaZJCmqfSvsxqkTIFsou1vItih8tUaqXi.jpg",
                 "images/zlqIgyZxaZJCmqfSvsxqkTIFsou1vItih8tUaqXi.jpg",
