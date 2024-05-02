@@ -14,7 +14,7 @@ class CountersSeeder extends Seeder
     public function run(): void
     {
         $title_ar = ["مواقع تم تنفيذها","مواقع تحت الانشاء","تطبيقات موبيل تم تنفيذها","تطبيقات موبيل تحت الانشاء"];
-        $title_en = ["built web projects","new web project","Created Mobile Applications"];
+        $title_en = ["Built Web Projects","New Web Project","Created Mobile Applications","New  Mobile Applications"];
         $count=['30','15',"10","5"];
       
 
