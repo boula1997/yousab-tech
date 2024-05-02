@@ -20,11 +20,11 @@
                             <div class="item">
                                 <div class="single-project-inner style-two">
                                     <div class="thumb">
-                                        <img src="{{ isset($portfolio->image) ? $portfolio->image : asset('default.jpg') }}"
-                                            alt="img">
+                                        <img style="height: 300px" src="{{ isset($portfolio->image) ? $portfolio->image : asset('default.jpg') }}"
+                                            alt="{{  $portfolio->title }}">
                                     </div>
                                     <div class="details-wrap">
-                                        <h3><a
+                                        <h3><a class="text-decoration-none"
                                                 href="{{ route('front.show.portfolio',$portfolio->id) }}">{{ $portfolio->title }}</a>
                                         </h3>
                                         <p> {!! $portfolio->description !!} </p>
