@@ -13,7 +13,10 @@
                             <div class="details-inner">
                                 <h4><a href="team-details.html">{{ $portfolio->title }}</a></h4>
                                 <p>{{ $portfolio->title }}</p>
-                                <button class="btn btn-outline-primary">Show</button>
+                                <a href="{{ route('front.show.portfolio',$portfolio->id) }}">
+                                <button class="btn btn-outline-primary">{{ __('general.show') }}</button>
+
+                                </a>
                             </div>
                         </div>
                     </div>
