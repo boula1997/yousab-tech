@@ -24,6 +24,7 @@ class GalleriesSeeder extends Seeder
                          "مسابات ستيل (موقع للتجارة الإلكترونية)",
                          "حداق الفيروز",
                          "الجزيرة (خدمات فندقية)",
+                         "ايجيبت للسياحة",
                      ];
         $title_en = [
                         "Elalamia (e-commerce website)",
@@ -36,6 +37,7 @@ class GalleriesSeeder extends Seeder
                         "Msabaat Steel (e-commerce website)",
                         "Haddak Elfayrouz",
                         "Al Jazira (Hotel Services)",
+                        "Egypt Tourism",
                     ];
 
         $subtitle_ar =null;
@@ -192,6 +194,20 @@ class GalleriesSeeder extends Seeder
                         "images/eljazira/7.png",
                         "images/eljazira/8.png",
                         "images/eljazira/9.png",
+                   ],
+                   [
+                        //Egypt Tourism   
+                        "images/egypttourism/1.jpeg",
+                        "images/egypttourism/2.jpeg",
+                        "images/egypttourism/3.jpeg",
+                        "images/egypttourism/4.jpeg",
+                        "images/egypttourism/5.jpeg",
+                        "images/egypttourism/6.jpeg",
+                        "images/egypttourism/7.jpeg",
+                        "images/egypttourism/8.jpeg",
+                        "images/egypttourism/9.jpeg",
+                        "images/egypttourism/10.jpeg",
+                        "images/egypttourism/11.jpeg",
                    ],
                 ];
       
