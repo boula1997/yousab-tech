@@ -24,7 +24,7 @@
                                 id="{{ $locale }}" role="tabpanel">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="mb-7 bg-light p-3 rounded h-100">
+                                        <div class="mb-5 bg-light p-3 rounded h-100">
                                             <div class="card-title fw-bold">
                                                 <h5 class="font-weight-bolder text-dark">@lang('general.title'):</h5>
                                                 <p class="m-0">{{ $team->translate($locale)->title }}</p>
@@ -33,7 +33,7 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="mb-7 bg-light p-3 rounded h-100">
+                                        <div class="mb-5 bg-light p-3 rounded h-100">
                                             <div class="card-title fw-bold">
                                                 <h5 class="font-weight-bolder text-dark">@lang('general.subtitle'):</h5>
                                                 <p class="m-0">{{ $team->translate($locale)->subtitle }}</p>
@@ -46,7 +46,7 @@
                                 <br>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="mb-7 bg-light p-3 rounded h-100">
+                                        <div class="mb-5 bg-light p-3 rounded h-100">
                                             <div class="card-title fw-bold">
                                                 <h5 class="font-weight-bolder text-dark">@lang('general.description'):</h5>
                                                 <p class="m-0">{!! $team->translate($locale)->description !!}</p>
@@ -63,7 +63,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="mb-7 bg-light p-3 rounded h-100">
+                                    <div class="mb-5 bg-light p-3 rounded h-100">
                                         <div class="card-title fw-bold">
                                             <h5 class="font-weight-bolder text-dark">@lang('general.facebook'):</h5>
                                             <p class="m-0">{{ $team->facebook }}</p>
@@ -71,7 +71,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="mb-7 bg-light p-3 rounded h-100">
+                                    <div class="mb-5 bg-light p-3 rounded h-100">
                                         <div class="card-title fw-bold">
                                             <h5 class="font-weight-bolder text-dark">@lang('general.twitter'):</h5>
                                             <p class="m-0">{{ $team->twitter }}</p>
@@ -79,7 +79,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="mb-7 bg-light p-3 rounded h-100">
+                                    <div class="mb-5 bg-light p-3 rounded h-100">
                                         <div class="card-title fw-bold">
                                             <h5 class="font-weight-bolder text-dark">@lang('general.instagram'):</h5>
                                             <p class="m-0">{{ $team->instagram }}</p>
@@ -87,7 +87,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="mb-7 bg-light p-3 rounded h-100">
+                                    <div class="mb-5 bg-light p-3 rounded h-100">
                                         <div class="card-title fw-bold">
                                             <h5 class="font-weight-bolder text-dark">@lang('general.linkedin'):</h5>
                                             <p class="m-0">{{ $team->linkedin }}</p>
