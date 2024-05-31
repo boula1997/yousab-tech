@@ -1,7 +1,6 @@
 @if (isset($route, $role, $module))
 
-    <form id="delete-form-{{ $module->id }}" style="display: inline-table;"
-        action="{{ route($route . '.destroy', $module->id) }}" method="post">
+
 
         @can($role . '-list')
             <a href="{{ route($route . '.show', $module) }}" title="show">
@@ -45,11 +44,17 @@
                                     {{ $module->email }}
                                 @endif
                             </b></div>
-                        <div class="modal-footer d-flex justify-content-start align-items-start">
-                            <button type="button" class="btn gray btn-outline-secondary"
-                                data-dismiss="modal">{{ __('general.cancel') }}</button>
-                            <button type="submit" class="btn gray btn-outline-danger">{{ __('general.delete') }}</button>
-                        </div>
+                            <div class="modal-footer d-flex justify-content-start align-items-start">
+                                <button type="button" class="btn gray btn-outline-secondary"
+                                    data-dismiss="modal">{{ __('general.cancel') }}</button>
+                                    <form id="delete-form-{{ $module->id }}" style="display: inline-table;"
+                                        action="{{ route($route . '.destroy', $module->id) }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit"
+                                            class="btn gray btn-outline-danger">{{ __('general.delete') }}</button>
+                                    </form>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -61,8 +66,6 @@
             </a>
         @endcan
 
-
-    </form>
 @endif
 @push('scripts')
 <script>
