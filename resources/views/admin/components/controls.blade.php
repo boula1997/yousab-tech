@@ -64,5 +64,14 @@
 
     </form>
 @endif
-
+@push('scripts')
+<script>
+$(document).ready(function() {
+    // Move all modals with the 'modal fade' class outside of their parent td elements
+    $('td').has('.modal.fade').each(function() {
+        $(this).find('.modal.fade').appendTo('body');
+    });
+});
+</script>
+@endpush
 {{-- toodle delete --}}
