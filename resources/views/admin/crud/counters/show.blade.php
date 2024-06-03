@@ -27,7 +27,7 @@
                                         <div class="mb-5 bg-light p-3 rounded h-100">
                                             <div class="card-title fw-bold">
                                                 <h5 class="font-weight-bolder text-dark">@lang('general.title'):</h5>
-                                                <p class="m-0">{{ $counter->translate($locale)->title }}</p>
+                                                <p style="margin: 0; color: inherit; font-weight: normal;">{{ $counter->translate($locale)->title }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -42,7 +42,7 @@
                     <div class="mb-5 bg-light p-3 rounded h-100">
                         <div class="card-title fw-bold">
                             <h5 class="font-weight-bolder text-dark">@lang('general.count'):</h5>
-                            <p class="m-0">{{ $counter->count }}</p>
+                            <p style="margin: 0; color: inherit; font-weight: normal;">{{ $counter->count }}</p>
                         </div>
                     </div>
                 </div>

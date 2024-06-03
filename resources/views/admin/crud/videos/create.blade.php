@@ -31,7 +31,7 @@
                                         </div>
                                         <input type="text" name="{{ $locale . '[title]' }}"
                                             placeholder="@lang('general.title')"
-                                            class="form-control  pl-5 min-h-40px @error($locale . '.title') is-invalid @enderror"
+                                            class="form-control @error('') invalid @enderror  pl-5 min-h-40px @error($locale . '.title') is-invalid @enderror"
                                             value="{{ old($locale . '.title') }}">
                                     </div>
                                 </div>
@@ -49,7 +49,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">{{ __('general.youtube_link') }}</label>
                                     <input type="text" name="youtube_link" value="{{ old('youtube_link') }}"
-                                        class="form-control" id="exampleInputName"
+                                        class="form-control @error('') invalid @enderror" id="exampleInputName"
                                         placeholder="{{ __('general.youtube_link') }}">
                                 </div>
                             </div>

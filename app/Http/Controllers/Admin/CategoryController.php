@@ -121,7 +121,6 @@ class CategoryController extends Controller
     {
         try {
             $category->delete();
-            $category->file->delete();
             $category->deleteFile();
             return redirect()->route('categories.index')
                 ->with('success', trans('general.deleted_successfully'));

@@ -42,7 +42,7 @@
                             <div class="form-group">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">{{ __('general.contact') }}</label>
-                                    <input type="text" name="contact" value="{{ old('contact',$contact->contact) }}" class="form-control"
+                                    <input type="text" name="contact" value="{{ old('contact',$contact->contact) }}" class="form-control @error('') invalid @enderror"
                                         id="exampleInputName" placeholder="@lang('general.contact')">
                                 </div>
                             </div>

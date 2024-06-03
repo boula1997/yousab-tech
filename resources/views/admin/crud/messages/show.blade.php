@@ -15,7 +15,7 @@
                                 <div class="mb-5 bg-light p-3 rounded h-100">
                                     <div class="card-title fw-bold">
                                         <h5 class="font-weight-bolder text-dark">@lang('general.name'):</h5>
-                                        <p class="m-0">{{ $message->name }}</p>
+                                        <p style="margin: 0; color: inherit; font-weight: normal;">{{ $message->name }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -24,7 +24,7 @@
                                 <div class="mb-5 bg-light p-3 rounded h-100">
                                     <div class="card-title fw-bold">
                                         <h5 class="font-weight-bolder text-dark">@lang('general.email'):</h5>
-                                        <p class="m-0">{{ $message->email }}</p>
+                                        <p style="margin: 0; color: inherit; font-weight: normal;">{{ $message->email }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -37,7 +37,7 @@
                                 <div class="mb-5 bg-light p-3 rounded h-100">
                                     <div class="card-title fw-bold">
                                         <h5 class="font-weight-bolder text-dark">@lang('general.message'):</h5>
-                                        <p class="m-0">{{ $message->message }}</p>
+                                        <p style="margin: 0; color: inherit; font-weight: normal;">{{ $message->message }}</p>
                                     </div>
                                 </div>
                             </div>
