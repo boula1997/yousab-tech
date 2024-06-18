@@ -25,28 +25,28 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">@lang('general.name')</label>
-                                    <input type="text" name="name" value="{{ old('name') }}" class="form-control"
+                                    <input type="text" name="name" value="{{ old('name') }}" class="form-control @error('') invalid @enderror"
                                         id="exampleInputName" placeholder="@lang('general.name')">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">@lang('general.email')</label>
-                                    <input type="email" name="email" value="{{ old('email') }}" class="form-control"
+                                    <input type="email" name="email" value="{{ old('email') }}" class="form-control @error('') invalid @enderror"
                                         id="exampleInputEmail" placeholder="@lang('general.email')">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">@lang('general.password')</label>
                                     <input type="password" name="password" value="{{ old('password') }}"
-                                        class="form-control" id="exampleInputPassword" placeholder="@lang('general.password')">
+                                        class="form-control @error('') invalid @enderror" id="exampleInputPassword" placeholder="@lang('general.password')">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">@lang('general.confirm_password')</label>
                                     <input type="password" name="confirm-password" value="{{ old('confirm-password') }}"
-                                        class="form-control" id="exampleInputConfirmpassword"
+                                        class="form-control @error('') invalid @enderror" id="exampleInputConfirmpassword"
                                         placeholder="@lang('general.confirm_password')">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">@lang('general.role')</label>
-                                    <select name="roles" id="" class="form-control">
+                                    <select name="roles" id="" class="form-control @error('') invalid @enderror">
                                         @foreach ($roles as $role)
                                             <option value="{{ $role }}">{{ $role }}</option>
                                         @endforeach

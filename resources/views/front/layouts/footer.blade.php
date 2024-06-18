@@ -212,6 +212,16 @@
     });
 </script>
 
+<script>
+    $(document).ready(function() {
+        // alert(500);
+        // Simulate a click on the checkbox once the page is loaded
+        console.log('you are right');
+        if (!$('.targetCheckbox').is(':checked'))
+            $('.targetCheckbox').click();
+    });
+</script>
+
 </body>
 
 </html>

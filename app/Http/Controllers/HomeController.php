@@ -56,7 +56,7 @@ class HomeController extends Controller
             $services = $this->service->get();
             $testimonials = $this->testimonial->get();
             $processes = $this->process->take(9)->latest()->get();
-            $teams = $this->team->get();
+            $teams = $this->team->latest()->get();
             $counters = $this->counter->get();
             $portfolios = $this->portfolio->get();
             $faqs=$this->faq->get();

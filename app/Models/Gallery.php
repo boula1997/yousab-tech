@@ -23,5 +23,9 @@ class Gallery extends Model implements TranslatableContract
     {
         return  count($this->files)>0?$this->files:["default.jpg"];
     }
+    public function getImageAttribute()
+    {
+        return  count($this->files)>0?$this->files[0]->url:["default.jpg"];
+    }
     
 }

@@ -2,7 +2,7 @@
     <div class="td-search-popup" id="td-search-popup">
         <form action="index.html" class="search-form">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search.....">
+                <input type="text" class="form-control @error('') invalid @enderror" placeholder="Search.....">
             </div>
             <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
         </form>
@@ -72,6 +72,8 @@
                             href="{{ route('front.home') }}">{{ __('general.home') }}</a></li>
                     <li><a class="{{ request()->routeIs('front.service') ? 'active' : '' }}"
                             href="{{ route('front.service') }}">{{ __('general.services') }}</a></li>
+                    <li><a class="{{ request()->routeIs('front.portfolios') ? 'active' : '' }}"
+                            href="{{ route('front.portfolios') }}">{{ __('general.portfolios') }}</a></li>
                     <li><a class="{{ request()->routeIs('front.about') ? 'active' : '' }}"
                             href="{{ route('front.about') }}">{{ __('general.about') }}</a></li>
                     {{-- <li><a class="{{request()->routeIs('front.home')?'active':''}}" href="{{route('front.home')}}">Project</a></li> --}}

@@ -33,7 +33,7 @@
                                         </div>
                                         <input type="text" name="{{ $locale . '[title]' }}"
                                             placeholder="@lang('general.title')"
-                                            class="form-control  pl-5 min-h-40px @error($locale . '.title') is-invalid @enderror"
+                                            class="form-control @error('') invalid @enderror  pl-5 min-h-40px @error($locale . '.title') is-invalid @enderror"
                                             value="{{ old($locale . '.title') }}">
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@
                                         </div>
                                         <input type="text" name="{{ $locale . '[subtitle]' }}"
                                             placeholder="@lang('general.subtitle')"
-                                            class="form-control  pl-5 min-h-40px @error($locale . '.subtitle') is-invalid @enderror"
+                                            class="form-control @error('') invalid @enderror  pl-5 min-h-40px @error($locale . '.subtitle') is-invalid @enderror"
                                             value="{{ old($locale . '.subtitle') }}">
                                     </div>
                                 </div>
@@ -73,7 +73,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">{{ __('general.identifier') }}</label>
                                     <input type="text" name="identifier" value="{{ old('identifier') }}"
-                                        class="form-control" id="exampleInputName" placeholder="@lang('general.identifier')">
+                                        class="form-control @error('') invalid @enderror" id="exampleInputName" placeholder="@lang('general.identifier')">
                                 </div>
                             </div>
 

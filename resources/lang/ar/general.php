@@ -196,6 +196,23 @@ return [
 
     'delete_confirm'=>'تاكيد الحذف',
     'delete_message'=>'هل انت متاكد انك تريد حذف',
-
+    "search" => "بحث",
+    "products" => "المنتجات",
+    "categories" => "الاقسام",
+    "show_all" => "عرض الكل",
+    "cancel" => "يلغي",
+    "no_result" => "لا توجد نتيجه",
+    "send_message" => "أرسل رسالة",
+    "user" => "مستخدم",
+    "serviceRequest" => "طلب خدمة",
+    "our_portfolios" => "معرضنا",
+    "Dashboard" => "لوحة التحكم",
+    "Password" => "الرقم السرى",
+    "Confirm" => "تأكيد",
+    "Email" => "بريد إلكتروني",
+    "Login" => "تسجيل الدخول",
+    "Register" => "يسجل",
+    "Name" => "اسم",
+    "Logout" => "تسجيل خروج",
 
 ];

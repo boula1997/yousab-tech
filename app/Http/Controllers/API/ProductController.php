@@ -22,7 +22,7 @@ class ProductController extends Controller
             $data['products'] = ProductResource::collection($this->product->get());
             return successResponse($data);
         } catch (Exception $e) {
-            dd($e->getMessage());
+
             return failedResponse($e->getMessage());
         }
     }
@@ -33,7 +33,7 @@ class ProductController extends Controller
             $data['product'] = new ProductResource($this->product->findorfail($id));
             return successResponse($data);
         } catch (Exception $e) {
-            dd($e->getMessage());
+
             return failedResponse($e->getMessage());
         }
     }

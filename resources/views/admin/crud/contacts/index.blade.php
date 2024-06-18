@@ -37,6 +37,7 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>@lang('general.contact')</th>
+                                                <th>@lang('general.icon')</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
                                         </thead>
@@ -45,6 +46,7 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $contact->contact }}</td>
+                                                    <td><i class="{{ $contact->icon }}"></i></td>
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'contacts',

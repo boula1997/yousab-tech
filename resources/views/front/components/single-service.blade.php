@@ -14,7 +14,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="thumb">
+                                    <div class="thumb w-75">
                                         <img src="{{ $service->image }}" alt="img">
                                     </div>
                                     

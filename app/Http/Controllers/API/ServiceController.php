@@ -22,7 +22,7 @@ class ServiceController extends Controller
             $data['services'] = ServiceResource::collection($this->service->get());
             return successResponse($data);
         } catch (Exception $e) {
-            dd($e->getMessage());
+
             return failedResponse($e->getMessage());
         }
     }
@@ -33,7 +33,7 @@ class ServiceController extends Controller
             $data['service'] = new ServiceResource($this->service->findorfail($id));
             return successResponse($data);
         } catch (Exception $e) {
-            dd($e->getMessage());
+
             return failedResponse($e->getMessage());
         }
     }
