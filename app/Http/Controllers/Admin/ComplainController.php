@@ -58,7 +58,6 @@ class ComplainController extends Controller
      */
     public function store(ComplainRequest $request)
     {
-
         try {
             $data = $request->except('image','profile_avatar_remove');
             $complain = $this->complain->create($data);
