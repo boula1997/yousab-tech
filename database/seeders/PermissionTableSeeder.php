@@ -1,10 +1,10 @@
 <?php
-  
+
 namespace Database\Seeders;
-  
+
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
-  
+
 class PermissionTableSeeder extends Seeder
 {
     /**
@@ -27,6 +27,10 @@ class PermissionTableSeeder extends Seeder
            'faq-create',
            'faq-edit',
            'faq-delete',
+           'complain-list',
+           'complain-create',
+           'complain-edit',
+           'complain-delete',
            'counter-list',
            'counter-create',
            'counter-edit',
@@ -98,7 +102,7 @@ class PermissionTableSeeder extends Seeder
            'newsletter-delete',
            'newsletter-reply',
         ];
-     
+
         foreach ($permissions as $permission) {
              Permission::updateOrCreate(['name' => $permission,'guard_name'=>'admin']);
         }

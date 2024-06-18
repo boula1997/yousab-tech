@@ -2,6 +2,7 @@
 
 use App\Models\Admin;
 use App\Models\Category;
+use App\Models\Complain;
 use App\Models\Faq;
 use App\Models\Message;
 use App\Models\Counter;
@@ -93,6 +94,7 @@ function itemsCount($model)
         "partners" => count(Partner::get()),
         "products" => count(Product::get()),
         "users" => count(User::get()),
+        "complains" => count(Complain::get()),
         "admins" => count(Admin::get()),
         "videos" => count(Video::get()),
         "roles" => count(Role::get()),

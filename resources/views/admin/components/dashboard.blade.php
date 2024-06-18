@@ -61,7 +61,7 @@
 
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
-            
+
             {{-- <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <a href="#" class="dropdown-item">
                     <!-- Message Start -->
@@ -513,7 +513,25 @@
                         </ul>
                     </li>
                 @endcan
-
+                @can('complain-list')
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class=" px-1 fas fa-tags"></i>
+                        <p>
+                            @lang('general.complains') <i class=" px-1 fas fa-angle-left right"></i>
+                            <span class="badge badge-info right">{{ itemsCount('complains') }}</span>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('complains.index') }}" class="nav-link">
+                                <i class=" px-1 far fa-circle nav-icon"></i>
+                                <p>@lang('general.show')</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            @endcan
                 @can('counter-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
@@ -632,7 +650,7 @@
                         <button class="btn text-secondary" type="submit">@lang('general.logout')</button>
 
                     </form>
-                </li>   
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
