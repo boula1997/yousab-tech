@@ -2,20 +2,17 @@
 
 namespace Database\Seeders;
 
+use App\Models\Complain;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Faq;
 
- 
-
-class FaqSeeder extends Seeder
+class ComplainSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-
         $title_en = ["How long does it take to develop a website or web application?",
                      "Can you help with website redesign or updates to an existing website?",
                      " Will my website be mobile-friendly and responsive?",
@@ -71,7 +68,7 @@ class FaqSeeder extends Seeder
         $image=[];
 
         for ($i = 0; $i < count($title_ar); $i++) {
-            $FaqTranslation = Faq::create([
+            $ComplainTranslation = Complain::create([
                 'ar' => [
                     'title' => $title_ar[$i],
                     'description' => $description_ar[$i],
@@ -84,4 +81,5 @@ class FaqSeeder extends Seeder
             ]);
         }
     }
+
 }

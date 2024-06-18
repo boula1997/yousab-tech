@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->text('description')->nullable();
+            $table->unsignedBigInteger('complain_id');
+            $table->string('locale')->index();
+            $table->unique(['complain_id', 'locale']);
+            $table->foreign('complain_id')->references('id')->on('complains')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             FaqSeeder::class,
+            ComplainSeeder::class,
             MessagesSeeder::class,
             NewslettersSeeder::class,
             CountersSeeder::class,
@@ -42,9 +43,9 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             UsersSeeder::class,
             VideosSeeder::class,
-          
+
 
         ]);
-        
+
     }
 }
