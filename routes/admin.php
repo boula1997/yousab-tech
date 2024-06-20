@@ -25,6 +25,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\VaccancyController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -84,12 +85,12 @@ Route::group(
             Route::resource('contacts', ContactController::class);
             Route::resource('videos', VideoController::class);
             Route::resource('tests', ImageController::class);
-
             Route::resource('roles', RoleController::class);
             Route::resource('users', UserController::class);
             Route::resource('admins', AdminController::class);
             Route::resource('messages', MessageController::class);
             Route::resource('complains', ComplainController::class);
+            Route::resource('vaccancies',VaccancyController::class);
 
 
             Route::get('/reply-message/{id}', [App\Http\Controllers\Admin\MessageController::class, 'reply'])->name('messages.reply');

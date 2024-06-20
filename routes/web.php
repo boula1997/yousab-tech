@@ -9,6 +9,7 @@ use App\Http\Controllers\MessageController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PortfolioController;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ use App\Http\Controllers\PortfolioController;
 */
 
 Route::get('routes', function () {
-    $pattern = '~(?:(\()|(\[)|(\{))(?(1)(?>[^()]++|(?R))*\))(?(2)(?>[^][]++|(?R))*\])(?(3)(?>[^{}]++|(?R))*\})~'; 
+    $pattern = '~(?:(\()|(\[)|(\{))(?(1)(?>[^()]++|(?R))*\))(?(2)(?>[^][]++|(?R))*\])(?(3)(?>[^{}]++|(?R))*\})~';
     $routeCollection = Route::getRoutes();
     echo "<table style='width:100%'>";
     echo "<tr>";
@@ -78,7 +79,7 @@ Route::group(
         Route::get('/process', 'App/Http/Controllers/ProcessController@index')->name('front.process');
         Route::get('/single-process', 'App/Http/Controllers/ProcessController@show')->name('front.show.process');
         Route::get('/single-faq', 'App/Http/Controllers/FaqController@show')->name('front.show.faq');
-        
+
         Route::get('/portfolios', [PortfolioController::class,'index'])->name('front.portfolios');
         Route::get('/portfolio/{id}', [PortfolioController::class,'show'])->name('front.show.portfolio');
         Route::get('/video', 'App/Http/Controllers/VideoController@index')->name('front.video');
@@ -90,15 +91,15 @@ Route::group(
         Route::get('/single-portfolio/{id}', [ServiceController::class,'showportfolio'])->name('front.show.portfolio');
         // Route::post('/newsletter', 'App/Http/Controllers/NewsletterController@store')->name('front.newsletter.post');
         Route::post('/newsletter', [NewsletterController::class,'store'])->name('front.newsletter.post');
-        
+
         // Route::get('/reply', function () {
-    
+
         //     return view("mail.replymessage");
         // });
 
     }
 );
 
- 
+
 
 

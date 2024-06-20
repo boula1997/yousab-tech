@@ -532,6 +532,25 @@
                     </ul>
                 </li>
             @endcan
+            @can('vaccancy-list')
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class=" px-1 fas fa-tags"></i>
+                    <p>
+                        @lang('general.vaccancies') <i class=" px-1 fas fa-angle-left right"></i>
+                        <span class="badge badge-info right">{{ itemsCount('vaccancies') }}</span>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('vaccancies.index') }}" class="nav-link">
+                            <i class=" px-1 far fa-circle nav-icon"></i>
+                            <p>@lang('general.show')</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        @endcan
                 @can('counter-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">

@@ -19,6 +19,7 @@ use App\Models\Service;
 use App\Models\Setting;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Vaccancy;
 use App\Models\Video;
 use Illuminate\Support\Facades\File;
 use Jackiedo\Cart\Facades\Cart;
@@ -95,6 +96,8 @@ function itemsCount($model)
         "products" => count(Product::get()),
         "users" => count(User::get()),
         "complains" => count(Complain::get()),
+        "vaccancies" => count(Vaccancy::get()),
+
         "admins" => count(Admin::get()),
         "videos" => count(Video::get()),
         "roles" => count(Role::get()),
