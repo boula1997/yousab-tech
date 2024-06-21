@@ -13,10 +13,12 @@ use App\Http\Controllers\API\ServiceController;
 use App\Http\Controllers\API\TestimonialController;
 use App\Http\Controllers\API\ProcessController;
 use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\ComplainController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\SettingController;
 use App\Http\Controllers\API\PartnerController;
 use App\Http\Controllers\API\TeamController;
+use App\Http\Controllers\API\VaccancyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,28 +65,34 @@ Route::group(['middleware' => ['apiLocalization','cors']], function () {
     Route::get('/products', [ProductController::class, 'index']);
     Route::get('/product/{id}', [ProductController::class, 'show']);
     Route::get('/process/{id}', [ProcessController::class, 'show']);
-    
+
     Route::get('/faqs', [FaqController::class, 'index']);
     Route::get('/faq/{id}', [FaqController::class, 'show']);
-    
+
+    Route::get('/complains', [ComplainController::class, 'index']);
+    Route::get('/complain/{id}', [ComplainController::class, 'show']);
+
+    Route::get('/vaccancies',[VaccancyController::class,'index']);
+    Route::get('/vaccancy/{id}',[VaccancyController::class,'show']);
+
     Route::get('/partners', [PartnerController::class, 'index']);
     Route::get('/partner/{id}', [PartnerController::class, 'show']);
     Route::get('/teams', [TeamController::class, 'index']);
     Route::get('/team/{id}', [TeamController::class, 'show']);
-    
+
     Route::get('/partners', [PartnerController::class, 'index']);
     Route::get('/partner/{id}', [PartnerController::class, 'show']);
-    
+
     Route::get('/counters', [CounterController::class, 'index']);
     Route::get('/counter/{id}', [CounterController::class, 'show']);
     Route::get('/contacts', [ContactController::class, 'index']);
     Route::get('/contact/{id}', [ContactController::class, 'show']);
-    
+
     Route::get('/settings', [SettingController::class, 'index']);
-    
+
     Route::get('/pages', [PageController::class, 'index']);
     Route::get('/page/{id}', [PageController::class, 'show']);
-    
+
     Route::get('/portfolios', [PortfolioController::class, 'index']);
     Route::get('/portfolio/{id}', [PortfolioController::class, 'show']);
 

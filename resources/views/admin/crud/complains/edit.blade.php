@@ -39,9 +39,6 @@
                                     </div>
                                 </div>
 
-
-
-
                                 <div class="col-form-group">
                                     <label>@lang('general.description')(@lang('general.' . $locale))<span class="text-danger">*</span></label>
                                     <textarea rows="100" class="summernote @error($locale . '.description') is-invalid @enderror"
@@ -54,6 +51,21 @@
                     </div>
                 </div>
             </div>
+            {{-- Number Input --}}
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>@lang('general.repeat') <span class="text-danger"> * </span></label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-pen"></i></span>
+                        </div>
+                        <input type="number" name="repeat" placeholder="@lang('general.repeat')"
+
+                            class="form-control  min-h-40px @error('repeat') is-invalid @enderror"
+                            value="{{ old('repeat',$complain->repeat) }}">
+                    </div>
+                </div>
+            </div>
             <div class="card card-custom">
                 <div class="card-footer mb-5 mt-5">
                     <button type="submit" class="btn btn-outline-success">@lang('general.save')</button>

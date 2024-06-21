@@ -38,6 +38,7 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>@lang('general.title')</th>
+                                                <th>@lang('general.repeat')</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
                                         </thead>
@@ -46,6 +47,7 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $complain->title }}</td>
+                                                    <td>{{ $complain->repeat }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'complains',

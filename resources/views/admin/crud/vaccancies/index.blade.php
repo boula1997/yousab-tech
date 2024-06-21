@@ -38,6 +38,8 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>@lang('general.title')</th>
+                                                <th>@lang('general.salary')</th>
+
                                                 <th>@lang('general.controls')</th>
                                             </tr>
                                         </thead>
@@ -46,6 +48,8 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $vaccancy->title }}</td>
+                                                    <td>{{ $vaccancy->salary }}</td>
+
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'vaccancies',

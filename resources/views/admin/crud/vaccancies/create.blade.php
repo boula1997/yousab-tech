@@ -54,6 +54,20 @@
                     </div>
                 </div>
             </div>
+             {{-- Number Input --}}
+             <div class="col-md-6">
+                <div class="form-group">
+                    <label>@lang('general.salary') <span class="text-danger"> * </span></label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-pen"></i></span>
+                        </div>
+                        <input type="number" name="salary" placeholder="@lang('general.salary')"
+                            class="form-control  min-h-40px @error('salary') is-invalid @enderror"
+                            value="{{ old('salary') }}">
+                    </div>
+                </div>
+            </div>
             <div class="card card-custom">
                 <div class="card-footer mb-5">
                     <button type="submit"

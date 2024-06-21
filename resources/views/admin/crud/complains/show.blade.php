@@ -49,6 +49,15 @@
                         @endforeach
                     </div>
                 </div>
+                {{-- Number Input --}}
+                <div class="mb-5 col-md-6">
+                    <div class="bg-light p-3 rounded h-100">
+                        <div class="card-title">
+                            <h5 class="font-weight-bolder text-dark">{{('general.repeat')}}:</h5>
+                            <p>{{ $module->repeat }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
