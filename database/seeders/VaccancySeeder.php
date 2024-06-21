@@ -20,7 +20,7 @@ class VaccancySeeder extends Seeder
         $title_ar = ["مطور وجهات المواقع"];
         $description_ar = ["<p>يقوم مطور الواجهة الأمامية بإنشاء مواقع الويب والتطبيقات باستخدام لغات الويب مثل HTML وCSS وJavaScript التي تتيح للمستخدمين الوصول إلى الموقع أو التطبيق والتفاعل معه. عندما تزور موقع ويب، تم إنشاء عناصر التصميم التي تراها بواسطة مطور الواجهة الأمامية</p>"];
 
-
+        $salary = [7000];
 
 
         $image=[];
@@ -36,6 +36,7 @@ class VaccancySeeder extends Seeder
                     'title' => $title_en[$i],
                     'description' => $description_en[$i],
                 ],
+                'salary' => $salary[$i],
             ]);
         }
     }
