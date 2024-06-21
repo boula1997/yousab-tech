@@ -27,7 +27,7 @@
                                         <div class="mb-5 bg-light p-3 rounded h-100">
                                             <div class="card-title fw-bold">
                                                 <h5 class="font-weight-bolder text-dark">@lang('general.title'):</h5>
-                                                <p style="margin: 0; color: inherit; font-weight: normal;">{{ $vaccancies->translate($locale)->title }}</p>
+                                                <p style="margin: 0; color: inherit; font-weight: normal;">{{ $vaccancy->translate($locale)->title }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -40,7 +40,7 @@
                                         <div class="mb-5 bg-light p-3 rounded h-100">
                                             <div class="card-title fw-bold">
                                                 <h5 class="font-weight-bolder text-dark">@lang('general.description'):</h5>
-                                                <p style="margin: 0; color: inherit; font-weight: normal;">{!! $vaccancies->translate($locale)->description !!}</p>
+                                                <p style="margin: 0; color: inherit; font-weight: normal;">{!! $vaccancy->translate($locale)->description !!}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -54,7 +54,7 @@
                                     <div class="bg-light p-3 rounded h-100">
                                         <div class="card-title">
                                             <h5 class="font-weight-bolder text-dark">{{('general.salary')}}:</h5>
-                                            <p>{{ $module->salary }}</p>
+                                            <p>{{ $vaccancy->salary }}</p>
                                         </div>
                                     </div>
                                 </div>
