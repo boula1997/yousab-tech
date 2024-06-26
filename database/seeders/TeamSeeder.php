@@ -19,9 +19,9 @@ class TeamSeeder extends Seeder
                      "Ibrahim Samy",
                      "Kyrillos Edward",
                      "Tadrous Emil",
-                     "Ahmed Elseily",
                      "Melad Youssef",
                      "Zeiad Mohamed",
+                     "Ahmed Elseily",
                     ];
         $subtitle_en = [
                         "Manager",
@@ -29,21 +29,22 @@ class TeamSeeder extends Seeder
                         "Software Engineer",
                         "Software Engineer",
                         "Software Engineer",
+                        "Web Developer",
+                        "Web Developer",
                         "Web Designer",
-                        "Web Developer",
-                        "Web Developer",
+
                     ];
         $description_en = [null,null,null,null,null,null,null,null];
-      
+
         $title_ar = [
                      "جرجس مكرم",
                      "بولا نسيم",
                      "ابراهيم سامى",
                      "كيرلس ادوارد",
                      "تادرس اميل",
-                    //  "احمد السيلي",
                      "ميلاد يوسف",
                      "زياد محمد",
+                     //  "احمد السيلي",
                     ];
 
         $subtitle_ar =[
@@ -52,9 +53,9 @@ class TeamSeeder extends Seeder
                        "مهندس برمجيات",
                         "مصمم ويب ",
                         "مطور ويب",
-                        // "مطور ويب",
                         "مطور ويب",
                         "مطور ويب",
+                       // "مطور ويب",
                     ];
         $description_ar =  [null,null,null,null,null,null,null,null];
 
@@ -64,9 +65,9 @@ class TeamSeeder extends Seeder
             "https://www.facebook.com",
             "https://www.facebook.com",
             "https://www.facebook.com",
-            // "https://www.facebook.com",
             "https://www.facebook.com",
             "https://www.facebook.com",
+           // "https://www.facebook.com",
         ];
         $twitters=[
             "https://www.twitter.com",
@@ -74,9 +75,10 @@ class TeamSeeder extends Seeder
             "https://www.twitter.com",
             "https://www.twitter.com",
             "https://www.twitter.com",
+            "https://www.twitter.com",
+            "https://www.twitter.com",
             // "https://www.twitter.com",
-            "https://www.twitter.com",
-            "https://www.twitter.com",
+
         ];
         $instagrams=[
             "https://www.instagram.com",
@@ -84,9 +86,10 @@ class TeamSeeder extends Seeder
             "https://www.instagram.com",
             "https://www.instagram.com",
             "https://www.instagram.com",
+            "https://www.instagram.com",
+            "https://www.instagram.com",
             // "https://www.instagram.com",
-            "https://www.instagram.com",
-            "https://www.instagram.com",
+
         ];
         $linkedins=[
             "https://www.linkedin.com",
@@ -94,9 +97,10 @@ class TeamSeeder extends Seeder
             "https://www.linkedin.com",
             "https://www.linkedin.com",
             "https://www.linkedin.com",
+            "https://www.linkedin.com",
+            "https://www.linkedin.com",
             // "https://www.linkedin.com",
-            "https://www.linkedin.com",
-            "https://www.linkedin.com",
+
         ];
 
         $image=[
@@ -105,19 +109,19 @@ class TeamSeeder extends Seeder
                 "images/YQXLPLiQgi8H1E9YE77J3lwUX0qSOYXkHMP192Nz.png",
                 "images/pekmLKsEWdfVwDSwbG0sSIZARXfO8GavZPaoOF1D.jpg",
                 "images/tAgfJG0vAJHhQsCii9FR441z6tGs9fyGKj92MUzy.jpg",
-                // "images/zlqIgyZxaZJCmqfSvsxqkTIFsou1vItih8tUaqXi.jpg",
                 "images/melad.jpeg",
                 "images/zaid_sayed.jpeg",
+               // "images/zlqIgyZxaZJCmqfSvsxqkTIFsou1vItih8tUaqXi.jpg",
             ];
-       
-       
+
+
 
         for ($i = 0; $i < count($title_ar); $i++) {
             $Team = Team::create([
                 'ar' => [
                     'title' => $title_ar[$i],
                     'description' => $description_ar[$i],
-                    'subtitle' => $subtitle_ar[$i],  
+                    'subtitle' => $subtitle_ar[$i],
                 ],
                 'en' => [
                     'title' => $title_en[$i],
