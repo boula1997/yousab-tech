@@ -12,7 +12,8 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
+    'vaccancies'=>'Vaccancy',
+    'complains'=>'Complain',
     'home'  => 'Home',
     'about'  => 'About',
     'title'  => 'Title',

@@ -19,6 +19,8 @@ use App\Http\Controllers\API\SettingController;
 use App\Http\Controllers\API\PartnerController;
 use App\Http\Controllers\API\TeamController;
 use App\Http\Controllers\API\VaccancyController;
+use App\Http\Requests\API\ComplainRequest;
+use App\Http\Requests\API\VaccancyRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -103,4 +105,12 @@ Route::group(['middleware' => ['apiLocalization','cors']], function () {
 
 Route::post('/newsletter', [NewsletterController::class, 'store']);
 Route::post('/message', [MessageController::class, 'store']);
+
+Route::post('/complain',[ComplainController::class,'store']);
+Route::put('/complain/{id}',[ComplainController::class,'update']);
+Route::delete('/complain/{id}',[ComplainController::class,'delete']);
+
+Route::post('/vaccancy',[VaccancyController::class,'store']);
+Route::put('/vaccancy/{id}',[VaccancyController::class,'update']);
+Route::delete('/vaccancy/{id}',[VaccancyController::class,'delete']);
 

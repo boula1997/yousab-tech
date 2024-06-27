@@ -12,6 +12,8 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+    'vaccancies'=>'العمل المتاح',
+    'complains'=>'الشكاوي',
     'home'  => 'الرئيسية',
     'about'  => 'من نحن',
     'title'  => 'العنوان',

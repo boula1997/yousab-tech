@@ -1,5 +1,5 @@
 @extends('admin.components.form')
-@section('form_action', route('vaccancies.update', $Vaccancy->id))
+@section('form_action', route('vaccancies.update', $vaccancy->id))
 @section('form_type', 'POST')
 @section('fields_content')
     <div class="content-wrapper">
@@ -32,7 +32,7 @@
                         <input type="number" name="salary" placeholder="@lang('general.salary')"
 
                             class="form-control  min-h-40px @error('salary') is-invalid @enderror"
-                            value="{{ old('salary',$complain->salary) }}">
+                            value="{{ old('salary',$vaccancy->salary) }}">
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                                         <input type="text" name="{{ $locale . '[title]' }}"
                                             placeholder="@lang('general.title')"
                                             class="form-control @error('') invalid @enderror  pl-5 min-h-40px @error($locale . '.title') is-invalid @enderror"
-                                            value="{{ old($locale . '.title', $Vaccancy->translate($locale)->title) }}">
+                                            value="{{ old($locale . '.title', $vaccancy->translate($locale)->title) }}">
                                     </div>
                                 </div>
 
@@ -61,7 +61,7 @@
                                     <label>@lang('general.description')(@lang('general.' . $locale))<span class="text-danger">*</span></label>
                                     <textarea rows="100" class="summernote @error($locale . '.description') is-invalid @enderror"
                                         name="{{ $locale . '[description]' }}">
-                                        {!! old($locale . '.description', $Vaccancy->translate($locale)->description) !!}
+                                        {!! old($locale . '.description', $vaccancy->translate($locale)->description) !!}
                                     </textarea>
                                 </div>
                             </div>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\MessageRequest;
+use App\Http\Requests\API\MessageRequest;
 use App\Mail\MessageMail;
 use App\Mail\MessageUserMail;
 use App\Models\Message;

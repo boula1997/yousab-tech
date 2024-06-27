@@ -35,4 +35,31 @@ class ComplainController extends Controller
             return failedResponse(($e->getmessage()));
         }
     }
+    public function store(ComplainRequest $request) {
+        try{
+            $data['complain'] = Complain::create($request->all());
+            return successResponse($data);
+        } catch(Exception $e){
+            return failedResponse($e->getMessage());
+        }
+    }
+    public function update(ComplainRequest $request , $id) {
+        try{
+ 
+            $complain = Complain::find($id);
+            $complain->update($request->all());
+            return successResponse($complain);
+        }catch(Exception $e){
+            return failedResponse($e->getMessage());
+        }
+    }
+    public function delete($id){
+        try{
+            $complain = Complain::find($id);
+            $complain->delete();
+            return successResponse($complain);
+        }catch(Exception $e){
+            return failedResponse($e->getMessage());
+        }
+    }
 }
