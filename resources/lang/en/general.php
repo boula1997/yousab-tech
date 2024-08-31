@@ -41,6 +41,53 @@ return [
     'videos'  => 'Videos',
     'partners'  => 'Partners',
 
+
+"projects" => "Projects",
+
+"tasks" => "Tasks",
+
+"show_all" => "Show all",
+
+"cancel" => "Cancel",
+
+"no_result" => "No result",
+
+"repeat" => "Repeat",
+
+"status" => "Status",
+
+"yes" => "Yes",
+
+"no" => "No",
+
+"employees" => "Employees",
+
+"select" => "Select",
+
+"project" => "Project",
+
+"specifications" => "Specifications",
+
+"employee" => "Employee",
+
+"salary" => "Salary",
+
+"Dashboard" => "Dashboard",
+
+"Password" => "Password",
+
+"Confirm" => "Confirm",
+
+"Email" => "Email",
+
+"Login" => "Login",
+
+"Register" => "Register",
+
+"Name" => "Name",
+
+"Logout" => "Logout",
+
     'teams'  => 'Teams',
     'messages'  => 'Messages',
     'partners'  => 'Partners',
