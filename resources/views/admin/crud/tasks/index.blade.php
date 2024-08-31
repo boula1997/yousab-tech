@@ -38,9 +38,10 @@
                                                 <th>#</th>
                                                 <th>{{__('general.title')}}</th>
 
-                                                <th>{{__('general.status')}}</th>
-                                                
+                                                {{-- <th>{{__('general.status')}}</th> --}}
+                                                @if (auth()->user()->type=='admin')
                                                 <th>{{__('general.employee')}}</th>
+                                                @endif
                                                 
                                                 <th>{{__('general.project')}}</th>
                                             </tr>
@@ -51,9 +52,10 @@
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $task->title }}</td>
 
-                                                    <td>{{$task->status?__('general.yes'):__('general.no') }}</td>
-                                                    
+                                                    {{-- <td>{{$task->status?__('general.yes'):__('general.no') }}</td> --}}
+                                                    @if (auth()->user()->type=='admin')
                                                     <td>{{ $task->employee->name }}</td>
+                                                    @endif
                                                     
                                                     <td>{{ $task->project->title }}</td>
                                                     <td>
