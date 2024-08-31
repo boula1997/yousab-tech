@@ -52,14 +52,13 @@
                                                     </button>
 
                                                 </div>
-                                            </div>
-                                            <div class="col-md-4">
                                                 <div class="">
                                                     <button type="submit" name="action" value="delete" class="btn btn-danger">
                                                         @lang('general.delete_tasks')
                                                     </button>
                                                 </div>
                                             </div>
+
                                         </div>
                                         <table id="example1" class="table table-hover">
                                             <thead>
