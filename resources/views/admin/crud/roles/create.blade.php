@@ -24,7 +24,7 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <strong>@lang('general.name'):</strong>
-                                        {!! Form::text('name', null, ['placeholder' => 'Name', 'class' => 'form-control @error('') invalid @enderror']) !!}
+                                        {!! Form::text('name', null, ['placeholder' => 'Name', 'class' => 'form-control']) !!}
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">

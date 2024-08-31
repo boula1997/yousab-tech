@@ -31,7 +31,7 @@ class TaskController extends Controller
     public function index()
     {
         try {
-            if(auth()->user()->type='admin')
+            if(auth()->user()->type=='admin')
             $tasks = $this->task->latest()->get();
             else
             $tasks = auth()->user()->tasks;
