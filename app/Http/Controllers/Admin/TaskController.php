@@ -35,7 +35,7 @@ class TaskController extends Controller
             $status=1;
             else
             $status=0;
-        
+
             if(auth()->user()->type=='admin')
             $tasks = $this->task->where('status',$status)->latest()->get();
             else
@@ -142,7 +142,7 @@ class TaskController extends Controller
             $task->update([
                 'status'=>!$task->status
             ]);
-            return redirect()->route('tasks.index')
+            return redirect()->back()
                 ->with('success', trans('general.deleted_successfully'));
         } catch (Exception $e) {
             dd($e->getMessage());
