@@ -100,6 +100,7 @@ Route::group(
             Route::get('/reply-message/{id}', [App\Http\Controllers\Admin\MessageController::class, 'reply'])->name('messages.reply');
             Route::get('/finished/tasks', [App\Http\Controllers\Admin\TaskController::class, 'index'])->name('tasks.finished');
             Route::post('/reply-email/{id}/reply', [App\Http\Controllers\Admin\MessageController::class, 'emailReply'])->name('messages.emailReply');
+            Route::post('/tasks/changEmployees', [App\Http\Controllers\Admin\TaskController::class, 'taskChangeEmployee'])->name('tasks.changeEmployee');
 
             Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
             Route::resource('newsletters', NewsletterController::class);

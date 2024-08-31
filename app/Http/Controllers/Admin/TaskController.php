@@ -31,6 +31,8 @@ class TaskController extends Controller
     public function index()
     {
         try {
+            $employees=Admin::get();
+
             if(request()->routeIs('tasks.finished'))
             $status=1;
             else
@@ -40,7 +42,7 @@ class TaskController extends Controller
             $tasks = $this->task->where('status',$status)->latest()->get();
             else
             $tasks = $this->task->where('status',$status)->where('employee_id',auth()->user()->id)->latest()->get();
-            return view('admin.crud.tasks.index', compact('tasks'))
+            return view('admin.crud.tasks.index', compact('tasks','employees'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
         } catch (Exception $e) {
             dd($e->getMessage());
@@ -59,6 +61,27 @@ class TaskController extends Controller
         $projects=Project::where('status',1)->get();
         return view('admin.crud.tasks.create',compact('employees','projects'));
     }
+    public function taskChangeEmployee(Request $request)
+    {
+        // Validate the incoming request
+        // $request->validate([
+        //     'tasks' => 'required|array|min:1',
+        //     'tasks.*' => 'exists:tasks,id', // Ensure each task ID exists
+        //     'employee_id' => 'required|exists:employees,id', // Ensure the selected employee exists
+        // ]);
+    
+        // Loop through each selected task and update the employee_id
+        foreach ($request->tasks as $id) {
+            $task = Task::find($id);
+            if ($task) {
+                $task->update(['employee_id' => $id]);
+            }
+        }
+    
+        // Redirect back with a success message
+        return redirect()->back()->with('success', __('Employee assigned successfully to selected tasks.'));
+    }
+    
 
     /**
      * Store a newly created resource in storage.
