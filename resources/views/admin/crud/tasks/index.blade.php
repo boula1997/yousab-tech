@@ -52,7 +52,7 @@
                                                     </button>
 
                                                 </div>
-                                                <div class="">
+                                                <div class="mt-2">
                                                     <button type="submit" name="action" value="delete" class="btn btn-danger">
                                                         @lang('general.delete_tasks')
                                                     </button>
