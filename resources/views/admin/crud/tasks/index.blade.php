@@ -66,7 +66,7 @@
                                                 <tr>
                                                     <th>#</th>
                                                     <th>{{ __('general.title') }}</th>
-                                                    <th class="d-none">{{ __('general.select') }}</th>
+                                                    {{-- <th>{{ __('general.select') }}</th> --}}
                                                     <th>{{ __('general.employees') }}</th>
                                                     <th>{{ __('general.project') }}</th>
                                                 </tr>
@@ -78,7 +78,7 @@
                                                         <td style="cursor: pointer" onclick="toggleCheckbox({{ $task->id }})">
                                                             {{ $task->title }}
                                                         </td>
-                                                        <td class="d-none">
+                                                        <td>
                                                             <input type="checkbox" name="tasks[]" value="{{ $task->id }}" id="checkbox-{{ $task->id }}">
                                                         </td>
                                                         <td>{{ taskEmployees($task->title) }}</td>
