@@ -46,7 +46,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <div class="mb-3">
+                                                <div class="mt-3">
                                                     <button type="submit" name="action" value="assign" class="btn btn-primary">
                                                         @lang('general.assign_employee')
                                                     </button>
@@ -54,8 +54,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <div class="mb-3">
-
+                                                <div class="mt-3">
                                                     <button type="submit" name="action" value="delete" class="btn btn-danger">
                                                         @lang('general.delete_tasks')
                                                     </button>
