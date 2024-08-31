@@ -2,7 +2,7 @@
     <div class="td-search-popup" id="td-search-popup">
         <form action="index.html" class="search-form">
             <div class="form-group">
-                <input type="text" class="form-control @error('') invalid @enderror" placeholder="Search.....">
+                <input type="text" class="form-control" placeholder="Search.....">
             </div>
             <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
         </form>
@@ -24,13 +24,6 @@
                         <li>
                             <p><i class="far fa-envelope"></i> {{ contacts('email')[0]->contact }}</p>
                         </li>
-
-                        <li>
-                            <p><i class="far fa-envelope"></i> {{ projects('email')[0]->project }}</p>
-                        </li>
-                        <li>
-                            <p><i class="far fa-envelope"></i> {{ tasks('email')[0]->task }}</p>
-                        </li>
                     </ul>
                 </div>
                 <div class="col-sm-6">
@@ -38,28 +31,12 @@
                         <li class="d-none d-none d-lg-inline-block">
                             <p>{{ __('general.hotline') }} <span>: {{ contacts('phone')[0]->contact }} </span></p>
                         </li>
-                        <li class="d-none d-none d-lg-inline-block">
-                            <p>{{ __('general.hotline') }} <span>: {{ projects('phone')[0]->project }} </span></p>
-                        </li>
-                        <li class="d-none d-none d-lg-inline-block">
-                            <p>{{ __('general.hotline') }} <span>: {{ tasks('phone')[0]->task }} </span></p>
-                        </li>
                         <li class="social-area">
                             <p class="d-inline-block">{{ __('general.follow_us_on') }}</p>
                             @foreach (contacts('social') as $contact)
                                 <a href="{{ $contact->contact }}"><i class="{{ $contact->icon }}"
                                         aria-hidden="true"></i></a>
                             @endforeach
-
-                            @foreach (projects('social') as $project)
-                            <a href="{{ $project->project }}"><i class="{{ $project->icon }}"
-                                    aria-hidden="true"></i></a>
-                        @endforeach
-
-                            @foreach (tasks('social') as $task)
-                            <a href="{{ $task->task }}"><i class="{{ $task->icon }}"
-                                    aria-hidden="true"></i></a>
-                        @endforeach
 
                             {{-- <a href="{{ settings()->twitter }}"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                             <a href="{{ settings()->instgram }}"><i class="fab fa-instagram"
@@ -102,10 +79,6 @@
                     {{-- <li><a class="{{request()->routeIs('front.home')?'active':''}}" href="{{route('front.home')}}">Project</a></li> --}}
                     <li><a class="{{ request()->routeIs('front.message') ? 'active' : '' }}"
                             href="{{ route('front.message') }}">{{ __('general.contact_us') }}</a></li>
-                            <li><a class="{{ request()->routeIs('front.message') ? 'active' : '' }}"
-                                href="{{ route('front.message') }}">{{ __('general.project_us') }}</a></li>
-                            <li><a class="{{ request()->routeIs('front.message') ? 'active' : '' }}"
-                                href="{{ route('front.message') }}">{{ __('general.task_us') }}</a></li>
                     @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                         <li class="{{ app()->getLocale() == $localeCode ? 'd-none' : '' }}">
                             <a rel="alternate" hreflang="{{ $localeCode }}"

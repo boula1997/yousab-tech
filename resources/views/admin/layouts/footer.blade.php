@@ -68,7 +68,7 @@
 <script src="{{ asset('js/iconpicker-1.5.0.js') }}"></script>
 <script src="{{ asset('admin/file-upload/image-input.js') }}"></script>
 <!-- Page specific script -->
-<script>
+{{-- <script>
     $(document).ready(function() {
       $('select').each(function() {
         var $select = $(this);
@@ -134,7 +134,7 @@
         $select.before($searchInput);
       });
     });
-    </script>
+    </script> --}}
 @stack('scripts')
 
 <script>

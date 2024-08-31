@@ -26,7 +26,8 @@
                             </div>
                         </div>
 
-                        {{-- Checkbox Input --}} <div class="col-md-6 ps-4">
+                        {{-- Checkbox Input --}} 
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <div class="form-group">
                                     <div class="form-check form-switch"> <input class="form-check-input"
@@ -38,9 +39,11 @@
                             </div>
                         </div>
 
-                        {{-- Multi Select Input Create --}} <div class="form-group row"> <label
-                                class="col-form-label text-right col-lg-3 col-sm-12">{{ __('words.employees') }}</label>
-                            <div class="col-lg-4 col-md-9 col-sm-12"> <select class="form-control selectpicker"
+                        {{-- Multi Select Input Create --}}
+                         <div class="form-group col-md-6"> 
+                            <label
+                                class="col-form-label text-right">{{ __('general.employees') }}</label>
+                                <select class="form-control selectpicker"
                                     id="multiSelect1" multiple="multiple" data-live-search="true" name="employees[]">
                                     <option value="">{{ __('general.select') }}</option>
                                     @foreach ($employees as $employee)
@@ -48,10 +51,11 @@
                                             {{ collect(old('employees'))->contains($employee->id) ? 'selected' : '' }}>
                                             {{ $employee->name }}</option>
                                     @endforeach
-                                </select> </div>
+                                </select> 
                         </div>
 
-                        {{-- Dynamic Select Input --}} <div class="col-md-6">
+                        {{-- Dynamic Select Input --}} 
+                        <div class="col-md-6">
                             <div class="mb-3"> <label for=""
                                     class="form-label">{{ __('general.project') }}</label> <select
                                     class="form-select form-select-lg" name="project_id" id="project">

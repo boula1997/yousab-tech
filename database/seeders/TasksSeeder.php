@@ -16,7 +16,7 @@ class TasksSeeder extends Seeder
        
         $title=["dummydata"];
         $status=[1]; 
-       $employee=["dummydata"];
+       $employee=[1];
        $project=[1];
       
 
@@ -26,9 +26,9 @@ class TasksSeeder extends Seeder
 
                'status'=>$status[0],
                 
-                 'employee'=>$employee[0],
+                 'employee_id'=>$employee[0],
                 
-                 'project'=>$project[0],
+                 'project_id'=>$project[0],
             ]);
         }
     }

@@ -18,7 +18,7 @@ class CreateTasksTable extends Migration
             $table->string('title')->nullable();
             $table->boolean('status')->default(0);            
             $table->unsignedBigInteger('employee_id')->nullable(); 
-            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
+            $table->foreign('employee_id')->references('id')->on('admins')->onDelete('cascade');
             $table->unsignedBigInteger('project_id')->nullable(); 
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             $table->timestamps();

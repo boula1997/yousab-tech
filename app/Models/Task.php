@@ -15,5 +15,13 @@ class Task extends Model
     protected $guarded = [];
     public $translatedAttributes = ['title'];
     public $timestamps = true;
+
+
+    public function project(){
+        return $this->belongsTo(Project::class,'project_id');
+    }
+    public function employee(){
+        return $this->belongsTo(Admin::class,'employee_id');
+    }
     
 }

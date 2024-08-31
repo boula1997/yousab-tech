@@ -50,4 +50,8 @@ class Admin extends Authenticatable
     {
         return  $this->file?asset($this->file->url): asset('default.jpg');
     }
+
+    public function tasks(){
+        return $this->hasMany(Task::class);
+    }
 }

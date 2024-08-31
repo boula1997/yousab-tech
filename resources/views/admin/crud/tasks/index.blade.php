@@ -53,7 +53,7 @@
 
                                                     <td>{{$task->status?__('general.yes'):__('general.no') }}</td>
                                                     
-                                                    <td>{{ $task->employee }}</td>
+                                                    <td>{{ $task->employee->name }}</td>
                                                     
                                                     <td>{{ $task->project->title }}</td>
                                                     <td>

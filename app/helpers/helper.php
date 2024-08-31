@@ -176,18 +176,18 @@ if (!function_exists('contact')) {
     }
 }
 
-if (!function_exists('projects')) {
+// if (!function_exists('projects')) {
 
-    function projects($type)
-    {
-        return isset($type) ?  Project::where('type', $type)->get() : Project::latest()->get();;
-    }
-}
+//     function projects($type)
+//     {
+//         return isset($type) ?  Project::where('type', $type)->get() : Project::latest()->get();;
+//     }
+// }
 
-if (!function_exists('project')) {
+// if (!function_exists('project')) {
 
-    function project($type)
-    {
-      Project::where('type', $type)->first();
-    }
-}
+//     function project($type)
+//     {
+//       Project::where('type', $type)->first();
+//     }
+// }

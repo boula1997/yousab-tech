@@ -25,9 +25,9 @@ class TaskRequest extends FormRequest
         $rules = [
         'title' => 'required',
 
-        'status' => 'required',
+        'status' => 'nullable',
 
-        'employee' => 'required',
+        'employee_id' => 'array',
 
         'project_id' => 'required',
         ];

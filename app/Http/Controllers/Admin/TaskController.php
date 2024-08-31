@@ -6,6 +6,8 @@ use App\Models\Task;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\TaskRequest;
+use App\Models\Admin;
+use App\Models\Project;
 use Exception;
 
 class TaskController extends Controller
@@ -29,7 +31,10 @@ class TaskController extends Controller
     public function index()
     {
         try {
+            if(auth()->user()->type='admin')
             $tasks = $this->task->latest()->get();
+            else
+            $tasks = auth()->user()->tasks;
             return view('admin.crud.tasks.index', compact('tasks'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
         } catch (Exception $e) {
@@ -45,7 +50,9 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view('admin.crud.tasks.create');
+        $employees=Admin::get();
+        $projects=Project::where('status',1)->get();
+        return view('admin.crud.tasks.create',compact('employees','projects'));
     }
 
     /**
@@ -57,7 +64,16 @@ class TaskController extends Controller
     public function store(TaskRequest $request)
     {
         try {
-            $this->task->create($request->all());
+            $titles = explode('+', $request->title);
+            foreach($titles as $title) {
+                foreach($request->employees as $employee){
+                Task::create([
+                    'title'=>$title,
+                    'employee_id'=>$employee,
+                    'project_id'=>$request->project_id
+                ]);
+             }
+            }
             return redirect()->route('tasks.index')
                 ->with('success', trans('general.created_successfully'));
         } catch (Exception $e) {
@@ -86,7 +102,9 @@ class TaskController extends Controller
     public function edit(Task $task)
     {
         //    dd($task->title);
-        return view('admin.crud.tasks.edit', compact('task'));
+        $employees=Admin::get();
+        $projects=Project::where('status',1)->get();
+        return view('admin.crud.tasks.edit', compact('task','employees','projects'));
     }
     /**
      * Update the specified resource in storage.
