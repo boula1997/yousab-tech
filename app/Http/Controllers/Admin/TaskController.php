@@ -31,10 +31,15 @@ class TaskController extends Controller
     public function index()
     {
         try {
-            if(auth()->user()->type=='admin')
-            $tasks = $this->task->latest()->get();
+            if(request()->routeIs('tasks.finished'))
+            $status=1;
             else
-            $tasks = auth()->user()->tasks;
+            $status=0;
+        
+            if(auth()->user()->type=='admin')
+            $tasks = $this->task->where('status',$status)->latest()->get();
+            else
+            $tasks = $this->task->where('status',$status)->where('employee_id',auth()->user()->id)->latest()->get();
             return view('admin.crud.tasks.index', compact('tasks'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
         } catch (Exception $e) {
@@ -134,7 +139,9 @@ class TaskController extends Controller
     public function destroy(Task $task)
     {
         try {
-            $task->delete();
+            $task->update([
+                'status'=>!$task->status
+            ]);
             return redirect()->route('tasks.index')
                 ->with('success', trans('general.deleted_successfully'));
         } catch (Exception $e) {
