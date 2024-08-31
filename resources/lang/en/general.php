@@ -45,6 +45,7 @@ return [
 "projects" => "Projects",
 
 "tasks" => "Tasks",
+"finishedTasks" => "Finished Tasks",
 
 "show_all" => "Show all",
 

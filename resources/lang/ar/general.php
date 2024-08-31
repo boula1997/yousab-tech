@@ -51,6 +51,7 @@ return [
     'delete'  => 'مسح',
     "projects" => "المشاريع",
 "tasks" => "المهام",
+"finishedTasks" => "المهام المنجزة",
 "show_all" => "عرض الكل",
 "cancel" => "إلغاء",
 "no_result" => "لا توجد نتائج",
