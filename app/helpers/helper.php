@@ -12,6 +12,7 @@ use App\Models\Gallery;
 use App\Models\Image;
 use App\Models\Page;
 use App\Models\Team;
+use App\Models\Task;
 use App\Models\Partner;
 use App\Models\Testimonial;
 use App\Models\Process;
@@ -87,6 +88,7 @@ function itemsCount($model)
         "Portfolios" => count(Gallery::get()),
         "images" => count(Image::get()),
         "pages" => count(Page::get()),
+        "tasks" => count(Task::get()),
         "teams" => count(Team::get()),
         "partners" => count(Partner::get()),
         "services" => count(Service::get()),
@@ -130,6 +132,22 @@ if (!function_exists('cart')) {
     {
 
         return Cart::name('shopping')->useForCommercial();
+    }
+}
+
+if (!function_exists('tasks')) {
+
+    function tasks($type)
+    {
+        return isset($type) ?  Task::where('type', $type)->get() : Task::latest()->get();;
+    }
+}
+
+if (!function_exists('task')) {
+
+    function task($type)
+    {
+      Task::where('type', $type)->first();
     }
 }
 if (!function_exists('favourite')) {

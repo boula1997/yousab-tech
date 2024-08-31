@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             GalleriesSeeder::class,
             PagesSeeder::class,
             PermissionTableSeeder::class,
+            TasksSeeder::class,
             CreateAdminUserSeeder::class,
             ProcessesSeeder::class,
             SettingSeeder::class,
