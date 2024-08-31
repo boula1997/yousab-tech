@@ -33,17 +33,17 @@
                                         <div class="row d-flex align-items-center">
                                             {{-- Dynamic Select Input --}}
                                             <div class="col-md-4 mb-4">
-                                                <div class="">
-                                                    <label for="employee" class="form-label">{{ __('general.employee') }}</label>
-                                                    <select class="form-select form-select-lg" name="employee_id" id="employee" >
-                                                        <option value="">{{ __('general.select') }}</option>
-                                                        @foreach ($employees as $employee)
-                                                            <option value="{{ $employee->id }}">
-                                                                {{ $employee->name }} 
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
+                                                <label
+                                                class="col-form-label text-right">{{ __('general.employees') }}</label>
+                                                <select class="form-control selectpicker"
+                                                    id="multiSelect1" multiple="multiple" data-live-search="true" name="employees[]">
+                                                    <option value="">{{ __('general.select') }}</option>
+                                                    @foreach ($employees as $employee)
+                                                        <option value="{{ $employee->id }}"
+                                                            {{ collect(old('employees'))->contains($employee->id) ? 'selected' : '' }}>
+                                                            {{ $employee->name }}</option>
+                                                    @endforeach
+                                                </select> 
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="">

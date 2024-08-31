@@ -68,13 +68,22 @@ class TaskController extends Controller
         $taskIds = $request->input('tasks');
         $action = $request->input('action');
          
-        if(!isset($request->employee_id)&& $action == 'assign')
+        if(count($request->employees)<1&& $action == 'assign')
         return redirect()->back()->with('error', __('Select Employee!'));
     
         $task=Task::whereIn('id', $taskIds)->first();
+        $tasks=Task::whereIn('id', $taskIds)->get();
         if ($action == 'assign') {
-            $employeeId = $request->input('employee_id');
-            Task::whereIn('id', $taskIds)->update(['employee_id' => $employeeId]);
+            foreach($tasks as $task) {
+                foreach($request->employees as $employee){
+                Task::create([
+                    'title'=>$task->title,
+                    'employee_id'=>$employee,
+                    'project_id'=>$task->project_id
+                ]);
+             }
+             $task->delete();
+            }
             return redirect()->back()->with('success', __('Tasks assigned successfully.'));
         } elseif ($action == 'delete') {
             Task::whereIn('id', $taskIds)->update(['status' => !$task->status]);
