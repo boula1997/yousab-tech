@@ -74,16 +74,18 @@ class TaskController extends Controller
         $task=Task::whereIn('id', $taskIds)->first();
         $tasks=Task::whereIn('id', $taskIds)->get();
         if ($action == 'assign') {
-            dd([$tasks,$request->employees]);
             foreach($tasks as $task) {
-                foreach($request->employees as $employee){
-                Task::create([
-                    'title'=>$task->title,
-                    'employee_id'=>$employee,
-                    'project_id'=>$task->project_id
-                ]);
+                $taskssameTitles=Task::where('title', $task->title)->get();
+                foreach($taskssameTitles as $tasksameTitle){
+                    foreach($request->employees as $employee){
+                    Task::create([
+                        'title'=>$tasksameTitle->title,
+                        'employee_id'=>$employee,
+                        'project_id'=>$tasksameTitle->project_id
+                    ]);
+                }
+                $tasksameTitle->delete();
              }
-             $task->delete();
             }
             return redirect()->back()->with('success', __('Tasks assigned successfully.'));
         } elseif ($action == 'delete') {
