@@ -32,7 +32,7 @@
                                         @csrf
                                         <div class="row d-flex align-items-center">
                                             {{-- Dynamic Select Input --}}
-                                            <div class="col-md-4 mb-2">
+                                            <div class="col-md-4 mb-4">
                                                 <div class="">
                                                     <label for="employee" class="form-label">{{ __('general.employee') }}</label>
                                                     <select class="form-select form-select-lg" name="employee_id" id="employee" >
