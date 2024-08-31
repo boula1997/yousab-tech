@@ -60,6 +60,8 @@ return [
 "yes" => "نعم",
 "no" => "لا",
 "employees" => "الموظفون",
+"assign_employee" => "تعيين موظف",
+"delete_tasks" => "حذف مهام",
 "select" => "اختر",
 "project" => "مشروع",
 "specifications" => "المواصفات",

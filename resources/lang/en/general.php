@@ -46,6 +46,8 @@ return [
 
 "tasks" => "Tasks",
 "finishedTasks" => "Finished Tasks",
+"assign_employee" => "Assign Employee",
+"delete_tasks" => "Delete Tasks",
 
 "show_all" => "Show all",
 
