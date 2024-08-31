@@ -105,20 +105,29 @@
 @endsection
 
 @push('scripts')
-    <script>
-        $(function() {
-            $("#example1").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-                "searching": true,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        });
+<script>
+    $(function() {
+        $("#example1").DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "searching": true,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    });
 
-        function toggleCheckbox(taskId) {
-            const checkbox = document.getElementById(`checkbox-${taskId}`);
-            checkbox.checked = !checkbox.checked;
+    function toggleCheckbox(taskId) {
+        const checkbox = document.getElementById(`checkbox-${taskId}`);
+        const taskRow = $(`#checkbox-${taskId}`).closest('tr').find('td:nth-child(2)');
+
+        checkbox.checked = !checkbox.checked;
+
+        if (checkbox.checked) {
+            taskRow.css('background-color', 'yellow');
+        } else {
+            taskRow.css('background-color', '');
         }
-    </script>
+    }
+</script>
+
 @endpush
