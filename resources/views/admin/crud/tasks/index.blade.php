@@ -77,7 +77,7 @@
                                                 @foreach ($tasks as $task)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
-                                                        <td style="cursor: pointer" onclick="toggleCheckbox({{ $task->id }})">
+                                                        <td title="{{ taskEmployees($task->title) }}" style="cursor: pointer" onclick="toggleCheckbox({{ $task->id }})">
                                                             {{ $task->title }}
                                                         </td>
                                                         <td>

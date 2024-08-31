@@ -127,6 +127,12 @@ function services()
     return $services;
 }
 
+function taskEmployees($title){
+    $employee_ids=Task::where('title',$title)->pluck('employee_id');
+    $names=Admin::whereIn('id',$employee_ids)->pluck('name');
+    return json_encode($names);
+}
+
 function products()
 {
     $products = Product::latest()->take(6)->get();
