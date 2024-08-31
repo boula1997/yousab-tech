@@ -74,6 +74,7 @@ class TaskController extends Controller
         $task=Task::whereIn('id', $taskIds)->first();
         $tasks=Task::whereIn('id', $taskIds)->get();
         if ($action == 'assign') {
+            dd([$tasks,$request->employees]);
             foreach($tasks as $task) {
                 foreach($request->employees as $employee){
                 Task::create([
