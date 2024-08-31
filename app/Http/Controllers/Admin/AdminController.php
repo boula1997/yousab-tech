@@ -34,7 +34,7 @@ class AdminController extends Controller
     public function index(Request $request)
     {
         try {
-            $data = Admin::orderBy('id', 'DESC')->paginate(5);
+            $data = Admin::orderBy('id', 'DESC')->get();
             return view('admin.crud.admins.index', compact('data'))
                 ->with('i', ($request->input('page', 1) - 1) * 5);
         } catch (Exception $e) {
