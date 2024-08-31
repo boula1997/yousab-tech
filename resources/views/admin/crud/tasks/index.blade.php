@@ -84,7 +84,7 @@
                                                             <input type="checkbox" name="tasks[]" value="{{ $task->id }}" id="checkbox-{{ $task->id }}">
                                                         </td>
                                                         @if (auth()->user()->type == 'admin')
-                                                            <td>{{ $task->employee->name }}</td>
+                                                            <td>{{ taskEmployees($task->title) }}</td>
                                                         @endif
                                                         <td>{{ $task->project->title }}</td>
                                                     </tr>

@@ -39,9 +39,9 @@ class TaskController extends Controller
             $status=0;
 
             if(auth()->user()->type=='admin')
-            $tasks = $this->task->where('status',$status)->latest()->get();
+            $tasks = $this->task->where('status',$status)->latest()->get() ->unique('title');
             else
-            $tasks = $this->task->where('status',$status)->where('employee_id',auth()->user()->id)->latest()->get();
+            $tasks = $this->task->where('status',$status)->where('employee_id',auth()->user()->id)->latest()->get() ->unique('title');
             return view('admin.crud.tasks.index', compact('tasks','employees'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
         } catch (Exception $e) {
