@@ -61,26 +61,30 @@ class TaskController extends Controller
         $projects=Project::where('status',1)->get();
         return view('admin.crud.tasks.create',compact('employees','projects'));
     }
-    public function taskChangeEmployee(Request $request)
+    public function bulkAction(Request $request)
     {
-        // Validate the incoming request
-        // $request->validate([
-        //     'tasks' => 'required|array|min:1',
-        //     'tasks.*' => 'exists:tasks,id', // Ensure each task ID exists
-        //     'employee_id' => 'required|exists:employees,id', // Ensure the selected employee exists
-        // ]);
+
+
+        $taskIds = $request->input('tasks');
+        $action = $request->input('action');
+         
+        if(!isset($request->employee_id)&& $action == 'assign')
+        return redirect()->back()->with('error', __('Select Employee!'));
     
-        // Loop through each selected task and update the employee_id
-        foreach ($request->tasks as $id) {
-            $task = Task::find($id);
-            if ($task) {
-                $task->update(['employee_id' => $id]);
-            }
+        $task=Task::whereIn('id', $taskIds)->first();
+        if ($action == 'assign') {
+            $employeeId = $request->input('employee_id');
+            Task::whereIn('id', $taskIds)->update(['employee_id' => $employeeId]);
+            return redirect()->back()->with('success', __('Tasks assigned successfully.'));
+        } elseif ($action == 'delete') {
+            Task::whereIn('id', $taskIds)->update(['status' => !$task->status]);
+            return redirect()->back()->with('success', __('Tasks deleted successfully.'));
         }
     
-        // Redirect back with a success message
-        return redirect()->back()->with('success', __('Employee assigned successfully to selected tasks.'));
+        return redirect()->back()->with('error', __('Invalid action selected.'));
     }
+    
+
     
 
     /**

@@ -28,14 +28,14 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <form action="{{ route('tasks.changeEmployee') }}" method="POST">
+                                    <form action="{{ route('tasks.bulkAction') }}" method="POST">
                                         @csrf
                                         <div class="row">
                                             {{-- Dynamic Select Input --}}
                                             <div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label for="employee" class="form-label">{{ __('general.employee') }}</label>
-                                                    <select class="form-select form-select-lg" name="employee_id" id="employee" required>
+                                                    <select class="form-select form-select-lg" name="employee_id" id="employee" >
                                                         <option value="">{{ __('general.select') }}</option>
                                                         @foreach ($employees as $employee)
                                                             <option value="{{ $employee->id }}">
@@ -44,10 +44,11 @@
                                                         @endforeach
                                                     </select>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-6 d-flex align-items-end">
-                                                <button type="submit" class="btn btn-primary">
+                                                <button type="submit" name="action" value="assign" class="btn btn-primary">
                                                     @lang('general.assign_employee')
+                                                </button>
+                                                <button type="submit" name="action" value="delete" class="btn btn-danger">
+                                                    @lang('general.delete_tasks')
                                                 </button>
                                             </div>
                                         </div>
@@ -67,9 +68,11 @@
                                                 @foreach ($tasks as $task)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
-                                                        <td>{{ $task->title }}</td>
+                                                        <td onclick="toggleCheckbox({{ $task->id }})">
+                                                            {{ $task->title }}
+                                                        </td>
                                                         <td>
-                                                            <input type="checkbox" name="tasks[]" value="{{ $task->id }}">
+                                                            <input type="checkbox" name="tasks[]" value="{{ $task->id }}" id="checkbox-{{ $task->id }}">
                                                         </td>
                                                         @if (auth()->user()->type == 'admin')
                                                             <td>{{ $task->employee->name }}</td>
@@ -103,5 +106,10 @@
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         });
+
+        function toggleCheckbox(taskId) {
+            const checkbox = document.getElementById(`checkbox-${taskId}`);
+            checkbox.checked = !checkbox.checked;
+        }
     </script>
 @endpush

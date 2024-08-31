@@ -102,6 +102,10 @@ Route::group(
             Route::post('/reply-email/{id}/reply', [App\Http\Controllers\Admin\MessageController::class, 'emailReply'])->name('messages.emailReply');
             Route::post('/tasks/changEmployees', [App\Http\Controllers\Admin\TaskController::class, 'taskChangeEmployee'])->name('tasks.changeEmployee');
 
+            Route::post('/tasks/bulk-action', [TaskController::class, 'bulkAction'])->name('tasks.bulkAction');
+           
+            Route::post('/tasks/finish/delete', [App\Http\Controllers\Admin\TaskController::class, 'tasksDelete'])->name('tasks.finish');
+
             Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
             Route::resource('newsletters', NewsletterController::class);
 
