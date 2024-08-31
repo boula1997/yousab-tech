@@ -45,7 +45,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-5">
+                                            <div class="col-md-4">
                                                 <div class="mt-3">
                                                     <button type="submit" name="action" value="assign" class="btn btn-primary">
                                                         @lang('general.assign_employee')
@@ -54,7 +54,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <div class="mt-5">
+                                                <div class="mt-3">
                                                     <button type="submit" name="action" value="delete" class="btn btn-danger">
                                                         @lang('general.delete_tasks')
                                                     </button>
