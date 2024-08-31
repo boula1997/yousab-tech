@@ -67,9 +67,7 @@
                                                     <th>#</th>
                                                     <th>{{ __('general.title') }}</th>
                                                     <th>{{ __('general.select') }}</th>
-                                                    @if (auth()->user()->type == 'admin')
-                                                        <th>{{ __('general.employee') }}</th>
-                                                    @endif
+                                                    <th>{{ __('general.employees') }}</th>
                                                     <th>{{ __('general.project') }}</th>
                                                 </tr>
                                             </thead>
@@ -77,15 +75,13 @@
                                                 @foreach ($tasks as $task)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
-                                                        <td title="{{ taskEmployees($task->title) }}" style="cursor: pointer" onclick="toggleCheckbox({{ $task->id }})">
+                                                        <td style="cursor: pointer" onclick="toggleCheckbox({{ $task->id }})">
                                                             {{ $task->title }}
                                                         </td>
                                                         <td>
                                                             <input type="checkbox" name="tasks[]" value="{{ $task->id }}" id="checkbox-{{ $task->id }}">
                                                         </td>
-                                                        @if (auth()->user()->type == 'admin')
-                                                            <td>{{ taskEmployees($task->title) }}</td>
-                                                        @endif
+                                                        <td>{{ taskEmployees($task->title) }}</td>
                                                         <td>{{ $task->project->title }}</td>
                                                     </tr>
                                                 @endforeach
