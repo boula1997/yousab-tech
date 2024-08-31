@@ -19,7 +19,7 @@
                                 <div class="input-group">
                                     <div class="input-group-prepend"> <span class="input-group-text"><i
                                                 class="fas fa-pen"></i></span> </div> <input type="text" name="title"
-                                        placeholder="{{ __('general.title') }}"
+                                        placeholder="ex:task1+task2+task3+task4"
                                         class="form-control pl-1 min-h-40px @error('title') is-invalid @enderror"
                                         value="{{ old('title') }}">
                                 </div>
