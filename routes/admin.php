@@ -25,6 +25,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\Admin\TaskController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VaccancyController;
 use Illuminate\Support\Facades\Auth;
@@ -88,6 +89,7 @@ Route::group(
             Route::resource('tests', ImageController::class);
             Route::resource('roles', RoleController::class);
             Route::resource('users', UserController::class);
+            Route::resource('projects', ProjectController::class);
             Route::resource('tasks', TaskController::class);
             Route::resource('admins', AdminController::class);
             Route::resource('messages', MessageController::class);

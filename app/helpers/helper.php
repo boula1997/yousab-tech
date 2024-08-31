@@ -10,6 +10,7 @@ use App\Models\Newsletter;
 use App\Models\Contact;
 use App\Models\Gallery;
 use App\Models\Image;
+use App\Models\Project;
 use App\Models\Page;
 use App\Models\Team;
 use App\Models\Task;
@@ -88,6 +89,7 @@ function itemsCount($model)
         "Portfolios" => count(Gallery::get()),
         "images" => count(Image::get()),
         "pages" => count(Page::get()),
+        "projects" => count(Project::get()),
         "tasks" => count(Task::get()),
         "teams" => count(Team::get()),
         "partners" => count(Partner::get()),
@@ -171,5 +173,21 @@ if (!function_exists('contact')) {
     function contact($type)
     {
       Contact::where('type', $type)->first();
+    }
+}
+
+if (!function_exists('projects')) {
+
+    function projects($type)
+    {
+        return isset($type) ?  Project::where('type', $type)->get() : Project::latest()->get();;
+    }
+}
+
+if (!function_exists('project')) {
+
+    function project($type)
+    {
+      Project::where('type', $type)->first();
     }
 }

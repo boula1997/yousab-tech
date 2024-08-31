@@ -24,6 +24,10 @@
                         <li>
                             <p><i class="far fa-envelope"></i> {{ contacts('email')[0]->contact }}</p>
                         </li>
+
+                        <li>
+                            <p><i class="far fa-envelope"></i> {{ projects('email')[0]->project }}</p>
+                        </li>
                         <li>
                             <p><i class="far fa-envelope"></i> {{ tasks('email')[0]->task }}</p>
                         </li>
@@ -35,6 +39,9 @@
                             <p>{{ __('general.hotline') }} <span>: {{ contacts('phone')[0]->contact }} </span></p>
                         </li>
                         <li class="d-none d-none d-lg-inline-block">
+                            <p>{{ __('general.hotline') }} <span>: {{ projects('phone')[0]->project }} </span></p>
+                        </li>
+                        <li class="d-none d-none d-lg-inline-block">
                             <p>{{ __('general.hotline') }} <span>: {{ tasks('phone')[0]->task }} </span></p>
                         </li>
                         <li class="social-area">
@@ -43,6 +50,11 @@
                                 <a href="{{ $contact->contact }}"><i class="{{ $contact->icon }}"
                                         aria-hidden="true"></i></a>
                             @endforeach
+
+                            @foreach (projects('social') as $project)
+                            <a href="{{ $project->project }}"><i class="{{ $project->icon }}"
+                                    aria-hidden="true"></i></a>
+                        @endforeach
 
                             @foreach (tasks('social') as $task)
                             <a href="{{ $task->task }}"><i class="{{ $task->icon }}"
@@ -90,7 +102,8 @@
                     {{-- <li><a class="{{request()->routeIs('front.home')?'active':''}}" href="{{route('front.home')}}">Project</a></li> --}}
                     <li><a class="{{ request()->routeIs('front.message') ? 'active' : '' }}"
                             href="{{ route('front.message') }}">{{ __('general.contact_us') }}</a></li>
-
+                            <li><a class="{{ request()->routeIs('front.message') ? 'active' : '' }}"
+                                href="{{ route('front.message') }}">{{ __('general.project_us') }}</a></li>
                             <li><a class="{{ request()->routeIs('front.message') ? 'active' : '' }}"
                                 href="{{ route('front.message') }}">{{ __('general.task_us') }}</a></li>
                     @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
