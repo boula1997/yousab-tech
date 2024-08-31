@@ -80,6 +80,13 @@ function failedResponse($data = [], $message = "error", $status = 400)
 
 function itemsCount($model)
 {
+    if(auth()->user()->type=='admin'){
+        $tasks=count(Task::where('status',0)->get());
+        $finishedTAsks=count(Task::where('status',1)->get());
+    }else{
+        $tasks=count(Task::where('status',0)->where('employee_id',auth()->user()->id)->get());
+        $finishedTAsks=count(Task::where('status',1)->where('employee_id',auth()->user()->id)->get());
+    }
     $items = [
         "faqs" => count(Faq::get()),
         "messages" => count(Message::get()),
@@ -90,8 +97,8 @@ function itemsCount($model)
         "images" => count(Image::get()),
         "pages" => count(Page::get()),
         "projects" => count(Project::get()),
-        "tasks" => count(Task::where('status',0)->get()),
-        "finishedTasks" => count(Task::where('status',1)->get()),
+        "tasks" => $tasks,
+        "finishedTasks" => $finishedTAsks,
         "teams" => count(Team::get()),
         "partners" => count(Partner::get()),
         "services" => count(Service::get()),
