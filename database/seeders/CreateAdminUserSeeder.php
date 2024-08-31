@@ -21,26 +21,31 @@ class CreateAdminUserSeeder extends Seeder
         $user1 = Admin::create([
             'name' => 'Boula', 
             'email' => 'boula@gmail.com',
+            'type' => 'admin',
             'password' => bcrypt('22101997')
         ]);
         $user2 = Admin::create([
             'name' => 'Kermina', 
             'email' => 'kermina@gmail.com',
+            'type' => 'employee',
             'password' => bcrypt('123456789')
         ]);
         $user3 = Admin::create([
             'name' => 'Ibrahim', 
             'email' => 'ibrahim@gmail.com',
+            'type' => 'employee',
             'password' => bcrypt('123456789')
         ]);
         $user4 = Admin::create([
             'name' => 'Konuz', 
             'email' => 'konuz@gmail.com',
+            'type' => 'employee',
             'password' => bcrypt('123456789')
         ]);
         $user5 = Admin::create([
             'name' => 'Melad', 
             'email' => 'melad@gmail.com',
+            'type' => 'employee',
             'password' => bcrypt('123456789')
         ]);
         $user6 = Admin::create([
