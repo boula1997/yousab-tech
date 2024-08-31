@@ -89,7 +89,10 @@ class TaskController extends Controller
             }
             return redirect()->back()->with('success', __('Tasks assigned successfully.'));
         } elseif ($action == 'delete') {
-            Task::whereIn('id', $taskIds)->update(['status' => !$task->status]);
+            $tasks=Task::whereIn('id', $taskIds)->get();
+            foreach($tasks as $task) {
+             Task::where('title',$task->title)->update(['status' => !$task->status]);
+            }; 
             return redirect()->back()->with('success', __('Tasks deleted successfully.'));
         }
     
