@@ -68,7 +68,7 @@ class TaskController extends Controller
         $taskIds = $request->input('tasks');
         $action = $request->input('action');
          
-        if(count($request->employees)<1&& $action == 'assign')
+        if(!isset($request->employees)<1&& $action == 'assign')
         return redirect()->back()->with('error', __('Select Employee!'));
     
         $task=Task::whereIn('id', $taskIds)->first();
