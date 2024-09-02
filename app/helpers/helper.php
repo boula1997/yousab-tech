@@ -81,11 +81,11 @@ function failedResponse($data = [], $message = "error", $status = 400)
 function itemsCount($model)
 {
     if(auth()->user()->type=='admin'){
-        $tasks=count(Task::where('status',0)->get());
-        $finishedTAsks=count(Task::where('status',1)->get());
+        $tasks=count(Task::where('status',0)->get()->unique('title'));
+        $finishedTAsks=count(Task::where('status',1)->get()->unique('title'));
     }else{
-        $tasks=count(Task::where('status',0)->where('employee_id',auth()->user()->id)->get());
-        $finishedTAsks=count(Task::where('status',1)->where('employee_id',auth()->user()->id)->get());
+        $tasks=count(Task::where('status',0)->where('employee_id',auth()->user()->id)->get()->unique('title'));
+        $finishedTAsks=count(Task::where('status',1)->where('employee_id',auth()->user()->id)->get()->unique('title'));
     }
     $items = [
         "faqs" => count(Faq::get()),
