@@ -182,7 +182,8 @@ class TaskController extends Controller
     {
         try {
             $task->update([
-                'status'=>!$task->status
+                'status' => !$task->status,
+                'created_at' => now() // or use Carbon::now()
             ]);
             return redirect()->back()
                 ->with('success', trans('general.deleted_successfully'));
