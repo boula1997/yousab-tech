@@ -34,26 +34,28 @@
                                             {{-- Dynamic Select Input --}}
                                             <div class="col-md-4 mb-4">
                                                 <label
-                                                class="col-form-label text-right">{{ __('general.employees') }}</label>
-                                                <select class="form-control selectpicker"
-                                                    id="multiSelect1" multiple="multiple" data-live-search="true" name="employees[]">
+                                                    class="col-form-label text-right">{{ __('general.employees') }}</label>
+                                                <select class="form-control selectpicker" id="multiSelect1"
+                                                    multiple="multiple" data-live-search="true" name="employees[]">
                                                     <option value="">{{ __('general.select') }}</option>
                                                     @foreach ($employees as $employee)
                                                         <option value="{{ $employee->id }}"
                                                             {{ collect(old('employees'))->contains($employee->id) ? 'selected' : '' }}>
                                                             {{ $employee->name }}</option>
                                                     @endforeach
-                                                </select> 
+                                                </select>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="">
-                                                    <button type="submit" name="action" value="assign" class="btn btn-primary">
+                                                    <button type="submit" name="action" value="assign"
+                                                        class="btn btn-primary">
                                                         @lang('general.assign_employee')
                                                     </button>
 
                                                 </div>
                                                 <div class="mt-2">
-                                                    <button type="submit" name="action" value="delete" class="btn btn-danger">
+                                                    <button type="submit" name="action" value="delete"
+                                                        class="btn btn-danger">
                                                         @lang('general.delete_tasks')
                                                     </button>
                                                 </div>
@@ -74,11 +76,14 @@
                                                 @foreach ($tasks as $task)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
-                                                        <td style="cursor: pointer" onclick="toggleCheckbox({{ $task->id }})">
+                                                        <td style="cursor: pointer"
+                                                            onclick="toggleCheckbox({{ $task->id }})">
                                                             {{ $task->title }}
                                                         </td>
                                                         <td class="d-none">
-                                                            <input type="checkbox" name="tasks[]" value="{{ $task->id }}" id="checkbox-{{ $task->id }}">
+                                                            <input type="checkbox" name="tasks[]"
+                                                                value="{{ $task->id }}"
+                                                                id="checkbox-{{ $task->id }}">
                                                         </td>
                                                         <td>{{ taskEmployees($task->title) }}</td>
                                                         <td>{{ $task->project->title }}</td>
@@ -100,30 +105,57 @@
 @endsection
 
 @push('scripts')
-<script>
-    $(function() {
-        $("#example1").DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
-            "paging": false,
-            "searching": true,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    });
+    <script>
+        $(document).ready(function() {
+            // Function to load the value into the search input and trigger search
+            function loadSearchValue() {
+                if (localStorage.getItem('searchValue')) {
+                    const $searchInput = $('input[type="search"]');
+                    $searchInput.val(localStorage.getItem('searchValue'));
+                    $searchInput.trigger('input'); // Trigger the input event to start the search
+                }
+            }
 
-    function toggleCheckbox(taskId) {
-        const checkbox = document.getElementById(`checkbox-${taskId}`);
-        const taskRow = $(`#checkbox-${taskId}`).closest('tr').find('td:nth-child(2)');
+            // Check for the input field's existence every 500ms
+            const interval = setInterval(function() {
+                if ($('input[type="search"]').length > 0) {
+                    loadSearchValue();
+                    clearInterval(interval); // Stop checking once the input is found
+                }
+            }, 500);
 
-        checkbox.checked = !checkbox.checked;
+            // Save the value to localStorage whenever the input value changes
+            $(document).on('input', 'input[type="search"]', function() {
+                localStorage.setItem('searchValue', $(this).val());
+            });
+        });
 
-        if (checkbox.checked) {
-            taskRow.css('background-color', 'yellow');
-        } else {
-            taskRow.css('background-color', '');
+
+
+
+
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "paging": false,
+                "searching": true,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        });
+
+        function toggleCheckbox(taskId) {
+            const checkbox = document.getElementById(`checkbox-${taskId}`);
+            const taskRow = $(`#checkbox-${taskId}`).closest('tr').find('td:nth-child(2)');
+
+            checkbox.checked = !checkbox.checked;
+
+            if (checkbox.checked) {
+                taskRow.css('background-color', 'yellow');
+            } else {
+                taskRow.css('background-color', '');
+            }
         }
-    }
-</script>
-
+    </script>
 @endpush
