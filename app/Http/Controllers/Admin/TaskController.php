@@ -112,22 +112,28 @@ class TaskController extends Controller
     {
         try {
             $titles = explode('+', $request->title);
-            foreach($titles as $title) {
-                foreach($request->employees as $employee){
-                Task::create([
-                    'title'=>$title,
-                    'employee_id'=>$employee,
-                    'project_id'=>$request->project_id
-                ]);
-             }
+            foreach ($titles as $title) {
+                foreach ($request->employees as $employee) {
+                    Task::create([
+                        'title' => $title,
+                        'employee_id' => $employee,
+                        'project_id' => $request->project_id
+                    ]);
+                }
             }
-            return redirect()->back()->with(['success' => __('general.created_successfully')]);
+    
+            // Get the previous URL
+            $previousUrl = url()->previous();
+    
+            // Redirect to the previous URL with a success message
+            return redirect($previousUrl)->with(['success' => __('general.created_successfully')]);
         } catch (Exception $e) {
             dd($e->getMessage());
+            // Redirect back with an error message
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
-
+    
     /**
      * Display the specified resource.
      *
