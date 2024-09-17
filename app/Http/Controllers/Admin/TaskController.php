@@ -122,14 +122,16 @@ class TaskController extends Controller
                 }
             }
     
-            // Get the previous URL
-            $previousUrl = url()->previous();
+            // Get the previous and the one before the previous route
+            $previousRoute = session('previousRoute');
+            $twoRoutesAgo = session('twoRoutesAgo');
     
-            // Redirect to the previous URL with a success message
-            return redirect($previousUrl)->with(['success' => __('general.created_successfully')]);
+            // Redirect to either the previous or the one before
+            return redirect($twoRoutesAgo)
+                ->with(['success' => __('general.created_successfully')]);
+    
         } catch (Exception $e) {
             dd($e->getMessage());
-            // Redirect back with an error message
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
