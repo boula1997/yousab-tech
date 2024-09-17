@@ -121,8 +121,7 @@ class TaskController extends Controller
                 ]);
              }
             }
-            return redirect()->route('tasks.index')
-                ->with('success', trans('general.created_successfully'));
+            return redirect()->back()->with(['success' => __('general.created_successfully')]);
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
@@ -165,8 +164,7 @@ class TaskController extends Controller
         try {
             $data = $request->all();
             $task->update($data);
-            return redirect()->route('tasks.index')
-                ->with('success', trans('general.update_successfully'));
+            return redirect()->back()->with(['success' => __('general.created_successfully')]);
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
@@ -185,8 +183,7 @@ class TaskController extends Controller
                 'status' => !$task->status,
                 'created_at' => now() // or use Carbon::now()
             ]);
-            return redirect()->back()
-                ->with('success', trans('general.deleted_successfully'));
+            return redirect()->back()->with(['success' => __('general.created_successfully')]);
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
