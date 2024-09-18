@@ -47,7 +47,7 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $fee->project->cost }}</td>
-                                                    <td>{{ $fee->amount }}</td>
+                                                    <td class="{{ $fee->amount>0?'text-success' : 'text-danger' }}">{{ $fee->amount }}</td>
                                                     <td>{{ $fee->rest }}</td>
                                                     <td>{{ $fee->project->title }}</td>
                                                     <td>{{ $fee->note }}</td>
