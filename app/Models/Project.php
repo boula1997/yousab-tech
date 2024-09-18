@@ -16,4 +16,6 @@ class Project extends Model
     public $translatedAttributes = ['title'];
     public $timestamps = true;
     
+    public function fees(){ return $this->hasMany(Fee::class); }
+
 }

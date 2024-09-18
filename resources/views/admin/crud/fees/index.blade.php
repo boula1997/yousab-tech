@@ -34,8 +34,11 @@
                                                 <th>#</th>
                                                 <th>{{__('general.cost')}}</th>
                                                 <th>{{__('general.amount')}}</th>
-                                                <th>{{__('general.project')}}</th>
                                                 <th>{{__('general.rest')}}</th>
+                                                <th>{{__('general.project')}}</th>
+                                                <th>{{__('general.created_at')}}</th>
+                                                <th>@lang('general.controls')</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -44,8 +47,16 @@
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $fee->project->cost }}</td>
                                                     <td>{{ $fee->amount }}</td>
-                                                    <td>{{ $fee->project->title }}</td>
                                                     <td>{{ $fee->rest }}</td>
+                                                    <td>{{ $fee->project->title }}</td>
+                                                    <td>{{ $fee->created_at }}</td>
+                                                    <td>
+                                                        @include('admin.components.controls', [
+                                                            'route' => 'fees',
+                                                            'role' => 'fee',
+                                                            'module' => $fee,
+                                                        ])
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>

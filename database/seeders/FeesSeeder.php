@@ -14,9 +14,9 @@ class FeesSeeder extends Seeder
     public function run(): void
     {
        
-        $amount=[500];
+        $amount=[300];
         $project=[1];
-        $rest=[300];
+        $rest=[200];
       
 
         for ($i = 0; $i < count($amount); $i++) {

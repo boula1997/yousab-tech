@@ -62,13 +62,14 @@ class FeeController extends Controller
     {
         try {
             $project=Project::find($request->project_id);
-            if($project->cost-$request->amount<0)
+            $latestFee = $project->fees()->latest()->first();
+            if(($latestFee ? $latestFee->rest : $project->cost)-$request->amount<0)
             return redirect()->back()->with(['error' => __('amount exceeded the cost')]);
 
                 Fee::create([
                     'amount' => $request->amount,
                     'project_id' => $request->project_id,
-                    'rest' => $project->cost-$request->amount
+                    'rest' => ($latestFee ? $latestFee->rest : $project->cost)-$request->amount
                 ]);
     
             // Get the previous and the one before the previous route
@@ -104,7 +105,8 @@ class FeeController extends Controller
      */
     public function edit(Fee $fee)
     {
-        return view('admin.crud.fees.edit', compact('fee'));
+        $projects=Project::latest()->get();
+        return view('admin.crud.fees.edit', compact('fee','projects'));
     }
     /**
      * Update the specified resource in storage.
@@ -116,16 +118,24 @@ class FeeController extends Controller
     public function update(FeeRequest $request, Fee $fee)
     {
         try {
-
-            if($request->rest+$fee->amount-$request->amount<0)
             return redirect()->back()->with(['error' => __('amount exceeded the cost')]);
+
+            // $latestFee = $fee->project->fees()->latest()->first();
+            
+            // if(($latestFee ? $latestFee->rest : $fee->project->cost)-($fee->amount-$request->amount)<0)
      
-            $fee->update([
-                'amount' => $fee->amount,
-                'project_id' => $request->project_id,
-                'rest' => $request->rest+$fee->amount-$request->amount
-            ]);
-            return redirect()->back()->with(['success' => __('general.created_successfully')]);
+            // $fee->update([
+            //     'amount' => $request->amount,
+            //     'project_id' => $request->project_id,
+            //     'rest' => $fee->amount-$request->amount
+            // ]);
+            // // Get the previous and the one before the previous route
+            // $previousRoute = session('previousRoute');
+            // $twoRoutesAgo = session('twoRoutesAgo');
+    
+            // // Redirect to either the previous or the one before
+            // return redirect($twoRoutesAgo)
+            //     ->with(['success' => __('general.created_successfully')]);
         } catch (Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->with(['error' => __('general.something_wrong')]);

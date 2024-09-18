@@ -35,7 +35,7 @@
                                     <option value="">{{ __('general.select') }}</option>
                                     @foreach ($projects as $project)
                                         <option value="{{ $project->id }}"
-                                            {{ old('project_id', $fee->project_id) == $project->project_id ? 'selected' : '' }}>
+                                            {{ old('project_id', $fee->project_id) == $project->id ? 'selected' : '' }}>
                                             {{ $project->title }} </option>
                                     @endforeach
                                 </select> </div>

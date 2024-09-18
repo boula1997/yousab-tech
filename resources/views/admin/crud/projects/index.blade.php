@@ -38,7 +38,7 @@
                                                 <th>#</th>
                                                 <th>{{__('general.title')}}</th>
                                                 <th>{{__('general.cost')}}</th>
-
+                                                <th>{{__('general.rest')}}</th>
                                                 <th>{{__('general.status')}}</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
@@ -49,7 +49,11 @@
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $project->title }}</td>
                                                     <td>{{ $project->cost }}</td>
-
+                                                    @php
+                                                    $latestFee = $project->fees()->latest()->first();
+                                                @endphp
+                                                
+                                                <td>{{ $latestFee ? $latestFee->rest : $project->cost }}</td>
                                                     <td>{{$project->status?__('general.yes'):__('general.no') }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
