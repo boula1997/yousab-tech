@@ -38,7 +38,7 @@
                                                 class="fas fa-pen"></i></span> </div> <input type="number" name="cost"
                                         placeholder="{{ __('general.cost') }}"
                                         class="form-control pl-1 min-h-40px @error('cost') is-invalid @enderror"
-                                        value="{{ old('cost', $fee->cost) }}">
+                                        value="{{ old('cost', $project->cost) }}">
                                 </div>
                             </div>
                         </div>
