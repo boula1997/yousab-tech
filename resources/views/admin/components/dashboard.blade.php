@@ -31,8 +31,9 @@
             <div class="navbar-search-block">
                 <form class="form-inline">
                     <div class="input-group input-group-sm">
-                        <input class="form-control @error('') invalid @enderror form-control @error('') invalid @enderror-navbar" type="search" placeholder="@lang('general.search')"
-                            aria-label="Search">
+                        <input
+                            class="form-control @error('') invalid @enderror form-control @error('') invalid @enderror-navbar"
+                            type="search" placeholder="@lang('general.search')" aria-label="Search">
                         <div class="input-group-append">
                             <button class="btn btn-navbar" type="submit">
                                 <i class=" px-1 fas fa-search"></i>
@@ -295,7 +296,7 @@
                     </li>
                 @endcan
 
-                                @can('admin-list')
+                @can('admin-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class=" px-1 fas fa-user-tag"></i>
@@ -378,24 +379,24 @@
                 @endcan
 
                 @can('service-list')
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class=" px-1 fab fa-servicestack"></i>
-                        <p>
-                            @lang('general.services') <i class=" px-1 fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">{{ itemsCount('services') }}</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('services.index') }}" class="nav-link">
-                                <i class=" px-1 far fa-circle nav-icon"></i>
-                                <p>@lang('general.show')</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            @endcan
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class=" px-1 fab fa-servicestack"></i>
+                            <p>
+                                @lang('general.services') <i class=" px-1 fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('services') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('services.index') }}" class="nav-link">
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
+                                    <p>@lang('general.show')</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endcan
                 @can('product-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
@@ -535,43 +536,43 @@
                     </li>
                 @endcan
                 @can('complain-list')
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class=" px-1 fas fa-tags"></i>
-                        <p>
-                            @lang('general.complains') <i class=" px-1 fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">{{ itemsCount('complains') }}</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('complains.index') }}" class="nav-link">
-                                <i class=" px-1 far fa-circle nav-icon"></i>
-                                <p>@lang('general.show')</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            @endcan
-            @can('vaccancy-list')
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class=" px-1 fas fa-tags"></i>
-                    <p>
-                        @lang('general.vaccancies') <i class=" px-1 fas fa-angle-left right"></i>
-                        <span class="badge badge-info right">{{ itemsCount('vaccancies') }}</span>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{ route('vaccancies.index') }}" class="nav-link">
-                            <i class=" px-1 far fa-circle nav-icon"></i>
-                            <p>@lang('general.show')</p>
+                        <a href="#" class="nav-link">
+                            <i class=" px-1 fas fa-tags"></i>
+                            <p>
+                                @lang('general.complains') <i class=" px-1 fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('complains') }}</span>
+                            </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('complains.index') }}" class="nav-link">
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
+                                    <p>@lang('general.show')</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                </ul>
-            </li>
-        @endcan
+                @endcan
+                @can('vaccancy-list')
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class=" px-1 fas fa-tags"></i>
+                            <p>
+                                @lang('general.vaccancies') <i class=" px-1 fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('vaccancies') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('vaccancies.index') }}" class="nav-link">
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
+                                    <p>@lang('general.show')</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endcan
                 @can('counter-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
@@ -632,30 +633,30 @@
                 @endcan
 
                 @can('fee-list')
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class=" px-1 far fa-address-card"></i>
-                        <p>
-                            @lang('general.fees') <i class=" px-1 fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">{{ itemsCount('fees') }}</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('fees.index') }}" class="nav-link">
-                                <i class=" px-1 far fa-circle nav-icon"></i>
-                                <p>@lang('general.show')</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class=" px-1 far fa-address-card"></i>
+                            <p>
+                                @lang('general.fees') <i class=" px-1 fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('fees') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('fees.index') }}" class="nav-link">
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
+                                    <p>@lang('general.show')</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 @endcan
 
 
                 @can('video-list')
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                          <i class=" px-1 fas fa-play-circle"></i>
+                            <i class=" px-1 fas fa-play-circle"></i>
                             <p>
                                 @lang('general.videos') <i class=" px-1 fas fa-angle-left right"></i>
                                 <span class="badge badge-info right">{{ itemsCount('videos') }}</span>
@@ -674,42 +675,42 @@
 
 
                 @can('task-list')
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class=" px-1 far fa-address-card"></i>
-                        <p>
-                            @lang('general.tasks') <i class=" px-1 fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">{{ itemsCount('tasks') }}</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('tasks.index') }}" class="nav-link">
-                                <i class=" px-1 far fa-circle nav-icon"></i>
-                                <p>@lang('general.show')</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class=" px-1 far fa-address-card"></i>
+                            <p>
+                                @lang('general.tasks') <i class=" px-1 fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('tasks') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('tasks.index') }}" class="nav-link">
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
+                                    <p>@lang('general.show')</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 @endcan
                 @can('task-list')
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class=" px-1 far fa-address-card"></i>
-                        <p>
-                            @lang('general.finishedTasks') <i class=" px-1 fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">{{ itemsCount('finishedTasks') }}</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('tasks.finished') }}" class="nav-link">
-                                <i class=" px-1 far fa-circle nav-icon"></i>
-                                <p>@lang('general.show')</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class=" px-1 far fa-address-card"></i>
+                            <p>
+                                @lang('general.finishedTasks') <i class=" px-1 fas fa-angle-left right"></i>
+                                <span class="badge badge-info right">{{ itemsCount('finishedTasks') }}</span>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('tasks.finished') }}" class="nav-link">
+                                    <i class=" px-1 far fa-circle nav-icon"></i>
+                                    <p>@lang('general.show')</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 @endcan
 
                 @can('message-list')
