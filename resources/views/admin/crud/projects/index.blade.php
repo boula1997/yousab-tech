@@ -37,6 +37,7 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>{{__('general.title')}}</th>
+                                                <th>{{__('general.cost')}}</th>
 
                                                 <th>{{__('general.status')}}</th>
                                                 <th>@lang('general.controls')</th>
@@ -47,6 +48,7 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $project->title }}</td>
+                                                    <td>{{ $project->cost }}</td>
 
                                                     <td>{{$project->status?__('general.yes'):__('general.no') }}</td>
                                                     <td>

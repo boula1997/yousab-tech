@@ -18,6 +18,7 @@ use App\Models\Partner;
 use App\Models\Testimonial;
 use App\Models\Process;
 use App\Models\Service;
+use App\Models\Fee;
 use App\Models\Setting;
 use App\Models\User;
 use App\Models\Product;
@@ -100,6 +101,8 @@ function itemsCount($model)
         "tasks" => $tasks,
         "finishedTasks" => $finishedTAsks,
         "teams" => count(Team::get()),
+        "fees" => count(Fee::get()),
+        "finishedFees" => count(Fee::get()),
         "partners" => count(Partner::get()),
         "services" => count(Service::get()),
         "testimonials" => count(Testimonial::get()),

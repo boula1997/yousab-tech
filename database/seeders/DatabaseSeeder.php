@@ -40,6 +40,7 @@ class DatabaseSeeder extends Seeder
             SettingSeeder::class,
             ServiceSeeder::class,
             PartnerSeeder::class,
+            FeesSeeder::class,
             TeamSeeder::class,
             TestimonialsSeeder::class,
             ProductSeeder::class,

@@ -26,6 +26,19 @@
                             </div>
                         </div>
 
+                        {{-- Number Input --}} <div class="col-md-6">
+                            <div class="form-group"> <label>{{ __('general.cost') }} <span class="text-danger"> *
+                                    </span></label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend"> <span class="input-group-text"><i
+                                                class="fas fa-pen"></i></span> </div> <input type="number" name="cost"
+                                        placeholder="{{ __('general.cost') }}"
+                                        class="form-control min-h-40px @error('cost') is-invalid @enderror"
+                                        value="{{ old('cost') }}">
+                                </div>
+                            </div>
+                        </div>
+
                         {{-- Checkbox Input --}} <div class="col-md-6 ps-4">
                             <div class="form-group">
                                 <div class="form-group">

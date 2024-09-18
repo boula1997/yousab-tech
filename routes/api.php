@@ -7,6 +7,7 @@ use App\Http\Controllers\API\NewsletterController;
 use App\Http\Controllers\API\ContactController;
 use App\Http\Controllers\API\PageController;
 use App\Http\Controllers\API\PortfolioController;
+use App\Http\Controllers\API\FeeController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\TaskController;
 use App\Http\Controllers\API\ProjectController;
@@ -100,6 +101,8 @@ Route::group(['middleware' => ['apiLocalization','cors']], function () {
     Route::get('/task/{id}', [TaskController::class, 'show']);
     Route::get('/pages', [PageController::class, 'index']);
     Route::get('/page/{id}', [PageController::class, 'show']);
+    Route::get('/fees', [FeeController::class, 'index']);
+    Route::get('/fee/{id}', [FeeController::class, 'show']);
 
     Route::get('/portfolios', [PortfolioController::class, 'index']);
     Route::get('/portfolio/{id}', [PortfolioController::class, 'show']);

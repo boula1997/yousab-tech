@@ -31,6 +31,54 @@
                                 </div>
                             </div>
                         </div>
+
+
+
+                        <!-- normal input -->
+                        <div class="col-md-6">
+                            <div class="mb-5 bg-light p-3 rounded h-100">
+                                <div class="card-title fw-bold">
+                                    <h5 class="font-weight-bolder text-dark">{{ __('general.cost') }}:</h5>
+                                    <p style="margin: 0; color: inherit; font-weight: normal;">{{ $fee->cost }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-6 d-flex justify-content-start">
+                                    <h1 class="card-title fw-bold">@lang('general.fees')</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <table id="example1" class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>{{ __('general.amount') }}</th>
+                                        <th>{{ __('general.rest') }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($project->fees as $fee)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $fee->amount }}</td>
+                                            <td>{{ $fee->rest }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

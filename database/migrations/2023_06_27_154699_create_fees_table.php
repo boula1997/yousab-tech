@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectsTable extends Migration
+class CreateFeesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('fees', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
+            $table->double('amount')->nullable();
 
-            $table->boolean('status')->default(0);
-            $table->double('cost')->nullable();
+            $table->unsignedBigInteger('project_id')->nullable(); $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            
+            $table->double('rest')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('fees');
     }
 }

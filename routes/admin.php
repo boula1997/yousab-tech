@@ -28,6 +28,7 @@ use App\Http\Controllers\Admin\TaskController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VaccancyController;
+use App\Http\Controllers\Admin\FeeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -94,9 +95,11 @@ Route::group(
             Route::resource('admins', AdminController::class);
             Route::resource('messages', MessageController::class);
             Route::resource('complains', ComplainController::class);
+            Route::resource('fees', FeeController::class);
             Route::resource('vaccancies',VaccancyController::class);
 
-
+            
+            Route::get('/finished/fees', [App\Http\Controllers\Admin\FeeController::class, 'index'])->name('fees.finished');
             Route::get('/reply-message/{id}', [App\Http\Controllers\Admin\MessageController::class, 'reply'])->name('messages.reply');
             Route::get('/finished/tasks', [App\Http\Controllers\Admin\TaskController::class, 'index'])->name('tasks.finished');
             Route::post('/reply-email/{id}/reply', [App\Http\Controllers\Admin\MessageController::class, 'emailReply'])->name('messages.emailReply');
@@ -108,6 +111,12 @@ Route::group(
 
             Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
             Route::resource('newsletters', NewsletterController::class);
+
+            Route::post('/fees/changEmployees', [App\Http\Controllers\Admin\FeeController::class, 'feeChangeEmployee'])->name('fees.changeEmployee');
+
+            Route::post('/fees/bulk-action', [FeeController::class, 'bulkAction'])->name('fees.bulkAction');
+           
+            Route::post('/fees/finish/delete', [App\Http\Controllers\Admin\FeeController::class, 'feesDelete'])->name('fees.finish');
 
             Route::get('/reply-newsletter', [App\Http\Controllers\Admin\NewsletterController::class, 'reply'])->name('newsletters.reply');
             Route::post('/reply-email/reply', [App\Http\Controllers\Admin\NewsletterController::class, 'emailReply'])->name('newsletters.emailReply');
