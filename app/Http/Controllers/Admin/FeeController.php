@@ -96,7 +96,7 @@ class FeeController extends Controller
     {
         return view('admin.crud.fees.show', compact('fee'));
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
