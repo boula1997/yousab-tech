@@ -48,50 +48,9 @@ class FeeController extends Controller
      */
     public function create()
     {
-        $employees=Admin::get();
         $projects=Project::where('status',1)->get();
-        return view('admin.crud.fees.create',compact('employees','projects'));
+        return view('admin.crud.fees.create',compact('projects'));
     }
-    public function bulkAction(Request $request)
-    {
-
-
-        $feeIds = $request->input('fees');
-        $action = $request->input('action');
-         
-        if(!isset($request->employees)&& $action == 'assign')
-        return redirect()->back()->with('error', __('Select Employee!'));
-    
-        $fee=Fee::whereIn('id', $feeIds)->first();
-        $fees=Fee::whereIn('id', $feeIds)->get();
-        if ($action == 'assign') {
-            foreach($fees as $fee) {
-                $feessameTitles=Fee::where('title', $fee->title)->get();
-                foreach($feessameTitles as $feesameTitle){
-                    foreach($request->employees as $employee){
-                    Fee::create([
-                        'title'=>$feesameTitle->title,
-                        'employee_id'=>$employee,
-                        'project_id'=>$feesameTitle->project_id
-                    ]);
-                }
-                $feesameTitle->delete();
-             }
-            }
-            return redirect()->back()->with('success', __('Fees assigned successfully.'));
-        } elseif ($action == 'delete') {
-            $fees=Fee::whereIn('id', $feeIds)->get();
-            foreach($fees as $fee) {
-             Fee::where('title',$fee->title)->update(['status' => !$fee->status]);
-            }; 
-            return redirect()->back()->with('success', __('Fees deleted successfully.'));
-        }
-    
-        return redirect()->back()->with('error', __('Invalid action selected.'));
-    }
-    
-
-    
 
     /**
      * Store a newly created resource in storage.
@@ -102,16 +61,11 @@ class FeeController extends Controller
     public function store(FeeRequest $request)
     {
         try {
-            $titles = explode('+', $request->title);
-            foreach ($titles as $title) {
-                foreach ($request->employees as $employee) {
-                    Fee::create([
-                        'title' => $title,
-                        'employee_id' => $employee,
-                        'project_id' => $request->project_id
-                    ]);
-                }
-            }
+                Fee::create([
+                    'amount' => $request->amount,
+                    'project_id' => $request->project_id,
+                    'rest' => $request->rest
+                ]);
     
             // Get the previous and the one before the previous route
             $previousRoute = session('previousRoute');
@@ -146,10 +100,7 @@ class FeeController extends Controller
      */
     public function edit(Fee $fee)
     {
-        //    dd($fee->title);
-        $employees=Admin::get();
-        $projects=Project::where('status',1)->get();
-        return view('admin.crud.fees.edit', compact('fee','employees','projects'));
+        return view('admin.crud.fees.edit', compact('fee'));
     }
     /**
      * Update the specified resource in storage.
@@ -161,8 +112,12 @@ class FeeController extends Controller
     public function update(FeeRequest $request, Fee $fee)
     {
         try {
-            $data = $request->all();
-            $fee->update($data);
+     
+            $fee->update([
+                'amount' => $fee->amount,
+                'project_id' => $request->project_id,
+                'rest' => $request->rest+$fee->amount-$request->amount
+            ]);
             return redirect()->back()->with(['success' => __('general.created_successfully')]);
         } catch (Exception $e) {
             dd($e->getMessage());
@@ -178,10 +133,7 @@ class FeeController extends Controller
     public function destroy(Fee $fee)
     {
         try {
-            $fee->update([
-                'status' => !$fee->status,
-                'created_at' => now() // or use Carbon::now()
-            ]);
+            // $fee->delete();
             return redirect()->back()->with(['success' => __('general.created_successfully')]);
         } catch (Exception $e) {
             dd($e->getMessage());
