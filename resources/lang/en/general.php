@@ -41,6 +41,39 @@ return [
     'videos'  => 'Videos',
     'partners'  => 'Partners',
 
+    "fees" => "Fees",
+
+"show_all" => "Show all",
+
+"cancel" => "Cancel",
+
+"no_result" => "No result",
+
+"amount" => "Amount",
+
+"note" => "Note",
+
+"cost" => "Cost",
+
+"rest" => "Rest",
+
+"specifications" => "Specifications",
+
+"Dashboard" => "Dashboard",
+
+"Password" => "Password",
+
+"Confirm" => "Confirm",
+
+"Email" => "Email",
+
+"Login" => "Login",
+
+"Register" => "Register",
+
+"Name" => "Name",
+
+"Logout" => "Logout",
 
 "projects" => "Projects",
 
