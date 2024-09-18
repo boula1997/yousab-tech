@@ -15,7 +15,7 @@
                             <div class="mb-5 bg-light p-3 rounded h-100">
                                 <div class="card-title fw-bold">
                                     <h5 class="font-weight-bolder text-dark">{{ __('general.amount') }}:</h5>
-                                    <p style="margin: 0; color: inherit; font-weight: normal;">{{ $fee->amount }}</p>
+                                    <p class="{{ $fee->amount>0?'text-success' : 'text-danger' }}" style="margin: 0; color: inherit; font-weight: normal;">{{ $fee->amount>0?'+':'' }} {{ $fee->amount }}</p>
                                 </div>
                             </div>
                         </div>
