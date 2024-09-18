@@ -61,10 +61,14 @@ class FeeController extends Controller
     public function store(FeeRequest $request)
     {
         try {
+            $project=Project::find($request->project_id);
+            if($project->cost-$request->amount<0)
+            return redirect()->back()->with(['error' => __('amount exceeded the cost')]);
+
                 Fee::create([
                     'amount' => $request->amount,
                     'project_id' => $request->project_id,
-                    'rest' => $request->rest
+                    'rest' => $project->cost-$request->amount
                 ]);
     
             // Get the previous and the one before the previous route
@@ -112,6 +116,9 @@ class FeeController extends Controller
     public function update(FeeRequest $request, Fee $fee)
     {
         try {
+
+            if($request->rest+$fee->amount-$request->amount<0)
+            return redirect()->back()->with(['error' => __('amount exceeded the cost')]);
      
             $fee->update([
                 'amount' => $fee->amount,
