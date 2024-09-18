@@ -36,35 +36,49 @@
                                         </option>
                                     @endforeach
                                 </select> </div>
+
+                            <!-- Normal title input -->
+                            <div class="col-md-12">
+                                <div class="form-group"> <label>{{ __('general.note') }} <span class="text-danger"> *
+                                        </span></label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"> <span class="input-group-text"><i
+                                                    class="fas fa-pen"></i></span> </div> <input type="text"
+                                            name="note" placeholder="{{ __('general.note') }}"
+                                            class="form-control pl-1 min-h-40px @error('note') is-invalid @enderror"
+                                            value="{{ old('note') }}">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
 
-                    <div class="card-footer mb-5">
-                        <button type="submit"
-                            class="btn btn-outline-primary px-5
+                        <div class="card-footer mb-5">
+                            <button type="submit"
+                                class="btn btn-outline-primary px-5
                           ">@lang('general.save')</button>
-                        <a href="{{ route('fees.index') }}"
-                            class="btn btn-outline-danger px-5
+                            <a href="{{ route('fees.index') }}"
+                                class="btn btn-outline-danger px-5
                             ">@lang('general.cancel')</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
-        @push('scripts')
-            <script>
-                $(function() {
-                    // Summernote
-                    $('.summernote').summernote()
+            @push('scripts')
+                <script>
+                    $(function() {
+                        // Summernote
+                        $('.summernote').summernote()
 
-                    // CodeMirror
-                    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
-                        mode: "htmlmixed",
-                        theme: "monokai"
-                    });
-                })
-            </script>
-        @endpush
+                        // CodeMirror
+                        CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                            mode: "htmlmixed",
+                            theme: "monokai"
+                        });
+                    })
+                </script>
+            @endpush
 
-    @endsection
+        @endsection

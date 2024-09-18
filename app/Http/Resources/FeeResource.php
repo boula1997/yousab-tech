@@ -21,6 +21,7 @@ class FeeResource extends JsonResource
 'project'=>$this->project,
 
 'rest'=>$this->rest,
+'note'=>$this->note,
         ];
     }
 }

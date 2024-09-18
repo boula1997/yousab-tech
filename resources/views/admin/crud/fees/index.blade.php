@@ -36,6 +36,7 @@
                                                 <th>{{__('general.amount')}}</th>
                                                 <th>{{__('general.rest')}}</th>
                                                 <th>{{__('general.project')}}</th>
+                                                <th>{{__('general.note')}}</th>
                                                 <th>{{__('general.created_at')}}</th>
                                                 <th>@lang('general.controls')</th>
 
@@ -49,6 +50,7 @@
                                                     <td>{{ $fee->amount }}</td>
                                                     <td>{{ $fee->rest }}</td>
                                                     <td>{{ $fee->project->title }}</td>
+                                                    <td>{{ $fee->note }}</td>
                                                     <td>{{ $fee->created_at }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
