@@ -34,7 +34,6 @@
                                                 <th>#</th>
                                                 <th>{{__('general.cost')}}</th>
                                                 <th>{{__('general.amount')}}</th>
-                                                <th>{{__('general.rest')}}</th>
                                                 <th>{{__('general.project')}}</th>
                                                 <th>{{__('general.note')}}</th>
                                                 <th>{{__('general.created_at')}}</th>
