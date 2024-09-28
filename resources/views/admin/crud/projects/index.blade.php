@@ -13,19 +13,16 @@
                             <!-- general form elements -->
                             <div class="card">
                                 <div class="card-header">
-                                    <!-- general form elements -->
                                     <div class="row">
-                                        <div class="col-md-6 d-flex d-flex justify-content-start">
+                                        <div class="col-md-6 d-flex justify-content-start">
                                             <h1 class="card-title fw-bold">@lang('general.projects')</h1>
                                         </div>
-                                        <div class="col-md-6 d-flex d-flex justify-content-end">
+                                        <div class="col-md-6 d-flex justify-content-end">
                                             <a href="{{ route('projects.create') }}">
-
-                                                <button
-                                                    class="btn btn-outline-primary px-5
-                                                    "><i
-                                                        class="fa fa-plus fa-sm px-2" aria-hidden="true"></i>
-                                                    @lang('general.add')</button>
+                                                <button class="btn btn-outline-primary px-5">
+                                                    <i class="fa fa-plus fa-sm px-2" aria-hidden="true"></i>
+                                                    @lang('general.add')
+                                                </button>
                                             </a>
                                         </div>
                                     </div>
@@ -47,8 +44,8 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $project->title }}</td>
-                                                    <td class="cost">{{ $project->cost }}</td> <!-- Add class 'cost' to this cell -->
-                                                    <td>{{ rest($project) }}</td>
+                                                    <td class="cost">{{ $project->cost }}</td>
+                                                    <td class="rest">{{ rest($project) }}</td> <!-- Add class 'rest' to this cell -->
                                                     <td>{{ $project->status ? __('general.yes') : __('general.no') }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
@@ -65,18 +62,15 @@
                                             <tr>
                                                 <td colspan="2" class="text-right fw-bold">Total Cost:</td>
                                                 <td id="total-cost"></td> <!-- Cell to display the total cost -->
-                                                <td colspan="3"></td>
+                                                <td id="total-rest"></td> <!-- Cell to display the total rest -->
+                                                <td colspan="2"></td>
                                             </tr>
                                         </tfoot>
                                     </table>
                                 </div>
-                                
                             </div>
-
                         </div>
-
                     </div>
-
                 </div><!-- /.container-fluid -->
             </section>
         </div>
@@ -84,7 +78,6 @@
     </div>
     <!-- /.content-wrapper -->
 @endsection
-
 
 @push('scripts')
     <script>
@@ -98,43 +91,36 @@
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
-            // Function to calculate the total cost for visible rows
-            function calculateTotalCost() {
+            // Function to calculate the total cost and rest for visible rows
+            function calculateTotals() {
                 let totalCost = 0;
+                let totalRest = 0;
 
-                // Iterate over each visible row using standard jQuery selector
-                $('#example1 tbody tr:visible').each(function(index) {
-                    // Extract and parse the cost value from the '.cost' cell
+                // Iterate over each visible row
+                $('#example1 tbody tr:visible').each(function() {
+                    // Extract and parse the cost value
                     let costText = $(this).find('.cost').text().trim();
-
-                    // Debugging: Log the raw and parsed cost value
-                    console.log(`Row ${index + 1} - Raw Cost Text: "${costText}"`);
-
-                    // Parse the cost value into a number, handling unexpected characters
                     let cost = parseFloat(costText.replace(/[^0-9.-]+/g, "")) || 0;
-                    console.log(`Row ${index + 1} - Parsed Cost: ${cost}`);
-
                     totalCost += cost;
+
+                    // Extract and parse the rest value
+                    let restText = $(this).find('.rest').text().trim();
+                    let rest = parseFloat(restText.replace(/[^0-9.-]+/g, "")) || 0;
+                    totalRest += rest;
                 });
 
-                // Debugging: Log the final total cost value
-                console.log(`Total Cost Calculated: ${totalCost}`);
-
-                // Display the total cost in the summary row
+                // Display the totals in the summary row
                 $('#total-cost').text(totalCost.toFixed(2));
+                $('#total-rest').text(totalRest.toFixed(2));
             }
 
-            // Calculate the initial total cost for all visible rows
-            calculateTotalCost();
+            // Calculate the initial totals for all visible rows
+            calculateTotals();
 
-            // Recalculate the total cost every time a search or filter is applied
+            // Recalculate the totals every time a search or filter is applied
             table.on('search.dt', function() {
-                calculateTotalCost();
+                calculateTotals();
             });
         });
     </script>
 @endpush
-
-
-
-
