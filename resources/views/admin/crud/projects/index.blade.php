@@ -88,7 +88,8 @@
 
 @push('scripts')
     <script>
-        $(function() {
+        $(document).ready(function() {
+            // Initialize the DataTable and store the instance
             const table = $("#example1").DataTable({
                 "responsive": true,
                 "lengthChange": false,
@@ -97,16 +98,27 @@
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
-            // Function to calculate the total cost for the currently visible rows
+            // Function to calculate the total cost for visible rows
             function calculateTotalCost() {
                 let totalCost = 0;
 
-                // Select visible rows only using DataTables API
-                table.rows({ search: 'applied' }).nodes().each(function(index, element) {
-                    // Extract the cost value from the appropriate cell and add it to the total
-                    let cost = parseFloat($(element).find('.cost').text()) || 0;
+                // Iterate over each visible row using standard jQuery selector
+                $('#example1 tbody tr:visible').each(function(index) {
+                    // Extract and parse the cost value from the '.cost' cell
+                    let costText = $(this).find('.cost').text().trim();
+
+                    // Debugging: Log the raw and parsed cost value
+                    console.log(`Row ${index + 1} - Raw Cost Text: "${costText}"`);
+
+                    // Parse the cost value into a number, handling unexpected characters
+                    let cost = parseFloat(costText.replace(/[^0-9.-]+/g, "")) || 0;
+                    console.log(`Row ${index + 1} - Parsed Cost: ${cost}`);
+
                     totalCost += cost;
                 });
+
+                // Debugging: Log the final total cost value
+                console.log(`Total Cost Calculated: ${totalCost}`);
 
                 // Display the total cost in the summary row
                 $('#total-cost').text(totalCost.toFixed(2));
@@ -122,5 +134,7 @@
         });
     </script>
 @endpush
+
+
 
 
