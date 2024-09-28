@@ -133,7 +133,7 @@ function rest($project)
 {
     $totalFee=0;
     foreach($project->fees as $fee){
-        if($fee>0)
+        if($fee->amount>0)
         $totalFee+=$fee->amount;
     }
     return $project->cost-$totalFee;
