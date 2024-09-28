@@ -16,7 +16,6 @@ class FeesSeeder extends Seeder
        
         $amount=[300];
         $project=[1];
-        $rest=[200];
       
 
         for ($i = 0; $i < count($amount); $i++) {
@@ -25,7 +24,6 @@ class FeesSeeder extends Seeder
 
                  'project_id'=>$project[0],
                 
-                 'rest'=>$rest[0],
             ]);
         }
     }

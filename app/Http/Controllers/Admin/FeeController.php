@@ -69,6 +69,7 @@ class FeeController extends Controller
                 Fee::create([
                     'amount' => $request->amount,
                     'project_id' => $request->project_id,
+                    'note' => $request->note,
                 ]);
     
             // Get the previous and the one before the previous route
@@ -126,6 +127,7 @@ class FeeController extends Controller
             $fee->update([
                 'amount' => $request->amount,
                 'note' => $request->note,
+                'project_id' => $request->project_id,
             ]);
             // Get the previous and the one before the previous route
             $previousRoute = session('previousRoute');
