@@ -129,6 +129,14 @@ function services()
 
     return $services;
 }
+function rest($project)
+{
+    $totalFee=0;
+    foreach($project->fees as $fee){
+        $totalFee+=$fee->amount;
+    }
+    return $project->cost-$totalFee;
+}
 
 function taskEmployees($title){
     $employee_ids=Task::where('title',$title)->pluck('employee_id');

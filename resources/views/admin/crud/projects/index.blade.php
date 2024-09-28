@@ -53,7 +53,7 @@
                                                     $latestFee = $project->fees()->latest()->first();
                                                 @endphp
                                                 
-                                                <td>{{ $latestFee ? $latestFee->rest : $project->cost }}</td>
+                                                <td>{{ rest($project) }}</td>
                                                     <td>{{$project->status?__('general.yes'):__('general.no') }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
