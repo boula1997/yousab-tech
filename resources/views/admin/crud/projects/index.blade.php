@@ -31,8 +31,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    
-                                    <table id="example1" class="table  table-hover">
+                                    <table id="example1" class="table table-hover">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
@@ -48,13 +47,9 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $project->title }}</td>
-                                                    <td>{{ $project->cost }}</td>
-                                                    @php
-                                                    $latestFee = $project->fees()->latest()->first();
-                                                @endphp
-                                                
-                                                <td>{{ rest($project) }}</td>
-                                                    <td>{{$project->status?__('general.yes'):__('general.no') }}</td>
+                                                    <td class="cost">{{ $project->cost }}</td> <!-- Add class 'cost' to this cell -->
+                                                    <td>{{ rest($project) }}</td>
+                                                    <td>{{ $project->status ? __('general.yes') : __('general.no') }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'projects',
@@ -64,10 +59,18 @@
                                                     </td>
                                                 </tr>
                                             @endforeach
-
                                         </tbody>
+                                        <!-- Summary Row -->
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="2" class="text-right fw-bold">Total Cost:</td>
+                                                <td id="total-cost"></td> <!-- Cell to display the total cost -->
+                                                <td colspan="3"></td>
+                                            </tr>
+                                        </tfoot>
                                     </table>
                                 </div>
+                                
                             </div>
 
                         </div>
@@ -86,22 +89,38 @@
 @push('scripts')
     <script>
         $(function() {
-            $("#example1").DataTable({
+            const table = $("#example1").DataTable({
                 "responsive": true,
                 "lengthChange": false,
                 "paging": false,
                 "autoWidth": false,
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
+
+            // Function to calculate the total cost for the currently visible rows
+            function calculateTotalCost() {
+                let totalCost = 0;
+
+                // Select visible rows only using DataTables API
+                table.rows({ search: 'applied' }).nodes().each(function(index, element) {
+                    // Extract the cost value from the appropriate cell and add it to the total
+                    let cost = parseFloat($(element).find('.cost').text()) || 0;
+                    totalCost += cost;
+                });
+
+                // Display the total cost in the summary row
+                $('#total-cost').text(totalCost.toFixed(2));
+            }
+
+            // Calculate the initial total cost for all visible rows
+            calculateTotalCost();
+
+            // Recalculate the total cost every time a search or filter is applied
+            table.on('search.dt', function() {
+                calculateTotalCost();
             });
         });
     </script>
 @endpush
+
+

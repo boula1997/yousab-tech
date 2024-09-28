@@ -38,7 +38,6 @@
                                                 <th>{{__('general.note')}}</th>
                                                 <th>{{__('general.created_at')}}</th>
                                                 <th>@lang('general.controls')</th>
-
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -46,7 +45,10 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $fee->project->cost }}</td>
-                                                    <td class="{{ $fee->amount>0?'text-success' : 'text-danger' }}">{{ $fee->amount>0?'+':'' }}{{ $fee->amount }}</td>
+                                                    <td class="amount {{ $fee->amount > 0 ? 'text-success' : 'text-danger' }}">
+                                                        {{ $fee->amount > 0 ? '+' : '' }}{{ $fee->amount }}
+                                                    </td>
+                                                    
                                                     <td>{{ $fee->project->title }}</td>
                                                     <td>{{ $fee->note }}</td>
                                                     <td>{{ $fee->created_at }}</td>
@@ -60,8 +62,17 @@
                                                 </tr>
                                             @endforeach
                                         </tbody>
+                                        <!-- Summary Row -->
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="2" class="text-right fw-bold">Total Amount:</td>
+                                                <td id="total-amount"></td> <!-- Cell to display the total amount -->
+                                                <td colspan="4"></td>
+                                            </tr>
+                                        </tfoot>
                                     </table>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -76,55 +87,64 @@
 @push('scripts')
     <script>
         $(document).ready(function() {
-            // Function to load the value into the search input and trigger search
-            function loadSearchValue() {
-                if (localStorage.getItem('searchValue')) {
-                    const $searchInput = $('input[type="search"]');
-                    $searchInput.val(localStorage.getItem('searchValue'));
-                    $searchInput.trigger('input'); // Trigger the input event to start the search
-                }
-            }
-
-            // Check for the input field's existence every 500ms
-            const interval = setInterval(function() {
-                if ($('input[type="search"]').length > 0) {
-                    loadSearchValue();
-                    clearInterval(interval); // Stop checking once the input is found
-                }
-            }, 500);
-
-            // Save the value to localStorage whenever the input value changes
-            $(document).on('input', 'input[type="search"]', function() {
-                localStorage.setItem('searchValue', $(this).val());
-            });
-        });
-
-
-
-
-
-        $(function() {
-            $("#example1").DataTable({
+            // Initialize the DataTable and store the instance correctly
+            const table = $("#example1").DataTable({
                 "responsive": true,
                 "lengthChange": false,
                 "autoWidth": false,
                 "paging": false,
                 "searching": true,
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        });
+            });
 
-        function toggleCheckbox(feeId) {
-            const checkbox = document.getElementById(`checkbox-${feeId}`);
-            const feeRow = $(`#checkbox-${feeId}`).closest('tr').find('td:nth-child(2)');
+            // Ensure that table is a DataTable instance by debugging it
+            console.log("DataTable Instance:", table);
 
-            checkbox.checked = !checkbox.checked;
+            // Function to calculate the total amount for visible rows
+            function calculateTotalAmount() {
+                let totalAmount = 0;
 
-            if (checkbox.checked) {
-                feeRow.css('background-color', 'yellow');
-            } else {
-                feeRow.css('background-color', '');
+                // Check if table instance is valid
+                if (table && typeof table.rows === 'function') {
+                    // Loop through each visible row in the 'amount' column
+                    table.rows({ search: 'applied' }).every(function() {
+                        // Get the 'amount' cell for the current row
+                        const rowNode = $(this.node());
+                        const amountText = rowNode.find('.amount').text().trim();
+
+                        // Debug: Log the captured amount text
+                        console.log(`Row Amount Text: "${amountText}"`);
+
+                        // Parse the amount and handle any NaN values
+                        let amount = parseFloat(amountText) || 0;
+
+                        // Debug: Log the parsed amount
+                        console.log(`Parsed Amount: ${amount}`);
+
+                        totalAmount += amount;
+                    });
+                } else {
+                    console.error("Error: The 'table' instance is not a valid DataTable object.");
+                }
+
+                // Display the total amount in the summary row
+                console.log(`Total Calculated Amount: ${totalAmount}`);
+                $('#total-amount').text(totalAmount.toFixed(2)); // Format with two decimal places
             }
-        }
+
+            // Calculate the total amount for visible rows on page load
+            calculateTotalAmount();
+
+            // Recalculate total amount on search/filter change
+            table.on('search.dt', function() {
+                console.log("Search or filter applied. Recalculating total amount...");
+                calculateTotalAmount();
+            });
+        });
     </script>
 @endpush
+
+
+
+
+
