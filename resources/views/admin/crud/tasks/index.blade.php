@@ -105,75 +105,42 @@
 @endsection
 
 @push('scripts')
-
 <script>
-    $(function() {
-        // Define a unique key for your DataTable state in localStorage
-        const tableStateKey = "coursesTableState";
-
-        // Initialize DataTable with stateSave and custom state management
-        var table = $("#example1").DataTable({
+    $(document).ready(function() {
+        // Initialize the DataTable and store the instance correctly
+        const table = $("#example1").DataTable({
             "responsive": true,
             "lengthChange": false,
             "autoWidth": false,
-            "paging": true,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-            "stateSave": true, // Enable state saving
-            "stateLoadCallback": function(settings) {
-                // Load the state from localStorage
-                var savedState = localStorage.getItem(tableStateKey);
-                return savedState ? JSON.parse(savedState) : null;
-            },
-            "stateSaveCallback": function(settings, data) {
-                // Save the state to localStorage
-                localStorage.setItem(tableStateKey, JSON.stringify(data));
+            "paging": false,
+            "searching": true,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+        // Function to load the value into the search input and trigger search
+        function loadSearchValue() {
+            const storedSearchValue = localStorage.getItem('searchValue');
+            if (storedSearchValue) {
+                const $searchInput = $('input[type="search"]');
+                $searchInput.val(storedSearchValue);
+                $searchInput.trigger('input'); // Trigger the input event to start the search
             }
-        });
+        }
 
-        // Append DataTable buttons to container
-        table.buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    });
-</script>
-    <script>
-        $(document).ready(function() {
-            // Function to load the value into the search input and trigger search
-            function loadSearchValue() {
-                if (localStorage.getItem('searchValue')) {
-                    const $searchInput = $('input[type="search"]');
-                    $searchInput.val(localStorage.getItem('searchValue'));
-                    $searchInput.trigger('input'); // Trigger the input event to start the search
-                }
+        // Check for the input field's existence every 500ms (ensures the input exists)
+        const interval = setInterval(function() {
+            if ($('input[type="search"]').length > 0) {
+                loadSearchValue(); // Load search value once the input field is found
+                clearInterval(interval); // Stop checking once the input is found
             }
+        }, 500);
 
-            // Check for the input field's existence every 500ms
-            const interval = setInterval(function() {
-                if ($('input[type="search"]').length > 0) {
-                    loadSearchValue();
-                    clearInterval(interval); // Stop checking once the input is found
-                }
-            }, 500);
-
-            // Save the value to localStorage whenever the input value changes
-            $(document).on('input', 'input[type="search"]', function() {
-                localStorage.setItem('searchValue', $(this).val());
-            });
+        // Save the value to localStorage whenever the input value changes
+        $(document).on('input', 'input[type="search"]', function() {
+            localStorage.setItem('searchValue', $(this).val());
         });
 
-
-
-
-
-        $(function() {
-            $("#example1").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-                "paging": false,
-                "searching": true,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        });
-
+        // Function to toggle checkbox and highlight row
         function toggleCheckbox(taskId) {
             const checkbox = document.getElementById(`checkbox-${taskId}`);
             const taskRow = $(`#checkbox-${taskId}`).closest('tr').find('td:nth-child(2)');
@@ -186,5 +153,17 @@
                 taskRow.css('background-color', '');
             }
         }
-    </script>
+
+        // Calculate the total amount (if necessary)
+        function calculateTotalAmount() {
+            // Code for calculating total amounts or handling other logic
+        }
+
+        // Example: recalculate total on search
+        table.on('search.dt', function() {
+            calculateTotalAmount();
+        });
+    });
+</script>
+
 @endpush
