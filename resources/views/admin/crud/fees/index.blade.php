@@ -32,11 +32,11 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>{{__('general.cost')}}</th>
-                                                <th>{{__('general.amount')}}</th>
-                                                <th>{{__('general.project')}}</th>
-                                                <th>{{__('general.note')}}</th>
-                                                <th>{{__('general.created_at')}}</th>
+                                                <th>{{ __('general.cost') }}</th>
+                                                <th>{{ __('general.amount') }}</th>
+                                                <th>{{ __('general.project') }}</th>
+                                                <th>{{ __('general.note') }}</th>
+                                                <th>{{ __('general.created_at') }}</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
                                         </thead>
@@ -48,7 +48,6 @@
                                                     <td class="amount {{ $fee->amount > 0 ? 'text-success' : 'text-danger' }}">
                                                         {{ $fee->amount > 0 ? '+' : '' }}{{ $fee->amount }}
                                                     </td>
-                                                    
                                                     <td>{{ $fee->project->title }}</td>
                                                     <td>{{ $fee->note }}</td>
                                                     <td>{{ $fee->created_at }}</td>
@@ -72,7 +71,6 @@
                                         </tfoot>
                                     </table>
                                 </div>
-                                
                             </div>
                         </div>
                     </div>
@@ -97,12 +95,12 @@
         }
 
         // Save column visibility state to localStorage
-        function saveColumnVisibility(settings, data) {
+        function saveColumnVisibility() {
             const columnVisibility = table.columns().visible().toArray();
             localStorage.setItem(localStorageKey, JSON.stringify(columnVisibility));
         }
 
-        // Initialize the DataTable and store the instance correctly
+        // Initialize the DataTable and store the instance
         const table = $("#example1").DataTable({
             "responsive": true,
             "lengthChange": false,
@@ -123,7 +121,7 @@
             }
         });
 
-        // Ensure that table is a DataTable instance by debugging it
+        // Ensure that table is a DataTable instance
         console.log("DataTable Instance:", table);
 
         // Function to calculate the total amount for visible rows
@@ -134,27 +132,14 @@
             if (table && typeof table.rows === 'function') {
                 // Loop through each visible row in the 'amount' column
                 table.rows({ search: 'applied' }).every(function() {
-                    // Get the 'amount' cell for the current row
                     const rowNode = $(this.node());
                     const amountText = rowNode.find('.amount').text().trim();
-
-                    // Debug: Log the captured amount text
-                    console.log(`Row Amount Text: "${amountText}"`);
-
-                    // Parse the amount and handle any NaN values
                     let amount = parseFloat(amountText) || 0;
-
-                    // Debug: Log the parsed amount
-                    console.log(`Parsed Amount: ${amount}`);
-
                     totalAmount += amount;
                 });
-            } else {
-                console.error("Error: The 'table' instance is not a valid DataTable object.");
             }
 
             // Display the total amount in the summary row
-            console.log(`Total Calculated Amount: ${totalAmount}`);
             $('#total-amount').text(totalAmount.toFixed(2)); // Format with two decimal places
         }
 
@@ -163,22 +148,14 @@
 
         // Recalculate total amount on search/filter change
         table.on('search.dt', function() {
-            console.log("Search or filter applied. Recalculating total amount...");
             calculateTotalAmount();
         });
 
         // Recalculate total amount on column visibility change
         table.on('column-visibility.dt', function() {
-            console.log("Column visibility changed. Recalculating total amount...");
             calculateTotalAmount();
-            saveColumnVisibility();
+            saveColumnVisibility(); // Save updated column visibility state
         });
     });
 </script>
-
 @endpush
-
-
-
-
-
