@@ -105,59 +105,57 @@
 @endsection
 
 @push('scripts')
-<script>
-    $(document).ready(function() {
-        const searchStorageKey = 'searchValue'; // Key to store the search value in localStorage
-        const tableStateKey = "coursesTableState"; // Key to store the DataTable state in localStorage
-
-        // Initialize DataTable with stateSave and custom state management
-        var table = $("#example1").DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
-            "paging": false,
-            "searching": true,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-            "stateSave": true, // Enable state saving
-            "stateLoadCallback": function(settings) {
-                // Load the state from localStorage
-                var savedState = localStorage.getItem(tableStateKey);
-                return savedState ? JSON.parse(savedState) : null;
-            },
-            "stateSaveCallback": function(settings, data) {
-                // Save the state to localStorage
-                localStorage.setItem(tableStateKey, JSON.stringify(data));
+    <script>
+        $(document).ready(function() {
+            // Function to load the value into the search input and trigger search
+            function loadSearchValue() {
+                if (localStorage.getItem('searchValue')) {
+                    const $searchInput = $('input[type="search"]');
+                    $searchInput.val(localStorage.getItem('searchValue'));
+                    $searchInput.trigger('input'); // Trigger the input event to start the search
+                }
             }
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
-        // Load search value from localStorage
-        function loadSearchValue() {
-            const storedSearchValue = localStorage.getItem(searchStorageKey);
-            if (storedSearchValue) {
-                const $searchInput = $('input[type="search"]');
-                $searchInput.val(storedSearchValue);
-                $searchInput.trigger('input'); // Trigger the input event to start the search
+            // Check for the input field's existence every 500ms
+            const interval = setInterval(function() {
+                if ($('input[type="search"]').length > 0) {
+                    loadSearchValue();
+                    clearInterval(interval); // Stop checking once the input is found
+                }
+            }, 500);
+
+            // Save the value to localStorage whenever the input value changes
+            $(document).on('input', 'input[type="search"]', function() {
+                localStorage.setItem('searchValue', $(this).val());
+            });
+        });
+
+
+
+
+
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "paging": false,
+                "searching": true,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        });
+
+        function toggleCheckbox(taskId) {
+            const checkbox = document.getElementById(`checkbox-${taskId}`);
+            const taskRow = $(`#checkbox-${taskId}`).closest('tr').find('td:nth-child(2)');
+
+            checkbox.checked = !checkbox.checked;
+
+            if (checkbox.checked) {
+                taskRow.css('background-color', 'yellow');
+            } else {
+                taskRow.css('background-color', '');
             }
         }
-
-        // Check for the search input field's existence every 500ms
-        const interval = setInterval(function() {
-            const $searchInput = $('input[type="search"]');
-            if ($searchInput.length > 0) {
-                loadSearchValue(); // Load search value once the input field is found
-                clearInterval(interval); // Stop checking once the input is found
-            }
-        }, 500);
-
-        // Save the search value to localStorage whenever the input value changes
-        $(document).on('input', 'input[type="search"]', function() {
-            localStorage.setItem(searchStorageKey, $(this).val());
-        });
-
-        // Example: Recalculate total when search/filter is applied
-        table.on('search.dt', function() {
-            // Logic for calculating totals or handling search can go here
-        });
-    });
-</script>
+    </script>
 @endpush
