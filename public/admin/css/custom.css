@@ -29,7 +29,7 @@
 /* Sidebar Links: Hover and Focus Fix */
 .nav-sidebar .nav-item>.nav-link {
   position: relative;
-  color: #153C6E; /* Base color */
+  color: #fff; /* Base color */
   transition: background-color 0.3s, color 0.3s ease-in-out; /* Smooth transition */
 }
 
