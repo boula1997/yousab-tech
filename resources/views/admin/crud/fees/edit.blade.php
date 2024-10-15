@@ -20,7 +20,7 @@
                                     </span></label>
                                 <div class="input-group">
                                     <div class="input-group-prepend"> <span class="input-group-text"><i
-                                                class="fas fa-pen"></i></span> </div> <input type="number" name="amount"
+                                                class="fas fa-pen"></i></span> </div> <input type="text" name="amount"
                                         placeholder="{{ __('general.amount') }}"
                                         class="form-control pl-1 min-h-40px @error('amount') is-invalid @enderror"
                                         value="{{ old('amount', $fee->amount) }}">
