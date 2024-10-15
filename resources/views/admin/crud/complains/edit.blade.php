@@ -59,7 +59,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-pen"></i></span>
                         </div>
-                        <input type="number" name="repeat" placeholder="@lang('general.repeat')"
+                        <input type="text" name="repeat" placeholder="@lang('general.repeat')"
 
                             class="form-control  min-h-40px @error('repeat') is-invalid @enderror"
                             value="{{ old('repeat',$complain->repeat) }}">

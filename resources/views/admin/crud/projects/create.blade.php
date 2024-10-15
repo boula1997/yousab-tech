@@ -31,7 +31,7 @@
                                     </span></label>
                                 <div class="input-group">
                                     <div class="input-group-prepend"> <span class="input-group-text"><i
-                                                class="fas fa-pen"></i></span> </div> <input type="number" name="cost"
+                                                class="fas fa-pen"></i></span> </div> <input type="text" name="cost"
                                         placeholder="{{ __('general.cost') }}"
                                         class="form-control min-h-40px @error('cost') is-invalid @enderror"
                                         value="{{ old('cost') }}">

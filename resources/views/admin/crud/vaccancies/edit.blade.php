@@ -29,7 +29,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-pen"></i></span>
                         </div>
-                        <input type="number" name="salary" placeholder="@lang('general.salary')"
+                        <input type="text" name="salary" placeholder="@lang('general.salary')"
 
                             class="form-control  min-h-40px @error('salary') is-invalid @enderror"
                             value="{{ old('salary',$vaccancy->salary) }}">
