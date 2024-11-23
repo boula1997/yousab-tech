@@ -74,13 +74,6 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/js/select2.min.js"></script>
 
-<script>
-    $(document).ready(function() {
-    $('#mySelect').select2({
-        placeholder: "Select an option",
-        allowClear: true
-    });
-});
 {{-- <script>
     $(document).ready(function() {
       $('select').each(function() {
@@ -148,6 +141,14 @@
       });
     });
     </script> --}}
+<script>
+    $(document).ready(function() {
+        $('select').select2({
+            placeholder: "Select an option",
+            allowClear: true
+        });
+    });
+</script>
 @stack('scripts')
 
 <script>
