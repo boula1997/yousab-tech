@@ -124,14 +124,14 @@
                                 </li>
                             </ul>
                         </li>
-                        @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        {{-- @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                             <li class="{{ app()->getLocale() == $localeCode ? 'd-none' : '' }}">
                                 <a rel="alternate" hreflang="{{ $localeCode }}"
                                     href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                     <img src="{{ asset('flags/' . $localeCode . '.png') }}" class="flag" alt="KSA Flag">
                                 </a>
                             </li>
-                        @endforeach
+                        @endforeach --}}
                     </ul>
                 </div>
             </div>
