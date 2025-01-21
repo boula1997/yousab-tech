@@ -52,6 +52,12 @@
  <!-- Bootstrap-tag input css -->
  <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/bootstrap-tagsinput.css")}}">
 
+<!-- vector map css -->
+<link rel="stylesheet" type="text/css" href="assets/css/vector-map.css">
+
+<!-- Slick Slider Css -->
+<link rel="stylesheet" href="assets/css/vendors/slick.css">
+
  <!-- App css -->
  <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/style.css")}}">
  <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/custom.css")}}">
