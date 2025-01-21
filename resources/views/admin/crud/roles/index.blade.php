@@ -1,107 +1,68 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains process content -->
-    <div class="content-wrapper">
-        <!-- Main content -->
-        <section class="content pt-2">
-            <div class="container-fluid">
-                <div class="row">
-                    <!-- left column -->
-                    <div class="col-md-12">
-                        <!-- general form elements -->
-                        <div class="card">
-                            <div class="card-header">
-                                <!-- general form elements -->
-                                <div class="row">
-                                    <div class="col-md-6 d-flex d-flex justify-content-start">
-                                        <h1 class="card-title fw-bold">@lang('general.roles')</h3>
+            <!-- Container-fluid starts-->
+            <div class="page-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card card-table">
+                                <!-- Table Start -->
+                                <div class="card-body">
+                                    <div class="title-header option-title">
+                                        <h5>Role List</h5>
+                                        <form class="d-inline-flex">
+                                            <a href="{{route('roles.create')}}" class="align-items-center btn btn-theme d-flex">
+                                                <i data-feather="plus"></i>Add Role
+                                            </a>
+                                        </form>
                                     </div>
-                                    <div class="col-md-6 d-flex d-flex justify-content-end">
-                                        <a href="{{ route('roles.create') }}">
+                                    <div>
+                                        <div class="table-responsive">
+                                            <table id="table_id" class="table role-table all-package theme-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>No</th>
+                                                        <th>Name</th>
+                                                        <th>Create At</th>
+                                                        <th>Options</th>
+                                                    </tr>
+                                                </thead>
 
-                                            <button
-                                                class="btn btn-outline-primary px-5
-                                                "><i
-                                                    class="fa fa-plus fa-sm px-2" aria-hidden="true"></i>
-                                                @lang('general.add')</button>
-                                        </a>
+                                                <tbody>
+                                                    @foreach ($roles as $role)
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Dummy</td>
+                                                        <td>3 weeks ago</td>
+                                                        <td>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="{{route('roles.edit',$role->id)}}">
+                                                                        <i class="ri-pencil-line"></i>
+                                                                    </a>
+                                                                </li>
+
+                                                                <li>
+                                                                    <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                                        data-bs-target="#exampleModalToggle">
+                                                                        <i class="ri-delete-bin-line"></i>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                    @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card-body">
-                                
-
-
-                                <table id="example1" class="table  table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>@lang('general.image')</th>
-                                            <th>@lang('general.controls')</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($roles as $key => $role)
-                                            <tr>
-                                                <td>{{ ++$i }}</td>
-                                                <td>{{ $role->name }}</td>
-                                                <td>
-                                                    @include('admin.components.controls', [
-                                                        'route' => 'roles',
-                                                        'role' => 'role',
-                                                        'module' => $role,
-                                                    ])
-                                                </td>
-                                            </tr>
-                                        @endforeach
-
-                                    </tbody>
-                                </table>
-
-
+                                <!-- Table End -->
                             </div>
                         </div>
-
                     </div>
-
                 </div>
-                {!! $roles->render() !!}
-            </div><!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
+                <!-- Container-fluid Ends-->
+            </div>
 @endsection
-
-
-@push('scripts')
-    <script>
-        $(function() {
-            // Define a unique key for your DataTable state in localStorage
-            const tableStateKey = "coursesTableState";
-
-            // Initialize DataTable with stateSave and custom state management
-            var table = $("#example1").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-                "paging": true,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-                "stateSave": true, // Enable state saving
-                "stateLoadCallback": function(settings) {
-                    // Load the state from localStorage
-                    var savedState = localStorage.getItem(tableStateKey);
-                    return savedState ? JSON.parse(savedState) : null;
-                },
-                "stateSaveCallback": function(settings, data) {
-                    // Save the state to localStorage
-                    localStorage.setItem(tableStateKey, JSON.stringify(data));
-                }
-            });
-
-            // Append DataTable buttons to container
-            table.buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        });
-    </script>
-@endpush

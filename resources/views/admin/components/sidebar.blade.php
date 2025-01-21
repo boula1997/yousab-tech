@@ -106,10 +106,10 @@
                                     </a>
                                     <ul class="sidebar-submenu">
                                         <li>
-                                            <a href="role.html">All roles</a>
+                                            <a href="{{route('roles.index')}}">All roles</a>
                                         </li>
                                         <li>
-                                            <a href="create-role.html">Create Role</a>
+                                            <a href="{{route('roles.create')}}">Create Role</a>
                                         </li>
                                     </ul>
                                 </li>

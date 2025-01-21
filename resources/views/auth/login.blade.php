@@ -1,110 +1,95 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en" dir="{{app()->getLocale()=="ar"?"rtl":"ltr"}}">
 
-@section('content')
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Cuba admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Cuba admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="pixelstrap">
+    <link rel="icon" href="{{asset("admin/assets/images/favicon.png")}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset("admin/assets/images/favicon.png")}}" type="image/x-icon">
+    <title>Fastkart - log In</title>
 
-<style>
-    /* Custom Styles for Login Page */
-    .card-header {
-        background: linear-gradient(135deg, #007bff, #0056b3);
-    }
+    <!-- Google font-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
-    .container {
-        background-color: #f7f9fc;
-    }
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/bootstrap.css")}}">
 
-    .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
-        transition: background-color 0.3s ease;
-    }
+    <!-- App css -->
+    <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/style.css")}}">
+</head>
 
-    .btn-primary:hover {
-        background-color: #0056b3;
-        border-color: #0056b3;
-    }
+<body class="{{app()->getLocale()=="ar"?"rtl":"ltr"}}">
 
-    .img-fluid {
-        object-fit: contain;
-    }
-</style>
+    <!-- login section start -->
+    <section class="log-in-section section-b-space">
+        <a href="" class="logo-login"><img src="{{asset("admin/assets/images/logo/1.png")}}" class="img-fluid"></a>
+        <div class="container w-100">
+            <div class="row">
 
-<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-    <div class="row w-100">
-        <div class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center bg-light">
-            <img src="{{ asset(settings()->logo) }}" alt="Website Logo" class="img-fluid p-5" style="max-height: 300px;">
-        </div>
-        <div class="col-lg-6 col-md-8 col-12 d-flex justify-content-center">
-            <div class="card shadow-sm border-0 rounded-lg w-100">
-                <div class="card-header bg-primary text-white text-center rounded-top">
-                    <h3 class="mb-0">{{ $title ?? '' }} {{ __('Login') }}</h3>
-                </div>
-                <div class="card-body p-4">
-                    @isset($route)
-                        <form method="POST" action="{{ route($route) }}">
-                    @else
-                        <form method="POST" action="{{ route('login') }}">
-                    @endisset
-                    @csrf
+                <div class="col-xl-5 col-lg-6 me-auto">
+                    <div class="log-in-box">
+                        <div class="log-in-title">
+                            <h3>Welcome To Fastkart</h3>
+                            <h4>Log In Your Account</h4>
+                        </div>
 
-                    <div class="form-group mb-3">
-                        <label for="email" class="form-label">{{ __('Email Address') }}</label>
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                               name="email" value="{{ old('email','admin@gmail.com') }}" autocomplete="email" autofocus>
-                        @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                        <div class="input-box">
+                        @isset($route)
+                            <form class="row g-4" method="POST" action="{{ route($route) }}">
+                        @else
+                            <form class="row g-4" method="POST" action="{{ route('login') }}">
+                        @endisset
+                        @csrf
+                                <div class="col-12">
+                                    <div class="form-floating theme-form-floating log-in-form">
+                                        <input type="email" class="form-control" id="email" placeholder="Email Address" name="email">
+                                        <label for="email">Email Address</label>
+                                    </div>
+                                </div>
+                            
+                                <div class="col-12">
+                                    <div class="form-floating theme-form-floating log-in-form">
+                                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                                        <label for="password">Password</label>
+                                    </div>
+                                </div>
+                            
+                                <div class="col-12">
+                                    <div class="forgot-box">
+                                        <div class="form-check ps-0 m-0 remember-box">
+                                            <input class="checkbox_animated check-box" type="checkbox" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">Remember me</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="col-12">
+                                    <!-- Replace <a> with <button> for proper form submission -->
+                                    <button type="submit" class="btn btn-animation w-100 justify-content-center">
+                                        Log In
+                                    </button>
+                                </div>
+                            </form>
+                            
+                        </div>
+
+
+
                     </div>
-
-                    <div class="form-group mb-3 position-relative">
-                        <label for="password" class="form-label">{{ __('Password') }}</label>
-                        <input id="password" type="password"
-                               class="form-control @error('password') is-invalid @enderror" name="password"
-                               autocomplete="current-password">
-                        <span class="toggle-password" onclick="togglePassword()" style="position: absolute; right: 10px; top: 35px; cursor: pointer;">
-                            👁️
-                        </span>
-                        @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group form-check mb-3">
-                        <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                               {{ old('remember') ? 'checked' : '' }}>
-                        <label class="form-check-label" for="remember">
-                            {{ __('Remember Me') }}
-                        </label>
-                    </div>
-
-                    <div class="d-grid mb-3">
-                        <button type="submit" class="btn btn-primary btn-block">
-                            {{ __('Login') }}
-                        </button>
-                    </div>
-
-                    <div class="text-center">
-                        @if (Route::has('password.request'))
-                            <a class="text-primary" href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
-                            </a>
-                        @endif
-                    </div>
-                </form>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+    <!-- login section end -->
 
-<script>
-    function togglePassword() {
-        const passwordField = document.getElementById("password");
-        const type = passwordField.type === "password" ? "text" : "password";
-        passwordField.type = type;
-    }
-</script>
-@endsection
+</body>
+
+</html>

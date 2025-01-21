@@ -4,3 +4,38 @@
     width: 20px;
     border-radius: 3px; /* Slight rounding for smoother look */
   }
+
+
+  body.dark-only .page-wrapper .page-body-wrapper .page-body .card:not(.email-body) .table th, body.dark-only .page-wrapper .page-body-wrapper .page-body .card:not(.email-body) .table td {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: #262932 !important;
+}
+
+body.dark-only .page-wrapper .page-body-wrapper .page-body .form-control {
+  background-color: #1d1e26 !important;
+  color: rgba(255, 255, 255, 0.3);
+  border: 1px solid #1d1e26;
+}
+
+body.dark-only .seo-view {
+  background-color: #262932;
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px dashed #d1d1d1;
+  border-radius: 10px;
+}
+
+
+body.dark-only .ck.ck-editor__main>.ck-editor__editable {
+  background-color: #262932 !important;
+  border: 1px dashed rgba(255, 255, 255, 0.3) !important;
+
+  border-radius: 0;
+}
+
+body.dark-only .ck.ck-toolbar {
+  background-color: #262932 !important;
+  border: 1px dashed rgba(255, 255, 255, 0.3) !important;
+  padding: 0 var(--ck-spacing-small);
+  color:#ffff !important;
+}
