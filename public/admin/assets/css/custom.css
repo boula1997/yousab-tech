@@ -1,0 +1,9 @@
+/* Logo size adjustments */
+.logo-side {
+    height: 80px !important; /* Refined height */
+  }
+  
+  .logo {
+    height: 70px !important; 
+    margin-top: 5px; /* Added margin for better alignment */
+  }
