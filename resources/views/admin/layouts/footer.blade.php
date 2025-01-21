@@ -57,27 +57,27 @@
  <script src="{{asset("admin/assets/js/script.js")}}"></script>
 
    <!-- Sidebar jquery -->
-   <script src="assets/js/config.js"></script>
+   <script src="{{asset("admin/assets/js/config.js")}}"></script>
 
    <!-- tooltip init js -->
-   <script src="assets/js/tooltip-init.js"></script>
+   <script src="{{asset("admin/assets/js/tooltip-init.js")}}"></script>
  
  
  
    <!-- Apexchar js -->
-   <script src="assets/js/chart/apex-chart/apex-chart1.js"></script>
-   <script src="assets/js/chart/apex-chart/moment.min.js"></script>
-   <script src="assets/js/chart/apex-chart/apex-chart.js"></script>
-   <script src="assets/js/chart/apex-chart/stock-prices.js"></script>
-   <script src="assets/js/chart/apex-chart/chart-custom1.js"></script>
+   <script src="{{asset("admin/assets/js/chart/apex-chart/apex-chart1.js")}}"></script>
+   <script src="{{asset("admin/assets/js/chart/apex-chart/moment.min.js")}}"></script>
+   <script src="{{asset("admin/assets/js/chart/apex-chart/apex-chart.js")}}"></script>
+   <script src="{{asset("admin/assets/js/chart/apex-chart/stock-prices.js")}}"></script>
+   <script src="{{asset("admin/assets/js/chart/apex-chart/chart-custom1.js")}}"></script>
  
  
    <!-- slick slider js -->
-   <script src="assets/js/slick.min.js"></script>
-   <script src="assets/js/custom-slick.js"></script>
+   <script src="{{asset("admin/assets/js/slick.min.js")}}"></script>
+   <script src="{{asset("admin/assets/js/custom-slick.js")}}"></script>
  
    <!-- ratio js -->
-   <script src="assets/js/ratio.js"></script>
+   <script src="{{asset("admin/assets/js/ratio.js")}}"></script>
  
 </body>
 
