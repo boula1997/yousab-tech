@@ -65,7 +65,7 @@ Route::group(
             Route::group(['middleware' => ['auth:admin']], function () {
 
                 Route::get('/', function () {
-                    return view('dashboard');
+                    return view('admin.home');
                 })->name('dashboard');
 
             Route::resource('roles', RoleController::class);
@@ -121,7 +121,7 @@ Route::group(
             Route::get('/reply-newsletter', [App\Http\Controllers\Admin\NewsletterController::class, 'reply'])->name('newsletters.reply');
             Route::post('/reply-email/reply', [App\Http\Controllers\Admin\NewsletterController::class, 'emailReply'])->name('newsletters.emailReply');
             Route::get('/dashboard', function () {
-                return view('dashboard');
+                return view('admin.home');
             });
 
             Route::put('/setting', 'App\Http\Controllers\Admin\SettingController@setting')->name('setting');

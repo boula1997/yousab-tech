@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google-site-verification" content="sNrOHZ-giaG9HQWzThmVOantLqe2P6zsQJRO9-exWtA" />
     <title>{{ settings()->website_title }}</title>
-    {{-- <link rel=icon href="assets/img/favicon.webp" sizes="20x20" type="image/png"> --}}
+    {{-- <link rel=icon href="admin/assets/img/favicon.webp" sizes="20x20" type="image/png"> --}}
     <link rel="icon" type="image/x-icon" href="{{ settings()->tab }}">
     <!-- Stylesheet -->
 

@@ -1,11 +1,14 @@
 @include('admin.layouts.header')
 
-<body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
-        @include('admin.components.success')
-        @include('admin.components.errors')
-        @include('admin.components.dashboard')
+@include('admin.components.top')
+<!-- page-wrapper Start-->
+<div class="page-wrapper compact-wrapper" id="pageWrapper">
+    <!-- Page Body Start-->
+    <div class="page-body-wrapper">
+        @include('admin.components.menu')
+        @include('admin.components.sidebar')
         @yield('content')
     </div>
+</div>
 
-    @include('admin.layouts.footer')
+@include('admin.layouts.footer')

@@ -1,165 +1,59 @@
-<footer class="main-footer text-center fixed-bottom">
-    <strong>Copyright &copy; 2023 <a href="{{ route('home') }}">Yousab Tech</a>.</strong>
-    All rights reserved.
-</footer>
+    <!-- footer Start -->
+    <div class="container-fluid">
+      <footer class="footer">
+          <div class="row">
+              <div class="col-md-12 footer-copyright text-center">
+                  <p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
+              </div>
+          </div>
+      </footer>
+  </div>
+  <!-- footer En -->
+ <!-- latest js -->
+ <script src="{{asset("admin/assets/js/jquery-3.6.0.min.js")}}"></script>
 
-<!-- Control Sidebar -->
-<aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-</aside>
-<!-- /.control-sidebar -->
-<!-- ./wrapper -->
+ <!-- Bootstrap js -->
+ <script src="{{asset("admin/assets/js/bootstrap/bootstrap.bundle.min.js")}}"></script>
 
-<script src="{{ asset('bootstrap-5.3.1-dist\js\bootstrap.js') }}"></script>
-<!-- jQuery -->
-<script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
-<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- ChartJS -->
-<script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
-<!-- Sparkline -->
-<script src="{{ asset('plugins/sparklines/sparkline.js') }}"></script>
-<!-- JQVMap -->
-<script src="{{ asset('plugins/jqvmap/jquery.vmap.min.js') }}"></script>
-<script src="{{ asset('plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
-<!-- jQuery Knob Chart -->
-<script src="{{ asset('plugins/jquery-knob/jquery.knob.min.js') }}"></script>
-<!-- daterangepicker -->
-<script src="{{ asset('plugins/moment/moment.min.js') }}"></script>
-<script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="{{ asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
-<!-- Summernote -->
-<script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
-<!-- overlayScrollbars -->
-<script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
-<!-- AdminLTE App -->
-<script src="{{ asset('dist/js/adminlte.js') }}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{ asset('dist/js/demo.js') }}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
-<!-- CodeMirror -->
-<script src="{{ asset('plugins/codemirror/codemirror.js') }}"></script>
-<script src="{{ asset('plugins/codemirror/mode/css/css.js') }}"></script>
-<script src="{{ asset('plugins/codemirror/mode/xml/xml.js') }}"></script>
-<script src="{{ asset('plugins/codemirror/mode/htmlmixed/htmlmixed.js') }}"></script>
-<!-- DataTables  & Plugins -->
-<script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('plugins/jszip/jszip.min.js') }}"></script>
-<script src="{{ asset('plugins/pdfmake/pdfmake.min.js') }}"></script>
-<script src="{{ asset('plugins/pdfmake/vfs_fonts.js') }}"></script>
-<script src="{{ asset('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
-<script src="{{ asset('js/scripts.bundle.js') }}"></script>
-{{-- <script src="{{asset('js/iconpicker-1.5.0.json')}}"></script> --}}
-<script src="{{ asset('js/iconpicker-1.5.0.js') }}"></script>
-<script src="{{ asset('admin/file-upload/image-input.js') }}"></script>
-<!-- Page specific script -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <!-- feather icon js -->
+ <script src="{{asset("admin/assets/js/icons/feather-icon/feather.min.js")}}"></script>
+ <script src="{{asset("admin/assets/js/icons/feather-icon/feather-icon.js")}}"></script>
 
-<!-- Include Select2 CSS and JavaScript -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/js/select2.min.js"></script>
+ <!-- scrollbar simplebar js -->
+ <script src="{{asset("admin/assets/js/scrollbar/simplebar.js")}}"></script>
+ <script src="{{asset("admin/assets/js/scrollbar/custom.js")}}"></script>
 
-{{-- <script>
-    $(document).ready(function() {
-      $('select').each(function() {
-        var $select = $(this);
-        var $searchInput = $('<input type="text" class="select-search" placeholder="Search...">');
-        var $optionsContainer = $('<div class="select-options"></div>').appendTo($select.parent());
-    
-        // Create options in the options container
-        $select.find('option').each(function() {
-          var $option = $('<div class="option-item"></div>')
-            .text($(this).text())
-            .data('value', $(this).val());
-          $optionsContainer.append($option);
-        });
-    
-        // Hide the original select
-        $select.hide();   $optionsContainer.hide();
-    
-        // When the search input is focused, show the options container
-        $searchInput.on('click', function() {
-          $optionsContainer.show();
-          $optionsContainer.find('.option-item').show(); // Show all options initially
-    
-          // Ensure selected item is at the top of the options list
-          var selectedValue = $select.val();
-          if (selectedValue) {
-            $optionsContainer.find('.option-item').each(function() {
-              if ($(this).data('value') === selectedValue) {
-                $(this).prependTo($optionsContainer); // Move selected item to the top
-              }
-            });
-          }
-        });
-    
-        // Filter options based on search input
-        $searchInput.on('input', function() {
-          var searchTerm = $(this).val().toLowerCase();
-          $optionsContainer.find('.option-item').each(function() {
-            var optionText = $(this).text().toLowerCase();
-            if (optionText.includes(searchTerm)) {
-              $(this).show();
-            } else {
-              $(this).hide();
-            }
-          });
-        });
-    
-        // Handle option selection
-        $optionsContainer.on('click', '.option-item', function() {
-          var selectedValue = $(this).data('value');
-          $select.val(selectedValue).change(); // Update the original select
-          $searchInput.val($(this).text()); // Update the search input
-          $optionsContainer.hide(); // Hide the options container
-        });
-    
-        // Hide the options container when clicking outside
-        $(document).on('click', function(e) {
-          if (!$(e.target).closest('.select-search, .select-options').length) {
-            $optionsContainer.hide();
-          }
-        });
-    
-        // Append the search input to the select's parent element
-        $select.before($searchInput);
-      });
-    });
-    </script> --}}
-<script>
-    $(document).ready(function() {
-        $('select').select2({
-            placeholder: "Select an option",
-            allowClear: true
-        });
-    });
-</script>
-@stack('scripts')
+ <!-- Sidebar js -->
+ <script src="{{asset("admin/assets/js/config.js")}}"></script>
 
-<script>
-    $(document).ready(function() {
-        // alert(500);
-        // Simulate a click on the checkbox once the page is loaded
-        console.log('you are right');
-        if (!$('.targetCheckbox').is(':checked'))
-            $('.targetCheckbox').click();
-    });
-</script>
+ <!-- bootstrap tag-input js -->
+ <script src="{{asset("admin/assets/js/bootstrap-tagsinput.min.js")}}"></script>
+ <script src="{{asset("admin/assets/js/sidebar-menu.js")}}"></script>
+
+ <!-- customizer js -->
+ <script src="{{asset("admin/assets/js/customizer.js")}}"></script>
+
+ <!--Dropzon js -->
+ <script src="{{asset("admin/assets/js/dropzone/dropzone.js")}}"></script>
+ <script src="{{asset("admin/assets/js/dropzone/dropzone-script.js")}}"></script>
+
+ <!-- Plugins js -->
+ <script src="{{asset("admin/assets/js/notify/bootstrap-notify.min.js")}}"></script>
+ <script src="{{asset("admin/assets/js/notify/index.js")}}"></script>
+
+ <!-- ck editor js -->
+ <script src="{{asset("admin/assets/js/ckeditor.js")}}"></script>
+ <script src="{{asset("admin/assets/js/ckeditor-custom.js")}}"></script>
+
+ <!-- select2 js -->
+ <script src="{{asset("admin/assets/js/select2.min.js")}}"></script>
+ <script src="{{asset("admin/assets/js/select2-custom.js")}}"></script>
+
+ <!-- sidebar effect -->
+ <script src="{{asset("admin/assets/js/sidebareffect.js")}}"></script>
+
+ <!-- Theme js -->
+ <script src="{{asset("admin/assets/js/script.js")}}"></script>
 </body>
 
 </html>

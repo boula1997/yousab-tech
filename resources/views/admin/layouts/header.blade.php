@@ -1,54 +1,59 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+<html lang="en" dir="ltr">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', settings()->title)</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Overpass:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
-    <link rel="icon" type="image/x-icon" href="{{ settings()->tab }}">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="{{ asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-    <!-- JQVMap -->
-    <link rel="stylesheet" href="{{ asset('plugins/jqvmap/jqvmap.min.css') }}">
-    <!-- Theme style -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Fastkart admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="pixelstrap">
+    <link rel="icon" href="{{asset("admin/assets/images/favicon.png")}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset("admin/assets/images/favicon.png")}}" type="image/x-icon">
+    <title>Fastkart - Dashboard</title>
 
-    <link rel="stylesheet" href="{{ asset('css/iconpicker-1.5.0.css') }}">
+     <!-- Google font -->
+     <link
+     href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+     rel="stylesheet">
 
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
-        <!-- summernote -->
-        <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-bs4-dark.css" rel="stylesheet">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/css/custom.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('css/style.bundle.css') }}"> --}}
-    @if (app()->getLocale() == 'en')    
-    <link rel="stylesheet" href="{{ asset('bootstrap-5.3.1-dist\css\bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('dist/css/image.css') }}">
-    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
-    @else
-    <link rel="stylesheet" href="{{ asset('bootstrap-5.3.1-dist\css\bootstrap.rtl.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('dist/css/image.css') }}">
-    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min_ar.css') }}">
-    <link rel="stylesheet" href="{{ asset('dist/css/admin_ar.css') }}">
-    @endif
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    <link rel="stylesheet" type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+ <!-- Linear Icon css -->
+ <link rel="stylesheet" href="{{asset("admin/assets/css/linearicon.css")}}">
 
+ <!-- Fontawesome css -->
+ <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/font-awesome.css")}}">
+
+ <!-- Themify icon css -->
+ <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/themify.css")}}">
+
+ <!--Dropzon css -->
+ <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/dropzone.css")}}">
+
+ <!-- Feather icon css-->
+ <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/feather-icon.css")}}">
+
+ <!-- remixicon css -->
+ <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/remixicon.css")}}">
+
+ <!-- Select2 css -->
+ <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/select2.min.css")}}">
+
+ <!-- Plugins css -->
+ <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/scrollbar.css")}}">
+ <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/animate.css")}}">
+ <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/chartist.css")}}">
+ <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/date-picker.css")}}">
+
+ <!-- Bootstrap css -->
+ <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/bootstrap.css")}}">
+
+ <!-- Bootstrap-tag input css -->
+ <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/bootstrap-tagsinput.css")}}">
+
+ <!-- App css -->
+ <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/style.css")}}">
 </head>
+
+<body>
