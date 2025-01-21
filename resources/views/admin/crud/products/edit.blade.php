@@ -11,6 +11,8 @@
             <div class="col-12">
                 <div class="row">
                     <div class="col-sm-8 m-auto">
+                        @include('admin.components.designIssue')
+
                         <div class="card">
                             <div class="card-body">
                                 <div class="card-header-2">
