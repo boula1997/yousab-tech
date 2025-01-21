@@ -98,7 +98,7 @@ Route::group(
             Route::resource('fees', FeeController::class);
             Route::resource('vaccancies',VaccancyController::class);
 
-            Route::get('/dark-toggle', [SettingController::class, 'toggleDarkMode'])->name('dark.toggle');
+
 
             
             Route::get('/finished/fees', [App\Http\Controllers\Admin\FeeController::class, 'index'])->name('fees.finished');
@@ -128,7 +128,7 @@ Route::group(
 
             Route::put('/setting', 'App\Http\Controllers\Admin\SettingController@setting')->name('setting');
             Route::get('/setting/edit', 'App\Http\Controllers\Admin\SettingController@editSetting')->name('edit.setting');
-
+            Route::get('/dark-toggle', 'App\Http\Controllers\Admin\SettingController@editSetting')->name('dark.toggle');
             Route::put('/profile', [App\Http\Controllers\Admin\ProfileController::class, 'update'])->name('update.profile');
             Route::get('/profile', [App\Http\Controllers\Admin\ProfileController::class, 'edit'])->name('edit.profile');
         });
