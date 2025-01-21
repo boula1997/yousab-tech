@@ -63,4 +63,4 @@
  <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/custom.css")}}">
 </head>
 
-<body class="{{app()->getLocale()=="ar"?"rtl":"ltr"}}">
+<body class="{{app()->getLocale()=="ar"?"rtl":"ltr"}} {{auth()->user()->dark?"dark-only":""}}">

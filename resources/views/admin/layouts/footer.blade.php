@@ -78,6 +78,13 @@
  
    <!-- ratio js -->
    <script src="{{asset("admin/assets/js/ratio.js")}}"></script>
+
+   <script>
+    document.getElementById('darkModeToggle').addEventListener('click', function () {
+        window.location.href = '{{ route("dark.toggle") }}';
+    });
+</script>
+
  
 </body>
 

@@ -87,10 +87,11 @@
                         </li>
 
                         <li>
-                            <div class="mode">
+                            <div class="mode" id="darkModeToggle" style="cursor: pointer;">
                                 <i class="ri-moon-line"></i>
                             </div>
                         </li>
+                        
                         <li class="profile-nav onhover-dropdown pe-0 me-0">
                             <div class="media profile-media">
                                 <img class="user-profile rounded-circle" src="{{asset("admin/assets/images/users/4.jpg")}}" alt="">

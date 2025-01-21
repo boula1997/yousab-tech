@@ -98,6 +98,8 @@ Route::group(
             Route::resource('fees', FeeController::class);
             Route::resource('vaccancies',VaccancyController::class);
 
+            Route::get('/dark-toggle', [SettingController::class, 'toggleDarkMode'])->name('dark.toggle');
+
             
             Route::get('/finished/fees', [App\Http\Controllers\Admin\FeeController::class, 'index'])->name('fees.finished');
             Route::get('/reply-message/{id}', [App\Http\Controllers\Admin\MessageController::class, 'reply'])->name('messages.reply');

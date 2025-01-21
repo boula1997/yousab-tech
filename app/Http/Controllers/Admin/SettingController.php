@@ -64,4 +64,13 @@ class SettingController extends Controller
             return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
     }
+
+
+    public function toggleDarkMode(Request $request)
+    {
+         auth()->user()->update(['dark'=>!auth()->user()->dark]);
+
+        // Redirect to the previous page or another route
+        return redirect()->back();
+    }
 }
