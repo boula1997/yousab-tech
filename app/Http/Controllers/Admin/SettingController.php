@@ -70,7 +70,7 @@ class SettingController extends Controller
     {
         $user=auth()->user();
         $user->update(['dark'=>!$user->dark]);
-
+        dd($user->dark);
         // Redirect to the previous page or another route
         return redirect()->back();
     }
