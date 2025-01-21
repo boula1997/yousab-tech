@@ -19,7 +19,7 @@
                                             <a href="javascript:void(0)">Export</a>
                                         </li>
                                         <li>
-                                            <a class="btn btn-solid" href="add-new-product.html">Add Product</a>
+                                            <a class="btn btn-solid" href="{{route('products.create')}}">Add Product</a>
                                         </li>
                                     </ul>
                                 </div>
