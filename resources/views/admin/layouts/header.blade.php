@@ -56,4 +56,4 @@
  <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/style.css")}}">
 </head>
 
-<body>
+<body class="{{app()->getLocale()=="ar"?"rtl":"ltr"}}">
