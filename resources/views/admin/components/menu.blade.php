@@ -33,6 +33,14 @@
                 </form>
                 <div class="nav-right col-6 pull-right right-header p-0">
                     <ul class="nav-menus">
+                        @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li class="{{ app()->getLocale() == $localeCode ? 'd-none' : '' }}">
+                            <a rel="alternate" hreflang="{{ $localeCode }}"
+                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                <img src="{{ asset('flags/' . $localeCode . '.png') }}" class="flag" alt="KSA Flag">
+                            </a>
+                        </li>
+                    @endforeach
                         <li>
                             <span class="header-search">
                                 <i class="ri-search-line"></i>
@@ -124,14 +132,6 @@
                                 </li>
                             </ul>
                         </li>
-                        @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                            <li class="{{ app()->getLocale() == $localeCode ? 'd-none' : '' }}">
-                                <a rel="alternate" hreflang="{{ $localeCode }}"
-                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                    <img src="{{ asset('flags/' . $localeCode . '.png') }}" class="flag" alt="KSA Flag">
-                                </a>
-                            </li>
-                        @endforeach
                     </ul>
                 </div>
             </div>
