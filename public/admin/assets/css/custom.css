@@ -1,9 +1,6 @@
-/* Logo size adjustments */
-.logo-side {
-    height: 80px !important; /* Refined height */
-  }
-  
-  .logo {
-    height: 70px !important; 
-    margin-top: 5px; /* Added margin for better alignment */
+/* Flag icon */
+.flag {
+    height: 20px;
+    width: 20px;
+    border-radius: 3px; /* Slight rounding for smoother look */
   }
