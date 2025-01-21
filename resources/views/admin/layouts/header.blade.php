@@ -53,10 +53,10 @@
  <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/bootstrap-tagsinput.css")}}">
 
 <!-- vector map css -->
-<link rel="stylesheet" type="text/css" href="{{asset("assets/css/vector-map.css")}}">
+<link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vector-map.css")}}">
 
 <!-- Slick Slider Css -->
-<link rel="stylesheet" href="{{asset("assets/css/vendors/slick.css")}}">
+<link rel="stylesheet" href="{{asset("admin/assets/css/vendors/slick.css")}}">
 
  <!-- App css -->
  <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/style.css")}}">
