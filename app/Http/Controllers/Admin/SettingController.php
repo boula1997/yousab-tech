@@ -68,7 +68,8 @@ class SettingController extends Controller
 
     public function toggleDarkMode(Request $request)
     {
-         auth()->user()->update(['dark'=>!auth()->user()->dark]);
+        $user=auth()->user();
+        $user->update(['dark'=>!$user->dark]);
 
         // Redirect to the previous page or another route
         return redirect()->back();
