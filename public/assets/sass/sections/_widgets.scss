@@ -31,7 +31,7 @@
             bottom: -5px;
             height: 3px;
             width: 60px;
-            background: var(--main-color);
+            background: #8731FF;
             z-index: 2;
         }
     }
@@ -47,7 +47,7 @@
         position: relative;
         padding-bottom: 0;
         padding: 10px 20px;
-        background: var(--main-color);
+        background: #8731FF;
         color: #fff;
     }
     &.widget_search {
@@ -84,7 +84,7 @@
                 background: #e9ebef;
                 transition: 0.5s;
                 &:hover {
-                    background: var(--main-color);
+                    background: #8731FF;
                 }
             }
         }
@@ -107,7 +107,7 @@
             display: none;
         }
         &:after {
-            border-bottom: 1px dashed var(--main-color);
+            border-bottom: 1px dashed #8731FF;
             background: transparent;
             width: 156px;
         }
@@ -183,7 +183,7 @@
 .widget-recent-post ul li .media .media-body .post-info svg,
 .widget-recent-post ul li .media .media-body .post-info i {
     margin-right: 5px;
-    color: var(--main-color);
+    color: #8731FF;
 }
 .widget-recent-post ul li:last-child {
     border-bottom: 0 !important;
@@ -298,7 +298,7 @@
                 i {
                     float: left; 
                     margin-right: 10px;
-                    color: var(--main-color);
+                    color: #8731FF;
                     background: #FFE6E2;
                     padding: 5px 5px 2px 5px;
                     border-radius: 3px;
@@ -306,7 +306,7 @@
             }
             &:hover {
                 background-image: linear-gradient(to right, #F99746, #EE0020);
-                border: 1px solid var(--main-color);
+                border: 1px solid #8731FF;
                 color: #fff;
             }
         }
@@ -332,9 +332,9 @@
     }
 }
 .widget_tag_cloud .tagcloud a:hover {
-    background: var(--main-color);
+    background: #8731FF;
     color: #ffffff;
-    border-color: var(--main-color);
+    border-color: #8731FF;
 }
 
 
@@ -367,7 +367,7 @@
         height: 0;
         width: 0;
         &:checked ~ .checkmark {
-            background-color: var(--main-color);
+            background-color: #8731FF;
         }
         &:checked ~ .checkmark:after {
             display: block;
@@ -453,7 +453,7 @@
                     border-bottom: 0;
                 }
                 i {
-                    color: var(--main-color);
+                    color: #8731FF;
                     margin-right: 7px;
                 }
                 span {
@@ -491,9 +491,9 @@
     .social-media {
         li {
             a {
-                color: var(--main-color);
+                color: #8731FF;
                 &:hover {
-                    background: var(--main-color);
+                    background: #8731FF;
                     color: #fff;
                 }
             }

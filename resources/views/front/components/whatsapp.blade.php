@@ -6,7 +6,7 @@
                 call: "01126785910", // Call phone number
                 whatsapp: "+201208050298", // WhatsApp number
                 call_to_action: "{{__('general.contact_us')}}", // Call to action
-                button_color: "#0060FF", // Color of button
+                button_color: "#8731FF", // Color of button
                 position: "{{ app()->getLocale()=='ar'? 'right' : 'left' }}", // Position may be 'right' or 'left'
                 order: "call,whatsapp", // Order of buttons
             };

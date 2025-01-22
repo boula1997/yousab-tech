@@ -8,7 +8,7 @@
         position: relative;
         display: inline-block;
         margin-bottom: 4px;
-        color: var(--main-color);
+        color: #8731FF;
         font-weight: 700;
         &.left-line {
             padding-left: 60px;
@@ -19,7 +19,7 @@
                 top: 12px;
                 height: 2px;
                 width: 40px;
-                background: var(--main-color);
+                background: #8731FF;
             }
         }
         &.right-line {
@@ -30,7 +30,7 @@
                 top: 12px;
                 height: 2px;
                 width: 40px;
-                background: var(--main-color);
+                background: #8731FF;
             }
         }
         &.double-line {
@@ -41,7 +41,7 @@
                 top: 12px;
                 height: 2px;
                 width: 40px;
-                background: var(--main-color);
+                background: #8731FF;
             }
             &:after {
                 content: '';
@@ -50,7 +50,7 @@
                 top: 12px;
                 height: 2px;
                 width: 40px;
-                background: var(--main-color);
+                background: #8731FF;
             }
         }
         &.left-border {
@@ -62,7 +62,7 @@
                 top: 1px;
                 height: 20px;
                 width: 4px;
-                background: var(--main-color);
+                background: #8731FF;
             }
         }
         &.right-border {
@@ -73,7 +73,7 @@
                 top: 1px;
                 height: 20px;
                 width: 4px;
-                background: var(--main-color);
+                background: #8731FF;
             }
         }
         &.double-border {
@@ -85,7 +85,7 @@
                 top: 1px;
                 height: 20px;
                 width: 4px;
-                background: var(--main-color);
+                background: #8731FF;
             }
             &:after {
                 content: '';
@@ -94,7 +94,7 @@
                 top: 1px;
                 height: 20px;
                 width: 4px;
-                background: var(--main-color);
+                background: #8731FF;
             }
         }
     }
@@ -113,7 +113,7 @@
     }
     &.style-white {
         .sub-title {
-            color: var(--main-color);
+            color: #8731FF;
         }
         .title {
             color: #fff;

@@ -1,12 +1,12 @@
 .home-cyber {
-    --main-color: #446DFF;
+    --main-color: #8731FF;
     --heading-font: 'Inter', sans-serif;
     --body-font: 'Roboto', sans-serif;
 	.custom-container {
 		padding: 0 57px 0 115px;
 	}
 	.btn-gradient {
-		background: linear-gradient(269.19deg, #2949FA 11.26%, #00C9E2 86.6%);
+		background: linear-gradient(269.19deg, #8731FF 11.26%, #00C9E2 86.6%);
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
@@ -35,13 +35,13 @@
 			-webkit-text-fill-color: #fff;
 		}
 		&:after {
-			background: #446DFF;
+			background: #8731FF;
 		}
 	}
 }
 .navbar-area-5 {
 	&.sticky-active {
-		background: var(--main-color);
+		background: #8731FF;
 	}
 	&.sticky-active .nav-container {
 		padding: 20px 60px;
@@ -99,7 +99,7 @@
 			.list {
 				width: 100%;
 				margin: 0;
-				background: var(--main-color);
+				background: #8731FF;
 				li {
 					padding: 0;
 					text-align: center;
@@ -516,7 +516,7 @@
 			background: #212644;
 			color: #fff;
 			&:hover {
-				background: var(--main-color);
+				background: #8731FF;
 			}
 		}
 	}

@@ -104,7 +104,7 @@
 		bottom: -30px;
 		height: 2px;
 		width: 0%;
-		background: var(--main-color);
+		background: #8731FF;
 		visibility: hidden;
 		opacity: 0;
 		transition: 0.4s;
@@ -163,7 +163,7 @@
 	    color: var(--heading-color);
 	}
 	.navbar-area-2 .nav-container .navbar-collapse .navbar-nav > li:hover a {
-	    color: var(--main-color);
+	    color: #8731FF;
 	}
 	.navbar-area-3 .nav-container {
 	    border-bottom: 0;

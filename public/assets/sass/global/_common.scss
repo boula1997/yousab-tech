@@ -58,7 +58,7 @@
 }
 .btn-base {
     color: #fff;
-    background:  var(--main-color);
+    background:  #8731FF;
     &:hover {
         color: #fff;
     }
@@ -78,17 +78,17 @@
     }
 }
 .btn-white {
-    color: var(--main-color) !important;
+    color: #8731FF !important;
     background: #fff;
     &:hover,
     &:focus {
         color: #fff !important;
-        background: var(--main-color);
+        background: #8731FF;
     }
 }
 .btn-border-base {
-    color: var(--main-color);
-    border: 2px solid var(--main-color);
+    color: #8731FF;
+    border: 2px solid #8731FF;
     line-height: 53px;
     &:hover,
     &:focus {
@@ -102,8 +102,8 @@
     &:hover,
     &:focus {
         color: #fff;
-        background: var(--main-color);
-        border: 2px solid var(--main-color);
+        background: #8731FF;
+        border: 2px solid #8731FF;
     }
     &.btn-small {
         line-height: 45px;
@@ -116,11 +116,11 @@
     &:hover,
     &:focus {
         color: #fff;
-        background: var(--main-color);
-        border: 2px solid var(--main-color);
+        background: #8731FF;
+        border: 2px solid #8731FF;
     }
     &:after {
-        background: var(--main-color);
+        background: #8731FF;
     }
 }
 .btn-border-black-2 {
@@ -130,11 +130,11 @@
     &:hover,
     &:focus {
         color: #fff;
-        background: var(--main-color);
-        border: 2px solid var(--main-color);
+        background: #8731FF;
+        border: 2px solid #8731FF;
     }
     &:after {
-        background: var(--main-color);
+        background: #8731FF;
     }
 }
 
@@ -160,7 +160,7 @@
         position: absolute;
         left: 0;
         bottom: 0;
-        background: var(--main-color);
+        background: #8731FF;
         height: 1px;
         width: 0;
         transition: 0.4s;
@@ -185,7 +185,7 @@
     line-height: 35px;
     color: #fff;
     text-align: center;
-    background: var(--main-color);
+    background: #8731FF;
     border-radius: 50%;
     display: inline-block;
     &:hover {
@@ -204,7 +204,7 @@
     width: 44px;
     height: 44px;
     color: $color-white;
-    background-color: var(--main-color);
+    background-color: #8731FF;
     text-align: center;
     line-height: 44px;
     z-index: 99;
@@ -267,7 +267,7 @@
             background-color: $color-white;
             font-weight: 600;
             text-transform: capitalize;
-            color: var(--main-color);
+            color: #8731FF;
             width: 200px;
             height: 50px;
             text-align: center;
@@ -299,7 +299,7 @@
   display: inline-block;
   position: absolute;
   top: 0;
-  background-color: var(--main-color);
+  background-color: #8731FF;
   border-radius: 100%;
   -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
   animation: sk-bounce 2.0s infinite ease-in-out;
@@ -366,12 +366,12 @@
         left: -15px;
     }
     i {
-        color: var(--main-color);
+        color: #8731FF;
         margin-left: 6px;
         font-size: 28px;
     }
     &.video-play-btn-base {
-        background: var(--main-color);
+        background: #8731FF;
         svg {
             color: #fff;
         }
@@ -464,11 +464,11 @@
             border-radius: 50%;
             display: inline-block;
             background: #fff;
-            color: var(--main-color);
+            color: #8731FF;
             font-size: 12px;
             &:hover {
                 background: #fff;
-                color: var(--main-color);
+                color: #8731FF;
             }
             &.facebook {
                 color: $facebook;
@@ -512,7 +512,7 @@
             margin-right: 0;
         }
         &:hover {
-            background: var(--main-color);
+            background: #8731FF;
             i {
                 color: #fff;
             }
@@ -537,7 +537,7 @@
             padding: 0;
             cursor: pointer;
             font-size: 18px;
-            background: var(--main-color);
+            background: #8731FF;
             &:hover {
                 background: var(--heading-color);
             }
@@ -562,7 +562,7 @@
             transition: 0.4s;
             box-shadow: none;
             color: #fff;
-            background: var(--main-color);
+            background: #8731FF;
             font-size: 20px;
             padding: 0;
             cursor: pointer;
@@ -637,7 +637,7 @@
             i,
             svg {
                 margin-right: 10px;
-                color: var(--main-color);
+                color: #8731FF;
             }
             &.close {
                 i,
@@ -671,7 +671,7 @@
     color: #FFC107;
 }
 .bg-base {
-    background: var(--main-color);
+    background: #8731FF;
 }
 .bg-green {
     background: #1DC295;

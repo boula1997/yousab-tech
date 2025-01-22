@@ -1,5 +1,5 @@
 .home-help-desk {
-    --main-color: #0066FF;
+    --main-color: #8731FF;
     --heading-font: 'Poppins', sans-serif;
 }
 
@@ -108,15 +108,15 @@
 		width: 45px;
 		border-radius: 50%;
 		line-height: 45px;
-		color: var(--main-color);
-		border: 1px solid var(--main-color);
+		color: #8731FF;
+		border: 1px solid #8731FF;
 		text-align: center;
 		margin-right: 20px;
 		transition: 0.4s;
 	}
 	&:hover {
 		.icon-number {
-			background: var(--main-color);
+			background: #8731FF;
 			color: #fff;
 		}
 	}
@@ -125,7 +125,7 @@
 .single-team-inner {
 	&.style-4 {
 	    background: transparent;
-	    border-bottom: 1px solid var(--main-color);
+	    border-bottom: 1px solid #8731FF;
 	}
 }
 
@@ -186,7 +186,7 @@
 				position: absolute;
 				top: -40px;
 				left: 30px;
-				background: var(--main-color);
+				background: #8731FF;
 				padding: 5px 15px;
 				color: #fff;
 				border-radius: 40px;

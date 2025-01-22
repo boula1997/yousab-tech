@@ -33,7 +33,7 @@
                 }
             }
             a:hover {
-                color: var(--main-color);
+                color: #8731FF;
             }
         }
     }
@@ -71,12 +71,12 @@
         .media-left {
             i {
                 font-size: 30px;
-                color: var(--main-color);
+                color: #8731FF;
                 margin-right: 10px;
             }
             svg {
                 font-size: 30px;
-                color: var(--main-color);
+                color: #8731FF;
                 margin-right: 10px;
             }
         }
@@ -144,7 +144,7 @@
                         font-family: var(--heading-font);
                     }
                     &:hover a {
-                        color: var(--main-color);
+                        color: #8731FF;
                     }
                     +li {
                         margin-left: 17px;
@@ -188,7 +188,7 @@
                                 opacity: 0;
                             }
                             &:after {
-                                background: var(--main-color);
+                                background: #8731FF;
                             }
                         }
                         &:hover > .sub-menu{
@@ -293,7 +293,7 @@
     }
 }
 .navbar-area-2 {
-    background: var(--main-color);
+    background: #8731FF;
     .nav-container {
         .navbar-collapse {
             .navbar-nav {
@@ -385,7 +385,7 @@
     border-bottom: 0;
     background: #fff;
     &.navbar-area-2  {
-        background: var(--main-color);
+        background: #8731FF;
     }
     &.navbar-area-3  {
         background: var(--heading-color);
@@ -518,7 +518,7 @@
         }
         &:hover {
             >a {
-                color: var(--main-color);
+                color: #8731FF;
             }
             ul {
                 opacity: 1;
@@ -548,8 +548,8 @@
     }
     .search-bar {
         &:hover {
-            background: var(--main-color);
-            border: 1px solid var(--main-color);
+            background: #8731FF;
+            border: 1px solid #8731FF;
         }
     }
 }
@@ -626,7 +626,7 @@
             color: var(--heading-color);
             cursor: pointer;
             &:hover {
-                background: var(--main-color);
+                background: #8731FF;
                 color: #fff;
             }
         }
@@ -635,12 +635,12 @@
         background: #ced4da;
     }
     .social-media li a:hover {
-        background: var(--main-color);
+        background: #8731FF;
         color: #fff;
     }
 }
 .sidebar-menu .sidebar-menu-close {
-    background-color: var(--main-color);
+    background-color: #8731FF;
     border: 0;
     position: absolute;
     top: 0;

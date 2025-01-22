@@ -20,7 +20,7 @@
                             <div class="item">
                                 <div class="single-project-inner style-two">
                                     <div class="thumb">
-                                        <img style="height: 300px" src="{{ isset($portfolio->image) ? $portfolio->image : asset('default.jpg') }}"
+                                        <img style="height: 400px" src="{{ isset($portfolio->image) ? $portfolio->image : asset('default.jpg') }}"
                                             alt="{{  $portfolio->title }}">
                                     </div>
                                     <div class="details-wrap">

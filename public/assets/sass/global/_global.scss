@@ -1,5 +1,5 @@
 :root {
-    --main-color: #0060FF;
+    --main-color: #8731FF;
     --main-color2: #EE0020;
     --heading-color: #151423;
     --paragraph-color: #616161;
@@ -98,7 +98,7 @@ a:active {
     color: inherit;
 }
 a:hover {
-    color: var(--main-color);
+    color: #8731FF;
 }
 pre {
     word-break: break-word;
@@ -179,7 +179,7 @@ code {
             top: 0;
             font-family: 'fontawesome';
             content: "\f105";
-            color: var(--main-color);
+            color: #8731FF;
         }
     }
 }
@@ -220,7 +220,7 @@ code {
 .comment-navigation .nav-next:hover>a,
 .posts-navigation .nav-next:hover>a,
 .post-navigation .nav-next:hover>a {
-    color: var(--main-color);
+    color: #8731FF;
 }
 
 .comment-list li {
@@ -437,9 +437,9 @@ object {
 
 .wp-link-pages .current,
 .wp-link-pages a:hover {
-    background-color: var(--main-color);
+    background-color: #8731FF;
     color: #fff;
-    border-color: var(--main-color);
+    border-color: #8731FF;
 }
 
 .wp-link-pages span:first-child {
@@ -468,7 +468,7 @@ ul {
 .post-password-form input[type=submit] {
     width: 100px;
     height: 50px;
-    background-color: var(--main-color);
+    background-color: #8731FF;
     color: #fff;
     font-size: 15px;
     font-weight: 600;
