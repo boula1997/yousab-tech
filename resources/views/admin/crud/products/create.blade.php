@@ -14,47 +14,156 @@
                         <div class="col-sm-8 m-auto">
 
                             @include('admin.components.designIssue')
-
-                            <div class="card card-custom mb-2">
-                                <div class="card-header card-header-tabs-line">
-                                    @include('admin.components.breadcrumb', ['module' => 'products', 'action' => 'create'])
-                                </div>
-                                <div class="card-toolbar px-3">
-                                    <ul class="nav nav-tabs nav-bold nav-tabs-line">
-                                        @foreach (config('translatable.locales') as $key => $locale)
-                                            <li class="nav-item">
-                                                <a class="nav-link  @if ($key == 0) active @endif" data-toggle="tab"
-                                                    href="{{ '#' . $locale }}">@lang('general.' . $locale)</a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
+                            <div class="card">
                                 <div class="card-body">
-                                    <div class="tab-content">
-                                        @foreach (config('translatable.locales') as $key => $locale)
-                                            <div class="tab-pane fade show @if ($key == 0) active @endif"
-                                                id="{{ $locale }}" role="tabpanel">
-                                                <div class="form-group">
-                                                    <label>{{__('general.title')}}- @lang('general.' . $locale)<span class="text-danger"> * </span></label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i class="fas fa-pen"></i></span>
-                                                        </div>
-                                                        <input type="text" name="{{ $locale . '[title]' }}"
-                                                            placeholder="{{__('general.title')}}"
-                                                            class="form-control @error('') invalid @enderror  pl-1 min-h-40px @error($locale . '.title') is-invalid @enderror"
-                                                            value="{{ old($locale . '.title') }}">
+                                    <div class="card-header-2">
+                                        <h5>Product Information</h5>
+                                    </div>
+
+                                    <div class="card-toolbar px-3">
+                                        <ul class="nav nav-tabs nav-bold nav-tabs-line">
+                                            @foreach (config('translatable.locales') as $key => $locale)
+                                                <li class="nav-item">
+                                                    <a class="nav-link  @if ($key == 0) active @endif"
+                                                        data-toggle="tab" href="{{ '#' . $locale }}">@lang('general.' . $locale)</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="tab-content">
+                                            @foreach (config('translatable.locales') as $key => $locale)
+                                                <div class="tab-pane fade show @if ($key == 0) active @endif"
+                                                    id="{{ $locale }}" role="tabpanel">
+                                                    <!-- Normal title input -->
+                                                    <div class="mb-4 row align-items-center"> <label
+                                                            class="form-label-title col-sm-3 mb-0">{{ __('general.title') }}
+                                                            - @lang('general.' . $locale)<span class="text-danger"> * </span></label>
+                                                        <div class="col-sm-9"> <input type="text"
+                                                                name="{{ $locale . '[title]' }}"
+                                                                placeholder="{{ __('general.title') }}"
+                                                                class="form-control @error('title') invalid @enderror @error($locale . '.title') is-invalid @enderror"
+                                                                value="{{ old($locale . '.title') }}"> </div>
+                                                    </div>
+
+                                                    <!-- Normal title input -->
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-sm-3 mb-0">
+                                                        {{ __('general.description') }} - @lang('general.' . $locale)<span class="text-danger"> * </span>
+                                                    </label>
+                                                    <div class="col-sm-9">
+                                                        <textarea id="description-{{ $locale }}" rows="100" 
+                                                            class="@error($locale . '.description') is-invalid @enderror" 
+                                                            name="{{ $locale . '[description]' }}">
+                                                            {!! old($locale . '.description') !!}
+                                                        </textarea>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        @endforeach
+
+
+
+                                                </div>
+                                            @endforeach
+                                        </div>
                                     </div>
+
+                                    <form class="theme-form theme-form-2 mega-form">
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="form-label-title col-sm-3 mb-0">Product
+                                                Name</label>
+                                            <div class="col-sm-9">
+                                                <input class="form-control" type="text" placeholder="Product Name">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                @include('admin.components.image', [
+                                                    'label' => __('general.image'),
+                                                    'value' => old('image'),
+                                                    'name' => 'image',
+                                                    'id' => 'kt_image_3',
+                                                    'accept' => 'image/*',
+                                                    'required' => true,
+                                                ])
+
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="col-sm-3 col-form-label form-label-title">Product
+                                                Type</label>
+                                            <div class="col-sm-9">
+                                                <select class="js-example-basic-single w-100" name="state">
+                                                    <option disabled>Static Menu</option>
+                                                    <option>Simple</option>
+                                                    <option>Classified</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="col-sm-3 col-form-label form-label-title">Category</label>
+                                            <div class="col-sm-9">
+                                                <select class="js-example-basic-single w-100" name="state">
+                                                    <option disabled>Category Menu</option>
+                                                    <option>Electronics</option>
+                                                    <option>TV & Appliances</option>
+                                                    <option>Home & Furniture</option>
+                                                    <option>Another</option>
+                                                    <option>Baby & Kids</option>
+                                                    <option>Health, Beauty & Perfumes</option>
+                                                    <option>Uncategorized</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="col-sm-3 col-form-label form-label-title">Subcategory</label>
+                                            <div class="col-sm-9">
+                                                <select class="js-example-basic-single w-100" name="state">
+                                                    <option disabled>Subcategory Menu</option>
+                                                    <option>Ethnic Wear</option>
+                                                    <option>Ethnic Bottoms</option>
+                                                    <option>Women Western Wear</option>
+                                                    <option>Sandels</option>
+                                                    <option>Shoes</option>
+                                                    <option>Beauty & Grooming</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="col-sm-3 col-form-label form-label-title">Brand</label>
+                                            <div class="col-sm-9">
+                                                <select class="js-example-basic-single w-100">
+                                                    <option disabled>Brand Menu</option>
+                                                    <option value="puma">Puma</option>
+                                                    <option value="hrx">HRX</option>
+                                                    <option value="roadster">Roadster</option>
+                                                    <option value="zara">Zara</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="col-sm-3 col-form-label form-label-title">Unit</label>
+                                            <div class="col-sm-9">
+                                                <select class="js-example-basic-single w-100">
+                                                    <option disabled>Unit Menu</option>
+                                                    <option>Kilogram</option>
+                                                    <option>Pieces</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </form>
                                 </div>
-                                {{-- // TODO(boula): organize inputs according to client needs easy --}}
                             </div>
-
-
-
 
                             <div class="card">
                                 <div class="card-body">
