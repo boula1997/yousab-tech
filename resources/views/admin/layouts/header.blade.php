@@ -51,6 +51,11 @@
 
  <!-- Bootstrap-tag input css -->
  <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/bootstrap-tagsinput.css")}}">
+ 
+{{-- admin lte --}}
+ <link rel="stylesheet" href="{{ asset('css/iconpicker-1.5.0.css') }}">
+
+ <link rel="stylesheet" href="{{ asset('dist/css/image.css') }}">
 
 <!-- vector map css -->
 <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vector-map.css")}}">

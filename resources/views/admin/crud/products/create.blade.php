@@ -20,6 +20,53 @@
                                         <h5>Product Information</h5>
                                     </div>
 
+                                    <div class="card-toolbar px-3">
+                                        <ul class="nav nav-tabs nav-bold nav-tabs-line">
+                                            @foreach (config('translatable.locales') as $key => $locale)
+                                                <li class="nav-item">
+                                                    <a class="nav-link  @if ($key == 0) active @endif"
+                                                        data-toggle="tab" href="{{ '#' . $locale }}">@lang('general.' . $locale)</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="tab-content">
+                                            @foreach (config('translatable.locales') as $key => $locale)
+                                                <div class="tab-pane fade show @if ($key == 0) active @endif"
+                                                    id="{{ $locale }}" role="tabpanel">
+                                                    <!-- Normal title input -->
+                                                    <div class="mb-4 row align-items-center"> <label
+                                                            class="form-label-title col-sm-3 mb-0">{{ __('general.title') }}
+                                                            - @lang('general.' . $locale)<span class="text-danger"> * </span></label>
+                                                        <div class="col-sm-9"> <input type="text"
+                                                                name="{{ $locale . '[title]' }}"
+                                                                placeholder="{{ __('general.title') }}"
+                                                                class="form-control @error('title') invalid @enderror @error($locale . '.title') is-invalid @enderror"
+                                                                value="{{ old($locale . '.title') }}"> </div>
+                                                    </div>
+
+                                                    <!-- Normal title input -->
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-sm-3 mb-0">
+                                                        {{ __('general.description') }} - @lang('general.' . $locale)<span class="text-danger"> * </span>
+                                                    </label>
+                                                    <div class="col-sm-9">
+                                                        <textarea id="description-{{ $locale }}" rows="100" 
+                                                            class="@error($locale . '.description') is-invalid @enderror" 
+                                                            name="{{ $locale . '[description]' }}">
+                                                            {!! old($locale . '.description') !!}
+                                                        </textarea>
+                                                    </div>
+                                                </div>
+
+
+
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+
                                     <form class="theme-form theme-form-2 mega-form">
                                         <div class="mb-4 row align-items-center">
                                             <label class="form-label-title col-sm-3 mb-0">Product
@@ -29,15 +76,21 @@
                                             </div>
                                         </div>
 
-                                        <!-- normal input -->
+                                        <div class="row">
                                             <div class="col-md-6">
-                                                <div class="mb-5 bg-light p-3 rounded h-100">
-                                                    <div class="card-title fw-bold">
-                                                        <h5 class="font-weight-bolder text-dark">{{__('general.undefined')}}:</h5>
-                                                        <p style="margin: 0; color: inherit; font-weight: normal;">{{ $module->undefined }}</p>
-                                                    </div>
-                                                </div>
+                                                @include('admin.components.image', [
+                                                    'label' => __('general.image'),
+                                                    'value' => old('image'),
+                                                    'name' => 'image',
+                                                    'id' => 'kt_image_3',
+                                                    'accept' => 'image/*',
+                                                    'required' => true,
+                                                ])
+
                                             </div>
+                                        </div>
+
+
 
 
 
@@ -432,3 +485,20 @@
     </div>
 
 @endsection
+
+
+
+@push('js')
+<script>
+    $(function() {
+        // Summernote
+        $('.summernote').summernote()
+
+        // CodeMirror
+        CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+            mode: "htmlmixed",
+            theme: "monokai"
+        });
+    })
+</script>
+@endpush

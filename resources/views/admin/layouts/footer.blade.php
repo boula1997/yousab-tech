@@ -79,13 +79,19 @@
    <!-- ratio js -->
    <script src="{{asset("admin/assets/js/ratio.js")}}"></script>
 
-   <script>
-    document.getElementById('darkModeToggle').addEventListener('click', function () {
-        window.location.href = '{{ route("dark.toggle") }}';
-    });
-</script>
+    <!-- Summernote -->
+    <script src="{{ asset('js/scripts.bundle.js') }}"></script>
+    <script src="{{ asset('admin/file-upload/image-input.js') }}"></script>
+    <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
+    <script src="{{ asset('js/iconpicker-1.5.0.js') }}"></script>
+    <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
 
- 
+@stack('js')
+    <script>
+        document.getElementById('darkModeToggle').addEventListener('click', function () {
+            window.location.href = '{{ route("dark.toggle") }}';
+        });
+    </script>
 </body>
 
 </html>
