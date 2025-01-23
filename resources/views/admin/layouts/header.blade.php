@@ -46,12 +46,14 @@
  <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/chartist.css")}}">
  <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/date-picker.css")}}">
 
+ <link rel="stylesheet" href="{{ asset('bootstrap-5.3.1-dist\css\bootstrap.min.css') }}">
+
  <!-- Bootstrap css -->
  <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/bootstrap.css")}}">
 
  <!-- Bootstrap-tag input css -->
  <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/bootstrap-tagsinput.css")}}">
- 
+
 {{-- admin lte --}}
  <link rel="stylesheet" href="{{ asset('css/iconpicker-1.5.0.css') }}">
 
