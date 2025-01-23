@@ -39,3 +39,8 @@ body.dark-only .ck.ck-toolbar {
   padding: 0 var(--ck-spacing-small);
   color:#ffff !important;
 }
+
+
+.bg-show{
+  background-color: #F9F9F6;
+}
