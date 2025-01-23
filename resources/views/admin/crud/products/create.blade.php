@@ -12,8 +12,8 @@
 
                     <div class="row">
                         <div class="col-sm-8 m-auto">
-                            
-                           @include('admin.components.designIssue')
+
+                            @include('admin.components.designIssue')
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-header-2">
@@ -28,6 +28,18 @@
                                                 <input class="form-control" type="text" placeholder="Product Name">
                                             </div>
                                         </div>
+
+                                        <!-- normal input -->
+                                            <div class="col-md-6">
+                                                <div class="mb-5 bg-light p-3 rounded h-100">
+                                                    <div class="card-title fw-bold">
+                                                        <h5 class="font-weight-bolder text-dark">{{__('general.undefined')}}:</h5>
+                                                        <p style="margin: 0; color: inherit; font-weight: normal;">{{ $module->undefined }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
 
                                         <div class="mb-4 row align-items-center">
                                             <label class="col-sm-3 col-form-label form-label-title">Product
