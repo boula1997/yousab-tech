@@ -27,7 +27,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="title-header option-title">
-                                        <h5>User Details</h5>
+                                        <h5>{{__('general.create')}} {{__('general.products')}}</h5>
                                     </div>
                                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                         @foreach (config('translatable.locales') as $key => $locale)

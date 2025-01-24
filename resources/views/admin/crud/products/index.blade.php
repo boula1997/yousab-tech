@@ -9,7 +9,7 @@
                     <div class="card card-table">
                         <div class="card-body">
                             <div class="title-header option-title d-sm-flex d-block">
-                                <h5>Products List</h5>
+                                <h5>{{'general.products'}}</h5>
                                 <div class="right-options">
                                     <ul>
                                         <li>
@@ -19,7 +19,7 @@
                                             <a href="javascript:void(0)">Export</a>
                                         </li>
                                         <li>
-                                            <a class="btn btn-solid" href="{{route('products.create')}}">Add Product</a>
+                                            <a class="btn btn-solid" href="{{route('products.create')}}">{{__('general.create')}}</a>
                                         </li>
                                     </ul>
                                 </div>

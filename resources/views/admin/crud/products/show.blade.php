@@ -1,78 +1,120 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <div class="content-wrapper">
-        <div class="container p-3">
-            <div class="card card-custom card-stretch gutter-b">
-                <div class="card-header card-header-tabs-line">
-                    @include('admin.components.breadcrumb', ['module' => 'products', 'action' => 'show'])
-                </div>
-                <div class="card-toolbar px-3">
-                    <ul class="nav nav-tabs nav-bold nav-tabs-line">
-                        @foreach (config('translatable.locales') as $key => $locale)
-                            <li class="nav-item">
-                                <a class="nav-link  @if ($key == 0) active @endif" data-toggle="tab"
-                                    href="{{ '#' . $locale }}">@lang('general.' . $locale)</a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-                <div class="card-body p-10">
-                    <div class="tab-content">
-                        @foreach (config('translatable.locales') as $key => $locale)
-                            <div class="tab-pane fade show @if ($key == 0) active @endif"
-                                id="{{ $locale }}" role="tabpanel">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-5 bg-light p-3 rounded h-100">
-                                            <div class="card-title fw-bold">
-                                                <h5 class="font-weight-bolder text-dark">@lang('general.title'):</h5>
-                                                <p style="margin: 0; color: inherit; font-weight: normal;">{{ $product->translate($locale)->title }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
+    <div class="page-body">
 
-                                    <div class="col-md-6">
-                                        <div class="mb-5 bg-light p-3 rounded h-100">
-                                            <div class="card-title fw-bold">
-                                                <h5 class="font-weight-bolder text-dark">@lang('general.subtitle'):</h5>
-                                                <p style="margin: 0; color: inherit; font-weight: normal;">{{ $product->translate($locale)->subtitle }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
+        <!-- New Product Add Start -->
+        <div class="container-fluid">
+            <div class="row theme-form ">
+                <div class="col-12">
 
-                                </div>
-                                <br>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="mb-5 bg-light p-3 rounded h-100">
-                                            <div class="card-title fw-bold">
-                                                <h5 class="font-weight-bolder text-dark">@lang('general.description'):</h5>
-                                                <p style="margin: 0; color: inherit; font-weight: normal;">{!! $product->translate($locale)->description !!}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
+                    {{-- tranlations section --}}
+                    <div class="row">
+                        <div class="col-sm-8 m-auto">
+
+
+                        </div>
                     </div>
-                </div>
+                    {{-- tranlations section --}}
 
-                <div class="card card-custom">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <img src="{{ $product->image }}" class="w-50">
-                                </div>
-                            </div>
+                    <div class="row">
+                        <div class="col-sm-8 m-auto">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="title-header option-title">
+                                        <h5>{{ __('general.create') }} {{ __('general.products') }}</h5>
+                                    </div>
+                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                        @foreach (config('translatable.locales') as $key => $locale)
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link @if ($key == 0) active @endif"
+                                                    id="pills-{{ $locale }}-tab" data-bs-toggle="pill"
+                                                    data-bs-target="#pills-{{ $locale }}"
+                                                    type="button">@lang('general.' . $locale)</button>
+                                            </li>
+                                        @endforeach
+                                    </ul>
 
-                            <div class="col-md-6">
-                                <div class="mb-5 bg-light p-3 rounded h-100">
-                                    <div class="card-title fw-bold">
-                                        <h5 class="font-weight-bolder text-dark">@lang('general.icon'):</h5>
-                                        <i class="{{ $product->icon }}"></i>
+                                    <div class="tab-content" id="pills-tabContent">
+                                        @foreach (config('translatable.locales') as $key => $locale)
+                                            <div class="tab-pane fade show @if ($key == 0) active @endif"
+                                                id="pills-{{ $locale }}" role="tabpanel">
+                                                <!-- Normal title input -->
+                                                <div class="mb-4 row align-items-center"> <label
+                                                        class="form-label-title col-sm-3 mb-0">{{ __('general.title') }} -
+                                                        @lang('general.' . $locale)<span class="text-danger"> * </span></label>
+                                                    <div class="col-sm-9"> <input type="text"
+                                                            name="{{ $locale . '[title]' }}"
+                                                            placeholder="{{ __('general.title') }}"
+                                                            class="form-control @error('title') invalid @enderror @error($locale . '.title') is-invalid @enderror"
+                                                            value="{{ old($locale . '.title') }}"> </div>
+                                                </div>
+
+                                                <!-- Normal title input -->
+                                                <div class="mb-4 row align-items-center"> <label
+                                                        class="form-label-title col-sm-3 mb-0">{{ __('general.description') }}
+                                                        - @lang('general.' . $locale)<span class="text-danger"> * </span></label>
+                                                    <div class="col-sm-9">
+                                                        <textarea rows="100" class="summernote @error($locale . '.description') is-invalid @enderror"
+                                                            name="{{ $locale . '[description]' }}"> {!! old($locale . '.description') !!} </textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+
+
+                                    <div class="mb-4 row align-items-center">
+                                        <label class="form-label-title col-sm-3 mb-0">Product
+                                            Name</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="text" placeholder="Product Name">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4 row align-items-center">
+                                        <label class="col-sm-3 col-form-label form-label-title">Category</label>
+                                        <div class="col-sm-9">
+                                            <select class="js-example-basic-single w-100" name="state">
+                                                <option disabled>Category Menu</option>
+                                                <option>Electronics</option>
+                                                <option>TV & Appliances</option>
+                                                <option>Home & Furniture</option>
+                                                <option>Another</option>
+                                                <option>Baby & Kids</option>
+                                                <option>Health, Beauty & Perfumes</option>
+                                                <option>Uncategorized</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4 row align-items-center">
+                                        <label class="col-sm-3 col-form-label form-label-title">Subcategory</label>
+                                        <div class="col-sm-9">
+                                            <select class="js-example-basic-single w-100" name="state">
+                                                <option disabled>Subcategory Menu</option>
+                                                <option>Ethnic Wear</option>
+                                                <option>Ethnic Bottoms</option>
+                                                <option>Women Western Wear</option>
+                                                <option>Sandels</option>
+                                                <option>Shoes</option>
+                                                <option>Beauty & Grooming</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            @include('admin.components.image', [
+                                                'label' => __('general.image'),
+                                                'value' => old('image'),
+                                                'name' => 'image',
+                                                'id' => 'kt_image_3',
+                                                'accept' => 'image/*',
+                                                'required' => true,
+                                            ])
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -81,5 +123,6 @@
                 </div>
             </div>
         </div>
+        <!-- New Product Add End -->
     </div>
 @endsection
