@@ -68,6 +68,10 @@
  <!-- App css -->
  <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/style.css")}}">
  <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/custom.css")}}">
+ <!-- Font Awesome -->
+ <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+<!-- summernote -->
+<link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
 </head>
 
 <body class="{{app()->getLocale()=="ar"?"rtl":"ltr"}} {{auth()->user()->dark?"dark-only":""}}">

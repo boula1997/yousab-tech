@@ -37,22 +37,22 @@
                                 <li class="sidebar-list mt-4">
                                     <a class="sidebar-link sidebar-title link-nav" href="{{route('dashboard')}}">
                                         <i class="ri-home-line"></i>
-                                        <span>Dashboard</span>
+                                        <span>{{__('general.dashboard')}}</span>
                                     </a>
                                 </li>
 
                                 <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                                         <i class="ri-store-3-line"></i>
-                                        <span>Product</span>
+                                        <span>{{__('general.products')}}</span>
                                     </a>
                                     <ul class="sidebar-submenu">
                                         <li>
-                                            <a href="{{route('products.index')}}">Prodcts</a>
+                                            <a href="{{route('products.index')}}">{{__('general.list')}}</a>
                                         </li>
 
                                         <li>
-                                            <a href="{{route('products.create')}}">Add New Products</a>
+                                            <a href="{{route('products.create')}}">{{__('general.create')}}</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -60,15 +60,15 @@
                                 <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                                         <i class="ri-list-check-2"></i>
-                                        <span>Category</span>
+                                        <span>{{__('general.catgeories')}}</span>
                                     </a>
                                     <ul class="sidebar-submenu">
                                         <li>
-                                            <a href="category.html">Category List</a>
+                                            <a href="{{route('categories.index')}}">{{__('general.list')}}</a>
                                         </li>
 
                                         <li>
-                                            <a href="add-new-category.html">Add New Category</a>
+                                            <a href="{{route('categories.create')}}">{{__('general.create')}}</a>
                                         </li>
                                     </ul>
                                 </li>
