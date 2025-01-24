@@ -27,7 +27,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="title-header option-title">
-                                        <h5>{{__('general.create')}} {{__('general.products')}}</h5>
+                                        <h5>{{ __('general.create') }} {{ __('general.products') }}</h5>
                                     </div>
                                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                         @foreach (config('translatable.locales') as $key => $locale)
@@ -57,6 +57,17 @@
 
                                                 <!-- Normal title input -->
                                                 <div class="mb-4 row align-items-center"> <label
+                                                        class="form-label-title col-sm-3 mb-0">{{ __('general.subtitle') }}
+                                                        - @lang('general.' . $locale)<span class="text-danger"> * </span></label>
+                                                    <div class="col-sm-9"> <input type="text"
+                                                            name="{{ $locale . '[subtitle]' }}"
+                                                            placeholder="{{ __('general.subtitle') }}"
+                                                            class="form-control @error('subtitle') invalid @enderror @error($locale . '.subtitle') is-invalid @enderror"
+                                                            value="{{ old($locale . '.subtitle') }}"> </div>
+                                                </div>
+
+                                                <!-- Normal title input -->
+                                                <div class="mb-4 row align-items-center"> <label
                                                         class="form-label-title col-sm-3 mb-0">{{ __('general.description') }}
                                                         - @lang('general.' . $locale)<span class="text-danger"> * </span></label>
                                                     <div class="col-sm-9">
@@ -64,62 +75,20 @@
                                                             name="{{ $locale . '[description]' }}"> {!! old($locale . '.description') !!} </textarea>
                                                     </div>
                                                 </div>
+
                                             </div>
                                         @endforeach
                                     </div>
 
-
-                                    <div class="mb-4 row align-items-center">
-                                        <label class="form-label-title col-sm-3 mb-0">Product
-                                            Name</label>
-                                        <div class="col-sm-9">
-                                            <input class="form-control" type="text" placeholder="Product Name">
-                                        </div>
-                                    </div>
-
-                                    <div class="mb-4 row align-items-center">
-                                        <label class="col-sm-3 col-form-label form-label-title">Category</label>
-                                        <div class="col-sm-9">
-                                            <select class="js-example-basic-single w-100" name="state">
-                                                <option disabled>Category Menu</option>
-                                                <option>Electronics</option>
-                                                <option>TV & Appliances</option>
-                                                <option>Home & Furniture</option>
-                                                <option>Another</option>
-                                                <option>Baby & Kids</option>
-                                                <option>Health, Beauty & Perfumes</option>
-                                                <option>Uncategorized</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="mb-4 row align-items-center">
-                                        <label class="col-sm-3 col-form-label form-label-title">Subcategory</label>
-                                        <div class="col-sm-9">
-                                            <select class="js-example-basic-single w-100" name="state">
-                                                <option disabled>Subcategory Menu</option>
-                                                <option>Ethnic Wear</option>
-                                                <option>Ethnic Bottoms</option>
-                                                <option>Women Western Wear</option>
-                                                <option>Sandels</option>
-                                                <option>Shoes</option>
-                                                <option>Beauty & Grooming</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            @include('admin.components.image', [
-                                                'label' => __('general.image'),
-                                                'value' => old('image'),
-                                                'name' => 'image',
-                                                'id' => 'kt_image_3',
-                                                'accept' => 'image/*',
-                                                'required' => true,
-                                            ])
-
-                                        </div>
+                                    {{-- Image Input --}} <div class="row">
+                                        <div class="col-md-6"> @include('admin.components.image', [
+                                            'label' => __('general.image'),
+                                            'value' => old('image'),
+                                            'name' => 'image',
+                                            'id' => 'kt_image_3',
+                                            'accept' => 'image/*',
+                                            'required' => true,
+                                        ]) </div>
                                     </div>
                                 </div>
                             </div>

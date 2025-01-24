@@ -39,9 +39,7 @@
     <script src="{{ asset('admin/assets/js/dropzone/dropzone.js') }}"></script>
     <script src="{{ asset('admin/assets/js/dropzone/dropzone-script.js') }}"></script>
 
-    <!-- Plugins js -->
-    <script src="{{ asset('admin/assets/js/notify/bootstrap-notify.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/notify/index.js') }}"></script>
+
 
     <!-- ck editor js -->
     <script src="{{ asset('admin/assets/js/ckeditor.js') }}"></script>

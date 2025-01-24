@@ -29,55 +29,31 @@
                                     <table class="table all-package theme-table table-product" id="table_id">
                                         <thead>
                                             <tr>
-                                                <th>Product Image</th>
-                                                <th>Product Name</th>
-                                                <th>Category</th>
-                                                <th>Current Qty</th>
-                                                <th>Price</th>
-                                                <th>Status</th>
-                                                <th>Option</th>
+                                                <th>#</th>
+                                                <th>@lang('general.image')</th>
+                                                <th>@lang('general.title')</th>
+                                                <th>@lang('general.controls')</th>
                                             </tr>
                                         </thead>
 
                                         <tbody>
                                             @foreach ($products as $product)
                                                 <tr>
+                                                    <td>{{ $loop->iteration }}</td>
                                                     <td>
                                                         <div class="table-image">
-                                                            <img src="{{ asset('admin/assets/images/product/1.png') }}"
+                                                            <img src="{{ $product->image }}"
                                                                 class="img-fluid" alt="">
                                                         </div>
                                                     </td>
 
-                                                    <td>Aata Buscuit</td>
-
-                                                    <td>Buscuit</td>
-
-                                                    <td>12</td>
-
-                                                    <td class="td-price">$95.97</td>
-
-                                                    <td class="status-danger">
-                                                        <span>Pending</span>
-                                                    </td>
-
+                                                    <td>{{ $product->title }}</td>
                                                     <td>
-                                                        <ul>
-
-
-                                                            <li>
-                                                                <a href="{{ route('products.edit', $product->id) }}">
-                                                                    <i class="ri-pencil-line"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                                    data-bs-target="#exampleModalToggle">
-                                                                    <i class="ri-delete-bin-line"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
+                                                        @include('admin.components.controls', [
+                                                            'route' => 'products',
+                                                            'role' => 'product',
+                                                            'module' => $product,
+                                                        ])
                                                     </td>
                                                 </tr>
                                             @endforeach
