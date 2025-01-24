@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="{{app()->getLocale()=="ar"?"rtl":"ltr"}}">
+<html lang="en" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -10,68 +10,69 @@
     <meta name="keywords"
         content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="pixelstrap">
-    <link rel="icon" href="{{asset(settings()->logo)}}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{asset(settings()->logo)}}" type="image/x-icon">
-    <title>{{settings()->title}} - {{__('general.dashboard')}}</title>
+    <link rel="icon" href="{{ asset(settings()->logo) }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset(settings()->logo) }}" type="image/x-icon">
+    <title>{{ settings()->title }} - {{ __('general.dashboard') }}</title>
 
-     <!-- Google font -->
-     <link
-     href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-     rel="stylesheet">
+    <!-- Google font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
- <!-- Linear Icon css -->
- <link rel="stylesheet" href="{{asset("admin/assets/css/linearicon.css")}}">
+    <!-- Linear Icon css -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/linearicon.css') }}">
 
- <!-- Fontawesome css -->
- <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/font-awesome.css")}}">
+    <!-- Fontawesome css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/vendors/font-awesome.css') }}">
 
- <!-- Themify icon css -->
- <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/themify.css")}}">
+    <!-- Themify icon css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/vendors/themify.css') }}">
 
- <!--Dropzon css -->
- <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/dropzone.css")}}">
+    <!--Dropzon css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/vendors/dropzone.css') }}">
 
- <!-- Feather icon css-->
- <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/feather-icon.css")}}">
+    <!-- Feather icon css-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/vendors/feather-icon.css') }}">
 
- <!-- remixicon css -->
- <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/remixicon.css")}}">
+    <!-- remixicon css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/remixicon.css') }}">
 
- <!-- Select2 css -->
- <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/select2.min.css")}}">
+    <!-- Select2 css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/select2.min.css') }}">
 
- <!-- Plugins css -->
- <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/scrollbar.css")}}">
- <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/animate.css")}}">
- <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/chartist.css")}}">
- <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/date-picker.css")}}">
+    <!-- Plugins css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/vendors/scrollbar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/vendors/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/vendors/chartist.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/vendors/date-picker.css') }}">
 
- <link rel="stylesheet" href="{{ asset('bootstrap-5.3.1-dist\css\bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bootstrap-5.3.1-dist\css\bootstrap.min.css') }}">
 
- <!-- Bootstrap css -->
- <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/bootstrap.css")}}">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+        <!-- summernote -->
+        <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
 
- <!-- Bootstrap-tag input css -->
- <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/bootstrap-tagsinput.css")}}">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/vendors/bootstrap.css') }}">
 
-{{-- admin lte --}}
- <link rel="stylesheet" href="{{ asset('css/iconpicker-1.5.0.css') }}">
+    <!-- Bootstrap-tag input css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/vendors/bootstrap-tagsinput.css') }}">
 
- <link rel="stylesheet" href="{{ asset('dist/css/image.css') }}">
+    {{-- admin lte --}}
+    <link rel="stylesheet" href="{{ asset('css/iconpicker-1.5.0.css') }}">
 
-<!-- vector map css -->
-<link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vector-map.css")}}">
+    <link rel="stylesheet" href="{{ asset('dist/css/image.css') }}">
 
-<!-- Slick Slider Css -->
-<link rel="stylesheet" href="{{asset("admin/assets/css/vendors/slick.css")}}">
+    <!-- vector map css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/vector-map.css') }}">
 
- <!-- App css -->
- <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/style.css")}}">
- <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/custom.css")}}">
- <!-- Font Awesome -->
- <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
-<!-- summernote -->
-<link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+    <!-- Slick Slider Css -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/vendors/slick.css') }}">
+
+    <!-- App css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/custom.css') }}">
 </head>
 
-<body class="{{app()->getLocale()=="ar"?"rtl":"ltr"}} {{auth()->user()->dark?"dark-only":""}}">
+<body class="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }} {{ auth()->user()->dark ? 'dark-only' : '' }}">

@@ -10,7 +10,7 @@
 
 
 
-            <div class="row">
+            <div class="row theme-form ">
                 <div class="col-12">
 
                     {{-- tranlations section --}}
@@ -24,7 +24,6 @@
 
                     <div class="row">
                         <div class="col-sm-8 m-auto">
-                            @include('admin.components.designIssue')
                             <div class="card">
                                 <div class="card-body">
                                     <div class="title-header option-title">
