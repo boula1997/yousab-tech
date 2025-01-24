@@ -21,7 +21,7 @@
 <div class="container">
     <div class="hm-gradient mb-5">
         <div class="container p-4" style="font-size: 20px">
-            <a style="color: #4E3A14" href="index.html">الرئيسية</a> / <span style="color: white">فيديوهاتنا</span>
+            <a style="color: #4E3A14" href="{{route('dashboard')}}">الرئيسية</a> / <span style="color: white">فيديوهاتنا</span>
         </div>
     </div>
 </div>

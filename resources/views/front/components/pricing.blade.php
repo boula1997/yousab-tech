@@ -2,7 +2,7 @@
     <div class="breadcrumb-main">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="index.html">الرئسية</a>
+                <a href="{{route('dashboard')}}">الرئسية</a>
             </li>
             <li class="breadcrumb-item active">Pricing</li>
         </ol>

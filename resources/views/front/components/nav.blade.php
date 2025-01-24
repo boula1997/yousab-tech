@@ -1,6 +1,6 @@
     <!-- search popup start-->
     <div class="td-search-popup" id="td-search-popup">
-        <form action="index.html" class="search-form">
+        <form action="{{route('dashboard')}}" class="search-form">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search.....">
             </div>

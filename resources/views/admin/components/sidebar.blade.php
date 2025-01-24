@@ -3,9 +3,14 @@
                 <div id="sidebarEffect"></div>
                 <div>
                     <div class="logo-wrapper logo-wrapper-center">
-                        <a href="index.html" data-bs-original-title="" title="">
-                            <img class="img-fluid for-white" src="{{asset("admin/assets/images/logo/full-white.png")}}" alt="logo">
+                        <a href="{{route('dashboard')}}" data-bs-original-title="" title="">
+                            <img 
+                                class="img-fluid for-white logo-circle"  
+                                src="{{asset(settings()->logo)}}" 
+                                alt="logo"
+                            >
                         </a>
+                        
                         <div class="back-btn">
                             <i class="fa fa-angle-left"></i>
                         </div>
@@ -14,9 +19,9 @@
                         </div>
                     </div>
                     <div class="logo-icon-wrapper">
-                        <a href="index.html">
-                            <img class="img-fluid main-logo main-white" src="{{asset("admin/assets/images/logo/logo.png")}}" alt="logo">
-                            <img class="img-fluid main-logo main-dark" src="{{asset("admin/assets/images/logo/logo-white.png")}}"
+                        <a href="{{route('dashboard')}}">
+                            <img class="img-fluid main-logo main-white" src="{{asset(settings()->logo)}}" alt="logo">
+                            <img class="img-fluid main-logo main-dark" src="{{asset(settings()->logo)}}"
                                 alt="logo">
                         </a>
                     </div>
@@ -29,8 +34,8 @@
                             <ul class="sidebar-links" id="simple-bar">
                                 <li class="back-btn"></li>
 
-                                <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav" href="index.html">
+                                <li class="sidebar-list mt-4">
+                                    <a class="sidebar-link sidebar-title link-nav" href="{{route('dashboard')}}">
                                         <i class="ri-home-line"></i>
                                         <span>Dashboard</span>
                                     </a>

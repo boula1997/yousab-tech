@@ -7,473 +7,121 @@
 
         <!-- New Product Add Start -->
         <div class="container-fluid">
+
+
+
             <div class="row">
                 <div class="col-12">
 
+                    {{-- tranlations section --}}
                     <div class="row">
                         <div class="col-sm-8 m-auto">
 
+
+                        </div>
+                    </div>
+                    {{-- tranlations section --}}
+
+                    <div class="row">
+                        <div class="col-sm-8 m-auto">
                             @include('admin.components.designIssue')
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="card-header-2">
-                                        <h5>Product Information</h5>
+                                    <div class="title-header option-title">
+                                        <h5>User Details</h5>
                                     </div>
+                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                        @foreach (config('translatable.locales') as $key => $locale)
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link @if ($key == 0) active @endif"
+                                                    id="pills-{{ $locale }}-tab" data-bs-toggle="pill"
+                                                    data-bs-target="#pills-{{ $locale }}"
+                                                    type="button">@lang('general.' . $locale)</button>
+                                            </li>
+                                        @endforeach
+                                    </ul>
 
-                                    <div class="card-toolbar px-3">
-                                        <ul class="nav nav-tabs nav-bold nav-tabs-line">
-                                            @foreach (config('translatable.locales') as $key => $locale)
-                                                <li class="nav-item">
-                                                    <a class="nav-link  @if ($key == 0) active @endif"
-                                                        data-toggle="tab" href="{{ '#' . $locale }}">@lang('general.' . $locale)</a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="tab-content">
-                                            @foreach (config('translatable.locales') as $key => $locale)
-                                                <div class="tab-pane fade show @if ($key == 0) active @endif"
-                                                    id="{{ $locale }}" role="tabpanel">
-                                                    <!-- Normal title input -->
-                                                    <div class="mb-4 row align-items-center"> <label
-                                                            class="form-label-title col-sm-3 mb-0">{{ __('general.title') }}
-                                                            - @lang('general.' . $locale)<span class="text-danger"> * </span></label>
-                                                        <div class="col-sm-9"> <input type="text"
-                                                                name="{{ $locale . '[title]' }}"
-                                                                placeholder="{{ __('general.title') }}"
-                                                                class="form-control @error('title') invalid @enderror @error($locale . '.title') is-invalid @enderror"
-                                                                value="{{ old($locale . '.title') }}"> </div>
-                                                    </div>
+                                    <div class="tab-content" id="pills-tabContent">
+                                        @foreach (config('translatable.locales') as $key => $locale)
+                                            <div class="tab-pane fade show @if ($key == 0) active @endif"
+                                                id="pills-{{ $locale }}" role="tabpanel">
+                                                <!-- Normal title input -->
+                                                <div class="mb-4 row align-items-center"> <label
+                                                        class="form-label-title col-sm-3 mb-0">{{ __('general.title') }} -
+                                                        @lang('general.' . $locale)<span class="text-danger"> * </span></label>
+                                                    <div class="col-sm-9"> <input type="text"
+                                                            name="{{ $locale . '[title]' }}"
+                                                            placeholder="{{ __('general.title') }}"
+                                                            class="form-control @error('title') invalid @enderror @error($locale . '.title') is-invalid @enderror"
+                                                            value="{{ old($locale . '.title') }}"> </div>
+                                                </div>
 
-                                                    <!-- Normal title input -->
-                                                <div class="mb-4 row align-items-center">
-                                                    <label class="form-label-title col-sm-3 mb-0">
-                                                        {{ __('general.description') }} - @lang('general.' . $locale)<span class="text-danger"> * </span>
-                                                    </label>
+                                                <!-- Normal title input -->
+                                                <div class="mb-4 row align-items-center"> <label
+                                                        class="form-label-title col-sm-3 mb-0">{{ __('general.description') }}
+                                                        - @lang('general.' . $locale)<span class="text-danger"> * </span></label>
                                                     <div class="col-sm-9">
-                                                        <textarea id="description-{{ $locale }}" rows="100" 
-                                                            class="@error($locale . '.description') is-invalid @enderror" 
-                                                            name="{{ $locale . '[description]' }}">
-                                                            {!! old($locale . '.description') !!}
-                                                        </textarea>
-                                                    </div>
-                                                </div>
-
-
-
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-
-                                    <form class="theme-form theme-form-2 mega-form">
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="form-label-title col-sm-3 mb-0">Product
-                                                Name</label>
-                                            <div class="col-sm-9">
-                                                <input class="form-control" type="text" placeholder="Product Name">
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                @include('admin.components.image', [
-                                                    'label' => __('general.image'),
-                                                    'value' => old('image'),
-                                                    'name' => 'image',
-                                                    'id' => 'kt_image_3',
-                                                    'accept' => 'image/*',
-                                                    'required' => true,
-                                                ])
-
-                                            </div>
-                                        </div>
-
-
-
-
-
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="col-sm-3 col-form-label form-label-title">Product
-                                                Type</label>
-                                            <div class="col-sm-9">
-                                                <select class="js-example-basic-single w-100" name="state">
-                                                    <option disabled>Static Menu</option>
-                                                    <option>Simple</option>
-                                                    <option>Classified</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="col-sm-3 col-form-label form-label-title">Category</label>
-                                            <div class="col-sm-9">
-                                                <select class="js-example-basic-single w-100" name="state">
-                                                    <option disabled>Category Menu</option>
-                                                    <option>Electronics</option>
-                                                    <option>TV & Appliances</option>
-                                                    <option>Home & Furniture</option>
-                                                    <option>Another</option>
-                                                    <option>Baby & Kids</option>
-                                                    <option>Health, Beauty & Perfumes</option>
-                                                    <option>Uncategorized</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="col-sm-3 col-form-label form-label-title">Subcategory</label>
-                                            <div class="col-sm-9">
-                                                <select class="js-example-basic-single w-100" name="state">
-                                                    <option disabled>Subcategory Menu</option>
-                                                    <option>Ethnic Wear</option>
-                                                    <option>Ethnic Bottoms</option>
-                                                    <option>Women Western Wear</option>
-                                                    <option>Sandels</option>
-                                                    <option>Shoes</option>
-                                                    <option>Beauty & Grooming</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="col-sm-3 col-form-label form-label-title">Brand</label>
-                                            <div class="col-sm-9">
-                                                <select class="js-example-basic-single w-100">
-                                                    <option disabled>Brand Menu</option>
-                                                    <option value="puma">Puma</option>
-                                                    <option value="hrx">HRX</option>
-                                                    <option value="roadster">Roadster</option>
-                                                    <option value="zara">Zara</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="col-sm-3 col-form-label form-label-title">Unit</label>
-                                            <div class="col-sm-9">
-                                                <select class="js-example-basic-single w-100">
-                                                    <option disabled>Unit Menu</option>
-                                                    <option>Kilogram</option>
-                                                    <option>Pieces</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                    </form>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-header-2">
-                                        <h5>Description</h5>
-                                    </div>
-
-                                    <form class="theme-form theme-form-2 mega-form">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="row">
-                                                    <label class="form-label-title col-sm-3 mb-0">Product
-                                                        Description</label>
-                                                    <div class="col-sm-9">
-                                                        <div id="editor"></div>
+                                                        <textarea rows="100" class="summernote @error($locale . '.description') is-invalid @enderror"
+                                                            name="{{ $locale . '[description]' }}"> {!! old($locale . '.description') !!} </textarea>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-header-2">
-                                        <h5>Product Images</h5>
+                                        @endforeach
                                     </div>
 
-                                    <form class="theme-form theme-form-2 mega-form">
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="col-sm-3 col-form-label form-label-title">Images</label>
-                                            <div class="col-sm-9">
-                                                <input class="form-control form-choose" type="file" id="formFile"
-                                                    multiple>
-                                            </div>
+
+                                    <div class="mb-4 row align-items-center">
+                                        <label class="form-label-title col-sm-3 mb-0">Product
+                                            Name</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="text" placeholder="Product Name">
                                         </div>
-
-                                        <div class="row align-items-center">
-                                            <label class="col-sm-3 col-form-label form-label-title">Thumbnail
-                                                Image</label>
-                                            <div class="col-sm-9">
-                                                <input class="form-control form-choose" type="file"
-                                                    id="formFileMultiple1" multiple>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-
-
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-header-2">
-                                        <h5>Product variations</h5>
                                     </div>
 
-                                    <form class="theme-form theme-form-2 mega-form">
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="form-label-title col-sm-3 mb-0">Product
-                                                Name</label>
-                                            <div class="col-sm-9">
-                                                <input class="form-control" type="text" placeholder="Product Name">
-                                            </div>
+                                    <div class="mb-4 row align-items-center">
+                                        <label class="col-sm-3 col-form-label form-label-title">Category</label>
+                                        <div class="col-sm-9">
+                                            <select class="js-example-basic-single w-100" name="state">
+                                                <option disabled>Category Menu</option>
+                                                <option>Electronics</option>
+                                                <option>TV & Appliances</option>
+                                                <option>Home & Furniture</option>
+                                                <option>Another</option>
+                                                <option>Baby & Kids</option>
+                                                <option>Health, Beauty & Perfumes</option>
+                                                <option>Uncategorized</option>
+                                            </select>
                                         </div>
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="form-label-title col-sm-3 mb-0">Option
-                                                Name</label>
-                                            <div class="col-sm-9">
-                                                <select class="js-example-basic-single w-100" name="state">
-                                                    <option>Color</option>
-                                                    <option>Size</option>
-                                                    <option>Material</option>
-                                                    <option>Style</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="row align-items-center">
-                                            <label class="col-sm-3 col-form-label form-label-title">Option
-                                                Value</label>
-                                            <div class="col-sm-9">
-                                                <div class="bs-example">
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Type tag & hit enter" id="#inputTag"
-                                                        data-role="tagsinput">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-
-                                    <a href="#" class="add-option"><i class="ri-add-line me-2"></i> Add Another
-                                        Option</a>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-header-2">
-                                        <h5>Shipping</h5>
                                     </div>
 
-                                    <form class="theme-form theme-form-2 mega-form">
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="form-label-title col-sm-3 mb-0">Weight
-                                                (kg)</label>
-                                            <div class="col-sm-9">
-                                                <input class="form-control" type="number" placeholder="Weight">
-                                            </div>
+                                    <div class="mb-4 row align-items-center">
+                                        <label class="col-sm-3 col-form-label form-label-title">Subcategory</label>
+                                        <div class="col-sm-9">
+                                            <select class="js-example-basic-single w-100" name="state">
+                                                <option disabled>Subcategory Menu</option>
+                                                <option>Ethnic Wear</option>
+                                                <option>Ethnic Bottoms</option>
+                                                <option>Women Western Wear</option>
+                                                <option>Sandels</option>
+                                                <option>Shoes</option>
+                                                <option>Beauty & Grooming</option>
+                                            </select>
                                         </div>
-
-                                        <div class="row align-items-center">
-                                            <label class="col-sm-3 col-form-label form-label-title">Dimensions
-                                                (cm)</label>
-                                            <div class="col-sm-9">
-                                                <select class="js-example-basic-single w-100" name="state">
-                                                    <option>Length</option>
-                                                    <option>Width</option>
-                                                    <option>Height</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-header-2">
-                                        <h5>Product Price</h5>
                                     </div>
 
-                                    <form class="theme-form theme-form-2 mega-form">
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="col-sm-3 form-label-title">price</label>
-                                            <div class="col-sm-9">
-                                                <input class="form-control" type="number" placeholder="0">
-                                            </div>
-                                        </div>
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="col-sm-3 form-label-title">Compare at
-                                                price</label>
-                                            <div class="col-sm-9">
-                                                <input class="form-control" type="number" placeholder="0">
-                                            </div>
-                                        </div>
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="col-sm-3 form-label-title">Cost per item</label>
-                                            <div class="col-sm-5">
-                                                <input class="form-control" type="number" placeholder="0">
-                                            </div>
-                                            <div class="col-sm-2">
-                                                <label>Margin:</label>
-                                                <span>25%</span>
-                                            </div>
-                                            <div class="col-sm-2">
-                                                <label>Profit:</label>
-                                                <span>$5</span>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            @include('admin.components.image', [
+                                                'label' => __('general.image'),
+                                                'value' => old('image'),
+                                                'name' => 'image',
+                                                'id' => 'kt_image_3',
+                                                'accept' => 'image/*',
+                                                'required' => true,
+                                            ])
 
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-header-2">
-                                        <h5>Product Inventory</h5>
+                                        </div>
                                     </div>
-
-                                    <form class="theme-form theme-form-2 mega-form">
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="form-label-title col-sm-3 mb-0">SKU</label>
-                                            <div class="col-sm-9">
-                                                <input class="form-control" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="col-sm-3 col-form-label form-label-title">Stock
-                                                Status</label>
-                                            <div class="col-sm-9">
-                                                <select class="js-example-basic-single w-100" name="state">
-                                                    <option>In Stock</option>
-                                                    <option>Out Of Stock</option>
-                                                    <option>On Backorder</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <table class="table variation-table table-responsive-sm">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Variant</th>
-                                                <th scope="col">Price</th>
-                                                <th scope="col">SKU</th>
-                                                <th scope="col">Quantity</th>
-                                                <th scope="col"></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Red</td>
-                                                <td>
-                                                    <input class="form-control" type="number" placeholder="0">
-                                                </td>
-                                                <td>
-                                                    <input class="form-control" type="number" placeholder="0">
-                                                </td>
-                                                <td>
-                                                    <input class="form-control" type="number" placeholder="0">
-                                                </td>
-                                                <td>
-                                                    <ul class="order-option">
-                                                        <li><a href="javascript:void(0)" data-toggle="modal"
-                                                                data-target="#deleteModal"><i
-                                                                    class="ri-delete-bin-line"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Blue</td>
-                                                <td>
-                                                    <input class="form-control" type="number" placeholder="0">
-                                                </td>
-                                                <td>
-                                                    <input class="form-control" type="number" placeholder="0">
-                                                </td>
-                                                <td>
-                                                    <input class="form-control" type="number" placeholder="0">
-                                                </td>
-                                                <td>
-                                                    <ul class="order-option">
-                                                        <li><a href="javascript:void(0)" data-toggle="modal"
-                                                                data-target="#deleteModal"><i
-                                                                    class="ri-delete-bin-line"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-header-2">
-                                        <h5>Link Products</h5>
-                                    </div>
-
-                                    <form class="theme-form theme-form-2 mega-form">
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="form-label-title col-sm-3 mb-0">Upsells</label>
-                                            <div class="col-sm-9">
-                                                <input class="form-control" type="search">
-                                            </div>
-                                        </div>
-
-                                        <div class="row align-items-center">
-                                            <label class="form-label-title col-sm-3 mb-0">Cross-Sells</label>
-                                            <div class="col-sm-9">
-                                                <input class="form-control" type="search">
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-header-2">
-                                        <h5>Search engine listing</h5>
-                                    </div>
-
-                                    <div class="seo-view">
-                                        <span class="link">https://fastkart.com</span>
-                                        <h5>Buy fresh vegetables & Fruits online at best price</h5>
-                                        <p>Online Vegetable Store - Buy fresh vegetables & Fruits online at best
-                                            prices. Order online and get free delivery.</p>
-                                    </div>
-
-                                    <form class="theme-form theme-form-2 mega-form">
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="form-label-title col-sm-3 mb-0">Page title</label>
-                                            <div class="col-sm-9">
-                                                <input class="form-control" type="search" placeholder="Fresh Fruits">
-                                            </div>
-                                        </div>
-
-                                        <div class="mb-4 row">
-                                            <label class="form-label-title col-sm-3 mb-0">Meta
-                                                description</label>
-                                            <div class="col-sm-9">
-                                                <textarea class="form-control" rows="3"></textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <label class="form-label-title col-sm-3 mb-0">URL handle</label>
-                                            <div class="col-sm-9">
-                                                <input class="form-control" type="search"
-                                                    placeholder="https://fastkart.com/fresh-veggies">
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-
-                                <div class="card-submit-button">
-                                    <button class="btn btn-animation ms-auto" type="submit">Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -485,5 +133,3 @@
     </div>
 
 @endsection
-
-
