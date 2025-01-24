@@ -13,14 +13,7 @@
             <div class="row theme-form ">
                 <div class="col-12">
 
-                    {{-- tranlations section --}}
-                    <div class="row">
-                        <div class="col-sm-8 m-auto">
-
-
-                        </div>
-                    </div>
-                    {{-- tranlations section --}}
+                    @include('admin.components.alert-error')
 
                     <div class="row">
                         <div class="col-sm-8 m-auto">
@@ -89,7 +82,20 @@
                                             'accept' => 'image/*',
                                             'required' => true,
                                         ]) </div>
+
+                                        <div class="col-md-6">
+                                            @include('admin.components.icon', [
+                                                'label' => 'icon',
+                                                'required' => true,
+                                                'value' => 'fas fa-desktop',
+                                            ])
+
+                                        </div>
                                     </div>
+                                </div>
+
+                                <div class="card-submit-button">
+                                    <button class="btn btn-animation ms-auto" type="submit">Submit</button>
                                 </div>
                             </div>
                         </div>
