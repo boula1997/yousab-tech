@@ -460,12 +460,12 @@
 
                                 <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-                                        <i class="ri-settings-line"></i>
-                                        <span>Settings</span>
+                                        <i class=""></i>
+                                        <span>{{__('general.settings')}}</span>
                                     </a>
                                     <ul class="sidebar-submenu">
                                         <li>
-                                            <a href="profile-setting.html">Profile Setting</a>
+                                            <a href="{{route('edit.setting')}}">{{__('general.Profile Setting')}}</a>
                                         </li>
                                     </ul>
                                 </li>
