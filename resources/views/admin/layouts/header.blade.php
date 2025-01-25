@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Fastkart admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+        content="{{settings()->description}}">
     <meta name="keywords"
-        content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
+        content="{{settings()->keywords}}">
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="{{ asset(settings()->logo) }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset(settings()->logo) }}" type="image/x-icon">
