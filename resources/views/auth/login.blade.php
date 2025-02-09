@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Cuba admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+        content="{{settings()->description}}">
     <meta name="keywords"
-        content="admin template, Cuba admin template, dashboard template, flat admin template, responsive admin template, web app">
+        content="{{settings()->keywords}}">
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="{{asset("admin/assets/images/favicon.png")}}" type="image/x-icon">
     <link rel="shortcut icon" href="{{asset("admin/assets/images/favicon.png")}}" type="image/x-icon">
-    <title>Fastkart - log In</title>
+    <title>{{settings()->title}}</title>
 
     <!-- Google font-->
     <link
@@ -54,14 +54,14 @@
                                         <label for="email">Email Address</label>
                                     </div>
                                 </div>
-                            
+
                                 <div class="col-12">
                                     <div class="form-floating theme-form-floating log-in-form">
                                         <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                                         <label for="password">Password</label>
                                     </div>
                                 </div>
-                            
+
                                 <div class="col-12">
                                     <div class="forgot-box">
                                         <div class="form-check ps-0 m-0 remember-box">
@@ -70,7 +70,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            
+
                                 <div class="col-12">
                                     <!-- Replace <a> with <button> for proper form submission -->
                                     <button type="submit" class="btn btn-animation w-100 justify-content-center">
@@ -78,7 +78,7 @@
                                     </button>
                                 </div>
                             </form>
-                            
+
                         </div>
 
 

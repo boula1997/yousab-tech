@@ -1,16 +1,16 @@
-            <!-- Page Sidebar Start-->
-            <div class="sidebar-wrapper">
+               <!-- Page Sidebar Start-->
+               <div class="sidebar-wrapper">
                 <div id="sidebarEffect"></div>
                 <div>
                     <div class="logo-wrapper logo-wrapper-center">
                         <a href="{{route('dashboard')}}" data-bs-original-title="" title="">
-                            <img 
-                                class="img-fluid for-white logo-circle"  
-                                src="{{asset(settings()->logo)}}" 
+                            <img
+                                class="img-fluid for-white logo-circle"
+                                src="{{asset(settings()->logo)}}"
                                 alt="logo"
                             >
                         </a>
-                        
+
                         <div class="back-btn">
                             <i class="fa fa-angle-left"></i>
                         </div>
@@ -39,6 +39,100 @@
                                         <i class="ri-home-line"></i>
                                         <span>{{__('general.dashboard')}}</span>
                                     </a>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-user-3-line"></i>
+                                        <span>{{__('general.admins')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('admins.index')}}">{{__('general.All admins')}}</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{route('admins.create')}}">{{__('general.Add a new admin')}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-user-3-line"></i>
+                                        <span>{{__('general.roles')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('roles.index')}}">{{__('general.All roles')}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('roles.create')}}">{{__('general.Create Role')}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-user-3-line"></i>
+                                        <span>{{__('general.users')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('users.index')}}">{{__('general.All users')}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('users.create')}}">{{__('general.Add a new  user')}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-list-check-2"></i>
+                                        <span>{{__('general.partners')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('partners.index')}}">{{__('general.All partners')}}</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{route('partners.create')}}">{{__('general.Add a new partner')}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-list-check-2"></i>
+                                        <span>{{__('general.teams')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('teams.index')}}">{{__('general.list')}}</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{route('teams.create')}}">{{__('general.create')}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-list-check-2"></i>
+                                        <span>{{__('general.services')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('services.index')}}">{{__('general.list')}}</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{route('services.create')}}">{{__('general.create')}}</a>
+                                        </li>
+                                    </ul>
                                 </li>
 
                                 <li class="sidebar-list">
@@ -75,6 +169,199 @@
 
                                 <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-list-check-2"></i>
+                                        <span>{{__('general.testimonials')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('testimonials.index')}}">{{__('general.list')}}</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{route('testimonials.create')}}">{{__('general.create')}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-list-check-2"></i>
+                                        <span>{{__('general.processes')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('processes.index')}}">{{__('general.list')}}</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{route('processes.create')}}">{{__('general.create')}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-list-check-2"></i>
+                                        <span>{{__('general.portfolios')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('portfolios.index')}}">{{__('general.list')}}</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{route('portfolios.create')}}">{{__('general.create')}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-list-check-2"></i>
+                                        <span>{{__('general.pages')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('pages.index')}}">{{__('general.list')}}</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{route('pages.create')}}">{{__('general.create')}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-list-check-2"></i>
+                                        <span>{{__('general.faqs')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('faqs.index')}}">{{__('general.list')}}</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{route('faqs.create')}}">{{__('general.create')}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-list-check-2"></i>
+                                        <span>{{__('general.complains')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('complains.index')}}">{{__('general.list')}}</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{route('complains.create')}}">{{__('general.create')}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-list-check-2"></i>
+                                        <span>{{__('general.vaccancies')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('vaccancies.index')}}">{{__('general.list')}}</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{route('vaccancies.create')}}">{{__('general.create')}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-list-check-2"></i>
+                                        <span>{{__('general.counters')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('counters.index')}}">{{__('general.list')}}</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{route('counters.create')}}">{{__('general.create')}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-list-check-2"></i>
+                                        <span>{{__('general.contacts')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('contacts.index')}}">{{__('general.list')}}</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{route('contacts.create')}}">{{__('general.create')}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-list-check-2"></i>
+                                        <span>{{__('general.videos')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('videos.index')}}">{{__('general.list')}}</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{route('videos.create')}}">{{__('general.create')}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-list-check-2"></i>
+                                        <span>{{__('general.messages')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('messages.index')}}">{{__('general.list')}}</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{route('messages.create')}}">{{__('general.create')}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-list-check-2"></i>
+                                        <span>{{__('general.newsletters')}}</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="{{route('newsletters.index')}}">{{__('general.list')}}</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{route('newsletters.create')}}">{{__('general.create')}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                                         <i class="ri-list-settings-line"></i>
                                         <span>Attributes</span>
                                     </a>
@@ -89,35 +376,9 @@
                                     </ul>
                                 </li>
 
-                                <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title" href="javascript:void(0)">
-                                        <i class="ri-user-3-line"></i>
-                                        <span>Users</span>
-                                    </a>
-                                    <ul class="sidebar-submenu">
-                                        <li>
-                                            <a href="all-users.html">All users</a>
-                                        </li>
-                                        <li>
-                                            <a href="add-new-user.html">Add new user</a>
-                                        </li>
-                                    </ul>
-                                </li>
 
-                                <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title" href="javascript:void(0)">
-                                        <i class="ri-user-3-line"></i>
-                                        <span>Roles</span>
-                                    </a>
-                                    <ul class="sidebar-submenu">
-                                        <li>
-                                            <a href="{{route('roles.index')}}">All roles</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{route('roles.create')}}">Create Role</a>
-                                        </li>
-                                    </ul>
-                                </li>
+
+
 
                                 <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav" href="media.html">
@@ -199,12 +460,12 @@
 
                                 <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-                                        <i class="ri-settings-line"></i>
-                                        <span>Settings</span>
+                                        <i class=""></i>
+                                        <span>{{__('general.settings')}}</span>
                                     </a>
                                     <ul class="sidebar-submenu">
                                         <li>
-                                            <a href="profile-setting.html">Profile Setting</a>
+                                            <a href="{{route('edit.setting')}}">{{__('general.Profile Setting')}}</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -232,3 +493,7 @@
                 </div>
             </div>
             <!-- Page Sidebar Ends-->
+
+
+
+

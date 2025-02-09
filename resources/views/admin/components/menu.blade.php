@@ -4,14 +4,14 @@
                 <div class="header-logo-wrapper p-0">
                     <div class="logo-wrapper">
                         <a href="{{route('dashboard')}}">
-                            <img class="img-fluid main-logo" src="{{asset("admin/assets/images/logo/1.png")}}" alt="logo">
-                            <img class="img-fluid white-logo" src="{{asset("admin/assets/images/logo/1-white.png")}}" alt="logo">
+                            <img class="img-fluid main-logo" src="{{asset(settings()->logo)}}" alt="logo">
+                            <img class="img-fluid white-logo" src="{{asset(settings()->logo)}}" alt="logo">
                         </a>
                     </div>
                     <div class="toggle-sidebar">
                         <i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i>
                         <a href="{{route('dashboard')}}">
-                            <img src="{{asset("admin/assets/images/logo/1.png")}}" class="img-fluid" alt="">
+                            <img src="{{asset(settings()->logo)}}" class="img-fluid" alt="">
                         </a>
                     </div>
                 </div>
@@ -21,10 +21,10 @@
                         <div class="Typeahead Typeahead--twitterUsers">
                             <div class="u-posRelative">
                                 <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text"
-                                    placeholder="Search Fastkart .." name="q" title="" autofocus>
+                                    placeholder="{{__("general.search")}} .." name="q" title="" autofocus>
                                 <i class="close-search" data-feather="x"></i>
                                 <div class="spinner-border Typeahead-spinner" role="status">
-                                    <span class="sr-only">Loading...</span>
+                                    <span class="sr-only">{{__("general.loading")}}...</span>
                                 </div>
                             </div>
                             <div class="Typeahead-menu"></div>
@@ -91,7 +91,7 @@
                                 <i class="ri-moon-line"></i>
                             </div>
                         </li>
-                        
+
                         <li class="profile-nav onhover-dropdown pe-0 me-0">
                             <div class="media profile-media">
                                 <img class="user-profile rounded-circle" src="{{asset("admin/assets/images/users/4.jpg")}}" alt="">
