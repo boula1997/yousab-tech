@@ -47,7 +47,7 @@
                                                         </div>
                                                     </td>
 
-                                                    <td>{{ $product->title }}</td>
+                                                    <td class="text-start">{{ $product->title }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'products',
