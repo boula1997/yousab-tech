@@ -9,7 +9,7 @@
                     <div class="card card-table">
                         <div class="card-body">
                             <div class="title-header option-title d-sm-flex d-block">
-                                <h5>{{'general.products'}}</h5>
+                                <h5>{{'general.newsletters'}}</h5>
                                 <div class="right-options">
                                     <ul>
                                         <li>
@@ -19,14 +19,14 @@
                                             <a href="javascript:void(0)">Export</a>
                                         </li>
                                         <li>
-                                            <a class="btn btn-solid" href="{{route('products.create')}}">{{__('general.create')}}</a>
+                                            <a class="btn btn-solid" href="{{route('newsletters.create')}}">{{__('general.create')}}</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             <div>
                                 <div class="table-responsive">
-                                    <table class="table all-package theme-table table-product" id="table_id">
+                                    <table class="table all-package theme-table table-newsletter" id="table_id">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
@@ -37,22 +37,22 @@
                                         </thead>
 
                                         <tbody>
-                                            @foreach ($products as $product)
+                                            @foreach ($data as $newsletter)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>
                                                         <div class="table-image">
-                                                            <img src="{{ $product->image }}"
+                                                            <img src="{{ $newsletter->image }}"
                                                                 class="img-fluid" alt="">
                                                         </div>
                                                     </td>
 
-                                                    <td class="text-start">{{ $product->title }}</td>
+                                                    <td class="text-start">{{ $newsletter->name }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
-                                                            'route' => 'products',
-                                                            'role' => 'product',
-                                                            'module' => $product,
+                                                            'route' => 'newsletters',
+                                                            'role' => 'newsletter',
+                                                            'module' => $newsletter,
                                                         ])
                                                     </td>
                                                 </tr>

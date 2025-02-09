@@ -9,7 +9,7 @@
                     <div class="card card-table">
                         <div class="card-body">
                             <div class="title-header option-title d-sm-flex d-block">
-                                <h5>{{'general.products'}}</h5>
+                                <h5>{{'general.messages'}}</h5>
                                 <div class="right-options">
                                     <ul>
                                         <li>
@@ -19,14 +19,14 @@
                                             <a href="javascript:void(0)">Export</a>
                                         </li>
                                         <li>
-                                            <a class="btn btn-solid" href="{{route('products.create')}}">{{__('general.create')}}</a>
+                                            <a class="btn btn-solid" href="{{route('messages.create')}}">{{__('general.create')}}</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             <div>
                                 <div class="table-responsive">
-                                    <table class="table all-package theme-table table-product" id="table_id">
+                                    <table class="table all-package theme-table table-message" id="table_id">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
@@ -37,22 +37,22 @@
                                         </thead>
 
                                         <tbody>
-                                            @foreach ($products as $product)
+                                            @foreach ($data as $message)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>
                                                         <div class="table-image">
-                                                            <img src="{{ $product->image }}"
+                                                            <img src="{{ $message->image }}"
                                                                 class="img-fluid" alt="">
                                                         </div>
                                                     </td>
 
-                                                    <td class="text-start">{{ $product->title }}</td>
+                                                    <td class="text-start">{{ $message->name }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
-                                                            'route' => 'products',
-                                                            'role' => 'product',
-                                                            'module' => $product,
+                                                            'route' => 'messages',
+                                                            'role' => 'message',
+                                                            'module' => $message,
                                                         ])
                                                     </td>
                                                 </tr>
