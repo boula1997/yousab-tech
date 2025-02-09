@@ -1,98 +1,82 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Content Wrapper. Contains message content -->
-    <div class="content-wrapper">
-        <div class="conainer p-5">
-
-            <!-- Main content -->
-            <section class="content pt-2">
-                <div class="container-fluid">
-                    <div class="row">
-                        <!-- left column -->
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <!-- general form elements -->
-                                    <div class="row">
-                                        <div class="col-md-6 d-flex d-flex justify-content-start">
-                                            <h1 class="card-title fw-bold">@lang('general.messages')</h3>
-                                        </div>
-                                    </div>
+    <!-- Container-fluid starts-->
+    <div class="page-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card card-table">
+                        <div class="card-body">
+                            <div class="title-header option-title d-sm-flex d-block">
+                                <h5>{{'general.products'}}</h5>
+                                <div class="right-options">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0)">import</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">Export</a>
+                                        </li>
+                                        <li>
+                                            <a class="btn btn-solid" href="{{route('products.create')}}">{{__('general.create')}}</a>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    
-                                    <table id="example1" class="table  table-hover">
-                                        <thead class="h-2">
-                                            <tr class="p-0 m-0">
+                            </div>
+                            <div>
+                                <div class="table-responsive">
+                                    <table class="table all-package theme-table table-product" id="table_id">
+                                        <thead>
+                                            <tr>
                                                 <th>#</th>
-                                                <th>@lang('general.name')</th>
-                                                <th>@lang('general.email')</th>
+                                                <th>@lang('general.image')</th>
+                                                <th>@lang('general.title')</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
                                         </thead>
+
                                         <tbody>
-                                            @foreach ($data as $message)
-                                                <tr class="p-0 m-0">
+                                            @foreach ($products as $product)
+                                                <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $message->name }}</td>
-                                                    <td>{{ $message->email }}</td>
+                                                    <td>
+                                                        <div class="table-image">
+                                                            <img src="{{ $product->image }}"
+                                                                class="img-fluid" alt="">
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="text-start">{{ $product->title }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
-                                                            'route' => 'messages',
-                                                            'role' => 'message',
-                                                            'module' => $message,
+                                                            'route' => 'products',
+                                                            'role' => 'product',
+                                                            'module' => $product,
                                                         ])
                                                     </td>
                                                 </tr>
                                             @endforeach
-    
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-    
                         </div>
-    
                     </div>
-    
-                </div><!-- /.container-fluid -->
-            </section>
-            <!-- /.content -->
+                </div>
+            </div>
+        </div>
+        <!-- Container-fluid Ends-->
+
+        <div class="container-fluid">
+            <!-- footer start-->
+            <footer class="footer">
+                <div class="row">
+                    <div class="col-md-12 footer-copyright text-center">
+                        <p class="mb-0">{{settings()->copyright}}</p>
+                    </div>
+                </div>
+            </footer>
         </div>
     </div>
-    <!-- /.content-wrapper -->
 @endsection
-
-
-@push('scripts')
-    <script>
-        $(function() {
-            // Define a unique key for your DataTable state in localStorage
-            const tableStateKey = "coursesTableState";
-
-            // Initialize DataTable with stateSave and custom state management
-            var table = $("#example1").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-                "paging": true,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-                "stateSave": true, // Enable state saving
-                "stateLoadCallback": function(settings) {
-                    // Load the state from localStorage
-                    var savedState = localStorage.getItem(tableStateKey);
-                    return savedState ? JSON.parse(savedState) : null;
-                },
-                "stateSaveCallback": function(settings, data) {
-                    // Save the state to localStorage
-                    localStorage.setItem(tableStateKey, JSON.stringify(data));
-                }
-            });
-
-            // Append DataTable buttons to container
-            table.buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        });
-    </script>
-@endpush
