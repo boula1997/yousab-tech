@@ -1,11 +1,11 @@
 @extends('admin.components.form')
-@section('form_action', route('products.update', $product->id))
+@section('form_action', route('users.update', $user->id))
 @section('form_type', 'POST')
 @section('fields_content')
     @method('put')
     <div class="page-body">
 
-        <!-- New Product Add Start -->
+        <!-- New user Add Start -->
         <div class="container-fluid">
 
 
@@ -20,79 +20,29 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="title-header option-title">
-                                        <h5>{{ __('general.edit') }} {{ __('general.products') }}</h5>
+                                        <h5>{{ __('general.edit') }} {{ __('general.users') }}</h5>
                                     </div>
-                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                        @foreach (config('translatable.locales') as $key => $locale)
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link @if ($key == 0) active @endif"
-                                                    id="pills-{{ $locale }}-tab" data-bs-toggle="pill"
-                                                    data-bs-target="#pills-{{ $locale }}"
-                                                    type="button">@lang('general.' . $locale)</button>
-                                            </li>
-                                        @endforeach
-                                    </ul>
+<!-- Normal title input --> <div class="mb-4 row align-items-center"> <label class="form-label-title col-sm-3 mb-0">{{ __('general.name') }} <span class="text-danger"> * </span></label> <div class="col-sm-9"> <input type="text" name="name" placeholder="{{ __('general.name') }}" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $user->name) }}"> </div> </div>
 
-                                    <div class="tab-content" id="pills-tabContent">
-                                        @foreach (config('translatable.locales') as $key => $locale)
-                                            <div class="tab-pane fade show @if ($key == 0) active @endif"
-                                                id="pills-{{ $locale }}" role="tabpanel">
-                                                <!-- Normal title input -->
-                                                <div class="mb-4 row align-items-center"> <label
-                                                        class="form-label-title col-sm-3 mb-0">{{ __('general.title') }} -
-                                                        @lang('general.' . $locale)<span class="text-danger"> * </span></label>
-                                                    <div class="col-sm-9"> <input type="text"
-                                                            name="{{ $locale . '[title]' }}"
-                                                            placeholder="{{ __('general.title') }}"
-                                                            class="form-control @error('title') invalid @enderror @error($locale . '.title') is-invalid @enderror"
-                                                            value="{{ old($locale . '.title', $product->translate($locale)->title) }}"> </div>
-                                                </div>
+<!-- Normal title input --> <div class="mb-4 row align-items-center"> <label class="form-label-title col-sm-3 mb-0">{{ __('general.email') }} <span class="text-danger"> * </span></label> <div class="col-sm-9"> <input type="email" placeholder="{{ __('general.email') }}" class="form-control @error('email') is-invalid @enderror" value="{{ old('email',$user->email) }}" name="email"> </div> </div>
 
-                                                <!-- Normal title input -->
-                                                <div class="mb-4 row align-items-center"> <label
-                                                        class="form-label-title col-sm-3 mb-0">{{ __('general.subtitle') }}
-                                                        - @lang('general.' . $locale)<span class="text-danger"> * </span></label>
-                                                    <div class="col-sm-9"> <input type="text"
-                                                            name="{{ $locale . '[subtitle]' }}"
-                                                            placeholder="{{ __('general.subtitle') }}"
-                                                            class="form-control @error('subtitle') invalid @enderror @error($locale . '.subtitle') is-invalid @enderror"
-                                                            value="{{ old($locale . '.subtitle', $product->translate($locale)->subtitle) }}">
-                                                    </div>
-                                                </div>
+<!-- Normal title input --> <div class="mb-4 row align-items-center"> <label class="form-label-title col-sm-3 mb-0">{{ __('general.email_verified_at') }} <span class="text-danger"> * </span></label> <div class="col-sm-9"> <input type="datetime-local" id="dateTimeInput" placeholder="{{ __('general.email_verified_at') }}" class="form-control @error('email_verified_at') is-invalid @enderror" value="{{ old('email_verified_at',$user->email_verified_at) }}" name="email_verified_at"> </div> </div>
 
-                                                <!-- Normal title input -->
-                                                <div class="mb-4 row align-items-center"> <label
-                                                        class="form-label-title col-sm-3 mb-0">{{ __('general.description') }}
-                                                        - @lang('general.' . $locale)<span class="text-danger"> * </span></label>
-                                                    <div class="col-sm-9">
-                                                        <textarea rows="100" class="summernote @error($locale . '.description') is-invalid @enderror"
-                                                            name="{{ $locale . '[description]' }}"> {!! old($locale . '.description', $product->translate($locale)->description) !!} </textarea>
-                                                    </div>
-                                                </div>
+<!-- Normal title input --> <div class="mb-4 row align-items-center"> <label class="form-label-title col-sm-3 mb-0">{{ __('general.created_at') }} <span class="text-danger"> * </span></label> <div class="col-sm-9"> <input type="datetime-local" id="dateTimeInput" placeholder="{{ __('general.created_at') }}" class="form-control @error('created_at') is-invalid @enderror" value="{{ old('created_at',$user->created_at) }}" name="created_at"> </div> </div>
 
-                                            </div>
-                                        @endforeach
-                                    </div>
+<!-- Normal title input --> <div class="mb-4 row align-items-center"> <label class="form-label-title col-sm-3 mb-0">{{ __('general.updated_at') }} <span class="text-danger"> * </span></label> <div class="col-sm-9"> <input type="datetime-local" id="dateTimeInput" placeholder="{{ __('general.updated_at') }}" class="form-control @error('updated_at') is-invalid @enderror" value="{{ old('updated_at',$user->updated_at) }}" name="updated_at"> </div> </div>
 
                                     {{-- Image Input --}} 
                                     <div class="row">
                                         <div class="col-md-6"> @include('admin.components.image', [
                                             'label' => __('general.image'),
-                                            'value' => old('image', $product->image),
+                                            'value' => old('image', $user->image),
                                             'name' => 'image',
                                             'id' => 'kt_image_3',
                                             'accept' => 'image/*',
                                             'required' => true,
                                         ]) </div>
 
-                                        <div class="col-md-6">
-                                            @include('admin.components.icon', [
-                                                'label' => 'icon',
-                                                'required' => true,
-                                                'value' => 'fas fa-desktop',
-                                            ])
-
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="card-submit-button">
@@ -104,7 +54,7 @@
                 </div>
             </div>
         </div>
-        <!-- New Product Add End -->
+        <!-- New user Add End -->
     </div>
 
 @endsection

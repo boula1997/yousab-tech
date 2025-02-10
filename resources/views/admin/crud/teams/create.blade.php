@@ -1,11 +1,11 @@
 @extends('admin.components.form')
-@section('form_action', route('products.store'))
+@section('form_action', route('teams.store'))
 @section('form_type', 'POST')
 @section('fields_content')
 
     <div class="page-body">
 
-        <!-- New Product Add Start -->
+        <!-- New team Add Start -->
         <div class="container-fluid">
 
 
@@ -20,7 +20,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="title-header option-title">
-                                        <h5>{{ __('general.create') }} {{ __('general.products') }}</h5>
+                                        <h5>{{ __('general.create') }} {{ __('general.teams') }}</h5>
                                     </div>
                                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                         @foreach (config('translatable.locales') as $key => $locale)
@@ -69,8 +69,69 @@
                                                     </div>
                                                 </div>
 
+
                                             </div>
                                         @endforeach
+                                    </div>
+
+                                    <!-- Normal title input -->
+                                    <div class="mb-4 row align-items-center"> <label
+                                            class="form-label-title col-sm-3 mb-0">{{ __('general.facebook') }} <span
+                                                class="text-danger"> * </span></label>
+                                        <div class="col-sm-9"> <input type="text" name="facebook"
+                                                placeholder="{{ __('general.facebook') }}"
+                                                class="form-control @error('facebook') is-invalid @enderror"
+                                                value="{{ old('facebook') }}"> </div>
+                                    </div>
+
+                                    <!-- Normal title input -->
+                                    <div class="mb-4 row align-items-center"> <label
+                                            class="form-label-title col-sm-3 mb-0">{{ __('general.twitter') }} <span
+                                                class="text-danger"> * </span></label>
+                                        <div class="col-sm-9"> <input type="text" name="twitter"
+                                                placeholder="{{ __('general.twitter') }}"
+                                                class="form-control @error('twitter') is-invalid @enderror"
+                                                value="{{ old('twitter') }}"> </div>
+                                    </div>
+
+                                    <!-- Normal title input -->
+                                    <div class="mb-4 row align-items-center"> <label
+                                            class="form-label-title col-sm-3 mb-0">{{ __('general.instagram') }} <span
+                                                class="text-danger"> * </span></label>
+                                        <div class="col-sm-9"> <input type="text" name="instagram"
+                                                placeholder="{{ __('general.instagram') }}"
+                                                class="form-control @error('instagram') is-invalid @enderror"
+                                                value="{{ old('instagram') }}"> </div>
+                                    </div>
+
+                                    <!-- Normal title input -->
+                                    <div class="mb-4 row align-items-center"> <label
+                                            class="form-label-title col-sm-3 mb-0">{{ __('general.linkedin') }} <span
+                                                class="text-danger"> * </span></label>
+                                        <div class="col-sm-9"> <input type="text" name="linkedin"
+                                                placeholder="{{ __('general.linkedin') }}"
+                                                class="form-control @error('linkedin') is-invalid @enderror"
+                                                value="{{ old('linkedin') }}"> </div>
+                                    </div>
+
+                                    <!-- Normal title input -->
+                                    <div class="mb-4 row align-items-center"> <label
+                                            class="form-label-title col-sm-3 mb-0">{{ __('general.created_at') }} <span
+                                                class="text-danger"> * </span></label>
+                                        <div class="col-sm-9"> <input type="datetime-local" id="dateTimeInput"
+                                                placeholder="{{ __('general.created_at') }}"
+                                                class="form-control @error('created_at') is-invalid @enderror"
+                                                value="{{ old('created_at') }}" name="created_at"> </div>
+                                    </div>
+
+                                    <!-- Normal title input -->
+                                    <div class="mb-4 row align-items-center"> <label
+                                            class="form-label-title col-sm-3 mb-0">{{ __('general.updated_at') }} <span
+                                                class="text-danger"> * </span></label>
+                                        <div class="col-sm-9"> <input type="datetime-local" id="dateTimeInput"
+                                                placeholder="{{ __('general.updated_at') }}"
+                                                class="form-control @error('updated_at') is-invalid @enderror"
+                                                value="{{ old('updated_at') }}" name="updated_at"> </div>
                                     </div>
 
                                     {{-- Image Input --}} <div class="row">
@@ -83,14 +144,6 @@
                                             'required' => true,
                                         ]) </div>
 
-                                        <div class="col-md-6">
-                                            @include('admin.components.icon', [
-                                                'label' => 'icon',
-                                                'required' => true,
-                                                'value' => 'fas fa-desktop',
-                                            ])
-
-                                        </div>
                                     </div>
                                 </div>
 
@@ -103,7 +156,7 @@
                 </div>
             </div>
         </div>
-        <!-- New Product Add End -->
+        <!-- New team Add End -->
     </div>
 
 @endsection

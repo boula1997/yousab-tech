@@ -1,11 +1,11 @@
 @extends('admin.components.form')
-@section('form_action', route('products.store'))
+@section('form_action', route('services.store'))
 @section('form_type', 'POST')
 @section('fields_content')
 
     <div class="page-body">
 
-        <!-- New Product Add Start -->
+        <!-- New service Add Start -->
         <div class="container-fluid">
 
 
@@ -20,7 +20,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="title-header option-title">
-                                        <h5>{{ __('general.create') }} {{ __('general.products') }}</h5>
+                                        <h5>{{ __('general.create') }} {{ __('general.services') }}</h5>
                                     </div>
                                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                         @foreach (config('translatable.locales') as $key => $locale)
@@ -103,7 +103,7 @@
                 </div>
             </div>
         </div>
-        <!-- New Product Add End -->
+        <!-- New service Add End -->
     </div>
 
 @endsection

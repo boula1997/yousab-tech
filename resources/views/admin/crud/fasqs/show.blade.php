@@ -3,7 +3,7 @@
 @section('content')
     <div class="page-body">
 
-        <!-- New Product Add Start -->
+        <!-- New faq Add Start -->
         <div class="container-fluid">
 
 
@@ -15,7 +15,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="title-header option-title">
-                                        <h5>{{ __('general.show') }} {{ __('general.products') }}</h5>
+                                        <h5>{{ __('general.show') }} {{ __('general.faqs') }}</h5>
                                     </div>
                                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                         @foreach (config('translatable.locales') as $key => $locale)
@@ -36,7 +36,7 @@
                                                 <div class="mb-4 row align-items-center">
                                                     <div class="col-sm-6"> <label
                                                             class="form-label-title mb-0">{{ __('general.title') }}</label>
-                                                        <p class="bg-show p-2 mt-2">{{ $product->translate($locale)->title }}</p>
+                                                        <p class="bg-show p-2 mt-2">{{ $faq->translate($locale)->title }}</p>
                                                     </div>
                                                 </div>
 
@@ -44,7 +44,7 @@
                                                 <div class="mb-4 row align-items-center">
                                                     <div class="col-sm-6"> <label
                                                             class="form-label-title mb-0">{{ __('general.subtitle') }}</label>
-                                                        <p class="bg-show p-2 mt-2">{{ $product->translate($locale)->subtitle }}</p>
+                                                        <p class="bg-show p-2 mt-2">{{ $faq->translate($locale)->subtitle }}</p>
                                                     </div>
                                                 </div>
 
@@ -52,7 +52,7 @@
                                                 <div class="mb-4 row align-items-center">
                                                     <div class="col-sm-6"> <label
                                                             class="form-label-title mb-0">{{ __('general.description') }}</label>
-                                                        <p class="bg-show p-2 mt-2">{!! $product->translate($locale)->description !!}</p>
+                                                        <p class="bg-show p-2 mt-2">{!! $faq->translate($locale)->description !!}</p>
                                                     </div>
                                                 </div>
 
@@ -65,7 +65,7 @@
                                         <div class="col-sm-6"> <label
                                                 class="form-label-title mb-0">{{ __('general.image') }}</label> <img
                                                 class="bg-show p-2 mt-2" width="300" height="300"
-                                                src="{{ $product->image }}" alt=""> </div>
+                                                src="{{ $faq->image }}" alt=""> </div>
                                     </div>
                                 </div>
                             </div>
@@ -74,6 +74,6 @@
                 </div>
             </div>
         </div>
-        <!-- New Product Add End -->
+        <!-- New faq Add End -->
     </div>
 @endsection
