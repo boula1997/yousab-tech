@@ -3,7 +3,7 @@
 @section('content')
     <div class="page-body">
 
-        <!-- New Product Add Start -->
+        <!-- New admin Add Start -->
         <div class="container-fluid">
 
 
@@ -14,58 +14,56 @@
                         <div class="col-sm-8 m-auto">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="title-header option-title">
-                                        <h5>{{ __('general.show') }} {{ __('general.products') }}</h5>
+                                    <!-- normal input -->
+                                    <div class="mb-4 row align-items-center">
+                                        <div class="col-sm-6"> <label
+                                                class="form-label-title mb-0">{{ __('general.name') }}</label>
+                                            <p class="bg-show p-2 mt-2">{{ $admin->name }}</p>
+                                        </div>
                                     </div>
-                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                        @foreach (config('translatable.locales') as $key => $locale)
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link @if ($key == 0) active @endif"
-                                                    id="pills-{{ $locale }}-tab" data-bs-toggle="pill"
-                                                    data-bs-target="#pills-{{ $locale }}"
-                                                    type="button">@lang('general.' . $locale)</button>
-                                            </li>
-                                        @endforeach
-                                    </ul>
 
-                                    <div class="tab-content" id="pills-tabContent">
-                                        @foreach (config('translatable.locales') as $key => $locale)
-                                            <div class="tab-pane fade show @if ($key == 0) active @endif"
-                                                id="pills-{{ $locale }}" role="tabpanel">
-                                                <!-- normal input -->
-                                                <div class="mb-4 row align-items-center">
-                                                    <div class="col-sm-6"> <label
-                                                            class="form-label-title mb-0">{{ __('general.title') }}</label>
-                                                        <p class="bg-show p-2 mt-2">{{ $product->translate($locale)->title }}</p>
-                                                    </div>
-                                                </div>
-
-                                                <!-- normal input -->
-                                                <div class="mb-4 row align-items-center">
-                                                    <div class="col-sm-6"> <label
-                                                            class="form-label-title mb-0">{{ __('general.subtitle') }}</label>
-                                                        <p class="bg-show p-2 mt-2">{{ $product->translate($locale)->subtitle }}</p>
-                                                    </div>
-                                                </div>
-
-                                                <!-- normal input -->
-                                                <div class="mb-4 row align-items-center">
-                                                    <div class="col-sm-6"> <label
-                                                            class="form-label-title mb-0">{{ __('general.description') }}</label>
-                                                        <p class="bg-show p-2 mt-2">{!! $product->translate($locale)->description !!}</p>
-                                                    </div>
-                                                </div>
-
+                                    <div class="col-md-6">
+                                        <div class="mb-5 bg-light p-3 rounded h-100">
+                                            <div class="card-title fw-bold">
+                                                <h5 class="font-weight-bolder text-dark">{{ __('general.email') }}: </h5> <a
+                                                    href="mailto:{{ $admin->email }}"
+                                                    style="margin: 0; color: inherit; font-weight: normal;">{{ $admin->email }}</a>
                                             </div>
-                                        @endforeach
+                                        </div>
                                     </div>
 
                                     <!-- normal input -->
                                     <div class="mb-4 row align-items-center">
                                         <div class="col-sm-6"> <label
-                                                class="form-label-title mb-0">{{ __('general.image') }}</label> <img
-                                                class="bg-show p-2 mt-2" width="300" height="300"
-                                                src="{{ $product->image }}" alt=""> </div>
+                                                class="form-label-title mb-0">{{ __('general.type') }}</label>
+                                            <p class="bg-show p-2 mt-2">{{ $admin->type }}</p>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- normal input -->
+                                    <div class="mb-4 row align-items-center">
+                                        <div class="col-sm-6"> <label
+                                                class="form-label-title mb-0">{{ __('general.dark') }}</label>
+                                            <p class="bg-show p-2 mt-2">
+                                                {{ $admin->dark ? _('general.yes') : __('general.no') }}</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- normal input -->
+                                    <div class="mb-4 row align-items-center">
+                                        <div class="col-sm-6"> <label
+                                                class="form-label-title mb-0">{{ __('general.created_at') }}</label>
+                                            <p class="bg-show p-2 mt-2">{{ $admin->created_at }}</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- normal input -->
+                                    <div class="mb-4 row align-items-center">
+                                        <div class="col-sm-6"> <label
+                                                class="form-label-title mb-0">{{ __('general.updated_at') }}</label>
+                                            <p class="bg-show p-2 mt-2">{{ $admin->updated_at }}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -74,6 +72,6 @@
                 </div>
             </div>
         </div>
-        <!-- New Product Add End -->
+        <!-- New admin Add End -->
     </div>
 @endsection
