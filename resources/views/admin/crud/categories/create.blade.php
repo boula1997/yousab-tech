@@ -1,11 +1,11 @@
 @extends('admin.components.form')
-@section('form_action', route('products.store'))
+@section('form_action', route('categories.store'))
 @section('form_type', 'POST')
 @section('fields_content')
 
     <div class="page-body">
 
-        <!-- New Product Add Start -->
+        <!-- New category Add Start -->
         <div class="container-fluid">
 
 
@@ -20,7 +20,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="title-header option-title">
-                                        <h5>{{ __('general.create') }} {{ __('general.products') }}</h5>
+                                        <h5>{{ __('general.create') }} {{ __('general.categories') }}</h5>
                                     </div>
                                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                         @foreach (config('translatable.locales') as $key => $locale)
@@ -37,6 +37,7 @@
                                         @foreach (config('translatable.locales') as $key => $locale)
                                             <div class="tab-pane fade show @if ($key == 0) active @endif"
                                                 id="pills-{{ $locale }}" role="tabpanel">
+
                                                 <!-- Normal title input -->
                                                 <div class="mb-4 row align-items-center"> <label
                                                         class="form-label-title col-sm-3 mb-0">{{ __('general.title') }} -
@@ -103,7 +104,7 @@
                 </div>
             </div>
         </div>
-        <!-- New Product Add End -->
+        <!-- New category Add End -->
     </div>
 
 @endsection

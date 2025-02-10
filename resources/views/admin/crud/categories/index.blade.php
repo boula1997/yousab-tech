@@ -30,8 +30,17 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>@lang('general.image')</th>
-                                                <th>@lang('general.title')</th>
+                                                <th>{{__('general.icon')}}</th>
+
+                                                <th>{{__('general.created_at')}}</th>
+                                                
+                                                <th>{{__('general.updated_at')}}</th>
+                                                
+                                                <th>{{__('general.title')}}</th>
+                                                
+                                                <th>{{__('general.subtitle')}}</th>
+                                                
+                                                <th>{{__('general.description')}}</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
                                         </thead>
@@ -40,14 +49,17 @@
                                             @foreach ($categories as $category)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>
-                                                        <div class="table-image">
-                                                            <img src="{{ $category->image }}"
-                                                                class="img-fluid" alt="">
-                                                        </div>
-                                                    </td>
+                                                    <td>{{ $category->icon }}</td>
 
-                                                    <td class="text-start">{{ $category->title }}</td>
+                                                    <td>{{ $category->created_at }}</td>
+                                                    
+                                                    <td>{{ $category->updated_at }}</td>
+                                                    
+                                                    <td>{{ $category->title }}</td>
+                                                    
+                                                    <td>{{ $category->subtitle }}</td>
+                                                    
+                                                    <td>{{ $category->description }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'categories',
