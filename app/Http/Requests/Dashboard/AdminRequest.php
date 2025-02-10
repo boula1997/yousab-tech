@@ -30,7 +30,7 @@ class AdminRequest extends FormRequest
         return [
             'image' => $image,
             'name' => 'required',
-            'email' => ['required','email',Rule::unique('admins', 'email')->ignore($this->id)],
+            'email' => $email,
             'password' => 'required_without:_method|same:confirm-password',
             'roles' => 'required'
         ];
