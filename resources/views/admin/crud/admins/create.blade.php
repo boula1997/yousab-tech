@@ -42,17 +42,23 @@
                                                 value="{{ old('email') }}" name="email"> </div>
                                     </div>
 
-                                    <!-- Normal title input -->
+
+
                                     <div class="mb-4 row align-items-center"> <label
-                                            class="form-label-title col-sm-3 mb-0">{{ __('general.type') }} <span
-                                                class="text-danger"> * </span></label>
-                                        <div class="col-sm-9"> <input type="text" name="type"
-                                                placeholder="{{ __('general.type') }}"
-                                                class="form-control @error('type') is-invalid @enderror"
-                                                value="{{ old('type') }}"> </div>
+                                            class="col-sm-3 col-form-label form-label-title">{{ __('general.select') }}</label>
+                                        <div class="col-sm-9"> <select class="js-example-basic-single w-100" name="role_id"
+                                                id="role">
+                                                <option value="">{{ __('general.select') }}</option>
+                                                @foreach ($roles as $role)
+                                                    <option value="{{ $role->id }}"
+                                                        {{ old('role_id') == $role->id ? 'selected' : '' }}>
+                                                        {{ $role->name }} </option>
+                                                @endforeach
+                                            </select> </div>
                                     </div>
 
-                                    {{-- Checkbox Input --}} 
+
+                                    {{-- Checkbox Input --}}
                                     <div class="mb-4 row align-items-center">
                                         <div class="col-md-9">
                                             <div class="form-check user-checkbox ps-0"> <input @checked(old('dark'))
