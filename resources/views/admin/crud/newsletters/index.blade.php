@@ -30,8 +30,11 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>@lang('general.image')</th>
-                                                <th>@lang('general.title')</th>
+                                                <th>{{__('general.newsletterEmail')}}</th>
+
+                                                <th>{{__('general.created_at')}}</th>
+
+                                                <th>{{__('general.updated_at')}}</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
                                         </thead>
@@ -40,14 +43,12 @@
                                             @foreach ($data as $newsletter)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>
-                                                        <div class="table-image">
-                                                            <img src="{{ $newsletter->image }}"
-                                                                class="img-fluid" alt="">
-                                                        </div>
-                                                    </td>
 
-                                                    <td class="text-start">{{ $newsletter->name }}</td>
+                                                    <td>{{ $newsletter->newsletterEmail }}</td>
+
+                                                    <td>{{ $newsletter->created_at }}</td>
+                                                    
+                                                    <td>{{ $newsletter->updated_at }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'newsletters',

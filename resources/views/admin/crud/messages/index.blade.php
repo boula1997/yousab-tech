@@ -30,8 +30,17 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>@lang('general.image')</th>
-                                                <th>@lang('general.title')</th>
+                                                <th>{{__('general.name')}}</th>
+
+                                                <th>{{__('general.email')}}</th>
+
+                                                <th>{{__('general.phone')}}</th>
+
+                                                <th>{{__('general.message')}}</th>
+
+                                                <th>{{__('general.created_at')}}</th>
+
+                                                <th>{{__('general.updated_at')}}</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
                                         </thead>
@@ -40,14 +49,19 @@
                                             @foreach ($data as $message)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>
-                                                        <div class="table-image">
-                                                            <img src="{{ $message->image }}"
-                                                                class="img-fluid" alt="">
-                                                        </div>
-                                                    </td>
 
-                                                    <td class="text-start">{{ $message->name }}</td>
+
+                                                    <td>{{ $message->name }}</td>
+
+                                                    <td>{{ $message->email }}</td>
+                                                    
+                                                    <td>{{ $message->phone }}</td>
+                                                    
+                                                    <td>{{ $message->message }}</td>
+                                                    
+                                                    <td>{{ $message->created_at }}</td>
+                                                    
+                                                    <td>{{ $message->updated_at }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'messages',

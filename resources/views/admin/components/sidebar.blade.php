@@ -311,7 +311,7 @@
                                     </ul>
                                 </li>
 
-                                <li class="sidebar-list">
+                                {{-- <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                                         <i class="ri-list-check-2"></i>
                                         <span>{{__('general.videos')}}</span>
@@ -325,7 +325,7 @@
                                             <a href="{{route('videos.create')}}">{{__('general.create')}}</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
 
                                 <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
@@ -360,7 +360,7 @@
                                 </li>
 
 
-                                <li class="sidebar-list">
+                                {{-- <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                                         <i class="ri-list-settings-line"></i>
                                         <span>Attributes</span>
@@ -374,20 +374,20 @@
                                             <a href="add-new-attributes.html">Add Attributes</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
 
 
 
 
 
-                                <li class="sidebar-list">
+                                {{-- <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav" href="media.html">
                                         <i class="ri-price-tag-3-line"></i>
                                         <span>Media</span>
                                     </a>
-                                </li>
+                                </li> --}}
 
-                                <li class="sidebar-list">
+                                {{-- <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title" href="javascript:void(0)">
                                         <i class="ri-archive-line"></i>
                                         <span>Orders</span>
@@ -403,9 +403,9 @@
                                             <a href="order-tracking.html">Order Tracking</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
 
-                                <li class="sidebar-list">
+                                {{-- <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                                         <i class="ri-focus-3-line"></i>
                                         <span>Localization</span>
@@ -419,9 +419,9 @@
                                             <a href="currency-rates.html">Currency Rates</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
 
-                                <li class="sidebar-list">
+                                {{-- <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                                         <i class="ri-price-tag-3-line"></i>
                                         <span>Coupons</span>
@@ -435,28 +435,28 @@
                                             <a href="create-coupon.html">Create Coupon</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
 
-                                <li class="sidebar-list">
+                                {{-- <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav" href="taxes.html">
                                         <i class="ri-price-tag-3-line"></i>
                                         <span>Tax</span>
                                     </a>
-                                </li>
-
+                                </li> --}}
+{{-- 
                                 <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav" href="product-review.html">
                                         <i class="ri-star-line"></i>
                                         <span>Product Review</span>
                                     </a>
-                                </li>
+                                </li> --}}
 
-                                <li class="sidebar-list">
+                                {{-- <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav" href="support-ticket.html">
                                         <i class="ri-phone-line"></i>
                                         <span>Support Ticket</span>
                                     </a>
-                                </li>
+                                </li> --}}
 
                                 <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
@@ -470,12 +470,12 @@
                                     </ul>
                                 </li>
 
-                                <li class="sidebar-list">
+                                {{-- <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav" href="reports.html">
                                         <i class="ri-file-chart-line"></i>
                                         <span>Reports</span>
                                     </a>
-                                </li>
+                                </li> --}}
 
                                 <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav" href="list-page.html">
