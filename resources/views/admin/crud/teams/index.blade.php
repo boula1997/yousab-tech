@@ -39,16 +39,16 @@
                                                 <th>{{ __('general.instagram') }}</th>
 
                                                 <th>{{ __('general.linkedin') }}</th>
-
-                                                <th>{{ __('general.created_at') }}</th>
-
-                                                <th>{{ __('general.updated_at') }}</th>
-
+                                                
                                                 <th>{{ __('general.title') }}</th>
-
+                                                
                                                 <th>{{ __('general.subtitle') }}</th>
-
+                                                
                                                 <th>{{ __('general.description') }}</th>
+                                                
+                                                                                                <th>{{ __('general.created_at') }}</th>
+                                                
+                                                                                                <th>{{ __('general.updated_at') }}</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
                                         </thead>
@@ -73,15 +73,15 @@
 
                                                     <td>{{ $team->linkedin }}</td>
 
+                                                    
+                                                    <td>{{ $team->title }}</td>
+                                                    
+                                                    <td>{{ $team->subtitle }}</td>
+                                                    
+                                                    <td>{{ $team->description }}</td>
                                                     <td>{{ $team->created_at }}</td>
 
                                                     <td>{{ $team->updated_at }}</td>
-
-                                                    <td>{{ $team->title }}</td>
-
-                                                    <td>{{ $team->subtitle }}</td>
-
-                                                    <td>{{ $team->description }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'teams',

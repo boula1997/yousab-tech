@@ -32,11 +32,12 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>@lang('general.image')</th>
+                                                
+                                                <th>{{ __('general.title') }}</th>
                                                 <th>{{ __('general.created_at') }}</th>
 
                                                 <th>{{ __('general.updated_at') }}</th>
-
-                                                <th>{{ __('general.title') }}</th>
+                                                
                                                 <th>@lang('general.controls')</th>
                                             </tr>
                                         </thead>
@@ -52,11 +53,11 @@
                                                         </div>
                                                     </td>
 
+                                                    
+                                                    <td>{{ $partner->title }}</td>
                                                     <td>{{ $partner->created_at }}</td>
 
                                                     <td>{{ $partner->updated_at }}</td>
-
-                                                    <td>{{ $partner->title }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'partners',

@@ -32,15 +32,15 @@
                                                 <th>#</th>
                                                 <th>{{__('general.icon')}}</th>
 
-                                                <th>{{__('general.created_at')}}</th>
-                                                
-                                                <th>{{__('general.updated_at')}}</th>
                                                 
                                                 <th>{{__('general.title')}}</th>
                                                 
                                                 <th>{{__('general.subtitle')}}</th>
                                                 
                                                 <th>{{__('general.description')}}</th>
+                                                <th>{{__('general.created_at')}}</th>
+                                                
+                                                <th>{{__('general.updated_at')}}</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
                                         </thead>
@@ -51,15 +51,15 @@
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $category->icon }}</td>
 
-                                                    <td>{{ $category->created_at }}</td>
-                                                    
-                                                    <td>{{ $category->updated_at }}</td>
                                                     
                                                     <td>{{ $category->title }}</td>
                                                     
                                                     <td>{{ $category->subtitle }}</td>
                                                     
                                                     <td>{{ $category->description }}</td>
+                                                    <td>{{ $category->created_at }}</td>
+                                                    
+                                                    <td>{{ $category->updated_at }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'categories',

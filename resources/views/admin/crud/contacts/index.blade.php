@@ -30,8 +30,10 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>@lang('general.image')</th>
+                                                <th>@lang('general.icon')</th>
                                                 <th>@lang('general.title')</th>
+                                                <th>{{__('general.created_at')}}</th>
+                                                <th>{{__('general.updated_at')}}</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
                                         </thead>
@@ -47,6 +49,9 @@
                                                     </td>
 
                                                     <td class="text-start">{{ $contact->contact }}</td>
+                                                    <td>{{ $category->created_at }}</td>
+                                                    
+                                                    <td>{{ $category->updated_at }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'contacts',
