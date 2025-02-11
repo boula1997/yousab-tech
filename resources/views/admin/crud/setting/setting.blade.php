@@ -65,7 +65,7 @@
                                                         class="form-label-title col-sm-3 mb-0">{{ __('general.description') }}
                                                         - @lang('general.' . $locale)<span class="text-danger"> * </span></label>
                                                     <div class="col-sm-9">
-                                                        <textarea rows="100" class="summernote @error($locale . '.description') is-invalid @enderror"
+                                                        <textarea rows="10" class="summernote @error($locale . '.description') is-invalid @enderror"
                                                             name="{{ $locale . '[description]' }}"> {!! old($locale . '.description', $setting->translate($locale)->description) !!} </textarea>
                                                     </div>
                                                 </div>
@@ -99,7 +99,7 @@
                                                         class="form-label-title col-sm-3 mb-0">{{ __('general.meta_data') }}
                                                         - @lang('general.' . $locale)<span class="text-danger"> * </span></label>
                                                     <div class="col-sm-9">
-                                                        <textarea rows="100" class="summernote @error($locale . '.meta_data') is-invalid @enderror"
+                                                        <textarea rows="10" class="summernote @error($locale . '.meta_data') is-invalid @enderror"
                                                             name="{{ $locale . '[meta_data]' }}"> {!! old($locale . '.meta_data', $setting->translate($locale)->meta_data) !!} </textarea>
                                                     </div>
                                                 </div>
@@ -157,7 +157,7 @@
                                             class="form-label-title mb-0">{{ __('general.map') }} <span
                                                 class="text-danger"> * </span></label>
                                         <div class="col-12">
-                                            <textarea rows="20" class=" @error('map') is-invalid @enderror" name="{{ 'map' }}"> {!! old('map', $setting->map) !!} </textarea>
+                                            <textarea rows="10" class=" @error('map') is-invalid @enderror" name="{{ 'map' }}"> {!! old('map', $setting->map) !!} </textarea>
                                         </div>
                                     </div>
                                 </div>
