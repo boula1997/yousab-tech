@@ -12,6 +12,37 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+
+    "delete_item" => "حذف العنصر",  
+
+"show_all" => "عرض الكل",  
+
+"cancel" => "إلغاء",  
+
+"no_result" => "لا توجد نتائج",  
+
+"loading" => "جاري التحميل",  
+
+"list" => "قائمة",  
+
+"catgeories" => "الفئات",  
+
+"dark" => "داكن",  
+
+"newsletterEmail" => "البريد الإلكتروني للنشرة الإخبارية",  
+
+"Dashboard" => "لوحة التحكم",  
+
+"Password" => "كلمة المرور",  
+
+"Confirm" => "تأكيد",  
+
+"Email" => "البريد الإلكتروني",  
+
+"Register" => "تسجيل",  
+
+"Name" => "الاسم",  
+
     'vaccancies'=>'العمل المتاح',
     'complains'=>'الشكاوي',
     'home'  => 'الرئيسية',

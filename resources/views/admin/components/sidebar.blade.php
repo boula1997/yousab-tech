@@ -263,7 +263,7 @@
                                     </ul>
                                 </li>
 
-                                <li class="sidebar-list">
+                                {{-- <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                                         <i class="ri-list-check-2"></i>
                                         <span>{{__('general.vaccancies')}}</span>
@@ -277,7 +277,7 @@
                                             <a href="{{route('vaccancies.create')}}">{{__('general.create')}}</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
 
                                 <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">

@@ -12,6 +12,38 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+
+
+
+"delete_item" => "Delete item",
+
+"show_all" => "Show all",
+
+"cancel" => "Cancel",
+
+"no_result" => "No result",
+
+"loading" => "Loading",
+
+"list" => "List",
+
+"catgeories" => "Catgeories",
+
+"dark" => "Dark",
+
+"newsletterEmail" => "NewsletterEmail",
+
+"Dashboard" => "Dashboard",
+
+"Password" => "Password",
+
+"Confirm" => "Confirm",
+
+"Email" => "Email",
+
+"Register" => "Register",
+
+"Name" => "Name",
     'vaccancies'=>'Vaccancy',
     'complains'=>'Complain',
     'home'  => 'Home',
