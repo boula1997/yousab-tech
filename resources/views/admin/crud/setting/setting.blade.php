@@ -38,15 +38,6 @@
                                             <div class="tab-pane fade show @if ($key == 0) active @endif"
                                                 id="pills-{{ $locale }}" role="tabpanel">
 
-                                                <!-- Normal title input -->
-                                                <div class="mb-4 row align-items-center"> <label
-                                                        class="form-label-title col-sm-3 mb-0">{{ __('general.address') }}
-                                                        <span class="text-danger"> * </span></label>
-                                                    <div class="col-sm-9"> <input type="text" name="address"
-                                                            placeholder="{{ __('general.address') }}"
-                                                            class="form-control @error('address') is-invalid @enderror"
-                                                            value="{{ old('address', $setting->address) }}"> </div>
-                                                </div>
 
                                                 <!-- Normal title input -->
                                                 <div class="mb-4 row align-items-center"> <label
@@ -93,6 +84,18 @@
                                                             value="{{ old($locale . '.copyright', $setting->translate($locale)->copyright) }}">
                                                     </div>
                                                 </div>
+
+
+                                                                                                <!-- Normal title input -->
+                                                                                                <div class="mb-4 row align-items-center"> <label
+                                                                                                    class="form-label-title col-sm-3 mb-0">{{ __('general.address') }}
+                                                                                                    <span class="text-danger"> * </span></label>
+                                                                                                <div class="col-sm-9"> <input type="text" name="address"
+                                                                                                        placeholder="{{ __('general.address') }}"
+                                                                                                        class="form-control @error('address') is-invalid @enderror"
+                                                                                                        value="{{ old('address', $setting->address) }}"> </div>
+                                                                                            </div>
+                                            
 
                                                 <!-- Normal title input -->
                                                 <div class="mb-4 row align-items-center"> <label
