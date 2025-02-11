@@ -151,7 +151,7 @@
                                     </div>
                                 </div>
                                 <div class="card-submit-button">
-                                    <button class="btn btn-animation ms-auto" type="submit">Submit</button>
+                                    <button class="btn btn-animation ms-auto" type="submit">{{__('general.submit')}}</button>
                                 </div>
                             </div>
                         </div>
