@@ -95,7 +95,7 @@
 
                         <li class="profile-nav onhover-dropdown pe-0 me-0">
                             <div class="media profile-media">
-                                <img class="user-profile rounded-circle" src="{{asset("admin/assets/images/users/4.jpg")}}" alt="">
+                                <img class="user-profile rounded-circle" src="{{auth()->user()->image}}" alt="">
                                 <div class="user-name-hide media-body">
                                     <span>{{auth('admin')->user()->name}}</span>
                                     <p class="mb-0 font-roboto">{{auth('admin')->user()->type}}<i class="middle ri-arrow-down-s-line"></i></p>

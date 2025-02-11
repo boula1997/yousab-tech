@@ -101,7 +101,7 @@ body.dark-only .btn.btn-white {
   display: inline-block;
   margin-left: 19px;
 }
-
+  
 :lang(ar) [class^="icon-"]:before, 
 :lang(ar) [class*=" icon-"]:before {
   text-decoration: inherit;
