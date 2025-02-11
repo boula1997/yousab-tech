@@ -109,5 +109,7 @@ body.dark-only .btn.btn-white {
   margin-right: 19px;
 }
 
-
+#GetIconPicker{
+  margin-inline: 10px;
+}
 
