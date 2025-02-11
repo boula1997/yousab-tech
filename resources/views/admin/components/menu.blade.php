@@ -127,10 +127,13 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="">
-                                        <i data-feather="log-out"></i>
-                                        <span>{{ __('general.LogOut') }}</span>
-                                    </a>
+                                    <form action="{{ route('logout') }}" method="post" style="display: inline;">
+                                        @csrf
+                                        <button type="submit" style="background: none; border: none; color: inherit; cursor: pointer;">
+                                            <i data-feather="log-out"></i>
+                                            <span>{{ __('general.LogOut') }}</span>
+                                        </button>
+                                    </form>
                                 </li>
                             </ul>
                             
