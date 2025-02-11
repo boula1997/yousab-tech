@@ -458,7 +458,7 @@
                                     </a>
                                 </li> --}}
 
-                                <li class="sidebar-list">
+                                {{-- <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                                         <i class=""></i>
                                         <span>{{__('general.settings')}}</span>
@@ -468,7 +468,7 @@
                                             <a href="{{route('edit.setting')}}">{{__('general.Profile Setting')}}</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
 
                                 {{-- <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav" href="reports.html">

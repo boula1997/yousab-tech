@@ -95,10 +95,18 @@ body.dark-only .btn.btn-white {
   border-color: #1d1e26;
 }
 
-[class^="icon-"]:before, [class*=" icon-"]:before {
+:lang(en) [class^="icon-"]:before, 
+:lang(en) [class*=" icon-"]:before {
   text-decoration: inherit;
   display: inline-block;
   margin-left: 19px;
+}
+
+:lang(ar) [class^="icon-"]:before, 
+:lang(ar) [class*=" icon-"]:before {
+  text-decoration: inherit;
+  display: inline-block;
+  margin-right: 19px;
 }
 
 

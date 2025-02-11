@@ -54,36 +54,37 @@
                             <ul class="notification-dropdown onhover-show-div">
                                 <li>
                                     <i class="ri-notification-line"></i>
-                                    <h6 class="f-18 mb-0">Notitications</h6>
+                                    <h6 class="f-18 mb-0">{{ __('general.Notifications') }}</h6>
                                 </li>
                                 <li>
                                     <p>
-                                        <i class="fa fa-circle me-2 font-primary"></i>Delivery processing <span
-                                            class="pull-right">10 min.</span>
+                                        <i class="fa fa-circle me-2 font-primary"></i>{{ __('general.DeliveryProcessing') }} 
+                                        <span class="pull-right">10 min.</span>
                                     </p>
                                 </li>
                                 <li>
                                     <p>
-                                        <i class="fa fa-circle me-2 font-success"></i>Order Complete<span
-                                            class="pull-right">1 hr</span>
+                                        <i class="fa fa-circle me-2 font-success"></i>{{ __('general.OrderComplete') }} 
+                                        <span class="pull-right">1 hr</span>
                                     </p>
                                 </li>
                                 <li>
                                     <p>
-                                        <i class="fa fa-circle me-2 font-info"></i>Tickets Generated<span
-                                            class="pull-right">3 hr</span>
+                                        <i class="fa fa-circle me-2 font-info"></i>{{ __('general.TicketsGenerated') }} 
+                                        <span class="pull-right">3 hr</span>
                                     </p>
                                 </li>
                                 <li>
                                     <p>
-                                        <i class="fa fa-circle me-2 font-danger"></i>Delivery Complete<span
-                                            class="pull-right">6 hr</span>
+                                        <i class="fa fa-circle me-2 font-danger"></i>{{ __('general.DeliveryComplete') }} 
+                                        <span class="pull-right">6 hr</span>
                                     </p>
                                 </li>
                                 <li>
-                                    <a class="btn btn-primary" href="javascript:void(0)">Check all notification</a>
+                                    <a class="btn btn-primary" href="javascript:void(0)">{{ __('general.CheckAllNotifications') }}</a>
                                 </li>
                             </ul>
+                            
                         </li>
 
                         <li>
@@ -96,42 +97,43 @@
                             <div class="media profile-media">
                                 <img class="user-profile rounded-circle" src="{{asset("admin/assets/images/users/4.jpg")}}" alt="">
                                 <div class="user-name-hide media-body">
-                                    <span>Emay Walter</span>
-                                    <p class="mb-0 font-roboto">Admin<i class="middle ri-arrow-down-s-line"></i></p>
+                                    <span>{{auth('admin')->user()->name}}</span>
+                                    <p class="mb-0 font-roboto">{{auth('admin')->user()->type}}<i class="middle ri-arrow-down-s-line"></i></p>
                                 </div>
                             </div>
                             <ul class="profile-dropdown onhover-show-div">
                                 <li>
                                     <a href="all-users.html">
                                         <i data-feather="users"></i>
-                                        <span>Users</span>
+                                        <span>{{ __('general.profile') }}</span>
                                     </a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a href="order-list.html">
                                         <i data-feather="archive"></i>
-                                        <span>Orders</span>
+                                        <span>{{ __('general.Orders') }}</span>
                                     </a>
-                                </li>
-                                <li>
+                                </li> --}}
+                                {{-- <li>
                                     <a href="support-ticket.html">
                                         <i data-feather="phone"></i>
-                                        <span>Spports Tickets</span>
+                                        <span>{{ __('general.SupportTickets') }}</span>
                                     </a>
-                                </li>
+                                </li> --}}
                                 <li>
-                                    <a href="profile-setting.html">
+                                    <a href="{{ route('edit.setting') }}">
                                         <i data-feather="settings"></i>
-                                        <span>Settings</span>
+                                        <span>{{ __('general.Settings') }}</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="">
                                         <i data-feather="log-out"></i>
-                                        <span>Log out</span>
+                                        <span>{{ __('general.LogOut') }}</span>
                                     </a>
                                 </li>
                             </ul>
+                            
                         </li>
                     </ul>
                 </div>

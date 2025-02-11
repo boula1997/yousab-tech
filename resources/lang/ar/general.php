@@ -32,8 +32,21 @@ return [
 "newsletterEmail" => "البريد الإلكتروني للنشرة الإخبارية",  
 
 "Dashboard" => "لوحة التحكم",  
+'profile' => 'الملف الشخصي',
 
 "Password" => "كلمة المرور",  
+'Notifications' => 'الإشعارات',
+'DeliveryProcessing' => 'جاري المعالجة',
+'OrderComplete' => 'تم الطلب',
+'TicketsGenerated' => 'تم إنشاء التذاكر',
+'DeliveryComplete' => 'اكتمل التسليم',
+'CheckAllNotifications' => 'عرض جميع الإشعارات',
+
+'Users' => 'المستخدمون',
+'Orders' => 'الطلبات',
+'Settings' => 'الإعدادات',
+'LogOut' => 'تسجيل الخروج',
+'SupportTickets' => 'تذاكر الدعم',
 
 "Confirm" => "تأكيد",  
 

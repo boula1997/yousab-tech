@@ -14,6 +14,20 @@ return [
     */
 
 
+'Users' => 'Users',
+'Orders' => 'Orders',
+'Settings' => 'Settings',
+'LogOut' => 'Log out',
+'SupportTickets' => 'Support Tickets',
+'profile' => 'Profile',
+
+'Notifications' => 'Notifications',
+'DeliveryProcessing' => 'Delivery processing',
+'OrderComplete' => 'Order Complete',
+'TicketsGenerated' => 'Tickets Generated',
+'DeliveryComplete' => 'Delivery Complete',
+'CheckAllNotifications' => 'Check all notifications',
+
 
 "delete_item" => "Delete item",
 
