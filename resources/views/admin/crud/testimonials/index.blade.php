@@ -51,9 +51,9 @@
 
                                                     <td class="text-start">{{ $testimonial->title }}</td>
 
-                                                                                                        <td>{{ $category->created_at }}</td>
+                                                                                                        <td>{{ $testimonial->created_at }}</td>
                                                     
-                                                    <td>{{ $category->updated_at }}</td><td>
+                                                    <td>{{ $testimonial->updated_at }}</td><td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'testimonials',
                                                             'role' => 'testimonial',

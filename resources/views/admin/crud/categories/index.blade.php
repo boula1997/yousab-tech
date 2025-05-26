@@ -37,7 +37,6 @@
                                                 
                                                 <th>{{__('general.subtitle')}}</th>
                                                 
-                                                <th>{{__('general.description')}}</th>
                                                 <th>{{__('general.created_at')}}</th>
                                                 
                                                 <th>{{__('general.updated_at')}}</th>
@@ -56,7 +55,6 @@
                                                     
                                                     <td>{{ $category->subtitle }}</td>
                                                     
-                                                    <td>{{ $category->description }}</td>
                                                     <td>{{ $category->created_at }}</td>
                                                     
                                                     <td>{{ $category->updated_at }}</td>

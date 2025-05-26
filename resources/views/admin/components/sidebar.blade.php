@@ -48,11 +48,11 @@
                                     </a>
                                     <ul class="sidebar-submenu">
                                         <li>
-                                            <a href="{{route('admins.index')}}">{{__('general.All admins')}}</a>
+                                            <a href="{{route('admins.index')}}">{{__('general.list')}}</a>
                                         </li>
 
                                         <li>
-                                            <a href="{{route('admins.create')}}">{{__('general.Add a new admin')}}</a>
+                                            <a href="{{route('admins.create')}}">{{__('general.create')}}</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -64,10 +64,10 @@
                                     </a>
                                     <ul class="sidebar-submenu">
                                         <li>
-                                            <a href="{{route('roles.index')}}">{{__('general.All roles')}}</a>
+                                            <a href="{{route('roles.index')}}">{{__('general.list')}}</a>
                                         </li>
                                         <li>
-                                            <a href="{{route('roles.create')}}">{{__('general.Create Role')}}</a>
+                                            <a href="{{route('roles.create')}}">{{__('general.create')}}</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -79,10 +79,10 @@
                                     </a>
                                     <ul class="sidebar-submenu">
                                         <li>
-                                            <a href="{{route('users.index')}}">{{__('general.All users')}}</a>
+                                            <a href="{{route('users.index')}}">{{__('general.list')}}</a>
                                         </li>
                                         <li>
-                                            <a href="{{route('users.create')}}">{{__('general.Add a new  user')}}</a>
+                                            <a href="{{route('users.create')}}">{{__('general.create')}}</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -94,11 +94,11 @@
                                     </a>
                                     <ul class="sidebar-submenu">
                                         <li>
-                                            <a href="{{route('partners.index')}}">{{__('general.All partners')}}</a>
+                                            <a href="{{route('partners.index')}}">{{__('general.list')}}</a>
                                         </li>
 
                                         <li>
-                                            <a href="{{route('partners.create')}}">{{__('general.Add a new partner')}}</a>
+                                            <a href="{{route('partners.create')}}">{{__('general.create')}}</a>
                                         </li>
                                     </ul>
                                 </li>
