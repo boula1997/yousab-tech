@@ -50,9 +50,9 @@
                                                     </td>
 
                                                     <td class="text-start">{{ $portfolio->title }}</td>
-                                                    <td>{{ $category->created_at }}</td>
+                                                    <td>{{ $portfolio->created_at }}</td>
                                                     
-                                                    <td>{{ $category->updated_at }}</td>
+                                                    <td>{{ $portfolio->updated_at }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'portfolios',

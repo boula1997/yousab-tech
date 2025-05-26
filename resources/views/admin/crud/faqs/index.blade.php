@@ -51,9 +51,9 @@
 
                                                     <td class="text-start">{{ $faq->title }}</td>
 
-                                                    <td>{{ $category->created_at }}</td>
+                                                    <td>{{ $faq->created_at }}</td>
                                                     
-                                                    <td>{{ $category->updated_at }}</td>
+                                                    <td>{{ $faq->updated_at }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'faqs',

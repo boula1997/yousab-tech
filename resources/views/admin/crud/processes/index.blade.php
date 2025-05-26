@@ -50,9 +50,9 @@
                                                     </td>
 
                                                     <td class="text-start">{{ $process->title }}</td>
-                                                    <td>{{ $category->created_at }}</td>
+                                                    <td>{{ $process->created_at }}</td>
                                                     
-                                                    <td>{{ $category->updated_at }}</td>
+                                                    <td>{{ $process->updated_at }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'processes',
