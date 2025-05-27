@@ -57,12 +57,17 @@
                                     </div>
                                 </div>
 
-                                <div class="col-12">
-                                    <div class="form-floating theme-form-floating log-in-form">
-                                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
-                                        <label for="password">Password</label>
-                                    </div>
-                                </div>
+<div class="col-12">
+    <div class="form-floating theme-form-floating log-in-form position-relative">
+        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+        <label for="password">Password</label>
+        <!-- Eye Icon -->
+        <span class="password-toggle-icon position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+            <i class="fa fa-eye" id="togglePassword"></i>
+        </span>
+    </div>
+</div>
+
 
                                 <div class="col-12">
                                     <div class="forgot-box">
@@ -97,6 +102,19 @@
     <!-- login section end -->
 
 </body>
+<script>
+    document.getElementById('togglePassword').addEventListener('click', function () {
+        const passwordInput = document.getElementById('password');
+        const isPasswordVisible = passwordInput.getAttribute('type') === 'password';
+        
+        // Toggle the type attribute
+        passwordInput.setAttribute('type', isPasswordVisible ? 'text' : 'password');
+        
+        // Change the icon class
+        this.classList.toggle('fa-eye');
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
 
 
 </html>
