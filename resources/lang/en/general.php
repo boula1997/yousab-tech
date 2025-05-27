@@ -97,6 +97,7 @@ return [
     'portfolios'  => 'Portfolios',
     'users'  => 'Users',
     'admins'  => 'Admins',
+    'loginImage'  => 'Login Image',
     'pages'  => 'Pages',
     'services'  => 'Services',
     'testimonials'  => 'Testimonials',

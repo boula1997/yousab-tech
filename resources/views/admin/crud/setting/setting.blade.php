@@ -143,7 +143,7 @@
                                         <div class="col-md-6"> @include('admin.components.image', [
                                             'label' => __('general.image'),
                                             'value' => old('image', $setting->image),
-                                            'name' => 'image',
+                                            'name' => 'loginImage',
                                             'id' => 'kt_image_4',
                                             'accept' => 'image/*',
                                             'required' => true,

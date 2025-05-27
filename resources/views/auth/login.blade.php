@@ -30,7 +30,7 @@
 
     <!-- login section start -->
     <section class="log-in-section section-b-space" style="background-image:url({{settings()->image}});">
-        <a href="" class="logo-login"><img src="{{asset("admin/assets/images/logo/1.png")}}" class="img-fluid"></a>
+        <a href="" class="logo-login"><img src="{{ettings()->logo}}" class="img-fluid"></a>
         <div class="container w-100">
             <div class="row">
 

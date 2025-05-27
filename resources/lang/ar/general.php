@@ -35,6 +35,7 @@ return [
     "task" => "مهمة",
     "action" => "إجراء",
     "received" => "تم الاستلام",
+    "loginImage" => "صورة تسجيل الدخزل",
     "has" => "لديه",
     "changed_successfully" => "تم التغيير بنجاح",
     "updated_successfully" => "تم التحديث بنجاح",
