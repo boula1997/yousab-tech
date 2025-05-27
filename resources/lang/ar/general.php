@@ -28,6 +28,7 @@ return [
 "catgeories" => "الفئات",  
 
 "dark" => "داكن",  
+"newsletters" => "البريد الموحد",  
 
 "newsletterEmail" => "البريد الإلكتروني للنشرة الإخبارية",  
 
