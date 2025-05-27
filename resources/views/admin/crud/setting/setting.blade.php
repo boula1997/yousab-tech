@@ -11,10 +11,7 @@
 
 
             <div class="row theme-form ">
-                <div class="col-12">
-
                     @include('admin.components.alert-error')
-
                     <div class="row">
                         <div class="col-sm-8 m-auto">
                             <div class="card">
@@ -111,40 +108,38 @@
                                         @endforeach
                                     </div>
 
-                                    {{-- Image Input --}} <div class="row">
+
+
                                         <div class="col-md-6"> @include('admin.components.image', [
                                             'label' => __('general.logo'),
-                                            'value' => old('logo', $setting->image),
-                                            'name' => 'image',
+                                            'value' => old('logo', $setting->logo),
+                                            'name' => 'logo',
                                             'id' => 'kt_image_3',
                                             'accept' => 'image/*',
                                             'required' => true,
                                         ]) </div>
-                                    </div>
 
-                                    {{-- Image Input --}} <div class="row">
+
                                         <div class="col-md-6"> @include('admin.components.image', [
                                             'label' => __('general.white_logo'),
-                                            'value' => old('white_logo', $setting->image),
-                                            'name' => 'image',
+                                            'value' => old('white_logo', $setting->white_logo),
+                                            'name' => 'white_logo',
                                             'id' => 'kt_image_3',
                                             'accept' => 'image/*',
                                             'required' => true,
                                         ]) </div>
-                                    </div>
 
-                                    {{-- Image Input --}} <div class="row">
+
                                         <div class="col-md-6"> @include('admin.components.image', [
                                             'label' => __('general.tab'),
-                                            'value' => old('tab', $setting->image),
-                                            'name' => 'image',
+                                            'value' => old('tab', $setting->tab),
+                                            'name' => 'tab',
                                             'id' => 'kt_image_3',
                                             'accept' => 'image/*',
                                             'required' => true,
                                         ]) </div>
-                                    </div>
 
-                                    {{-- Image Input --}} <div class="row">
+
                                         <div class="col-md-6"> @include('admin.components.image', [
                                             'label' => __('general.image'),
                                             'value' => old('image', $setting->image),
@@ -153,7 +148,7 @@
                                             'accept' => 'image/*',
                                             'required' => true,
                                         ]) </div>
-                                    </div>
+    
 
                                     <!-- Normal title input -->
                                     <div class="mb-4 row"> <label
@@ -170,7 +165,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
         <!-- New setting Add End -->
