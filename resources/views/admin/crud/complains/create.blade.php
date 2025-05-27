@@ -22,7 +22,7 @@
                                     <div class="title-header option-title">
                                         <h5>{{ __('general.create') }} {{ __('general.products') }}</h5>
                                     </div>
-                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <ul class="nav nav-pills mb-3 d-flex" id="pills-tab" role="tablist">
                                         @foreach (config('translatable.locales') as $key => $locale)
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link @if ($key == 0) active @endif"
