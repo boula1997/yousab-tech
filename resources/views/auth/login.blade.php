@@ -31,11 +31,17 @@
 
     <!-- login section start -->
     <section class="log-in-section section-b-space" style="background-image:url({{settings()->image}});">
-        <a href="" class="logo-login"><img src="{{settings()->logo}}" class="img-fluid logo"></a>
         <div class="container w-100">
-            <div class="row">
+            <div class="row align-items-center">
+                <!-- Logo Section -->
+                <div class="col-xl-4 col-lg-5 text-center">
+                    <a href="" class="logo-login">
+                        <img src="{{settings()->logo}}" class="img-fluid logo" alt="Logo">
+                    </a>
+                </div>
 
-                <div class="col-xl-5 col-lg-6 me-auto">
+                <!-- Login Form Section -->
+                <div class="col-xl-5 col-lg-6 ms-auto">
                     <div class="log-in-box">
                         <div class="log-in-title">
                             <h3>Welcome To Fastkart</h3>
@@ -43,12 +49,12 @@
                         </div>
 
                         <div class="input-box">
-                        @isset($route)
-                            <form class="row g-4" method="POST" action="{{ route($route) }}">
-                        @else
-                            <form class="row g-4" method="POST" action="{{ route('login') }}">
-                        @endisset
-                        @csrf
+                            @isset($route)
+                                <form class="row g-4" method="POST" action="{{ route($route) }}">
+                            @else
+                                <form class="row g-4" method="POST" action="{{ route('login') }}">
+                            @endisset
+                            @csrf
                                 <div class="col-12">
                                     <div class="form-floating theme-form-floating log-in-form">
                                         <input type="email" class="form-control" id="email" placeholder="Email Address" name="email">
@@ -73,17 +79,12 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <!-- Replace <a> with <button> for proper form submission -->
                                     <button type="submit" class="btn btn-animation w-100 justify-content-center">
                                         Log In
                                     </button>
                                 </div>
                             </form>
-
                         </div>
-
-
-
                     </div>
                 </div>
             </div>
@@ -92,5 +93,6 @@
     <!-- login section end -->
 
 </body>
+
 
 </html>
