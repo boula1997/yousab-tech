@@ -24,6 +24,7 @@
 
     <!-- App css -->
     <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/style.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/custom.css")}}">
 </head>
 
 <body class="{{app()->getLocale()=="ar"?"rtl":"ltr"}}">
