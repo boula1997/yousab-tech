@@ -27,6 +27,26 @@ return [
 
 "catgeories" => "الفئات",  
 
+ "accountants" => "المحاسبون",
+    "historys" => "التواريخ",
+    "show_all" => "عرض الكل",
+    "cancel" => "إلغاء",
+    "no_result" => "لا توجد نتائج",
+    "task" => "مهمة",
+    "action" => "إجراء",
+    "received" => "تم الاستلام",
+    "has" => "لديه",
+    "changed_successfully" => "تم التغيير بنجاح",
+    "updated_successfully" => "تم التحديث بنجاح",
+    "Dashboard" => "لوحة القيادة",
+    "Register" => "تسجيل",
+    "Name" => "الاسم",
+    "Password" => "كلمة المرور",
+    "Email" => "البريد الإلكتروني",
+    "Login" => "تسجيل الدخول",
+    "Confirm" => "تأكيد",
+    "Logout" => "تسجيل الخروج",
+
 "dark" => "داكن",  
 "newsletters" => "البريد الموحد",  
 
