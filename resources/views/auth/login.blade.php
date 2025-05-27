@@ -29,7 +29,7 @@
 <body class="{{app()->getLocale()=="ar"?"rtl":"ltr"}}">
 
     <!-- login section start -->
-    <section class="log-in-section section-b-space">
+    <section class="log-in-section section-b-space" style="background-image:url(../images/bg.png);">
         <a href="" class="logo-login"><img src="{{asset("admin/assets/images/logo/1.png")}}" class="img-fluid"></a>
         <div class="container w-100">
             <div class="row">
