@@ -36,7 +36,7 @@
 
                 
                 <!-- Login Form Section -->
-                <div class="col-xl-5 col-lg-6 ms-auto">
+                <div class="col-xl-5 col-lg-6">
                     <div class="log-in-box">
                         <div class="log-in-title">
                             <h3>Welcome To Fastkart</h3>
@@ -83,9 +83,9 @@
                     </div>
                 </div>
 
-                
+
                 <!-- Logo Section -->
-                <div class="col-xl-4 col-lg-5 text-center">
+                <div class="col-xl-4 col-lg-5 text-center ms-auto">
                     <a href="" class="logo-login">
                         <img src="{{settings()->logo}}" class="img-fluid logo" alt="Logo">
                     </a>
