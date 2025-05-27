@@ -96,7 +96,7 @@ body.dark-only .form-label-title{color:#c7c7c5 !important;}
 .log-in-section .logo-login img {
     position: absolute;
     top: -106px  !important;
-    left: 30px;
+    left: 0px !important;
 }
 
 
