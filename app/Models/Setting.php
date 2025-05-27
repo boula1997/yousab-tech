@@ -30,4 +30,8 @@ class Setting extends Model implements TranslatableContract
     {
         return file_exists($val) ? asset($val) :  settings()->logo;
     }
+    public function getImageAttribute($val)
+    {
+        return file_exists($val) ? asset($val) :  settings()->logo;
+    }
 }
