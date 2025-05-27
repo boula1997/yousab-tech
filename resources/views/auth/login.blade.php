@@ -19,8 +19,13 @@
         href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
+
     <!-- Bootstrap css -->
     <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/vendors/bootstrap.css")}}">
+
+    
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 
     <!-- App css -->
     <link rel="stylesheet" type="text/css" href="{{asset("admin/assets/css/style.css")}}">
@@ -57,16 +62,16 @@
                                     </div>
                                 </div>
 
-<div class="col-12">
-    <div class="form-floating theme-form-floating log-in-form position-relative">
-        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
-        <label for="password">Password</label>
-        <!-- Eye Icon -->
-        <span class="password-toggle-icon position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
-            <i class="fa fa-eye" id="togglePassword"></i>
-        </span>
-    </div>
-</div>
+                            <div class="col-12">
+                                <div class="form-floating theme-form-floating log-in-form position-relative">
+                                    <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                                    <label for="password">Password</label>
+                                    <!-- Eye Icon -->
+                                    <span class="password-toggle-icon position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+                                        <i class="fa fa-eye" id="togglePassword"></i>
+                                    </span>
+                                </div>
+                            </div>
 
 
                                 <div class="col-12">
@@ -101,20 +106,20 @@
     </section>
     <!-- login section end -->
 
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const passwordInput = document.getElementById('password');
+            const isPasswordVisible = passwordInput.getAttribute('type') === 'password';
+            
+            // Toggle the type attribute
+            passwordInput.setAttribute('type', isPasswordVisible ? 'text' : 'password');
+            
+            // Change the icon class
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
 </body>
-<script>
-    document.getElementById('togglePassword').addEventListener('click', function () {
-        const passwordInput = document.getElementById('password');
-        const isPasswordVisible = passwordInput.getAttribute('type') === 'password';
-        
-        // Toggle the type attribute
-        passwordInput.setAttribute('type', isPasswordVisible ? 'text' : 'password');
-        
-        // Change the icon class
-        this.classList.toggle('fa-eye');
-        this.classList.toggle('fa-eye-slash');
-    });
-</script>
 
 
 </html>
