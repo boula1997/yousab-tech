@@ -9,7 +9,7 @@
                     <div class="card card-table">
                         <div class="card-body">
                             <div class="title-header option-title d-sm-flex d-block">
-                                <h5>{{ 'general.partners' }}</h5>
+                                <h5>{{ __('general.partners') }}</h5>
                                 <div class="right-options">
                                     <ul>
                                         <li>

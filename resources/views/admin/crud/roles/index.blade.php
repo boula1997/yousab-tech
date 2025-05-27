@@ -10,7 +10,7 @@
                                 <!-- Table Start -->
                                 <div class="card-body">
                                     <div class="title-header option-title d-sm-flex d-block">
-                                        <h5>{{ 'general.admins' }}</h5>
+                                        <h5>{{__('general.admins')}}</h5>
                                         <div class="right-options">
                                             <ul>
                                                 <li>
