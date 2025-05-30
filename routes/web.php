@@ -10,7 +10,8 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\URL;
-
+use Intervention\Image\Facades\Image;
+use App\Models\File as ModelsFile;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +22,39 @@ use Illuminate\Support\Facades\URL;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::get('/test-image', function () {
+
+    $files = ModelsFile::get();
+
+    foreach ($files as $file) {
+        $path = $file->path;
+
+        if (!file_exists($path)) {
+            // Just skip files that don't exist (don't abort the whole process)
+            continue;
+        }
+
+        try {
+            // Resize and overwrite the image
+            Image::make($path)
+                ->resize(1200, 800, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                })
+                ->save($path);
+
+
+        } catch (\Exception $e) {
+            // Log error and continue with next image
+            \Log::error("Error resizing image {$file->url}: " . $e->getMessage());
+            continue;
+        }
+    }
+
+    return 'All images processed and resized!';
+});
 
 Route::get('routes', function () {
     $pattern = '~(?:(\()|(\[)|(\{))(?(1)(?>[^()]++|(?R))*\))(?(2)(?>[^][]++|(?R))*\])(?(3)(?>[^{}]++|(?R))*\})~';
