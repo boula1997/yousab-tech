@@ -35,7 +35,7 @@ class SettingController extends Controller
                 $file->move('images', $data['logo']);
             
                 Image::make($data['logo'])
-                    ->resize(1200, 800, function ($constraint) {
+                    ->resize(2400, 1600, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })
@@ -49,7 +49,7 @@ class SettingController extends Controller
                 $data['tab'] = $request->tab->store('images');
                 $file2->move('images', $data['tab']);
                                 Image::make($data['tab'])
-                    ->resize(1200, 800, function ($constraint) {
+                    ->resize(2400, 1600, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })
@@ -61,7 +61,7 @@ class SettingController extends Controller
                 $data['white_logo'] = $request->white_logo->store('images');
                 $file2->move('images', $data['white_logo']);
                                 Image::make($data['white_logo'])
-                    ->resize(1200, 800, function ($constraint) {
+                    ->resize(2400, 1600, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })
@@ -73,7 +73,7 @@ class SettingController extends Controller
                 $data['image'] = $request->image->store('images');
                 $file2->move('images', $data['image']);
                                 Image::make($data['image'])
-                    ->resize(1200, 800, function ($constraint) {
+                    ->resize(2400, 1600, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })
