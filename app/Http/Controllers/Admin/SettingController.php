@@ -73,7 +73,7 @@ class SettingController extends Controller
                 $data['image'] = $request->image->store('images');
                 $file2->move('images', $data['image']);
                                 Image::make($data['image'])
-                    ->resize(1200, 800, function ($constraint) {
+                    ->resize(2400, 1600, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })
