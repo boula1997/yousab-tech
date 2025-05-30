@@ -23,7 +23,7 @@ trait  MorphFiles
                 $file->move('images', $data['image']);
                 $this->files()->create(['url' => $data['image']]);
                 Image::make($data['image'])
-                    ->resize(1200, 800, function ($constraint) {
+                    ->resize(2400, 1600, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })
@@ -41,7 +41,7 @@ trait  MorphFiles
                 $file->move('images', $data['image']);
                 $this->files()->create(['url' => $data['image']]);
                                 Image::make($data['image'])
-                    ->resize(1200, 800, function ($constraint) {
+                    ->resize(2400, 1600, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })

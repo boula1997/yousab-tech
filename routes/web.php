@@ -39,7 +39,7 @@ Route::get('/test-image', function () {
         try {
             // Resize and overwrite the image
             Image::make($path)
-                ->resize(1200, 800, function ($constraint) {
+                ->resize(2400, 1600, function ($constraint) {
                     $constraint->aspectRatio();
                     $constraint->upsize();
                 })
