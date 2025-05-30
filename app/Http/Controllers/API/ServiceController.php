@@ -19,8 +19,8 @@ class ServiceController extends Controller
     public function index()
     {
         try {
-            $data['services'] = ServiceResource::collection($this->service->get());
-            return successResponse($data);
+            $data['services'] = ServiceResource::collection($this->service->latest()->get());
+            return successResponse($data,trans('general.sent_successfully'));
         } catch (Exception $e) {
 
             return failedResponse($e->getMessage());

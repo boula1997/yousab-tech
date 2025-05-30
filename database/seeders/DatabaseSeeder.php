@@ -2,13 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Http\Requests\Dashboard\VideoRequest;
+use App\Http\Requests\Dashboard\OrderproductRequest;
+use App\Http\Requests\Dashboard\ReviewRequest;
 use App\Models\Admin;
+use App\Models\Appointment;
+use App\Models\Careerrequest;
+use App\Models\CategoryNews;
+use App\Models\News;
 use App\Models\Service;
 use App\Models\Setting;
+use App\Models\Solutionrequest;
 use App\Models\Team;
-use App\Models\Product;
-use App\Models\Category;
+use App\Models\TrainerAppointment;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,35 +26,33 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-
+        
         $this->call([
-            FaqSeeder::class,
-            ComplainSeeder::class,
-            VaccancySeeder::class,
-            MessagesSeeder::class,
-            NewslettersSeeder::class,
-            CountersSeeder::class,
-            ContactsSeeder::class,
-            GalleriesSeeder::class,
-            PagesSeeder::class,
+          
             PermissionTableSeeder::class,
             CreateAdminUserSeeder::class,
-            ProjectsSeeder::class,
-            TasksSeeder::class,
-            ProcessesSeeder::class,
-            SettingSeeder::class,
-            ServiceSeeder::class,
-            PartnerSeeder::class,
-            FeesSeeder::class,
-            TeamSeeder::class,
-            TestimonialsSeeder::class,
-            ProductSeeder::class,
             CategorySeeder::class,
+            BrandsSeeder::class,
+            StoresSeeder::class,
+            SizesSeeder::class,
+            ColorsSeeder::class,
+            SubcategoriesSeeder::class,
+            ProductOffersSeeder::class,
+            ProductSeeder::class,
+            ProductVariationsSeeder::class,
+            BannersSeeder::class,
+            SlidersSeeder::class,
+            ItemRequestSeeder::class,
+
+            
+            NewslettersSeeder::class,
+            ContactsSeeder::class,
+            PagesSeeder::class,
+            SettingSeeder::class,
             UsersSeeder::class,
-            VideosSeeder::class,
-
-
+            FaqsSeeder::class,
+            OffersSeeder::class,
         ]);
-
+        
     }
 }

@@ -20,7 +20,7 @@ class File extends Model
 
    public function getUrlAttribute($val)
     { 
-        return file_exists($val) ? asset($val) : asset('default.jpg');
+        return file_exists($val) ? asset($val) : settings()->logo;
     }
     public function getPathAttribute()
     { 

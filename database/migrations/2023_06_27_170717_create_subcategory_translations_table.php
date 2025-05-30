@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateServiceTranslationsTable extends Migration
+class CreateSubcategoryTranslationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateServiceTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('service_translations', function (Blueprint $table) {
+        Schema::create('subcategory_translations', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
             $table->string('subtitle')->nullable();
             $table->text('description')->nullable();
-            $table->unsignedBigInteger('service_id');
+            $table->unsignedBigInteger('subcategory_id');
             $table->string('locale')->index();
-            $table->unique(['service_id', 'locale']);
-            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
+            $table->unique(['subcategory_id', 'locale']);
+            $table->foreign('subcategory_id')->references('id')->on('subcategories')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class CreateServiceTranslationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('service_translations');
+        Schema::dropIfExists('subcategory_translations');
     }
 }

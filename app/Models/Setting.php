@@ -14,24 +14,20 @@ class Setting extends Model implements TranslatableContract
     use HasFactory, Translatable;
     protected $table = 'settings';
     protected $guarded = [];
-    public $translatedAttributes = ['title', 'subtitle', 'description','copyright',"address"];
+    public $translatedAttributes = ['title', 'subtitle', 'description','copyright','address','policy','meta_data','appointment'];
     public $timestamps = true;
 
 
     public function getLogoAttribute($val)
     {
-        return file_exists($val) ? asset($val) :  settings()->logo;
+        return file_exists($val) ? asset($val) :  asset('default.jpg');
     }
     public function getTabAttribute($val)
     {
-        return file_exists($val) ? asset($val) :  settings()->logo;
+        return file_exists($val) ? asset($val) :  asset('default.jpg');
     }
     public function getwhiteLogoAttribute($val)
     {
-        return file_exists($val) ? asset($val) :  settings()->logo;
-    }
-    public function getImageAttribute($val)
-    {
-        return file_exists($val) ? asset($val) :  settings()->logo;
+        return file_exists($val) ? asset($val) :  asset('default.jpg');
     }
 }

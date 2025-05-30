@@ -14,21 +14,20 @@ class ContactsSeeder extends Seeder
     public function run(): void
     {
        
-        $icon=[ "fab fa-facebook-f",
-                "fab fa-linkedin-in",
-                "fab fa-instagram",
-                "fas fa-mail-bulk",
-                "fas fa-phone",
-                "fab fa-whatsapp"];
+        $icon=[ 
+                "ri-phone-fill",
+                "ri-whatsapp-fill",
+                "ri-whatsapp-fill",
+            ];
 
-        $contacts=["https://www.facebook.com/YousabTech?mibextid=ZbWKwL",
-                   "www.linkedin.com/in/yousab-tech-3707b428b",
-                   "https://www.instagram.com",
-                   "yousabtech@gmail.com",
-                   "01126785910",
-                   "01208050298"];
+        $contacts=[
+                    "+201070718676",
+                    "+201070718676",
+                    "yousab-tech@gmail.com",
+                    
+                    ];
 
-        $type=['social','social','social','email','phone','whatsapp'];
+        $type=['phone','whatsapp','email'];
       
 
         for ($i = 0; $i < count($contacts); $i++) {

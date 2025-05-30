@@ -14,12 +14,23 @@ class Category extends Model implements TranslatableContract
 {
     use HasFactory, Translatable, MorphFile;
     protected $table = 'categories';
-    public $translatedAttributes = ['title', 'subtitle', 'description'];
+    public $translatedAttributes = ['title'];
     protected $guarded = [];
     public $timestamps = true;
 
     public function getImageAttribute(){
-        return  $this->file? asset($this->file->url): settings()->logo;
+        return  $this->file? asset($this->file->url): asset('default.jpg');
    }
+
+
+
+   public function products(){
+    return $this->hasMany(Product::class);
+   }
+
+   public function subcategories(){
+    return $this->hasMany(Subcategory::class);
+   }
+
     
 }
