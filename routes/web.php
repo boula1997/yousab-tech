@@ -37,7 +37,6 @@ Route::get('/test-image', function () {
         }
 
         try {
-            dd($path);
             // Resize and overwrite the image
             Image::make($path)
                 ->resize(2400, 1600, function ($constraint) {
