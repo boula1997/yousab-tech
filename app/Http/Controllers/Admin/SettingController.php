@@ -39,7 +39,7 @@ class SettingController extends Controller
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })
-                    ->save($path);}
+                    ->save($data['logo']);}
 
 
 
@@ -53,7 +53,7 @@ class SettingController extends Controller
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })
-                    ->save($path);
+                    ->save($data['tab']);
             }
             if ($request->hasFile('white_logo')){
                 File::delete($setting->white_logo);
@@ -65,7 +65,7 @@ class SettingController extends Controller
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })
-                    ->save($path);
+                    ->save($data['tab']);
             }
             if ($request->hasFile('image')){
                 File::delete($setting->image);
@@ -77,7 +77,7 @@ class SettingController extends Controller
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })
-                    ->save($path);
+                    ->save($data['tab']);
             }
             $setting->update($data);
             return redirect()->route('edit.setting')

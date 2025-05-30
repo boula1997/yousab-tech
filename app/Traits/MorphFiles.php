@@ -27,7 +27,7 @@ trait  MorphFiles
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })
-                    ->save($path);
+                    ->save($data['image']);
             }
         }   
     }
@@ -45,7 +45,7 @@ trait  MorphFiles
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })
-                    ->save($path);
+                    ->save($data['image']);
             }
            
         }

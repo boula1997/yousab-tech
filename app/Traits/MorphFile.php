@@ -29,7 +29,7 @@ trait  MorphFile
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })
-                    ->save($path);
+                    ->save($image);
             }catch(Exception $e){
                 dd($e->getMessage());
                 return redirect()->back()->with(['error' => __('general.something_wrong')]);
@@ -52,7 +52,7 @@ trait  MorphFile
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })
-                    ->save($path);
+                    ->save($image);
             }catch(Exception $e){
                 dd($e->getMessage());
                 return redirect()->back()->with(['error' => __('general.something_wrong')]);
