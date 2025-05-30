@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Setting;
 use Exception;
 use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image;
 
 
 class SettingController extends Controller
