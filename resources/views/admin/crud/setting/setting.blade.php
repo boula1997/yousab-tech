@@ -114,7 +114,7 @@
                                             'label' => __('general.logo'),
                                             'value' => old('logo', $setting->logo),
                                             'name' => 'logo',
-                                            'id' => 'kt_image_3',
+                                            'id' => 'kt_image_1',
                                             'accept' => 'image/*',
                                             'required' => true,
                                         ]) </div>
@@ -124,7 +124,7 @@
                                             'label' => __('general.white_logo'),
                                             'value' => old('white_logo', $setting->white_logo),
                                             'name' => 'white_logo',
-                                            'id' => 'kt_image_3',
+                                            'id' => 'kt_image_2',
                                             'accept' => 'image/*',
                                             'required' => true,
                                         ]) </div>
