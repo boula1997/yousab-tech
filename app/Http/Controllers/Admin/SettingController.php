@@ -65,7 +65,7 @@ class SettingController extends Controller
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })
-                    ->save($data['tab']);
+                    ->save($data['white_logo']);
             }
             if ($request->hasFile('image')){
                 File::delete($setting->image);
@@ -77,7 +77,7 @@ class SettingController extends Controller
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })
-                    ->save($data['tab']);
+                    ->save($data['image']);
             }
             $setting->update($data);
             return redirect()->route('edit.setting')
