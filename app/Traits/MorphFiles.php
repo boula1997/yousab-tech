@@ -5,6 +5,7 @@ namespace App\Traits;
 use App\Models\File as ModelsFile;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image;
 
 trait  MorphFiles
 {
@@ -21,6 +22,12 @@ trait  MorphFiles
                 $data['image'] = $file->store('images');
                 $file->move('images', $data['image']);
                 $this->files()->create(['url' => $data['image']]);
+                Image::make($data['image'])
+                    ->resize(1200, 800, function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    })
+                    ->save($path);
             }
         }   
     }
@@ -33,6 +40,12 @@ trait  MorphFiles
                 $data['image'] = $file->store('images');
                 $file->move('images', $data['image']);
                 $this->files()->create(['url' => $data['image']]);
+                                Image::make($data['image'])
+                    ->resize(1200, 800, function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    })
+                    ->save($path);
             }
            
         }

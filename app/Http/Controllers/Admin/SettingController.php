@@ -31,25 +31,52 @@ class SettingController extends Controller
                 {File::delete($setting->logo);
                 $file = $request->file('logo');
                 $data['logo'] = $request->logo->store('images');
-                $file->move('images', $data['logo']); }
+                $file->move('images', $data['logo']);
+            
+                Image::make($data['logo'])
+                    ->resize(1200, 800, function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    })
+                    ->save($path);}
+
+
 
             if ($request->hasFile('tab')){
                 File::delete($setting->tab);
                 $file2 = $request->file('tab');
                 $data['tab'] = $request->tab->store('images');
                 $file2->move('images', $data['tab']);
+                                Image::make($data['tab'])
+                    ->resize(1200, 800, function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    })
+                    ->save($path);
             }
             if ($request->hasFile('white_logo')){
                 File::delete($setting->white_logo);
                 $file2 = $request->file('white_logo');
                 $data['white_logo'] = $request->white_logo->store('images');
                 $file2->move('images', $data['white_logo']);
+                                Image::make($data['white_logo'])
+                    ->resize(1200, 800, function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    })
+                    ->save($path);
             }
             if ($request->hasFile('image')){
                 File::delete($setting->image);
                 $file2 = $request->file('image');
                 $data['image'] = $request->image->store('images');
                 $file2->move('images', $data['image']);
+                                Image::make($data['image'])
+                    ->resize(1200, 800, function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    })
+                    ->save($path);
             }
             $setting->update($data);
             return redirect()->route('edit.setting')

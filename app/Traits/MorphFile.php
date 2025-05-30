@@ -7,6 +7,7 @@ use App\Models\File as ModelsFile;
 use Exception;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image;
 
 trait  MorphFile
 {
@@ -23,6 +24,12 @@ trait  MorphFile
                 $image = request()->image->store('images');
                 $file->move('images',  $image);
                 $this->file()->create(['url' =>  $image]);
+                Image::make($image)
+                    ->resize(1200, 800, function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    })
+                    ->save($path);
             }catch(Exception $e){
                 dd($e->getMessage());
                 return redirect()->back()->with(['error' => __('general.something_wrong')]);
@@ -40,6 +47,12 @@ trait  MorphFile
                 $image = $file ->store('images');
                 $file->move('images', $image);
                 $this->file()->create(['url' => $image]);
+                Image::make($image)
+                    ->resize(1200, 800, function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    })
+                    ->save($path);
             }catch(Exception $e){
                 dd($e->getMessage());
                 return redirect()->back()->with(['error' => __('general.something_wrong')]);
