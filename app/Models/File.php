@@ -18,8 +18,12 @@ class File extends Model
         return $this->morphTo();
     }
 
-    public function getUrlAttribute($val)
+   public function getUrlAttribute($val)
     { 
-        return file_exists($val) ? asset($val) : settings()->logo;
+        return file_exists($val) ? asset($val) : asset('default.jpg');
+    }
+    public function getPathAttribute()
+    { 
+        return $this->attributes['url'];
     }
 }

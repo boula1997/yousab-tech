@@ -41,6 +41,13 @@
                             </a>
                         </li>
                     @endforeach
+
+                    <!-- Add the button here -->
+                    <li>
+                        <a href="https://yousab-tech.com/webapp/public/test-image" class="btn btn-sm btn-primary" style="margin-left: 10px;">
+                            Compress Images
+                        </a>
+                    </li>
                         <li>
                             <span class="header-search">
                                 <i class="ri-search-line"></i>
