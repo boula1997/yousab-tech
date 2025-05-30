@@ -110,7 +110,7 @@
                             </div>
                             <ul class="profile-dropdown onhover-show-div">
                                 <li>
-                                    <a href="all-users.html">
+                                    <a href="{{route('edit.profile')}}">
                                         <i data-feather="users"></i>
                                         <span>{{ __('general.profile') }}</span>
                                     </a>

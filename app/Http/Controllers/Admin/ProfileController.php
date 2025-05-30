@@ -11,32 +11,35 @@ use Hash;
 use Illuminate\Support\Arr;
 use App\Models\File as ModelsFile;
 use Illuminate\Support\Facades\File;
+use App\Http\Requests\Dashboard\UserRequest;
 
 class ProfileController extends Controller
 {
 
     public function edit()
     {
-        $admin = Admin::find(auth('admin')->user()->id);
-        return view('admin.crud.profile.edit', compact('admin'));
+
+        return view('admin.crud.users.editProfile');
     }
 
 
-    public function update(ProfileRequest $request)
+    public function update(UserRequest $request)
     {
-        $input = $request->except('image','profile_avatar_remove');
-        if (!empty($input['password'])) {
-            $input['password'] = Hash::make($input['password']);
-        } else {
-            $input = Arr::except($input, array('password'));
+        try {
+            $input = $request->except('image','profile_avatar_remove');
+            if (!empty($input['password'])) {
+                $input['password'] = Hash::make($input['password']);
+            } else {
+                $input = Arr::except($input, array('password'));
+            }
+            $user = auth('admin')->user();
+            $user->update($input);
+            $user->updateFile();
+            return redirect()->back()
+                ->with('success', 'Profile updated successfully');
+        } catch (Exception $e) {
+            dd($e->getMessage());
+            return redirect()->back()->with(['error' => __('general.something_wrong')]);
         }
-
-        $admin = Admin::find(auth('admin')->user()->id);
-        $admin->update($input);
-        $admin->updateFile();
-
-
-        return redirect()->route('dashboard')
-            ->with('success', 'Admin updated successfully');
     }
 }
