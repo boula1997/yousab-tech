@@ -11,7 +11,7 @@
         content="{{settings()->keywords}}">
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="{{settings()->logo}}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{asset("admin/assets/images/favicon.png")}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{settings()->logo}}" type="image/x-icon">
     <title>{{settings()->title}}</title>
 
     <!-- Google font-->
