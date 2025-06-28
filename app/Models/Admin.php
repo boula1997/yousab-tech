@@ -49,7 +49,7 @@ class Admin extends Authenticatable
 
     public function getImageAttribute()
     {
-        return  $this->file?asset($this->file->url): settings()->logo;
+        return  $this->file?asset($this->file->url): asset('default.jpg');
     }
 
     public function tasks(){

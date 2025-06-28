@@ -8,19 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
-
-
-
 class Faq extends Model implements TranslatableContract
 {
-    use HasFactory, Translatable, MorphFile;
+    use HasFactory, Translatable,MorphFile;
     protected $table = 'faqs';
-    public $translatedAttributes = ['title', 'subtitle', 'description'];
     protected $guarded = [];
+    public $translatedAttributes = ['title', 'description'];
     public $timestamps = true;
 
     public function getImageAttribute(){
-        return  $this->file?asset($this->file->url): settings()->logo;
-   }
-    
+         return  $this->file?asset($this->file->url): asset('default.jpg');
+    }
+
 }
+ 
