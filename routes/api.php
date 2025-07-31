@@ -21,6 +21,7 @@ use App\Http\Controllers\API\PageController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\HomeController;
 use App\Http\Controllers\API\OrderController;
+use App\Http\Controllers\API\PortfolioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\SettingController;
 use App\Http\Controllers\API\ProductController;
@@ -114,6 +115,7 @@ Route::group(['middleware' => ['apiLocalization','cors']], function () {
     Route::get('/chooseUs/{id}', [ChooseUsController::class, 'show']);
 
     Route::get('/services', [ServiceController::class, 'index']);
+    Route::get('/portfolios', [PortfolioController::class, 'index']);
     Route::get('/service/{id}', [ServiceController::class, 'show']);
 });
 
