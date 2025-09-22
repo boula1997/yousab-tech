@@ -9,9 +9,9 @@
                     </div>
                     <div class="toggle-sidebar">
                         <i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i>
-                        <a href="{{route('dashboard')}}">
+                        {{-- <a href="{{route('dashboard')}}">
                             <img src="{{asset(settings()->logo)}}" class="img-fluid" alt="">
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
 
