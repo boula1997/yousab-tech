@@ -42,7 +42,8 @@
                                     </div>
 
 
-                                                                        <div class="mb-4 row align-items-center"> <label
+
+                                    <div class="mb-4 row align-items-center"> <label
                                             class="form-label-title col-sm-3 mb-0">{{ __('general.password') }} <span
                                                 class="text-danger"> * </span></label>
                                         <div class="col-sm-9"> <input type="password"
@@ -52,12 +53,12 @@
                                     </div>
                                     <!-- Normal title input -->
                                     <div class="mb-4 row align-items-center"> <label
-                                            class="form-label-title col-sm-3 mb-0">{{ __('general.passoword_confirmation') }}
+                                            class="form-label-title col-sm-3 mb-0">{{ __('general.confirm_password') }}
                                             <span class="text-danger"> * </span></label>
                                         <div class="col-sm-9"> <input type="password"
-                                                placeholder="{{ __('general.passoword_confirmation') }}"
-                                                class="form-control @error('passoword_confirmation') is-invalid @enderror"
-                                                value="{{ old('passoword_confirmation') }}" name="passoword_confirmation">
+                                                placeholder="{{ __('general.confirm-password') }}"
+                                                class="form-control @error('confirm-password') is-invalid @enderror"
+                                                value="{{ old('confirm-password') }}" name="confirm-password">
                                         </div>
                                     </div>
                                     <div class="mb-4 row align-items-center"> <label
