@@ -62,13 +62,13 @@
                                     </div>
                                     <div class="mb-4 row align-items-center"> <label
                                             class="col-sm-3 col-form-label form-label-title">{{ __('general.select') }}</label>
-                                        <div class="col-sm-9"> <select class="js-example-basic-single w-100" name="role_id"
+                                        <div class="col-sm-9"> <select class="js-example-basic-single w-100" name="roles"
                                                 id="role">
                                                 <option value="">{{ __('general.select') }}</option>
                                                 @foreach ($roles as $role)
-                                                    <option value="{{ $role->id }}"
-                                                        @selected($admin->type == $role->name)>
-                                                        {{ $role->name }} </option>
+                                                    <option value="{{ $role }}"
+                                                        {{ old('role',$admin->type) == $role ? 'selected' : '' }}>
+                                                        {{ $role}} </option>
                                                 @endforeach
                                             </select> </div>
                                     </div>
@@ -84,6 +84,17 @@
                                                         class="text-danger"> * </span></label> </div>
                                         </div>
                                     </div>
+
+                                                                        {{-- Image Input --}} 
+                                    <div class="row">
+                                        <div class="col-md-6"> @include('admin.components.image', [
+                                            'label' => __('general.image'),
+                                            'value' => old('image', $admin->image),
+                                            'name' => 'image',
+                                            'id' => 'kt_image_3',
+                                            'accept' => 'image/*',
+                                            'required' => true,
+                                        ]) </div>
 
                                 </div>
                                 <div class="card-submit-button">
