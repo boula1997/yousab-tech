@@ -53,12 +53,12 @@
                                     </div>
                                     <!-- Normal title input -->
                                     <div class="mb-4 row align-items-center"> <label
-                                            class="form-label-title col-sm-3 mb-0">{{ __('general.passoword_confirmation') }}
+                                            class="form-label-title col-sm-3 mb-0">{{ __('general.password_confirmation') }}
                                             <span class="text-danger"> * </span></label>
                                         <div class="col-sm-9"> <input type="password"
-                                                placeholder="{{ __('general.passoword_confirmation') }}"
-                                                class="form-control @error('passoword_confirmation') is-invalid @enderror"
-                                                value="{{ old('passoword_confirmation') }}" name="passoword_confirmation">
+                                                placeholder="{{ __('general.password_confirmation') }}"
+                                                class="form-control @error('password_confirmation') is-invalid @enderror"
+                                                value="{{ old('password_confirmation') }}" name="password_confirmation">
                                         </div>
                                     </div>
 
