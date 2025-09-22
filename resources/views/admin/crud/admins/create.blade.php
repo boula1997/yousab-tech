@@ -56,9 +56,9 @@
                                             class="form-label-title col-sm-3 mb-0">{{ __('general.confirm_password') }}
                                             <span class="text-danger"> * </span></label>
                                         <div class="col-sm-9"> <input type="password"
-                                                placeholder="{{ __('general.confirm_password') }}"
-                                                class="form-control @error('confirm_password') is-invalid @enderror"
-                                                value="{{ old('confirm_password') }}" name="confirm_password">
+                                                placeholder="{{ __('general.confirm-password') }}"
+                                                class="form-control @error('confirm-password') is-invalid @enderror"
+                                                value="{{ old('confirm-password') }}" name="confirm-password">
                                         </div>
                                     </div>
 
