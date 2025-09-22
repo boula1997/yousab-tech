@@ -68,11 +68,11 @@
 
                                     <div class="mb-4 row align-items-center"> <label
                                             class="col-sm-3 col-form-label form-label-title">{{ __('general.select') }}</label>
-                                        <div class="col-sm-9"> <select class="js-example-basic-single w-100" name="role_id"
+                                        <div class="col-sm-9"> <select class="js-example-basic-single w-100" name="roles"
                                                 id="role">
                                                 <option value="">{{ __('general.select') }}</option>
                                                 @foreach ($roles as $role)
-                                                    <option value="{{ $role->id }}"
+                                                    <option value="{{ $role }}"
                                                         {{ old('role_id') == $role->id ? 'selected' : '' }}>
                                                         {{ $role->name }} </option>
                                                 @endforeach
