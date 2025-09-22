@@ -154,3 +154,8 @@ body.dark-only .btn.btn-white {
     transition: 0.5s;
 }
 
+@media (max-width: 991.98px) {
+    .logo-login {
+        display: none !important;
+    }
+}

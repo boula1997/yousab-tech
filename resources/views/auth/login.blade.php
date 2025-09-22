@@ -34,6 +34,8 @@
 
 <body class="{{app()->getLocale()=="ar"?"rtl":"ltr"}}">
 
+    
+
     <!-- login section start -->
     <section class="log-in-section section-b-space" style="background-image:url({{settings()->image}});">
         <div class="container w-100">
