@@ -73,8 +73,8 @@
                                                 <option value="">{{ __('general.select') }}</option>
                                                 @foreach ($roles as $role)
                                                     <option value="{{ $role }}"
-                                                        {{ old('role_id') == $role->id ? 'selected' : '' }}>
-                                                        {{ $role->name }} </option>
+                                                        {{ old('role') == $role ? 'selected' : '' }}>
+                                                        {{ $role}} </option>
                                                 @endforeach
                                             </select> </div>
                                     </div>
