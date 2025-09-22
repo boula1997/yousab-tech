@@ -67,9 +67,7 @@
                                                 id="role">
                                                 <option value="">{{ __('general.select') }}</option>
                                                 @foreach ($roles as $role)
-                                                    <option value="{{ $role }}"
-                                                        {{ old('role',$admin->type) == $role ? 'selected' : '' }}>
-                                                        {{ $role}} </option>
+                                            <option @selected($role ==$admin->type) value="{{ $role }}">{{ $role }}</option>
                                                 @endforeach
                                             </select> </div>
                                     </div>
