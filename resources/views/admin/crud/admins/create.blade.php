@@ -33,7 +33,7 @@
                                                 value="{{ old('name') }}"> </div>
                                     </div>
 
-                                    <!-- Normal title input -->
+
                                     <div class="mb-4 row align-items-center"> <label
                                             class="form-label-title col-sm-3 mb-0">{{ __('general.email') }} <span
                                                 class="text-danger"> * </span></label>
@@ -41,6 +41,28 @@
                                                 class="form-control @error('email') is-invalid @enderror"
                                                 value="{{ old('email') }}" name="email"> </div>
                                     </div>
+
+
+                                    <div class="mb-4 row align-items-center"> <label
+                                            class="form-label-title col-sm-3 mb-0">{{ __('general.password') }} <span
+                                                class="text-danger"> * </span></label>
+                                        <div class="col-sm-9"> <input type="password"
+                                                placeholder="{{ __('general.password') }}"
+                                                class="form-control @error('password') is-invalid @enderror"
+                                                value="{{ old('password') }}" name="password"> </div>
+                                    </div>
+                                    <!-- Normal title input -->
+                                    <div class="mb-4 row align-items-center"> <label
+                                            class="form-label-title col-sm-3 mb-0">{{ __('general.passoword_confirmation') }}
+                                            <span class="text-danger"> * </span></label>
+                                        <div class="col-sm-9"> <input type="password"
+                                                placeholder="{{ __('general.passoword_confirmation') }}"
+                                                class="form-control @error('passoword_confirmation') is-invalid @enderror"
+                                                value="{{ old('passoword_confirmation') }}" name="passoword_confirmation">
+                                        </div>
+                                    </div>
+
+
 
 
 
@@ -73,7 +95,8 @@
                                 </div>
 
                                 <div class="card-submit-button">
-                                    <button class="btn btn-animation ms-auto" type="submit">{{__('general.submit')}}</button>
+                                    <button class="btn btn-animation ms-auto"
+                                        type="submit">{{ __('general.submit') }}</button>
                                 </div>
                             </div>
                         </div>

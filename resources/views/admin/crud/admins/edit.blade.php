@@ -40,6 +40,26 @@
                                                 class="form-control @error('email') is-invalid @enderror"
                                                 value="{{ old('email', $admin->email) }}" name="email"> </div>
                                     </div>
+
+
+                                                                        <div class="mb-4 row align-items-center"> <label
+                                            class="form-label-title col-sm-3 mb-0">{{ __('general.password') }} <span
+                                                class="text-danger"> * </span></label>
+                                        <div class="col-sm-9"> <input type="password"
+                                                placeholder="{{ __('general.password') }}"
+                                                class="form-control @error('password') is-invalid @enderror"
+                                                value="{{ old('password') }}" name="password"> </div>
+                                    </div>
+                                    <!-- Normal title input -->
+                                    <div class="mb-4 row align-items-center"> <label
+                                            class="form-label-title col-sm-3 mb-0">{{ __('general.passoword_confirmation') }}
+                                            <span class="text-danger"> * </span></label>
+                                        <div class="col-sm-9"> <input type="password"
+                                                placeholder="{{ __('general.passoword_confirmation') }}"
+                                                class="form-control @error('passoword_confirmation') is-invalid @enderror"
+                                                value="{{ old('passoword_confirmation') }}" name="passoword_confirmation">
+                                        </div>
+                                    </div>
                                     <div class="mb-4 row align-items-center"> <label
                                             class="col-sm-3 col-form-label form-label-title">{{ __('general.select') }}</label>
                                         <div class="col-sm-9"> <select class="js-example-basic-single w-100" name="role_id"

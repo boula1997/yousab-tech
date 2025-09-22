@@ -100,7 +100,7 @@
 
                 <!-- Logo Section -->
                 <div class="col-xl-4 col-lg-5 text-center ms-auto d-none d-lg-block">
-                    <a href="" class="logo-login">
+                    <a href="" class="logo-login"> 
                         <img src="{{ settings()->logo }}" class="img-fluid logo" alt="Logo">
                     </a>
                 </div>
