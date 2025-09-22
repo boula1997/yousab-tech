@@ -5,7 +5,6 @@
                     <div class="logo-wrapper">
                         <a href="{{route('dashboard')}}">
                             <img class="img-fluid main-logo" src="{{asset(settings()->logo)}}" alt="logo">
-                            <img class="img-fluid white-logo" src="{{asset(settings()->logo)}}" alt="logo">
                         </a>
                     </div>
                     <div class="toggle-sidebar">
