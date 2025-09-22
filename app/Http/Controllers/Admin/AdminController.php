@@ -50,7 +50,8 @@ class AdminController extends Controller
      */
     public function create()
     {
-        $roles = Role::all();
+                $roles = Role::pluck('name', 'name')->all();
+
         return view('admin.crud.admins.create', compact('roles'));
     }
 
@@ -97,7 +98,8 @@ class AdminController extends Controller
     public function edit($id)
     {
         $admin = Admin::find($id);
-        $roles = Role::all();
+                $roles = Role::pluck('name', 'name')->all();
+
         $adminRole = $admin->roles->pluck('name', 'name')->all();
 
 
