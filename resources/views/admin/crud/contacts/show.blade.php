@@ -2,78 +2,54 @@
 
 @section('content')
     <div class="page-body">
-
-        <!-- New Product Add Start -->
         <div class="container-fluid">
-
-
-
-            <div class="row theme-form ">
+            <div class="row theme-form">
                 <div class="col-12">
                     <div class="row">
                         <div class="col-sm-8 m-auto">
                             <div class="card">
                                 <div class="card-body">
+
                                     <div class="title-header option-title">
-                                        <h5>{{ __('general.show') }} {{ __('general.products') }}</h5>
+                                        <h5>{{ __('general.show') }} {{ __('general.contact') }}</h5>
                                     </div>
-                                    <ul class="nav nav-pills mb-3 d-flex" id="pills-tab" role="tablist">
-                                        @foreach (config('translatable.locales') as $key => $locale)
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link @if ($key == 0) active @endif"
-                                                    id="pills-{{ $locale }}-tab" data-bs-toggle="pill"
-                                                    data-bs-target="#pills-{{ $locale }}"
-                                                    type="button">@lang('general.' . $locale)</button>
-                                            </li>
-                                        @endforeach
-                                    </ul>
 
                                     <div class="tab-content" id="pills-tabContent">
-                                        @foreach (config('translatable.locales') as $key => $locale)
-                                            <div class="tab-pane fade show @if ($key == 0) active @endif"
-                                                id="pills-{{ $locale }}" role="tabpanel">
-                                                <!-- normal input -->
-                                                <div class="mb-4 row align-items-center">
-                                                    <div class="col-sm-6"> <label
-                                                            class="form-label-title mb-0">{{ __('general.title') }}</label>
-                                                        <p class="bg-show p-2 mt-2">{{ $product->translate($locale)->title }}</p>
-                                                    </div>
-                                                </div>
+                                     
 
-                                                <!-- normal input -->
-                                                <div class="mb-4 row align-items-center">
-                                                    <div class="col-sm-6"> <label
-                                                            class="form-label-title mb-0">{{ __('general.subtitle') }}</label>
-                                                        <p class="bg-show p-2 mt-2">{{ $product->translate($locale)->subtitle }}</p>
-                                                    </div>
-                                                </div>
-
-                                                <!-- normal input -->
-                                                <div class="mb-4 row align-items-center">
-                                                    <div class="col-sm-6"> <label
-                                                            class="form-label-title mb-0">{{ __('general.description') }}</label>
-                                                        <p class="bg-show p-2 mt-2">{!! $product->translate($locale)->description !!}</p>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        @endforeach
-                                    </div>
-
-                                    <!-- normal input -->
                                     <div class="mb-4 row align-items-center">
-                                        <div class="col-sm-6"> <label
-                                                class="form-label-title mb-0">{{ __('general.image') }}</label> <img
-                                                class="bg-show p-2 mt-2" width="300" height="300"
-                                                src="{{ $product->image }}" alt=""> </div>
+                                        <div class="col-sm-12">
+                                            <label class="form-label-title mb-0">
+                                                {{ __('general.contact') }}
+                                            </label>
+                                            <p class="bg-show p-2 mt-2">
+                                                {{ $contact->contact ?? '-' }}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+
+                                    <div class="mb-4 row align-items-center">
+                                        <div class="col-sm-12">
+                                            <label class="form-label-title mb-0">{{ __('general.icon') }}</label>
+                                            <p class="bg-show p-2 mt-2">
+                                                <i class="{{ $contact->icon }}" style="font-size: 22px;"></i>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4 row align-items-center">
+                                        <div class="col-sm-12">
+                                            <label class="form-label-title mb-0">{{ __('general.type') }}</label>
+                                            <p class="bg-show p-2 mt-2">{{ $contact->type }}</p>
+                                        </div>
+                                    </div>
+
+                                </div> 
+                            </div> 
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>
-        <!-- New Product Add End -->
     </div>
 @endsection

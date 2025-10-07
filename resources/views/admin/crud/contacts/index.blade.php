@@ -1,7 +1,6 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Container-fluid starts-->
     <div class="page-body">
         <div class="container-fluid">
             <div class="row">
@@ -12,12 +11,7 @@
                                 <h5>{{'general.contacts'}}</h5>
                                 <div class="right-options">
                                     <ul>
-                                        <li>
-                                            <a href="javascript:void(0)">import</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">Export</a>
-                                        </li>
+
                                         <li>
                                             <a class="btn btn-solid" href="{{route('contacts.create')}}">{{__('general.create')}}</a>
                                         </li>
@@ -32,8 +26,6 @@
                                                 <th>#</th>
                                                 <th>@lang('general.icon')</th>
                                                 <th>@lang('general.title')</th>
-                                                <th>{{__('general.created_at')}}</th>
-                                                <th>{{__('general.updated_at')}}</th>
                                                 <th>@lang('general.controls')</th>
                                             </tr>
                                         </thead>
@@ -43,15 +35,15 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>
-                                                        <div class="table-image">
+                                                    <div class="table-icon text-center">
+                                                        <i class="{{ $contact->icon }}" style="font-size: 22px;"></i>
+                                                    </div>
+                                                </td>
                                                            <i class="{{$contact->contact}}"></i>
                                                         </div>
                                                     </td>
 
-                                                    <td class="text-start">{{ $contact->contact }}</td>
-                                                    <td>{{ $contact->created_at }}</td>
-                                                    
-                                                    <td>{{ $contact->updated_at }}</td>
+                                                    <td >{{ $contact->contact }}</td>
                                                     <td>
                                                         @include('admin.components.controls', [
                                                             'route' => 'contacts',
