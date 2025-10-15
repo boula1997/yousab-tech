@@ -14,42 +14,58 @@ trait  MorphFiles
         return $this->morphMany(ModelsFile::class, 'fileable');
     }
 
-    public function uploadFiles()
-    {
-        if (request()->hasFile('images')) {
-            $files = request()->file('images');
-            foreach ($files as $file) {
-                $data['image'] = $file->store('images');
-                $file->move('images', $data['image']);
-                $this->files()->create(['url' => $data['image']]);
-                Image::make($data['image'])
-                    ->resize(2400, 1600, function ($constraint) {
-                        $constraint->aspectRatio();
-                        $constraint->upsize();
-                    })
-                    ->save($data['image']);
-            }
-        }   
-    }
-    public function updateFiles()
-    {  
-        $this->deleteSpecificFiles();
-        if (request()->hasFile('images')) {
-            $files = request()->file('images');
-            foreach ($files as $file) {
-                $data['image'] = $file->store('images');
-                $file->move('images', $data['image']);
-                $this->files()->create(['url' => $data['image']]);
-                                Image::make($data['image'])
-                    ->resize(2400, 1600, function ($constraint) {
-                        $constraint->aspectRatio();
-                        $constraint->upsize();
-                    })
-                    ->save($data['image']);
-            }
-           
+public function uploadFiles()
+{
+    if (request()->hasFile('images')) {
+        $files = request()->file('images');
+
+        // تحديد المجلد حسب اسم الراوت
+        $routeName = request()->route()->getName();
+        $folder = str_contains($routeName, 'portfolios') ? 'portfolios' : 'images';
+
+        foreach ($files as $file) {
+            $path = $file->store($folder);
+            $file->move(public_path($folder), basename($path));
+
+            $this->files()->create(['url' => $folder . '/' . basename($path)]);
+
+            Image::make(public_path($folder . '/' . basename($path)))
+                ->resize(2400, 1600, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                })
+                ->save(public_path($folder . '/' . basename($path)));
         }
-    }   
+    }
+}
+
+public function updateFiles()
+{
+    $this->deleteSpecificFiles();
+
+    if (request()->hasFile('images')) {
+        $files = request()->file('images');
+
+        // تحديد المجلد حسب اسم الراوت
+        $routeName = request()->route()->getName();
+        $folder = str_contains($routeName, 'portfolios') ? 'portfolios' : 'images';
+
+        foreach ($files as $file) {
+            $path = $file->store($folder);
+            $file->move(public_path($folder), basename($path));
+
+            $this->files()->create(['url' => $folder . '/' . basename($path)]);
+
+            Image::make(public_path($folder . '/' . basename($path)))
+                ->resize(2400, 1600, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                })
+                ->save(public_path($folder . '/' . basename($path)));
+        }
+    }
+}
+
 
     public function deleteFiles()
     {
