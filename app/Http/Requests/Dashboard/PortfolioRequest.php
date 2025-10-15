@@ -27,8 +27,8 @@ class PortfolioRequest extends FormRequest
             'images' =>  $image ,
         ];
         foreach (config('translatable.locales') as $locale) {
-            $rules += [$locale . '.title' => ['required', 'string']];
-            $rules += [$locale . '.description' => ['required']];
+            $rules += [$locale . '.title' => ['nullable']];
+            $rules += [$locale . '.description' => ['nullable']];
         }
         return  $rules;
     }
