@@ -72,7 +72,7 @@
                                             </div>
                                         @endforeach
                                     </div>
-                    @include('admin.components.images', ['images' => $images])
+                    @include('admin.components.images')
 
                                 </div>
 

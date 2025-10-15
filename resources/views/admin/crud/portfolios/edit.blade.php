@@ -73,7 +73,8 @@
                                             </div>
                                         @endforeach
                                     </div>
-                    @include('admin.components.images')
+                    @include('admin.components.images', ['images' => $images])
+
 
 
                                         <div class="col-md-6">
