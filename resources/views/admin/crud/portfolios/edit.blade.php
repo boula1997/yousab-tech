@@ -76,15 +76,6 @@
                     @include('admin.components.images', ['images' => $images])
 
 
-
-                                        <div class="col-md-6">
-                                            @include('admin.components.icon', [
-                                                'label' => 'icon',
-                                                'required' => true,
-                                                'value' => 'fas fa-desktop',
-                                            ])
-
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="card-submit-button">
