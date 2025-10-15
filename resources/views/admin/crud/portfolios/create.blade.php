@@ -72,26 +72,8 @@
                                             </div>
                                         @endforeach
                                     </div>
+                    @include('admin.components.images', ['images' => $images])
 
-                                    {{-- Image Input --}} <div class="row">
-                                        <div class="col-md-6"> @include('admin.components.images', [
-                                            'label' => __('general.image'),
-                                            'value' => old('image'),
-                                            'name' => 'images',
-                                            'id' => 'kt_image_3',
-                                            'accept' => 'image/*',
-                                            'required' => true,
-                                        ]) </div>
-
-                                        <div class="col-md-6">
-                                            @include('admin.components.icon', [
-                                                'label' => 'icon',
-                                                'required' => true,
-                                                'value' => 'fas fa-desktop',
-                                            ])
-
-                                        </div>
-                                    </div>
                                 </div>
 
                                 <div class="card-submit-button">

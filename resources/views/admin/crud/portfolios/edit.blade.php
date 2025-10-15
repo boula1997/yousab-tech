@@ -73,17 +73,8 @@
                                             </div>
                                         @endforeach
                                     </div>
+                    @include('admin.components.images')
 
-                                    {{-- Image Input --}} 
-                                    <div class="row">
-                                        <div class="col-md-6"> @include('admin.components.images', [
-                                            'label' => __('general.image'),
-                                            'value' => old('images', $portfolio->images),
-                                            'name' => 'images',
-                                            'id' => 'kt_image_3',
-                                            'accept' => 'image/*',
-                                            'required' => true,
-                                        ]) </div>
 
                                         <div class="col-md-6">
                                             @include('admin.components.icon', [
