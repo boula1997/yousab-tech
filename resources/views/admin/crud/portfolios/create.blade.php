@@ -77,7 +77,7 @@
                                         <div class="col-md-6"> @include('admin.components.images', [
                                             'label' => __('general.image'),
                                             'value' => old('image'),
-                                            'name' => 'image',
+                                            'name' => 'images',
                                             'id' => 'kt_image_3',
                                             'accept' => 'image/*',
                                             'required' => true,

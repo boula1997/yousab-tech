@@ -78,8 +78,8 @@
                                     <div class="row">
                                         <div class="col-md-6"> @include('admin.components.images', [
                                             'label' => __('general.image'),
-                                            'value' => old('image', $portfolio->images),
-                                            'name' => 'image',
+                                            'value' => old('images', $portfolio->images),
+                                            'name' => 'images',
                                             'id' => 'kt_image_3',
                                             'accept' => 'image/*',
                                             'required' => true,
