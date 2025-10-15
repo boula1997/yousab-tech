@@ -76,9 +76,9 @@
 
                                     {{-- Image Input --}} 
                                     <div class="row">
-                                        <div class="col-md-6"> @include('admin.components.image', [
+                                        <div class="col-md-6"> @include('admin.components.images', [
                                             'label' => __('general.image'),
-                                            'value' => old('image', $portfolio->image),
+                                            'value' => old('image', $portfolio->images),
                                             'name' => 'image',
                                             'id' => 'kt_image_3',
                                             'accept' => 'image/*',
