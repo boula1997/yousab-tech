@@ -116,6 +116,7 @@ Route::group(['middleware' => ['apiLocalization','cors']], function () {
 
     Route::get('/services', [ServiceController::class, 'index']);
     Route::get('/portfolios', [PortfolioController::class, 'index']);
+    Route::get('/portfolio/{id}', [PortfolioController::class, 'show']);
     Route::get('/service/{id}', [ServiceController::class, 'show']);
 });
 
