@@ -36,7 +36,7 @@
                                                 <div class="mb-4 row align-items-center">
                                                     <div class="col-sm-6"> <label
                                                             class="form-label-title mb-0">{{ __('general.title') }}</label>
-                                                        <p class="bg-show p-2 mt-2">{{ $portfolio->translate($locale)->title }}</p>
+                                                        <p class="bg-show p-2 mt-2" id="ptitle" ptitle="{{$portfolio->translate($locale)->title}}">{{ $portfolio->translate($locale)->title }}</p>
                                                     </div>
                                                 </div>
 
@@ -77,3 +77,47 @@
         <!-- New portfolio Add End -->
     </div>
 @endsection
+
+
+@push('scripts')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function() {
+
+    // Read ?src=value from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const srcValue = urlParams.get("src") || "";
+
+    // Read portfolio title from the <p> tag
+    const portfolioTitle = $("#ptitle").attr("ptitle");
+
+    // Build action text
+    const action = encodeURIComponent(`View Portfolio ${portfolioTitle}`);
+
+    const clientId = 52;
+
+    // Add ?src=VALUE if exists
+    const srcQuery = srcValue ? `?src=${encodeURIComponent(srcValue)}` : "";
+
+    // Full API request
+    const url = `https://yousab-tech.com/workspace/public/api/clienttrack/${clientId}/${action}${srcQuery}`;
+
+    // Send request
+    $.ajax({
+        url: url,
+        method: 'GET',
+        headers: { 'locale': 'en' },
+        success: function(res) {
+            console.log("Tracking success:", res.data);
+        },
+        error: function(xhr, status, err) {
+            console.error("Tracking error:", err);
+        }
+    });
+
+});
+</script>
+
+@endpush
+
