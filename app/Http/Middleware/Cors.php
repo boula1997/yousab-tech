@@ -9,18 +9,11 @@ use Symfony\Component\HttpFoundation\Response;
 class Cors
 {
     /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * Deprecated: CORS is now handled globally by
+     * \Illuminate\Http\Middleware\HandleCors using config/cors.php.
      */
-//App\Http\Middleware;
-
-public function handle($request, Closure $next)
-{
-    return $next($request)
-        ->header('Access-Control-Allow-Methods', '*')
-        ->header('Access-Control-Allow-Credentials', true)
-        ->header('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type,X-Token-Auth,Authorization')
-        ->header('Accept', 'application/json');
-}
+    public function handle(Request $request, Closure $next): Response
+    {
+        return $next($request);
+    }
 }
