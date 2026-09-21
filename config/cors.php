@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'paths' => ['api/*'],
+    'paths' => ['api/*','/message'],
     'allowed_methods' => ['POST', 'OPTIONS'],
     'allowed_origins' => ['https://blanko.tech/webapp', 'https://www.blanko.tech/webapp', 'http://localhost:5173'],
     'allowed_origins_patterns' => [],
