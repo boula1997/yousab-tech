@@ -17,7 +17,10 @@ return [
 
     'paths' => ['api/*','/message'],
     'allowed_methods' => ['POST', 'OPTIONS'],
-    'allowed_origins' => ['https://blanko.tech/webapp', 'https://www.blanko.tech/webapp', 'http://localhost:5173'],
+    // Do not list a real origin here (e.g. http://localhost:5173): the web server already sends
+    // `Access-Control-Allow-Origin: *`, and a second value makes browsers reject the response.
+    // (Entries with a path such as /webapp never match - an Origin header has no path.)
+    'allowed_origins' => ['https://blanko.tech/webapp', 'https://www.blanko.tech/webapp'],
     'allowed_origins_patterns' => [],
     'allowed_headers' => ['Content-Type', 'Accept', 'X-Requested-With'],
     'exposed_headers' => [],
