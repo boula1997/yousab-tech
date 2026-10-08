@@ -14,7 +14,7 @@ class MessageController extends Controller
     {
 
         try {
-            $data = Message::create($request->all());
+            $data = Message::create($request->validated());
             return successResponse($data);
         } catch (Exception $e) {
 
